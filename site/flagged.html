@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review — unverified items | China4</title>
+<meta name="description" content="Every claim that could not be verified line-by-line against an official source, with what was tried and how to confirm it manually.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="flagged">
+<header id="topbar"></header>
+<main class="wrap">
+  <div class="page-head">
+    <h1>Flagged for Review</h1>
+    <p class="sub">Nothing on this page is presented as fact elsewhere on the site. Each entry records what we tried,
+    the nearest unofficial sources (clearly labelled secondary), and the exact manual step that would confirm it.
+    Items here do not block the verified tables — they exist so you can review and request changes after the site is live.</p>
+  </div>
+
+  <div class="callout bad">
+    <strong>Why these exist:</strong> our verification rule is absolute — if a value could not be confirmed on an official
+    page retrieved during research (2026-11-07), it is either left blank in the main tables (e.g. bank fee figures on the
+    <a href="costs.html">Costs page</a>) or confined to this page with full transparency about evidence quality.
+  </div>
+
+  <div id="flagged-list"></div>
+</main>
+<footer id="footer"></footer>
+<script src="../assets/app.js"></script>
+<script src="data/flagged.js"></script>
+<script>
+(function () {
+  "use strict";
+  var mount = document.getElementById("flagged-list");
+  var html = window.DATA_FLAGGED.map(function (f) {
+    return '<article class="method" id="' + f.id.toLowerCase() + '">' +
+      "<header><h3>" + f.id + " — " + DASH__escape(f.item) + "</h3>" +
+      '<span class="tag">' + DASH__escape(f.area) + "</span>" +
+      DASH.badge(f.status, f.status === "verified" ? "verified (repo fact)" : "unverified") + "</header>" +
+      '<div class="body" style="grid-template-columns:1.4fr 1fr 1fr">' +
+      '<div class="col"><h4>What could not be verified</h4><p style="margin:0">' + f.detail + "</p>" +
+      '<p style="margin:.5rem 0 0"><span class="chip"><strong>Already tried:</strong> ' + DASH__escape(f.tried) + "</span></p></div>" +
+      '<div class="col"><h4>Nearest (secondary) sources</h4><p style="margin:0">' + DASH__escape(f.secondary) + "</p></div>" +
+      '<div class="col"><h4>How to confirm manually</h4><p style="margin:0">' + DASH__escape(f.action) + "</p></div>" +
+      "</div><footer>Evidence / starting point: " + DASH.srcLink({url: f.source, title: "Source (does not necessarily verify the flagged claim)"}) + "</footer></article>";
+  }).join("");
+  mount.innerHTML = html;
+
+  // local escape helper (app.js keeps escapeHtml private)
+  function DASH__escape(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+})();
+</script>
+</body>
+</html>

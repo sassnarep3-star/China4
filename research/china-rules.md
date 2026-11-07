@@ -1,0 +1,3 @@
+# China research
+
+SAFE's [2020 current-account guideline](https://www.gov.cn/zhengce/zhengceku/2020-08/31/content_5538828.htm) describes the annual convenience facility. [SAFE Tianjin](https://www.safe.gov.cn/tianjin/2024/0430/2464.html) republishes the personal FX implementing rules, including conversion against income documents and remittance rules. [SAFE guidance on foreign individuals](https://www.safe.gov.cn/tianjin/2026/0713/3088.html) discusses legal current-account RMB income. Applicability depends on source, status, documentation and bank review, not just the account balance. The site rules table contains further primary sources, including cash, overseas ATM and prohibited-conduct rules.

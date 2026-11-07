@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>China FX Rules — official rulebook table | China4</title>
+<meta name="description" content="China-side foreign-exchange rules for individuals: quotas, foreign-national income conversion, cash limits, ATM caps, prohibitions — each with its official source.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="rules">
+<header id="topbar"></header>
+<main class="wrap">
+  <div class="page-head">
+    <h1>China FX rules (individuals) — the official rulebook</h1>
+    <p class="sub">One row per rule, each linked to the official page where the Chinese text was read on 2026-11-07.
+    Key issuing bodies: SAFE (国家外汇管理局), PBOC (中国人民银行), State Council (国务院/gov.cn), State Taxation
+    Administration (国家税务总局). <span class="badge historical">historical</span> marks documents whose own official
+    page labels them repealed (已废止) — kept for context, not relied on.</p>
+  </div>
+
+  <section class="panel">
+    <h2>Rule table <span class="anchor">(filterable)</span></h2>
+    <div id="rules-table"></div>
+  </section>
+
+  <div class="callout warn">
+    <strong>Names you will meet at the bank:</strong>
+    <span class="chip">购汇 = buy FX with CNY</span>
+    <span class="chip">结汇 = sell FX for CNY</span>
+    <span class="chip">便利化额度 = convenience quota (ID-only tier)</span>
+    <span class="chip">完税证明/完税凭证 = tax-paid certificate</span>
+    <span class="chip">税务备案表 = outbound-payment tax filing form (&gt;US$50k single payments)</span>
+    <span class="chip">携带证 = Carrying Certificate for physical cash at the border</span>
+  </div>
+</main>
+<footer id="footer"></footer>
+<script src="../assets/app.js"></script>
+<script src="data/rules.js"></script>
+<script>
+(function () {
+  "use strict";
+  DASH.renderTable("rules-table", [
+    { key: "area", title: "Area" },
+    { key: "rule", title: "Rule (verified wording/values)" },
+    { key: "detail", title: "Detail (official text quoted where applicable)" },
+    { key: "value", title: "Limit / figure" },
+    { key: "status", title: "Status" },
+    { key: "source", title: "Official sources", render: function (r) {
+      var parts = [];
+      if (r.source) parts.push(DASH.srcLink(r.source));
+      if (r.source2) parts.push(DASH.srcLink(r.source2));
+      return parts.join(" ");
+    }}
+  ], window.DATA_RULES);
+})();
+</script>
+</body>
+</html>

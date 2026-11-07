@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>US Tax &amp; Reporting — CNY → USD | China4</title>
+<meta name="description" content="US obligations when moving money out of China: FBAR, FATCA Form 8938, Form 3520 foreign gifts, FinCEN 105 cash declaration, IRC §988, foreign tax credit.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="us">
+<header id="topbar"></header>
+<main class="wrap">
+  <div class="page-head">
+    <h1>US tax &amp; reporting obligations</h1>
+    <p class="sub">The US does not tax the act of moving your own money across borders. It does demand
+    <em>disclosure</em> of foreign accounts, large foreign gifts and physical cash — with penalties that scale only
+    when filings are missed. All rows verified against IRS / FinCEN / CBP / US Code pages on 2026-11-07.</p>
+  </div>
+
+  <div class="callout info">
+    <strong>Sequence that keeps you clean:</strong> while the money is still in China you may already pass the FBAR
+    trigger (&gt;$10,000 aggregate) — file it. Convert and wire. The wire into your US bank is not a tax event.
+    Keep Chinese tax records (完税证明) and conversion/wire slips with your US tax file. If the money was really a gift
+    from relatives, check the Form 3520 row below.
+  </div>
+
+  <section class="panel">
+    <h2>Obligations at a glance</h2>
+    <div id="us-table"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Reading the §988 rule on currency conversion</h2>
+    <p>IRC <a href="https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.htm" target="_blank" rel="noopener">§988(e)</a>
+    does two things for an individual’s <em>personal</em> transactions:</p>
+    <ul>
+      <li><strong>§988(e)(1)</strong> — the section simply does not apply to “any section 988 transaction entered into by an
+      individual which is a personal transaction”.</li>
+      <li><strong>§988(e)(2)</strong> — even when a personal transaction disposes of foreign currency, “no gain shall be
+      recognized … by reason of changes in exchange rates”, <em>unless</em> the gain on that transaction “exceeds $200”.</li>
+    </ul>
+    <p>Practical meaning for this project: converting your own CNY balance into USD is not a taxable event unless,
+    per transaction, currency moves generated a <em>gain</em> above $200 (e.g. you acquired the CNY at a much weaker rate).
+    Document your acquisition dates/rates so the computation is trivial if ever asked.</p>
+  </section>
+</main>
+<footer id="footer"></footer>
+<script src="../assets/app.js"></script>
+<script src="data/us.js"></script>
+<script>
+(function () {
+  "use strict";
+  DASH.renderTable("us-table", [
+    { key: "regime", title: "Regime / form" },
+    { key: "trigger", title: "Trigger" },
+    { key: "action", title: "What to do" },
+    { key: "penalty", title: "Penalty if missed" },
+    { key: "notes", title: "Notes for this use-case" },
+    { key: "status", title: "Status" },
+    { key: "source", title: "Official sources", render: function (r) {
+      var parts = [];
+      if (r.source) parts.push(DASH.srcLink(r.source));
+      if (r.source2) parts.push(DASH.srcLink(r.source2));
+      if (r.source3) parts.push(DASH.srcLink(r.source3));
+      return parts.join(" ");
+    }}
+  ], window.DATA_US_ROWS);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Costs &amp; Penalties — the conversion “penalty” breakdown | China4</title>
+<meta name="description" content="What converting CNY to USD actually costs: taxes that exist, fees that are real, and the penalties that apply only to illegal exits.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="costs">
+<header id="topbar"></header>
+<main class="wrap">
+  <div class="page-head">
+    <h1>Costs &amp; penalties — the “conversion penalty” broken down</h1>
+    <p class="sub">Moving funds is distinct from taxation of income or foreign-currency gains; the table below separates
+    the four layers people conflate: myths (no tax on conversion), preconditions (income must be taxed/documented),
+    friction costs (fees &amp; spreads — flagged where only secondary figures exist), and true penalties (only for
+    illegal exits or missed US filings).</p>
+  </div>
+
+  <section class="panel">
+    <h2>Full breakdown <span class="anchor">(filterable)</span></h2>
+    <div id="costs-table"></div>
+  </section>
+
+  <section class="panel">
+    <h2>China IIT — comprehensive income rate table (wages &amp; combined income)</h2>
+    <p class="note">Annual taxable income after the RMB 60,000 basic deduction (residents) and other permitted deductions;
+    non-resident wage income is computed monthly with a RMB 5,000/month deduction. Table 1 of the amended
+    Individual Income Tax Law — source under the table. This is the tax the bank expects to see <em>already paid</em>
+    before converting salary-derived balances.</p>
+    <div id="iit-table"></div>
+    <p class="note" style="margin-top:.6rem">Source:
+      <a href="https://shanghai.chinatax.gov.cn/yptax/ztzl/xgrsdszc/201809/t441739.html" target="_blank" rel="noopener">State Taxation Administration (Shanghai) — Chairman’s Order No. 9, Rate Tables 1–2 ↗</a>
+      · Law text:
+      <a href="https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html" target="_blank" rel="noopener">STA — 个人所得税法 full text ↗</a>
+      (both read on 2026-11-07).</p>
+  </section>
+
+  <div class="callout ok">
+    <strong>Practical read:</strong> for legitimately taxed salary, the conversion itself usually moves at the cost of
+    bank fees plus spread only. The painful scenarios are exactly two: (1) the income was never taxed in China — then
+    IIT (3%–45%) must be settled before conversion; (2) someone tells you to dodge documentation via underground channels —
+    then penalties depend on the conduct and circumstances, and may include a fine or criminal case.
+  </div>
+</main>
+<footer id="footer"></footer>
+<script src="../assets/app.js"></script>
+<script src="data/costs.js"></script>
+<script>
+(function () {
+  "use strict";
+  var TYPE_LABEL = {
+    "myth-busted": "Myth (busted)",
+    "precondition": "Precondition (tax/doc)",
+    "friction cost": "Friction cost (fee/spread)",
+    "true-penalty": "True penalty"
+  };
+  DASH.renderTable("costs-table", [
+    { key: "item", title: "Item" },
+    { key: "type", title: "Layer", render: function (r) {
+      var cls = r.type === "true-penalty" ? "prohibited" : r.type === "myth-busted" ? "verified" : r.type === "precondition" ? "conditional" : "analysis";
+      return '<span class="badge ' + cls + '">' + (TYPE_LABEL[r.type] || r.type) + "</span>";
+    }},
+    { key: "amount", title: "Amount" },
+    { key: "detail", title: "Detail (with official text)" },
+    { key: "status", title: "Status" },
+    { key: "source", title: "Source", render: function (r) {
+      var parts = [];
+      if (r.source) parts.push(DASH.srcLink(r.source));
+      if (r.source2) parts.push(DASH.srcLink(r.source2));
+      return parts.join(" ");
+    }}
+  ], window.DATA_COST_ROWS);
+
+  DASH.renderTable("iit-table", [
+    { key: "bracket", title: "Bracket" },
+    { key: "taxable", title: "Annual taxable income (RMB)" },
+    { key: "rate", title: "Rate" },
+    { key: "source", title: "Official source", render: function () { return DASH.srcLink({title:"STA rate table", url:"https://shanghai.chinatax.gov.cn/yptax/ztzl/xgrsdszc/201809/t441739.html"}); } }
+  ], window.DATA_IIT_BRACKETS, { filter: false });
+})();
+</script>
+</body>
+</html>
