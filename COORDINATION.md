@@ -17,10 +17,10 @@ Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
 | 3 | Build conversion-penalty breakdown | site/penalties.html | done | agent-1 | SAFE Regulations fines, FinCEN/IRS penalty figures | Built; unverified items flagged |
 | 4 | Build data table of methods with pros/cons | site/methods.html | done | agent-1 | SAFE Detailed Rules, FinCEN, IRS, SAFE enforcement release | Every row has source link |
 | 5 | Create GitHub Pages site (landing page + subpages, dashboard UI) | site/*.html, site/css, .github/workflows | done | agent-1 | n/a | 6 pages + CSS + workflow; HTML validated |
-| 6 | Verify all site content line by line against official sources | site/ | in progress | agent-1 | pending | Unverified → blank + flagged (see flagged.html) |
-| 7 | Create "Flagged for Review" page with irregularities | site/flagged.html | done | agent-1 | n/a | Published on site |
-| 8 | Integration: merge branches, re-verify combined data, confirm site builds | main (via PR) | unclaimed | agent-1 | pending | Do not merge broken site |
-| 9 | Create PR from integration branch to main, merge, confirm Pages deploys | GitHub | unclaimed | agent-1 | pending | Record PR link + merge result here |
+| 6 | Verify all site content line by line against official sources | root pages | done | agent-1 | SAFE Detailed Rules, SAFE Regulations, SAFE enforcement release, FinCEN FBAR, IRS FATCA/Pub 54/Form 3520/FAQ, IRS China treaty documents (1984), PBOC | Every table row carries an official-source link; values not confirmed from an official source left blank and flagged on flagged.html |
+| 7 | Create "Flagged for Review" page with irregularities | flagged.html | done | agent-1 | n/a | Published on site: 8 unverified values + 5 irregularities with suggested manual checks |
+| 8 | Integration: merge branches, re-verify combined data, confirm site builds | main (via PR) | done | agent-1 | PR #1 and PR #2 merged into main; live build commit e1491ef status "built" | All six pages + CSS return 200; no broken links |
+| 9 | Create PR from integration branch to main, merge, confirm Pages deploys | GitHub | done | agent-1 | PR #1: https://github.com/sassnarep3-star/China4/pull/1 (merged); PR #2: https://github.com/sassnarep3-star/China4/pull/2 (merged); GitHub Pages live at https://sassnarep3-star.github.io/China4/ | Pages build_type legacy, source branch main path "/", html_url confirmed; flagged items do not block merge and are published on the Flagged for Review page |
 
 ## Rules
 - Statuses: unclaimed, in progress, done, needs review
