@@ -20,13 +20,13 @@ owned by `arena-6eb49625`.
 
 | # | Task | Status | Owner session | Date (UTC) | File scope |
 |---|------|--------|---------------|------------|------------|
-| 1 | Repo review (line-by-line, flag irregularities) | claimed → in progress | arena-6eb49625 | 2026-11-07 | README.md, full repo inventory |
-| 2 | Research: China-side FX rules (SAFE/PBOC, official sources) | claimed | arena-6eb49625 | 2026-11-07 | research/china-rules.md |
-| 3 | Research: US-side tax & reporting (IRS/FinCEN, official sources) | claimed | arena-6eb49625 | 2026-11-07 | research/us-tax.md |
-| 4 | Research: conversion channels + penalty/fee breakdown | claimed | arena-6eb49625 | 2026-11-07 | research/methods.md |
-| 5 | Data tables (verified rows only, source link per row) | claimed | arena-6eb49625 | 2026-11-07 | site/data/*.js |
-| 6 | Site build (dashboard UI, landing + subpages) | claimed | arena-6eb49625 | 2026-11-07 | index.html, site/**, assets/** |
-| 7 | Verification pass (line-by-line vs official sources, link check, build check) | claimed | arena-6eb49625 | 2026-11-07 | all of the above |
+| 1 | Repo review (line-by-line, flag irregularities) | completed | arena-6eb49625 | 2026-11-07 | README.md, full repo inventory |
+| 2 | Research: China-side FX rules (SAFE/PBOC, official sources) | completed | arena-6eb49625 | 2026-11-07 | research/china-rules.md |
+| 3 | Research: US-side tax & reporting (IRS/FinCEN, official sources) | completed | arena-6eb49625 | 2026-11-07 | research/us-tax.md |
+| 4 | Research: conversion channels + penalty/fee breakdown | completed | arena-6eb49625 | 2026-11-07 | research/methods.md |
+| 5 | Data tables (verified rows only, source link per row) | completed | arena-6eb49625 | 2026-11-07 | site/data/*.js |
+| 6 | Site build (dashboard UI, landing + subpages) | completed | arena-6eb49625 | 2026-11-07 | index.html, site/**, assets/** |
+| 7 | Verification pass (line-by-line vs official sources, link check, build check) | completed | arena-6eb49625 | 2026-11-07 | all of the above |
 | 8 | Integration: PR to main, merge, GitHub Pages deploy, record result | claimed | arena-6eb49625 | 2026-11-07 | merge + COORDINATION.md updates |
 
 ## Handoff / Request Log
@@ -35,8 +35,9 @@ owned by `arena-6eb49625`.
 
 ## Completed-Task Records (sources, verification, irregularities)
 
-(appended here as tasks finish)
+- Tasks 1–7: original repository contained only the README heading; no substantive pre-existing claims to review. Added research, dashboard, data, flagged issues and verification notes. Primary evidence linked in site records (SAFE, tax authorities, IRS, FinCEN, CBP and govinfo); provider-specific statements attributed to provider. Unverified fees, penalties and availability are on the Flagged page. Local reference/source checker, JavaScript syntax and HTTP smoke tests passed; these do not establish legal correctness or remote source availability.
+- Task 8: PR opened, merge and deployment pending.
 
 ## PR / Merge Record
 
-(pending)
+PR: https://github.com/sassnarep3-star/China4/pull/5 — merge and deployment pending.
