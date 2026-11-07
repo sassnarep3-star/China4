@@ -1,0 +1,194 @@
+[
+  {
+    "id": "S1",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "2022 FX policy Q&A (Chinese): the USD 50,000 facilitation amount is not the limit for genuine lawful current-account transactions",
+    "url": "https://www.safe.gov.cn/ningxia/2022/0929/1997.html",
+    "checked": "2026-11-07",
+    "note": "Official branch-level FAQ; confirms amount above quota needs transaction materials. In Chinese."
+  },
+  {
+    "id": "S2",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "2025 personal FX Q&A: documented current-account expenses may use non-quota purchase",
+    "url": "https://www.safe.gov.cn/tianjin/2025/1223/2957.html",
+    "checked": "2026-11-07",
+    "note": "Official branch-level Q&A; example is overseas rent. In Chinese."
+  },
+  {
+    "id": "S3",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "Individual Foreign Exchange Administration Rules (Implementation), including Articles 13–15",
+    "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html",
+    "checked": "2026-11-07",
+    "note": "Official consolidated Chinese text marked amended; underlying rule dates to 2007. Confirm current bank implementation. Text includes domestic/overseas individual differences, RMB-to-FX evidence and foreign-currency remittance."
+  },
+  {
+    "id": "S4",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "Circular on further improving individual foreign-exchange administration",
+    "url": "https://www.safe.gov.cn/safe/2015/1231/5442.html",
+    "checked": "2026-11-07",
+    "note": "Prohibits quota splitting/borrowing to evade checks; official Chinese text."
+  },
+  {
+    "id": "S5",
+    "authority": "State Taxation Administration of China",
+    "title": "Individual Income Tax Law of the People's Republic of China (English translation)",
+    "url": "https://fgk.chinatax.gov.cn/eng/c102962/c102967/c102997/c103004/c5245849/content.html",
+    "checked": "2026-11-07",
+    "note": "Official English translation of law amended in 2018; source Chinese text is authentic, English is for reference. Lists residency and taxable categories/rates."
+  },
+  {
+    "id": "S6",
+    "authority": "U.S. Internal Revenue Service (IRS)",
+    "title": "Publication 54: Tax Guide for U.S. Citizens and Resident Aliens Abroad",
+    "url": "https://www.irs.gov/publications/p54",
+    "checked": "2026-11-07",
+    "note": "U.S. citizens generally report worldwide income; foreign tax credit rules and overseas account reporting references."
+  },
+  {
+    "id": "S7",
+    "authority": "U.S. Government Publishing Office / U.S. Code",
+    "title": "26 U.S.C. §988: Treatment of certain foreign-currency transactions",
+    "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/pdf/USCODE-2024-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf",
+    "checked": "2026-11-07",
+    "note": "Official U.S. Code PDF. Section 988(e) includes the personal-transaction exception and USD 200 gain threshold for the stated nonrecognition rule."
+  },
+  {
+    "id": "S8",
+    "authority": "U.S. Internal Revenue Service (IRS)",
+    "title": "Topic 856: Foreign tax credit",
+    "url": "https://www.irs.gov/taxtopics/tc856",
+    "checked": "2026-11-07",
+    "note": "Qualifying foreign income-tax liability, payment/accrual, limitations and credit/deduction choice."
+  },
+  {
+    "id": "S9",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "SAFE explanation of authenticity review and FX violations",
+    "url": "https://www.safe.gov.cn/en/2015/0918/1171.html",
+    "checked": "2026-11-07",
+    "note": "Official English source describing false/reused documents and split remittance issues."
+  },
+  {
+    "id": "S10",
+    "authority": "U.S. Internal Revenue Service (IRS) / FinCEN",
+    "title": "Report of Foreign Bank and Financial Accounts (FBAR)",
+    "url": "https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar",
+    "checked": "2026-11-07",
+    "note": "U.S. person account/signature authority; aggregate foreign-account threshold USD 10,000 at any time during year; separate from income tax."
+  },
+  {
+    "id": "S11",
+    "authority": "U.S. Internal Revenue Service (IRS)",
+    "title": "Do I need to file Form 8938?",
+    "url": "https://www.irs.gov/businesses/corporations/do-i-need-to-file-form-8938-statement-of-specified-foreign-financial-assets",
+    "checked": "2026-11-07",
+    "note": "Separate FATCA asset reporting; thresholds differ by filing status and residence."
+  },
+  {
+    "id": "S12",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "Capital-account foreign-exchange settlement and payment reform",
+    "url": "https://www.safe.gov.cn/en/2016/1219/1301.html",
+    "checked": "2026-11-07",
+    "note": "Official English circular describing supporting materials and purpose review for relevant capital-account settlement/payment."
+  },
+  {
+    "id": "S13",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "SAFE individual FX rules: legal RMB current-account income and unused RMB reconversion",
+    "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html",
+    "checked": "2026-11-07",
+    "note": "Same consolidated rule as S3; cited to Articles 13 and 15."
+  },
+  {
+    "id": "S15",
+    "authority": "State Administration of Foreign Exchange (SAFE), Shanghai branch",
+    "title": "2026 FX and cross-border RMB policy Q&A",
+    "url": "https://www.safe.gov.cn/shanghai/2026/0402/2412.html",
+    "checked": "2026-11-07",
+    "note": "Official Chinese Q&A; includes qualifying cross-border e-commerce settlement with transaction evidence/electronic information."
+  },
+  {
+    "id": "S16",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "SAFE spokesperson Q&A on individual foreign exchange rules",
+    "url": "https://www.safe.gov.cn/en/2007/0105/819.html",
+    "checked": "2026-11-07",
+    "note": "Official English source for genuine current-account evidence, donations, family support, trade/business distinction."
+  },
+  {
+    "id": "S17",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "Circular on authenticity and compliance reviews (2017)",
+    "url": "https://www.safe.gov.cn/en/2017/0126/1303.html",
+    "checked": "2026-11-07",
+    "note": "Profit remittance documents include company distribution decision, tax filing and audited financial statements in relevant cases."
+  },
+  {
+    "id": "S18",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "SAFE Q&A on authentic company profit remittances",
+    "url": "https://www.safe.gov.cn/en/2017/0126/1248.html",
+    "checked": "2026-11-07",
+    "note": "Official English explanation of compliant profit remittance/document review."
+  },
+  {
+    "id": "S19",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "SAFE guidance on donation, family support and inheritance evidence",
+    "url": "https://www.safe.gov.cn/en/2007/0105/819.html",
+    "checked": "2026-11-07",
+    "note": "Same source as S16; cited specifically for documentary evidence examples."
+  },
+  {
+    "id": "S20",
+    "authority": "General Administration of Customs of China",
+    "title": "Customs consultation response: foreign-currency cash carried out of China",
+    "url": "http://www.customs.gov.cn/eportal/ui?pageId=374112&msgDataId=4dd9dc6803b442978d6878c15ce639d6",
+    "checked": "2026-11-07",
+    "note": "Official 2025 response; USD 5,000/10,000 permit brackets for physical foreign cash export."
+  },
+  {
+    "id": "S21",
+    "authority": "Guangzhou Customs",
+    "title": "Cash carried across China’s border",
+    "url": "http://guangzhou.customs.gov.cn/guangzhou_customs/381679/3795484/3800229/index.html",
+    "checked": "2026-11-07",
+    "note": "Official customs page; includes RMB CNY 20,000 limit and foreign currency cash guidance. Chinese."
+  },
+  {
+    "id": "S22",
+    "authority": "State Administration of Foreign Exchange (SAFE)",
+    "title": "SAFE Q&A on large overseas bank-card cash withdrawals",
+    "url": "https://www.safe.gov.cn/en/2017/1230/1391.html",
+    "checked": "2026-11-07",
+    "note": "Official English Q&A distinguishing ordinary overseas card consumption from cash-withdrawal controls."
+  },
+  {
+    "id": "S23",
+    "authority": "Financial Crimes Enforcement Network (FinCEN), U.S. Treasury",
+    "title": "FinCEN Form 105: physical international transport reporting guidance",
+    "url": "https://www.fincen.gov/resources/statutes-regulations/administrative-rulings/fincen-form-105-currency-and-other-monetary",
+    "checked": "2026-11-07",
+    "note": "Physical currency/monetary instruments over USD 10,000; ordinary transfers through banking procedures are not physical transportation reports."
+  },
+  {
+    "id": "S24",
+    "authority": "State Administration of Foreign Exchange (SAFE), Tianjin branch",
+    "title": "2026 individual FX Q&A: reconversion of unused RMB by an overseas individual",
+    "url": "https://www.safe.gov.cn/tianjin/2026/0917/3134.html",
+    "checked": "2026-11-07",
+    "note": "Official FAQ; original exchange receipt required and valid 24 months; specified small conversions have an ID-only provision. Chinese."
+  },
+  {
+    "id": "S25",
+    "authority": "State Administration of Foreign Exchange (SAFE), Tianjin branch",
+    "title": "2025 personal FX Q&A: annual facilitation quota eligibility for overseas individuals",
+    "url": "https://www.safe.gov.cn/tianjin/2025/1113/2926.html",
+    "checked": "2026-11-07",
+    "note": "Official Chinese FAQ; confirms overseas individuals holding a foreign permanent-residence ID may use the USD 50,000 equivalent annual FX purchase facilitation quota."
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "foreign-individual-income",
+    "category": "Personal / current account",
+    "route": "U.S. citizen classified as an overseas individual: convert documented legal RMB current-account income earned in China",
+    "what": "SAFE's published rules provide for an overseas individual's purchase of FX using legal RMB current-account income earned in China, supported by identity and transaction evidence, including tax evidence.",
+    "pros": "Direct, documented bank route if the balance is genuine eligible current-account earnings and the claimant's SAFE customer category qualifies.",
+    "cons": "Does not establish eligibility for an arbitrary RMB balance, investment principal, or undocumented savings. The account bank must confirm customer classification and current procedure.",
+    "limit": "Not confirmed for this account; evidence and current bank handling required.",
+    "fees": "",
+    "status": "conditional",
+    "sources": [
+      {
+        "label": "SAFE individual foreign-exchange implementation rules, Articles 13 and 15 (Chinese)",
+        "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html"
+      }
+    ]
+  },
+  {
+    "id": "quota-bank-remit",
+    "category": "Personal / current account",
+    "route": "Bank USD purchase under an applicable individual facilitation quota, followed by a bank remittance for a genuine current-account purpose",
+    "what": "ID-only facilitation up to equivalent USD 50,000 per person/year applies to specified FX operations. SAFE describes purchase-quota eligibility for domestic individuals and overseas individuals holding a Chinese foreign permanent-residence ID. Purchase and outbound remittance are distinct operations.",
+    "pros": "May be the least-document-heavy formal bank route when the person has applicable quota available and has an accepted genuine purpose.",
+    "cons": "Do not assume the purchase quota applies to every U.S. citizen. Remaining quota, customer category, accepted purpose, bank USD availability, quote and charges are unknown; not a tax-free guarantee.",
+    "limit": "USD 50,000 equivalent per person per year for facilitation; not a transaction ceiling for genuine documented eligible transactions.",
+    "fees": "",
+    "status": "conditional",
+    "sources": [
+      {
+        "label": "SAFE Ningxia: personal FX policy Q&A (Chinese)",
+        "url": "https://www.safe.gov.cn/ningxia/2022/0929/1997.html"
+      },
+      {
+        "label": "SAFE individual foreign-exchange implementation rules (Chinese)",
+        "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html"
+      },
+      {
+        "label": "SAFE 2025 FAQ on foreign permanent-residence ID holders",
+        "url": "https://www.safe.gov.cn/tianjin/2025/1113/2926.html"
+      }
+    ]
+  },
+  {
+    "id": "documented-over-quota",
+    "category": "Personal / current account",
+    "route": "Documented genuine current-account purchase above the facilitation quota",
+    "what": "SAFE guidance states authentic, lawful current-account foreign-exchange purchase/settlement is not limited by the facilitation amount, but amounts above it require transaction documents and bank authenticity review.",
+    "pros": "Can accommodate genuine, eligible, documented needs without borrowing another person's quota or artificially splitting transfers.",
+    "cons": "Not a blanket permission to transfer accumulated savings for any purpose. Eligibility and required evidence depend on the real transaction and the bank's review.",
+    "limit": "No amount ceiling confirmed for qualifying current-account transactions in cited SAFE guidance; bank review still applies.",
+    "fees": "",
+    "status": "conditional",
+    "sources": [
+      {
+        "label": "SAFE Ningxia: personal FX policy Q&A (Chinese)",
+        "url": "https://www.safe.gov.cn/ningxia/2022/0929/1997.html"
+      },
+      {
+        "label": "SAFE Tianjin: 2025 individual FX Q&A (Chinese)",
+        "url": "https://www.safe.gov.cn/tianjin/2025/1223/2957.html"
+      }
+    ]
+  },
+  {
+    "id": "existing-fx-remittance",
+    "category": "Personal / current account",
+    "route": "Remit an existing foreign-currency savings balance, if the account already holds USD or another foreign currency",
+    "what": "The published SAFE rules provide an ID-only path for a domestic individual's current-account FX savings remittance up to USD 50,000 equivalent per day, with transaction evidence above that. For an overseas individual, the rules separately say remittance from an FX savings account is handled with identity documents.",
+    "pros": "Avoids a fresh CNY-to-USD conversion if the funds are already held in foreign currency.",
+    "cons": "Does not convert an RMB balance. The customer's classification, purpose, bank processing and applicable current rules must be confirmed.",
+    "limit": "Domestic-individual threshold in the cited rule: USD 50,000 equivalent per day for current-account FX savings remittance; overseas-person text differs.",
+    "fees": "",
+    "status": "conditional",
+    "sources": [
+      {
+        "label": "SAFE individual foreign-exchange implementation rules, Articles 14–15 (Chinese)",
+        "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html"
+      }
+    ]
+  },
+  {
+    "id": "purpose-based-expense",
+    "category": "Personal / current account",
+    "route": "Use a real, documented current-account expense to support an out-of-quota FX purchase; separately confirm the outbound wire",
+    "what": "SAFE guidance recognizes transaction-evidenced current-account FX purchases outside the facilitation amount; a 2025 example states documented overseas rent may be purchased without using the annual facilitation quota. Outbound remittance has separate requirements.",
+    "pros": "Potentially useful where the conversion genuinely pays an eligible expense and the contract, invoice, tuition notice, or other evidence matches.",
+    "cons": "The cited rent Q&A confirms the FX purchase, not a general permission to send unrestricted savings to oneself. Confirm remittance and payee requirements separately; do not invent, relabel, or retrofit a payment purpose.",
+    "limit": "No general limit confirmed for an authentic eligible transaction; evidence is required.",
+    "fees": "",
+    "status": "conditional",
+    "sources": [
+      {
+        "label": "SAFE Tianjin: 2025 individual FX Q&A (Chinese)",
+        "url": "https://www.safe.gov.cn/tianjin/2025/1223/2957.html"
+      },
+      {
+        "label": "SAFE Ningxia: personal FX policy Q&A (Chinese)",
+        "url": "https://www.safe.gov.cn/ningxia/2022/0929/1997.html"
+      }
+    ]
+  },
+  {
+    "id": "unused-rmb-reconversion",
+    "category": "Personal / current account",
+    "route": "Overseas individual reconverts the unused RMB from a prior legitimate FX exchange",
+    "what": "The SAFE rules provide for reconversion of original unused RMB using the original exchange receipt, valid for 24 months from the exchange date. Separate historical guidance covers unused RMB withdrawn in China using a foreign card, with original vouchers.",
+    "pros": "Can fit a narrow case where the current RMB balance traces directly to a prior exchange and the original exchange receipt is available and within its validity period.",
+    "cons": "Not a route for arbitrary RMB savings; the original exchange receipt, personal classification and 24-month validity matter.",
+    "limit": "Original receipt validity: 24 months. FAQ also states ID-only handling up to USD 500 equivalent cumulative per day, or USD 1,000 equivalent in specified bonded departure areas.",
+    "fees": "",
+    "status": "conditional",
+    "sources": [
+      {
+        "label": "SAFE Tianjin 2026 Q&A on unused-RMB reconversion (Chinese)",
+        "url": "https://www.safe.gov.cn/tianjin/2026/0917/3134.html"
+      },
+      {
+        "label": "SAFE individual foreign-exchange implementation rules, Article 13 (Chinese)",
+        "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html"
+      }
+    ]
+  },
+  {
+    "id": "individual-trade",
+    "category": "Business / trade",
+    "route": "Actual individual trade or cross-border e-commerce settlement",
+    "what": "SAFE rules recognize business FX settlement with genuine trade evidence. 2026 Shanghai SAFE guidance says qualifying cross-border e-commerce settlement with transaction documents or electronic transaction data does not use the individual facilitation quota.",
+    "pros": "A formal path for actual commercial receipts, with real records and proper registration/account procedures.",
+    "cons": "Cannot convert personal savings into trade proceeds. Business registration, customs, tax and transaction requirements may apply; eligibility is not established here.",
+    "limit": "Not applicable to an unrelated personal bank balance.",
+    "fees": "",
+    "status": "narrow-use",
+    "sources": [
+      {
+        "label": "SAFE Shanghai: FX and cross-border RMB Q&A, 2026 (Chinese)",
+        "url": "https://www.safe.gov.cn/shanghai/2026/0402/2412.html"
+      },
+      {
+        "label": "SAFE spokesperson Q&A on individual FX rules (English)",
+        "url": "https://www.safe.gov.cn/en/2007/0105/819.html"
+      }
+    ]
+  },
+  {
+    "id": "company-profit",
+    "category": "Business / investment",
+    "route": "Remit real company profit or dividend through the proper company process",
+    "what": "SAFE describes compliant company profit remittances as current-account transactions when genuine, supported by relevant documents such as profit distribution resolutions, tax filings and audited financial statements.",
+    "pros": "Suitable when the funds are genuine distributable profits from an actual company interest and ownership/financial records are clear.",
+    "cons": "Not a personal-savings workaround. Company accounting, tax, audit, ownership, registration and bank review apply; local current steps are not established.",
+    "limit": "Transaction-specific; no amount or approval outcome confirmed for this user.",
+    "fees": "",
+    "status": "narrow-use",
+    "sources": [
+      {
+        "label": "SAFE circular on authenticity/compliance review (English)",
+        "url": "https://www.safe.gov.cn/en/2017/0126/1303.html"
+      },
+      {
+        "label": "SAFE official Q&A on profit remittance (English)",
+        "url": "https://www.safe.gov.cn/en/2017/0126/1248.html"
+      }
+    ]
+  },
+  {
+    "id": "inheritance-gift-support",
+    "category": "Personal / documented transfer",
+    "route": "Document a genuine inheritance, donation, or family-support transfer",
+    "what": "SAFE describes evidence for non-business current-account receipts beyond facilitation, including a notarized donation agreement, inheritance evidence, or kinship and source-of-funds records for family support.",
+    "pros": "May fit an authentic inheritance, gift, or support payment with complete legal and source documents.",
+    "cons": "A label alone does not qualify the funds. Do not characterize savings as a gift or inheritance unless that is the real underlying transaction; tax treatment is separate.",
+    "limit": "Case-specific documentary review; no amount or approval outcome confirmed.",
+    "fees": "",
+    "status": "narrow-use",
+    "sources": [
+      {
+        "label": "SAFE spokesperson Q&A on documentation for donations, family maintenance and inheritance (English)",
+        "url": "https://www.safe.gov.cn/en/2007/0105/819.html"
+      }
+    ]
+  },
+  {
+    "id": "capital-account",
+    "category": "Business / investment",
+    "route": "Use the transaction-specific capital-account route for investment principal or exit proceeds",
+    "what": "SAFE rules distinguish capital-account transactions and require relevant genuine-purpose evidence for settlement/payment in applicable cases. Investment registration/approval and transaction documentation may apply.",
+    "pros": "The proper path if the balance is actually investment principal or qualifying investment proceeds.",
+    "cons": "Often transaction-specific; no generic personal route can be confirmed without identifying the investment, ownership, registration and account type.",
+    "limit": "Not determined; specific capital-account rules apply.",
+    "fees": "",
+    "status": "narrow-use",
+    "sources": [
+      {
+        "label": "SAFE capital-account settlement/payment reform (English)",
+        "url": "https://www.safe.gov.cn/en/2016/1219/1301.html"
+      }
+    ]
+  },
+  {
+    "id": "cash-carriage",
+    "category": "Travel / cash",
+    "route": "Carry permitted foreign-currency cash with required permits and declarations",
+    "what": "China Customs states foreign cash up to USD 5,000 equivalent may leave without a permit; more than USD 5,000 through USD 10,000 requires a bank permit; above USD 10,000 requires a SAFE permit. A separate Customs page states a CNY 20,000 per-person/trip RMB cash limit. U.S. FinCEN reporting generally applies to physical cross-border currency/monetary instruments above USD 10,000; normal bank transfers are excluded.",
+    "pros": "A small or incidental physical option if the cash was lawfully acquired and all permits/declarations are met.",
+    "cons": "Unsafe and impractical for large balances; separate cash withdrawal rules and travel/security risks. This is not a way around bank FX, tax, source or reporting rules.",
+    "limit": "China permit thresholds: USD 5,000 / 10,000 equivalent; RMB cash CNY 20,000 per person/trip. U.S. physical-transport report threshold: over USD 10,000 aggregate.",
+    "fees": "",
+    "status": "limited",
+    "sources": [
+      {
+        "label": "China Customs consultation response on foreign-cash permit thresholds (Chinese)",
+        "url": "http://www.customs.gov.cn/eportal/ui?pageId=374112&msgDataId=4dd9dc6803b442978d6878c15ce639d6"
+      },
+      {
+        "label": "Guangzhou Customs: cash carried across border (Chinese)",
+        "url": "http://guangzhou.customs.gov.cn/guangzhou_customs/381679/3795484/3800229/index.html"
+      },
+      {
+        "label": "FinCEN Form 105 guidance (U.S. Treasury)",
+        "url": "https://www.fincen.gov/resources/statutes-regulations/administrative-rulings/fincen-form-105-currency-and-other-monetary"
+      }
+    ]
+  },
+  {
+    "id": "overseas-card-use",
+    "category": "Use funds without repatriating",
+    "route": "Use a China-issued bank card for genuine overseas purchases rather than remitting the balance",
+    "what": "SAFE explains normal overseas card spending is not deducted from the personal USD 50,000 FX purchase quota; overseas ATM cash withdrawals have separate daily and annual controls.",
+    "pros": "Can directly pay legitimate overseas living or travel expenses without first wiring those funds to a U.S. bank.",
+    "cons": "Does not place USD in a U.S. account. Merchant/card exchange treatment and fees vary; cash withdrawals remain separately limited.",
+    "limit": "Separate card cash-withdrawal controls apply; no user-specific withdrawal amount established here.",
+    "fees": "",
+    "status": "alternative-use",
+    "sources": [
+      {
+        "label": "SAFE official Q&A on overseas card cash withdrawals (English)",
+        "url": "https://www.safe.gov.cn/en/2017/1230/1391.html"
+      }
+    ]
+  }
+]

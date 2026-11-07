@@ -1,0 +1,121 @@
+[
+  {
+    "flag": "Account-holder category is unknown",
+    "detail": "A U.S. citizen may be classified as an overseas individual for some SAFE procedures, but passport alone does not determine the regulatory account category. Confirm actual category, account type, and any Chinese permanent-residence status with the bank before using the USD 50,000 domestic-individual facilitation route.",
+    "severity": "High — blocks route selection",
+    "sources": [
+      {
+        "label": "SAFE individual FX implementation rules, Articles 13–15",
+        "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html"
+      }
+    ]
+  },
+  {
+    "flag": "Original source and character of the CNY are unknown",
+    "detail": "No source documents were supplied. Wages, business revenue, asset-sale proceeds, inheritance/gift, investment principal and existing savings may lead to different FX evidence and tax analysis.",
+    "severity": "High — blocks eligibility and tax calculation",
+    "sources": [
+      {
+        "label": "SAFE individual FX rules",
+        "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html"
+      },
+      {
+        "label": "China Individual Income Tax Law",
+        "url": "https://fgk.chinatax.gov.cn/eng/c102962/c102967/c102997/c103004/c5245849/content.html"
+      }
+    ]
+  },
+  {
+    "flag": "RMB vs foreign-currency account balance is unknown",
+    "detail": "If the account already holds foreign currency, a remittance route may avoid a new CNY conversion. If it holds RMB, a qualifying purchase/conversion basis must be identified.",
+    "severity": "High — changes route",
+    "sources": [
+      {
+        "label": "SAFE individual FX rules, Articles 13–15",
+        "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html"
+      }
+    ]
+  },
+  {
+    "flag": "No bank, amount, city, purpose, beneficiary details or quota usage supplied",
+    "detail": "No account-specific conversion eligibility, current document list, bank fee, rate, beneficiary-bank cost, or net USD can be verified. Ask the actual bank for a written compliance path and all-in quote.",
+    "severity": "High — exact answer unavailable",
+    "sources": [
+      {
+        "label": "SAFE guidance on the facilitation quota and transaction evidence",
+        "url": "https://www.safe.gov.cn/ningxia/2022/0929/1997.html"
+      }
+    ]
+  },
+  {
+    "flag": "Older individual FX procedure text",
+    "detail": "Some individual FX implementation provisions originate in older rules. A 2026 SAFE FAQ confirms the unused-RMB reconversion procedure, but the account bank or local SAFE branch should confirm all account-specific handling.",
+    "severity": "Medium — current implementation check",
+    "sources": [
+      {
+        "label": "SAFE amended individual FX implementation rules",
+        "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html"
+      }
+    ]
+  },
+  {
+    "flag": "Individual China tax due and historic U.S. filings cannot be established",
+    "detail": "No income type, tax-residence days, basis, China tax vouchers, U.S. returns, or previous foreign account reports were provided. No exact tax, penalty, interest or credit is calculated; treat those amounts as blank/unverified.",
+    "severity": "High — tax adviser review",
+    "sources": [
+      {
+        "label": "China Individual Income Tax Law (official English translation)",
+        "url": "https://fgk.chinatax.gov.cn/eng/c102962/c102967/c102997/c103004/c5245849/content.html"
+      },
+      {
+        "label": "IRS Publication 54",
+        "url": "https://www.irs.gov/publications/p54"
+      },
+      {
+        "label": "IRS foreign tax credit guidance",
+        "url": "https://www.irs.gov/taxtopics/tc856"
+      }
+    ]
+  },
+  {
+    "flag": "No universal conversion tax or individual tax exemption is asserted",
+    "detail": "Research found the USD 50,000 FX facilitation threshold is not described by SAFE as a tax. It did not establish a blanket exemption for the source income, any realized foreign-currency gain, or a particular person's account. Keep these analyses separate.",
+    "severity": "Medium — wording caveat",
+    "sources": [
+      {
+        "label": "SAFE FX facilitation explanation",
+        "url": "https://www.safe.gov.cn/ningxia/2022/0929/1997.html"
+      },
+      {
+        "label": "26 U.S.C. §988",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/pdf/USCODE-2024-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf"
+      }
+    ]
+  },
+  {
+    "flag": "No shortcut via splitting, borrowed quota, false purpose or underground channels",
+    "detail": "These are excluded as compliant strategies. SAFE bars evading controls through splitting or borrowing/lending quotas; false documentation and underground transfer create significant regulatory, fraud and loss risks.",
+    "severity": "High — do not use",
+    "sources": [
+      {
+        "label": "SAFE anti-splitting circular",
+        "url": "https://www.safe.gov.cn/safe/2015/1231/5442.html"
+      },
+      {
+        "label": "SAFE authenticity enforcement explanation",
+        "url": "https://www.safe.gov.cn/en/2015/0918/1171.html"
+      }
+    ]
+  },
+  {
+    "flag": "English translation of China tax statute is reference-only",
+    "detail": "The official English translation states the Chinese source text is authentic and English is for reference. Check the Chinese text or obtain qualified advice for a binding conclusion.",
+    "severity": "Low — translation caveat",
+    "sources": [
+      {
+        "label": "State Taxation Administration English Individual Income Tax Law",
+        "url": "https://fgk.chinatax.gov.cn/eng/c102962/c102967/c102997/c103004/c5245849/content.html"
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+name: Verify site
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate site links, JSON and official-source rows
+        run: python3 assets/verify.py

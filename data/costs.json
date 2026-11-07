@@ -1,0 +1,110 @@
+[
+  {
+    "item": "Bank CNY/USD exchange rate on execution date",
+    "amount": "",
+    "status": "Unverified — no bank, date or executable quote supplied.",
+    "impact": "Rate determines the USD proceeds; request a dated quote in writing.",
+    "sources": [
+      {
+        "label": "SAFE FX guidance (does not confirm any bank quote)",
+        "url": "https://www.safe.gov.cn/ningxia/2022/0929/1997.html"
+      }
+    ]
+  },
+  {
+    "item": "FX spread or markup",
+    "amount": "",
+    "status": "Unverified — no bank quote or benchmark specified.",
+    "impact": "Compare the bank's USD credited amount with the same-time stated reference rate; the amount here is intentionally blank.",
+    "sources": [
+      {
+        "label": "SAFE FX guidance (does not provide a spread or price)",
+        "url": "https://www.safe.gov.cn/ningxia/2022/0929/1997.html"
+      }
+    ]
+  },
+  {
+    "item": "China sending-bank wire charge",
+    "amount": "",
+    "status": "Unverified — sender bank/account/channel not supplied.",
+    "impact": "Ask the bank for its current tariff and whether the sender or receiver pays each fee.",
+    "sources": [
+      {
+        "label": "SAFE rules requiring bank authenticity review (fees not stated)",
+        "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html"
+      }
+    ]
+  },
+  {
+    "item": "Correspondent / intermediary deductions",
+    "amount": "",
+    "status": "Unverified — route and charge option unknown.",
+    "impact": "Request an all-in estimate and fee allocation from the sending bank; intermediary deductions can only be confirmed for the actual route.",
+    "sources": [
+      {
+        "label": "FinCEN guidance distinguishing normal bank transfers from physical cash reporting (not a fee schedule)",
+        "url": "https://www.fincen.gov/resources/statutes-regulations/administrative-rulings/fincen-form-105-currency-and-other-monetary"
+      }
+    ]
+  },
+  {
+    "item": "U.S. receiving-bank fee",
+    "amount": "",
+    "status": "Unverified — recipient bank/account not supplied.",
+    "impact": "Ask the receiving bank for its incoming international-wire tariff.",
+    "sources": [
+      {
+        "label": "IRS foreign-account guidance (reporting only; no wire fee stated)",
+        "url": "https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar"
+      }
+    ]
+  },
+  {
+    "item": "China tax on the underlying CNY source transaction",
+    "amount": "",
+    "status": "Unverified — source, tax residency, tax basis and payment history unknown.",
+    "impact": "Tax attaches to the applicable income/transaction category, not an assumed conversion surcharge; seek a case-specific determination.",
+    "sources": [
+      {
+        "label": "China Individual Income Tax Law (official English translation)",
+        "url": "https://fgk.chinatax.gov.cn/eng/c102962/c102967/c102997/c103004/c5245849/content.html"
+      }
+    ]
+  },
+  {
+    "item": "U.S. income tax or realized foreign-currency gain",
+    "amount": "",
+    "status": "Unverified — income source, basis, dates and filing history unknown.",
+    "impact": "Determine original U.S. taxable income and any realized currency gain separately; no U.S. tax calculation is possible from supplied facts.",
+    "sources": [
+      {
+        "label": "IRS Publication 54",
+        "url": "https://www.irs.gov/publications/p54"
+      },
+      {
+        "label": "26 U.S.C. §988",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/pdf/USCODE-2024-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf"
+      }
+    ]
+  },
+  {
+    "item": "USD 50,000 FX facilitation amount",
+    "amount": "Not a tax or a penalty",
+    "status": "Verified — SAFE identifies this as a facilitation threshold, not a universal hard cap for authentic eligible current-account transactions.",
+    "impact": "Above the applicable ID-only amount, transaction evidence and bank review may be required; eligibility varies by customer category. Splitting/borrowing quota is prohibited.",
+    "sources": [
+      {
+        "label": "SAFE Ningxia FX policy Q&A (Chinese)",
+        "url": "https://www.safe.gov.cn/ningxia/2022/0929/1997.html"
+      },
+      {
+        "label": "SAFE rule against evading controls by splitting or borrowing quotas (Chinese)",
+        "url": "https://www.safe.gov.cn/safe/2015/1231/5442.html"
+      },
+      {
+        "label": "SAFE 2025 quota eligibility FAQ (Chinese)",
+        "url": "https://www.safe.gov.cn/tianjin/2025/1113/2926.html"
+      }
+    ]
+  }
+]

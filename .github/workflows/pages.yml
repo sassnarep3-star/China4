@@ -1,0 +1,41 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Verify site and official-source data
+        run: python3 assets/verify.py
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Assemble public site files
+        run: |
+          mkdir -p "${RUNNER_TEMP}/china-money-pages"
+          cp -R index.html routes tax requirements sources review assets data research "${RUNNER_TEMP}/china-money-pages/"
+          cp .nojekyll "${RUNNER_TEMP}/china-money-pages/"
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/china-money-pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
