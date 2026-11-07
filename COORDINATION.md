@@ -41,3 +41,7 @@ owned by `arena-6eb49625`.
 ## PR / Merge Record
 
 PR: https://github.com/sassnarep3-star/China4/pull/5 — merge and deployment pending.
+
+## Conflict and handoff — 2026-11-07
+
+PR #5 could not merge because `main` advanced independently to e7e12b1, containing work and a coordination board from session `agent-1` (PRs #1–#3). The two sessions claimed overlapping dashboard, research and integration scopes before either board was visible to the other. The root `README.md`, `index.html` and `COORDINATION.md` conflict; the other session also claims site pages and shared integration. No other session's changes have been discarded or overwritten. Request to the integration owner: reconcile both dashboards and both coordination histories, decide which landing page/navigation to retain, and review the new research and flagged claims before integration. In particular check currency gain tax characterization, foreign-individual eligibility, actual source applicability and fee figures. PR #5 remains open and unmerged pending that coordination; the site currently deployed from main is the other session's site, not this PR's dashboard. GitHub Pages API reports latest build e7e12b1 built.
