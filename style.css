@@ -210,3 +210,5 @@ a.source { font-size: 0.78rem; color: #2563eb; text-decoration: underline; }
 .data td { vertical-align: top; }
 .best-answer h2 { margin-top: 0; }
 @media (max-width: 700px) { .site-header { position: static; } nav { margin-left: 0; } }
+
+@media (max-width: 700px) { .cost-schedule .data { min-width: 0; font-size: .72rem; } .cost-schedule .data th, .cost-schedule .data td { padding: 7px 4px; } }
