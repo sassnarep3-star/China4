@@ -205,4 +205,8 @@ a.source { font-size: 0.78rem; color: #2563eb; text-decoration: underline; }
   nav { margin-left: 0; justify-content: center; }
   table.data { font-size: 0.78rem; }
   table.data td, table.data th { padding: 7px 8px; }
-}
+}.table-wrap { overflow-x: auto; }
+.table-wrap .data { min-width: 660px; }
+.data td { vertical-align: top; }
+.best-answer h2 { margin-top: 0; }
+@media (max-width: 700px) { .site-header { position: static; } nav { margin-left: 0; } }
