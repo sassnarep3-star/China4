@@ -1,0 +1,15 @@
+{
+  "accessed": "2026-11-08",
+  "boc_usd_buy": 6.6648,
+  "boc_usd_sell": 6.6929,
+  "mid": 6.67885,
+  "spread_one_way": 0.00209923949259665,
+  "fee_rate": 0.001,
+  "fee_min_cny": 50.0,
+  "fee_max_cny": 260.0,
+  "cable_cny": 150.0,
+  "quota_usd": 50000,
+  "atm_year_cny": 100000,
+  "cash_per_trip_usd": 5000,
+  "quote_timestamp": "2026-11-09 05:30 Beijing time"
+}

@@ -1,0 +1,257 @@
+{
+  "accessed": "2026-11-08",
+  "sources": {
+    "fx_regs_2008": {
+      "title": "中华人民共和国外汇管理条例（国务院令第532号）— Foreign Exchange Control Regulations of the PRC (2008 revision)",
+      "publisher": "State Council of the PRC (gov.cn)",
+      "url": "https://www.gov.cn/zhengce/2008-08/06/content_2602514.htm",
+      "short": "FX Regulations 2008 (State Council)",
+      "establishes": "Art. 5 (no restriction on current-account international payments and transfers); Art. 12 (current-account transactions need a genuine, lawful basis); Art. 15 (SAFE sets cash-carry limits); Art. 39 (evasion: fine up to 30%, or 30%–100% if serious); Art. 40 (illegal FX arbitrage); Art. 41 (illegal settlement); Art. 42 (carrying FX in/out: warning, fine up to 20%); Art. 45 (private/disguised FX trading: fine up to 30%, or 30%–100% if serious); Art. 48 (individuals up to RMB 50,000 for e.g. false documents); Art. 52(2) (a 'domestic individual' includes a foreigner who has continuously resided in China for one year).",
+      "status": "Retrieved and read in full, 2026-11-08.",
+      "official": true
+    },
+    "safe_807": {
+      "title": "国家外汇管理局关于印发《个人外汇管理办法实施细则》的通知（汇发〔2007〕1号）",
+      "publisher": "State Administration of Foreign Exchange (SAFE)",
+      "url": "https://www.safe.gov.cn/safe/2007/0105/5320.html",
+      "short": "SAFE Detailed Rules (汇发〔2007〕1号)",
+      "establishes": "Art. 2 (annual quota of US$50,000 per person for individual FX settlement and for domestic individuals' FX purchases); Art. 10–12 (documents needed above the quota); Art. 13 (a foreign individual may buy FX with legal RMB current-account income on ID plus supporting documents including tax certificates); Art. 14 (domestic individual remitting from an FX savings account: up to US$50,000/day on ID); Art. 15 (foreign individual remitting from an FX savings account: on ID; cash remittance above US$10,000/day needs customs/cash documents); Art. 17 (QDII); Art. 20 (emigration/inheritance transfer); Art. 21 (property); Art. 30 (cash withdrawal above US$10,000/day needs SAFE filing); Art. 31 (deposit of cash above US$5,000/day needs documents). Art. 39 was repealed by 汇发〔2023〕8号 (noted on the same page).",
+      "status": "Retrieved and read in full, 2026-11-08.",
+      "official": true
+    },
+    "safe_eng_2007": {
+      "title": "SAFE Spokesman Addresses Press Conference on the Detailed Rules on Measures for the Administration of Individual Foreign Exchange",
+      "publisher": "SAFE (English)",
+      "url": "https://www.safe.gov.cn/en/2007/0105/819.html",
+      "short": "SAFE English Q&A (2007)",
+      "establishes": "The US$50,000 annual quota applies to individual FX sales (结汇) for both domestic and foreign individuals, and to FX purchases (购汇) by domestic individuals; purchases above the quota require authenticity review.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "safe_fpr_2017": {
+      "title": "Circular on Foreign Exchange Sales and Settlement for Foreign Citizens with Their Foreign Permanent Resident ID Cards",
+      "publisher": "SAFE (English)",
+      "url": "https://www.safe.gov.cn/en/2017/1129/1365.html",
+      "short": "SAFE 2017 (foreign permanent-resident ID cards)",
+      "establishes": "A foreign permanent-resident ID card is a valid ID for FX business and its holders are eligible for the US$50,000 annual settlement and purchase quota. It extends the quota to that card type; it does not restrict the quota to it.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "property_transfer_2004": {
+      "title": "中国人民银行公告〔2004〕第16号 — 个人财产对外转移售付汇管理暂行办法",
+      "publisher": "People's Bank of China, published on SAFE",
+      "url": "https://www.safe.gov.cn/safe/2004/1116/5461.html",
+      "short": "PBOC 2004 No.16 (property transfer abroad)",
+      "establishes": "Two legal capital-account routes: emigration transfer (移民转移) and inheritance transfer (继承转移). Art. 6: one application for the whole amount; first remittance at most half, then at most half of the remainder after one year, all after two years; amounts up to RMB 200,000 may go in one payment. Art. 8/9: documents include hukou cancellation certificate, overseas residence proof certified by a Chinese embassy/consulate, proof of property rights, and a tax payment certificate from the tax authority. Art. 10: up to RMB 500,000 decided by the local SAFE branch, above that by SAFE headquarters. Art. 11: proceeds must be wired to the applicant's own account abroad, not taken out as cash. Art. 13: false documents or duplicate applications are punished under Art. 40 of the FX Regulations.",
+      "status": "Retrieved and read in full, 2026-11-08.",
+      "official": true
+    },
+    "property_fx_2006": {
+      "title": "国家外汇管理局 建设部关于规范房地产市场外汇管理有关问题的通知（汇发〔2006〕47号）",
+      "publisher": "SAFE / Ministry of Construction",
+      "url": "https://www.safe.gov.cn/safe/2006/0901/5468.html",
+      "short": "SAFE 汇发〔2006〕47号 (property)",
+      "establishes": "Art. 5: RMB proceeds from a foreign individual's sale of domestic commercial housing may be purchased into FX and remitted only after the local SAFE branch reviews (i) the purchase application, (ii) the transfer contract, and (iii) the tax clearance certificate for the property transfer.",
+      "status": "Retrieved and read in full, 2026-11-08.",
+      "official": true
+    },
+    "watchlist_2015": {
+      "title": "国家外汇管理局关于进一步完善个人外汇管理有关问题的通知（汇发〔2015〕49号）",
+      "publisher": "SAFE",
+      "url": "https://www.safe.gov.cn/safe/2015/1231/5442.html",
+      "short": "SAFE 汇发〔2015〕49号 (watchlist)",
+      "establishes": "Individuals must not use splitting or borrowed quotas to evade the quota or authenticity review. Lending your quota to help someone else, or borrowing another person's quota, leads to the 'watchlist' (关注名单): the year of listing plus the next two years, during which every FX transaction requires ID plus supporting documents.",
+      "status": "Retrieved and read in full, 2026-11-08.",
+      "official": true
+    },
+    "cash_2003": {
+      "title": "国家外汇管理局、海关总署关于印发《携带外币现钞出入境管理暂行办法》的通知（汇发〔2003〕102号）",
+      "publisher": "SAFE / General Administration of Customs (reproduced by MOFCOM)",
+      "url": "https://m.mofcom.gov.cn/article/zcfb/zczh/200311/20031100144140.shtml",
+      "short": "SAFE/Customs 汇发〔2003〕102号 (cash)",
+      "establishes": "Carrying FX cash out: up to US$5,000 no permit; US$5,000–10,000 a bank-issued carrying permit; above US$10,000 a SAFE-issued permit. Art. 3: carrying more than US$5,000 into China must be declared to customs. Art. 9: a bank permit may not exceed US$10,000 per certificate.",
+      "status": "Retrieved via MOFCOM reprint; SAFE's own copy of this circular was not located as a standalone page. Listed as currently valid in SAFE's 2026 rules catalogue. Marked 'official (reprint)'.",
+      "official": "mirror"
+    },
+    "rmb_cash_2004": {
+      "title": "偏爱用现金？再爱也得符合要求 — 携带货币出入境规定（引中国人民银行公告〔2004〕第18号）",
+      "publisher": "Shenzhen Port Office (ka.sz.gov.cn)",
+      "url": "https://ka.sz.gov.cn/xxgk/qt/gzdt/content/post_12283223.html",
+      "short": "Shenzhen Port Office on cash limits (2025)",
+      "establishes": "RMB 20,000 per person per trip in/out of China (PBOC Announcement 2004 No.18); FX cash above US$5,000 into China must be declared; unapproved excess cash is subject to a customs fine of up to 20% of the excess value under the Customs Administrative Penalty Regulations.",
+      "status": "Retrieved, 2026-11-08. The PBOC announcement itself and the customs.gov.cn page that previously carried it were not retrievable (customs URL returned 404), so the RMB 20,000 figure is taken from this official government page quoting the announcement. Flagged for a primary-source check.",
+      "official": "secondary-official"
+    },
+    "card_2017": {
+      "title": "外汇局规范个人持银行卡境外大额提现：每人每年不超过10万元（汇发〔2017〕29号报道）",
+      "publisher": "Xinhua, reporting the SAFE release",
+      "url": "http://www.xinhuanet.com/fortune/2017-12/30/c_1122190237.htm",
+      "short": "SAFE card-cash rule (Xinhua report)",
+      "establishes": "From 2018-01-01, cash withdrawals abroad on domestic bank cards are capped at RMB 100,000 equivalent per person per calendar year across all cards (supplementary cards included), and RMB 10,000 per card per day; exceeding the annual cap suspends withdrawals for the rest of that year and the next. Card spending abroad does not use the US$50,000 quota.",
+      "status": "SAFE's own page for 汇发〔2017〕29号 was not located in this session; the content is taken from Xinhua's report of the SAFE release. Flagged for a primary-source check.",
+      "official": "secondary-official"
+    },
+    "crypto_2021": {
+      "title": "关于进一步防范和处置虚拟货币交易炒作风险的通知（银发〔2021〕237号）",
+      "publisher": "PBOC and nine other authorities",
+      "url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4348658/index.html",
+      "short": "PBOC 银发〔2021〕237号 (virtual currency)",
+      "establishes": "Virtual currency has no legal-tender status in China; business activities involving virtual currency — including exchange between fiat currency and virtual currency — are illegal financial activities and are strictly prohibited; financial institutions and payment institutions may not provide account, transfer or settlement services for them; overseas exchanges serving residents of mainland China are likewise illegal.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "iit_law": {
+      "title": "中华人民共和国个人所得税法",
+      "publisher": "State Taxation Administration (chinatax.gov.cn)",
+      "url": "https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html",
+      "short": "China Individual Income Tax Law",
+      "establishes": "Art. 3: comprehensive income is taxed at progressive rates from 3% to 45%; business income 5%–35%; interest, dividends, property leasing, property transfer and incidental income at a flat 20%. Art. 6: the annual standard deduction is RMB 60,000 for residents.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "safe_catalogue_2026": {
+      "title": "现行有效外汇管理主要法规目录（截至2026年6月30日）",
+      "publisher": "SAFE",
+      "url": "https://www.safe.gov.cn/safe/file/file/20260805/d2d0d6ce1441436eadc8bc600eb79c43.pdf",
+      "short": "SAFE rules catalogue (to 2026-06-30)",
+      "establishes": "SAFE's own list of foreign-exchange rules currently in force, including 汇发〔2003〕102号 (cash) and excluding 汇发〔2009〕56号 (the 2009 splitting circular), which SAFE branch sites mark as repealed.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "safe_tianjin_2026": {
+      "title": "个人财产转移购付汇业务问答（六）",
+      "publisher": "SAFE Tianjin branch",
+      "url": "http://www.safe.gov.cn/tianjin/2026/0318/3017.html",
+      "short": "SAFE Tianjin Q&A (2026)",
+      "establishes": "Current restatement (published 2026-03-18) that personal property transfer abroad consists of emigration transfer and inheritance transfer under PBOC Announcement 2004 No.16.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "boc_rates": {
+      "title": "中国银行外汇牌价 — Bank of China foreign-exchange quoted rates",
+      "publisher": "Bank of China",
+      "url": "https://www.boc.cn/sourcedb/whpj/",
+      "short": "Bank of China FX rates",
+      "establishes": "USD quoted per 100 USD: cash/spot buying 666.48, cash/spot selling 669.29, BOC conversion rate 671.68, quote timestamp 2026/11/09 05:30. Rates are indicative; the counter rate at the time of the transaction governs.",
+      "status": "Retrieved, 2026-11-08 (quote timestamp 2026-11-09 05:30 Beijing time).",
+      "official": "bank"
+    },
+    "boc_fees": {
+      "title": "中国银行电子银行个人服务转账汇款费率表 — BOC personal remittance tariff",
+      "publisher": "Bank of China",
+      "url": "https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html",
+      "short": "Bank of China remittance tariff",
+      "establishes": "Cross-border telegraphic transfer: 1‰ of the remitted amount, minimum RMB 50, maximum RMB 260 per transfer, plus a cable charge of RMB 150 for destinations outside Hong Kong/Macau/Taiwan (RMB 80 within them). The table is headed 'effective 1 November 2014'; branch-level variation and promotions may apply.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": "bank"
+    },
+    "irs_fbar": {
+      "title": "Report of Foreign Bank and Financial Accounts (FBAR)",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar",
+      "short": "IRS FBAR page",
+      "establishes": "A US person must file FinCEN Form 114 if the aggregate value of foreign financial accounts exceeded US$10,000 at any time during the calendar year; due 15 April with an automatic extension to 15 October; civil penalty maximums are adjusted annually for inflation.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "fincen_821": {
+      "title": "31 CFR 1010.821 — Penalty adjustment and table (eCFR)",
+      "publisher": "Financial Crimes Enforcement Network / eCFR",
+      "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821",
+      "short": "31 CFR 1010.821 penalty table",
+      "establishes": "For penalties assessed on or after 17 January 2025: non-willful FBAR violation maximum US$16,536; willful violation maximum US$165,353 (statutory base US$10,000 / US$100,000). eCFR as of 2026-11-05 had not yet posted a later inflation adjustment.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "irs_fatca": {
+      "title": "FATCA information for individuals (Form 8938)",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/businesses/corporations/fatca-information-for-individuals",
+      "short": "IRS FATCA / Form 8938 page",
+      "establishes": "Form 8938 reports specified foreign financial assets; the aggregate value must generally exceed US$50,000 (higher thresholds apply abroad). Failure to file may result in a US$10,000 penalty and up to US$50,000 more for continued failure after IRS notice; underpayments attributable to undisclosed foreign assets carry a 40% penalty.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "irs_8938_compare": {
+      "title": "Comparison of Form 8938 and FBAR requirements",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements",
+      "short": "IRS 8938 vs FBAR comparison",
+      "establishes": "Form 8938 thresholds: living in the US — unmarried US$50,000 year-end / US$75,000 any time, married filing jointly US$100,000 / US$150,000; living outside the US — unmarried US$200,000 / US$300,000, married filing jointly US$400,000 / US$600,000. FBAR threshold: aggregate accounts over US$10,000 at any time.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "irs_3520_instr": {
+      "title": "Instructions for Form 3520 (Rev. December 2025)",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/pub/irs-pdf/i3520.pdf",
+      "short": "IRS Form 3520 instructions (12/2025)",
+      "establishes": "Part IV is required when a US person receives more than US$100,000 from a nonresident-alien individual or foreign estate in a tax year (related donors aggregated). Section 6039F penalty: 5% of the gift per month of failure, capped at 25%, unless reasonable cause. Section 6677 trust penalties: generally the greater of US$10,000 or 35% of the gross value.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "irs_gifts": {
+      "title": "Gifts from foreign person",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/businesses/gifts-from-foreign-person",
+      "short": "IRS 'gifts from foreign person'",
+      "establishes": "Reporting thresholds: over US$100,000 from a nonresident alien or foreign estate (related donors aggregated); over US$20,116 for 2025 and US$20,573 for 2026 from foreign corporations/partnerships. Filing is informational; penalties under IRC 6039F(c) may apply without reasonable cause. Gifts from covered expatriates may be taxed under IRC 2801.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "cbp_105": {
+      "title": "Money and Other Monetary Instruments",
+      "publisher": "US Customs and Border Protection",
+      "url": "https://www.cbp.gov/travel/international-visitors/money-monetary-instruments",
+      "short": "CBP currency reporting",
+      "establishes": "Anyone bringing, sending or receiving more than US$10,000 in currency or monetary instruments at one time into or out of the United States must file FinCEN Form 105; the threshold applies to families/groups collectively; failure risks seizure and civil or criminal penalties.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "irs_pub54": {
+      "title": "Publication 54 — Tax Guide for U.S. Citizens and Resident Aliens Abroad",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/publications/p54",
+      "short": "IRS Publication 54",
+      "establishes": "US citizens and resident aliens are taxed on worldwide income; the foreign tax credit (Form 1116) and the foreign earned income exclusion are the main reliefs for foreign-source income.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "irs_treaty": {
+      "title": "China tax treaty documents",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/businesses/international-businesses/china-tax-treaty-documents",
+      "short": "US–China tax treaty (IRS)",
+      "establishes": "The 1984 US–China income tax treaty and accompanying documents, used to resolve double taxation and set withholding rates; it contains a savings clause preserving the US right to tax its citizens.",
+      "status": "Retrieved, 2026-11-08 (index page).",
+      "official": true
+    },
+    "irs_fx_rates": {
+      "title": "Foreign currency and currency exchange rates",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/individuals/international-taxpayers/foreign-currency-and-currency-exchange-rates",
+      "short": "IRS foreign-currency guidance",
+      "establishes": "Amounts on a US return must be expressed in US dollars, translated at the rate prevailing when an item is received, paid or accrued; this is the basis for treating a foreign-currency exchange gain or loss separately from the underlying funds.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "irs_fx_unit": {
+      "title": "LB&I Concept Unit INT-C-041 — Official Versus Free Market Exchange Rate (section 988)",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/pub/fatca/int_practice_units/int_c_041.pdf",
+      "short": "IRS practice unit on IRC 988",
+      "establishes": "IRC 988 applies to transactions in a non-functional currency, including buying or selling units of foreign currency; the spot rate under Treas. Reg. 1.988-1(d) is used to compute exchange gain or loss.",
+      "status": "Retrieved, 2026-11-08.",
+      "official": true
+    },
+    "moj_1997": {
+      "title": "中华人民共和国外汇管理条例（1997年修订文本，国家行政法规库）",
+      "publisher": "Ministry of Justice — National Administrative Regulations Database",
+      "url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1144",
+      "short": "1997 FX Regulations text (MOJ)",
+      "establishes": "The pre-2008 text of Art. 45 set a fine of 30% up to three times the illegal amount for private FX trading. The 2008 revision replaced this with a fine of up to 30%, or 30% to 100% in serious cases — the source of the widely repeated but outdated '30%–300%' range.",
+      "status": "Search-indexed text read; the database page itself is a JavaScript application and could not be fully rendered by the research tool. Used only to explain the origin of the outdated range — flagged.",
+      "official": "database"
+    }
+  }
+}

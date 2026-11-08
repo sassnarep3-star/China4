@@ -1,0 +1,45 @@
+name: Verify site
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Rebuild pages from the data model
+        run: python3 build.py
+      - name: Fail if committed HTML does not match the generator
+        run: |
+          if ! git diff --quiet -- '*.html' 'data'; then
+            echo "::error::Generated HTML differs from build.py output. Run python3 build.py and commit."
+            git diff --stat -- '*.html' 'data'
+            exit 1
+          fi
+      - name: Check every table row carries a source link
+        run: |
+          python3 - <<'PY'
+          import glob, re, sys
+          bad = 0
+          for f in sorted(glob.glob("*.html")):
+              h = open(f, encoding="utf-8").read()
+              for tbl in re.findall(r"<tbody>(.*?)</tbody>", h, re.S):
+                  for row in re.findall(r"<tr.*?</tr>", tbl, re.S):
+                      if not re.search(r'href=[\'"]http', row):
+                          bad += 1
+                          print(f"{f}: row without an external source link")
+          if bad:
+              sys.exit(1)
+          print("all table rows carry a source link")
+          PY
