@@ -2,6 +2,8 @@
 
 A static, primary-source research dashboard for lawful CNY→USD conversion and US–China tax/reporting analysis. It is designed for a US citizen holding CNY in a Chinese bank account, but distinguishes identity, source of funds, and special property routes instead of assuming one rule fits everyone.
 
+Live deployment: **https://sassnarep3-star.github.io/China4/**
+
 ## Pages
 
 - **Dashboard** — executive decision guidance and 18-route comparison.
