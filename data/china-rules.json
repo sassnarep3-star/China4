@@ -1,0 +1,269 @@
+{
+  "_meta": {
+    "description": "The Chinese legal framework, rule by rule, with the article text that actually controls. This is the backbone table: every limit quoted elsewhere on the site traces to a row here.",
+    "session": "agent-2"
+  },
+  "classification": {
+    "question": "Are you a 境内个人 (domestic individual) or a 境外个人 (non-domestic individual)?",
+    "why_it_matters": "This decides whether the USD 50,000 annual purchase quota binds you at all. It is the single most commonly misstated point in English-language guides.",
+    "definition_verbatim": "境内个人，是指中国公民和在中华人民共和国境内连续居住满1年的外国人，外国驻华外交人员和国际组织驻华代表除外。",
+    "definition_translation": "A domestic individual means a Chinese citizen, or a foreigner who has resided in the PRC continuously for a full one year, excluding foreign diplomatic personnel in China and representatives of international organisations in China.",
+    "consequence": "A US citizen who has lived in China continuously for one year IS a domestic individual and IS subject to the USD 50,000 annual purchase quota. A US citizen who has not is a non-domestic individual and uses Article 13 instead.",
+    "sources": ["S02"]
+  },
+  "rules": [
+    {
+      "id": "R01",
+      "topic": "The annual USD 50,000 total — what it actually covers",
+      "article": "Detailed Rules Art. 2",
+      "rule": "Annual total management applies to SETTLEMENT (结汇, foreign currency to RMB) by ALL individuals, and to PURCHASE (购汇, RMB to foreign currency) by DOMESTIC individuals only. Each annual total is USD 50,000 equivalent per person per year. SAFE may adjust it.",
+      "value_usd": 50000,
+      "verbatim": "对个人结汇和境内个人购汇实行年度总额管理。年度总额分别为每人每年等值5万美元。",
+      "common_error": "Guides routinely say 'you can only convert USD 50,000 a year' without noting that the purchase-side limit is written only for 境内个人.",
+      "sources": ["S01", "S02"]
+    },
+    {
+      "id": "R02",
+      "topic": "What you may do with FX you have purchased",
+      "article": "Detailed Rules Art. 3",
+      "rule": "Purchased FX may be remitted abroad, deposited into your own FX savings account, or carried out of the country in accordance with the relevant rules.",
+      "value_usd": null,
+      "verbatim": "个人所购外汇，可以汇出境外、存入本人外汇储蓄账户，或按照有关规定携带出境。",
+      "sources": ["S01"]
+    },
+    {
+      "id": "R03",
+      "topic": "Non-domestic individual converting lawful RMB income",
+      "article": "Detailed Rules Art. 13(1)",
+      "rule": "Lawful current-account RMB income earned in China is converted to FX on presentation of valid personal ID plus supporting documents evidencing the transaction amount, INCLUDING tax payment vouchers.",
+      "value_usd": null,
+      "verbatim": "在境内取得的经常项目合法人民币收入，凭本人有效身份证件和有交易额的相关证明材料（含税务凭证）办理购汇。",
+      "common_error": "This article states no annual numeric cap. The constraint is documentary, not a USD 50,000 ceiling.",
+      "sources": ["S01"]
+    },
+    {
+      "id": "R04",
+      "topic": "Reconverting unused RMB using the original exchange memo",
+      "article": "Detailed Rules Art. 13(2)",
+      "rule": "Unused RMB from an earlier conversion is reconverted on valid ID plus the original exchange memo, valid for 24 months from the exchange date. Same-day cumulative amounts up to USD 500 equivalent, and up to USD 1,000 equivalent at pre-departure offsite locations, need ID only.",
+      "value_usd": 500,
+      "value2_usd": 1000,
+      "validity_months": 24,
+      "verbatim": "原兑换水单的兑回有效期为自兑换日起24个月；对于当日累计兑换不超过等值500美元（含）以及离境前在境内关外场所当日累计不超过等值1000美元（含）的兑换，可凭本人有效身份证件办理。",
+      "sources": ["S01"]
+    },
+    {
+      "id": "R05",
+      "topic": "Domestic individual remitting FX abroad from a savings account",
+      "article": "Detailed Rules Art. 14",
+      "rule": "From an FX savings account: same-day cumulative up to USD 50,000 equivalent on valid ID alone; above that, current-account authenticity vouchers showing the transaction amount. Hand-held FX banknotes: same-day cumulative up to USD 10,000 equivalent on ID alone; above that, authenticity vouchers plus a Customs-stamped inbound declaration or the original bank's FX withdrawal slip.",
+      "value_usd": 50000,
+      "value_period": "per day",
+      "value2_usd": 10000,
+      "value2_period": "per day, banknotes",
+      "verbatim": "外汇储蓄账户内外汇汇出境外当日累计等值5万美元以下（含）的，凭本人有效身份证件在银行办理；超过上述金额的，凭经常项目项下有交易额的真实性凭证办理。",
+      "common_error": "This USD 50,000 is PER DAY for remitting FX you already hold. It is a different number from the PER YEAR purchase quota in Art. 2, even though both say 5万美元.",
+      "sources": ["S01"]
+    },
+    {
+      "id": "R06",
+      "topic": "Non-domestic individual remitting FX abroad",
+      "article": "Detailed Rules Art. 15",
+      "rule": "From an FX savings account: on valid personal ID alone, with no numeric ceiling stated. Hand-held FX banknotes: same-day cumulative up to USD 10,000 equivalent on ID alone; above that, a Customs-stamped inbound declaration or the original bank's FX withdrawal slip is also required.",
+      "value_usd": null,
+      "value2_usd": 10000,
+      "verbatim": "境外个人经常项目外汇汇出境外，按以下规定在银行办理：（一）外汇储蓄账户内外汇汇出，凭本人有效身份证件办理；",
+      "sources": ["S01"]
+    },
+    {
+      "id": "R07",
+      "topic": "Above-quota purchase by a domestic individual",
+      "article": "Detailed Rules Art. 12",
+      "rule": "For non-business current-account purposes above the annual total, purchase at the bank on valid personal ID plus supporting documents evidencing the transaction amount.",
+      "value_usd": null,
+      "verbatim": "境内个人经常项目项下非经营性购汇超过年度总额的，凭本人有效身份证件和有交易额的相关证明材料在银行办理。",
+      "sources": ["S01"]
+    },
+    {
+      "id": "R08",
+      "topic": "Bank authenticity review is mandatory",
+      "article": "Detailed Rules Art. 6; Order 532 Art. 12",
+      "rule": "Banks must verify the authenticity of individual FX business and must not fabricate or alter transactions. Current-account FX receipts and payments must have a genuine and lawful transaction basis.",
+      "value_usd": null,
+      "verbatim": "各外汇指定银行……应按照本细则规定对个人外汇业务进行真实性审核，不得伪造、变造交易。",
+      "sources": ["S01", "S02"]
+    },
+    {
+      "id": "R09",
+      "topic": "Current-account international payments are not restricted",
+      "article": "Order 532 Art. 5",
+      "rule": "The State does not restrict current-account international payments and transfers. The controls are on verification and on capital account, not a blanket prohibition on sending money out.",
+      "value_usd": null,
+      "verbatim": "国家对经常性国际支付和转移不予限制。",
+      "sources": ["S02"]
+    },
+    {
+      "id": "R10",
+      "topic": "Withdrawing FX banknotes from a Chinese bank",
+      "article": "Detailed Rules Art. 30",
+      "rule": "Same-day cumulative withdrawals up to USD 10,000 equivalent are handled directly at the bank. Above that you must pre-file with the local SAFE bureau, providing ID and proof of the purpose, and the bank acts on the SAFE-stamped filing form.",
+      "value_usd": 10000,
+      "value_period": "per day",
+      "verbatim": "个人提取外币现钞当日累计等值1万美元以下（含）的，可以在银行直接办理；超过上述金额的，凭本人有效身份证件、提钞用途证明等材料向银行所在地外汇局事前报备。",
+      "sources": ["S01"]
+    },
+    {
+      "id": "R11",
+      "topic": "Depositing FX banknotes into a Chinese FX savings account",
+      "article": "Detailed Rules Art. 31",
+      "rule": "Same-day cumulative deposits up to USD 5,000 equivalent are handled directly at the bank. Above that, valid ID plus a Customs-stamped inbound baggage declaration or the original bank's FX withdrawal slip is required.",
+      "value_usd": 5000,
+      "value_period": "per day",
+      "verbatim": "个人向外汇储蓄账户存入外币现钞，当日累计等值5000美元以下（含）的，可以在银行直接办理",
+      "sources": ["S01"]
+    },
+    {
+      "id": "R12",
+      "topic": "Transfers between your own accounts and to close family",
+      "article": "Detailed Rules Art. 28",
+      "rule": "Between your own accounts: valid ID. Between you and a direct family member: both IDs plus proof of the direct family relationship. Between a domestic and a non-domestic individual: managed as a CROSS-BORDER transaction.",
+      "value_usd": null,
+      "verbatim": "（三）境内个人和境外个人账户间的资金划转按跨境交易进行管理。",
+      "practical_consequence": "Parking money in a Chinese friend's or relative's account to use their quota is not a domestic transfer if one of you is a non-domestic individual — it is treated as cross-border and pulls in the cross-border rules.",
+      "sources": ["S01"]
+    },
+    {
+      "id": "R13",
+      "topic": "Carrying foreign-currency banknotes OUT of China",
+      "article": "Huifa [2003] No. 102, covering notice item 2",
+      "rule": "Up to USD 5,000 equivalent: no permit, Customs releases. Above USD 5,000 up to and including USD 10,000: a Carrying Permit issued by a designated FX bank, stamped, is required. In principle no more than USD 10,000 equivalent may be carried out; above that a SAFE permit is available only for listed special cases (large delegations, long scientific expeditions, government leaders, travel to war zones or countries with strict FX controls, other special situations).",
+      "value_usd": 5000,
+      "value2_usd": 10000,
+      "verbatim": "出境人员携带不超过等值5000美元（含5000美元）的外币现钞出境的，无须申领《携带证》，海关予以放行；出境人员携带外币现钞金额在等值5000美元以上至10000美元（含10000美元）的，应向外汇指定银行申领《携带证》……出境人员原则上不得携带超过等值10000美元的外币现钞出境",
+      "sources": ["S04"]
+    },
+    {
+      "id": "R14",
+      "topic": "Carrying RMB banknotes across the border",
+      "article": "PBOC Announcement [2004] No. 18, as confirmed by Customs",
+      "rule": "RMB 20,000 per person per trip for both Chinese citizens and foreigners, excluding same-day and short-period repeat crossers.",
+      "value_cny": 20000,
+      "verbatim": "您好，每人每次携带现金的限额是人民币20000元，外币5000美元，但当天多次往返及短期内多次往返者除外。",
+      "source_caveat": "Verified in an official Customs reply rather than in the PBOC announcement text itself. See flag F09.",
+      "sources": ["S05"]
+    },
+    {
+      "id": "R15",
+      "topic": "Carrying payment instruments is not controlled by Customs",
+      "article": "Huifa [2003] No. 102, covering notice item 3",
+      "rule": "Because foreign-currency payment instruments and securities are brought into the banking management system, Customs no longer administers their carriage in and out of the country. This is why a bank draft is not subject to the banknote permit tiers.",
+      "value_usd": null,
+      "verbatim": "对出入境人员携带上述凭证和证券出入境，海关不再予以管理。",
+      "sources": ["S04"]
+    },
+    {
+      "id": "R16",
+      "topic": "Outbound property transfer: the two lawful channels",
+      "article": "PBOC [2004] No. 16 Art. 2; Detailed Rules Art. 20",
+      "rule": "Only two: emigration property transfer by a person who emigrated from mainland China, and inheritance transfer by a foreign citizen who lawfully inherited a Chinese estate. Detailed Rules Art. 20 expressly cross-refers to these Interim Measures.",
+      "value_usd": null,
+      "verbatim": "境内个人将其取得合法移民身份前境内财产对外转移以及外国公民依法继承境内遗产的对外转移，按《个人财产对外转移售付汇管理暂行办法》等有关规定办理。",
+      "sources": ["S01", "S08"]
+    },
+    {
+      "id": "R17",
+      "topic": "Staged remittance for emigration transfers",
+      "article": "PBOC [2004] No. 16 Art. 6",
+      "rule": "First remittance no more than half the approved total; after one year, no more than half the remainder; after two years, the entire remainder. If the approved total is RMB 200,000 equivalent or less, it may be remitted in a single lump sum.",
+      "value_cny": 200000,
+      "verbatim": null,
+      "sources": ["S08"]
+    },
+    {
+      "id": "R18",
+      "topic": "Who approves an outbound property transfer",
+      "article": "PBOC [2004] No. 16 Art. 10; Huifa [2024] No. 12 s.6.4",
+      "rule": "RMB 500,000 equivalent or less: the local SAFE branch approves. Above that: the branch reviews and forwards to SAFE head office. Under the 2024 guidelines, emigration transfers are filed at the emigrant's former household-registration locality and inheritance transfers at the decedent's former locality.",
+      "value_cny": 500000,
+      "verbatim": null,
+      "sources": ["S08", "S09", "S10"]
+    },
+    {
+      "id": "R19",
+      "topic": "Property-transfer proceeds cannot be taken out as cash",
+      "article": "PBOC [2004] No. 16 Art. 11",
+      "rule": "The funds must be remitted directly to the applicant's own account in the country or region of residence. They may not be withdrawn as foreign-currency banknotes within China.",
+      "value_usd": null,
+      "verbatim": null,
+      "sources": ["S08"]
+    },
+    {
+      "id": "R20",
+      "topic": "When SAFE will refuse a property-transfer application",
+      "article": "PBOC [2004] No. 16 Art. 12",
+      "rule": "SAFE will not accept the application where the property is subject to judicial or administrative restriction, is involved in pending criminal or civil proceedings, or where the lawful source of the property cannot be demonstrated.",
+      "value_usd": null,
+      "verbatim": null,
+      "sources": ["S08"]
+    },
+    {
+      "id": "R21",
+      "topic": "Cross-border RMB settlement of individual current-account income",
+      "article": "Yinfa [2020] No. 330 item 13",
+      "rule": "Banks are supported in handling individuals' current-account cross-border RMB settlement, expressly facilitating cross-border receipts and payments for salary and other lawful income. This moves RMB, not FX, so no onshore conversion occurs.",
+      "value_usd": null,
+      "verbatim": null,
+      "sources": ["S07"]
+    },
+    {
+      "id": "R22",
+      "topic": "Quota splitting and the watch list",
+      "article": "Huifa [2015] No. 49 item 2",
+      "rule": "Splitting to evade quota or authenticity management is prohibited. Lending your quota draws a risk-warning letter first and watch-listing on repetition; borrowing another's quota draws immediate watch-listing. The watch-list period is the year of listing plus the following two consecutive years, during which every transaction requires documentary proof at the counter.",
+      "value_years": 3,
+      "verbatim": null,
+      "sources": ["S03"]
+    },
+    {
+      "id": "R23",
+      "topic": "Crypto is not a lawful channel",
+      "article": "Yinfa [2021] No. 237 items 1(2), 1(3), 1(4), 4(9)",
+      "rule": "Virtual-currency-related business activity is an illegal financial activity. Fiat-to-crypto exchange is strictly prohibited; overseas exchanges serving mainland residents online are likewise illegal. Banks and payment institutions may not provide accounts, transfers or settlement. Related civil acts contrary to public order are void and losses fall on the participant.",
+      "value_usd": null,
+      "verbatim": null,
+      "sources": ["S06"]
+    },
+    {
+      "id": "R24",
+      "topic": "Chinese tax on the underlying income",
+      "article": "IIT Law Art. 1, 3, 6",
+      "rule": "A tax resident is a person domiciled in China, or not domiciled but resident for 183 days or more in a tax year. Comprehensive income is taxed at 3%-45%; business income at 5%-35%; interest, dividends, property lease, property transfer and incidental income at 20%. Property-transfer income is proceeds minus original value minus reasonable expenses.",
+      "rate_property_transfer_pct": 20,
+      "rate_comprehensive_min_pct": 3,
+      "rate_comprehensive_max_pct": 45,
+      "resident_days": 183,
+      "verbatim": null,
+      "practical_consequence": "This is the tax that actually matters on a property sale. It is due on the GAIN when the asset is sold, not on the later act of converting or remitting the proceeds.",
+      "sources": ["S11"]
+    },
+    {
+      "id": "R25",
+      "topic": "Tax clearance before cancelling Chinese household registration",
+      "article": "IIT Law Art. 10(5) and Art. 13",
+      "rule": "A taxpayer who emigrates and cancels Chinese household registration must settle the tax payable before the cancellation.",
+      "value_usd": null,
+      "verbatim": null,
+      "practical_consequence": "The hukou-cancellation certificate required for an emigration transfer (R18) therefore presupposes tax clearance. This is why the tax step cannot be skipped.",
+      "sources": ["S11"]
+    },
+    {
+      "id": "R26",
+      "topic": "These rules are still in force",
+      "article": "SAFE in-force catalogue as at 2026-06-30",
+      "rule": "SAFE's own catalogue confirms that Order 532, the Individual FX Measures (PBOC Order 2006 No. 3), the Detailed Rules (Huifa [2007] No. 1) and the banknote-carrying Measures (Huifa [2003] No. 102) all remain in force as at 30 June 2026.",
+      "value_usd": null,
+      "verbatim": null,
+      "sources": ["S23"]
+    }
+  ]
+}

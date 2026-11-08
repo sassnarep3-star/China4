@@ -1,0 +1,213 @@
+{
+  "_meta": {
+    "description": "Values that could not be verified from an official source, plus irregularities found during the audit. These are published openly on the Flagged for Review page. Nothing here blocks publication.",
+    "policy": "A blank cell means 'not verified', never 'zero' and never 'not applicable'. No value was estimated, interpolated or taken from a secondary site.",
+    "session": "agent-2"
+  },
+  "unverified": [
+    {
+      "id": "F01",
+      "topic": "Per-transaction and annual limits for individual cross-border RMB remittance",
+      "field": "methods.json M07 limit_text",
+      "why_blank": "Yinfa [2020] No. 330 item 13 authorises banks to handle individual current-account cross-border RMB settlement but states no numeric limit and no document list. Bank-specific limits could not be confirmed from an official source.",
+      "what_would_resolve": "A published Bank of China or SAFE product page stating the individual limit and required documents for cross-border RMB salary remittance.",
+      "sources_checked": ["S07"],
+      "severity": "medium"
+    },
+    {
+      "id": "F02",
+      "topic": "Annual aggregate cap on overseas cash withdrawals with Chinese bank cards",
+      "field": "methods.json M11 limit_text",
+      "why_blank": "A RMB 100,000 per person per year aggregate cap is very widely repeated in secondary sources, but the underlying SAFE circular was not retrieved and read from an official site in this session. Per the verification rule it is left blank rather than asserted.",
+      "what_would_resolve": "The official SAFE notice on overseas bank-card cash withdrawal reporting and the annual aggregate cap, read on safe.gov.cn.",
+      "sources_checked": ["S12", "S01"],
+      "severity": "high",
+      "note": "This is the most consequential remaining gap for anyone planning to move value by ATM."
+    },
+    {
+      "id": "F03",
+      "topic": "Money-transfer-operator fees and limits via Chinese bank agents",
+      "field": "methods.json M12 china_cost, limit_text, documents",
+      "why_blank": "Bank of China's tariff note 6 confirms it acts as agent for international remittance companies and that the pricing is set by those companies, but does not publish the prices. No official operator page was verified.",
+      "what_would_resolve": "The operator's own published China-outbound fee schedule and limit page.",
+      "sources_checked": ["S12"],
+      "severity": "medium"
+    },
+    {
+      "id": "F04",
+      "topic": "QDII and ODI product-level costs, quotas, and US PFIC / Form 5471 consequences",
+      "field": "methods.json M13, M15 china_cost and us_tax detail",
+      "why_blank": "The legal basis (Detailed Rules Art. 16 and 17) is verified, but institution-level quotas, fees and the US entity-reporting analysis were not verified from official sources this session.",
+      "what_would_resolve": "SAFE's current QDII quota table; IRS Form 8621 and Form 5471 instructions.",
+      "sources_checked": ["S01"],
+      "severity": "low",
+      "note": "Low priority because neither is a practical personal repatriation route."
+    },
+    {
+      "id": "F05",
+      "topic": "PayPal / Alipay / WeChat Pay outbound personal CNY-to-USD transfers",
+      "field": "methods.json M24 — all numeric fields",
+      "why_blank": "No official operator or regulator page confirming an outbound personal CNY-to-USD product, its limits or its fees was verified. Yinfa [2020] No. 330 item 2 addresses cross-border e-commerce trade flows through payment institutions, which is a different thing.",
+      "what_would_resolve": "An official operator page or PBOC/SAFE authorisation covering personal outbound capital transfer via these apps.",
+      "sources_checked": ["S07"],
+      "severity": "medium",
+      "note": "Marked status 'unverified' rather than 'legal' or 'prohibited'. Absence of verification is not proof of illegality."
+    },
+    {
+      "id": "F06",
+      "topic": "The actual FX bid-ask spread on a personal CNY/USD conversion",
+      "field": "fees.json B13 — all numeric fields",
+      "why_blank": "This is the single largest cost on a large conversion, and it is the one number that could NOT be officially verified. Bank of China confirms it charges no separate conversion fee at its own branches, but publishes no spread figure. Figures of roughly 0.24%-0.3% circulate on secondary sites only and are deliberately NOT used.",
+      "what_would_resolve": "A same-day comparison of the bank's published USD buying and selling quotes against the CFETS central parity rate, or an official statement of the permitted spread.",
+      "sources_checked": ["S12", "S13"],
+      "severity": "high",
+      "note": "Users must measure this themselves at the moment of transfer. The site explains how rather than quoting an unverified number."
+    },
+    {
+      "id": "F07",
+      "topic": "US-China treaty article-level withholding rates",
+      "field": "us-tax.json T10 article_rates",
+      "why_blank": "The IRS treaty index was verified and confirms the 1984 treaty and technical explanation exist, but the article text was not read this session, so no dividend, interest, royalty or capital-gains rate is quoted.",
+      "what_would_resolve": "Reading https://www.irs.gov/pub/irs-trty/china.pdf and citing the specific article.",
+      "sources_checked": ["S20"],
+      "severity": "medium"
+    },
+    {
+      "id": "F08",
+      "topic": "FBAR automatic extension to 15 October",
+      "field": "us-tax.json U01 due",
+      "why_blank": "The 15 April due date is confirmed by the IRS FATCA summary. The automatic six-month extension to 15 October is standard practice and widely documented, but was not read verbatim in an official source this session, so it is presented as flagged rather than as verified.",
+      "what_would_resolve": "The FinCEN FBAR reference page or IRS page stating the automatic extension.",
+      "sources_checked": ["S15", "S16", "S24"],
+      "severity": "low"
+    },
+    {
+      "id": "F09",
+      "topic": "Primary text of PBOC Announcement [2004] No. 18 (RMB 20,000 cash limit)",
+      "field": "china-rules.json R14 source_caveat",
+      "why_blank": "The RMB 20,000 figure IS verified, but only in an official Customs reply (S05), not in the PBOC announcement itself. Two previously used official URLs for the announcement are now dead (see I-02). The value is published because the Customs source is official; the caveat records that the primary instrument was not read.",
+      "what_would_resolve": "A live pbc.gov.cn page carrying Announcement [2004] No. 18.",
+      "sources_checked": ["S05"],
+      "severity": "low"
+    },
+    {
+      "id": "F10",
+      "topic": "Bank of China tariff superseded in three days",
+      "field": "fees.json — all rows dated 2025-11-11",
+      "why_blank": "Not a blank, but a currency warning. Today is 2026-11-08. The published tariff took effect 2025-11-11. The bank has announced a change effective 2026-11-11 that alters item 210108014 (ATM withdrawals). Every other item in the announcement is unchanged. The FX carrying-permit fee waiver is separately stated to run to 2026-12-31, and tariff note 11 says temporary waivers lapse when the next tariff takes effect.",
+      "what_would_resolve": "Re-checking https://www.boc.cn/custserv/fd5/ after 2026-11-11.",
+      "sources_checked": ["S12", "S13", "S25"],
+      "severity": "high",
+      "note": "Both the current and the incoming ATM figures are published side by side so the page does not silently go stale."
+    },
+    {
+      "id": "F11",
+      "topic": "Notary, translation and legalisation costs for property-transfer applications",
+      "field": "methods.json M05, M06 china_cost detail",
+      "why_blank": "The document requirements are verified, but no official schedule of notary, translation or consular legalisation fees was located. These are real costs on an inheritance or emigration transfer.",
+      "what_would_resolve": "Provincial price-bureau notary fee schedules and the relevant Chinese consulate's legalisation fee page.",
+      "sources_checked": ["S08"],
+      "severity": "medium"
+    }
+  ],
+  "irregularities": [
+    {
+      "id": "I-01",
+      "title": "Branch naming deviates from the requested convention",
+      "detail": "The task specification called for session branches named session-<id>/<task>. The platform fixes this session to the branch arena/6919f563-china4 and forbids creating or pushing any other branch. Work therefore proceeds on the mandated branch and coordination is recorded in COORDINATION.md instead.",
+      "resolution": "Documented deviation; no action needed.",
+      "severity": "info"
+    },
+    {
+      "id": "I-02",
+      "title": "Link rot: three previously cited official URLs are dead",
+      "detail": "Confirmed dead by direct fetch: (1) https://www.cbp.gov/travel/international-visitors/know-before-you-visit/money returns 404 — replaced with /travel/international-visitors/money-monetary-instruments (S21). (2) https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/4348521/index.html returns 404 — the crypto notice is now at /2025092212551974141/index.html (S06). (3) The Guangzhou Customs page carrying the RMB 20,000 rule returns 404 — replaced with an official Customs Q&A reply (S05).",
+      "resolution": "All three replaced with live official sources verified this session.",
+      "severity": "medium"
+    },
+    {
+      "id": "I-03",
+      "title": "Bank of China ATM tariff changes on 2026-11-11",
+      "detail": "The bank's announcement of 2026-08-11 changes item 210108014 effective 2026-11-11. Overseas UnionPay withdrawals stay at RMB 12 + 1% capped at RMB 112. Mastercard and VISA move to 2.5% of the withdrawal, minimum USD 3 and maximum USD 40 equivalent, replacing the previous 0.5% / min USD 3 / max USD 5 line. For a large withdrawal this is an eightfold increase in the cap.",
+      "resolution": "Both figures published side by side with effective dates. Practical guidance: use UnionPay, not Mastercard or VISA, for overseas cash after 2026-11-11.",
+      "severity": "high"
+    },
+    {
+      "id": "I-04",
+      "title": "Conflicting repeal status for Huifa [2015] No. 49",
+      "detail": "A secondary site (waizi.org.cn) labels the circular 【全文废止】 (wholly repealed). The official SAFE page for the circular carries no repeal marker, and SAFE's in-force catalogue was checked. The official position is treated as controlling.",
+      "resolution": "Flagged as an unresolved conflict rather than asserting repeal. The quota-splitting prohibition is independently supported by Order 532 Art. 39 and Art. 40, so the substantive warning holds either way.",
+      "severity": "medium"
+    },
+    {
+      "id": "I-05",
+      "title": "Two official IRS pages are stale and must not be used for current figures",
+      "detail": "The IRS FEIE landing page prints dollar amounts only through 2023. IRM 5.21.6's FBAR/8938 comparison exhibit still shows a 30 June FBAR deadline with no extensions and un-indexed $10,000 / $100,000 penalties. Both are official but out of date.",
+      "resolution": "Current figures taken from Rev. Proc. 2025-32 (S18), the IRS FATCA summary (S16), FinCEN (S15) and eCFR (S14) instead. S22 and S24 are cited only for the rules they still state correctly, with the caveat recorded in the source registry.",
+      "severity": "medium"
+    },
+    {
+      "id": "I-06",
+      "title": "CBP wording inconsistency on the cash-reporting threshold",
+      "detail": "Some CBP newsroom text says '$10,000 or greater' while the governing statute and CBP's own Money and Other Monetary Instruments page say 'exceeding $10,000'. Exactly $10,000 is therefore not reportable on the controlling wording.",
+      "resolution": "The site uses 'more than USD 10,000' throughout, matching S21.",
+      "severity": "low"
+    },
+    {
+      "id": "I-07",
+      "title": "FBAR penalty amounts were mislabelled as a 2026 adjustment",
+      "detail": "The previous site labelled $16,536 / $165,353 as the '2026 adjustment'. They are the amounts for penalties assessed on or after 17 January 2025. They remain operative in 2026 because the 2026 annual civil-monetary-penalty adjustment was cancelled (no October 2025 CPI-U was published; OMB M-26-11).",
+      "resolution": "Relabelled to the eCFR's own column heading and explained. The figures themselves were correct.",
+      "severity": "medium"
+    },
+    {
+      "id": "I-08",
+      "title": "Two different Form 3520 gift thresholds were conflated",
+      "detail": "The site presented $20,573 as the general foreign-gift threshold. It is the section 6039F threshold for gifts from foreign CORPORATIONS and PARTNERSHIPS (Rev. Proc. 2025-32 s.4.47). Gifts from a nonresident alien INDIVIDUAL or a foreign estate use a non-indexed 'more than $100,000' threshold (Form 3520 instructions, Who Must File item 4(a)).",
+      "resolution": "Split into two separate rows, U07 and U08, each with its own source.",
+      "severity": "high"
+    },
+    {
+      "id": "I-09",
+      "title": "Fabricated penalty ranges in the previous version of the site",
+      "detail": "penalties.html stated fines of '30%-300%' under Art. 45 and '30%-500%' under Art. 39. Neither appears in State Council Order 532. Both articles read '处...30%以下的罚款；情节严重的，处...30%以上等值以下的罚款' — up to 30%, and in serious cases 30% up to 100% (等值 = the equivalent amount). A separate '1 to 5 times' figure belongs to Art. 46 and applies to unlicensed OPERATORS, not customers.",
+      "resolution": "Corrected against the verbatim statute (S02), with the Chinese text quoted in the penalty table so the correction is auditable.",
+      "severity": "critical"
+    },
+    {
+      "id": "I-10",
+      "title": "The USD 50,000 quota was misapplied to a US citizen",
+      "detail": "The previous index.html told a US citizen they are limited to USD 50,000 a year. Detailed Rules Art. 2 imposes the annual purchase total only on 境内个人. Under Order 532 Art. 52(2) a foreigner is a domestic individual only after one full year of continuous residence in China. A non-resident US citizen instead uses Art. 13 with tax vouchers, which states no numeric annual cap.",
+      "resolution": "Added an explicit classification step at the top of the decision guide, with both articles quoted.",
+      "severity": "critical"
+    },
+    {
+      "id": "I-11",
+      "title": "Repealed provision cited as current law",
+      "detail": "The previous penalties page cited Detailed Rules Art. 39 (a fine of up to RMB 1,000 for individuals). That article was expressly repealed by Huifa [2023] No. 8, Annex 3; the repeal note is printed on the official SAFE page.",
+      "resolution": "Retained as row P10 but explicitly marked REPEALED so readers who have seen the old figure elsewhere can see why it no longer applies.",
+      "severity": "medium"
+    },
+    {
+      "id": "I-12",
+      "title": "Blanket claim of 'no US tax on conversion' was wrong",
+      "detail": "The previous site stated there is no US tax on converting currency. IRC 988(c)(1)(C) makes any disposition of nonfunctional currency, including a foreign-currency bank deposit, a section 988 transaction producing ORDINARY gain or loss. The 988(e)(2) personal-transaction exclusion is gain-only and switches off entirely once the gain exceeds $200.",
+      "resolution": "Added a dedicated section 988 analysis (T02-T05) with the statutory text quoted.",
+      "severity": "high"
+    },
+    {
+      "id": "I-13",
+      "title": "Non-official sources used as row citations",
+      "detail": "The previous methods.html cited fdi.gov.cn, chinamoney.com.cn, travelchinaguide.com, choiceshanghai.com, yclcpa.com and hsbc.com.cn as authorities for legal limits. These are not the regulator and cannot establish a legal limit.",
+      "resolution": "Every row now cites a regulator, legislature, government portal or the regulated institution's own published tariff. Secondary sites are used for nothing.",
+      "severity": "high"
+    },
+    {
+      "id": "I-14",
+      "title": "Malformed HTML and a hard-coded date",
+      "detail": "taxes.html contained a stray <td></td> inside a <ul>, and index.html hard-coded 'Last updated: 2026-11-07'.",
+      "resolution": "All pages are now generated from the JSON datasets by build.py, which stamps the build date automatically and emits well-formed tables. tools/verify.py fails the build on malformed structure or a missing source.",
+      "severity": "low"
+    }
+  ]
+}

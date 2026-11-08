@@ -1,0 +1,146 @@
+{
+  "_meta": {
+    "description": "Chinese administrative penalties, quoted from State Council Order 532 Chapter 7. Percentages are of the illegal amount (违法金额) or the evaded/arbitrated amount as specified in each article. '等值以下' means 'up to the equivalent amount', i.e. a 100% ceiling — NOT 300% or 500%.",
+    "session": "agent-2",
+    "critical_correction": "The previous version of this site stated fines of '30%-300%' (Art. 45) and '30%-500%' (Art. 39). Neither exists in the statute. Art. 39 and Art. 45 both read 处...30%以下的罚款；情节严重的，处...30%以上等值以下的罚款 — up to 30%, and in serious cases 30% up to 100%. Verified verbatim in S02."
+  },
+  "penalties": [
+    {
+      "id": "P01",
+      "article": "Order 532 Art. 39",
+      "chinese": "逃汇 — transferring domestic FX abroad in breach of rules, or moving domestic capital abroad by deception",
+      "conduct": "Evasion of FX controls (逃汇)",
+      "base_fine_pct_max": 30,
+      "serious_fine_pct_min": 30,
+      "serious_fine_pct_max": 100,
+      "other_measures": "Order to repatriate the FX within a set period; criminal liability where a crime is constituted",
+      "verbatim": "有违反规定将境内外汇转移境外，或者以欺骗手段将境内资本转移境外等逃汇行为的，由外汇管理机关责令限期调回外汇，处逃汇金额30%以下的罚款；情节严重的，处逃汇金额30%以上等值以下的罚款；构成犯罪的，依法追究刑事责任。",
+      "sources": ["S02"]
+    },
+    {
+      "id": "P02",
+      "article": "Order 532 Art. 40",
+      "chinese": "非法套汇 — illegal arbitrage, including buying FX from a bank with false or invalid transaction documents",
+      "conduct": "Illegal FX arbitrage (非法套汇), e.g. fabricated invoices or paying in FX what should be paid in RMB",
+      "base_fine_pct_max": 30,
+      "serious_fine_pct_min": 30,
+      "serious_fine_pct_max": 100,
+      "other_measures": "Order to re-exchange (回兑) the illegally obtained funds; criminal liability where a crime is constituted",
+      "verbatim": "有违反规定以外汇收付应当以人民币收付的款项，或者以虚假、无效的交易单证等向经营结售汇业务的金融机构骗购外汇等非法套汇行为的，由外汇管理机关责令对非法套汇资金予以回兑，处非法套汇金额30%以下的罚款；情节严重的，处非法套汇金额30%以上等值以下的罚款；构成犯罪的，依法追究刑事责任。",
+      "sources": ["S02"]
+    },
+    {
+      "id": "P03",
+      "article": "Order 532 Art. 41",
+      "chinese": "违规汇入外汇 / 非法结汇 — remitting FX into China in breach of rules; illegal settlement",
+      "conduct": "Unlawful inbound remittance or unlawful settlement",
+      "base_fine_pct_max": 30,
+      "serious_fine_pct_min": 30,
+      "serious_fine_pct_max": 100,
+      "other_measures": "Order to rectify. For illegal settlement specifically: order to re-exchange plus a fine of up to 30% (no serious-case uplift stated in that second paragraph).",
+      "verbatim": "违反规定将外汇汇入境内的，由外汇管理机关责令改正，处违法金额30%以下的罚款；情节严重的，处违法金额30%以上等值以下的罚款。非法结汇的，由外汇管理机关责令对非法结汇资金予以回兑，处违法金额30%以下的罚款。",
+      "sources": ["S02"]
+    },
+    {
+      "id": "P04",
+      "article": "Order 532 Art. 42",
+      "chinese": "违规携带外汇出入境 — carrying FX in or out in breach of rules",
+      "conduct": "Carrying banknotes across the border in breach of the carrying rules",
+      "base_fine_pct_max": 20,
+      "serious_fine_pct_min": null,
+      "serious_fine_pct_max": null,
+      "other_measures": "Warning; a fine of up to 20% MAY be imposed. Where laws or administrative regulations assign the penalty to Customs, those provisions prevail.",
+      "verbatim": "违反规定携带外汇出入境的，由外汇管理机关给予警告，可以处违法金额20%以下的罚款。法律、行政法规规定由海关予以处罚的，从其规定。",
+      "sources": ["S02"]
+    },
+    {
+      "id": "P05",
+      "article": "Order 532 Art. 44",
+      "chinese": "擅自改变外汇或结汇资金用途 — unauthorised change of the approved use of FX or settled funds",
+      "conduct": "Using capital-account or settled funds for a purpose other than the approved one",
+      "base_fine_pct_max": 30,
+      "serious_fine_pct_min": 30,
+      "serious_fine_pct_max": 100,
+      "other_measures": "Order to rectify; confiscation of illegal gains. Second paragraph: pricing, settling or transferring FX domestically in breach of rules draws a warning and a possible fine of up to 30%.",
+      "verbatim": "违反规定，擅自改变外汇或者结汇资金用途的，由外汇管理机关责令改正，没收违法所得，处违法金额30%以下的罚款；情节严重的，处违法金额30%以上等值以下的罚款。",
+      "sources": ["S02"]
+    },
+    {
+      "id": "P06",
+      "article": "Order 532 Art. 45",
+      "chinese": "私自买卖外汇、变相买卖外汇、倒买倒卖外汇、非法介绍买卖外汇 — private, disguised or speculative FX trading, or illegally brokering it, in a relatively large amount",
+      "conduct": "Underground banks, mirror '对敲' settlement, private FX dealing",
+      "base_fine_pct_max": 30,
+      "serious_fine_pct_min": 30,
+      "serious_fine_pct_max": 100,
+      "other_measures": "Warning; confiscation of illegal gains; criminal liability where a crime is constituted. Applies only where the amount is 数额较大 (relatively large).",
+      "verbatim": "私自买卖外汇、变相买卖外汇、倒买倒卖外汇或者非法介绍买卖外汇数额较大的，由外汇管理机关给予警告，没收违法所得，处违法金额30%以下的罚款；情节严重的，处违法金额30%以上等值以下的罚款；构成犯罪的，依法追究刑事责任。",
+      "sources": ["S02"]
+    },
+    {
+      "id": "P07",
+      "article": "Order 532 Art. 46",
+      "chinese": "未经批准擅自经营结汇、售汇业务 — operating an FX settlement/sale business without approval",
+      "conduct": "Acting as an unlicensed FX dealer (the operator, not the customer)",
+      "base_fine_pct_max": null,
+      "serious_fine_pct_min": null,
+      "serious_fine_pct_max": null,
+      "fixed_fine_text": "Confiscation of illegal gains. Where illegal gains are RMB 500,000 or more: a fine of 1 to 5 TIMES the illegal gains. Where there are no illegal gains, or gains are under RMB 500,000: a fine of RMB 500,000 to RMB 2,000,000.",
+      "other_measures": "Serious cases: ordered to suspend business for rectification or have the business licence revoked. Criminal liability where a crime is constituted.",
+      "verbatim": "未经批准擅自经营结汇、售汇业务的，由外汇管理机关责令改正，有违法所得的，没收违法所得，违法所得50万元以上的，并处违法所得1倍以上5倍以下的罚款；没有违法所得或者违法所得不足50万元的，处50万元以上200万元以下的罚款；情节严重的，由有关主管部门责令停业整顿或者吊销业务许可证；构成犯罪的，依法追究刑事责任。",
+      "sources": ["S02"]
+    },
+    {
+      "id": "P08",
+      "article": "Order 532 Art. 48",
+      "chinese": "申报、单证、账户、登记及配合检查违规 — reporting, document, account, registration and inspection-cooperation violations",
+      "conduct": "Failing to make balance-of-payments declarations, submitting untrue documents, breaching FX account or registration rules, obstructing inspection",
+      "base_fine_pct_max": null,
+      "serious_fine_pct_min": null,
+      "serious_fine_pct_max": null,
+      "fixed_fine_text": "Order to rectify and a warning. Institutions: fine up to RMB 300,000. INDIVIDUALS: fine up to RMB 50,000.",
+      "other_measures": "This is the flat-cap provision most relevant to an individual's paperwork failures, as distinct from the percentage fines on the amount moved.",
+      "verbatim": "有下列情形之一的，由外汇管理机关责令改正，给予警告，对机构可以处30万元以下的罚款，对个人可以处5万元以下的罚款",
+      "sources": ["S02"]
+    },
+    {
+      "id": "P09",
+      "article": "Huifa [2015] No. 49 item 2",
+      "chinese": "分拆结售汇 / 出借或借用他人额度 — splitting, lending or borrowing annual quota",
+      "conduct": "Quota splitting; lending your own USD 50,000 allowance; borrowing someone else's",
+      "base_fine_pct_max": null,
+      "serious_fine_pct_min": null,
+      "serious_fine_pct_max": null,
+      "fixed_fine_text": "Not a fine in itself. Lending your quota: first offence draws a risk-warning letter, a repeat draws watch-listing. Borrowing another's quota: immediate watch-listing.",
+      "other_measures": "Watch-list period is the year of listing PLUS the following two consecutive years. During that period the person cannot use the convenient ID-only channel and must present documentary proof of the transaction amount at the counter for every purchase or settlement. Any underlying evasion or arbitrage is separately fined under Art. 39 or Art. 40.",
+      "verbatim": null,
+      "sources": ["S03", "S02"]
+    },
+    {
+      "id": "P10",
+      "article": "Repealed — former Detailed Rules Art. 39",
+      "chinese": "已废止：原《个人外汇管理办法实施细则》第三十九条",
+      "conduct": "Formerly a catch-all fine of up to RMB 1,000 for individuals and RMB 30,000 for banks where no other rule specified a penalty",
+      "base_fine_pct_max": null,
+      "serious_fine_pct_min": null,
+      "serious_fine_pct_max": null,
+      "fixed_fine_text": "NO LONGER IN FORCE. Do not cite the RMB 1,000 individual fine as current law.",
+      "other_measures": "Expressly repealed by Huifa [2023] No. 8, Annex 3. The repeal note is printed at the foot of the official SAFE page for the Detailed Rules.",
+      "verbatim": "根据《国家外汇管理局关于废止和失效15件外汇管理规范性文件及调整14件外汇管理规范性文件条款的通知》（汇发〔2023〕8号）附件3……以下内容已被废止：《个人外汇管理办法实施细则》（汇发〔2007〕1号印发）第三十九条。",
+      "sources": ["S01"]
+    },
+    {
+      "id": "P11",
+      "article": "Yinfa [2021] No. 237 items 1(2), 1(3), 1(4)",
+      "chinese": "虚拟货币相关业务活动属于非法金融活动",
+      "conduct": "Using crypto or stablecoins to move value out of China",
+      "base_fine_pct_max": null,
+      "serious_fine_pct_min": null,
+      "serious_fine_pct_max": null,
+      "fixed_fine_text": "No percentage schedule is given in this notice. Fiat-to-crypto exchange business is classified as an illegal financial activity that is strictly prohibited and to be banned; overseas exchanges serving mainland residents over the internet are likewise illegal financial activity.",
+      "other_measures": "Where a crime is constituted, criminal liability is pursued. Related civil acts contrary to public order and good morals are void and the resulting losses are borne by the participant. Banks and payment institutions may not provide accounts, transfers, settlement, collateral or insurance for such activity.",
+      "verbatim": null,
+      "sources": ["S06"]
+    }
+  ]
+}
