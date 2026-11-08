@@ -241,7 +241,7 @@ so this site leaves it blank and shows you how to measure it yourself. """ + src
         quick_rows.append([
             f'<a href="methods.html#{e(m["id"])}"><strong>{e(m["name"])}</strong></a>',
             f'<span class="tag {cls}">{e(label)}</span>',
-            txt(m["limit_text"] or m["annual_limit_usd"]),
+            txt(m.get("limit_short")),
             src_links(m["sources"], row_id=m["id"]) + " " + flag_links(m.get("flags", [])),
         ])
     quick = table(["Route", "Status", "Limit", "Official source"], quick_rows,
@@ -312,7 +312,7 @@ def build_methods() -> str:
                 f'<a href="#{e(m["id"])}">{e(m["id"])}</a>',
                 f'<strong>{e(m["name"])}</strong><div class="muted small">{e(m["who"])}</div>',
                 f'<span class="tag {cls}">{e(lab)}</span>',
-                txt(m["limit_text"]),
+                txt(m.get("limit_short")),
                 txt(m["china_cost"]),
                 src_links(m["sources"], required=bool(m["sources"]), row_id=m["id"]) + " " + flag_links(m.get("flags", [])),
             ])
@@ -368,7 +368,7 @@ def build_costs() -> str:
          "The bank quotes you a rate worse than the interbank rate and keeps the difference. Bank of China charges no separate conversion fee at its own branches, so this cost is invisible on any fee schedule. It scales with the amount, which makes it the dominant cost on a large transfer. No official figure is published, so it is left blank.",
          ["S12"], ["F06"]),
         ("3", "The bank's remittance tariff",
-         "0.1% of the amount, minimum RMB 50, maximum RMB 260. Because it is capped, it becomes trivial as a percentage on a large wire — about 0.026% on a USD 140,000 equivalent transfer.",
+         "0.1% of the amount, minimum RMB 50, maximum RMB 260. Because it is capped, it becomes trivial as a percentage on a large wire: RMB 260 on a CNY 1,000,000 transfer is 0.026%. The arithmetic below uses CNY throughout so no exchange rate has to be assumed.",
          ["S12"], []),
         ("4", "Cable charge",
          "RMB 150 flat for an international transfer. On a small transfer this dominates; on a large one it is noise.",
@@ -520,7 +520,8 @@ def build_us_tax() -> str:
             detail,
             thr,
             e(u["due"]) + f'<div class="muted small">{e(u["filed_with"])}</div>',
-            txt(u.get("penalty_note")),
+            e(u.get("penalty_short") or "")
+            + f'<details><summary>Detail</summary><div class="note">{e(u["penalty_note"])}</div></details>',
             src_links(u["sources"], row_id=u["id"]) + " " + flag_links(u.get("flags", [])),
         ])
     rep = table(["ID", "Form", "Trigger", "Threshold", "When / where", "Penalty", "Source"], rows)

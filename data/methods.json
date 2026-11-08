@@ -33,8 +33,14 @@
         "Only covers current-account income, not capital such as property sale proceeds",
         "Bank must perform authenticity review and may refuse if documents are incomplete"
       ],
-      "sources": ["S01", "S02", "S12", "S19"],
-      "flags": []
+      "sources": [
+        "S01",
+        "S02",
+        "S12",
+        "S19"
+      ],
+      "flags": [],
+      "limit_short": "No annual cap; bounded by documented income"
     },
     {
       "id": "M02",
@@ -58,8 +64,14 @@
         "Borrowing or lending quota to move more is expressly policed and leads to watch-listing (S03)",
         "A US citizen who has lived in China a year is caught by this cap, which many guides get wrong"
       ],
-      "sources": ["S01", "S02", "S03", "S12"],
-      "flags": []
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S12"
+      ],
+      "flags": [],
+      "limit_short": "USD 50,000 / year"
     },
     {
       "id": "M03",
@@ -82,8 +94,13 @@
         "Bank performs authenticity review under Art. 6 and must reject fabricated transactions",
         "False or invalid documents convert this into illegal arbitrage under Order 532 Art. 40"
       ],
-      "sources": ["S01", "S02", "S12"],
-      "flags": []
+      "sources": [
+        "S01",
+        "S02",
+        "S12"
+      ],
+      "flags": [],
+      "limit_short": "No fixed cap; bounded by documented transaction"
     },
     {
       "id": "M04",
@@ -106,8 +123,12 @@
         "Only helps if the balance is already in foreign currency",
         "Converting RMB into that FX account first still triggers the purchase rules in M01/M02/M03"
       ],
-      "sources": ["S01", "S12"],
-      "flags": []
+      "sources": [
+        "S01",
+        "S12"
+      ],
+      "flags": [],
+      "limit_short": "Non-domestic: no stated cap. Domestic: USD 50,000 / day"
     },
     {
       "id": "M05",
@@ -132,8 +153,14 @@
         "Art. 11 forbids taking the proceeds out as banknotes in China; funds must go to the heir's own account abroad",
         "Cannot prove lawful source of funds means refusal (Art. 12)"
       ],
-      "sources": ["S08", "S09", "S10", "S17"],
-      "flags": []
+      "sources": [
+        "S08",
+        "S09",
+        "S10",
+        "S17"
+      ],
+      "flags": [],
+      "limit_short": "No annual quota; SAFE approval above RMB 500,000"
     },
     {
       "id": "M06",
@@ -157,8 +184,14 @@
         "Staged remittance can take two years for larger amounts",
         "Same judicial-restriction and lawful-source bars as M05 (Art. 12)"
       ],
-      "sources": ["S08", "S09", "S10", "S11"],
-      "flags": []
+      "sources": [
+        "S08",
+        "S09",
+        "S10",
+        "S11"
+      ],
+      "flags": [],
+      "limit_short": "No annual quota; staged over up to 2 years"
     },
     {
       "id": "M07",
@@ -182,8 +215,14 @@
         "Whether a given bank offers this to a given customer, and any per-transaction cap, could not be confirmed from an official source",
         "Does not solve the problem for capital balances such as property sale proceeds"
       ],
-      "sources": ["S07", "S19"],
-      "flags": ["F01"]
+      "sources": [
+        "S07",
+        "S19"
+      ],
+      "flags": [
+        "F01"
+      ],
+      "limit_short": null
     },
     {
       "id": "M08",
@@ -207,8 +246,15 @@
         "Carrying in breach is penalised under Order 532 Art. 42 and by Customs",
         "Loss or theft risk; US declaration duty on arrival"
       ],
-      "sources": ["S04", "S05", "S02", "S12", "S21"],
-      "flags": []
+      "sources": [
+        "S04",
+        "S05",
+        "S02",
+        "S12",
+        "S21"
+      ],
+      "flags": [],
+      "limit_short": "USD 5,000 permit-free; USD 10,000 with permit, per trip"
     },
     {
       "id": "M09",
@@ -222,14 +268,23 @@
       "china_cost": "No conversion occurs in China; RMB must be converted after arrival, at an unverified offshore spread.",
       "us_tax": "RMB is nonfunctional currency; converting it after arrival is an IRC 988 disposition (S19). Over USD 10,000 equivalent entering the US requires FinCEN 105 (S21).",
       "status": "legal_conditional",
-      "pros": ["Simple for very small amounts"],
+      "pros": [
+        "Simple for very small amounts"
+      ],
       "cons": [
         "RMB 20,000 is a trivial ceiling",
         "RMB is not freely convertible everywhere, so the offshore rate may be worse",
         "Excess is not released by Customs"
       ],
-      "sources": ["S05", "S19", "S21"],
-      "flags": ["F09"]
+      "sources": [
+        "S05",
+        "S19",
+        "S21"
+      ],
+      "flags": [
+        "F09"
+      ],
+      "limit_short": "RMB 20,000 / person / trip"
     },
     {
       "id": "M10",
@@ -252,8 +307,13 @@
         "Still counts toward US monetary-instrument reporting if physically carried",
         "Underlying purchase quota is unchanged"
       ],
-      "sources": ["S04", "S12", "S21"],
-      "flags": []
+      "sources": [
+        "S04",
+        "S12",
+        "S21"
+      ],
+      "flags": [],
+      "limit_short": "Underlying purchase quota applies"
     },
     {
       "id": "M11",
@@ -276,8 +336,15 @@
         "1% plus a fixed fee is expensive at scale",
         "Not a capital repatriation route"
       ],
-      "sources": ["S01", "S12", "S19"],
-      "flags": ["F02"]
+      "sources": [
+        "S01",
+        "S12",
+        "S19"
+      ],
+      "flags": [
+        "F02"
+      ],
+      "limit_short": null
     },
     {
       "id": "M12",
@@ -299,8 +366,14 @@
         "Operator-set fees and per-transfer limits are not published in the official tariff and could not be verified",
         "The underlying FX purchase is still governed by SAFE rules, so it does not create extra quota"
       ],
-      "sources": ["S12", "S01"],
-      "flags": ["F03"]
+      "sources": [
+        "S12",
+        "S01"
+      ],
+      "flags": [
+        "F03"
+      ],
+      "limit_short": null
     },
     {
       "id": "M13",
@@ -314,14 +387,21 @@
       "china_cost": null,
       "us_tax": "A US person investing in a non-US pooled fund commonly triggers PFIC reporting on Form 8621. That analysis was not verified in this session and is flagged.",
       "status": "legal_conditional",
-      "pros": ["Lawful outbound investment channel expressly recognised in Art. 17"],
+      "pros": [
+        "Lawful outbound investment channel expressly recognised in Art. 17"
+      ],
       "cons": [
         "This invests money offshore; it is not a clean route to cash in your own US bank account",
         "Institution-level quota and product terms were not verified",
         "Potential PFIC complexity for US persons"
       ],
-      "sources": ["S01"],
-      "flags": ["F04"]
+      "sources": [
+        "S01"
+      ],
+      "flags": [
+        "F04"
+      ],
+      "limit_short": null
     },
     {
       "id": "M14",
@@ -343,8 +423,12 @@
         "Only available to participants of an approved plan",
         "Requires employer cooperation and SAFE approval"
       ],
-      "sources": ["S01", "S19"],
-      "flags": []
+      "sources": [
+        "S01",
+        "S19"
+      ],
+      "flags": [],
+      "limit_short": "Per approved plan, outside the individual quota"
     },
     {
       "id": "M15",
@@ -358,14 +442,22 @@
       "china_cost": null,
       "us_tax": "A US person owning a foreign corporation may face Form 5471 and related regimes. Not verified in this session.",
       "status": "legal_conditional",
-      "pros": ["Lawful capital-account channel where there is a genuine investment"],
+      "pros": [
+        "Lawful capital-account channel where there is a genuine investment"
+      ],
       "cons": [
         "Requires a real overseas business; it is not a personal cash repatriation route",
         "Order 532 Art. 44 penalises changing the approved use of capital-account funds",
         "Heavy US entity-reporting burden"
       ],
-      "sources": ["S01", "S02"],
-      "flags": ["F04"]
+      "sources": [
+        "S01",
+        "S02"
+      ],
+      "flags": [
+        "F04"
+      ],
+      "limit_short": null
     },
     {
       "id": "M16",
@@ -379,13 +471,20 @@
       "china_cost": "Bank FX spread; notary costs not verified",
       "us_tax": "Note this is an INBOUND route. A US person receiving a gift from a foreign person above USD 100,000 files Form 3520 Part IV (S17).",
       "status": "legal_conditional",
-      "pros": ["Documented route for genuine cross-border family transfers"],
+      "pros": [
+        "Documented route for genuine cross-border family transfers"
+      ],
       "cons": [
         "Runs in the wrong direction for someone trying to get money OUT of China",
         "Fabricating a donation to move funds is illegal arbitrage under Order 532 Art. 40"
       ],
-      "sources": ["S01", "S02", "S17"],
-      "flags": []
+      "sources": [
+        "S01",
+        "S02",
+        "S17"
+      ],
+      "flags": [],
+      "limit_short": "No fixed cap; bounded by documented amount"
     },
     {
       "id": "M17",
@@ -399,13 +498,19 @@
       "china_cost": null,
       "us_tax": "Trade income is taxable business income; a US person may face Schedule C and foreign entity reporting.",
       "status": "legal_conditional",
-      "pros": ["Genuine trade flows sit outside the USD 50,000 individual quota"],
+      "pros": [
+        "Genuine trade flows sit outside the USD 50,000 individual quota"
+      ],
       "cons": [
         "Requires a real registered trading business with real goods flows",
         "Using a trade shell with fabricated invoices is expressly penalised (Order 532 Art. 40)"
       ],
-      "sources": ["S01", "S02"],
-      "flags": []
+      "sources": [
+        "S01",
+        "S02"
+      ],
+      "flags": [],
+      "limit_short": "Institutional rules, not the individual quota"
     },
     {
       "id": "M18",
@@ -426,8 +531,11 @@
         "No recourse if the broker simply keeps the money",
         "Funds may be frozen and the receiving US account closed"
       ],
-      "sources": ["S02"],
-      "flags": []
+      "sources": [
+        "S02"
+      ],
+      "flags": [],
+      "limit_short": "No lawful channel"
     },
     {
       "id": "M19",
@@ -447,8 +555,12 @@
         "Three years of losing counter-free processing",
         "Exposure to evasion and arbitrage fines on top"
       ],
-      "sources": ["S03", "S02"],
-      "flags": []
+      "sources": [
+        "S03",
+        "S02"
+      ],
+      "flags": [],
+      "limit_short": "Prohibited"
     },
     {
       "id": "M20",
@@ -469,8 +581,12 @@
         "Civil transactions may be void, leaving no legal recourse for losses",
         "Counterparty fraud and price risk between legs"
       ],
-      "sources": ["S06", "S19"],
-      "flags": []
+      "sources": [
+        "S06",
+        "S19"
+      ],
+      "flags": [],
+      "limit_short": "No lawful channel"
     },
     {
       "id": "M21",
@@ -490,8 +606,12 @@
         "Fines can reach the entire amount in serious cases",
         "Criminal exposure"
       ],
-      "sources": ["S02", "S01"],
-      "flags": []
+      "sources": [
+        "S02",
+        "S01"
+      ],
+      "flags": [],
+      "limit_short": "No lawful channel"
     },
     {
       "id": "M22",
@@ -511,8 +631,13 @@
         "US forfeiture can reach the whole amount, not just the excess",
         "Repeat-crossing rules defeat the split-across-trips approach"
       ],
-      "sources": ["S02", "S04", "S21"],
-      "flags": []
+      "sources": [
+        "S02",
+        "S04",
+        "S21"
+      ],
+      "flags": [],
+      "limit_short": "See M08 for lawful tiers"
     },
     {
       "id": "M23",
@@ -527,9 +652,15 @@
       "us_tax": "Unlicensed money transmitting carries separate US criminal exposure.",
       "status": "prohibited",
       "pros": [],
-      "cons": ["This is the provision behind the '1 to 5 times' figure that is often mis-attributed to customers", "Severe fines and criminal liability"],
-      "sources": ["S02"],
-      "flags": []
+      "cons": [
+        "This is the provision behind the '1 to 5 times' figure that is often mis-attributed to customers",
+        "Severe fines and criminal liability"
+      ],
+      "sources": [
+        "S02"
+      ],
+      "flags": [],
+      "limit_short": "No lawful channel without approval"
     },
     {
       "id": "M24",
@@ -549,8 +680,13 @@
         "Yinfa [2020] No. 330 item 2 supports non-bank payment institutions cooperating with banks for cross-border e-commerce trade flows, which is not the same as a personal capital transfer",
         "Treated as unverified rather than assumed available"
       ],
-      "sources": ["S07"],
-      "flags": ["F05"]
+      "sources": [
+        "S07"
+      ],
+      "flags": [
+        "F05"
+      ],
+      "limit_short": null
     },
     {
       "id": "M25",
@@ -573,8 +709,13 @@
         "Expires 24 months after the original exchange",
         "Cannot exceed what was originally converted"
       ],
-      "sources": ["S01", "S12", "S19"],
-      "flags": []
+      "sources": [
+        "S01",
+        "S12",
+        "S19"
+      ],
+      "flags": [],
+      "limit_short": "Up to the original amount; memo valid 24 months"
     }
   ]
 }

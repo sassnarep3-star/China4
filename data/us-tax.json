@@ -17,8 +17,15 @@
       "penalty_nonwillful_usd": 16536,
       "penalty_willful_usd": 165353,
       "penalty_note": "These are the inflation-adjusted amounts for penalties assessed on or after 17 January 2025 (31 CFR 1010.821 Table 1). They remain the operative figures because the 2026 annual adjustment was cancelled. Statutory bases: 31 USC 5321(a)(5)(B)(i) = $10,000 and 5321(a)(5)(C)(i)(I) = $100,000.",
-      "sources": ["S15", "S14", "S16"],
-      "flags": ["F08"]
+      "sources": [
+        "S15",
+        "S14",
+        "S16"
+      ],
+      "flags": [
+        "F08"
+      ],
+      "penalty_short": "USD 16,536 non-willful; USD 165,353 willful"
     },
     {
       "id": "U02",
@@ -31,8 +38,11 @@
       "penalty_nonwillful_usd": 10000,
       "penalty_continued_usd": 50000,
       "penalty_note": "USD 10,000 failure-to-file penalty; if the failure continues more than 90 days after the IRS notifies you, an additional USD 10,000 for each 30-day period, capped at USD 50,000 additional. A 40% accuracy-related penalty applies to any underpayment attributable to a non-disclosed asset.",
-      "sources": ["S16"],
-      "flags": []
+      "sources": [
+        "S16"
+      ],
+      "flags": [],
+      "penalty_short": "USD 10,000, plus up to USD 50,000 more; 40% of related underpayment"
     },
     {
       "id": "U03",
@@ -45,8 +55,11 @@
       "penalty_nonwillful_usd": 10000,
       "penalty_continued_usd": 50000,
       "penalty_note": "Same penalty structure as U02.",
-      "sources": ["S16"],
-      "flags": []
+      "sources": [
+        "S16"
+      ],
+      "flags": [],
+      "penalty_short": "USD 10,000, plus up to USD 50,000 more; 40% of related underpayment"
     },
     {
       "id": "U04",
@@ -59,8 +72,11 @@
       "penalty_nonwillful_usd": 10000,
       "penalty_continued_usd": 50000,
       "penalty_note": "Living abroad means your tax home is in a foreign country and you satisfy the bona fide residence or physical presence test. This higher threshold is the one most likely to apply to a US citizen who has been living in China.",
-      "sources": ["S16"],
-      "flags": []
+      "sources": [
+        "S16"
+      ],
+      "flags": [],
+      "penalty_short": "USD 10,000, plus up to USD 50,000 more; 40% of related underpayment"
     },
     {
       "id": "U05",
@@ -73,8 +89,11 @@
       "penalty_nonwillful_usd": 10000,
       "penalty_continued_usd": 50000,
       "penalty_note": "Same penalty structure as U02.",
-      "sources": ["S16"],
-      "flags": []
+      "sources": [
+        "S16"
+      ],
+      "flags": [],
+      "penalty_short": "USD 10,000, plus up to USD 50,000 more; 40% of related underpayment"
     },
     {
       "id": "U06",
@@ -87,8 +106,11 @@
       "penalty_nonwillful_usd": null,
       "penalty_note": "CBP states that failure to file can result in forfeiture and seizure of the currency, plus civil and criminal penalties under 31 USC 5317, 5321, 5322 and 5332. No single dollar figure is published on that page, so the amount is left blank.",
       "critical_detail": "The threshold applies to a family or group filing jointly, COLLECTIVELY — it is not USD 10,000 per person. Splitting cash among travelling companions does not avoid the duty.",
-      "sources": ["S21"],
-      "flags": []
+      "sources": [
+        "S21"
+      ],
+      "flags": [],
+      "penalty_short": "Forfeiture and seizure, plus civil or criminal penalties"
     },
     {
       "id": "U07",
@@ -101,8 +123,11 @@
       "penalty_nonwillful_usd": null,
       "penalty_note": "Section 6039F penalty: 5% of the amount of the gift for each month the failure continues, up to a maximum of 25% of the gift.",
       "critical_detail": "This USD 100,000 threshold is NOT inflation-indexed. Do not confuse it with the USD 20,573 figure, which belongs to gifts from foreign CORPORATIONS and PARTNERSHIPS.",
-      "sources": ["S17"],
-      "flags": []
+      "sources": [
+        "S17"
+      ],
+      "flags": [],
+      "penalty_short": "5% of the gift per month, capped at 25%"
     },
     {
       "id": "U08",
@@ -116,8 +141,12 @@
       "penalty_nonwillful_usd": null,
       "penalty_note": "Section 6039F: 5% of the gift per month, capped at 25%.",
       "critical_detail": "Verified verbatim in Rev. Proc. 2025-32 section 4.47. The IRS treats such gifts as income rather than as gifts, so this is a much lower bar than U07.",
-      "sources": ["S17", "S18"],
-      "flags": []
+      "sources": [
+        "S17",
+        "S18"
+      ],
+      "flags": [],
+      "penalty_short": "5% of the gift per month, capped at 25%"
     },
     {
       "id": "U09",
@@ -128,8 +157,11 @@
       "filed_with": "IRS, separately filed",
       "penalty_nonwillful_usd": 10000,
       "penalty_note": "Section 6677 initial penalty is the GREATER of USD 10,000 or 35% of the gross value of property transferred to the trust or of distributions received; 5% for a US owner's failure to report grantor-trust assets. Additional penalties accrue if the failure continues 90 days after IRS notice, capped at the gross reportable amount. A foreign bank account is not a trust; this row matters only if a trust is actually involved.",
-      "sources": ["S17"],
-      "flags": []
+      "sources": [
+        "S17"
+      ],
+      "flags": [],
+      "penalty_short": "Greater of USD 10,000 or 35% of the gross value"
     }
   ],
   "tax_rules": [
@@ -137,7 +169,10 @@
       "id": "T01",
       "rule": "Moving your own money between your own accounts is not a taxable event",
       "explanation": "Neither the FBAR nor Form 8938 is a tax; they are information reports. Repatriating savings you already owned does not create income merely because it crosses a border.",
-      "sources": ["S15", "S16"],
+      "sources": [
+        "S15",
+        "S16"
+      ],
       "flags": []
     },
     {
@@ -145,7 +180,9 @@
       "rule": "But disposing of RMB IS a section 988 transaction, and the gain is ORDINARY income",
       "explanation": "IRC 988(c)(1)(C)(i) makes any disposition of nonfunctional currency a section 988 transaction, and (ii) expressly covers foreign-currency denominated demand or time deposits with a bank. Under 988(a)(1)(A) the resulting foreign currency gain or loss is treated as ordinary, not capital.",
       "verbatim": "Section 988(c)(1)(C)(i): 'any disposition of nonfunctional currency'. Section 988(a)(1)(A): foreign currency gain or loss attributable to a section 988 transaction is computed separately and treated as ordinary income or loss.",
-      "sources": ["S19"],
+      "sources": [
+        "S19"
+      ],
       "flags": []
     },
     {
@@ -154,7 +191,9 @@
       "explanation": "Section 988(e)(1) disapplies section 988 to an individual's personal transactions. Section 988(e)(2) then provides that no gain is recognised on a personal disposition of nonfunctional currency, UNLESS the gain that would otherwise be recognised exceeds USD 200. If the gain is USD 201, the whole gain is taxable, not just the excess. There is no corresponding relief for losses, because a personal loss is not deductible in the first place.",
       "verbatim": "Section 988(e)(2): 'no gain shall be recognized for purposes of this subtitle by reason of changes in exchange rates after such currency was acquired by such individual and before such disposition. The preceding sentence shall not apply if the gain which would otherwise be recognized on the transaction exceeds $200.'",
       "practical_consequence": "On a large repatriation, a multi-year RMB appreciation can easily produce a gain far above USD 200, so the exclusion will usually NOT save you. Compute the gain using your acquisition-date basis in USD, not the balance in RMB.",
-      "sources": ["S19"],
+      "sources": [
+        "S19"
+      ],
       "flags": []
     },
     {
@@ -162,14 +201,18 @@
       "rule": "What counts as a 'personal transaction' is narrower than it sounds",
       "explanation": "Section 988(e)(3) defines a personal transaction as any transaction entered into by an individual EXCEPT to the extent properly allocable expenses meet the requirements of section 162 (trade or business) or section 212 (production of income). An interest-bearing deposit held for investment is therefore not automatically a personal transaction.",
       "verbatim": "Section 988(e)(3): 'the term \"personal transaction\" means any transaction entered into by an individual, except that such term shall not include any transaction to the extent that expenses properly allocable to such transaction meet the requirements of— (A) section 162 ..., or (B) section 212 ...'",
-      "sources": ["S19"],
+      "sources": [
+        "S19"
+      ],
       "flags": []
     },
     {
       "id": "T05",
       "rule": "The source of a section 988 gain follows your tax home, which affects foreign tax credits",
       "explanation": "Section 988(a)(3) sources foreign currency gain or loss by reference to the residence of the taxpayer, and for an individual residence is determined under the section 911(d)(3) tax-home concept. A US citizen whose tax home is in the US generally has US-source currency gain, which cannot be sheltered by foreign tax credits.",
-      "sources": ["S19"],
+      "sources": [
+        "S19"
+      ],
       "flags": []
     },
     {
@@ -178,28 +221,38 @@
       "explanation": "The FEIE applies only to foreign EARNED income — wages, salaries and professional fees — and expressly not to pensions, annuities or investment income. Repatriated savings are not earned income. For tax years beginning in 2026 the maximum exclusion is USD 132,900.",
       "amount_usd": 132900,
       "tax_year": 2026,
-      "sources": ["S22", "S18"],
+      "sources": [
+        "S22",
+        "S18"
+      ],
       "flags": []
     },
     {
       "id": "T07",
       "rule": "Form 8938 does not replace the FBAR — you may have to file both",
       "explanation": "The IRS states expressly that filing Form 8938 does not relieve you of the requirement to file an FBAR. The two regimes have different thresholds, different filing destinations and different penalties.",
-      "sources": ["S16", "S15"],
+      "sources": [
+        "S16",
+        "S15"
+      ],
       "flags": []
     },
     {
       "id": "T08",
       "rule": "Convert account values using the Treasury Bureau of the Fiscal Service year-end rate",
       "explanation": "For Form 8938 the IRS directs use of the Treasury's Financial Management Service / Bureau of the Fiscal Service foreign currency exchange rate as of the last day of the tax year. Using a random commercial rate is a common error.",
-      "sources": ["S16"],
+      "sources": [
+        "S16"
+      ],
       "flags": []
     },
     {
       "id": "T09",
       "rule": "Omitting more than USD 5,000 of income from a foreign asset extends the statute of limitations to six years",
       "explanation": "The IRS FATCA summary states that failure to report more than USD 5,000 of income from a specified foreign financial asset extends the assessment period to six years. Combined with the 40% understatement penalty, non-disclosure is expensive well beyond the headline USD 10,000.",
-      "sources": ["S16"],
+      "sources": [
+        "S16"
+      ],
       "flags": []
     },
     {
@@ -209,8 +262,12 @@
       "treaty_year": 1984,
       "article_rates": null,
       "article_rates_note": "Specific treaty article rates (dividends, interest, royalties, capital gains) were NOT read this session and are deliberately left blank rather than quoted from memory.",
-      "sources": ["S20"],
-      "flags": ["F07"]
+      "sources": [
+        "S20"
+      ],
+      "flags": [
+        "F07"
+      ]
     }
   ]
 }
