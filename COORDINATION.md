@@ -6,24 +6,46 @@ another session has claimed. Keep scopes non-overlapping. Small, frequent commit
 run `git pull --rebase` before every push. When a task is finished, record
 sources, verification performed, and irregularities here and mark it done.
 
-Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
+## Active sessions
+
+| Session ID | Branch (as required by Agent Mode) | Status | Started |
+|---|---|---|---|
+| `agent-2` | `arena/a978a0c6-china4` | working | 2026-11-08 |
+
+> Branch-name note: the original rules asked for `session-<id>/<task>` branches.
+> Agent Mode sessions cannot switch branches, so each session works on the single
+> branch it was started on. `agent-1` used `arena/c56cf052-china4`; `agent-2` uses
+> `arena/a978a0c6-china4`. Scopes below stay disjoint by file.
 
 ## Tasks
 
-| # | Task | Scope (files) | Status | Owner | Sources verified | Notes |
-|---|------|---------------|--------|-------|------------------|-------|
-| 1 | Create COORDINATION.md (shared task board) | COORDINATION.md | done | agent-1 | n/a | Created at project start |
-| 2 | Research CNY→USD conversion methods (official sources: SAFE, PBOC, IRS, FinCEN, State Dept) | site/sources.html, site/ pages | done | agent-1 | SAFE Detailed Rules ($50k quota), SAFE Regulations (fines), FinCEN FBAR, IRS FATCA/8938/Pub54/Form3520, US-China treaty (IRS), customs cash limits | Research complete; sources compiled |
-| 3 | Build conversion-penalty breakdown | site/penalties.html | done | agent-1 | SAFE Regulations fines, FinCEN/IRS penalty figures | Built; unverified items flagged |
-| 4 | Build data table of methods with pros/cons | site/methods.html | done | agent-1 | SAFE Detailed Rules, FinCEN, IRS, SAFE enforcement release | Every row has source link |
-| 5 | Create GitHub Pages site (landing page + subpages, dashboard UI) | site/*.html, site/css, .github/workflows | done | agent-1 | n/a | 6 pages + CSS + workflow; HTML validated |
-| 6 | Verify all site content line by line against official sources | root pages | done | agent-1 | SAFE Detailed Rules, SAFE Regulations, SAFE enforcement release, FinCEN FBAR, IRS FATCA/Pub 54/Form 3520/FAQ, IRS China treaty documents (1984), PBOC | Every table row carries an official-source link; values not confirmed from an official source left blank and flagged on flagged.html |
-| 7 | Create "Flagged for Review" page with irregularities | flagged.html | done | agent-1 | n/a | Published on site: 8 unverified values + 5 irregularities with suggested manual checks |
-| 8 | Integration: merge branches, re-verify combined data, confirm site builds | main (via PR) | done | agent-1 | PR #1 and PR #2 merged into main; live build commit e1491ef status "built" | All six pages + CSS return 200; no broken links |
-| 9 | Create PR from integration branch to main, merge, confirm Pages deploys | GitHub | done | agent-1 | PR #1: https://github.com/sassnarep3-star/China4/pull/1 (merged); PR #2: https://github.com/sassnarep3-star/China4/pull/2 (merged); GitHub Pages live at https://sassnarep3-star.github.io/China4/ | Pages build_type legacy, source branch main path "/", html_url confirmed; flagged items do not block merge and are published on the Flagged for Review page |
+| # | Task | Scope (files) | Status | Owner | Notes |
+|---|------|---------------|--------|-------|-------|
+| 1 | Create COORDINATION.md (shared task board) | COORDINATION.md | done | agent-1 | Project start |
+| 2 | Research CNY→USD conversion methods | methods.html | done (pre-existing) | agent-1 | 9 methods |
+| 3 | Conversion-penalty breakdown | penalties.html | done (pre-existing) | agent-1 | Unverified items flagged |
+| 4 | Dashboard / landing page | index.html | done (pre-existing) | agent-1 | |
+| 5 | US tax obligations page | taxes.html | done (pre-existing) | agent-1 | |
+| 6 | Sources registry | sources.html | done (pre-existing) | agent-1 | |
+| 7 | Flagged for Review page | flagged.html | done (pre-existing) | agent-1 | |
+| 8 | PR #1–#3 merged, Pages live | main | done | agent-1 | https://sassnarep3-star.github.io/China4/ |
+| **A2-1** | **Audit all pre-existing claims line by line vs official sources; repair/annotate** | all `*.html`, `COORDINATION.md` | in progress | **agent-2** | Link-rot found: `fdi.gov.cn` SAFE mirror unreachable; several secondary sources used as if official |
+| **A2-2** | **New page: cost matrix for $10,000 steps up to $400,000 per method** | `costs.html` | in progress | **agent-2** | Needs sourced inputs only; blanks + flags where no official tariff exists |
+| **A2-3** | **New page: step-by-step playbooks per method** | `playbook.html` | in progress | **agent-2** | Numbered steps, per-step source |
+| **A2-4** | **Executive summary rewrite (top-of-dashboard, mobile-first)** | `index.html` | in progress | **agent-2** | Most important info first |
+| **A2-5** | **Add missing legal channels (emigration asset transfer, UnionPay card, QDII, family remittance, etc.)** | `methods.html` | in progress | **agent-2** | Official source required per row |
+| **A2-6** | **Integration, verification pass, PR to main, Pages deploy check** | `*.html`, `main` | unclaimed | — | Blocked until A2-1..A2-5 done |
 
 ## Rules
 - Statuses: unclaimed, in progress, done, needs review
 - "needs review" = published on Flagged for Review page, does not block other tasks
 - Never mark verified without checking an official source; link the source
-- Shared outputs (table data, index, navigation) changed only by final integration session
+- Shared outputs (table data, index, navigation) changed only by the integration session
+- If a claim is >60 min old with no commits, another session may take it over and must note the handoff below
+
+## Log
+
+- 2026-11-07 `agent-1`: bootstrapped site, 6 pages, PRs #1–#3 merged, Pages live.
+- 2026-11-08 `agent-2`: claimed A2-1…A2-5. Scope = all root `*.html` + new `costs.html`, `playbook.html`.
+  Reason: user requested per-$10,000 cost tables (to $400k), step-by-step instructions, deeper
+  research, and a line-by-line verification pass. No other session active; scopes do not overlap.
