@@ -3,169 +3,91 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>China4 — Getting Money Out of China (US Citizen Guide)</title>
+<title>CNY to USD for US citizens — China4</title>
+<meta name="description" content="Lawful CNY-to-USD research dashboard for US citizens: source-matched routes, costs, tax, reporting and flags.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to main content</a>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="index.html"><span class="mark">C4</span> China4</a>
-    <nav>
-      <a class="active" href="index.html">Dashboard</a>
-      <a href="methods.html">Conversion Methods</a>
-      <a href="penalties.html">Penalty Breakdown</a>
-      <a href="taxes.html">US Tax Obligations</a>
-      <a href="flagged.html">Flagged for Review</a>
-      <a href="sources.html">Sources</a>
-    </nav>
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">C4</span> China4</a>
+    <nav aria-label="Primary navigation"><a href="index.html" aria-current="page">Dashboard</a>
+<a href="methods.html">Methods</a>
+<a href="costs.html">Cost tables</a>
+<a href="procedures.html">Procedures</a>
+<a href="taxes.html">Tax &amp; reporting</a>
+<a href="penalties.html">Penalties</a>
+<a href="sources.html">Sources</a>
+<a href="flagged.html">Flagged for Review</a>
+<a href="audit.html">Audit</a>
+<a href="verification.html">Verification</a></nav>
   </div>
 </header>
+<main id="main" class="container">
+<h1>CNY to USD for US citizens</h1>
+<p class="page-sub">Lawful routes, verified cost components, tax/reporting distinctions and complete amount tables.</p>
 
-<div class="container">
-  <div class="hero">
-    <h1>Moving money out of China to the US</h1>
-    <p>A research dashboard for US citizens with CNY stuck in a Chinese bank account: every legal way to convert CNY to USD, what each costs, the tax and reporting penalties, and which option carries the least penalty. All figures are traced to official sources; anything we could not verify is left blank and flagged.</p>
-    <a class="cta" href="methods.html">View all conversion methods &rarr;</a>
-  </div>
-
-  <div class="best-answer">
-    <h3>The short answer (best way, least penalty)</h3>
-    <p><strong>Use a normal bank wire (SWIFT) from your Chinese bank, converting CNY to USD within China&rsquo;s annual individual foreign-exchange quota of <b>US$50,000 per person per calendar year</b>.</strong> Within the quota you need only your ID — no tax penalty in China, just the bank&rsquo;s FX spread and wire fee. Above the quota, you must document the legitimate source of the funds (for a foreigner working in China, after-tax salary with tax payment records can be remitted on top of the quota). Moving your own already-taxed money to the US is <strong>not</strong> a US taxable event — but you must still file US reports (FBAR if your foreign accounts aggregate over US$10,000; Form 8938/FATCA above higher thresholds; Form 3520 if the money is a gift over US$100,000 from a foreign person). <strong>Never use underground money changers or crypto P2P</strong> — both are illegal in China and carry fines of 30%&ndash;300% of the amount plus criminal risk.</p>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128202; Executive summary</h2>
-    <p>China tightly controls converting renminbi (CNY) into foreign currency and moving it abroad. The key constraint is not a US tax on the transfer itself — it is China&rsquo;s foreign-exchange quota and the US information-reporting regime. The table below is the quick reference; full details, pros/cons, and penalties are on the following pages.</p>
-
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:22%">Method</th>
-          <th style="width:16%">China annual limit</th>
-          <th style="width:14%">China-side cost</th>
-          <th style="width:18%">US tax / reporting</th>
-          <th style="width:14%">Legality</th>
-          <th style="width:16%">Verdict</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="method-cell">Bank wire / SWIFT (Chinese bank)</td>
-          <td>US$50,000/person/yr quota; above = documentation required</td>
-          <td>FX spread + wire fee (amounts not verified — flagged)</td>
-          <td>Not taxable if your own funds; FBAR/8938 may apply</td>
-          <td><span class="tag good">Legal</span></td>
-          <td><strong>Best option</strong> within quota</td>
-        </tr>
-        <tr>
-          <td class="method-cell">After-tax salary remittance (foreigners employed in China)</td>
-          <td>No fixed cap beyond documented after-tax salary</td>
-          <td>FX spread + wire fee (unverified)</td>
-          <td>Not taxable if your own funds; FBAR/8938 may apply</td>
-          <td><span class="tag good">Legal</span></td>
-          <td>Best option above quota if you paid Chinese tax</td>
-        </tr>
-        <tr>
-          <td class="method-cell">Carry cash across the border</td>
-          <td>RMB 20,000; FX cash &le;US$5,000 no declaration</td>
-          <td>None (but risky)</td>
-          <td>US: declare &gt;US$10,000 (FinCEN 105)</td>
-          <td><span class="tag good">Legal</span> (within limits)</td>
-          <td>Only for small amounts</td>
-        </tr>
-        <tr>
-          <td class="method-cell">Western Union / MoneyGram (bank agents in China)</td>
-          <td>Same FX controls ($50,000 quota)</td>
-          <td>Fees + FX margin (unverified)</td>
-          <td>FBAR/8938 may apply</td>
-          <td><span class="tag mixed">Legal via banks</span></td>
-          <td>Convenient for small amounts</td>
-        </tr>
-        <tr>
-          <td class="method-cell">PayPal China / Alipay / WeChat Pay cross-border</td>
-          <td>Limits vary; not fully verified</td>
-          <td>Unverified</td>
-          <td>FBAR/8938 may apply</td>
-          <td><span class="tag mixed">Legal (limited)</span></td>
-          <td>Small amounts; limits unclear</td>
-        </tr>
-        <tr>
-          <td class="method-cell">Underground money changers (黑庄)</td>
-          <td>No legal channel</td>
-          <td>Fine 30%&ndash;300% + confiscation</td>
-          <td>FBAR/8938/3520 still apply</td>
-          <td><span class="tag bad">Illegal</span></td>
-          <td><strong>Never use</strong></td>
-        </tr>
-        <tr>
-          <td class="method-cell">Cryptocurrency / P2P</td>
-          <td>No legal channel</td>
-          <td>Illegal in China; criminal risk</td>
-          <td>FBAR/8938 may apply</td>
-          <td><span class="tag bad">Illegal in China</span></td>
-          <td><strong>Never use</strong></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="sources"><b>Sources:</b> SAFE Detailed Rules on Individual Foreign Exchange (US$50,000 annual quota); Regulations of the PRC on Foreign Exchange Administration (fines 30%&ndash;300%); FinCEN FBAR ($10,000 aggregate threshold); IRS FATCA/Form 8938 and Form 3520 guidance; China Customs cash declaration (RMB 20,000 / US$5,000). Full links: <a href="sources.html">Sources page</a>.</div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128397; Key numbers at a glance</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>US$50,000 / year</h3>
-        <p class="small">China individual annual foreign-exchange purchase/settlement quota per person (resets 1 Jan). Within quota: ID only at a bank.</p>
-      </div>
-      <div class="card">
-        <h3>US$10,000</h3>
-        <p class="small">FBAR (FinCEN Form 114): file if aggregate foreign accounts exceed $10,000 at any time during the year.</p>
-      </div>
-      <div class="card">
-        <h3>US$100,000</h3>
-        <p class="small">Form 3520: report gifts from foreign individuals/estates above $100,000/yr (gift itself not taxable; reporting is mandatory).</p>
-      </div>
-      <div class="card">
-        <h3>US$5,000</h3>
-        <p class="small">China customs: foreign-currency cash above US$5,000 equivalent must be declared when leaving China; RMB cash cap RMB 20,000.</p>
-      </div>
-      <div class="card">
-        <h3>30%&ndash;300%</h3>
-        <p class="small">China fine for illegally buying/selling foreign exchange (underground changers), plus confiscation and possible criminal liability.</p>
-      </div>
-      <div class="card">
-        <h3>No US tax</h3>
-        <p class="small">Transferring your own already-taxed money to the US is not US taxable income. US citizens are taxed on worldwide income — the transfer itself is not an event.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128204; How to use this site</h2>
-    <ol>
-      <li><a href="methods.html">Conversion Methods</a> — every way to convert CNY to USD, with pros, cons, limits, and official source for each row.</li>
-      <li><a href="penalties.html">Penalty Breakdown</a> — the full cost of each channel, including exchange spreads, wire fees, China fines, and US reporting penalties.</li>
-      <li><a href="taxes.html">US Tax Obligations</a> — FBAR, FATCA Form 8938, Form 3520, foreign tax credit, US&ndash;China treaty.</li>
-      <li><a href="flagged.html">Flagged for Review</a> — values we could not confirm from an official source (left blank) and irregularities needing your review.</li>
-      <li><a href="sources.html">Sources</a> — every official link used, for manual verification.</li>
-    </ol>
-    <div class="disclaimer"><strong>Not legal or tax advice.</strong> This site summarizes publicly available regulations for research purposes. Rules change, bank practices vary, and your facts (source of funds, tax history, visa status) determine what is legal for you. Consult a US-China cross-border tax professional and your bank before moving money.</div>
-  </div>
+<section class="hero" aria-labelledby="hero-heading">
+  <h2 id="hero-heading">Most important answer first</h2>
+  <p>Start with the actual source of the CNY. A foreign individual with documented lawful China earnings can usually use a bank or an eligible licensed salary-remittance service without treating USD 50,000 as a universal outbound cap. Property, inheritance, migration and business proceeds need their own evidence and tax analysis. Compare same-time, all-in net-USD quotes. Do not assume that moving principal creates no currency gain or that Chinese tax eliminates US tax.</p>
+  <p class="cta-row"><a class="cta" href="methods.html">Compare all methods</a> <a class="cta secondary" href="costs.html">Open 1,120 cost rows</a> <a class="cta secondary" href="procedures.html">Step-by-step procedures</a></p>
+</section>
+<section class="callout ok" aria-labelledby="short-answer">
+  <h2 id="short-answer">The lawful starting point</h2>
+  <p>Match the route to the actual source of the CNY. For documented China salary or other lawful current-account income, start with a bank or an eligible own-account salary service and compare same-time all-in net-USD quotes. Do not treat the USD 50,000 facilitation quota as a universal outbound cap, and do not assume “already taxed in China” means “no US tax.”</p>
+  <p class="small"><a class="source" href="https://www.safe.gov.cn/tianjin/2024/0430/2464.html">SAFE: 个人外汇管理办法实施细则 (amended consolidated text)</a> · <a class="source" href="https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf">SAFE Xiamen: 个人外汇业务服务小贴士</a> · <a class="source" href="https://www.icbc.com.cn/page/721852492064522245.html">ICBC: 个人购汇</a> · <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS: International individual tax matters FAQ</a> · <a class="source" href="https://www.govinfo.gov/content/pkg/USCODE-2024-title26/pdf/USCODE-2024-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf">US Code / GovInfo: 26 USC 988 (2024 edition)</a></p>
+</section>
+<section aria-labelledby="decision-title">
+  <h2 id="decision-title">Source-of-funds decision table</h2>
+  <div class="table-scroll" role="region" aria-label="Choose the route by the actual source of funds" tabindex="0">
+<table class="data require-source">
+<caption>Choose the route by the actual source of funds</caption>
+<thead><tr><th scope="col">Actual source</th><th scope="col">First lawful route to investigate</th><th scope="col">Key evidence</th><th scope="col">Official sources</th></tr></thead>
+<tbody>
+<tr><td>China salary</td><td>Bank TT; eligible Wise/SkyRemit own-account service</td><td>Contract, income details, tax records, own US account</td><td><a class="source" href="https://www.safe.gov.cn/tianjin/2024/0430/2464.html">SAFE: 个人外汇管理办法实施细则 (amended consolidated text)</a> · <a class="source" href="https://www.icbc.com.cn/page/721852492064522245.html">ICBC: 个人购汇</a> · <a class="source" href="https://wise.com/help/articles/2955298/guide-to-cny-transfers">Wise: Guide to CNY transfers</a> · <a class="source" href="https://remit.skyee360.com/client/account/terms-privacy">Skyee / SkyRemit: SkyRemit service agreement</a></td></tr>
+<tr><td>Unused RMB from earlier exchange</td><td>Bank reconversion</td><td>Original memo within 24 months; qualifying card evidence</td><td><a class="source" href="https://www.safe.gov.cn/tianjin/2024/0430/2464.html">SAFE: 个人外汇管理办法实施细则 (amended consolidated text)</a> · <a class="source" href="https://www.icbc.com.cn/page/721852492064522245.html">ICBC: 个人购汇</a></td></tr>
+<tr><td>Other lawful current-account RMB income</td><td>Bank documented current-account purchase/remittance</td><td>Transaction-amount source/tax evidence</td><td><a class="source" href="https://www.safe.gov.cn/tianjin/2024/0430/2464.html">SAFE: 个人外汇管理办法实施细则 (amended consolidated text)</a> · <a class="source" href="https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf">SAFE Xiamen: 个人外汇业务服务小贴士</a></td></tr>
+<tr><td>Mainland property sale</td><td>Bank property-sale proceeds review</td><td>Registered sale/title/tax documents</td><td><a class="source" href="https://www.safe.gov.cn/tianjin/2025/0829/2871.html">SAFE Tianjin: Huifa [2012] 59, amended consolidated notice</a> · <a class="source" href="https://www.icbc.com.cn/page/721852492064522245.html">ICBC: 个人购汇</a> · <a class="source" href="https://shanghai.chinatax.gov.cn/xwdt/ztzl/grsx/fwjy/csfclsx/202411/t474237.html">Shanghai Municipal Tax Service, STA: 个人出售购入超过2年的住房 (2026-04-20)</a></td></tr>
+<tr><td>Pre-migration assets</td><td>Migration transfer via competent SAFE branch</td><td>Status, former hukou, source/title, tax documents</td><td><a class="source" href="https://www.safe.gov.cn/hebei/file/file/20240816/86fd609207224d71b23cfda39ebe4bbb.pdf">SAFE Hebei: 移民财产转移购付汇核准 — administrative service guide</a> · <a class="source" href="https://www.safe.gov.cn/tianjin/2026/0319/3018.html">SAFE Tianjin: 个人财产转移购付汇业务问答（七）</a></td></tr>
+<tr><td>Mainland inheritance</td><td>Inheritance transfer via decedent’s former-hukou SAFE branch</td><td>Inheritance instrument, title, identity, tax documents</td><td><a class="source" href="https://www.safe.gov.cn/heilongjiang/file/file/20240816/68da25ab4a964a20a04d7b3aff7dae6a.doc">SAFE Heilongjiang: 继承财产转移购付汇核准 — administrative service guide</a> · <a class="source" href="https://www.safe.gov.cn/tianjin/2026/0319/3018.html">SAFE Tianjin: 个人财产转移购付汇业务问答（七）</a></td></tr>
+<tr><td>FIE dividend</td><td>Corporate distribution + withholding + bank review</td><td>Profit resolution, withholding, registration documents</td><td><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c102416/c5252107/content.html">MOF / STA policy library: 财政部 税务总局公告2026年第27号 — foreign-individual dividends</a></td></tr>
+<tr><td>Genuine trade/e-commerce</td><td>Compliant trade settlement account</td><td>Registration, contracts, logistics/transaction evidence</td><td><a class="source" href="https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf">SAFE Xiamen: 个人外汇业务服务小贴士</a> · <a class="source" href="https://www.safe.gov.cn/tianjin/2024/0430/2464.html">SAFE: 个人外汇管理办法实施细则 (amended consolidated text)</a></td></tr>
+<tr><td>Small travel cash need</td><td>Overseas ATM or controlled cash carry</td><td>Card/permit/declaration records</td><td><a class="source" href="https://www.safe.gov.cn/en/2017/1230/1397.html">SAFE: Regulating large-sum overseas cash withdrawals with bank cards, Huifa [2017] 29</a> · <a class="source" href="http://english.customs.gov.cn/statics/88707c1e-aa4e-40ca-a968-bdbdbb565e4f.html">General Administration of Customs China: Customs Clearance Guide for International Passengers</a> · <a class="source" href="https://www.cbp.gov/travel/international-visitors/money-monetary-instruments">US Customs and Border Protection: Money and Other Monetary Instruments</a></td></tr>
+</tbody>
+</table>
 </div>
+</section>
+<section aria-labelledby="numbers-title">
+  <h2 id="numbers-title">Key numbers and corrections</h2>
+  <div class="card-grid"><article class="card"><h3>USD 50,000</h3><p>Facilitation quota, not a universal outbound cap</p><p class="small"><a class="source" href="https://www.safe.gov.cn/tianjin/2024/0430/2464.html">SAFE: 个人外汇管理办法实施细则 (amended consolidated text)</a> · <a class="source" href="https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf">SAFE Xiamen: 个人外汇业务服务小贴士</a></p></article><article class="card"><h3>USD 132,900</h3><p>2026 FEIE maximum; earned income and eligibility tests apply</p><p class="small"><a class="source" href="https://www.irs.gov/instructions/i2555">IRS: Instructions for Form 2555 (2026)</a></p></article><article class="card"><h3>USD 10,000</h3><p>FBAR aggregate account-value trigger, not a transfer-size trigger</p><p class="small"><a class="source" href="https://www.fincen.gov/report-foreign-bank-and-financial-accounts">FinCEN: Report Foreign Bank and Financial Accounts</a></p></article><article class="card"><h3>CNY 100,000</h3><p>Overseas card cash withdrawal cap per person per calendar year</p><p class="small"><a class="source" href="https://www.safe.gov.cn/en/2017/1230/1397.html">SAFE: Regulating large-sum overseas cash withdrawals with bank cards, Huifa [2017] 29</a></p></article><article class="card"><h3>20%</h3><p>PRC IIT on foreign-individual FIE dividends from 2026-09-01</p><p class="small"><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c102416/c5252107/content.html">MOF / STA policy library: 财政部 税务总局公告2026年第27号 — foreign-individual dividends</a></p></article><article class="card"><h3>Blank</h3><p>Unverified all-in USD totals are intentionally not guessed</p><p class="small"><a class="source" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf">Bank of China: Personal customer services: personal finance, effective 2025-11-11</a> · <a class="source" href="https://wise.com/us/pricing/send-money?source=CNY&amp;target=USD&amp;payInMethod=BANK_TRANSFER&amp;payOutMethod=BANK_TRANSFER&amp;sourceAmount=66538">Wise: Fees for sending money</a></p></article></div>
+</section>
+<section aria-labelledby="categories-title">
+  <h2 id="categories-title">Category subpages</h2>
+  <div class="card-grid"><article class="card"><h3><a href="category-bank.html">Bank channels</a></h3><p class="big">6 <small>methods</small></p><p>Regulated bank conversion/remittance and draft options.</p></article><article class="card"><h3><a href="category-digital.html">Digital operators</a></h3><p class="big">7 <small>methods</small></p><p>Wise, SkyRemit, WU and unverified app routes.</p></article><article class="card"><h3><a href="category-special.html">Property &amp; status routes</a></h3><p class="big">4 <small>methods</small></p><p>Property sale, migration, inheritance and dividends.</p></article><article class="card"><h3><a href="category-business.html">Business &amp; RMB routes</a></h3><p class="big">2 <small>methods</small></p><p>Genuine trade and current-account RMB settlement.</p></article><article class="card"><h3><a href="category-cash-cards.html">Cash &amp; cards</a></h3><p class="big">2 <small>methods</small></p><p>ATM and cash carrying, with caps and declarations.</p></article><article class="card"><h3><a href="category-investments.html">Investment/support channels</a></h3><p class="big">3 <small>methods</small></p><p>Account witness, WMC and QDII; mostly not free disposal routes.</p></article><article class="card"><h3><a href="category-prohibited.html">Excluded workarounds</a></h3><p class="big">4 <small>methods</small></p><p>Underground, crypto, fake trade and quota borrowing risks.</p></article></div>
+</section>
+<section aria-labelledby="summary-title">
+  <h2 id="summary-title">Executive summary</h2>
+  <p><a href="EXECUTIVE_SUMMARY.md">Read the full executive summary</a> or use the dashboard sections below.</p>
+  <ol class="plain-list">
+    <li><strong>Costs:</strong> BOC publishes TT/draft commission 0.1%, min CNY 50/max CNY 260, plus cable CNY 150/80; overseas charges actual. No customer-specific FX/all-in USD quote was verified. <a class="source" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf">Bank of China: Personal customer services: personal finance, effective 2025-11-11</a></li>
+    <li><strong>Tax:</strong> US citizens generally report worldwide income; CNY disposition can produce IRC §988 currency gain/loss. Compare eligible FTC/FEIE without double benefit. <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS: International individual tax matters FAQ</a> · <a class="source" href="https://www.govinfo.gov/content/pkg/USCODE-2024-title26/pdf/USCODE-2024-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf">US Code / GovInfo: 26 USC 988 (2024 edition)</a> · <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit">IRS: Foreign Tax Credit</a> · <a class="source" href="https://www.irs.gov/instructions/i2555">IRS: Instructions for Form 2555 (2026)</a></li>
+    <li><strong>Reporting:</strong> FBAR, Form 8938 and Form 3520 have different triggers; reporting is not a transfer tax. <a class="source" href="https://www.fincen.gov/report-foreign-bank-and-financial-accounts">FinCEN: Report Foreign Bank and Financial Accounts</a> · <a class="source" href="https://www.irs.gov/instructions/i8938">IRS: Instructions for Form 8938 (11/2021, continuous use)</a> · <a class="source" href="https://www.irs.gov/instructions/i3520">IRS: Instructions for Form 3520 (12/2025, continuous use)</a></li>
+    <li><strong>Excluded:</strong> underground matchers, borrowed quotas, fake invoices and mainland crypto exchange workarounds are not lawful planning options. <a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">CFETS / SAFE regulatory translation: Regulations of the PRC on Foreign Exchange Administration, State Council Decree 532</a> · <a class="source" href="https://www.pbc.gov.cn/tiaofasi/144941/3581332/2026020619591971323/index.html">PBOC and seven authorities: 银发〔2026〕42号 — virtual-currency and related risks</a></li>
+  </ol>
+</section>
+<section class="callout warn" aria-labelledby="flags-title">
+  <h2 id="flags-title">Flagged for Review</h2>
+  <p>Unverified values are blank, not zero. The flag register covers FX/all-in quotes, personal tax, operator limits, local property tax, migration staging, dividend transition, future ATM tariffs and professional costs.</p>
+  <p><a href="flagged.html">Open the flag register</a> · <a href="audit.html">Open the line-by-line audit</a></p>
+</section>
 
+</main>
 <footer class="site-footer">
   <div class="inner">
-    <div>
-      <div class="brand" style="text-decoration:none; color:var(--ink);"><span class="mark">C4</span> China4</div>
-      <p class="small">Collect, organize, and analyze options for moving money out of China. Built from official sources only; unverified items are flagged.</p>
-    </div>
-    <div>
-      <p class="small">Maintained on GitHub: <a href="https://github.com/sassnarep3-star/China4" style="color:var(--accent);">sassnarep3-star/China4</a></p>
-      <p class="small">Last updated: 2026-11-07 &middot; GitHub Pages site</p>
-    </div>
+    <p>Research date 2026-11-08. Not legal or tax advice; confirm current bank/operator terms and personal tax facts.</p>
+    <p><a href="https://github.com/sassnarep3-star/China4">GitHub repository</a> · <a href="https://sassnarep3-star.github.io/China4/">Live GitHub Pages site</a> · <a href="costs.csv">Download complete cost CSV</a></p>
   </div>
 </footer>
-
 </body>
 </html>

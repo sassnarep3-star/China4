@@ -3,190 +3,71 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>US Tax Obligations — China4
-</title>
+<title>Tax and reporting obligations — China4</title>
+<meta name="description" content="Lawful CNY-to-USD research dashboard for US citizens: source-matched routes, costs, tax, reporting and flags.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to main content</a>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="index.html"><span class="mark">C4</span> China4</a>
-    <nav>
-      <a href="index.html">Dashboard</a>
-      <a href="methods.html">Conversion Methods</a>
-      <a href="penalties.html">Penalty Breakdown</a>
-      <a class="active" href="taxes.html">US Tax Obligations</a>
-      <a href="flagged.html">Flagged for Review</a>
-      <a href="sources.html">Sources</a>
-    </nav>
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">C4</span> China4</a>
+    <nav aria-label="Primary navigation"><a href="index.html">Dashboard</a>
+<a href="methods.html">Methods</a>
+<a href="costs.html">Cost tables</a>
+<a href="procedures.html">Procedures</a>
+<a href="taxes.html" aria-current="page">Tax &amp; reporting</a>
+<a href="penalties.html">Penalties</a>
+<a href="sources.html">Sources</a>
+<a href="flagged.html">Flagged for Review</a>
+<a href="audit.html">Audit</a>
+<a href="verification.html">Verification</a></nav>
   </div>
 </header>
+<main id="main" class="container">
+<h1>Tax and reporting obligations</h1>
+<p class="page-sub">Federal US analysis plus China tax rules; not a personalized tax opinion.</p>
 
-<div class="container">
-  <h1 class="page-title">US tax obligations for money coming out of China</h1>
-  <p class="page-sub">What a US citizen must report to the US Treasury and IRS when money moves from a Chinese bank account to the US. The act of moving your own money is <strong>not taxable</strong> — but failing to report it can be very expensive.</p>
-
-  <div class="callout info">
-    <h3>&#128680; The most important fact first</h3>
-    <p>US citizens and resident aliens are taxed on <strong>worldwide income</strong>, no matter where they live. However, <strong>transferring money you already own — including after-tax money from a Chinese bank account — is not a taxable event</strong>. There is no US &ldquo;remittance tax&rdquo; on bringing your own funds into the United States. The US obligations below are <em>information reporting</em>: FBAR, FATCA (Form 8938), and Form 3520 (for gifts). Miss them, and the penalties apply even if no tax is owed.</p>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128463; 1. FBAR — Report of Foreign Bank and Financial Accounts (FinCEN Form 114)</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:22%">Item</th>
-          <th style="width:34%">Rule</th>
-          <th style="width:22%">Penalty if missed</th>
-          <th style="width:22%">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Who must file</td>
-          <td>US persons (citizens, green card holders, resident aliens, entities) with a financial interest in, or signature authority over, foreign financial accounts</td>
-          <td rowspan="3">Non-willful: up to ~US$16,536 per violation (inflation-adjusted, 2026). Willful: greater of ~US$165,353 or 50% of the account balance per violation</td>
-          <td rowspan="3"><a class="source" href="https://www.fincen.gov/how-do-i-file-fbar">FinCEN — How do I file the FBAR?</a></td>
-        </tr>
-        <tr>
-          <td>Threshold</td>
-          <td>Aggregate value of <em>all</em> foreign accounts exceeds US$10,000 at any time during the calendar year (not $10,000 per account; not just year-end)</td>
-        </tr>
-        <tr>
-          <td>Where / when</td>
-          <td>Filed electronically via FinCEN BSA E-Filing (bsaefiling.fincen.gov) — not with the IRS tax return. Due April 15, automatic extension to October 15</td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="small">If your Chinese account held more than US$10,000 (aggregate across all your foreign accounts) at any point, you must file an FBAR — even if you never move the money out of China.</p>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128463; 2. FATCA — Form 8938, Statement of Specified Foreign Financial Assets</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:22%">Item</th>
-          <th style="width:34%">Rule</th>
-          <th style="width:22%">Penalty if missed</th>
-          <th style="width:22%">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Who must file</td>
-          <td>Specified individuals required to file a US income tax return, holding specified foreign financial assets above the threshold</td>
-          <td rowspan="3">US$10,000 per failure, plus up to US$10,000 per 30 days after IRS notice (capped at US$50,000); statute of limitations extended</td>
-          <td rowspan="3"><a class="source" href="https://www.irs.gov/businesses/corporations/fatca-information-for-individuals">IRS — FATCA information for individuals</a> &middot; <a class="source" href="https://www.irs.gov/publications/p54">IRS Pub 54</a></td>
-        </tr>
-        <tr>
-          <td>Thresholds (2025)</td>
-          <td>US residents: single &gt;US$50,000 year-end or &gt;US$75,000 any time; MFJ &gt;US$100,000 / &gt;US$150,000. Living abroad: single &gt;US$200,000 / &gt;US$300,000; MFJ &gt;US$400,000 / &gt;US$600,000</td>
-        </tr>
-        <tr>
-          <td>Where / when</td>
-          <td>Attached to your Form 1040 tax return (same deadline, incl. extensions). Filing Form 8938 does <em>not</em> replace the FBAR — you may need both</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128463; 3. Form 3520 — Foreign gifts and foreign trusts</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:22%">Item</th>
-          <th style="width:34%">Rule</th>
-          <th style="width:22%">Penalty if missed</th>
-          <th style="width:22%">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Who must file (Part IV)</td>
-          <td>US person receiving gifts/bequests &gt;US$100,000 in a year from foreign individuals or foreign estates (aggregate; gifts from related donors, e.g. both parents, are combined). Gifts from foreign corporations/partnerships: lower inflation-adjusted threshold (US$20,573 for 2026)</td>
-          <td rowspan="2">5% of the gift amount per month late, capped at 25%. Applies even if the gift itself is not taxable</td>
-          <td rowspan="2"><a class="source" href="https://www.irs.gov/pub/irs-pdf/i3520.pdf">IRS — Form 3520 instructions (PDF)</a></td>
-        </tr>
-        <tr>
-          <td>Tax on the gift</td>
-          <td>The gift itself is <strong>not US taxable income</strong> to the recipient. Only the reporting is mandatory.</td>
-        </tr>
-        <tr>
-          <td>Foreign trusts (Parts I&ndash;III)</td>
-          <td>Any transaction with a foreign trust — no dollar threshold</td>
-          <td>Greater of US$10,000 or 35% of the gross reportable amount</td>
-          <td><a class="source" href="https://www.irs.gov/pub/irs-pdf/i3520.pdf">IRS — Form 3520 instructions (PDF)</a></td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="small">If your parents in China send you money: if it&rsquo;s a genuine gift from parent(s) and the annual total exceeds US$100,000 (both parents combined), file Form 3520. If it&rsquo;s a documented loan with a note and interest, it is not a gift — keep the paperwork.</p>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128463; 4. If the money is income: foreign tax credit and exclusion</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:22%">Item</th>
-          <th style="width:34%">Rule</th>
-          <th style="width:22%">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Foreign Tax Credit (Form 1116)</td>
-          <td>If you paid Chinese individual income tax (3&ndash;45% on comprehensive income) on the money, you can credit it against US tax on the same income, avoiding double taxation. Limited to the US tax attributable to that foreign income.</td>
-          <td><a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS FAQ — international taxpayers</a></td>
-        </tr>
-        <tr>
-          <td>Foreign Earned Income Exclusion (Form 2555)</td>
-          <td>If you lived abroad and qualify, you may exclude up to US$130,000 (2025) of foreign earned income from US taxable income</td>
-          <td><a class="source" href="https://www.irs.gov/publications/p54">IRS Pub 54</a></td>
-        </tr>
-        <tr>
-          <td>US&ndash;China tax treaty (1984, in force 1987)</td>
-          <td>Caps Chinese withholding at 10% on dividends/interest/royalties; contains a savings clause preserving US taxation of its citizens. Primary double-tax relief for most people is the foreign tax credit, not the treaty.</td>
-          <td><a class="source" href="https://www.irs.gov/businesses/international-businesses/china-tax-treaty-documents">IRS — China tax treaty documents (1984 PDF)</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128204; Quick checklist: do I need to file anything?</h2>
-    <ul>
-      <li>Chinese account balance (with all foreign accounts) ever over US$10,000? &rarr; <strong>File FBAR (FinCEN Form 114)</strong>.</li>
-      <td></td>
-      <li>Specified foreign financial assets above FATCA thresholds? &rarr; <strong>File Form 8938 with your 1040</strong>.</li>
-      <li>Received a gift over US$100,000 from a foreign person (e.g., parents in China) in one year? &rarr; <strong>File Form 3520</strong>.</li>
-      <li>Money is your own after-tax savings being moved to a US account? &rarr; <strong>No US tax on the transfer itself</strong> — but the account still counts toward FBAR/8938 thresholds.</li>
-      <li>Money is China-source income you never reported to the IRS? &rarr; <strong>Report it; claim foreign tax credit for Chinese tax paid.</strong> Consider the IRS Streamlined Filing Compliance Procedures if you were non-willfully late.</li>
-    </ul>
-  </div>
-
-  <div class="callout bad">
-    <h3>&#128681; What not to do</h3>
-    <p>Do not try to hide the account: FBAR and Form 8938 penalties (up to ~US$16,536 non-willful per violation; willful penalties up to the greater of ~US$165,353 or 50% of the account balance) apply regardless of whether any tax is owed. If you are behind on filings, the IRS Streamlined Filing Compliance Procedures (non-willful) and Delinquent FBAR Submission Procedures can bring you into compliance with reduced or no penalties — act before the IRS contacts you.</p>
-  </div>
-
-  <div class="sources"><b>Sources (official):</b> FinCEN FBAR filing page (fincen.gov); IRS FATCA page, Form 3520 instructions (PDF), IRS Pub 54 (Tax Guide for US Citizens and Resident Aliens Abroad), IRS international-taxpayers FAQ, IRS China tax treaty documents (1984). Secondary/background material is marked where used. Full URLs: <a href="sources.html">Sources page</a>.</div>
+<section class="callout info"><h2>Core distinction</h2><p>Moving previously reported principal is not a second income item, but underlying income/gain and CNY disposition can still matter. Reporting forms are not transfer taxes. Numeric personal tax remains blank without residence, income, basis, treaty and state facts.</p><p class="small"><a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS: International individual tax matters FAQ</a> · <a class="source" href="https://www.govinfo.gov/content/pkg/USCODE-2024-title26/pdf/USCODE-2024-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf">US Code / GovInfo: 26 USC 988 (2024 edition)</a> · <a class="source" href="https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html">State Taxation Administration: 中华人民共和国个人所得税法 (2018 amendment)</a></p></section>
+<h2>China / US tax matrix</h2>
+<div class="table-scroll" role="region" aria-label="Tax treatment by item" tabindex="0">
+<table class="data require-source">
+<caption>Tax treatment by item</caption>
+<thead><tr><th scope="col">Item</th><th scope="col">China rule</th><th scope="col">US rule</th><th scope="col">Personal tax USD</th><th scope="col">Official sources</th></tr></thead>
+<tbody>
+<tr><td>Previously reported principal</td><td>No new income merely because principal changes location; confirm the underlying source and any currency gain.</td><td>Moving one&#x27;s own principal is not a second income item; currency disposition can still matter under section 988.</td><td><span class="blank" role="img" aria-label="Personal tax USD: unverified, left blank"></span></td><td><a class="source" href="https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html">State Taxation Administration: 中华人民共和国个人所得税法 (2018 amendment)</a> · <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS: International individual tax matters FAQ</a> · <a class="source" href="https://www.govinfo.gov/content/pkg/USCODE-2024-title26/pdf/USCODE-2024-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf">US Code / GovInfo: 26 USC 988 (2024 edition)</a></td></tr>
+<tr><td>China employment / service income</td><td>Residence, income category, treaty and withholding determine IIT; comprehensive-income rates are 3%–45%.</td><td>Worldwide income; compare eligible FTC and FEIE, without double benefit. FEIE does not remove self-employment tax.</td><td><span class="blank" role="img" aria-label="Personal tax USD: unverified, left blank"></span></td><td><a class="source" href="https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html">State Taxation Administration: 中华人民共和国个人所得税法 (2018 amendment)</a> · <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit">IRS: Foreign Tax Credit</a> · <a class="source" href="https://www.irs.gov/instructions/i2555">IRS: Instructions for Form 2555 (2026)</a> · <a class="source" href="https://www.irs.gov/pub/irs-trty/china.pdf">IRS: US–PRC Income Tax Convention and Protocols</a></td></tr>
+<tr><td>Bank savings-deposit interest</td><td>Temporary PRC IIT exemption for interest accrued from 2008-10-09 under the cited notice.</td><td>Generally reportable interest for a US citizen; China exemption does not create a US exemption or a foreign tax credit.</td><td><span class="blank" role="img" aria-label="Personal tax USD: unverified, left blank"></span></td><td><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c102416/c5203286/content.html">STA policy library: 财税〔2008〕132号 — savings-deposit interest</a> · <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS: International individual tax matters FAQ</a> · <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit">IRS: Foreign Tax Credit</a></td></tr>
+<tr><td>FIE dividends paid to a foreign individual</td><td>20% under announcement 2026 No. 27 from 2026-09-01, subject to any separately established treaty entitlement; payer withholding.</td><td>Generally reportable dividend income; FTC limitations and treaty residence require analysis. No assumed zero US tax.</td><td><span class="blank" role="img" aria-label="Personal tax USD: unverified, left blank"></span></td><td><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c102416/c5252107/content.html">MOF / STA policy library: 财政部 税务总局公告2026年第27号 — foreign-individual dividends</a> · <a class="source" href="https://www.irs.gov/pub/irs-trty/china.pdf">IRS: US–PRC Income Tax Convention and Protocols</a> · <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit">IRS: Foreign Tax Credit</a></td></tr>
+<tr><td>Mainland home sale</td><td>Ordinarily net gain after basis/reasonable expenses; cited guidance includes conditional five-year self-use and sole-family-home relief. Local assessment and other transaction taxes require a current local calculation.</td><td>Reportable sale/gain analysis, basis, possible exclusion eligibility and separate currency effects; do not apply China relief to the US return.</td><td><span class="blank" role="img" aria-label="Personal tax USD: unverified, left blank"></span></td><td><a class="source" href="https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html">State Taxation Administration: 中华人民共和国个人所得税法 (2018 amendment)</a> · <a class="source" href="https://www.chinatax.gov.cn/chinatax/n810341/n810765/n812183/200607/c1197073/content.html">STA: 国税发〔2006〕108号 — housing-transfer IIT</a> · <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS: International individual tax matters FAQ</a> · <a class="source" href="https://www.govinfo.gov/content/pkg/USCODE-2024-title26/pdf/USCODE-2024-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf">US Code / GovInfo: 26 USC 988 (2024 edition)</a></td></tr>
+<tr><td>CNY conversion / disposition</td><td>No universal transfer-percentage tax established; currency conversion is not a substitute for settling tax on the underlying income or gain.</td><td>Section 988 can produce ordinary currency gain/loss. Personal-transaction gain recognition exception ceases when gain exceeds USD 200; investment/business facts matter.</td><td><span class="blank" role="img" aria-label="Personal tax USD: unverified, left blank"></span></td><td><a class="source" href="https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html">State Taxation Administration: 中华人民共和国个人所得税法 (2018 amendment)</a> · <a class="source" href="https://www.govinfo.gov/content/pkg/USCODE-2024-title26/pdf/USCODE-2024-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf">US Code / GovInfo: 26 USC 988 (2024 edition)</a></td></tr>
+<tr><td>Inheritance / genuine gift</td><td>Transfer-specific tax and evidence analysis; no blanket China inheritance-tax assertion is made.</td><td>Ordinary foreign gift/bequest reporting is distinct from income; foreign-trust distributions and covered-expatriate transfers can have different tax/reporting consequences.</td><td><span class="blank" role="img" aria-label="Personal tax USD: unverified, left blank"></span></td><td><a class="source" href="https://www.safe.gov.cn/heilongjiang/file/file/20240816/68da25ab4a964a20a04d7b3aff7dae6a.doc">SAFE Heilongjiang: 继承财产转移购付汇核准 — administrative service guide</a> · <a class="source" href="https://www.irs.gov/instructions/i3520">IRS: Instructions for Form 3520 (12/2025, continuous use)</a> · <a class="source" href="https://www.irs.gov/businesses/gifts-from-foreign-person">IRS: Gifts from foreign person</a></td></tr>
+<tr><td>Genuine business / trade proceeds</td><td>Actual business/income category and registrations determine tax; personal savings cannot be relabeled as trade.</td><td>Worldwide business income and entity/information reporting may apply; no assumed tax-free remittance.</td><td><span class="blank" role="img" aria-label="Personal tax USD: unverified, left blank"></span></td><td><a class="source" href="https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html">State Taxation Administration: 中华人民共和国个人所得税法 (2018 amendment)</a> · <a class="source" href="https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf">SAFE Xiamen: 个人外汇业务服务小贴士</a> · <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS: International individual tax matters FAQ</a></td></tr>
+</tbody>
+</table>
 </div>
+<h2>Reporting forms and triggers</h2>
+<div class="table-scroll" role="region" aria-label="US reporting and border declarations" tabindex="0">
+<table class="data require-source">
+<caption>US reporting and border declarations</caption>
+<thead><tr><th scope="col">Form / declaration</th><th scope="col">Trigger</th><th scope="col">Filing</th><th scope="col">Penalty / consequence</th><th scope="col">Official sources</th></tr></thead>
+<tbody>
+<tr><td>FinCEN Form 114 (FBAR)</td><td>US person with financial interest/signature authority; aggregate foreign financial accounts &gt;USD 10,000 at any time in the calendar year.</td><td>BSA E-Filing; generally April 15 with automatic extension to October 15 under FinCEN&#x27;s due-date guidance.</td><td>Current adjusted maximum USD 16,536 for non-willful failure, per report under Bittner (not per account); willful statutory framework uses the greater of adjusted USD 165,353 or 50% of the relevant account balance, subject to exceptions and case law. Not automatic.</td><td><a class="source" href="https://www.fincen.gov/report-foreign-bank-and-financial-accounts">FinCEN: Report Foreign Bank and Financial Accounts</a> · <a class="source" href="https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821">eCFR / FinCEN: 31 CFR 1010.821, current as of 2026-11-05</a> · <a class="source" href="https://www.supremecourt.gov/opinions/22pdf/21-1195_h3ci.pdf">Supreme Court of the United States: Bittner v. United States, No. 21-1195 (Feb. 28, 2023)</a> · <a class="source" href="https://www.fincen.gov/system/files/shared/FBAR_Due_Date_Clarification_PD02-02-2018.pdf">FinCEN: FBAR Due Date Clarification PD 02-02-2018</a></td></tr>
+<tr><td>Form 8938</td><td>Specified individual with an income-tax return filing requirement and assets above the applicable strict thresholds: US resident single/separate &gt;50,000 year-end or &gt;75,000 anytime; joint &gt;100,000/&gt;150,000; qualifying abroad single/separate &gt;200,000/&gt;300,000; joint &gt;400,000/&gt;600,000.</td><td>Attach to the annual income-tax return, including extensions. Does not replace FBAR.</td><td>USD 10,000 initial failure; after IRS notice and 90 days, USD 10,000 per additional 30-day period/part-period, additional maximum USD 50,000; other consequences possible.</td><td><a class="source" href="https://www.irs.gov/instructions/i8938">IRS: Instructions for Form 8938 (11/2021, continuous use)</a></td></tr>
+<tr><td>Form 3520 Part IV</td><td>Foreign individual/estate gifts/bequests &gt;USD 100,000 aggregate; foreign corporation/partnership purported gifts &gt;USD 20,573 for 2026; related-party aggregation applies. Foreign trusts use other parts.</td><td>File separately; generally return due date, qualifying abroad June 15, extension no later than October 15 for calendar-year filers.</td><td>Foreign-gift reporting failure: 5% per month, maximum 25%, reasonable-cause exception. Trust penalties differ; covered-expatriate gifts may incur section 2801 tax.</td><td><a class="source" href="https://www.irs.gov/instructions/i3520">IRS: Instructions for Form 3520 (12/2025, continuous use)</a> · <a class="source" href="https://www.irs.gov/businesses/gifts-from-foreign-person">IRS: Gifts from foreign person</a></td></tr>
+<tr><td>FinCEN Form 105</td><td>Currency/covered monetary instruments &gt;USD 10,000 equivalent entering/leaving the US at one time; family/group amounts aggregate.</td><td>CBP-recommended electronic filing or paper process at the border. It is a declaration, not a tax.</td><td>Forfeiture/seizure and possible civil/criminal consequences for non-reporting or false information; not a percentage transfer tax.</td><td><a class="source" href="https://www.cbp.gov/travel/international-visitors/money-monetary-instruments">US Customs and Border Protection: Money and Other Monetary Instruments</a></td></tr>
+<tr><td>Forms 1116 / 2555</td><td>Not account reports: elective federal income-tax relief if the actual income and taxpayer qualify.</td><td>With the federal return; retain foreign-tax, income, travel and tax-home records.</td><td>No standalone transfer penalty; incorrect claims can change tax, interest and accuracy-related exposure.</td><td><a class="source" href="https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit">IRS: Foreign Tax Credit</a> · <a class="source" href="https://www.irs.gov/instructions/i2555">IRS: Instructions for Form 2555 (2026)</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2>Legitimate ways to reduce cost and risk</h2><ul><li>Obtain simultaneous quotes for the same net USD destination amount, with identical fee allocation (SHA/OUR), expected credited amount, validity time and receiving-bank charges. Do not rank providers from a fee alone.</li><li>Use the actual lawful source route. Repeated salary documentation at the same bank can reduce preparation friction; eligible Wise/SkyRemit may reduce branch visits, but neither is proven cheapest without quotes.</li><li>Reconcile principal, interest and gains before conversion. Claim only eligible FTC/FEIE and treaty benefits; keep acquisition-date USD basis records for CNY lots.</li><li>For a real property sale, substantiate basis and reasonable expenses and test the actual five-year/sole-family-home relief. Do not create a sale or recharacterize income to obtain relief.</li><li>Avoid unnecessary double conversion and cash routes for large balances. A capped wire commission can make consolidated lawful transfers efficient, but do not split to evade controls.</li><li>File FBAR/8938/3520/105 correctly when triggered. Reporting compliance avoids penalties; it is not a tax deduction or a way to erase underlying tax.</li><li>Have a US–China adviser model federal, state, currency-gain, treaty-residence and any entity-reporting effects before a large distribution or sale.</li></ul>
 
+</main>
 <footer class="site-footer">
   <div class="inner">
-    <div>
-      <div class="brand" style="text-decoration:none; color:var(--ink);"><span class="mark">C4</span> China4</div>
-      <p class="small">US tax obligations &middot; FBAR &middot; FATCA Form 8938 &middot; Form 3520</p>
-    </div>
-    <div>
-      <p class="small"><a href="index.html" style="color:var(--accent);">&#8592; Back to Dashboard</a></p>
-    </div>
+    <p>Research date 2026-11-08. Not legal or tax advice; confirm current bank/operator terms and personal tax facts.</p>
+    <p><a href="https://github.com/sassnarep3-star/China4">GitHub repository</a> · <a href="https://sassnarep3-star.github.io/China4/">Live GitHub Pages site</a> · <a href="costs.csv">Download complete cost CSV</a></p>
   </div>
 </footer>
-
 </body>
 </html>

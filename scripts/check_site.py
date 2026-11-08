@@ -99,7 +99,7 @@ class PageParser(HTMLParser):
             self._row = {"source": False, "amount": None}
         if tag == "th" and self._table_stack and not a.get("scope"):
             self._th_scope_missing += 1
-        if tag == "td" and self._row is not None and "data-amount" in a:
+        if self._row is not None and "data-amount" in a:
             try:
                 self._row["amount"] = int(a["data-amount"])
             except ValueError:

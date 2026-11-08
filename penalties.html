@@ -3,214 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Conversion Penalty Breakdown — CNY to USD</title>
+<title>Penalty breakdown — China4</title>
+<meta name="description" content="Lawful CNY-to-USD research dashboard for US citizens: source-matched routes, costs, tax, reporting and flags.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to main content</a>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="index.html"><span class="mark">C4</span> China4</a>
-    <nav>
-      <a href="index.html">Dashboard</a>
-      <a href="methods.html">Conversion Methods</a>
-      <a class="active" href="penalties.html">Penalty Breakdown</a>
-      <a href="taxes.html">US Tax Obligations</a>
-      <a href="flagged.html">Flagged for Review</a>
-      <a href="sources.html">Sources</a>
-    </nav>
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">C4</span> China4</a>
+    <nav aria-label="Primary navigation"><a href="index.html">Dashboard</a>
+<a href="methods.html">Methods</a>
+<a href="costs.html">Cost tables</a>
+<a href="procedures.html">Procedures</a>
+<a href="taxes.html">Tax &amp; reporting</a>
+<a href="penalties.html" aria-current="page">Penalties</a>
+<a href="sources.html">Sources</a>
+<a href="flagged.html">Flagged for Review</a>
+<a href="audit.html">Audit</a>
+<a href="verification.html">Verification</a></nav>
   </div>
 </header>
+<main id="main" class="container">
+<h1>Penalty breakdown</h1>
+<p class="page-sub">Separate transfer fees/FX friction from actual taxes and reporting penalties.</p>
 
-<div class="container">
-  <h1 class="page-title">The conversion penalty, broken down</h1>
-  <p class="page-sub">What it actually costs to move CNY to USD, channel by channel. China does not charge a &ldquo;conversion tax&rdquo; on legal conversions — the penalties come from (a) bank FX spreads and fees, (b) Chinese fines if you use illegal channels, and (c) US reporting penalties if you skip FBAR/Form 8938/Form 3520. Blank cells = not confirmed by an official source.</p>
-
-  <div class="section">
-    <h2 class="section-title">&#128203; A. Legal channel costs (bank wire within quota)</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:26%">Cost item</th>
-          <th style="width:20%">Amount</th>
-          <th style="width:30%">Notes</th>
-          <th style="width:24%">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Exchange-rate spread (bank markup over mid-market)</td>
-          <td><span class="blank">Not verified — flagged</span></td>
-          <td>Chinese banks publish their own buy/sell rates; the spread over the PBOC mid-market rate is not published in an official source we could confirm. Typically 1&ndash;3% in practice (<span class="blank">unverified</span>).</td>
-          <td><a class="source" href="https://www.pbc.gov.cn/english/130437/index.html">PBOC (exchange rates page)</a> &middot; <span class="blank">bank spread: unverified</span></td>
-        </tr>
-        <tr>
-          <td>International wire (SWIFT) fee</td>
-          <td><span class="blank">Not verified — flagged</span></td>
-          <td>Chinese banks commonly charge roughly US$15&ndash;50 plus intermediary fees; not confirmed from an official bank tariff page.</td>
-          <td><span class="blank">bank tariff pages: unverified</span></td>
-        </tr>
-        <tr>
-          <td>Intermediary / correspondent bank fee (US side)</td>
-          <td><span class="blank">Not verified — flagged</span></td>
-          <td>Deducted by intermediary banks in transit; varies by bank.</td>
-          <td><span class="blank">unverified</span></td>
-        </tr>
-        <tr>
-          <td>China tax on the conversion itself</td>
-          <td>None</td>
-          <td>Converting CNY to USD within the legal quota is not a taxable event in China. Tax only arises if the underlying money is untaxed income (China IIT 3&ndash;45%).</td>
-          <td><a class="source" href="http://www.fdi.gov.cn/1800000121_39_3577_0_7.html">SAFE Detailed Rules</a> &middot; <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS (worldwide income)</a></td>
-        </tr>
-        <tr>
-          <td>US tax on moving your own money</td>
-<td>None</td>
-<td>Transferring your own already-taxed funds to a US account is not a US taxable event. It is a reportable event (FBAR/8938), not a taxable one.</td>
-<td><a class="source" href="https://www.irs.gov/publications/p54">IRS Pub 54</a> &middot; <a class="source" href="https://www.fincen.gov/how-do-i-file-fbar">FinCEN FBAR</a></td>
-</tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#9888; B. China-side penalties for illegal channels</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:26%">Violation</th>
-          <th style="width:34%">Penalty</th>
-          <th style="width:16%">Legal basis</th>
-          <th style="width:24%">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Illegally buying/selling foreign exchange (underground changers, 黑庄)</td>
-          <td>Warning + confiscation of illegal gains + fine of 30%&ndash;300% of the amount; criminal liability if a crime is constituted</td>
-          <td>Regulations of the PRC on Foreign Exchange Administration, Art. 45/46</td>
-          <td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">Regulations (ChinaMoney mirror)</a> &middot; <a class="source" href="https://www.safe.gov.cn/en/2018/0829/1452.html">SAFE enforcement cases</a></td>
-        </tr>
-        <tr>
-          <td>Foreign-exchange evasion (moving funds abroad deceitfully)</td>
-          <td>Ordered to repatriate funds; fine of 30%&ndash;500% of the evaded amount; criminal liability if a crime is constituted</td>
-          <td>Regulations, Art. 38/39</td>
-          <td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">Regulations (ChinaMoney mirror)</a></td>
-        </tr>
-        <tr>
-          <td>Carrying foreign currency out of China in violation of customs/FX rules</td>
-          <td>Warning; fine up to 20% of the amount (Customs penalties prevail where applicable)</td>
-          <td>Regulations, Art. 42</td>
-          <td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">Regulations, Art. 42</a></td>
-        </tr>
-        <tr>
-          <td>Individual exceeding the US$50,000 annual quota without documentation</td>
-          <td>Bank cannot process the conversion; must provide evidence of genuine purpose (current account) or SAFE approval (capital account)</td>
-          <td>SAFE Detailed Rules, Art. 2, 10&ndash;12</td>
-          <td><a class="source" href="http://www.fdi.gov.cn/1800000121_39_3577_0_7.html">SAFE Detailed Rules</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128682; C. US reporting penalties (failure to file, not tax on the transfer)</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:20%">Form</th>
-          <th style="width:20%">Trigger</th>
-          <th style="width:30%">Penalty for non-filing</th>
-          <th style="width:30%">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>FBAR (FinCEN Form 114)</td>
-          <td>Aggregate foreign accounts &gt;US$10,000 at any time during the year</td>
-          <td>Non-willful: up to ~US$16,536 per violation (inflation-adjusted; 2026). Willful: greater of ~US$165,353 or 50% of the account balance per violation</td>
-          <td><a class="source" href="https://www.fincen.gov/how-do-i-file-fbar">FinCEN (how to file FBAR)</a></td>
-        </tr>
-        <tr>
-          <td>Form 8938 (FATCA)</td>
-          <td>Specified foreign financial assets above thresholds (US resident single: &gt;US$50,000 year-end / &gt;US$75,000 any time; higher if living abroad or MFJ)</td>
-          <td>US$10,000 per failure, plus up to US$50,000 continued failure after IRS notice</td>
-          <td><a class="source" href="https://www.irs.gov/businesses/corporations/fatca-information-for-individuals">IRS FATCA</a> &middot; <a class="source" href="https://www.irs.gov/publications/p54">IRS Pub 54</a></td>
-        </tr>
-        <tr>
-          <td>Form 3520 (Part IV)</td>
-          <td>Gifts/bequests &gt;US$100,000/yr from foreign individuals or estates (aggregate; related donors combined)</td>
-          <td>5% of the gift per month late, capped at 25%</td>
-          <td><a class="source" href="https://www.irs.gov/pub/irs-pdf/i3520.pdf">IRS Form 3520 instructions (PDF)</a> &middot; <a class="source" href="https://yclcpa.com/en/gift">Form 3520 guide (secondary)</a></td>
-        </tr>
-        <tr>
-          <td>Form 3520 (Parts I&ndash;III, foreign trusts)</td>
-          <td>Transactions with foreign trusts (no minimum threshold)</td>
-          <td>Greater of US$10,000 or 35% of the gross reportable amount</td>
-          <td><a class="source" href="https://www.irs.gov/pub/irs-pdf/i3520.pdf">IRS Form 3520 instructions (PDF)</a></td>
-        </tr>
-        <tr>
-          <td>Underlying foreign income not reported</td>
-          <td>China-source income earned but not declared to IRS</td>
-          <td>Tax owed + accuracy-related penalty (20%, or 40% for undisclosed foreign assets under IRC 6662(j)) + interest</td>
-          <td><a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS FAQ</a> &middot; <a class="source" href="https://www.irs.gov/publications/p54">IRS Pub 54</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128201; D. Worked examples (illustrative; verify rates/fees with your bank)</h2>
-    <p class="small">These assume the money is yours, already taxed in China where applicable, and you file all US reports. They are estimates, not quotes.</p>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:18%">Amount moved</th>
-          <th style="width:22%">Legal route within US$50,000 quota</th>
-          <th style="width:22%">Above quota (documented after-tax salary)</th>
-          <th style="width:38%">Illegal route (underground changer) — for contrast</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>US$10,000</td>
-          <td>Bank FX spread (~1&ndash;3%, unverified) + wire fee (~US$15&ndash;50, unverified). Total cost: unverified, likely well under 1%.</td>
-          <td>Same as within quota.</td>
-          <td>Fine 30%&ndash;300% (US$3,000&ndash;30,000) + confiscation + possible criminal liability. <strong>Worst option.</strong></td>
-        </tr>
-        <tr>
-          <td>US$50,000</td>
-          <td>Bank wire within quota; ID only. Cost: FX spread + wire fee only.</td>
-          <td>Not needed.</td>
-          <td>Fine US$15,000&ndash;US$150,000 + criminal risk.</td>
-        </tr>
-        <tr>
-          <td>US$200,000</td>
-          <td>Not possible in one year under quota; need documentation (e.g., after-tax salary records) or spread across calendar years/family members&rsquo; quotas.</td>
-          <td>Legal if documented as taxed salary. Cost: FX spread + wire fee.</td>
-          <td>Fine US$60,000&ndash;US$600,000 + criminal risk.</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="callout info">
-      <h3>&#128736; Bottom line</h3>
-      <p>The cheapest legal path is a bank wire within the US$50,000 annual quota (cost = bank FX spread + wire fee only; no China tax, no US tax). Above the quota, document after-tax salary/legal source and remit through the bank. The &ldquo;penalty&rdquo; is almost entirely avoidable by staying legal — illegal channels charge 30%&ndash;300% in fines plus criminal risk, and skipping US reporting can cost tens of thousands in penalties on money that owes no US tax at all.</p>
-    </div>
-  </div>
-
-  <div class="sources"><b>All penalty figures above are from official sources except where marked [unverified]:</b> SAFE Detailed Rules; Regulations of the PRC on Foreign Exchange Administration (ChinaMoney mirror); SAFE enforcement releases (safe.gov.cn); FinCEN FBAR guidance (fincen.gov); IRS FATCA, Pub 54, Form 3520 instructions (irs.gov). Bank FX spreads and wire fees are not published in an official source we could confirm and are flagged on the <a href="flagged.html">Flagged for Review</a> page. Full URLs: <a href="sources.html">Sources page</a>.</div>
+<section class="callout warn"><h2>Penalties are not prices</h2><p>Lawful transfer budgeting should include FX friction, published fees, routing/receiving charges, professional preparation and actual tax. Statutory penalties are sanctions for violations or reporting failures, not expected costs of a lawful route.</p></section>
+<h2>China-side sanctions</h2>
+<div class="table-scroll" role="region" aria-label="China FX violation penalties" tabindex="0">
+<table class="data require-source">
+<caption>China FX violation penalties</caption>
+<thead><tr><th scope="col">Violation</th><th scope="col">Penalty framework</th><th scope="col">Distinction</th><th scope="col">Official sources</th></tr></thead>
+<tbody>
+<tr><td>Foreign-exchange evasion</td><td>Repatriation order; ordinarily up to 30% fine; serious cases 30%–100%; possible criminal liability</td><td>Not a transfer fee; depends on violation and seriousness</td><td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">CFETS / SAFE regulatory translation: Regulations of the PRC on Foreign Exchange Administration, State Council Decree 532</a></td></tr>
+<tr><td>Illegal/disguised/illegal FX trading</td><td>Confiscation; ordinarily up to 30%; serious cases 30%–100%; possible criminal liability</td><td>Underground matchers and unauthorized exchange business</td><td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">CFETS / SAFE regulatory translation: Regulations of the PRC on Foreign Exchange Administration, State Council Decree 532</a> · <a class="source" href="https://www.pbc.gov.cn/tiaofasi/144941/3581332/2026020619591971323/index.html">PBOC and seven authorities: 银发〔2026〕42号 — virtual-currency and related risks</a></td></tr>
+<tr><td>False-document FX purchase</td><td>Similar evasion/false-document penalty bands</td><td>Fake invoices or distorted trade documents</td><td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">CFETS / SAFE regulatory translation: Regulations of the PRC on Foreign Exchange Administration, State Council Decree 532</a> · <a class="source" href="https://www.safe.gov.cn/tianjin/2024/0430/2464.html">SAFE: 个人外汇管理办法实施细则 (amended consolidated text)</a></td></tr>
+<tr><td>Cash-export violation</td><td>Warning and up to 20% fine under cited Regulations</td><td>Customs/permit rules are separate from tax</td><td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">CFETS / SAFE regulatory translation: Regulations of the PRC on Foreign Exchange Administration, State Council Decree 532</a> · <a class="source" href="http://english.customs.gov.cn/statics/88707c1e-aa4e-40ca-a968-bdbdbb565e4f.html">General Administration of Customs China: Customs Clearance Guide for International Passengers</a></td></tr>
+</tbody>
+</table>
 </div>
+<h2>US reporting / border consequences</h2>
+<div class="table-scroll" role="region" aria-label="US reporting penalties and consequences" tabindex="0">
+<table class="data require-source">
+<caption>US reporting penalties and consequences</caption>
+<thead><tr><th scope="col">Form / declaration</th><th scope="col">Trigger</th><th scope="col">Penalty / consequence</th><th scope="col">Official sources</th></tr></thead>
+<tbody>
+<tr><td>FinCEN Form 114 (FBAR)</td><td>US person with financial interest/signature authority; aggregate foreign financial accounts &gt;USD 10,000 at any time in the calendar year.</td><td>Current adjusted maximum USD 16,536 for non-willful failure, per report under Bittner (not per account); willful statutory framework uses the greater of adjusted USD 165,353 or 50% of the relevant account balance, subject to exceptions and case law. Not automatic.</td><td><a class="source" href="https://www.fincen.gov/report-foreign-bank-and-financial-accounts">FinCEN: Report Foreign Bank and Financial Accounts</a> · <a class="source" href="https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821">eCFR / FinCEN: 31 CFR 1010.821, current as of 2026-11-05</a> · <a class="source" href="https://www.supremecourt.gov/opinions/22pdf/21-1195_h3ci.pdf">Supreme Court of the United States: Bittner v. United States, No. 21-1195 (Feb. 28, 2023)</a> · <a class="source" href="https://www.fincen.gov/system/files/shared/FBAR_Due_Date_Clarification_PD02-02-2018.pdf">FinCEN: FBAR Due Date Clarification PD 02-02-2018</a></td></tr>
+<tr><td>Form 8938</td><td>Specified individual with an income-tax return filing requirement and assets above the applicable strict thresholds: US resident single/separate &gt;50,000 year-end or &gt;75,000 anytime; joint &gt;100,000/&gt;150,000; qualifying abroad single/separate &gt;200,000/&gt;300,000; joint &gt;400,000/&gt;600,000.</td><td>USD 10,000 initial failure; after IRS notice and 90 days, USD 10,000 per additional 30-day period/part-period, additional maximum USD 50,000; other consequences possible.</td><td><a class="source" href="https://www.irs.gov/instructions/i8938">IRS: Instructions for Form 8938 (11/2021, continuous use)</a></td></tr>
+<tr><td>Form 3520 Part IV</td><td>Foreign individual/estate gifts/bequests &gt;USD 100,000 aggregate; foreign corporation/partnership purported gifts &gt;USD 20,573 for 2026; related-party aggregation applies. Foreign trusts use other parts.</td><td>Foreign-gift reporting failure: 5% per month, maximum 25%, reasonable-cause exception. Trust penalties differ; covered-expatriate gifts may incur section 2801 tax.</td><td><a class="source" href="https://www.irs.gov/instructions/i3520">IRS: Instructions for Form 3520 (12/2025, continuous use)</a> · <a class="source" href="https://www.irs.gov/businesses/gifts-from-foreign-person">IRS: Gifts from foreign person</a></td></tr>
+<tr><td>FinCEN Form 105</td><td>Currency/covered monetary instruments &gt;USD 10,000 equivalent entering/leaving the US at one time; family/group amounts aggregate.</td><td>Forfeiture/seizure and possible civil/criminal consequences for non-reporting or false information; not a percentage transfer tax.</td><td><a class="source" href="https://www.cbp.gov/travel/international-visitors/money-monetary-instruments">US Customs and Border Protection: Money and Other Monetary Instruments</a></td></tr>
+<tr><td>Forms 1116 / 2555</td><td>Not account reports: elective federal income-tax relief if the actual income and taxpayer qualify.</td><td>No standalone transfer penalty; incorrect claims can change tax, interest and accuracy-related exposure.</td><td><a class="source" href="https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit">IRS: Foreign Tax Credit</a> · <a class="source" href="https://www.irs.gov/instructions/i2555">IRS: Instructions for Form 2555 (2026)</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2>Corrected legacy errors</h2>
+<ul>
+<li>Removed unsupported 30%–300% and 30%–500% fine multipliers. <a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">CFETS / SAFE regulatory translation: Regulations of the PRC on Foreign Exchange Administration, State Council Decree 532</a></li>
+<li>Removed blanket “no US tax” and “no China tax” claims. <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS: International individual tax matters FAQ</a> · <a class="source" href="https://www.govinfo.gov/content/pkg/USCODE-2024-title26/pdf/USCODE-2024-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf">US Code / GovInfo: 26 USC 988 (2024 edition)</a> · <a class="source" href="https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html">State Taxation Administration: 中华人民共和国个人所得税法 (2018 amendment)</a></li>
+<li>Removed invented 1%–3% FX spread and USD 15–50 wire estimates. <a class="source" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf">Bank of China: Personal customer services: personal finance, effective 2025-11-11</a> · <a class="source" href="https://wise.com/us/pricing/send-money?source=CNY&amp;target=USD&amp;payInMethod=BANK_TRANSFER&amp;payOutMethod=BANK_TRANSFER&amp;sourceAmount=66538">Wise: Fees for sending money</a></li>
+</ul>
 
+</main>
 <footer class="site-footer">
   <div class="inner">
-    <div>
-      <div class="brand" style="text-decoration:none; color:var(--ink);"><span class="mark">C4</span> China4</div>
-      <p class="small">Penalty breakdown &middot; unverified values left blank and flagged</p>
-    </div>
-    <div>
-      <p class="small"><a href="index.html" style="color:var(--accent);">&#8592; Back to Dashboard</a></p>
-    </div>
+    <p>Research date 2026-11-08. Not legal or tax advice; confirm current bank/operator terms and personal tax facts.</p>
+    <p><a href="https://github.com/sassnarep3-star/China4">GitHub repository</a> · <a href="https://sassnarep3-star.github.io/China4/">Live GitHub Pages site</a> · <a href="costs.csv">Download complete cost CSV</a></p>
   </div>
 </footer>
-
 </body>
 </html>

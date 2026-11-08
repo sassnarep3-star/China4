@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verification and build checks — China4</title>
+<meta name="description" content="Lawful CNY-to-USD research dashboard for US citizens: source-matched routes, costs, tax, reporting and flags.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">C4</span> China4</a>
+    <nav aria-label="Primary navigation"><a href="index.html">Dashboard</a>
+<a href="methods.html">Methods</a>
+<a href="costs.html">Cost tables</a>
+<a href="procedures.html">Procedures</a>
+<a href="taxes.html">Tax &amp; reporting</a>
+<a href="penalties.html">Penalties</a>
+<a href="sources.html">Sources</a>
+<a href="flagged.html">Flagged for Review</a>
+<a href="audit.html">Audit</a>
+<a href="verification.html" aria-current="page">Verification</a></nav>
+  </div>
+</header>
+<main id="main" class="container">
+<h1>Verification and build checks</h1>
+<p class="page-sub">Automated checks run before merge and before Pages deployment.</p>
+
+<h2>Reproducible local commands</h2>
+<pre><code>python scripts/build_data.py
+python scripts/build_site.py
+python -m unittest discover -s tests -v
+python scripts/check_site.py</code></pre>
+<h2>Checks enforced</h2>
+<ul>
+<li>28 methods × 40 amounts = 1,120 cost rows; exact USD 10,000–400,000 grid.</li>
+<li>Unknown numeric USD costs remain null/empty; every row has a registered official source URL.</li>
+<li>Canonical JSON/CSV reproducibility; 1,344-line legacy audit coverage.</li>
+<li>Local links and anchors, source-required table rows, one h1, landmarks, skip link, table captions, th scope, no JavaScript dependency.</li>
+<li>Responsive CSS rules: focus-visible, horizontal table scroll, media queries and reduced motion.</li>
+</ul>
+<h2>Deployment gate</h2>
+<p>The GitHub Pages workflow rebuilds data and the static dashboard, runs unit tests and the full site check, then uploads/deploys only from <code>main</code>. See <a href="https://github.com/sassnarep3-star/China4/actions">GitHub Actions</a> and <a href="https://sassnarep3-star.github.io/China4/">live site</a>.</p>
+<p><a href="VERIFICATION.md">Verification log</a> · <a href="COORDINATION.md">Coordination and PR/merge log</a></p>
+
+</main>
+<footer class="site-footer">
+  <div class="inner">
+    <p>Research date 2026-11-08. Not legal or tax advice; confirm current bank/operator terms and personal tax facts.</p>
+    <p><a href="https://github.com/sassnarep3-star/China4">GitHub repository</a> · <a href="https://sassnarep3-star.github.io/China4/">Live GitHub Pages site</a> · <a href="costs.csv">Download complete cost CSV</a></p>
+  </div>
+</footer>
+</body>
+</html>
