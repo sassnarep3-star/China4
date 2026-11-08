@@ -55,3 +55,14 @@ Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
 - Added an amount-by-amount $10,000–$400,000 schedule; total transaction costs and taxes remain blank because no current executable quotes, source history or personal tax data are verified. Added conditional route steps. The tariff formula is a historical published component, not a verified actual quote.
 - Static verification: `python scripts/verify_site.py` checks local links, required official links on each table row, and all requested amounts. It does not establish that every linked page remains available or that each claim is legally current.
 - Supplemental PR: https://github.com/sassnarep3-star/China4/pull/8. Static verifier passed; all six pages and CSS returned HTTP 200 from a local server. The first HTTP smoke-test attempt raced server startup and failed; retry against a running server passed. No PR checks were configured. Merge and deployment status to be recorded after confirmation.
+
+## Current session: arena/9ca8a991-china4
+
+| Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| Fill the blank $10,000-$400,000 cost schedule with sourced calculated estimates; add step-by-step route guide; add new official sources and flags; integrate and deploy | costs.html (new), steps.html (new), sources.html, flagged.html, nav on index/methods/penalties/taxes/flagged/sources, style.css, scripts/verify_site.py, COORDINATION.md | in progress | arena/9ca8a991-china4 | 2026-11-08 | Prior tasks marked done by earlier sessions. Branch fixed by Arena; working on this branch. |
+
+### Claim log — arena/9ca8a991-china4
+- Non-overlapping scope: this session only ADDS two new pages (costs.html, steps.html), ADDs rows to sources.html and flagged.html, and ADDs two nav links to existing pages. No existing table content is deleted or rewritten.
+- Model inputs are all pulled from official pages fetched during this session: BOC published FX rate board (boc.cn/sourcedb/whpj), BOC e-banking tariff (boc.cn/ebanking/service/cs1/200905/t20090506_990712.html), BOC 2025 personal-services price list PDF, eCFR 31 CFR 1010.821, IRS gifts-from-foreign-person, PBOC/SAFE 《携带外币现钞出入境管理暂行办法》 (gov.cn gongbao), PBOC 《个人财产对外转移售付汇管理暂行办法》 (gov.cn gongbao + safe.gov.cn), SAFE 《个人外汇管理办法实施细则》 (safe.gov.cn).
+- Every estimate on costs.html is a MODELLED figure from those published inputs with the formula, the rate snapshot date and the source link printed next to it; it is not a bank quote and is labelled as such.
