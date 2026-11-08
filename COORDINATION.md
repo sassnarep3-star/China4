@@ -65,3 +65,12 @@ Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
 ### Coordination/rebase note
 - `origin/main` advanced to `667b5ba` with integration PRs #6–#9 while this session was auditing a checkout at `e7e12b1`. `git pull --rebase origin main` conflicted in this shared board. Resolved by retaining all existing integration/session entries and appending this audit record. No other session’s files or work were discarded.
 - The authoritative GitHub Pages site had status `built` at `https://sassnarep3-star.github.io/China4/` before this audit; the latest main history records successful deploy run `42533800234` and follow-up run `42533888250`.
+
+## Current session: arena/5906756f-china4
+
+| # | Task | Scope (files) | Status | Owner | Sources verified | Notes |
+|---|------|---------------|--------|-------|------------------|-------|
+| 10 | Claim & verify comprehensive primary-source data (BOC, CCB, HSBC CN, Wise, SkyRemit, PayPal C2, SAFE, PBOC 2026-42, Chinatax, Customs, IRS 2026, FinCEN, CBP, US banks) | `COORDINATION.md` | done | arena/5906756f-china4 | All official primary agencies & tariffs fetched 2026-11-08 | Rebased onto `origin/main` (`3854ba8`) |
+| 11 | Restore & expand executive summary, all 14 conversion methods + step-by-step instructions, deep penalty breakdown, and 2026 US/PRC tax guides | `index.html`, `methods.html`, `penalties.html`, `taxes.html`, `style.css` | in progress | arena/5906756f-china4 | Verified against Nov 2026 SAFE, PBOC, BOC, Chinatax, IRS, FinCEN | Preserves prior accuracy corrections while delivering complete guides & tariffs |
+| 12 | Build mobile-friendly $10,000–$400,000 USD increment cost estimator & tables (most important info first, official source link on every row, blank/flagged where unverified) | `estimates.html`, `style.css` | in progress | arena/5906756f-china4 | Python-verified Nov 2026 quotes; CCB/HSBC spreads left unverified | Covers all 40 steps ($10k to $400k) |
+| 13 | Update Flagged for Review & Sources registry, validate links/HTML, commit, rebase, PR, merge to `main`, verify live GitHub Pages deployment | `flagged.html`, `sources.html`, `README.md`, `COORDINATION.md`, `scripts/verify_site.py` | in progress | arena/5906756f-china4 | Pending final merge & live curl verification | — |
