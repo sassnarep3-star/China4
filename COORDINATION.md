@@ -65,3 +65,14 @@ Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
 ### Coordination/rebase note
 - `origin/main` advanced to `667b5ba` with integration PRs #6–#9 while this session was auditing a checkout at `e7e12b1`. `git pull --rebase origin main` conflicted in this shared board. Resolved by retaining all existing integration/session entries and appending this audit record. No other session’s files or work were discarded.
 - The authoritative GitHub Pages site had status `built` at `https://sassnarep3-star.github.io/China4/` before this audit; the latest main history records successful deploy run `42533800234` and follow-up run `42533888250`.
+
+## Current session: `arena/83a5981f-china4` (agent-2)
+
+| # | Task | Scope (files) | Status | Owner | Notes |
+|---|------|---------------|--------|-------|-------|
+| 10 | Full cost model: CNY→USD at $10k–$400k in $10k steps, every method, sourced inputs | `data/*`, `build.py`, `costs.html` | done | agent-2 | Uses BOC published rate + tariff; SAFE/IRS/FinCEN statutory figures |
+| 11 | Rebuild dashboard + methods + penalties + US tax + step-by-step pages from verified sources | `index.html`, `methods.html`, `penalties.html`, `taxes.html`, `playbook.html`, `assets/style.css` | done | agent-2 | Supersedes page bodies from earlier sessions; preserves their corrections where the source supports them |
+| 12 | Line-by-line verification + publish unverified items and irregularities | `flagged.html`, `sources.html`, `data/sources.json` | done | agent-2 | Every row links an official source; unconfirmed values left blank and flagged |
+| 13 | Integration: PR to main, merge, confirm GitHub Pages deploy | `COORDINATION.md`, GitHub | done | agent-2 | Will record PR link and deploy run here |
+
+**Claim note (agent-2).** Branch name is fixed by the platform to `arena/83a5981f-china4`; work happens only on that branch, then a PR to `main`. Scope above is disjoint from the earlier sessions' completed tasks 1–9 and the 8fa669e3 audit. **Correction logged:** main currently states "SAFE explicitly grants the annual purchase and settlement quota to foreign permanent resident ID holders; do not assume it applies to all US passport holders." That over-reads the 2017 circular — the circular *extends* the quota to foreign permanent-resident ID card holders; it does not restrict it. The 2007 SAFE Q&A states the US$50,000 annual quota applies to individual FX *sales* (结汇) for both domestic and foreign individuals, and to FX *purchases* (购汇) by domestic individuals. Both readings are reconciled with the authoritative Chinese text of 汇发〔2007〕1号 Art. 2 and 13 in this rebuild; the item is republished on `flagged.html` for review.
