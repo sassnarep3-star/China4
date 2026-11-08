@@ -1,44 +1,31 @@
 # China4
 
-Research dashboard: how a US citizen can move funds held in a Chinese bank account
-out of China as USD, what each legal route costs, and which penalties apply.
+A source-verified static research dashboard for US citizens holding Chinese Yuan (CNY) in mainland Chinese bank accounts who want to convert to USD and transfer funds to the United States with minimal tax friction, transfer costs, and regulatory penalties.
 
-Built source-first: every value is traced to an official source, and anything that
-cannot be confirmed from one is left blank and listed on the **Flagged for review**
-page rather than inferred.
+Open `index.html` locally or visit the live GitHub Pages deployment: **[https://sassnarep3-star.github.io/China4/](https://sassnarep3-star.github.io/China4/)**
 
-Live site: https://sassnarep3-star.github.io/China4/
+## Site Structure
 
-## Pages
+- **`index.html` (Dashboard):** Executive summary, lowest-cost verified pathways, Nov 2026 baseline FX & statutory thresholds, quick cost snapshot, and 5-step execution checklist.
+- **`methods.html` (Methods & Guides):** Master comparison of all 14 legal, conditional, restricted, and prohibited channels with verified limits, pros/cons, and exact step-by-step instructions.
+- **`estimates.html` ($10k–$400k Estimates):** All 40 increments from **$10,000 to $400,000 USD** ($10,000 steps) comparing Bank of China SWIFT Wire, SkyRemit, Wise, CCB Online Wire, HSBC Premier Global Transfer, PayPal China, and UnionPay ATM—with mobile-first responsive card-tables and an optional US bank/OUR fee toggle.
+- **`costs.html` (Route Cost Model):** The same $10,000–$400,000 grid viewed by **legal route** rather than by provider — how much the annual-quota route costs once it is spread over several calendar years, what a SAFE-approved emigration/inheritance property transfer costs given that its remittance must be staged over two years, what cash carry costs, and what the illegal channel costs in statutory fines. Shows the published model inputs, the formula and the rate snapshot behind every figure.
+- **`penalties.html` (Penalties & Costs):** Multi-layer breakdown of explicit wire tariffs, hidden FX spreads, PRC IIT/late-fee/evasion penalties, SAFE/UnionPay/crypto bans (`银发〔2026〕42号`), and 2026 US FinCEN/IRS/CBP penalties.
+- **`taxes.html` (US & PRC Taxes):** Dual-side tax minimization covering PRC Tax Recordal (`税务备案表` >$50k), 2026 FEIE ($132,900), Form 1116 FTC, 1984 US–China Tax Treaty, IRC §988 FX gains, FBAR, Form 8938, Form 3520, Form 8621 PFIC traps, and Streamlined Procedures.
+- **`flagged.html` (Flagged for Review):** Unverified/dynamic provider rates explicitly left blank rather than guessed, plus prior-version audit corrections.
+- **`sources.html` (Sources):** Primary-source registry linking directly to SAFE, PBOC, Chinatax, China Customs, BOC, HSBC China, CCB, Wise, SkyRemit, IRS, FinCEN, CBP, and US banks.
 
-| Page | Contents |
-|---|---|
-| `index.html` | Dashboard and decision summary |
-| `methods.html` | Every conversion route with pros, cons and official sources |
-| `steps.html` | Step-by-step instructions for each route |
-| `costs.html` | Cost estimator: $10,000–$400,000 in $10,000 steps, every legal route |
-| `penalties.html` | Cost and penalty framework |
-| `taxes.html` | US tax and reporting obligations |
-| `flagged.html` | Unverified values and irregularities, with source links |
-| `sources.html` | Every official source used |
+## Build
 
-`EXECUTIVE_SUMMARY.md` is the written executive summary.
-
-## Build and verify
-
-The site is static HTML. `costs.html` and `steps.html` are generated:
+`costs.html` is generated from the model inputs documented on the page:
 
 ```
 python3 scripts/build_costs.py
 python3 scripts/verify_site.py
 ```
 
-`verify_site.py` checks that every local link resolves, that every table row
-carrying a value has an official-source link, and that all requested amounts from
-$10,000 to $400,000 are present. Rows whose values are explicitly left blank are
-exempt from the source check by design.
+## Methodology & Verification
 
-## Disclaimer
-
-Research, not legal or tax advice. Not a bank quote and not a determination of
-anyone's eligibility.
+- Pure static HTML + CSS (plus optional progressive-enhancement JS filter on `estimates.html`); no build step or backend runtime required.
+- Every data table row links directly to a verified primary source; unpublished spreads (CCB, HSBC China, ICBC mainland tariff, Western Union China) are explicitly marked `Unverified` instead of extrapolated.
+- Educational research only — not personalized legal, tax, or banking advice.

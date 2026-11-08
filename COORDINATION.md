@@ -54,8 +54,26 @@ Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
 - Reviewed the [2025 Bank of China tariff](https://pic.bankofchina.com/bocappd/pricelist/202503/P020250331641149290400.pdf) item 210105008 and notes, [SAFE cash rules](https://www.safe.gov.cn/tianjin/2024/0430/2466.html), [Shanghai property FAQ](https://english.shanghai.gov.cn/en-FAQHome/20240204/b4426264395b4fa3adfde73778c94ad4.html), [Shanghai salary FAQ](https://english.shanghai.gov.cn/en-FAQHome/20231211/74deb6f12c5e4e1686020bd042819690.html), and [IRS currency unit](https://www.irs.gov/pub/fatca/int_practice_units/fcu_t_018_02_01_08.pdf). Historical source status and applicability remain flagged.
 - Added an amount-by-amount $10,000–$400,000 schedule; total transaction costs and taxes remain blank because no current executable quotes, source history or personal tax data are verified. Added conditional route steps. The tariff formula is a historical published component, not a verified actual quote.
 - Static verification: `python scripts/verify_site.py` checks local links, required official links on each table row, and all requested amounts. It does not establish that every linked page remains available or that each claim is legally current.
-- Supplemental PR: https://github.com/sassnarep3-star/China4/pull/8. Static verifier passed; all six pages and CSS returned HTTP 200 from a local server. The first HTTP smoke-test attempt raced server startup and failed; retry against a running server passed. No PR checks were configured. Merge and deployment status to be recorded after confirmation.
+- Supplemental PR: https://github.com/sassnarep3-star/China4/pull/8. Static verifier passed; all six pages and CSS returned HTTP 200 from a local server. The first HTTP smoke-test attempt raced server startup and failed; retry against a running server passed. No PR checks were configured. Merged as commit `d028e12b5fbdcaca0778b0c668e5340c835838b0`; GitHub Pages build and deploy [run 42533800234](https://github.com/sassnarep3-star/China4/actions/runs/42533800234) succeeded. Live cost schedule and dashboard were fetched successfully at https://sassnarep3-star.github.io/China4/. GitHub’s managed build emitted a non-failing Node.js deprecation warning.
 
+## Current session: arena/d9dc8047-china4 — independent supplemental verification
+
+| Task | Scope | Status | Owner | Verification / notes |
+|---|---|---|---|---|
+| Check current integrated research against official source text and preserve non-overlapping integration work | COORDINATION.md only | done | arena/d9dc8047-china4 | Confirmed current main had already integrated the requested dashboard, route steps, tariff component, $10,000–$400,000 schedule, flags and deployment while this branch was based on an older commit. Re-ran `scripts/verify_site.py` against origin/main snapshot; all table rows and local links passed. Independently fetched SAFE (2016 purchase evidence; 2015 quota-splitting statement), PBOC FX Regulations Arts. 39–45, GACC passenger cash guidance and virtual-currency notice, FinCEN and IRS pages. The PBOC-hosted text specifies separate administrative ranges (Arts. 39/40/45: generally up to 30%, serious cases above 30% and below 100%; Art. 42 carrying violation up to 20%); these are not personalized costs. An earlier proposed full-page rewrite overlapped newer integration work and was stashed, not applied, to preserve current main’s BOC tariff and IRS §988 analysis. No site content was overwritten. |
+
+### Coordination/rebase note
+- `origin/main` advanced to `667b5ba` with integration PRs #6–#9 while this session was auditing a checkout at `e7e12b1`. `git pull --rebase origin main` conflicted in this shared board. Resolved by retaining all existing integration/session entries and appending this audit record. No other session’s files or work were discarded.
+- The authoritative GitHub Pages site had status `built` at `https://sassnarep3-star.github.io/China4/` before this audit; the latest main history records successful deploy run `42533800234` and follow-up run `42533888250`.
+
+## Current session: arena/5906756f-china4
+
+| # | Task | Scope (files) | Status | Owner | Sources verified | Notes |
+|---|------|---------------|--------|-------|------------------|-------|
+| 10 | Claim & verify comprehensive primary-source data (BOC, CCB, HSBC CN, Wise, SkyRemit, PayPal C2, SAFE, PBOC 2026-42, Chinatax, Customs, IRS 2026, FinCEN, CBP, US banks) | `COORDINATION.md` | done | arena/5906756f-china4 | All official primary agencies & tariffs fetched 2026-11-08 | Rebased onto `origin/main` (`3854ba8`) |
+| 11 | Restore & expand executive summary, all 14 conversion methods + step-by-step instructions, deep penalty breakdown, and 2026 US/PRC tax guides | `index.html`, `methods.html`, `penalties.html`, `taxes.html`, `style.css` | done | arena/5906756f-china4 | Verified against Nov 2026 SAFE, PBOC (`银发〔2026〕42号`, `[2025] 11`, parity `6.7168`), BOC (`6.6648/6.6929`), Chinatax, Customs, IRS, FinCEN | Preserves prior accuracy corrections (`五星卡` quota distinction, IRC §988, PBOC FX Regs Arts. 39–45) with full guides & tariffs |
+| 12 | Build mobile-friendly $10,000–$400,000 USD increment cost estimator & tables (most important info first, official source link on every row, blank/flagged where unverified) | `estimates.html`, `style.css` | done | arena/5906756f-china4 | Python-verified Nov 2026 quotes across all 40 steps ($10k–$400k); CCB/HSBC spreads kept `Unverified` | Added responsive `mobile-cards` CSS + optional US receiving bank/OUR toggle |
+| 13 | Update Flagged for Review & Sources registry, validate links/HTML, commit, rebase, PR, merge to `main`, verify live GitHub Pages deployment | `flagged.html`, `sources.html`, `README.md`, `COORDINATION.md`, `scripts/verify_site.py` | done | arena/5906756f-china4 | `scripts/verify_site.py`, HTML/JS syntax check, and local HTTP 200 smoke test all passed | Preparing PR & merge to `main` + live GitHub Pages verification |
 ## Current session: arena/9ca8a991-china4
 
 | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
@@ -98,3 +116,47 @@ Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
 7. Emigration/inheritance transfer eligibility does not on its face cover a US citizen's own savings.
 
 **Coordination.** Scope was additive only: two new pages, new rows appended to sources.html and flagged.html, one new row and one strengthened row on methods.html, two nav links added to the existing pages, and a cross-link from index.html and penalties.html. No existing table content from other sessions was deleted or rewritten. Files owned by earlier sessions that would have needed substantive rewrites were left alone and the correction logged on flagged.html instead.
+
+## Integration note — arena/9ca8a991-china4 (final)
+
+**Merge conflict.** While this session was working, arena/5906756f-china4 merged a full rebuild of the
+dashboard (PRs #9, #10, #11) that created `estimates.html` and rewrote every page. This session's PR #13
+could not merge cleanly. Resolution: **main's rebuild was taken as the base** for all nine conflicted files
+and this session's work was re-applied on top of it, additively. Nothing from arena/5906756f-china4 or any
+earlier session was discarded.
+
+**What this session contributed on top of that rebuild:**
+
+- **`costs.html` (new)** — the $10,000–$400,000 grid viewed **by legal route** rather than by provider, which
+  `estimates.html` does not cover: annual-quota spreading across calendar years (8 years and $1,329.77 at
+  $400,000), SAFE-approved emigration/inheritance property transfer with its mandatory three-stage remittance
+  ($1,023.47 at $400,000), cash carry, and the illegal channel's statutory fine exposure at every amount.
+  Both pages now cross-link and explain the difference.
+- **Five official sources added to `sources.html`**: SAFE Detailed Rules full text
+  (safe.gov.cn/safe/2007/0105/5320.html), SAFE + GAC cash-carry Interim Measures full text
+  (gov.cn Gazette), BOC e-banking outward-wire tariff, eCFR 31 CFR 1010.821 (the official FBAR penalty
+  table), and IRS gifts-from-foreign-person (Form 3520 thresholds).
+- **Eight flagged items added as section 3 of `flagged.html`**, including the rate anomaly below.
+- **`EXECUTIVE_SUMMARY.md` (new)** and a `costs.html` entry in `README.md`.
+- **`scripts/build_costs.py` (new)** — regenerates `costs.html` from its documented model inputs.
+- **Verifier extended**: `costs.html` added to the page list, `gov.cn` / `ecfr.gov` / `chinamoney.com.cn`
+  added to the official-domain allowlist, the full-amount-grid check applied to both estimate pages, and rows
+  whose values are explicitly blank exempted from the source check (a blank cell has no value to source).
+
+**Dropped deliberately:** this session had also built a standalone `steps.html`. Main's `methods.html`
+already carries exact step-by-step instructions for all 14 channels, so the duplicate page was removed rather
+than shipped alongside it.
+
+**New irregularity found (published on flagged.html):** on the 9 Nov 2026 snapshot, BOC's published USD spot
+selling rate (6.6929) sits **below** the PBOC central parity rate (6.7168) — the opposite of the usual
+relationship. Both cost pages therefore measure the FX cost as the half-spread of BOC's own published
+buy/sell quotes (0.2099% / 0.2104%) instead of comparing against parity. Flagged for re-checking against a
+live quote.
+
+**Cross-validation:** two independent research passes over the same published BOC board produced the same
+half-spread to three decimal places, and the BOC $400,000 totals agree to within $2 ($900.95 vs $902.85).
+
+**Verification.** `python3 scripts/verify_site.py` passes across all eight pages: 281 table rows checked,
+every local link resolves, every value-bearing row carries an official-source link, and the full 40-amount
+grid is present on both `estimates.html` and `costs.html`. HTTP smoke test: all eight pages plus `style.css`
+returned 200.
