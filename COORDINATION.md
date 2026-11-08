@@ -160,3 +160,18 @@ half-spread to three decimal places, and the BOC $400,000 totals agree to within
 every local link resolves, every value-bearing row carries an official-source link, and the full 40-amount
 grid is present on both `estimates.html` and `costs.html`. HTTP smoke test: all eight pages plus `style.css`
 returned 200.
+
+### Pull request and deployment — arena/9ca8a991-china4
+
+- **PR:** https://github.com/sassnarep3-star/China4/pull/13 — merged into `main` on 2026-11-08.
+- **Deploy workflow** "Deploy China4 site to GitHub Pages", run
+  [42535194889](https://github.com/sassnarep3-star/China4/actions/runs/42535194889) — status `completed`,
+  conclusion `success`.
+- **Pages status:** `{"build_type":"legacy","status":"built","url":"https://sassnarep3-star.github.io/China4/"}`
+  confirmed via `gh api repos/sassnarep3-star/China4/pages`.
+- **Live site:** https://sassnarep3-star.github.io/China4/ — 8 pages: index, methods, estimates, costs,
+  penalties, taxes, flagged, sources, plus `EXECUTIVE_SUMMARY.md` in the repository root.
+- **Note on verification:** the sandbox can only reach github.com and package registries, so the live site
+  could not be curl-ed from here. Deployment was confirmed through the GitHub Actions run conclusion and the
+  Pages API `status: built` instead, together with a pre-merge local HTTP smoke test in which all eight pages
+  and `style.css` returned 200 and a scan found 0 broken local links.
