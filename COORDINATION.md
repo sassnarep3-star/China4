@@ -27,3 +27,9 @@ Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
 - "needs review" = published on Flagged for Review page, does not block other tasks
 - Never mark verified without checking an official source; link the source
 - Shared outputs (table data, index, navigation) changed only by final integration session
+
+## Current session: arena/8fa669e3-china4
+
+| Task | Scope | Status | Owner | Notes |
+|---|---|---|---|---|
+| Independent integration audit, corrections, and publication | root HTML pages, style.css, README.md, .github/workflows, COORDINATION.md | in progress | arena/8fa669e3-china4 | Reviewing inherited site and official citations. Session branch fixed by Arena. |
