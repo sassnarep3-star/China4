@@ -44,8 +44,8 @@ the research, calculations, and checks are complete.
 | 11 | Official-source legal-route and tax research | research/sources/*, research/findings.json | done | agent-06824257 | 53 registry entries; SAFE/PBOC/STA/IRS/FinCEN/eCFR/Supreme Court/operator primary pages | Cover individual, salary, property, business, cards, cash, and prohibited routes |
 | 12 | Reproducible $10k–$400k cost tables, all 40 increments | research/costs.json, scripts/build_data.py | done | agent-06824257 | 28 methods x 40 amounts = 1,120 rows; BOC/Sky/ATM published components only | No invented fees, FX spreads, or tax rates; unknown total stays blank |
 | 13 | Executive summary and step-by-step procedures | EXECUTIVE_SUMMARY.md, research/procedures.json | done | agent-06824257 | 28 source-matched procedures; executive summary links primary sources | Distinguish bank friction from tax; no evasion instructions |
-| 14 | Automated data, link, accessibility and build checks | scripts/check_site.py, tests/*, .github/workflows/* | in progress | agent-06824257 | Pending | Validate all rows, calculations, local links and source citations |
-| 15 | Final integration, accessible dashboard, PR, merge and Pages | index.html, methods.html, costs.html, procedures.html, taxes.html, penalties.html, sources.html, flagged.html, style.css, README.md, VERIFICATION.md, COORDINATION.md | unclaimed | agent-06824257 | Pending tasks 10–14 | Only integration edits shared outputs; verify before merging |
+| 14 | Automated data, link, accessibility and build checks | scripts/check_site.py, tests/*, .github/workflows/* | done | agent-06824257 | 8 unit tests + data-only site check passed; Pages workflow gates deploy on rebuild/tests/checks | Full HTML/link check runs during task 15 integration |
+| 15 | Final integration, accessible dashboard, PR, merge and Pages | index.html, methods.html, costs.html, procedures.html, taxes.html, penalties.html, sources.html, flagged.html, audit.html, verification.html, category pages, style.css, scripts/build_site.py, README.md, VERIFICATION.md, COORDINATION.md | in progress | agent-06824257 | Tasks 10–14 done; integration claim | Only integration edits shared outputs; verify before merging |
 
 ### Handoff / integration log
 - 2026-11-08: Read the existing board and legacy site before claiming. Initial
@@ -56,3 +56,7 @@ the research, calculations, and checks are complete.
   the IRC 988 personal-transaction gap, Form 3520 penalty gap, Bittner FBAR unit,
   Alipay/WeChat/PayPal product scope, current-account RMB policy and Shanghai property
   tax guide. Remaining unverified items are published as flags, not guessed.
+
+- 2026-11-08: Task 14 check harness and CI gate completed. Task 15 claimed by
+  agent-06824257 after prerequisites finished; shared dashboard/navigation edits
+  begin only under this integration claim.
