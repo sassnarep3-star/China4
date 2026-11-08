@@ -6,7 +6,9 @@ another session has claimed. Keep scopes non-overlapping. Small, frequent commit
 run `git pull --rebase` before every push. When a task is finished, record
 sources, verification performed, and irregularities here and mark it done.
 
-Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
+Session ID for this session: `agent-d778fbdf` (branch `arena/d778fbdf-china4`)
+
+Previous session: `agent-1` (branch `arena/c56cf052-china4`)
 
 ## Tasks
 
@@ -21,6 +23,7 @@ Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
 | 7 | Create "Flagged for Review" page with irregularities | flagged.html | done | agent-1 | n/a | Published on site: 8 unverified values + 5 irregularities with suggested manual checks |
 | 8 | Integration: merge branches, re-verify combined data, confirm site builds | main (via PR) | done | agent-1 | PR #1 and PR #2 merged into main; live build commit e1491ef status "built" | All six pages + CSS return 200; no broken links |
 | 9 | Create PR from integration branch to main, merge, confirm Pages deploys | GitHub | done | agent-1 | PR #1: https://github.com/sassnarep3-star/China4/pull/1 (merged); PR #2: https://github.com/sassnarep3-star/China4/pull/2 (merged); GitHub Pages live at https://sassnarep3-star.github.io/China4/ | Pages build_type legacy, source branch main path "/", html_url confirmed; flagged items do not block merge and are published on the Flagged for Review page |
+| 10 | Independent audit, expansion, integration, and redeployment of the complete dashboard | all root HTML/CSS/data/documentation files and .github/workflows; GitHub PR/Pages | in progress | agent-d778fbdf | SAFE/PBOC/State Council/Customs; BOC personal tariff, FX quote and ATM notices; Wise/WU/MoneyGram operator terms; IRS/FinCEN/eCFR/CBP; US receiving-bank disclosures | Rebuilt all six pages with 18 sourced procedures, four 40-row matrices and 47 primary sources. Corrected foreign-individual/quota treatment and China penalty ranges. Unknown current provider, intermediary and personal-tax values are published blank with manual checks. `python3 scripts/build_site.py && python3 scripts/validate_site.py` passes; headless Chromium returned 200 on every page, passed desktop/390px overflow checks and route interaction. CI validation added; PR/deployment pending. Fixed Arena branch is the integration branch for this session. |
 
 ## Rules
 - Statuses: unclaimed, in progress, done, needs review

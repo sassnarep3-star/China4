@@ -1,31 +1,43 @@
-# China4
+# China4 evidence desk
 
-A source-verified static research dashboard for US citizens holding Chinese Yuan (CNY) in mainland Chinese bank accounts who want to convert to USD and transfer funds to the United States with minimal tax friction, transfer costs, and regulatory penalties.
+A static, primary-source research dashboard for lawful CNY→USD conversion and US–China tax/reporting analysis. It is designed for a US citizen holding CNY in a Chinese bank account, but distinguishes identity, source of funds, and special property routes instead of assuming one rule fits everyone.
 
-Open `index.html` locally or visit the live GitHub Pages deployment: **[https://sassnarep3-star.github.io/China4/](https://sassnarep3-star.github.io/China4/)**
+Live deployment: **https://sassnarep3-star.github.io/China4/**
 
-## Site Structure
+## Pages
 
-- **`index.html` (Dashboard):** Executive summary, lowest-cost verified pathways, Nov 2026 baseline FX & statutory thresholds, quick cost snapshot, and 5-step execution checklist.
-- **`methods.html` (Methods & Guides):** Master comparison of all 14 legal, conditional, restricted, and prohibited channels with verified limits, pros/cons, and exact step-by-step instructions.
-- **`estimates.html` ($10k–$400k Estimates):** All 40 increments from **$10,000 to $400,000 USD** ($10,000 steps) comparing Bank of China SWIFT Wire, SkyRemit, Wise, CCB Online Wire, HSBC Premier Global Transfer, PayPal China, and UnionPay ATM—with mobile-first responsive card-tables and an optional US bank/OUR fee toggle.
-- **`costs.html` (Route Cost Model):** The same $10,000–$400,000 grid viewed by **legal route** rather than by provider — how much the annual-quota route costs once it is spread over several calendar years, what a SAFE-approved emigration/inheritance property transfer costs given that its remittance must be staged over two years, what cash carry costs, and what the illegal channel costs in statutory fines. Shows the published model inputs, the formula and the rate snapshot behind every figure.
-- **`penalties.html` (Penalties & Costs):** Multi-layer breakdown of explicit wire tariffs, hidden FX spreads, PRC IIT/late-fee/evasion penalties, SAFE/UnionPay/crypto bans (`银发〔2026〕42号`), and 2026 US FinCEN/IRS/CBP penalties.
-- **`taxes.html` (US & PRC Taxes):** Dual-side tax minimization covering PRC Tax Recordal (`税务备案表` >$50k), 2026 FEIE ($132,900), Form 1116 FTC, 1984 US–China Tax Treaty, IRC §988 FX gains, FBAR, Form 8938, Form 3520, Form 8621 PFIC traps, and Streamlined Procedures.
-- **`flagged.html` (Flagged for Review):** Unverified/dynamic provider rates explicitly left blank rather than guessed, plus prior-version audit corrections.
-- **`sources.html` (Sources):** Primary-source registry linking directly to SAFE, PBOC, Chinatax, China Customs, BOC, HSBC China, CCB, Wise, SkyRemit, IRS, FinCEN, CBP, and US banks.
+- **Dashboard** — executive decision guidance and 18-route comparison.
+- **Methods** — pros, cons, constraints, and exact procedures for each route.
+- **Costs** — four 40-row matrices covering $10,000 through $400,000 in $10,000 increments, including special property routes, plus corrected penalties.
+- **Taxes** — China IIT, US worldwide income, FBAR, Form 8938, Form 3520, cash reporting, FEIE/FTC, treaty and filing corrections.
+- **Flagged for Review** — unresolved values, irregularities and required manual verification.
+- **Sources** — 47 primary documents with direct manual-review links.
 
-## Build
+The former `estimates.html` and `costs.html` URLs remain as compatibility redirects to the consolidated matrices, so older links do not serve conflicting figures.
 
-`costs.html` is generated from the model inputs documented on the page:
+Unknown institution-specific values remain blank; a dash never means zero. Historical prices and future effective dates are explicitly labeled. This is general research, not individualized legal, tax or investment advice.
 
+## Rebuild and validate
+
+Requires Python 3.11+ and no third-party packages:
+
+```sh
+python3 scripts/build_site.py
+python3 scripts/validate_site.py
 ```
-python3 scripts/build_costs.py
-python3 scripts/verify_site.py
+
+`build_site.py` uses `Decimal` arithmetic to regenerate all six HTML pages and `data/cost-model.json`. The validator independently recalculates the amount ladder, BOC fees/FX benchmark, conditional annual schedule and dated Wise scenarios; it also checks HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts.
+
+The GitHub Actions workflow rebuilds and validates pull requests, verifies generated files are current, then deploys only the public site files from `main` to GitHub Pages.
+
+## Local preview
+
+```sh
+python3 -m http.server 8080 --bind 0.0.0.0
 ```
 
-## Methodology & Verification
+Open `http://localhost:8080/`. No JavaScript, web fonts, cookies or runtime data requests are required.
 
-- Pure static HTML + CSS (plus optional progressive-enhancement JS filter on `estimates.html`); no build step or backend runtime required.
-- Every data table row links directly to a verified primary source; unpublished spreads (CCB, HSBC China, ICBC mainland tariff, Western Union China) are explicitly marked `Unverified` instead of extrapolated.
-- Educational research only — not personalized legal, tax, or banking advice.
+## Evidence and model boundary
+
+The BOC model uses the personal tariff effective 2025-11-11 and the explicitly dated BOC USD retail quote timestamped 2026-11-09 05:30 Beijing time. Wise formulas are historical examples published 2024-11-25, not current quotes. Current provider quotes, correspondent deductions, account-specific receiving fees, underlying taxes and professional costs must be verified before execution. See the site's **Flagged for Review** page for the complete boundary.

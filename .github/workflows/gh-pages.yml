@@ -1,8 +1,9 @@
-name: Deploy China4 site to GitHub Pages
+name: Validate and deploy China4
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -15,7 +16,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild static pages and cost audit
+        run: python3 scripts/build_site.py
+      - name: Verify generated files are current
+        run: git diff --exit-code
+      - name: Validate HTML, links, source register and calculations
+        run: python3 scripts/validate_site.py
+
   deploy:
+    if: github.event_name != 'pull_request'
+    needs: validate
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -23,11 +42,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Stage public site
+        run: |
+          mkdir _site
+          cp index.html methods.html penalties.html taxes.html sources.html flagged.html estimates.html costs.html style.css _site/
+          mkdir _site/data
+          cp data/cost-model.json _site/data/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "_site"
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

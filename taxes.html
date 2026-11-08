@@ -1,169 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>US & China Taxes, Treaty & Compliance | China4</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Separate underlying tax from transfer mechanics: FBAR, FATCA, Form 3520, cash reporting, China IIT, FEIE, FTC, treaty and correction paths.">
+<meta name="theme-color" content="#102a43">
+<title>China and US tax obligations — China4 Research</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html"><span class="mark">C4</span> China4</a>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Dashboard</a>
-      <a href="methods.html">Methods &amp; Guides</a>
-      <a href="estimates.html">$10k–$400k Estimates</a>
-      <a href="costs.html">Route cost model</a>
-      <a href="penalties.html">Penalties &amp; Costs</a>
-      <a class="active" aria-current="page" href="taxes.html">US &amp; PRC Taxes</a>
-      <a href="flagged.html">Flagged for Review</a>
-      <a href="sources.html">Sources</a>
-    </nav>
-  </div>
-</header>
+<a class="skip-link" href="#main">Skip to research</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="index.html" aria-label="China4 home"><span class="mark">C4</span><span>China4 <small>evidence desk</small></span></a>
+<nav aria-label="Primary navigation"><a href="index.html"><span>Dashboard</span><small>Decision dashboard</small></a><a href="methods.html"><span>Methods</span><small>18 routes and procedures</small></a><a href="penalties.html"><span>Costs</span><small>40-row cost matrices</small></a><a href="taxes.html" class="active" aria-current="page"><span>Taxes</span><small>China and US tax/reporting</small></a><a href="flagged.html"><span>Review</span><small>Unknowns and irregularities</small></a><a href="sources.html"><span>Sources</span><small>Primary-source register</small></a></nav>
+</div></header>
+<main class="container" id="main">
+<div class="page-heading"><div><p class="eyebrow">CNY → USD · US-citizen research</p><h1>China and US tax obligations</h1><p class="page-sub">Separate underlying tax from transfer mechanics: FBAR, FATCA, Form 3520, cash reporting, China IIT, FEIE, FTC, treaty and correction paths.</p></div><div class="as-of"><span>Research cutoff</span><strong>2026-11-08 UTC</strong><small>BOC quote: 2026-11-09 Beijing</small></div></div>
 
-<main class="container">
-  <h1 class="page-title">US &amp; China Taxes, Treaty Rules &amp; Compliance</h1>
-  <p class="page-sub">Preventing double taxation while staying compliant with PRC tax recordal, IRC §988 FX gain rules, FBAR/FATCA, Form 3520, and Form 8621.</p>
-
-  <div class="callout good">
-    <h3>Key Myth Debunked: Moving Your Own Money Is Not a New Tax</h3>
-    <p>Simply converting or wiring your own already-taxed RMB savings from your Chinese bank account to your US bank account does <strong>not</strong> create a new US income tax event—nor does the 2026 OBBBA IRC §4475 1% remittance excise tax apply to inbound China-to-US transfers (<a href="https://www.irs.gov/newsroom/treasury-irs-issue-proposed-regulations-on-the-new-remittance-transfer-tax-established-under-the-one-big-beautiful-bill">IRS IR-2026-48</a>). The only potential US tax on the conversion itself is an <strong>IRC §988 foreign currency exchange gain</strong> if the RMB appreciated in USD terms between receipt and conversion and the gain exceeds $200 (<a href="https://www.govinfo.gov/content/pkg/USCODE-2022-title26/pdf/USCODE-2022-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf">26 U.S.C. §988</a>).</p>
-  </div>
-
-  <section class="section">
-    <h2 class="section-title">1. China (PRC) Tax &amp; SAFE Recordal Requirements</h2>
-    <div class="table-wrap card-mobile">
-      <table class="data mobile-cards">
-        <thead>
-          <tr>
-            <th scope="col">PRC Tax / Filing Rule</th>
-            <th scope="col">Rates &amp; Thresholds</th>
-            <th scope="col">Practical Effect on Converting CNY → USD</th>
-            <th scope="col">Official Source</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Rule" data-prio="1" class="method-cell">PRC Individual Income Tax (IIT)</td>
-            <td data-label="Rates" data-prio="2">Comprehensive salary/services: <strong>3%–45%</strong>; Business: <strong>5%–35%</strong>; Interest/Dividends/Property Sale: <strong>20%</strong></td>
-            <td data-label="Effect" data-prio="3">Banks require official <span class="mono">纳税记录 / 完税证明</span> before converting PRC-earned income (waived if statutorily exempt per SAFE 2025 FAQ #10).</td>
-            <td data-label="Source" data-prio="8"><a href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/201901/90e47cf47dfd4294b44ee67512c40c24.shtml">PRC IIT Law</a> · <a href="https://www.safe.gov.cn/tianjin/2025/0715/2834.html">SAFE 2025</a></td>
-          </tr>
-          <tr>
-            <td data-label="Rule" data-prio="1" class="method-cell">Outward Payment Tax Recordal (<span class="mono">税务备案表</span>)</td>
-            <td data-label="Rates" data-prio="2">Required when single service/property/other contract payout exceeds <strong>US$50,000</strong> (¥0 filing fee)</td>
-            <td data-label="Effect" data-prio="3">Submitted online via provincial E-Tax Bureau once per contract; multiple wires under the same contract reuse the verification code.</td>
-            <td data-label="Source" data-prio="8"><a href="https://www.chinatax.gov.cn/chinatax/n810341/n810760/c5166114/content.html">STA/SAFE 2021 No. 19</a></td>
-          </tr>
-          <tr>
-            <td data-label="Rule" data-prio="1" class="method-cell">Emigration / Inheritance Tax Voucher Exemption</td>
-            <td data-label="Rates" data-prio="2">Exempt for estates/emigration assets <strong>≤¥150,000</strong>; required above ¥150,000</td>
-            <td data-label="Effect" data-prio="3">Per <span class="mono">国税发〔2005〕13号</span> / SAFE Q&amp;A, amounts above ¥150k require local tax bureau certification before SAFE capital transfer approval.</td>
-            <td data-label="Source" data-prio="8"><a href="https://www.safe.gov.cn/anhui/file/file/20170728/c662967c1ff746b9805002873a2150f0.pdf">SAFE Q&amp;A</a></td>
-          </tr>
-          <tr>
-            <td data-label="Rule" data-prio="1" class="method-cell">Back-Tax Late Surcharge vs Evasion Fines</td>
-            <td data-label="Rates" data-prio="2">Late payment: <strong>0.05%/day</strong> (18.25%/yr). Evasion: <strong>50%–500%</strong> fine + criminal risk</td>
-            <td data-label="Effect" data-prio="3">Voluntarily settling missed PRC IIT saves massive 50%–500% penalties and unlocks clean, uncapped bank outbound wiring.</td>
-            <td data-label="Source" data-prio="8"><a href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5195081/content.html">Tax Admin Law Art. 32/63</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-title">2. United States Income, FX Gain, Treaty &amp; Information Reporting (2026)</h2>
-    <div class="table-wrap card-mobile">
-      <table class="data mobile-cards">
-        <thead>
-          <tr>
-            <th scope="col">US Tax / Filing Item</th>
-            <th scope="col">2026 Verified Numbers &amp; Rules</th>
-            <th scope="col">How to Minimize US Tax &amp; Avoid Penalties</th>
-            <th scope="col">Official Source</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Item" data-prio="1" class="method-cell">FEIE (Form 2555) vs Foreign Tax Credit (Form 1116)</td>
-            <td data-label="Rules" data-prio="2">2026 FEIE cap: <strong>$132,900</strong> per qualifying taxpayer (up from $130,000 in 2025). Must pass Bona Fide Residence or 330-day Physical Presence test.</td>
-            <td data-label="Guidance" data-prio="3">Because China’s top IIT rate (45%) exceeds the US top rate (37%), high earners often owe <strong>$0 US tax</strong> using Form 1116 FTC (and avoid losing Child Tax Credit/Roth eligibility that FEIE can trigger).</td>
-            <td data-label="Source" data-prio="8"><a href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf">Rev. Proc. 2025-32</a> · <a href="https://www.irs.gov/individuals/international-taxpayers/figuring-the-foreign-earned-income-exclusion">IRS FEIE</a> · <a href="https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit">IRS FTC</a></td>
-          </tr>
-          <tr>
-            <td data-label="Item" data-prio="1" class="method-cell">1984 US–China Income Tax Treaty</td>
-            <td data-label="Rules" data-prio="2">In force (effective Jan 1, 1987). Dividends 10% cap, Interest 10% cap, Teachers/Researchers (Art. 19) &amp; Students (Art. 20) relief; <strong>Saving Clause (Protocol ¶2)</strong> limits US citizen claims.</td>
-            <td data-label="Guidance" data-prio="3">US citizens rely primarily on Art. 22 double-taxation relief (Foreign Tax Credit) rather than general treaty exemptions due to the Saving Clause.</td>
-            <td data-label="Source" data-prio="8"><a href="https://www.irs.gov/businesses/international-businesses/china-tax-treaty-documents">IRS China Tax Treaty</a></td>
-          </tr>
-          <tr>
-            <td data-label="Item" data-prio="1" class="method-cell">IRC §988 Foreign Currency Gain / Loss</td>
-            <td data-label="Rules" data-prio="2">Gain on disposing of nonfunctional currency (CNY→USD) is <strong>ordinary income</strong>; personal transactions exempt only if gain ≤<strong>$200</strong> (<span class="mono">§988(e)(2)</span>). Personal FX losses are nondeductible.</td>
-            <td data-label="Guidance" data-prio="3">Record the USD value when you earned/received each RMB tranche (e.g., payroll date or interest credit). With Nov 2026 parity at ~6.7168 vs ~7.1–7.3 in 2024–2025, older RMB may show a taxable §988 currency gain when converted to USD!</td>
-            <td data-label="Source" data-prio="8"><a href="https://www.govinfo.gov/content/pkg/USCODE-2022-title26/pdf/USCODE-2022-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.pdf">26 U.S.C. §988</a> · <a href="https://www.irs.gov/pub/fatca/int_practice_units/int_c_041.pdf">IRS FX Practice Unit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Item" data-prio="1" class="method-cell">FBAR (FinCEN Form 114)</td>
-            <td data-label="Rules" data-prio="2">Mandatory if combined max balance of Chinese bank/Alipay/WeChat/brokerage accounts exceeds <strong>$10,000</strong> at any moment in calendar year. Due Apr 15 (auto-extended Oct 15).</td>
-            <td data-label="Guidance" data-prio="3">File electronically via FinCEN BSA E-Filing for $0 tax—avoids $16,536 non-willful or $165,353+/50% willful fines.</td>
-            <td data-label="Source" data-prio="8"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar">IRS FBAR</a> · <a href="https://www.federalregister.gov/documents/2026/07/07/2026-13629/no-adjustment-to-civil-monetary-penalty-amounts">2026 Fed. Reg.</a></td>
-          </tr>
-          <tr>
-            <td data-label="Item" data-prio="1" class="method-cell">FATCA Form 8938</td>
-            <td data-label="Rules" data-prio="2">Living in US: &gt;<strong>$50k</strong> year-end or &gt;<strong>$75k</strong> anytime (Single; $100k/$150k MFJ). Living Abroad: &gt;<strong>$200k</strong> year-end or &gt;<strong>$300k</strong> anytime (Single; $400k/$600k MFJ).</td>
-            <td data-label="Guidance" data-prio="3">Attached to Form 1040. Required in addition to (not instead of) FBAR; avoids $10k–$60k failure penalty &amp; open statute of limitations.</td>
-            <td data-label="Source" data-prio="8"><a href="https://www.irs.gov/businesses/corporations/do-i-need-to-file-form-8938-statement-of-specified-foreign-financial-assets">IRS Form 8938</a></td>
-          </tr>
-          <tr>
-            <td data-label="Item" data-prio="1" class="method-cell">Form 3520 (Foreign Gifts &amp; Inheritances)</td>
-            <td data-label="Rules" data-prio="2">Information-only return if receiving &gt;<strong>$100,000</strong> from a nonresident alien/estate in a year (or &gt;<strong>$20,573</strong> in 2026 from a foreign corporation/partnership).</td>
-            <td data-label="Guidance" data-prio="3">Bona fide foreign gifts/inheritances are $0 US income tax—but failing to file Form 3520 triggers a <strong>5%/month penalty up to 25%</strong>!</td>
-            <td data-label="Source" data-prio="8"><a href="https://www.irs.gov/instructions/i3520">IRS Form 3520</a> · <a href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf">Rev. Proc. 2025-32</a></td>
-          </tr>
-          <tr>
-            <td data-label="Item" data-prio="1" class="method-cell">Form 8621 PFIC Trap (Chinese Funds / QDII / Yu’ebao)</td>
-            <td data-label="Rules" data-prio="2">Chinese mutual funds, ETFs, QDII products, and certain money-market funds (e.g. Yu’ebao / wealth products) often classify as <strong>PFICs</strong>.</td>
-            <td data-label="Guidance" data-prio="3">Keep RMB in plain bank cash deposits (not fund wealth-management products) if planning to move to USD; PFICs suffer top marginal tax + compound interest.</td>
-            <td data-label="Source" data-prio="8"><a href="https://www.irs.gov/forms-pubs/about-form-8621">IRS Form 8621</a></td>
-          </tr>
-          <tr>
-            <td data-label="Item" data-prio="1" class="method-cell">Catching Up Missed Filings (Streamlined Procedures)</td>
-            <td data-label="Rules" data-prio="2">3 years amended Form 1040 + 6 years delinquent FBARs + non-willfulness certification (Form 14653 abroad / Form 14654 US).</td>
-            <td data-label="Guidance" data-prio="3"><strong>0% miscellaneous offshore penalty</strong> for Streamlined Foreign Offshore (330+ days abroad) vs <strong>5%</strong> for Domestic—do this <em>before</em> an audit or sudden $400k wire.</td>
-            <td data-label="Source" data-prio="8"><a href="https://www.irs.gov/individuals/international-taxpayers/streamlined-filing-compliance-procedures">IRS Streamlined</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-title">3. Dual-Side Decision Matrix by Origin of RMB</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>China Salary / Consulting</h3>
-        <p><strong>PRC:</strong> Pull <span class="mono">纳税记录</span>; file <span class="mono">税务备案表</span> if single payout &gt;$50k.<br><strong>US:</strong> Claim Form 1116 FTC or $132,900 FEIE; track §988 FX basis on conversion.</p>
-      </div>
-      <div class="card">
-        <h3>China Real Estate Sale</h3>
-        <p><strong>PRC:</strong> Deed/VAT/IIT clearance + <span class="mono">税务备案表</span> (&gt;$50k).<br><strong>US:</strong> Report capital gain (check $250k/$500k §121 exclusion if primary home) + Form 1116 FTC + §988 currency gain.</p>
-      </div>
-      <div class="card">
-        <h3>China Inheritance / Gift</h3>
-        <p><strong>PRC:</strong> SAFE Inheritance Approval (&gt;¥150k tax cert) or donor’s legal transfer.<br><strong>US:</strong> $0 US income tax on genuine gift/bequest, but file Form 3520 if &gt;$100,000.</p>
-      </div>
-    </div>
-  </section>
+<div class="callout info"><h2>Tax conclusion</h2><p>Moving your own existing bank balance is not, by itself, a new wage or gift. That does not establish ‘zero tax’: underlying income/gains, interest, personal FX gain, tax residence and information returns still require analysis. No personalized tax amount can be calculated from principal alone.</p></div>
+<section class="section"><div class="section-heading"><p class="eyebrow">US compliance</p><h2>Reporting thresholds that can apply alongside the transfer</h2></div><div class="table-wrap"><table class="data "><caption>FBAR and Form 8938 are independent. Form 3520 is not triggered merely because you move your own funds.</caption><thead><tr><th scope="col">Rule</th><th scope="col">Trigger / requirement</th><th scope="col">How to apply it</th><th scope="col">Official sources</th></tr></thead><tbody><tr><td data-label="Rule">US worldwide income</td><td data-label="Trigger / requirement">Report taxable worldwide income even when living abroad; filing can still be required when FEIE/FTC reduces liability</td><td data-label="How to apply it">Every route; underlying wages, interest, gains and other income</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/publications/p54" target="_blank" rel="noopener noreferrer" aria-label="IRS: Publication 54 (2025): worldwide income, FEIE, FTC, and filing rules">[S32]</a></td></tr><tr><td data-label="Rule">FBAR / FinCEN 114</td><td data-label="Trigger / requirement">Aggregate foreign financial accounts exceeded $10,000 at any time in the calendar year</td><td data-label="How to apply it">Due April 15; automatic extension to October 15; maximum balances, not transfer size</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar" target="_blank" rel="noopener noreferrer" aria-label="IRS: FBAR threshold, deadlines, and filing guidance">[S25]</a></td></tr><tr><td data-label="Rule">Form 8938 — living in the US, unmarried/MFS</td><td data-label="Trigger / requirement">More than $50,000 on last day or more than $75,000 at any time</td><td data-label="How to apply it">Specified foreign financial assets; filed with annual return when required</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements" target="_blank" rel="noopener noreferrer" aria-label="IRS: Form 8938 and FBAR comparison, including all residence/filing-status thresholds">[S27]</a></td></tr><tr><td data-label="Rule">Form 8938 — living in the US, MFJ</td><td data-label="Trigger / requirement">More than $100,000 on last day or more than $150,000 at any time</td><td data-label="How to apply it">Separate from FBAR; both can apply</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements" target="_blank" rel="noopener noreferrer" aria-label="IRS: Form 8938 and FBAR comparison, including all residence/filing-status thresholds">[S27]</a></td></tr><tr><td data-label="Rule">Form 8938 — living abroad, unmarried/MFS</td><td data-label="Trigger / requirement">More than $200,000 on last day or more than $300,000 at any time</td><td data-label="How to apply it">Must also satisfy IRS ‘living abroad’ criteria; read the comparison</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements" target="_blank" rel="noopener noreferrer" aria-label="IRS: Form 8938 and FBAR comparison, including all residence/filing-status thresholds">[S27]</a></td></tr><tr><td data-label="Rule">Form 8938 — living abroad, MFJ</td><td data-label="Trigger / requirement">More than $400,000 on last day or more than $600,000 at any time</td><td data-label="How to apply it">Specified assets are broader than just bank accounts</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements" target="_blank" rel="noopener noreferrer" aria-label="IRS: Form 8938 and FBAR comparison, including all residence/filing-status thresholds">[S27]</a></td></tr><tr><td data-label="Rule">Form 3520</td><td data-label="Trigger / requirement">Gifts/bequests over $100,000 from a foreign individual or foreign estate, with related/nominee aggregation; separate trust rules</td><td data-label="How to apply it">Not a form for moving your own savings; 5% per month late penalty capped at 25% for covered gifts</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/instructions/i3520" target="_blank" rel="noopener noreferrer" aria-label="IRS: Current Instructions for Form 3520">[S28]</a></td></tr><tr><td data-label="Rule">FinCEN Form 105</td><td data-label="Trigger / requirement">Physically transporting more than $10,000 in currency/monetary instruments into or out of the US</td><td data-label="How to apply it">Group totals can aggregate; this is not FBAR and not an income tax</td><td data-label="Official sources"><a class="source" href="https://www.cbp.gov/travel/us-citizens/know-before-you-go/know-you-go-traveling-abroad" target="_blank" rel="noopener noreferrer" aria-label="US Customs and Border Protection: FinCEN Form 105 for more than USD 10,000 entering/leaving the US">[S29]</a></td></tr><tr><td data-label="Rule">Bank CTR</td><td data-label="Trigger / requirement">Financial institution reports same-day physical-cash transactions over $10,000, including known aggregation</td><td data-label="How to apply it">A report is not a tax or evidence of wrongdoing; never structure to avoid it</td><td data-label="Official sources"><a class="source" href="https://www.fincen.gov/resources/frequently-asked-questions-regarding-fincen-currency-transaction-report-ctr" target="_blank" rel="noopener noreferrer" aria-label="FinCEN: CTR FAQ: same-day cash aggregation above USD 10,000">[S30]</a></td></tr><tr><td data-label="Rule">Form 8300</td><td data-label="Trigger / requirement">Trade/business receipt of more than $10,000 cash in one or related transactions</td><td data-label="How to apply it">Not generally an individual’s own-account cash deposit; business facts can differ</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/publications/p1544/ar02.html" target="_blank" rel="noopener noreferrer" aria-label="IRS: Form 8300 applies to trade/business cash receipts, not an ordinary own-account transfer">[S31]</a></td></tr></tbody></table></div></section>
+<section class="section"><div class="section-heading"><p class="eyebrow">China underlying tax</p><h2>Resident comprehensive-income schedule</h2></div><p>China’s IIT law makes a person domiciled in China, or without domicile but present at least 183 days in a tax year, a resident individual. Residents are taxed on China and foreign-source income; nonresidents on China-source income. The table applies to annual <strong>taxable</strong> comprehensive income after statutory deductions—not gross remittance principal. Nonresidents generally calculate wages monthly using the monthly-converted schedule and a ¥5,000 monthly expense deduction. Non-domicile 90-day, 183-day, six-year and treaty rules can change the income included. <a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193028/content.html" target="_blank" rel="noopener noreferrer" aria-label="State Taxation Administration, PRC: PRC Individual Income Tax Law and rate schedules">[S39]</a> <a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c102416/c5202332/content.html" target="_blank" rel="noopener noreferrer" aria-label="MOF / STA: 2019 Announcement 35: nonresidents and residents without domicile">[S40]</a></p><div class="table-wrap"><table class="data "><caption>Tax = taxable income × rate − quick deduction, subject to the complete law, deductions, residence and special rules. Nonresident monthly brackets are 1/12 of these thresholds with quick deductions 1/12 of these values.</caption><thead><tr><th scope="col">Annual taxable comprehensive income</th><th scope="col">Rate</th><th scope="col">Quick deduction</th><th scope="col">Official source</th></tr></thead><tbody><tr><td data-label="Annual taxable comprehensive income">≤ ¥36,000</td><td data-label="Rate">3%</td><td data-label="Quick deduction">¥0</td><td data-label="Official source"><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193028/content.html" target="_blank" rel="noopener noreferrer" aria-label="State Taxation Administration, PRC: PRC Individual Income Tax Law and rate schedules">[S39]</a></td></tr><tr><td data-label="Annual taxable comprehensive income">> ¥36,000–144,000</td><td data-label="Rate">10%</td><td data-label="Quick deduction">¥2,520</td><td data-label="Official source"><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193028/content.html" target="_blank" rel="noopener noreferrer" aria-label="State Taxation Administration, PRC: PRC Individual Income Tax Law and rate schedules">[S39]</a></td></tr><tr><td data-label="Annual taxable comprehensive income">> ¥144,000–300,000</td><td data-label="Rate">20%</td><td data-label="Quick deduction">¥16,920</td><td data-label="Official source"><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193028/content.html" target="_blank" rel="noopener noreferrer" aria-label="State Taxation Administration, PRC: PRC Individual Income Tax Law and rate schedules">[S39]</a></td></tr><tr><td data-label="Annual taxable comprehensive income">> ¥300,000–420,000</td><td data-label="Rate">25%</td><td data-label="Quick deduction">¥31,920</td><td data-label="Official source"><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193028/content.html" target="_blank" rel="noopener noreferrer" aria-label="State Taxation Administration, PRC: PRC Individual Income Tax Law and rate schedules">[S39]</a></td></tr><tr><td data-label="Annual taxable comprehensive income">> ¥420,000–660,000</td><td data-label="Rate">30%</td><td data-label="Quick deduction">¥52,920</td><td data-label="Official source"><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193028/content.html" target="_blank" rel="noopener noreferrer" aria-label="State Taxation Administration, PRC: PRC Individual Income Tax Law and rate schedules">[S39]</a></td></tr><tr><td data-label="Annual taxable comprehensive income">> ¥660,000–960,000</td><td data-label="Rate">35%</td><td data-label="Quick deduction">¥85,920</td><td data-label="Official source"><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193028/content.html" target="_blank" rel="noopener noreferrer" aria-label="State Taxation Administration, PRC: PRC Individual Income Tax Law and rate schedules">[S39]</a></td></tr><tr><td data-label="Annual taxable comprehensive income">> ¥960,000</td><td data-label="Rate">45%</td><td data-label="Quick deduction">¥181,920</td><td data-label="Official source"><a class="source" href="https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193028/content.html" target="_blank" rel="noopener noreferrer" aria-label="State Taxation Administration, PRC: PRC Individual Income Tax Law and rate schedules">[S39]</a></td></tr></tbody></table></div><p class="note">Source of money and tax records are also required for the foreign-individual FX purchase route. Paying bank fees is not paying income tax. <a class="source" href="https://www.safe.gov.cn/tianjin/2024/0430/2464.html" target="_blank" rel="noopener noreferrer" aria-label="SAFE: Individual FX Detailed Rules (modified), especially Arts. 2, 12–15">[S1]</a></p></section>
+<section class="section"><div class="section-heading"><p class="eyebrow">Lawful tax minimization</p><h2>Compare relief mechanisms without double counting</h2></div><div class="table-wrap"><table class="data "><caption>The lowest legal tax outcome is fact-specific. Do not choose a transfer rail based on an assumed exemption.</caption><thead><tr><th scope="col">Mechanism</th><th scope="col">Verified rule</th><th scope="col">Decision constraint</th><th scope="col">Official sources</th></tr></thead><tbody><tr><td data-label="Mechanism">Foreign earned income exclusion</td><td data-label="Verified rule">2026 maximum $132,900 per qualifying person; requires eligible foreign earned income, foreign tax home and bona fide-residence or physical-presence test</td><td data-label="Decision constraint">Does not exempt a bank transfer, interest, property gain or all prior income; file Form 2555 with the return</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/individuals/international-taxpayers/foreign-earned-income-exclusion" target="_blank" rel="noopener noreferrer" aria-label="IRS: Foreign earned income exclusion eligibility">[S34]</a> <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/figuring-the-foreign-earned-income-exclusion" target="_blank" rel="noopener noreferrer" aria-label="IRS: 2026 maximum foreign earned income exclusion">[S35]</a></td></tr><tr><td data-label="Mechanism">Foreign tax credit</td><td data-label="Verified rule">Credit qualifying foreign income taxes on income also subject to US tax, subject to category and limitation rules</td><td data-label="Decision constraint">Often central when Chinese tax was paid; no FTC on income excluded under FEIE</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit" target="_blank" rel="noopener noreferrer" aria-label="IRS: Foreign tax credit and Form 1116 guidance">[S33]</a></td></tr><tr><td data-label="Mechanism">US–China treaty</td><td data-label="Verified rule">Allocates taxing rights and provides relief mechanisms, but saving-clause rules preserve broad US taxation of citizens/residents</td><td data-label="Decision constraint">Do not assume a treaty makes a US citizen’s transfer or Chinese salary tax-free</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/businesses/international-businesses/china-tax-treaty-documents" target="_blank" rel="noopener noreferrer" aria-label="IRS / US Treasury: US–China income tax treaty documents and saving-clause material">[S41]</a></td></tr><tr><td data-label="Mechanism">Personal FX gain</td><td data-label="Verified rule">Publication 525 says personal foreign-currency transaction gain need not be included unless over $200; if over $200, report as capital gain</td><td data-label="Decision constraint">Different business/investment rules may apply; preserve acquisition/disposition rates and basis</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/publications/p525" target="_blank" rel="noopener noreferrer" aria-label="IRS: Publication 525: personal foreign-currency transaction gain over USD 200">[S38]</a> <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/yearly-average-currency-exchange-rates" target="_blank" rel="noopener noreferrer" aria-label="IRS: Yearly-average FX rates and spot-rate translation principle">[S47]</a></td></tr><tr><td data-label="Mechanism">Past nonwillful filings</td><td data-label="Verified rule">Streamlined offshore/US-resident procedures can apply to eligible taxpayers; generally three tax years and six FBAR years</td><td data-label="Decision constraint">Eligibility and penalties differ; do not quietly back-file if a formal procedure is appropriate</td><td data-label="Official sources"><a class="source" href="https://www.irs.gov/individuals/international-taxpayers/us-taxpayers-residing-outside-the-united-states" target="_blank" rel="noopener noreferrer" aria-label="IRS: Streamlined procedures for qualifying US taxpayers residing outside the US">[S36]</a> <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/us-taxpayers-residing-in-the-united-states" target="_blank" rel="noopener noreferrer" aria-label="IRS: Streamlined procedures for qualifying US taxpayers residing in the US">[S37]</a></td></tr></tbody></table></div></section>
+<section class="section"><div class="section-heading"><p class="eyebrow">Execution worksheet</p><h2>Ten questions for a cross-border tax professional</h2></div><ol class="checklist"><li>Which years did the CNY income arise, and what were your China/US tax-residence positions in each?</li><li>How much is principal, interest, capital gain, gift, inheritance or business equity?</li><li>Which Chinese taxes were withheld or paid, and do you have amount-matched official records?</li><li>Which income was already reported on US returns, and at what translated USD basis?</li><li>Does FEIE qualify, and would FTC produce a better result across current and carryover years?</li><li>Are you claiming any treaty position requiring specific disclosure or residency analysis?</li><li>Does personal FX gain exceed $200, or do business/investment FX rules apply instead?</li><li>What were each foreign account’s maximum values for every open FBAR year?</li><li>Do Form 8938, 3520, trust/entity, state or other information returns apply independently?</li><li>If past filings were incomplete, are you eligible for streamlined or another formal correction procedure?</li></ol><p class="note">Personal tax due, China exit-related professional costs and US tax on the transfer are intentionally <strong>blank</strong> until these facts are known. See <a href="flagged.html">Flagged for Review</a>.</p></section>
+<div class="disclaimer"><strong>Research, not individualized legal, tax, or investment advice.</strong> Eligibility follows the source and character of funds, identity used at the bank, tax residence, and transaction purpose. Obtain a written all-in bank/provider quote and qualified cross-border tax review before execution. “—” means unknown or unavailable, never zero.</div>
 </main>
-
-<footer class="site-footer">
-  <div class="inner">
-    <span>China4 · Verified Research Dashboard (Nov 2026)</span>
-    <span><a href="estimates.html">$10k–$400k Estimates</a> · <a href="flagged.html">Flagged for Review</a> · <a href="sources.html">Sources</a></span>
-  </div>
-</footer>
-</body>
-</html>
+<footer class="site-footer"><div class="inner"><div><strong>China4 evidence desk</strong><p>Independent primary-source audit · calculations reproducible in <code>scripts/build_site.py</code> and <code>data/cost-model.json</code>.</p></div><div><p>Reviewed 2026-11-08 UTC. FX and fees change.</p><p><a href="flagged.html">Read unresolved items before acting</a> · <a href="https://github.com/sassnarep3-star/China4">Repository</a></p></div></div></footer>
+</body></html>
