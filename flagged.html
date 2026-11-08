@@ -14,6 +14,7 @@
       <a href="index.html">Dashboard</a>
       <a href="methods.html">Methods &amp; Guides</a>
       <a href="estimates.html">$10k–$400k Estimates</a>
+      <a href="costs.html">Route cost model</a>
       <a href="penalties.html">Penalties &amp; Costs</a>
       <a href="taxes.html">US &amp; PRC Taxes</a>
       <a class="active" aria-current="page" href="flagged.html">Flagged for Review</a>
@@ -98,6 +99,60 @@
       </ul>
     </div>
   </section>
+
+    <section class="section">
+      <h2 class="section-title">3. Route Cost Model — Limits &amp; Irregularities</h2>
+      <p class="section-lead">Published with the <a href="costs.html">Route cost model</a>. None of these block the page; they are listed so they can be checked against a live bank quote.</p>
+      <div class="table-wrap card-mobile">
+        <table class="data mobile-cards">
+          <thead>
+            <tr><th scope="col">Item</th><th scope="col">Status / action</th><th scope="col">Official context</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Item" data-prio="1" class="method-cell">Anomaly: quoted selling rate below the PBOC central parity rate</td>
+              <td data-label="Status" data-prio="2">On the 9 Nov 2026 snapshot, BOC’s published USD spot selling rate (6.6929) sits <em>below</em> the PBOC central parity rate (6.7168) — the opposite of the usual relationship, where a bank sells above parity. Because of this, the <a href="costs.html">Route cost model</a> does <strong>not</strong> measure the spread against parity; it uses the internally consistent half-spread of BOC’s own published buy/sell quotes (0.2099%). Re-check both rates on the day you transact.</td>
+              <td data-label="Source" data-prio="8"><a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a> · <a href="https://www.pbc.gov.cn/zhengcehuobisi/125207/125217/125925/2026110608563230207/index.html">PBOC parity</a></td>
+            </tr>
+            <tr>
+              <td data-label="Item" data-prio="1" class="method-cell">The published rate board is not an executable quote</td>
+              <td data-label="Status" data-prio="2">Bank of China states on the board itself that it is for reference and that the rate actually applied at online banking, mobile banking, smart counters or the branch counter governs. The model uses it as an input, not as a promise.</td>
+              <td data-label="Source" data-prio="8"><a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board disclaimer</a></td>
+            </tr>
+            <tr>
+              <td data-label="Item" data-prio="1" class="method-cell">Intermediary / correspondent and US receiving-bank charges</td>
+              <td data-label="Status" data-prio="2"><span class="blank">Left blank — no official published figure</span>. Add your own banks’ figures to the route-cost totals.</td>
+              <td data-label="Source" data-prio="8"><a href="https://pic.bankofchina.com/bocappd/pricelist/202503/P020250331641149290400.pdf">BOC price list (overseas bank charges collected separately)</a></td>
+            </tr>
+            <tr>
+              <td data-label="Item" data-prio="1" class="method-cell">SAFE Detailed Rules Article 39 has been repealed</td>
+              <td data-label="Status" data-prio="2">The fine of up to CNY 1,000 on individuals that an earlier version of this site cited was deleted by SAFE circular 汇发〔2023〕8号. Do not rely on it; penalties now come from the PRC Foreign Exchange Administration Regulations.</td>
+              <td data-label="Source" data-prio="8"><a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE 2007 (as amended)</a></td>
+            </tr>
+            <tr>
+              <td data-label="Item" data-prio="1" class="method-cell">Conflict in the property-transfer approval threshold</td>
+              <td data-label="Status" data-prio="2">Article 10 of the PBOC Interim Measures says applications of CNY 500,000 or less are approved by the local SAFE branch; SAFE’s own release describes the split as “below CNY 500,000” versus “CNY 500,000 or more”. The boundary case is ambiguous.</td>
+              <td data-label="Source" data-prio="8"><a href="http://m.safe.gov.cn/safe/2004/1116/4133.html">SAFE release</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC Interim Measures Art. 10</a> · <a href="http://m.safe.gov.cn/safe/2004/1116/4133.html">SAFE release</a></td>
+            </tr>
+            <tr>
+              <td data-label="Item" data-prio="1" class="method-cell">Emigration / inheritance transfer eligibility</td>
+              <td data-label="Status" data-prio="2">The route applies to people who emigrated from mainland China or to foreign citizens who inherited assets in China. It does not on its face cover a US citizen’s own savings. Confirm eligibility before relying on it.</td>
+              <td data-label="Source" data-prio="8"><a href="http://m.safe.gov.cn/safe/2004/1116/4133.html">SAFE release</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC Interim Measures Art. 2</a></td>
+            </tr>
+            <tr>
+              <td data-label="Item" data-prio="1" class="method-cell">Whether a US passport alone creates a US$50,000 annual quota</td>
+              <td data-label="Status" data-prio="2">Article 2 covers purchases by domestic individuals; SAFE separately extends the quota to holders of a foreign permanent-resident ID card. A US passport by itself is not shown by the verified pages to create a quota. Confirm with the bank.</td>
+              <td data-label="Source" data-prio="8"><a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE 2007 Art. 2</a> · <a href="https://www.safe.gov.cn/en/2017/1129/1365.html">SAFE 2017</a></td>
+            </tr>
+            <tr>
+              <td data-label="Item" data-prio="1" class="method-cell">Route-cost figures are a single rate snapshot</td>
+              <td data-label="Status" data-prio="2">All cost figures use the board published on 9 November 2026. Rates move daily and the FX component scales linearly with the amount, so re-run the model with a current rate before acting.</td>
+              <td data-label="Source" data-prio="8"><a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 </main>
 
 <footer class="site-footer">

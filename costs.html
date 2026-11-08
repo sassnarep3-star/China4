@@ -1,0 +1,987 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cost estimator | China4</title><link rel="stylesheet" href="style.css"></head><body><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><span class="mark">C4</span> China4</a><nav aria-label="Main navigation"><a href="index.html">Dashboard</a><a href="methods.html">Methods &amp; Guides</a><a href="estimates.html">$10k–$400k Estimates</a><a class="active" aria-current="page" href="costs.html">Route cost model</a><a href="penalties.html">Penalties &amp; Costs</a><a href="taxes.html">US &amp; PRC Taxes</a><a href="flagged.html">Flagged for Review</a><a href="sources.html">Sources</a></nav></div></header><main class="container">
+<h1 class="page-title">Legal-route cost model: $10,000 to $400,000</h1>
+<p class="page-sub">What each <strong>legal route</strong> costs, in $10,000 steps, computed from published official bank rates and tariffs. Every figure shows its formula, its rate snapshot and its source.</p>
+<div class="callout info"><h3>How this differs from <a href="estimates.html">$10k–$400k Estimates</a></h3>
+<p><a href="estimates.html"><strong>$10k–$400k Estimates</strong></a> compares <em>providers</em> — BOC, CCB, HSBC, SkyRemit, Wise, PayPal, UnionPay — and which is cheapest at each amount. <strong>This page compares <em>legal routes</em></strong>: what it costs to spread a transfer over several calendar years under the annual quota, what a SAFE-approved emigration or inheritance property transfer costs given that its remittance must be staged over two years, what cash carry costs, and what the illegal channel would cost in statutory fines. Both pages use the same $10,000–$400,000 grid; use them together.</p></div>
+
+<div class="best-answer"><h2>Read this first</h2>
+<p><strong>The dominant cost is not the fee — it is the size of the amount relative to the rules.</strong> Because the individual annual foreign-exchange quota is <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">US$50,000 per person per calendar year</a>, moving more than that in one year requires either documentation of a legitimate, taxed current-account source (then <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE Detailed Rules Art. 13</a> allows conversion with a tax certificate) or a SAFE-approved property transfer. The bank's own charges are small and capped: on the <a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC published tariff</a> the sending charge tops out at CNY 260 plus a CNY 150 cable fee — about <strong>$61.26</strong> per wire at the rate used here, however large the transfer.</p>
+<p><strong>What is deliberately left blank:</strong> intermediary/correspondent bank charges and the US receiving bank's incoming-wire fee. No official published figure was found for either, so they are not filled in. Add them yourself from your two banks.</p>
+</div>
+
+<section class="section"><h2 class="section-title">Model inputs (every one from an official source)</h2>
+<div class="table-wrap card-mobile"><table class="data mobile-cards"><thead><tr><th scope="col">Input</th><th scope="col">Value used</th><th scope="col">Official source</th></tr></thead><tbody>
+<tr><td>BOC USD spot buying rate (bank buys USD)</td><td>6.6648 CNY / USD</td><td><a href="https://www.boc.cn/sourcedb/whpj/">BOC FX rate board</a></td></tr>
+<tr><td>BOC USD spot selling rate (customer buys USD)</td><td><strong>6.6929 CNY / USD</strong></td><td><a href="https://www.boc.cn/sourcedb/whpj/">BOC FX rate board</a> — published 9 Nov 2026, 05:30 (BOC publication stamp)</td></tr>
+<tr><td>BOC USD reference rate (中行折算价)</td><td>6.7168 CNY / USD</td><td><a href="https://www.boc.cn/sourcedb/whpj/">BOC FX rate board</a></td></tr>
+<tr><td>BOC USD cash selling rate (customer buys USD cash)</td><td>6.6929 CNY / USD — identical to the spot selling rate on the sampled board, so no cash premium is added for the cash-carry route</td><td><a href="https://www.boc.cn/sourcedb/whpj/">BOC FX rate board</a></td></tr>
+<tr><td>Quoted buy–sell spread (sell − buy) ÷ sell</td><td>0.4198%</td><td>Computed from the two BOC rates above — <a href="https://www.boc.cn/sourcedb/whpj/">BOC FX rate board</a></td></tr>
+<tr><td><strong>One-way FX cost used in the model</strong> (half of the quoted spread)</td><td><strong>0.2099%</strong></td><td>Computed: spread ÷ 2 — the standard measure of a one-way retail conversion cost against mid-market. Rates: <a href="https://www.boc.cn/sourcedb/whpj/">BOC FX rate board</a></td></tr>
+<tr><td>Outward telegraphic transfer charge</td><td>0.1% of remittance value, min CNY 50, max CNY 260</td><td><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC e-banking personal tariff</a> · <a href="https://pic.bankofchina.com/bocappd/pricelist/202503/P020250331641149290400.pdf">BOC 2025 price list PDF</a></td></tr>
+<tr><td>Telecommunication (cable) fee, destinations outside HK/Macau/Taiwan</td><td>CNY 150 per transfer</td><td><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC e-banking personal tariff</a></td></tr>
+<tr><td>Individual annual foreign-exchange purchase / settlement quota</td><td>US$50,000 per person per calendar year</td><td><a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE, Detailed Rules on Individual FX, Art. 2</a></td></tr>
+<tr><td>Cash exit: no permit needed / bank permit / SAFE approval</td><td>≤ US$5,000 / US$5,001–10,000 / &gt; US$10,000 (in principle not allowed)</td><td><a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE + GAC Interim Measures, Arts. 5 and 7</a></td></tr>
+<tr><td>SAFE property transfer: approval level</td><td>≤ CNY 500,000 local SAFE branch; above that, SAFE head office (≈ US$74,706 at the rate above)</td><td><a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC, Interim Measures, Art. 10</a> · <a href="http://m.safe.gov.cn/safe/2004/1116/4133.html">SAFE release</a></td></tr>
+<tr><td>Intermediary / correspondent bank charge and US receiving-bank charge</td><td><span class="blank">— unverified</span></td><td>No official published figure found — left blank by policy: <a href="https://pic.bankofchina.com/bocappd/pricelist/202503/P020250331641149290400.pdf">BOC price list</a> states overseas bank charges are collected separately · <a href="flagged.html">Flagged for review</a></td></tr>
+</tbody></table></div>
+<p class="small"><strong>Formula:</strong> total estimated cost = (amount × 0.2099%) + (Σ per-wire sending charge in CNY ÷ 6.6929). The CNY sending charge per wire = min(CNY 260, max(CNY 50, 0.001 × USD value × 6.6929)) + CNY 150. Because the sending charge is capped, the cost <em>percentage falls as the amount rises</em>.</p>
+</section>
+
+<section class="section"><h2 class="section-title">Headline estimate by amount (most important first)</h2>
+<p class="small">Each row is an independent gross USD target: the amount you want to end up sending. "Cheapest legal route" assumes you can document the source; where you cannot, the quota-only fallback is shown in brackets.</p>
+<div class="table-wrap card-mobile"><table class="data mobile-cards"><thead><tr>
+<th scope="col">Gross USD</th><th scope="col">Cheapest legal route</th><th scope="col">Total est. cost</th><th scope="col">Cost %</th><th scope="col">FX spread</th><th scope="col">Bank sending fee</th><th scope="col">Time</th><th scope="col">Source</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="Amount"><strong>$10,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (or quota route — identical cost)</td>
+<td data-label="Total est. cost"><strong>$53.40</strong></td>
+<td data-label="Cost %">0.534%</td>
+<td data-label="FX spread">$20.99</td>
+<td data-label="Bank sending fee">$32.41</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$20,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (or quota route — identical cost)</td>
+<td data-label="Total est. cost"><strong>$84.40</strong></td>
+<td data-label="Cost %">0.422%</td>
+<td data-label="FX spread">$41.98</td>
+<td data-label="Bank sending fee">$42.41</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$30,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (or quota route — identical cost)</td>
+<td data-label="Total est. cost"><strong>$115.39</strong></td>
+<td data-label="Cost %">0.385%</td>
+<td data-label="FX spread">$62.98</td>
+<td data-label="Bank sending fee">$52.41</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$40,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (or quota route — identical cost)</td>
+<td data-label="Total est. cost"><strong>$145.23</strong></td>
+<td data-label="Cost %">0.363%</td>
+<td data-label="FX spread">$83.97</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$50,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (or quota route — identical cost)</td>
+<td data-label="Total est. cost"><strong>$166.22</strong></td>
+<td data-label="Cost %">0.332%</td>
+<td data-label="FX spread">$104.96</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$60,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 2 yrs, $230.78)</td>
+<td data-label="Total est. cost"><strong>$187.21</strong></td>
+<td data-label="Cost %">0.312%</td>
+<td data-label="FX spread">$125.95</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$70,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 2 yrs, $261.77)</td>
+<td data-label="Total est. cost"><strong>$208.21</strong></td>
+<td data-label="Cost %">0.297%</td>
+<td data-label="FX spread">$146.95</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$80,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 2 yrs, $290.46)</td>
+<td data-label="Total est. cost"><strong>$229.20</strong></td>
+<td data-label="Cost %">0.286%</td>
+<td data-label="FX spread">$167.94</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$90,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 2 yrs, $311.45)</td>
+<td data-label="Total est. cost"><strong>$250.19</strong></td>
+<td data-label="Cost %">0.278%</td>
+<td data-label="FX spread">$188.93</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$100,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 2 yrs, $332.44)</td>
+<td data-label="Total est. cost"><strong>$271.18</strong></td>
+<td data-label="Cost %">0.271%</td>
+<td data-label="FX spread">$209.92</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$110,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 3 yrs, $408.15)</td>
+<td data-label="Total est. cost"><strong>$292.18</strong></td>
+<td data-label="Cost %">0.266%</td>
+<td data-label="FX spread">$230.92</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$120,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 3 yrs, $435.69)</td>
+<td data-label="Total est. cost"><strong>$313.17</strong></td>
+<td data-label="Cost %">0.261%</td>
+<td data-label="FX spread">$251.91</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$130,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 3 yrs, $456.68)</td>
+<td data-label="Total est. cost"><strong>$334.16</strong></td>
+<td data-label="Cost %">0.257%</td>
+<td data-label="FX spread">$272.90</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$140,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 3 yrs, $477.67)</td>
+<td data-label="Total est. cost"><strong>$355.15</strong></td>
+<td data-label="Cost %">0.254%</td>
+<td data-label="FX spread">$293.89</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$150,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 3 yrs, $498.66)</td>
+<td data-label="Total est. cost"><strong>$376.14</strong></td>
+<td data-label="Cost %">0.251%</td>
+<td data-label="FX spread">$314.89</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$160,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 4 yrs, $580.91)</td>
+<td data-label="Total est. cost"><strong>$397.14</strong></td>
+<td data-label="Cost %">0.248%</td>
+<td data-label="FX spread">$335.88</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$170,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 4 yrs, $601.91)</td>
+<td data-label="Total est. cost"><strong>$418.13</strong></td>
+<td data-label="Cost %">0.246%</td>
+<td data-label="FX spread">$356.87</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$180,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 4 yrs, $622.90)</td>
+<td data-label="Total est. cost"><strong>$439.12</strong></td>
+<td data-label="Cost %">0.244%</td>
+<td data-label="FX spread">$377.86</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$190,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 4 yrs, $643.89)</td>
+<td data-label="Total est. cost"><strong>$460.11</strong></td>
+<td data-label="Cost %">0.242%</td>
+<td data-label="FX spread">$398.86</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$200,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 4 yrs, $664.88)</td>
+<td data-label="Total est. cost"><strong>$481.11</strong></td>
+<td data-label="Cost %">0.241%</td>
+<td data-label="FX spread">$419.85</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$210,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 5 yrs, $747.14)</td>
+<td data-label="Total est. cost"><strong>$502.10</strong></td>
+<td data-label="Cost %">0.239%</td>
+<td data-label="FX spread">$440.84</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$220,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 5 yrs, $768.13)</td>
+<td data-label="Total est. cost"><strong>$523.09</strong></td>
+<td data-label="Cost %">0.238%</td>
+<td data-label="FX spread">$461.83</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$230,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 5 yrs, $789.12)</td>
+<td data-label="Total est. cost"><strong>$544.08</strong></td>
+<td data-label="Cost %">0.237%</td>
+<td data-label="FX spread">$482.83</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$240,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 5 yrs, $810.11)</td>
+<td data-label="Total est. cost"><strong>$565.08</strong></td>
+<td data-label="Cost %">0.235%</td>
+<td data-label="FX spread">$503.82</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$250,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 5 yrs, $831.10)</td>
+<td data-label="Total est. cost"><strong>$586.07</strong></td>
+<td data-label="Cost %">0.234%</td>
+<td data-label="FX spread">$524.81</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$260,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 6 yrs, $913.36)</td>
+<td data-label="Total est. cost"><strong>$607.06</strong></td>
+<td data-label="Cost %">0.233%</td>
+<td data-label="FX spread">$545.80</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$270,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 6 yrs, $934.35)</td>
+<td data-label="Total est. cost"><strong>$628.05</strong></td>
+<td data-label="Cost %">0.233%</td>
+<td data-label="FX spread">$566.79</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$280,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 6 yrs, $955.34)</td>
+<td data-label="Total est. cost"><strong>$649.05</strong></td>
+<td data-label="Cost %">0.232%</td>
+<td data-label="FX spread">$587.79</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$290,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 6 yrs, $976.33)</td>
+<td data-label="Total est. cost"><strong>$670.04</strong></td>
+<td data-label="Cost %">0.231%</td>
+<td data-label="FX spread">$608.78</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$300,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 6 yrs, $997.33)</td>
+<td data-label="Total est. cost"><strong>$691.03</strong></td>
+<td data-label="Cost %">0.230%</td>
+<td data-label="FX spread">$629.77</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$310,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 7 yrs, $1,079.58)</td>
+<td data-label="Total est. cost"><strong>$712.02</strong></td>
+<td data-label="Cost %">0.230%</td>
+<td data-label="FX spread">$650.76</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$320,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 7 yrs, $1,100.57)</td>
+<td data-label="Total est. cost"><strong>$733.02</strong></td>
+<td data-label="Cost %">0.229%</td>
+<td data-label="FX spread">$671.76</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$330,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 7 yrs, $1,121.56)</td>
+<td data-label="Total est. cost"><strong>$754.01</strong></td>
+<td data-label="Cost %">0.228%</td>
+<td data-label="FX spread">$692.75</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$340,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 7 yrs, $1,142.55)</td>
+<td data-label="Total est. cost"><strong>$775.00</strong></td>
+<td data-label="Cost %">0.228%</td>
+<td data-label="FX spread">$713.74</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$350,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 7 yrs, $1,163.55)</td>
+<td data-label="Total est. cost"><strong>$795.99</strong></td>
+<td data-label="Cost %">0.227%</td>
+<td data-label="FX spread">$734.73</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$360,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 8 yrs, $1,245.80)</td>
+<td data-label="Total est. cost"><strong>$816.99</strong></td>
+<td data-label="Cost %">0.227%</td>
+<td data-label="FX spread">$755.73</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$370,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 8 yrs, $1,266.79)</td>
+<td data-label="Total est. cost"><strong>$837.98</strong></td>
+<td data-label="Cost %">0.226%</td>
+<td data-label="FX spread">$776.72</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$380,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 8 yrs, $1,287.78)</td>
+<td data-label="Total est. cost"><strong>$858.97</strong></td>
+<td data-label="Cost %">0.226%</td>
+<td data-label="FX spread">$797.71</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$390,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 8 yrs, $1,308.77)</td>
+<td data-label="Total est. cost"><strong>$879.96</strong></td>
+<td data-label="Cost %">0.226%</td>
+<td data-label="FX spread">$818.70</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$400,000</strong></td>
+<td data-label="Cheapest legal route">Documented conversion + 1 wire (quota-only fallback: 8 yrs, $1,329.77)</td>
+<td data-label="Total est. cost"><strong>$900.95</strong></td>
+<td data-label="Cost %">0.225%</td>
+<td data-label="FX spread">$839.70</td>
+<td data-label="Bank sending fee">$61.26</td>
+<td data-label="Time">1 wire</td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.boc.cn/sourcedb/whpj/">BOC rate board</a></td>
+</tr>
+</tbody></table></div>
+</section>
+
+<section class="section"><h2 class="section-title">Every legal route, side by side, at every amount</h2>
+<div class="table-wrap card-mobile"><table class="data mobile-cards"><thead><tr>
+<th scope="col">Gross USD</th><th scope="col">Annual-quota route</th><th scope="col">Documented single wire</th><th scope="col">SAFE property transfer</th><th scope="col">Cash carry</th><th scope="col">Source</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="Amount"><strong>$10,000</strong></td>
+<td data-label="Annual-quota route">$53.40<br><span class="small">1 wire(s), 1 yr</span></td>
+<td data-label="Documented single wire">$53.40<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$110.64<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry">$20.99<br><span class='small'>2 exits</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$20,000</strong></td>
+<td data-label="Annual-quota route">$84.40<br><span class="small">1 wire(s), 1 yr</span></td>
+<td data-label="Documented single wire">$84.40<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$134.16<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$30,000</strong></td>
+<td data-label="Annual-quota route">$115.39<br><span class="small">1 wire(s), 1 yr</span></td>
+<td data-label="Documented single wire">$115.39<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$160.21<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$40,000</strong></td>
+<td data-label="Annual-quota route">$145.23<br><span class="small">1 wire(s), 1 yr</span></td>
+<td data-label="Documented single wire">$145.23<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$191.21<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$50,000</strong></td>
+<td data-label="Annual-quota route">$166.22<br><span class="small">1 wire(s), 1 yr</span></td>
+<td data-label="Documented single wire">$166.22<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$222.20<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$60,000</strong></td>
+<td data-label="Annual-quota route">$230.78<br><span class="small">2 wire(s), 2 yrs</span></td>
+<td data-label="Documented single wire">$187.21<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$253.19<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$70,000</strong></td>
+<td data-label="Annual-quota route">$261.77<br><span class="small">2 wire(s), 2 yrs</span></td>
+<td data-label="Documented single wire">$208.21<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$284.18<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$80,000</strong></td>
+<td data-label="Annual-quota route">$290.46<br><span class="small">2 wire(s), 2 yrs</span></td>
+<td data-label="Documented single wire">$229.20<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$314.02<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$90,000</strong></td>
+<td data-label="Annual-quota route">$311.45<br><span class="small">2 wire(s), 2 yrs</span></td>
+<td data-label="Documented single wire">$250.19<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$340.01<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$100,000</strong></td>
+<td data-label="Annual-quota route">$332.44<br><span class="small">2 wire(s), 2 yrs</span></td>
+<td data-label="Documented single wire">$271.18<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$366.01<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$110,000</strong></td>
+<td data-label="Annual-quota route">$408.15<br><span class="small">3 wire(s), 3 yrs</span></td>
+<td data-label="Documented single wire">$292.18<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$392.00<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$120,000</strong></td>
+<td data-label="Annual-quota route">$435.69<br><span class="small">3 wire(s), 3 yrs</span></td>
+<td data-label="Documented single wire">$313.17<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$417.99<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$130,000</strong></td>
+<td data-label="Annual-quota route">$456.68<br><span class="small">3 wire(s), 3 yrs</span></td>
+<td data-label="Documented single wire">$334.16<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$443.98<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$140,000</strong></td>
+<td data-label="Annual-quota route">$477.67<br><span class="small">3 wire(s), 3 yrs</span></td>
+<td data-label="Documented single wire">$355.15<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$469.98<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$150,000</strong></td>
+<td data-label="Annual-quota route">$498.66<br><span class="small">3 wire(s), 3 yrs</span></td>
+<td data-label="Documented single wire">$376.14<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$495.97<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$160,000</strong></td>
+<td data-label="Annual-quota route">$580.91<br><span class="small">4 wire(s), 4 yrs</span></td>
+<td data-label="Documented single wire">$397.14<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$519.66<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$170,000</strong></td>
+<td data-label="Annual-quota route">$601.91<br><span class="small">4 wire(s), 4 yrs</span></td>
+<td data-label="Documented single wire">$418.13<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$540.65<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$180,000</strong></td>
+<td data-label="Annual-quota route">$622.90<br><span class="small">4 wire(s), 4 yrs</span></td>
+<td data-label="Documented single wire">$439.12<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$561.64<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$190,000</strong></td>
+<td data-label="Annual-quota route">$643.89<br><span class="small">4 wire(s), 4 yrs</span></td>
+<td data-label="Documented single wire">$460.11<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$582.63<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$200,000</strong></td>
+<td data-label="Annual-quota route">$664.88<br><span class="small">4 wire(s), 4 yrs</span></td>
+<td data-label="Documented single wire">$481.11<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$603.62<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$210,000</strong></td>
+<td data-label="Annual-quota route">$747.14<br><span class="small">5 wire(s), 5 yrs</span></td>
+<td data-label="Documented single wire">$502.10<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$624.62<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$220,000</strong></td>
+<td data-label="Annual-quota route">$768.13<br><span class="small">5 wire(s), 5 yrs</span></td>
+<td data-label="Documented single wire">$523.09<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$645.61<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$230,000</strong></td>
+<td data-label="Annual-quota route">$789.12<br><span class="small">5 wire(s), 5 yrs</span></td>
+<td data-label="Documented single wire">$544.08<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$666.60<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$240,000</strong></td>
+<td data-label="Annual-quota route">$810.11<br><span class="small">5 wire(s), 5 yrs</span></td>
+<td data-label="Documented single wire">$565.08<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$687.59<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$250,000</strong></td>
+<td data-label="Annual-quota route">$831.10<br><span class="small">5 wire(s), 5 yrs</span></td>
+<td data-label="Documented single wire">$586.07<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$708.59<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$260,000</strong></td>
+<td data-label="Annual-quota route">$913.36<br><span class="small">6 wire(s), 6 yrs</span></td>
+<td data-label="Documented single wire">$607.06<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$729.58<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$270,000</strong></td>
+<td data-label="Annual-quota route">$934.35<br><span class="small">6 wire(s), 6 yrs</span></td>
+<td data-label="Documented single wire">$628.05<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$750.57<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$280,000</strong></td>
+<td data-label="Annual-quota route">$955.34<br><span class="small">6 wire(s), 6 yrs</span></td>
+<td data-label="Documented single wire">$649.05<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$771.56<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$290,000</strong></td>
+<td data-label="Annual-quota route">$976.33<br><span class="small">6 wire(s), 6 yrs</span></td>
+<td data-label="Documented single wire">$670.04<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$792.56<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$300,000</strong></td>
+<td data-label="Annual-quota route">$997.33<br><span class="small">6 wire(s), 6 yrs</span></td>
+<td data-label="Documented single wire">$691.03<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$813.55<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$310,000</strong></td>
+<td data-label="Annual-quota route">$1,079.58<br><span class="small">7 wire(s), 7 yrs</span></td>
+<td data-label="Documented single wire">$712.02<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$834.54<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$320,000</strong></td>
+<td data-label="Annual-quota route">$1,100.57<br><span class="small">7 wire(s), 7 yrs</span></td>
+<td data-label="Documented single wire">$733.02<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$855.53<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$330,000</strong></td>
+<td data-label="Annual-quota route">$1,121.56<br><span class="small">7 wire(s), 7 yrs</span></td>
+<td data-label="Documented single wire">$754.01<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$876.53<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$340,000</strong></td>
+<td data-label="Annual-quota route">$1,142.55<br><span class="small">7 wire(s), 7 yrs</span></td>
+<td data-label="Documented single wire">$775.00<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$897.52<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$350,000</strong></td>
+<td data-label="Annual-quota route">$1,163.55<br><span class="small">7 wire(s), 7 yrs</span></td>
+<td data-label="Documented single wire">$795.99<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$918.51<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$360,000</strong></td>
+<td data-label="Annual-quota route">$1,245.80<br><span class="small">8 wire(s), 8 yrs</span></td>
+<td data-label="Documented single wire">$816.99<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$939.50<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$370,000</strong></td>
+<td data-label="Annual-quota route">$1,266.79<br><span class="small">8 wire(s), 8 yrs</span></td>
+<td data-label="Documented single wire">$837.98<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$960.50<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$380,000</strong></td>
+<td data-label="Annual-quota route">$1,287.78<br><span class="small">8 wire(s), 8 yrs</span></td>
+<td data-label="Documented single wire">$858.97<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$981.49<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$390,000</strong></td>
+<td data-label="Annual-quota route">$1,308.77<br><span class="small">8 wire(s), 8 yrs</span></td>
+<td data-label="Documented single wire">$879.96<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$1,002.48<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$400,000</strong></td>
+<td data-label="Annual-quota route">$1,329.77<br><span class="small">8 wire(s), 8 yrs</span></td>
+<td data-label="Documented single wire">$900.95<br><span class="small">1 wire</span></td>
+<td data-label="SAFE property transfer">$1,023.47<br><span class="small">3 wires, 2 yrs</span></td>
+<td data-label="Cash carry"><span class="blank">Not permitted above $10,000</span></td>
+<td data-label="Source"><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff</a> · <a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE quota</a> · <a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC property transfer</a> · <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">SAFE/GAC cash</a></td>
+</tr>
+</tbody></table></div>
+<p class="small"><strong>Why the quota route costs more above $50,000:</strong> it needs one wire per calendar year, so it pays the CNY 150 cable fee again each year and waits a year between tranches. <strong>Why the SAFE property-transfer route costs more:</strong> the rules require the money to leave in three stages — no more than half up front, no more than half of the remainder after one year, and the balance after two years (<a href="https://www.gov.cn/gongbao/content/2005/content_64294.htm">PBOC Interim Measures, Art. 6</a>) — so it pays three sets of fees. <strong>Cash carry</strong> is capped by <a href="https://www.gov.cn/gongbao/content/2004/content_63085.htm">Arts. 5 and 7</a>: above US$10,000 it is in principle not permitted.</p>
+</section>
+
+<section class="section"><h2 class="section-title">Illegal channel: statutory penalty exposure (never use)</h2>
+<p class="small">For contrast only. These are the statutory fine ranges in the PRC foreign-exchange regulations and are the reason the legal routes above are cheaper by orders of magnitude even in the worst case.</p>
+<div class="table-wrap card-mobile"><table class="data mobile-cards"><thead><tr>
+<th scope="col">Gross USD</th><th scope="col">Low end of fine (30%)</th><th scope="col">High end of fine (300%)</th><th scope="col">Confiscation / criminal</th><th scope="col">Compared with the legal route</th><th scope="col">Source</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="Amount"><strong>$10,000</strong></td>
+<td data-label="Low end of fine (30%)">$3,000.00</td>
+<td data-label="High end of fine (300%)">$30,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $53.40 (0.534%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$20,000</strong></td>
+<td data-label="Low end of fine (30%)">$6,000.00</td>
+<td data-label="High end of fine (300%)">$60,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $84.40 (0.422%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$30,000</strong></td>
+<td data-label="Low end of fine (30%)">$9,000.00</td>
+<td data-label="High end of fine (300%)">$90,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $115.39 (0.385%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$40,000</strong></td>
+<td data-label="Low end of fine (30%)">$12,000.00</td>
+<td data-label="High end of fine (300%)">$120,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $145.23 (0.363%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$50,000</strong></td>
+<td data-label="Low end of fine (30%)">$15,000.00</td>
+<td data-label="High end of fine (300%)">$150,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $166.22 (0.332%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$60,000</strong></td>
+<td data-label="Low end of fine (30%)">$18,000.00</td>
+<td data-label="High end of fine (300%)">$180,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $187.21 (0.312%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$70,000</strong></td>
+<td data-label="Low end of fine (30%)">$21,000.00</td>
+<td data-label="High end of fine (300%)">$210,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $208.21 (0.297%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$80,000</strong></td>
+<td data-label="Low end of fine (30%)">$24,000.00</td>
+<td data-label="High end of fine (300%)">$240,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $229.20 (0.286%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$90,000</strong></td>
+<td data-label="Low end of fine (30%)">$27,000.00</td>
+<td data-label="High end of fine (300%)">$270,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $250.19 (0.278%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$100,000</strong></td>
+<td data-label="Low end of fine (30%)">$30,000.00</td>
+<td data-label="High end of fine (300%)">$300,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $271.18 (0.271%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$110,000</strong></td>
+<td data-label="Low end of fine (30%)">$33,000.00</td>
+<td data-label="High end of fine (300%)">$330,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $292.18 (0.266%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$120,000</strong></td>
+<td data-label="Low end of fine (30%)">$36,000.00</td>
+<td data-label="High end of fine (300%)">$360,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $313.17 (0.261%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$130,000</strong></td>
+<td data-label="Low end of fine (30%)">$39,000.00</td>
+<td data-label="High end of fine (300%)">$390,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $334.16 (0.257%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$140,000</strong></td>
+<td data-label="Low end of fine (30%)">$42,000.00</td>
+<td data-label="High end of fine (300%)">$420,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $355.15 (0.254%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$150,000</strong></td>
+<td data-label="Low end of fine (30%)">$45,000.00</td>
+<td data-label="High end of fine (300%)">$450,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $376.14 (0.251%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$160,000</strong></td>
+<td data-label="Low end of fine (30%)">$48,000.00</td>
+<td data-label="High end of fine (300%)">$480,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $397.14 (0.248%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$170,000</strong></td>
+<td data-label="Low end of fine (30%)">$51,000.00</td>
+<td data-label="High end of fine (300%)">$510,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $418.13 (0.246%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$180,000</strong></td>
+<td data-label="Low end of fine (30%)">$54,000.00</td>
+<td data-label="High end of fine (300%)">$540,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $439.12 (0.244%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$190,000</strong></td>
+<td data-label="Low end of fine (30%)">$57,000.00</td>
+<td data-label="High end of fine (300%)">$570,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $460.11 (0.242%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$200,000</strong></td>
+<td data-label="Low end of fine (30%)">$60,000.00</td>
+<td data-label="High end of fine (300%)">$600,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $481.11 (0.241%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$210,000</strong></td>
+<td data-label="Low end of fine (30%)">$63,000.00</td>
+<td data-label="High end of fine (300%)">$630,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $502.10 (0.239%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$220,000</strong></td>
+<td data-label="Low end of fine (30%)">$66,000.00</td>
+<td data-label="High end of fine (300%)">$660,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $523.09 (0.238%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$230,000</strong></td>
+<td data-label="Low end of fine (30%)">$69,000.00</td>
+<td data-label="High end of fine (300%)">$690,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $544.08 (0.237%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$240,000</strong></td>
+<td data-label="Low end of fine (30%)">$72,000.00</td>
+<td data-label="High end of fine (300%)">$720,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $565.08 (0.235%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$250,000</strong></td>
+<td data-label="Low end of fine (30%)">$75,000.00</td>
+<td data-label="High end of fine (300%)">$750,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $586.07 (0.234%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$260,000</strong></td>
+<td data-label="Low end of fine (30%)">$78,000.00</td>
+<td data-label="High end of fine (300%)">$780,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $607.06 (0.233%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$270,000</strong></td>
+<td data-label="Low end of fine (30%)">$81,000.00</td>
+<td data-label="High end of fine (300%)">$810,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $628.05 (0.233%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$280,000</strong></td>
+<td data-label="Low end of fine (30%)">$84,000.00</td>
+<td data-label="High end of fine (300%)">$840,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $649.05 (0.232%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$290,000</strong></td>
+<td data-label="Low end of fine (30%)">$87,000.00</td>
+<td data-label="High end of fine (300%)">$870,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $670.04 (0.231%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$300,000</strong></td>
+<td data-label="Low end of fine (30%)">$90,000.00</td>
+<td data-label="High end of fine (300%)">$900,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $691.03 (0.230%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$310,000</strong></td>
+<td data-label="Low end of fine (30%)">$93,000.00</td>
+<td data-label="High end of fine (300%)">$930,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $712.02 (0.230%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$320,000</strong></td>
+<td data-label="Low end of fine (30%)">$96,000.00</td>
+<td data-label="High end of fine (300%)">$960,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $733.02 (0.229%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$330,000</strong></td>
+<td data-label="Low end of fine (30%)">$99,000.00</td>
+<td data-label="High end of fine (300%)">$990,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $754.01 (0.228%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$340,000</strong></td>
+<td data-label="Low end of fine (30%)">$102,000.00</td>
+<td data-label="High end of fine (300%)">$1,020,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $775.00 (0.228%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$350,000</strong></td>
+<td data-label="Low end of fine (30%)">$105,000.00</td>
+<td data-label="High end of fine (300%)">$1,050,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $795.99 (0.227%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$360,000</strong></td>
+<td data-label="Low end of fine (30%)">$108,000.00</td>
+<td data-label="High end of fine (300%)">$1,080,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $816.99 (0.227%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$370,000</strong></td>
+<td data-label="Low end of fine (30%)">$111,000.00</td>
+<td data-label="High end of fine (300%)">$1,110,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $837.98 (0.226%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$380,000</strong></td>
+<td data-label="Low end of fine (30%)">$114,000.00</td>
+<td data-label="High end of fine (300%)">$1,140,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $858.97 (0.226%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$390,000</strong></td>
+<td data-label="Low end of fine (30%)">$117,000.00</td>
+<td data-label="High end of fine (300%)">$1,170,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $879.96 (0.226%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr><tr>
+<td data-label="Amount"><strong>$400,000</strong></td>
+<td data-label="Low end of fine (30%)">$120,000.00</td>
+<td data-label="High end of fine (300%)">$1,200,000.00</td>
+<td data-label="Confiscation">Illegal gains may also be confiscated; criminal liability if a crime is constituted</td>
+<td data-label="Compared with legal route">Legal documented route at this amount: $900.95 (0.225%)</td>
+<td data-label="Source"><a href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">PRC FX Regulations, Arts. 45–46</a></td>
+</tr>
+</tbody></table></div>
+</section>
+
+<section class="section"><h2 class="section-title">What this estimate excludes</h2>
+<div class="table-wrap card-mobile"><table class="data mobile-cards"><thead><tr><th scope="col">Excluded item</th><th scope="col">Why</th><th scope="col">Source</th></tr></thead><tbody>
+<tr><td>Intermediary / correspondent bank deductions</td><td><span class="blank">— unverified</span> — varies by routing bank; no official published figure</td><td><a href="https://pic.bankofchina.com/bocappd/pricelist/202503/P020250331641149290400.pdf">BOC price list (states overseas bank charges are collected separately)</a> · <a href="flagged.html">Flagged for review</a></td></tr>
+<tr><td>US receiving bank incoming-wire fee</td><td><span class="blank">— unverified</span> — set privately by each US bank; no official published figure</td><td><a href="flagged.html">Flagged for review</a></td></tr>
+<tr><td>Chinese tax already owed on the underlying income</td><td><span class="blank">— unverified</span> — depends on how the money was earned and whether it was taxed in China</td><td><a href="https://www.safe.gov.cn/safe/2007/0105/5320.html">SAFE Detailed Rules, Art. 13 (tax certificate)</a></td></tr>
+<tr><td>US tax on income or on foreign-currency gain</td><td><span class="blank">— unverified</span> — depends on your filings, basis and whether the funds were already reported</td><td><a href="https://www.irs.gov/publications/p54">IRS Pub. 54</a> · <a href="https://www.irs.gov/pub/fatca/int_practice_units/int_c_041.pdf">IRS FX guidance</a></td></tr>
+<tr><td>Bank-specific discounts for e-banking channels</td><td><span class="blank">— unverified</span> — BOC lists channel discounts separately from the standard tariff</td><td><a href="https://www.boc.cn/ebanking/service/cs1/200905/t20090506_990712.html">BOC tariff page</a></td></tr>
+</tbody></table></div>
+</section>
+<div class="disclaimer"><strong>Research, not legal or tax advice.</strong> The figures on this page are model estimates computed from published official inputs, not bank quotes and not a determination of your eligibility. Verify current rates, the bank’s executable quote and your documents with the bank and qualified China–US advisers before acting. Sources reviewed 8–9 November 2026; older guidance may have changed.</div>
+</main><footer class="site-footer"><div class="inner"><span>China4 · Source-first research</span><a href="flagged.html">Open questions &amp; limitations</a></div></footer></body></html>

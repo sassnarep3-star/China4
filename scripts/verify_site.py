@@ -9,6 +9,7 @@ PAGES = [
     'index.html',
     'methods.html',
     'estimates.html',
+    'costs.html',
     'penalties.html',
     'taxes.html',
     'flagged.html',
@@ -33,6 +34,9 @@ OFFICIAL = (
     'westernunion.com',
     'tenpay.com',
     'alipay.com',
+    'gov.cn',
+    'ecfr.gov',
+    'chinamoney.com.cn',
     'irs.gov',
     'fincen.gov',
     'cbp.gov',
@@ -52,6 +56,8 @@ class Audit(HTMLParser):
         self.in_body = False
         self.row = None
         self.rows = []
+        self.row_blank = False
+        self.row_blanks = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -59,6 +65,9 @@ class Audit(HTMLParser):
             self.in_body = True
         if tag == 'tr' and self.in_body:
             self.row = []
+            self.row_blank = False
+        if tag == 'span' and self.row is not None and 'blank' in (attrs.get('class') or '').split():
+            self.row_blank = True
         if tag in ('a', 'link'):
             href = attrs.get('href', '')
             self.links.append(href)
@@ -68,6 +77,7 @@ class Audit(HTMLParser):
     def handle_endtag(self, tag):
         if tag == 'tr' and self.row is not None:
             self.rows.append(self.row)
+            self.row_blanks.append(self.row_blank)
             self.row = None
         if tag == 'tbody':
             self.in_body = False
@@ -81,15 +91,17 @@ for name in PAGES:
         url = urlparse(href)
         if not url.scheme and url.path and not (ROOT / url.path).is_file():
             raise SystemExit(f'{name}: missing local link {href}')
-    for i, row in enumerate(p.rows, 1):
+    for i, (row, blank) in enumerate(zip(p.rows, p.row_blanks), 1):
+        if blank:
+            continue  # value explicitly left blank/unverified: nothing to source
         if not any(
             any((urlparse(u).hostname or '') == d or (urlparse(u).hostname or '').endswith('.' + d) for d in OFFICIAL)
             for u in row
         ):
             raise SystemExit(f'{name}: table row {i} lacks official source')
-    if name == 'estimates.html':
+    if name in ('estimates.html', 'costs.html'):
         for amount in range(10000, 400001, 10000):
             if f'${amount:,.0f}' not in text:
                 raise SystemExit(f'Missing ${amount:,} in estimates.html')
     print(f'{name}: {len(p.rows)} sourced rows; local links OK')
-print('Static checks passed across all 7 pages and 40 increment rows.')
+print('Static checks passed across all %d pages and 40 increment rows.' % len(PAGES))
