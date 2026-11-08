@@ -3,164 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sources — China4
-</title>
+<title>Source registry · China Money</title>
+<meta name="description" content="All 25 sources, each fetched and read directly. Click any title to open the original.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html"><span class="mark">C4</span> China4</a>
-    <nav>
-      <a href="index.html">Dashboard</a>
-      <a href="methods.html">Conversion Methods</a>
-      <a href="penalties.html">Penalty Breakdown</a>
-      <a href="taxes.html">US Tax Obligations</a>
-      <a href="flagged.html">Flagged for Review</a>
-      <a class="active" href="sources.html">Sources</a>
-    </nav>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">China&nbsp;Money<span>CNY → USD, verified</span></a>
+    <button class="navtoggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">Menu</button>
   </div>
+  <nav class="site-nav"><div class="container"><a href="index.html">Dashboard</a><a href="guide.html">Decision guide</a><a href="methods.html">All routes</a><a href="costs.html">Conversion cost</a><a href="china-rules.html">China rules</a><a href="us-tax.html">US tax &amp; reporting</a><a href="penalties.html">Penalties</a><a href="flagged.html">Flagged for review</a><a href="audit.html">Repo audit</a><a href="sources.html" class="active" aria-current="page">Sources</a></div></nav>
 </header>
-
-<div class="container">
-  <h1 class="page-title">Sources and verification</h1>
-  <p class="page-sub">Every figure on this site is traced to a source. Official sources are marked <span class="tag info">Official</span>; secondary or background material is marked <span class="tag mixed">Secondary</span> and is not used for any stand-alone figure. Blank/unverified values are listed on the <a href="flagged.html">Flagged for Review</a> page.</p>
-
-  <div class="section">
-    <h2 class="section-title">&#128204; China — foreign exchange and customs (official)</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:34%">Source</th>
-          <th style="width:44%">What it establishes</th>
-          <th style="width:22%">Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a class="source" href="http://www.fdi.gov.cn/1800000121_39_3577_0_7.html">SAFE — Detailed Rules for Implementing the Measures for the Administration on Individual Foreign Exchange</a> (mirror of SAFE circular on fdi.gov.cn)</td>
-          <td>US$50,000 annual per-person quota for foreign-exchange settlement/purchase (Art. 2); documentation above quota (Art. 10&ndash;12); same-day remittance rules (Art. 14); penalty fine on individuals under the Measures (Art. 39)</td>
-          <td><span class="tag info">Official (mirror)</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.safe.gov.cn/en/">State Administration of Foreign Exchange (SAFE) — official English site</a></td>
-          <td>China's foreign-exchange regulator; regulations index and enforcement releases</td>
-          <td><span class="tag info">Official</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.safe.gov.cn/en/2018/0829/1452.html">SAFE — Foreign Exchange Irregularities enforcement release (Aug 2018)</a></td>
-          <td>Examples of fines for illegal FX purchases/sales (e.g., individual fines under Art. 45 of the Regulations)</td>
-          <td><span class="tag info">Official</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">Regulations of the PRC on Foreign Exchange Administration (ChinaMoney mirror)</a></td>
-          <td>Art. 38/39 evasion fines (30%&ndash;500%); Art. 42 carrying FX out (warning + fine up to 20%); Art. 45/46 illegal FX trading fines (30%&ndash;300%) + confiscation + criminal liability</td>
-          <td><span class="tag info">Official (mirror)</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.pbc.gov.cn/english/130437/index.html">People&rsquo;s Bank of China — English site</a></td>
-          <td>Central bank; exchange-rate data; virtual-currency risk notices issued 2021</td>
-          <td><span class="tag info">Official</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.travelchinaguide.com/essential/customs.htm">China Customs cash declaration guidance (secondary)</a></td>
-          <td>RMB 20,000 cash cap; foreign-currency cash &le;US$5,000 no declaration; US$5,001&ndash;10,000 permit; &gt;US$10,000 SAFE approval</td>
-          <td><span class="tag mixed">Secondary — UNVERIFIED against customs.gov.cn</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128463; United States — tax and reporting (official)</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:34%">Source</th>
-          <th style="width:44%">What it establishes</th>
-          <th style="width:22%">Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a class="source" href="https://www.fincen.gov/how-do-i-file-fbar">FinCEN — How do I file the FBAR?</a></td>
-          <td>FBAR (FinCEN Form 114) filed via BSA E-Filing; aggregate &gt;US$10,000 foreign accounts at any time; due April 15 with automatic October extension</td>
-          <td><span class="tag info">Official</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.irs.gov/businesses/corporations/fatca-information-for-individuals">IRS — FATCA information for individuals</a></td>
-          <td>Form 8938 reporting of specified foreign financial assets; general &gt;US$50,000 threshold, higher abroad</td>
-          <td><span class="tag info">Official</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.irs.gov/publications/p54">IRS Publication 54 (12/2025) — Tax Guide for US Citizens and Resident Aliens Abroad</a></td>
-          <td>US citizens taxed on worldwide income; foreign tax credit (Form 1116); foreign earned income exclusion; FBAR/Form 8938 context</td>
-          <td><span class="tag info">Official</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS — FAQs about international individual tax matters</a></td>
-          <td>Worldwide income taxation of US citizens abroad; foreign tax credit/deduction</td>
-          <td><span class="tag info">Official</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.irs.gov/pub/irs-pdf/i3520.pdf">IRS — Instructions for Form 3520 (PDF)</a></td>
-          <td>Form 3520 foreign-gift and foreign-trust reporting; US$100,000 individual/estate threshold; penalties 5%/month to 25% (Part IV); greater of US$10,000 or 35% (trusts)</td>
-          <td><span class="tag info">Official</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.irs.gov/businesses/international-businesses/china-tax-treaty-documents">IRS — China tax treaty documents</a></td>
-          <td>US&ndash;China income tax treaty (signed Beijing, April 30, 1984; in force 1987); 10% withholding caps; savings clause</td>
-          <td><span class="tag info">Official</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://choiceshanghai.com/blog/how-to-send-money-out-of-china-transfers-abroad-from-shanghai-2026">After-tax salary remittance practice (secondary)</a></td>
-          <td>Foreigners employed in China can remit after-tax salary abroad with tax payment records, contract, payslips</td>
-          <td><span class="tag mixed">Secondary</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.hsbc.com.cn/en-cn/foreign-exchange/products/forex/">HSBC China — Foreign currency exchange (secondary, quotes SAFE)</a></td>
-          <td>Cites SAFE US$50,000 annual quota for individual settlement/purchase</td>
-          <td><span class="tag mixed">Secondary</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.westernunion.com/cn/en/send-money.html">Western Union — Send money from China (secondary)</a></td>
-          <td>WU available via Chinese bank partner online banking and agent locations</td>
-          <td><span class="tag mixed">Secondary</span></td>
-        </tr>
-        <tr>
-          <td><a class="source" href="https://www.paypal.com/cn">PayPal China (secondary)</a></td>
-          <td>PayPal China service; cross-border CNY&rarr;USD limits and fees not verified</td>
-          <td><span class="tag mixed">Secondary — limits UNVERIFIED</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128269; Verification policy</h2>
-    <ul>
-      <li>Every table row carries a source link. Where the source is not official, the row is marked Secondary and any figure from it is treated as unverified.</li>
-      <li>Values that could not be confirmed from an official source are left <strong>blank</strong> (shown as <span class="blank">[unverified]</span>) and listed on the <a href="flagged.html">Flagged for Review</a> page — never inferred or filled in.</li>
-      <li>Bank FX spreads, wire fees, PayPal/WU/Alipay limits, exact FBAR inflation-adjusted penalty amounts, and the Customs cash-carrying procedure remain unverified as of this writing.</li>
-      <li>Suggested manual checks are listed on the Flagged for Review page.</li>
-    </ul>
-  </div>
-
-  <div class="disclaimer"><strong>Not legal or tax advice.</strong> Public regulations summarized for research. Rules change and bank practice varies; consult a US&ndash;China cross-border tax professional before moving money.</div>
+<main id="main" class="container">
+<div class="page-head">
+  <h1>Source registry</h1>
+  <p class="subtitle">All 25 sources, each fetched and read directly. Click any title to open the original.</p>
 </div>
-
+<section class="section"><p class="callout"><strong>What counts as official here.</strong>
+A source is official if it is published by the regulator (SAFE, PBOC, Customs, the State Taxation Administration,
+the IRS, FinCEN, CBP), by the legislature or government, or — for bank charges — by the regulated institution
+itself in its own published tariff. Travel sites, accountancy blogs, news articles and commercial bank marketing
+pages are used for nothing. Every date below is the date the page was actually fetched and read.</p>
+<p>Two entries carry caveats rather than a clean verification: an IRS page that is official but out of date, and a
+Customs reply that confirms a figure whose primary instrument could not be reached. Both are labelled in the
+status column and cross-referenced on the <a href="flagged.html">flagged page</a>.</p></section><section class="section"><div class="table-wrap"><table class="data"><thead><tr><th scope="col">ID</th><th scope="col">Document</th><th scope="col">Publisher</th><th scope="col">Type</th><th scope="col">Read on</th><th scope="col">What it establishes</th></tr></thead><tbody><tr><td><span id="S01">S01</span></td><td><a href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer"><strong>个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1</strong></a><div class="muted small">Art. 2 (annual total), Art. 10-12 (above-quota documentation), Art. 13 (non-domestic individuals), Art. 14-15 (outward remittance), Art. 16-23 (capital account), Art. 30-31 (banknotes)</div></td><td>State Administration of Foreign Exchange (SAFE)</td><td>Regulation (primary text)</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Page is marked 已修改 (as amended). Art. 39 was repealed by Huifa [2023] No. 8; the repeal note is printed at the foot of this official page. Art. 9(2) was amended by Huifa [2016] No. 13.</td></tr><tr><td><span id="S02">S02</span></td><td><a href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer"><strong>中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532</strong></a><div class="muted small">Art. 39, 40, 41, 42, 44, 45, 46, 48, 52</div></td><td>State Council of the PRC / published on SAFE portal</td><td>Administrative regulation (primary text)</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Chapter 7 sets all administrative penalties. Art. 52(2) defines 境内个人 (domestic individual).</td></tr><tr><td><span id="S03">S03</span></td><td><a href="https://www.safe.gov.cn/safe/2015/1231/5442.html" target="_blank" rel="noopener noreferrer"><strong>国家外汇管理局关于进一步完善个人外汇管理有关问题的通知 (Notice on Further Improving Individual Foreign Exchange Administration), Huifa [2015] No. 49</strong></a><div class="muted small">Item 2</div></td><td>SAFE</td><td>Regulatory notice (primary text)</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Establishes the &#x27;watch list&#x27; (关注名单) for quota splitting. Effective 2016-01-01. Item 2(3): watch-list period is the year of listing plus the following 2 consecutive years.</td></tr><tr><td><span id="S04">S04</span></td><td><a href="https://www.safe.gov.cn/tianjin/2024/0430/2466.html" target="_blank" rel="noopener noreferrer"><strong>携带外币现钞出入境管理暂行办法 (Interim Measures for Carrying Foreign Currency Banknotes In and Out of the Country), Huifa [2003] No. 102</strong></a><div class="muted small">Covering notice item 2; attached Measures Art. 3-5</div></td><td>SAFE + General Administration of Customs (SAFE Tianjin branch reproduction of the national circular)</td><td>Regulation (primary text)</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Item 2 of the covering notice states the USD 5,000 / USD 10,000 carrying-permit tiers and that in principle no more than USD 10,000 in banknotes may be carried out.</td></tr><tr><td><span id="S05">S05</span></td><td><a href="http://www.customs.gov.cn/eportal/ui?pageId=374112&amp;msgDataId=7cebfa81134447ad8a57883790a3e68d" target="_blank" rel="noopener noreferrer"><strong>出境可以带多少现金？ (How much cash may be taken out of the country?) — official Customs reply</strong></a><div class="muted small">Reply text</div></td><td>General Administration of Customs of the PRC (Jiangmen Customs)</td><td>Regulator public guidance</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Confirms RMB 20,000 per person per trip and foreign currency USD 5,000, excluding same-day and short-period multiple crossings. This is a Customs Q&amp;A reply, not the underlying PBOC Announcement [2004] No. 18 itself (see flag F09).</td></tr><tr><td><span id="S06">S06</span></td><td><a href="https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2025092212551974141/index.html" target="_blank" rel="noopener noreferrer"><strong>关于进一步防范和处置虚拟货币交易炒作风险的通知 (Notice on Further Preventing and Disposing of Risks in Virtual Currency Trading Speculation), Yinfa [2021] No. 237</strong></a><div class="muted small">Items 1(2), 1(3), 1(4), 4(9)</div></td><td>People&#x27;s Bank of China and nine other authorities</td><td>Regulatory notice (primary text)</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Dated 2021-09-15, published 2021-09-24. Item 1(2): fiat-to-virtual-currency exchange business is an illegal financial activity, strictly prohibited. Item 1(3): overseas exchanges serving mainland residents over the internet are likewise illegal. Item 4(9): banks and payment institutions may not provide accounts or settlement for such activity.</td></tr><tr><td><span id="S07">S07</span></td><td><a href="https://www.pbc.gov.cn/huobizhengceersi/214481/214511/3406535/7c4cab88dc26405d9aba84feee8059e0/index.html" target="_blank" rel="noopener noreferrer"><strong>关于进一步优化跨境人民币政策支持稳外贸稳外资的通知 (Notice on Further Optimising Cross-border RMB Policy), Yinfa [2020] No. 330</strong></a><div class="muted small">Item 13</div></td><td>PBOC, NDRC, MOFCOM, SASAC, CBIRC, SAFE</td><td>Regulatory notice (primary text)</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Item 13 supports banks handling individuals&#x27; current-account cross-border RMB settlement, expressly including salary and other lawful income. Effective 2021-02-04. Item 15 concerns inbound RMB to NRA accounts and is not an outbound individual route.</td></tr><tr><td><span id="S08">S08</span></td><td><a href="http://m.safe.gov.cn/safe/2004/1116/4133.html" target="_blank" rel="noopener noreferrer"><strong>个人财产对外转移售付汇管理暂行办法 (Interim Measures for the Administration of the Sale and Payment of Foreign Exchange for Outbound Transfer of Individual Property), PBOC Announcement [2004] No. 16</strong></a><div class="muted small">Art. 2, 5, 6, 8, 9, 10, 11, 12, 13</div></td><td>People&#x27;s Bank of China (reproduced with SAFE press release)</td><td>Regulation (primary text)</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Two channels only: emigration transfer and inheritance transfer. Art. 6 staged remittance (half, then half of remainder after 1 year, then all remainder after 2 years); lump sum allowed if total &lt;= RMB 200,000. Art. 10 approval split at RMB 500,000. Art. 11 funds must be wired to the applicant&#x27;s own account in the country of residence; no banknote withdrawal in China. Effective 2004-12-01.</td></tr><tr><td><span id="S09">S09</span></td><td><a href="https://www.gov.cn/zhengce/zhengceku/202404/content_6945036.htm" target="_blank" rel="noopener noreferrer"><strong>资本项目外汇业务指引（2024年版） (Capital Account Foreign Exchange Business Guidelines, 2024 edition), Huifa [2024] No. 12</strong></a><div class="muted small">Section 6.4</div></td><td>SAFE (State Council policy repository reproduction of the SAFE notice)</td><td>Operational guidelines</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Issued 2024-04-03. Section 6.4 governs approval of outbound property transfer. Confirmed still applied by SAFE branch Q&amp;A published 2026 (S10).</td></tr><tr><td><span id="S10">S10</span></td><td><a href="https://www.safe.gov.cn/tianjin/2026/0319/3018.html" target="_blank" rel="noopener noreferrer"><strong>个人财产转移购付汇业务问答（七） (Q&amp;A on FX purchase and payment for outbound individual property transfer, No. 7)</strong></a><div class="muted small">Q&amp;A citing s.6.4</div></td><td>SAFE Tianjin branch</td><td>Regulator Q&amp;A</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Published 2026-03-19. Confirms Huifa [2024] No. 12 s.6.4 is the operative rule: emigration transfer approved by SAFE at the emigrant&#x27;s former household-registration locality; inheritance transfer at the decedent&#x27;s former locality; heirs of several decedents may consolidate at one locality.</td></tr><tr><td><span id="S11">S11</span></td><td><a href="https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html" target="_blank" rel="noopener noreferrer"><strong>中华人民共和国个人所得税法 (Individual Income Tax Law of the PRC), as amended 2018-08-31</strong></a><div class="muted small">Art. 1, 2, 3, 10, 13</div></td><td>State Taxation Administration</td><td>Statute (primary text)</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Art. 1 residence (183 days). Art. 3 rates: comprehensive income 3%-45%; business income 5%-35%; interest, dividends, property lease, property transfer and incidental income 20%. Art. 10(5) and Art. 13 require tax clearance before cancelling Chinese household registration on emigration.</td></tr><tr><td><span id="S12">S12</span></td><td><a href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer"><strong>中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11</strong></a><div class="muted small">Items 210105008, 210107011, 210101002, 210108014, 210106010; notes 4, 5, 6</div></td><td>Bank of China (the regulated institution&#x27;s own published tariff)</td><td>Institution-published tariff</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Item 210105008: cross-border remittance by TT/draft 0.1% (1‰) of amount, min RMB 50, max RMB 260 per transaction; plus cable charge RMB 80 (HK/Macao/Taiwan) or RMB 150 (international). Note 5: guaranteed-full-value USD service USD 15 if beneficiary bank holds an account at BOC New York, otherwise USD 25. Item 210107011: no FX exchange fee at BOC branches. Item 210101002: FX carrying permit free 2025-04-01 to 2026-12-31. Item 210108014: cross-border ATM withdrawal RMB 12 + 1% of amount, max RMB 112. Item 210106010: clean collection 0.1%, min RMB 50, max RMB 250.</td></tr><tr><td><span id="S13">S13</span></td><td><a href="https://www.boc.cn/custserv/fd5/" target="_blank" rel="noopener noreferrer"><strong>中国银行服务价目 (Bank of China service price list index)</strong></a><div class="muted small">Index and effective-date statement</div></td><td>Bank of China</td><td>Institution tariff index</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Landing page linking the current tariff PDFs. States the list takes effect 2025-11-11 and links a further adjustment to personal service charges effective 2026-11-11 (see flag F10).</td></tr><tr><td><span id="S14">S14</span></td><td><a href="https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821" target="_blank" rel="noopener noreferrer"><strong>31 CFR 1010.821 — Penalty adjustment and table (FinCEN civil monetary penalties)</strong></a><div class="muted small">Table 1</div></td><td>Electronic Code of Federal Regulations (US Treasury / FinCEN)</td><td>Codified regulation</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Table 1, column headed &#x27;penalties assessed on or after January 17, 2025&#x27;: 31 USC 5321(a)(5)(B)(i) non-willful = $16,536 (statutory $10,000); 31 USC 5321(a)(5)(C)(i)(I) willful = $165,353 (statutory $100,000). eCFR displays Title 31 current to 2026-11-05 and shows no amendment to this section after 2025-01-17.</td></tr><tr><td><span id="S15">S15</span></td><td><a href="https://www.fincen.gov/report-foreign-bank-and-financial-accounts" target="_blank" rel="noopener noreferrer"><strong>Report Foreign Bank and Financial Accounts (FBAR)</strong></a><div class="muted small">Who Must File the FBAR</div></td><td>FinCEN (US Treasury)</td><td>Regulator guidance</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>A US person with a financial interest in or signature authority over foreign financial accounts must file an FBAR if the aggregate value exceeds $10,000 at any time during the calendar year. Individual filers may e-file through the BSA E-Filing System without registering.</td></tr><tr><td><span id="S16">S16</span></td><td><a href="https://www.irs.gov/businesses/corporations/summary-of-fatca-reporting-for-us-taxpayers" target="_blank" rel="noopener noreferrer"><strong>Summary of FATCA reporting for U.S. taxpayers</strong></a><div class="muted small">Reporting thresholds; Non-compliance; Form 8938 does not relieve FBAR</div></td><td>Internal Revenue Service</td><td>Regulator guidance</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Full Form 8938 threshold matrix (US resident single $50,000 year-end / $75,000 any time; MFJ $100,000/$150,000; MFS $50,000/$75,000; abroad single $200,000/$300,000; abroad MFJ $400,000/$600,000). Penalties: $10,000 failure to file, up to $50,000 additional for continued failure after IRS notification, 40% penalty on understatement attributable to non-disclosed assets. FBAR due 15 April; Form 8938 due with the return. Treasury Bureau of the Fiscal Service year-end rate used for conversion.</td></tr><tr><td><span id="S17">S17</span></td><td><a href="https://www.irs.gov/pub/irs-pdf/i3520.pdf" target="_blank" rel="noopener noreferrer"><strong>Instructions for Form 3520 (Rev. December 2025)</strong></a><div class="muted small">Who Must File 4(a)-(b); Penalties (s.6677, s.6039F, s.6662(j))</div></td><td>Internal Revenue Service</td><td>Official form instructions</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Who Must File item 4(a): more than $100,000 from a nonresident alien individual or foreign estate, aggregating related persons. Item 4(b): foreign corporations/partnerships use the section 6039F threshold. Penalties: s.6677 initial penalty greater of $10,000 or 35% of gross value (transfers/distributions), 5% for grantor-trust reporting failure; s.6039F 5% of the gift per month, capped at 25%. Continuous-use revision for tax year 2025 and later.</td></tr><tr><td><span id="S18">S18</span></td><td><a href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" target="_blank" rel="noopener noreferrer"><strong>Rev. Proc. 2025-32 — 2026 inflation-adjusted items</strong></a><div class="muted small">s.4.39, s.4.47</div></td><td>Internal Revenue Service</td><td>Revenue procedure (primary text)</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Section 4.39: foreign earned income exclusion for taxable years beginning in 2026 = $132,900. Section 4.47: section 6039F foreign-gift reporting threshold for taxable years beginning in 2026 = $20,573.</td></tr><tr><td><span id="S19">S19</span></td><td><a href="https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.htm" target="_blank" rel="noopener noreferrer"><strong>26 U.S.C. 988 — Treatment of certain foreign currency transactions</strong></a><div class="muted small">s.988(a)(1)(A), (a)(3), (c)(1)(C), (e)</div></td><td>US Government Publishing Office (United States Code, 2023 edition)</td><td>Statute (primary text)</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>s.988(a)(1)(A) foreign currency gain or loss is ordinary. s.988(c)(1)(C) disposition of nonfunctional currency is a section 988 transaction; (ii) includes foreign-currency denominated demand or time deposits issued by a bank. s.988(e)(2) personal-transaction gain exclusion does not apply if the gain exceeds $200. s.988(a)(3)(B)(i) residence = country of tax home.</td></tr><tr><td><span id="S20">S20</span></td><td><a href="https://www.irs.gov/businesses/international-businesses/china-tax-treaty-documents" target="_blank" rel="noopener noreferrer"><strong>China — Tax treaty documents</strong></a><div class="muted small">Index listing</div></td><td>Internal Revenue Service</td><td>Treaty index</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Index confirms the US-China income tax treaty and technical explanation are both dated 1984, with PDFs at irs.gov/pub/irs-trty/china.pdf and chintech.pdf. Specific treaty article rates were not read in this session (see flag F07).</td></tr><tr><td><span id="S21">S21</span></td><td><a href="https://www.cbp.gov/travel/international-visitors/money-monetary-instruments" target="_blank" rel="noopener noreferrer"><strong>Money and Other Monetary Instruments</strong></a><div class="muted small">Federal Mandate; Who Must File; What if I don&#x27;t file</div></td><td>US Customs and Border Protection</td><td>Regulator guidance</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Last modified 2025-11-24. Amounts exceeding $10,000 must be reported when entering or leaving the US, on FinCEN Form 105. Threshold applies to families/groups collectively, not per individual. Failure risks forfeiture and civil or criminal penalties. Electronic filing at fincen105.cbp.dhs.gov.</td></tr><tr><td><span id="S22">S22</span></td><td><a href="https://www.irs.gov/individuals/international-taxpayers/foreign-earned-income-exclusion" target="_blank" rel="noopener noreferrer"><strong>Foreign earned income exclusion</strong></a><div class="muted small">Qualification rules; Not foreign earned income</div></td><td>Internal Revenue Service</td><td>Regulator guidance</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Confirms US citizens and resident aliens living abroad are taxed on worldwide income; qualification via bona fide residence or 330-full-day physical presence test; exclusion applies to earned income only, not pensions or annuities. The dollar figures printed on this page stop at 2023, so the 2026 amount is taken from Rev. Proc. 2025-32 (S18) instead.</td></tr><tr><td><span id="S23">S23</span></td><td><a href="https://www.safe.gov.cn/safe/file/file/20260805/d2d0d6ce1441436eadc8bc600eb79c43.pdf" target="_blank" rel="noopener noreferrer"><strong>现行有效外汇管理主要法规目录（截至2026年6月30日） (Catalogue of principal foreign exchange regulations currently in force, as at 30 June 2026)</strong></a><div class="muted small">Items 1, 2, 3, 18</div></td><td>SAFE</td><td>Official in-force catalogue</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Confirms that as at 2026-06-30 the FX Administration Regulations (Order 532), the Individual FX Measures (PBOC Order 2006 No. 3), Huifa [2007] No. 1 and Huifa [2003] No. 102 all remain in force. Used as a currency check on the rules cited on this site.</td></tr><tr><td><span id="S24">S24</span></td><td><a href="https://www.irs.gov/irm/part5/irm_05-021-006" target="_blank" rel="noopener noreferrer"><strong>Comparison of Form 8938 and FBAR requirements (IRM 5.21.6 exhibit)</strong></a><div class="muted small">Exhibit 5.21.6-1</div></td><td>Internal Revenue Service — Internal Revenue Manual</td><td>Agency manual</td><td>2026-11-08<div><span class="tag warn">verified-with-caveat</span></div></td><td>Useful side-by-side of the two regimes, but the exhibit is stale: it still shows a 30 June FBAR deadline with no extensions and un-indexed $10,000/$100,000 penalties. The current deadline and indexed penalties come from S15/S16 and S14 respectively. Logged as irregularity I-05.</td></tr><tr><td><span id="S25">S25</span></td><td><a href="https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html" target="_blank" rel="noopener noreferrer"><strong>关于调整部分个人服务收费内容的公告（2026年11月11日起） (Announcement adjusting certain personal service charges, effective 11 November 2026)</strong></a><div class="muted small">Item 210108014, before/after columns</div></td><td>Bank of China</td><td>Institution tariff-change announcement</td><td>2026-11-08<div><span class="tag good">verified</span></div></td><td>Published 2026-08-11. Changes ONLY item 210108014 (ATM cash withdrawal). From 2026-11-11: overseas and HK/Macao/Taiwan withdrawals split by network — UnionPay stays RMB 12 + 1% capped at RMB 112 per transaction; Mastercard and VISA become 2.5% of the withdrawal, minimum USD 3 equivalent, maximum USD 40 equivalent per transaction. The old Great Wall International Debit Card 0.5% (min USD 3, max USD 5) line is replaced. No other personal tariff item is changed by this announcement.</td></tr></tbody></table></div></section>
+</main>
 <footer class="site-footer">
-  <div class="inner">
-    <div>
-      <div class="brand" style="text-decoration:none; color:var(--ink);"><span class="mark">C4</span> China4</div>
-      <p class="small">Source registry &middot; official sources preferred; unverified items flagged</p>
-    </div>
-    <div>
-      <p class="small"><a href="index.html" style="color:var(--accent);">&#8592; Back to Dashboard</a></p>
-    </div>
+  <div class="container">
+    <p><strong>Built 2026-11-08</strong> from the datasets in <code>data/</code>.
+    Every table row links to the official source it was read from. A dash
+    (<span class="blank">—</span>) means the value could not be confirmed officially and is
+    <a href="flagged.html">flagged for review</a>; it never means zero.</p>
+    <p class="disclaimer">Research summary, not legal, tax or financial advice. Rules and tariffs change.
+    Confirm your own position with your bank, SAFE and a qualified US tax adviser before acting.
+    <a href="sources.html">All 25 sources</a> ·
+    <a href="audit.html">What was corrected</a> ·
+    <a href="https://github.com/sassnarep3-star/China4">Repository</a></p>
   </div>
 </footer>
-
 </body>
 </html>

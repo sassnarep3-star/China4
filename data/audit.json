@@ -1,0 +1,227 @@
+{
+  "_meta": {
+    "description": "Line-by-line review of the repository as it stood at commit e7e12b1 (the previously published site). Each row records what was checked, what was found, and the official basis for the finding.",
+    "session": "agent-2",
+    "baseline_commit": "e7e12b1e066c1e0656ffb500950a8041ab98b341",
+    "review_date": "2026-11-08",
+    "method": "Every substantive claim in each tracked file was read and compared against the primary text of the governing instrument, fetched live from the regulator's own site. Findings are graded: critical (materially misleads a reader about what they may lawfully do or what it costs), high (material omission or wrong figure), medium (mislabelled or stale), low (presentation)."
+  },
+  "files_reviewed": [
+    {
+      "file": "index.html",
+      "lines_reviewed": "all",
+      "claims_checked": 9,
+      "findings": ["A-01", "A-02", "A-09"],
+      "verdict": "replaced"
+    },
+    {
+      "file": "methods.html",
+      "lines_reviewed": "all 9 table rows",
+      "claims_checked": 27,
+      "findings": ["A-01", "A-05"],
+      "verdict": "replaced — expanded from 9 to 25 channels"
+    },
+    {
+      "file": "penalties.html",
+      "lines_reviewed": "sections A-D",
+      "claims_checked": 18,
+      "findings": ["A-02", "A-03", "A-04", "A-07"],
+      "verdict": "replaced"
+    },
+    {
+      "file": "taxes.html",
+      "lines_reviewed": "all tables",
+      "claims_checked": 22,
+      "findings": ["A-06", "A-07", "A-08", "A-10", "A-12"],
+      "verdict": "replaced"
+    },
+    {
+      "file": "flagged.html",
+      "lines_reviewed": "8 unverified values + 5 irregularities",
+      "claims_checked": 13,
+      "findings": [],
+      "verdict": "replaced — several previously blank values are now officially sourced and filled; new flags added"
+    },
+    {
+      "file": "sources.html",
+      "lines_reviewed": "full source registry",
+      "claims_checked": 20,
+      "findings": ["A-05", "A-13"],
+      "verdict": "replaced — rebuilt from data/sources.json"
+    },
+    {
+      "file": "style.css",
+      "lines_reviewed": "all",
+      "claims_checked": 0,
+      "findings": [],
+      "verdict": "retained and extended"
+    },
+    {
+      "file": ".github/workflows/gh-pages.yml",
+      "lines_reviewed": "all",
+      "claims_checked": 0,
+      "findings": [],
+      "verdict": "retained — build and verification steps added"
+    },
+    {
+      "file": "COORDINATION.md",
+      "lines_reviewed": "all",
+      "claims_checked": 0,
+      "findings": ["I-01"],
+      "verdict": "extended with this session's claims and results"
+    },
+    {
+      "file": "README.md",
+      "lines_reviewed": "single line",
+      "claims_checked": 0,
+      "findings": [],
+      "verdict": "replaced with project documentation"
+    }
+  ],
+  "findings": [
+    {
+      "id": "A-01",
+      "file": "index.html, methods.html row 1",
+      "claim_as_published": "A US citizen is limited to converting USD 50,000 per person per year.",
+      "finding": "Misapplied. Detailed Rules Art. 2 imposes the annual total on settlement (结汇) for all individuals but on purchase (购汇) only for 境内个人. Order 532 Art. 52(2) defines 境内个人 as Chinese citizens plus foreigners continuously resident for one full year. A US citizen below that threshold is 境外个人 and converts under Art. 13 with tax vouchers, which states no annual numeric cap.",
+      "severity": "critical",
+      "official_basis": ["S01", "S02"],
+      "action": "Added an explicit classification step; split the routes by individual status."
+    },
+    {
+      "id": "A-02",
+      "file": "penalties.html section B, index.html",
+      "claim_as_published": "Illegal FX trading carries a fine of 30%-300%.",
+      "finding": "Fabricated. Art. 45 reads 处违法金额30%以下的罚款；情节严重的，处违法金额30%以上等值以下的罚款 — up to 30%, and in serious cases 30% up to 100%. 等值 means the equivalent amount, i.e. 100%, not 300%.",
+      "severity": "critical",
+      "official_basis": ["S02"],
+      "action": "Corrected, with the Chinese statutory text quoted in the table so the correction is auditable."
+    },
+    {
+      "id": "A-03",
+      "file": "penalties.html section B",
+      "claim_as_published": "Evasion of FX controls carries a fine of 30%-500%.",
+      "finding": "Fabricated. Art. 39 uses the identical formula: up to 30%, serious cases 30% up to 100%. The '1 to 5 times' multiplier the site may have been reaching for belongs to Art. 46 and applies to unlicensed operators, not customers.",
+      "severity": "critical",
+      "official_basis": ["S02"],
+      "action": "Corrected; Art. 46 published as a separate row scoped to operators."
+    },
+    {
+      "id": "A-04",
+      "file": "methods.html source key, penalties.html",
+      "claim_as_published": "Detailed Rules Art. 39 provides a fine of up to RMB 1,000 for individuals.",
+      "finding": "Repealed. Huifa [2023] No. 8 Annex 3 expressly deleted Art. 39 of the Detailed Rules; the repeal note is printed at the foot of the official SAFE page.",
+      "severity": "medium",
+      "official_basis": ["S01"],
+      "action": "Retained as row P10 explicitly marked REPEALED."
+    },
+    {
+      "id": "A-05",
+      "file": "methods.html, sources.html",
+      "claim_as_published": "Legal limits sourced to fdi.gov.cn, chinamoney.com.cn, travelchinaguide.com, choiceshanghai.com, yclcpa.com, hsbc.com.cn.",
+      "finding": "None of these is the regulator. A travel site or a commercial bank's marketing page cannot establish a legal limit. This violates the requirement that every row cite an official source.",
+      "severity": "high",
+      "official_basis": ["S01", "S02", "S04", "S05", "S08"],
+      "action": "Every row re-sourced to SAFE, PBOC, Customs, the State Council, the IRS, FinCEN, eCFR, or the institution's own published tariff."
+    },
+    {
+      "id": "A-06",
+      "file": "taxes.html (~line 163)",
+      "claim_as_published": "A stray <td></td> inside a <ul> element.",
+      "finding": "Malformed HTML producing an empty cell in a list context.",
+      "severity": "low",
+      "official_basis": [],
+      "action": "All pages now generated from data by build.py; tools/verify.py checks structure."
+    },
+    {
+      "id": "A-07",
+      "file": "taxes.html, penalties.html section C",
+      "claim_as_published": "FBAR penalties of $16,536 / $165,353 described as the '2026 adjustment'.",
+      "finding": "The figures are right, the label is wrong. eCFR 31 CFR 1010.821 Table 1 heads that column 'penalties assessed on or after January 17, 2025'. They remain operative for 2026 because the 2026 annual adjustment was cancelled.",
+      "severity": "medium",
+      "official_basis": ["S14"],
+      "action": "Relabelled to the eCFR's own wording, with the reason the 2025 figures still govern."
+    },
+    {
+      "id": "A-08",
+      "file": "taxes.html",
+      "claim_as_published": "FEIE of $130,000; foreign-gift threshold of $20,573 presented as the general threshold.",
+      "finding": "Two separate errors. (1) $130,000 is the 2025 FEIE; for tax years beginning in 2026 it is $132,900 (Rev. Proc. 2025-32 s.4.39). (2) $20,573 IS correct for 2026 but is the s.6039F threshold for gifts from foreign corporations and partnerships (s.4.47), not the 'more than $100,000' non-indexed threshold for gifts from a nonresident alien individual or foreign estate.",
+      "severity": "high",
+      "official_basis": ["S18", "S17"],
+      "action": "FEIE updated to $132,900 with the tax year stated; gift thresholds split into rows U07 and U08."
+    },
+    {
+      "id": "A-09",
+      "file": "index.html",
+      "claim_as_published": "Hard-coded 'Last updated: 2026-11-07'.",
+      "finding": "A manually typed date will silently go stale and misrepresent currency.",
+      "severity": "low",
+      "official_basis": [],
+      "action": "Build date stamped automatically by build.py."
+    },
+    {
+      "id": "A-10",
+      "file": "taxes.html",
+      "claim_as_published": "There is no US tax on converting currency.",
+      "finding": "Wrong as a blanket statement. IRC 988(c)(1)(C)(i) makes any disposition of nonfunctional currency a section 988 transaction, and (ii) expressly covers foreign-currency bank deposits. Gain is ordinary under 988(a)(1)(A). The 988(e)(2) exclusion is gain-only and switches off entirely once the gain exceeds $200.",
+      "severity": "high",
+      "official_basis": ["S19"],
+      "action": "Added rows T02-T05 with the statutory text quoted, including the cliff behaviour of the $200 exclusion."
+    },
+    {
+      "id": "A-11",
+      "file": "sources.html (IRM citation)",
+      "claim_as_published": "IRM 5.21.6 cited as current authority for the FBAR deadline and penalties.",
+      "finding": "That exhibit is stale: it shows a 30 June FBAR deadline with no extensions and un-indexed $10,000 / $100,000 penalties.",
+      "severity": "medium",
+      "official_basis": ["S24", "S15", "S16", "S14"],
+      "action": "Retained only for the structural comparison it still states correctly, with the staleness recorded in the source registry; current figures taken from FinCEN, the IRS FATCA summary and eCFR."
+    },
+    {
+      "id": "A-12",
+      "file": "taxes.html",
+      "claim_as_published": "Form 3520 penalties described only in general terms.",
+      "finding": "Material detail missing. s.6039F imposes 5% of the gift per month capped at 25%. s.6677 imposes the greater of $10,000 or 35% of the gross value for trust transfers and distributions, 5% for grantor-trust asset reporting, with further penalties after 90 days' IRS notice.",
+      "severity": "medium",
+      "official_basis": ["S17"],
+      "action": "Penalty detail added to rows U07, U08 and U09."
+    },
+    {
+      "id": "A-13",
+      "file": "penalties.html, sources.html, taxes.html",
+      "claim_as_published": "Citations to a CBP 'know before you visit / money' page, a PBOC crypto-notice URL, and a Guangzhou Customs page.",
+      "finding": "All three URLs are dead (404 on direct fetch). A citation a reader cannot open is not a verifiable citation.",
+      "severity": "medium",
+      "official_basis": ["S21", "S06", "S05"],
+      "action": "Each replaced with a live official page fetched and read this session."
+    },
+    {
+      "id": "A-14",
+      "file": "methods.html",
+      "claim_as_published": "Nine conversion channels listed.",
+      "finding": "Material omissions. Missing entirely: inheritance transfer and emigration transfer (the only lawful channels for a large capital balance), cross-border RMB settlement with offshore conversion, reconversion via the original exchange memo, bank drafts and clean collection, and the above-quota documentary routes. Also missing: an explicit list of prohibited routes with their actual penalties.",
+      "severity": "high",
+      "official_basis": ["S08", "S09", "S10", "S07", "S01", "S04", "S12", "S02", "S06", "S03"],
+      "action": "Expanded to 25 channels across bank, capital-account, RMB, cash, card, prohibited and unverified categories."
+    },
+    {
+      "id": "A-15",
+      "file": "penalties.html, index.html",
+      "claim_as_published": "Bank conversion fees left blank as unverified.",
+      "finding": "These ARE officially published. Bank of China's own service price list gives the wire tariff, cable charge, full-value-arrival surcharge, ATM tariff, carrying-permit fee and the fact that branch FX exchange carries no separate fee. Leaving them blank understated what is knowable.",
+      "severity": "medium",
+      "official_basis": ["S12", "S13", "S25"],
+      "action": "Filled from the official tariff, with effective dates. Only the FX spread remains blank, because no official spread figure exists."
+    },
+    {
+      "id": "A-16",
+      "file": "methods.html (ATM row)",
+      "claim_as_published": "No effective-date warning on bank fee figures.",
+      "finding": "Bank of China has announced a change effective 2026-11-11 — three days after this review — that raises Mastercard and VISA overseas ATM fees to 2.5% with a USD 40 cap, replacing 0.5% with a USD 5 cap.",
+      "severity": "high",
+      "official_basis": ["S25"],
+      "action": "Both current and incoming figures published side by side with effective dates and a practical recommendation."
+    }
+  ]
+}

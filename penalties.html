@@ -3,214 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Conversion Penalty Breakdown — CNY to USD</title>
+<title>What violations actually cost · China Money</title>
+<meta name="description" content="Every penalty read from State Council Order 532 and the governing notices, with the Chinese text quoted.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html"><span class="mark">C4</span> China4</a>
-    <nav>
-      <a href="index.html">Dashboard</a>
-      <a href="methods.html">Conversion Methods</a>
-      <a class="active" href="penalties.html">Penalty Breakdown</a>
-      <a href="taxes.html">US Tax Obligations</a>
-      <a href="flagged.html">Flagged for Review</a>
-      <a href="sources.html">Sources</a>
-    </nav>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">China&nbsp;Money<span>CNY → USD, verified</span></a>
+    <button class="navtoggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">Menu</button>
   </div>
+  <nav class="site-nav"><div class="container"><a href="index.html">Dashboard</a><a href="guide.html">Decision guide</a><a href="methods.html">All routes</a><a href="costs.html">Conversion cost</a><a href="china-rules.html">China rules</a><a href="us-tax.html">US tax &amp; reporting</a><a href="penalties.html" class="active" aria-current="page">Penalties</a><a href="flagged.html">Flagged for review</a><a href="audit.html">Repo audit</a><a href="sources.html">Sources</a></div></nav>
 </header>
-
-<div class="container">
-  <h1 class="page-title">The conversion penalty, broken down</h1>
-  <p class="page-sub">What it actually costs to move CNY to USD, channel by channel. China does not charge a &ldquo;conversion tax&rdquo; on legal conversions — the penalties come from (a) bank FX spreads and fees, (b) Chinese fines if you use illegal channels, and (c) US reporting penalties if you skip FBAR/Form 8938/Form 3520. Blank cells = not confirmed by an official source.</p>
-
-  <div class="section">
-    <h2 class="section-title">&#128203; A. Legal channel costs (bank wire within quota)</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:26%">Cost item</th>
-          <th style="width:20%">Amount</th>
-          <th style="width:30%">Notes</th>
-          <th style="width:24%">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Exchange-rate spread (bank markup over mid-market)</td>
-          <td><span class="blank">Not verified — flagged</span></td>
-          <td>Chinese banks publish their own buy/sell rates; the spread over the PBOC mid-market rate is not published in an official source we could confirm. Typically 1&ndash;3% in practice (<span class="blank">unverified</span>).</td>
-          <td><a class="source" href="https://www.pbc.gov.cn/english/130437/index.html">PBOC (exchange rates page)</a> &middot; <span class="blank">bank spread: unverified</span></td>
-        </tr>
-        <tr>
-          <td>International wire (SWIFT) fee</td>
-          <td><span class="blank">Not verified — flagged</span></td>
-          <td>Chinese banks commonly charge roughly US$15&ndash;50 plus intermediary fees; not confirmed from an official bank tariff page.</td>
-          <td><span class="blank">bank tariff pages: unverified</span></td>
-        </tr>
-        <tr>
-          <td>Intermediary / correspondent bank fee (US side)</td>
-          <td><span class="blank">Not verified — flagged</span></td>
-          <td>Deducted by intermediary banks in transit; varies by bank.</td>
-          <td><span class="blank">unverified</span></td>
-        </tr>
-        <tr>
-          <td>China tax on the conversion itself</td>
-          <td>None</td>
-          <td>Converting CNY to USD within the legal quota is not a taxable event in China. Tax only arises if the underlying money is untaxed income (China IIT 3&ndash;45%).</td>
-          <td><a class="source" href="http://www.fdi.gov.cn/1800000121_39_3577_0_7.html">SAFE Detailed Rules</a> &middot; <a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS (worldwide income)</a></td>
-        </tr>
-        <tr>
-          <td>US tax on moving your own money</td>
-<td>None</td>
-<td>Transferring your own already-taxed funds to a US account is not a US taxable event. It is a reportable event (FBAR/8938), not a taxable one.</td>
-<td><a class="source" href="https://www.irs.gov/publications/p54">IRS Pub 54</a> &middot; <a class="source" href="https://www.fincen.gov/how-do-i-file-fbar">FinCEN FBAR</a></td>
-</tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#9888; B. China-side penalties for illegal channels</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:26%">Violation</th>
-          <th style="width:34%">Penalty</th>
-          <th style="width:16%">Legal basis</th>
-          <th style="width:24%">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Illegally buying/selling foreign exchange (underground changers, 黑庄)</td>
-          <td>Warning + confiscation of illegal gains + fine of 30%&ndash;300% of the amount; criminal liability if a crime is constituted</td>
-          <td>Regulations of the PRC on Foreign Exchange Administration, Art. 45/46</td>
-          <td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">Regulations (ChinaMoney mirror)</a> &middot; <a class="source" href="https://www.safe.gov.cn/en/2018/0829/1452.html">SAFE enforcement cases</a></td>
-        </tr>
-        <tr>
-          <td>Foreign-exchange evasion (moving funds abroad deceitfully)</td>
-          <td>Ordered to repatriate funds; fine of 30%&ndash;500% of the evaded amount; criminal liability if a crime is constituted</td>
-          <td>Regulations, Art. 38/39</td>
-          <td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">Regulations (ChinaMoney mirror)</a></td>
-        </tr>
-        <tr>
-          <td>Carrying foreign currency out of China in violation of customs/FX rules</td>
-          <td>Warning; fine up to 20% of the amount (Customs penalties prevail where applicable)</td>
-          <td>Regulations, Art. 42</td>
-          <td><a class="source" href="https://www.chinamoney.com.cn/english/rarfmrrudrgl/20080805/813.html">Regulations, Art. 42</a></td>
-        </tr>
-        <tr>
-          <td>Individual exceeding the US$50,000 annual quota without documentation</td>
-          <td>Bank cannot process the conversion; must provide evidence of genuine purpose (current account) or SAFE approval (capital account)</td>
-          <td>SAFE Detailed Rules, Art. 2, 10&ndash;12</td>
-          <td><a class="source" href="http://www.fdi.gov.cn/1800000121_39_3577_0_7.html">SAFE Detailed Rules</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128682; C. US reporting penalties (failure to file, not tax on the transfer)</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:20%">Form</th>
-          <th style="width:20%">Trigger</th>
-          <th style="width:30%">Penalty for non-filing</th>
-          <th style="width:30%">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>FBAR (FinCEN Form 114)</td>
-          <td>Aggregate foreign accounts &gt;US$10,000 at any time during the year</td>
-          <td>Non-willful: up to ~US$16,536 per violation (inflation-adjusted; 2026). Willful: greater of ~US$165,353 or 50% of the account balance per violation</td>
-          <td><a class="source" href="https://www.fincen.gov/how-do-i-file-fbar">FinCEN (how to file FBAR)</a></td>
-        </tr>
-        <tr>
-          <td>Form 8938 (FATCA)</td>
-          <td>Specified foreign financial assets above thresholds (US resident single: &gt;US$50,000 year-end / &gt;US$75,000 any time; higher if living abroad or MFJ)</td>
-          <td>US$10,000 per failure, plus up to US$50,000 continued failure after IRS notice</td>
-          <td><a class="source" href="https://www.irs.gov/businesses/corporations/fatca-information-for-individuals">IRS FATCA</a> &middot; <a class="source" href="https://www.irs.gov/publications/p54">IRS Pub 54</a></td>
-        </tr>
-        <tr>
-          <td>Form 3520 (Part IV)</td>
-          <td>Gifts/bequests &gt;US$100,000/yr from foreign individuals or estates (aggregate; related donors combined)</td>
-          <td>5% of the gift per month late, capped at 25%</td>
-          <td><a class="source" href="https://www.irs.gov/pub/irs-pdf/i3520.pdf">IRS Form 3520 instructions (PDF)</a> &middot; <a class="source" href="https://yclcpa.com/en/gift">Form 3520 guide (secondary)</a></td>
-        </tr>
-        <tr>
-          <td>Form 3520 (Parts I&ndash;III, foreign trusts)</td>
-          <td>Transactions with foreign trusts (no minimum threshold)</td>
-          <td>Greater of US$10,000 or 35% of the gross reportable amount</td>
-          <td><a class="source" href="https://www.irs.gov/pub/irs-pdf/i3520.pdf">IRS Form 3520 instructions (PDF)</a></td>
-        </tr>
-        <tr>
-          <td>Underlying foreign income not reported</td>
-          <td>China-source income earned but not declared to IRS</td>
-          <td>Tax owed + accuracy-related penalty (20%, or 40% for undisclosed foreign assets under IRC 6662(j)) + interest</td>
-          <td><a class="source" href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-about-international-individual-tax-matters">IRS FAQ</a> &middot; <a class="source" href="https://www.irs.gov/publications/p54">IRS Pub 54</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128201; D. Worked examples (illustrative; verify rates/fees with your bank)</h2>
-    <p class="small">These assume the money is yours, already taxed in China where applicable, and you file all US reports. They are estimates, not quotes.</p>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:18%">Amount moved</th>
-          <th style="width:22%">Legal route within US$50,000 quota</th>
-          <th style="width:22%">Above quota (documented after-tax salary)</th>
-          <th style="width:38%">Illegal route (underground changer) — for contrast</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>US$10,000</td>
-          <td>Bank FX spread (~1&ndash;3%, unverified) + wire fee (~US$15&ndash;50, unverified). Total cost: unverified, likely well under 1%.</td>
-          <td>Same as within quota.</td>
-          <td>Fine 30%&ndash;300% (US$3,000&ndash;30,000) + confiscation + possible criminal liability. <strong>Worst option.</strong></td>
-        </tr>
-        <tr>
-          <td>US$50,000</td>
-          <td>Bank wire within quota; ID only. Cost: FX spread + wire fee only.</td>
-          <td>Not needed.</td>
-          <td>Fine US$15,000&ndash;US$150,000 + criminal risk.</td>
-        </tr>
-        <tr>
-          <td>US$200,000</td>
-          <td>Not possible in one year under quota; need documentation (e.g., after-tax salary records) or spread across calendar years/family members&rsquo; quotas.</td>
-          <td>Legal if documented as taxed salary. Cost: FX spread + wire fee.</td>
-          <td>Fine US$60,000&ndash;US$600,000 + criminal risk.</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="callout info">
-      <h3>&#128736; Bottom line</h3>
-      <p>The cheapest legal path is a bank wire within the US$50,000 annual quota (cost = bank FX spread + wire fee only; no China tax, no US tax). Above the quota, document after-tax salary/legal source and remit through the bank. The &ldquo;penalty&rdquo; is almost entirely avoidable by staying legal — illegal channels charge 30%&ndash;300% in fines plus criminal risk, and skipping US reporting can cost tens of thousands in penalties on money that owes no US tax at all.</p>
-    </div>
-  </div>
-
-  <div class="sources"><b>All penalty figures above are from official sources except where marked [unverified]:</b> SAFE Detailed Rules; Regulations of the PRC on Foreign Exchange Administration (ChinaMoney mirror); SAFE enforcement releases (safe.gov.cn); FinCEN FBAR guidance (fincen.gov); IRS FATCA, Pub 54, Form 3520 instructions (irs.gov). Bank FX spreads and wire fees are not published in an official source we could confirm and are flagged on the <a href="flagged.html">Flagged for Review</a> page. Full URLs: <a href="sources.html">Sources page</a>.</div>
+<main id="main" class="container">
+<div class="page-head">
+  <h1>What violations actually cost</h1>
+  <p class="subtitle">Every penalty read from State Council Order 532 and the governing notices, with the Chinese text quoted.</p>
 </div>
-
+<section class="section"><p class="callout error-callout"><strong>Correction to earlier versions of this site:</strong>
+it claimed fines of “30%–300%” and “30%–500%”. Neither figure exists in the statute. Arts. 39, 40 and 45 all read
+<em>up to 30%</em>, and in serious cases <em>30% up to 100%</em> — 等值 means the equivalent amount, i.e. 100%.
+The “1 to 5 times” multiplier belongs to Art. 46 and applies to unlicensed <strong>operators</strong>, not customers.
+<a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></p>
+<p class="lede">Percentages below are of the illegal amount. “Serious circumstances” is a finding by SAFE, not a
+fixed threshold, so treat the upper tier as a real possibility rather than a remote one.</p></section><section class="section"><h2>Penalty schedule</h2><div class="table-wrap"><table class="data"><thead><tr><th scope="col">ID</th><th scope="col">Provision</th><th scope="col">Conduct and measures</th><th scope="col">Base fine</th><th scope="col">Serious cases</th><th scope="col">Source</th></tr></thead><tbody><tr><td>P01</td><td><strong>Order 532 Art. 39</strong><div class="muted small" lang="zh-Hans">逃汇 — transferring domestic FX abroad in breach of rules, or moving domestic capital abroad by deception</div></td><td>Evasion of FX controls (逃汇)<div class="note">Order to repatriate the FX within a set period; criminal liability where a crime is constituted</div><details><summary>Chinese statutory text</summary><blockquote lang="zh-Hans">有违反规定将境内外汇转移境外，或者以欺骗手段将境内资本转移境外等逃汇行为的，由外汇管理机关责令限期调回外汇，处逃汇金额30%以下的罚款；情节严重的，处逃汇金额30%以上等值以下的罚款；构成犯罪的，依法追究刑事责任。</blockquote></details></td><td>up to 30%</td><td>30% – 100%</td><td><a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></td></tr><tr><td>P02</td><td><strong>Order 532 Art. 40</strong><div class="muted small" lang="zh-Hans">非法套汇 — illegal arbitrage, including buying FX from a bank with false or invalid transaction documents</div></td><td>Illegal FX arbitrage (非法套汇), e.g. fabricated invoices or paying in FX what should be paid in RMB<div class="note">Order to re-exchange (回兑) the illegally obtained funds; criminal liability where a crime is constituted</div><details><summary>Chinese statutory text</summary><blockquote lang="zh-Hans">有违反规定以外汇收付应当以人民币收付的款项，或者以虚假、无效的交易单证等向经营结售汇业务的金融机构骗购外汇等非法套汇行为的，由外汇管理机关责令对非法套汇资金予以回兑，处非法套汇金额30%以下的罚款；情节严重的，处非法套汇金额30%以上等值以下的罚款；构成犯罪的，依法追究刑事责任。</blockquote></details></td><td>up to 30%</td><td>30% – 100%</td><td><a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></td></tr><tr><td>P03</td><td><strong>Order 532 Art. 41</strong><div class="muted small" lang="zh-Hans">违规汇入外汇 / 非法结汇 — remitting FX into China in breach of rules; illegal settlement</div></td><td>Unlawful inbound remittance or unlawful settlement<div class="note">Order to rectify. For illegal settlement specifically: order to re-exchange plus a fine of up to 30% (no serious-case uplift stated in that second paragraph).</div><details><summary>Chinese statutory text</summary><blockquote lang="zh-Hans">违反规定将外汇汇入境内的，由外汇管理机关责令改正，处违法金额30%以下的罚款；情节严重的，处违法金额30%以上等值以下的罚款。非法结汇的，由外汇管理机关责令对非法结汇资金予以回兑，处违法金额30%以下的罚款。</blockquote></details></td><td>up to 30%</td><td>30% – 100%</td><td><a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></td></tr><tr><td>P04</td><td><strong>Order 532 Art. 42</strong><div class="muted small" lang="zh-Hans">违规携带外汇出入境 — carrying FX in or out in breach of rules</div></td><td>Carrying banknotes across the border in breach of the carrying rules<div class="note">Warning; a fine of up to 20% MAY be imposed. Where laws or administrative regulations assign the penalty to Customs, those provisions prevail.</div><details><summary>Chinese statutory text</summary><blockquote lang="zh-Hans">违反规定携带外汇出入境的，由外汇管理机关给予警告，可以处违法金额20%以下的罚款。法律、行政法规规定由海关予以处罚的，从其规定。</blockquote></details></td><td>up to 20%</td><td><span class="blank" title="Left blank: no serious-case tier in this article">—</span></td><td><a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></td></tr><tr><td>P05</td><td><strong>Order 532 Art. 44</strong><div class="muted small" lang="zh-Hans">擅自改变外汇或结汇资金用途 — unauthorised change of the approved use of FX or settled funds</div></td><td>Using capital-account or settled funds for a purpose other than the approved one<div class="note">Order to rectify; confiscation of illegal gains. Second paragraph: pricing, settling or transferring FX domestically in breach of rules draws a warning and a possible fine of up to 30%.</div><details><summary>Chinese statutory text</summary><blockquote lang="zh-Hans">违反规定，擅自改变外汇或者结汇资金用途的，由外汇管理机关责令改正，没收违法所得，处违法金额30%以下的罚款；情节严重的，处违法金额30%以上等值以下的罚款。</blockquote></details></td><td>up to 30%</td><td>30% – 100%</td><td><a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></td></tr><tr><td>P06</td><td><strong>Order 532 Art. 45</strong><div class="muted small" lang="zh-Hans">私自买卖外汇、变相买卖外汇、倒买倒卖外汇、非法介绍买卖外汇 — private, disguised or speculative FX trading, or illegally brokering it, in a relatively large amount</div></td><td>Underground banks, mirror &#x27;对敲&#x27; settlement, private FX dealing<div class="note">Warning; confiscation of illegal gains; criminal liability where a crime is constituted. Applies only where the amount is 数额较大 (relatively large).</div><details><summary>Chinese statutory text</summary><blockquote lang="zh-Hans">私自买卖外汇、变相买卖外汇、倒买倒卖外汇或者非法介绍买卖外汇数额较大的，由外汇管理机关给予警告，没收违法所得，处违法金额30%以下的罚款；情节严重的，处违法金额30%以上等值以下的罚款；构成犯罪的，依法追究刑事责任。</blockquote></details></td><td>up to 30%</td><td>30% – 100%</td><td><a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></td></tr><tr><td>P07</td><td><strong>Order 532 Art. 46</strong><div class="muted small" lang="zh-Hans">未经批准擅自经营结汇、售汇业务 — operating an FX settlement/sale business without approval</div></td><td>Acting as an unlicensed FX dealer (the operator, not the customer)<div class="note"><strong>Fixed amounts:</strong> Confiscation of illegal gains. Where illegal gains are RMB 500,000 or more: a fine of 1 to 5 TIMES the illegal gains. Where there are no illegal gains, or gains are under RMB 500,000: a fine of RMB 500,000 to RMB 2,000,000.</div><div class="note">Serious cases: ordered to suspend business for rectification or have the business licence revoked. Criminal liability where a crime is constituted.</div><details><summary>Chinese statutory text</summary><blockquote lang="zh-Hans">未经批准擅自经营结汇、售汇业务的，由外汇管理机关责令改正，有违法所得的，没收违法所得，违法所得50万元以上的，并处违法所得1倍以上5倍以下的罚款；没有违法所得或者违法所得不足50万元的，处50万元以上200万元以下的罚款；情节严重的，由有关主管部门责令停业整顿或者吊销业务许可证；构成犯罪的，依法追究刑事责任。</blockquote></details></td><td><span class="blank" title="Left blank: this article sets no percentage fine">—</span></td><td><span class="blank" title="Left blank: no serious-case tier in this article">—</span></td><td><a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></td></tr><tr><td>P08</td><td><strong>Order 532 Art. 48</strong><div class="muted small" lang="zh-Hans">申报、单证、账户、登记及配合检查违规 — reporting, document, account, registration and inspection-cooperation violations</div></td><td>Failing to make balance-of-payments declarations, submitting untrue documents, breaching FX account or registration rules, obstructing inspection<div class="note"><strong>Fixed amounts:</strong> Order to rectify and a warning. Institutions: fine up to RMB 300,000. INDIVIDUALS: fine up to RMB 50,000.</div><div class="note">This is the flat-cap provision most relevant to an individual&#x27;s paperwork failures, as distinct from the percentage fines on the amount moved.</div><details><summary>Chinese statutory text</summary><blockquote lang="zh-Hans">有下列情形之一的，由外汇管理机关责令改正，给予警告，对机构可以处30万元以下的罚款，对个人可以处5万元以下的罚款</blockquote></details></td><td><span class="blank" title="Left blank: this article sets no percentage fine">—</span></td><td><span class="blank" title="Left blank: no serious-case tier in this article">—</span></td><td><a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></td></tr><tr><td>P09</td><td><strong>Huifa [2015] No. 49 item 2</strong><div class="muted small" lang="zh-Hans">分拆结售汇 / 出借或借用他人额度 — splitting, lending or borrowing annual quota</div></td><td>Quota splitting; lending your own USD 50,000 allowance; borrowing someone else&#x27;s<div class="note"><strong>Fixed amounts:</strong> Not a fine in itself. Lending your quota: first offence draws a risk-warning letter, a repeat draws watch-listing. Borrowing another&#x27;s quota: immediate watch-listing.</div><div class="note">Watch-list period is the year of listing PLUS the following two consecutive years. During that period the person cannot use the convenient ID-only channel and must present documentary proof of the transaction amount at the counter for every purchase or settlement. Any underlying evasion or arbitrage is separately fined under Art. 39 or Art. 40.</div></td><td><span class="blank" title="Left blank: this article sets no percentage fine">—</span></td><td><span class="blank" title="Left blank: no serious-case tier in this article">—</span></td><td><a class="src" href="https://www.safe.gov.cn/safe/2015/1231/5442.html" target="_blank" rel="noopener noreferrer" title="国家外汇管理局关于进一步完善个人外汇管理有关问题的通知 (Notice on Further Improving Individual Foreign Exchange Administration), Huifa [2015] No. 49 — SAFE">S03</a> <a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></td></tr><tr><td>P10</td><td><strong>Repealed — former Detailed Rules Art. 39</strong><div class="muted small" lang="zh-Hans">已废止：原《个人外汇管理办法实施细则》第三十九条</div></td><td>Formerly a catch-all fine of up to RMB 1,000 for individuals and RMB 30,000 for banks where no other rule specified a penalty<div class="note"><strong>Fixed amounts:</strong> NO LONGER IN FORCE. Do not cite the RMB 1,000 individual fine as current law.</div><div class="note">Expressly repealed by Huifa [2023] No. 8, Annex 3. The repeal note is printed at the foot of the official SAFE page for the Detailed Rules.</div><details><summary>Chinese statutory text</summary><blockquote lang="zh-Hans">根据《国家外汇管理局关于废止和失效15件外汇管理规范性文件及调整14件外汇管理规范性文件条款的通知》（汇发〔2023〕8号）附件3……以下内容已被废止：《个人外汇管理办法实施细则》（汇发〔2007〕1号印发）第三十九条。</blockquote></details></td><td><span class="blank" title="Left blank: this article sets no percentage fine">—</span></td><td><span class="blank" title="Left blank: no serious-case tier in this article">—</span></td><td><a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a></td></tr><tr><td>P11</td><td><strong>Yinfa [2021] No. 237 items 1(2), 1(3), 1(4)</strong><div class="muted small" lang="zh-Hans">虚拟货币相关业务活动属于非法金融活动</div></td><td>Using crypto or stablecoins to move value out of China<div class="note"><strong>Fixed amounts:</strong> No percentage schedule is given in this notice. Fiat-to-crypto exchange business is classified as an illegal financial activity that is strictly prohibited and to be banned; overseas exchanges serving mainland residents over the internet are likewise illegal financial activity.</div><div class="note">Where a crime is constituted, criminal liability is pursued. Related civil acts contrary to public order and good morals are void and the resulting losses are borne by the participant. Banks and payment institutions may not provide accounts, transfers, settlement, collateral or insurance for such activity.</div></td><td><span class="blank" title="Left blank: this article sets no percentage fine">—</span></td><td><span class="blank" title="Left blank: no serious-case tier in this article">—</span></td><td><a class="src" href="https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2025092212551974141/index.html" target="_blank" rel="noopener noreferrer" title="关于进一步防范和处置虚拟货币交易炒作风险的通知 (Notice on Further Preventing and Disposing of Risks in Virtual Currency Trading Speculation), Yinfa [2021] No. 237 — People&#x27;s Bank of China and nine other authorities">S06</a></td></tr></tbody></table></div></section>
+</main>
 <footer class="site-footer">
-  <div class="inner">
-    <div>
-      <div class="brand" style="text-decoration:none; color:var(--ink);"><span class="mark">C4</span> China4</div>
-      <p class="small">Penalty breakdown &middot; unverified values left blank and flagged</p>
-    </div>
-    <div>
-      <p class="small"><a href="index.html" style="color:var(--accent);">&#8592; Back to Dashboard</a></p>
-    </div>
+  <div class="container">
+    <p><strong>Built 2026-11-08</strong> from the datasets in <code>data/</code>.
+    Every table row links to the official source it was read from. A dash
+    (<span class="blank">—</span>) means the value could not be confirmed officially and is
+    <a href="flagged.html">flagged for review</a>; it never means zero.</p>
+    <p class="disclaimer">Research summary, not legal, tax or financial advice. Rules and tariffs change.
+    Confirm your own position with your bank, SAFE and a qualified US tax adviser before acting.
+    <a href="sources.html">All 25 sources</a> ·
+    <a href="audit.html">What was corrected</a> ·
+    <a href="https://github.com/sassnarep3-star/China4">Repository</a></p>
   </div>
 </footer>
-
 </body>
 </html>

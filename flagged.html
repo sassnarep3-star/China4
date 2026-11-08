@@ -3,159 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flagged for Review — China4
-</title>
+<title>Flagged for review · China Money</title>
+<meta name="description" content="11 values left blank and 14 irregularities, published openly.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html"><span class="mark">C4</span> China4</a>
-    <nav>
-      <a href="index.html">Dashboard</a>
-      <a href="methods.html">Conversion Methods</a>
-      <a href="penalties.html">Penalty Breakdown</a>
-      <a href="taxes.html">US Tax Obligations</a>
-      <a class="active" href="flagged.html">Flagged for Review</a>
-      <a href="sources.html">Sources</a>
-    </nav>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">China&nbsp;Money<span>CNY → USD, verified</span></a>
+    <button class="navtoggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">Menu</button>
   </div>
+  <nav class="site-nav"><div class="container"><a href="index.html">Dashboard</a><a href="guide.html">Decision guide</a><a href="methods.html">All routes</a><a href="costs.html">Conversion cost</a><a href="china-rules.html">China rules</a><a href="us-tax.html">US tax &amp; reporting</a><a href="penalties.html">Penalties</a><a href="flagged.html" class="active" aria-current="page">Flagged for review</a><a href="audit.html">Repo audit</a><a href="sources.html">Sources</a></div></nav>
 </header>
-
-<div class="container">
-  <h1 class="page-title">Flagged for Review</h1>
-  <p class="page-sub">Per our verification policy, every table row must have a source link to an official site. Values we could not confirm from an official source are left <strong>blank</strong> and listed here. Irregularities — conflicts between sources or rules that need a closer look — are also listed here. None of these blocks the site; they are published so you can review and request changes.</p>
-
-  <div class="section">
-    <h2 class="section-title">&#129151; A. Unverified values (left blank on purpose)</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:22%">Item</th>
-          <th style="width:30%">Where it appears</th>
-          <th style="width:20%">Why unverified</th>
-          <th style="width:28%">Suggested manual check</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Bank FX spread (CNY&rarr;USD markup over mid-market rate)</td>
-          <td>methods.html (row 1&ndash;4); penalties.html (A)</td>
-          <td>Chinese banks set their own buy/sell rates; no official source found publishing the spread. Practice estimates 1&ndash;3% (<span class="blank">not verified</span>).</td>
-          <td>Check the daily exchange rate board of Bank of China / ICBC / your branch; compare to PBOC mid-market rate (pbc.gov.cn / chinaforex.com.cn).</td>
-        </tr>
-        <tr>
-          <td>International wire / SWIFT fee (Chinese bank)</td>
-          <td>methods.html (row 1&ndash;2); penalties.html (A)</td>
-          <td>Not confirmed from an official bank tariff page; practice estimates roughly US$15&ndash;50 plus intermediary fees (<span class="blank">not verified</span>).</td>
-          <td>Check your bank&rsquo;s international remittance tariff (outward remittance fee, cable charge, intermediary fee).</td>
-        </tr>
-        <tr>
-          <td>Intermediary/correspondent bank fee (US side)</td>
-          <td>penalties.html (A)</td>
-          <td>Varies by bank and routing; no official figure found.</td>
-          <td>Ask your US bank for its incoming international wire fee.</td>
-        </tr>
-        <tr>
-          <td>PayPal China cross-border CNY&rarr;USD limits and fees</td>
-          <td>methods.html (row 5)</td>
-          <td>PayPal China&rsquo;s published personal-transfer limits for sending USD out of China could not be verified from an official page.</td>
-          <td>Log into paypal.com.cn and check &ldquo;Send money&rdquo; limits and fees for a China-based account.</td>
-        </tr>
-        <tr>
-          <td>Alipay / WeChat Pay outbound remittance limits</td>
-          <td>methods.html (row 6)</td>
-          <td>Operator pages not reviewed; limits for CNY&rarr;USD outbound personal remittance unverified.</td>
-          <td>Check Alipay/WeChat Pay cross-border remittance terms.</td>
-        </tr>
-        <tr>
-          <td>Western Union/MoneyGram limits from Chinese bank agents</td>
-          <td>methods.html (row 4)</td>
-          <td>Agent-level limits vary by destination and bank; not pinned to an official figure.</td>
-          <td>Ask the agent bank (BOC, CCB, Postal Savings desk) for its WU/MG per-transfer and annual limits.</td>
-        </tr>
-        <tr>
-          <td>China Customs exact cash-carrying procedure</td>
-          <td>methods.html (row 3)</td>
-          <td>The RMB 20,000 / US$5,000 figures are consistent across sources, but the page reviewed (travelchinaguide.com) is not an official customs site. Permit procedure (bank-issued vs. SAFE) needs official confirmation.</td>
-          <td>Check General Administration of Customs (customs.gov.cn) and SAFE &ldquo;Interim Measures for Carrying Foreign Currency Cash In and Out of the Country&rdquo;.</td>
-        </tr>
-        <tr>
-          <td>PBOC 2021 virtual-currency notice details</td>
-          <td>methods.html (row 8)</td>
-          <td>Crypto trading is prohibited in China per widely reported PBOC/SAFE notices; we did not fetch the exact notice text from pbc.gov.cn.</td>
-          <td>Fetch the PBOC notice &ldquo;Notice on Preventing and Disposing of Risks in Virtual Currency Trading&rdquo; (Sept 2021) from pbc.gov.cn.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128681; B. Irregularities and conflicts</h2>
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:26%">Irregularity</th>
-          <th style="width:42%">Detail</th>
-          <th style="width:12%">Severity</th>
-          <th style="width:20%">Source(s) in conflict</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Does the US$50,000 annual quota apply to foreigners?</td>
-          <td>SAFE&rsquo;s Detailed Rules set a US$50,000 annual settlement/purchase quota for individuals. Bank pages (HSBC, Standard Chartered) distinguish domestic individuals (settlement &amp; purchase quota US$50,000) from non-domestic individuals (settlement quota US$50,000; purchase &ldquo;no quota&rdquo;). Some expat guides say foreigners can remit unlimited after-tax salary with tax records. The precise boundary for a US citizen who is not employed in China is unclear.</td>
-          <td><span class="tag warn">High</span></td>
-          <td>SAFE Detailed Rules vs. HSBC/Standard Chartered China pages vs. expat guides (secondary)</td>
-        </tr>
-        <tr>
-          <td>&ldquo;Ants moving&rdquo; (borrowing family/friends&rsquo; quotas)</td>
-          <td>Widely discussed in practice; SAFE treats quota borrowing as evasion if structured to evade controls (fines 30%&ndash;300%). Not explicitly named in the regulation text we reviewed.</td>
-          <td><span class="tag warn">Medium</span></td>
-          <td>SAFE Regulations Art. 38/39 (evasion) vs. community practice</td>
-        </tr>
-        <tr>
-          <td>FBAR penalty amounts (inflation-adjusted)</td>
-          <td>We cite ~US$16,536 (non-willful) and ~US$165,353 or 50% (willful) as 2026 inflation-adjusted figures from secondary tax guides; we did not pull the official FinCEN/DOJ inflation adjustment notice.</td>
-          <td><span class="tag warn">Medium</span></td>
-          <td>Secondary penalty tables vs. FinCEN (fincen.gov confirms FBAR exists, not the exact adjusted amounts)</td>
-        </tr>
-        <tr>
-          <td>Form 3520 thresholds (inflation adjustment)</td>
-          <td>The US$100,000 gift threshold is statutory (not indexed); foreign-corporation/partnership threshold is indexed (US$20,116 in 2025, US$20,573 in 2026 per Rev. Proc. 2025-32 per secondary sources; not verified on irs.gov directly).</td>
-          <td><span class="tag warn">Medium</span></td>
-          <td>Secondary tax guides vs. IRS Form 3520 instructions (irs.gov/pub/irs-pdf/i3520.pdf)</td>
-        </tr>
-        <tr>
-          <td>US&ndash;China treaty savings clause</td>
-          <td>Treaty caps China withholding at 10% but the US generally taxes its citizens regardless (savings clause). Practical treaty benefit for a US citizen resident in China is limited; most relief comes from Form 1116 foreign tax credit.</td>
-          <td><span class="tag info">Low</span></td>
-          <td>IRS China tax treaty documents (1984); secondary treaty summaries</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout warn">
-    <h3>&#128736; How to resolve flags</h3>
-    <p>Items in section A are blank by design — do not treat any practice estimate as fact. Items in section B need a closer look at the original regulation text. If you can confirm any blank value from an official source (bank tariff page, customs.gov.cn, pbc.gov.cn notice, FinCEN inflation notice, IRS Rev. Proc.), open a change request against this repo and we will update the table. Until then, assume the worst-case cost when budgeting.</p>
-  </div>
-
-  <div class="sources"><b>Sources:</b> Full source URLs for everything cited on this site: <a href="sources.html">Sources page</a>. All pages: safe.gov.cn (SAFE), fincen.gov (FinCEN), irs.gov (IRS), pbc.gov.cn (PBOC), customs.gov.cn (China Customs — to be verified).</div>
+<main id="main" class="container">
+<div class="page-head">
+  <h1>Flagged for review</h1>
+  <p class="subtitle">11 values left blank and 14 irregularities, published openly.</p>
 </div>
-
+<section class="section"><p class="callout"><strong>How to read this page.</strong>
+A dash (<span class="blank">—</span>) anywhere on this site means the value could not be confirmed from an
+official source. It never means zero, and it never means "not applicable". No figure on this site was
+estimated, interpolated or taken from a secondary website. These flags do not block publication; they tell
+you exactly where the research stops.</p></section><section class="section"><h2>Values left blank</h2><div class="table-wrap"><table class="data"><thead><tr><th scope="col">ID</th><th scope="col">What is missing</th><th scope="col">Why it is blank</th><th scope="col">What would resolve it</th><th scope="col">Severity</th><th scope="col">Sources checked</th></tr></thead><tbody><tr><td><span id="F01">F01</span></td><td><strong>Per-transaction and annual limits for individual cross-border RMB remittance</strong><div class="muted small">methods.json M07 limit_text</div></td><td>Yinfa [2020] No. 330 item 13 authorises banks to handle individual current-account cross-border RMB settlement but states no numeric limit and no document list. Bank-specific limits could not be confirmed from an official source.</td><td>A published Bank of China or SAFE product page stating the individual limit and required documents for cross-border RMB salary remittance.</td><td><span class="tag warn">medium</span></td><td><a class="src" href="https://www.pbc.gov.cn/huobizhengceersi/214481/214511/3406535/7c4cab88dc26405d9aba84feee8059e0/index.html" target="_blank" rel="noopener noreferrer" title="关于进一步优化跨境人民币政策支持稳外贸稳外资的通知 (Notice on Further Optimising Cross-border RMB Policy), Yinfa [2020] No. 330 — PBOC, NDRC, MOFCOM, SASAC, CBIRC, SAFE">S07</a></td></tr><tr><td><span id="F02">F02</span></td><td><strong>Annual aggregate cap on overseas cash withdrawals with Chinese bank cards</strong><div class="muted small">methods.json M11 limit_text</div></td><td>A RMB 100,000 per person per year aggregate cap is very widely repeated in secondary sources, but the underlying SAFE circular was not retrieved and read from an official site in this session. Per the verification rule it is left blank rather than asserted.<div class="note">This is the most consequential remaining gap for anyone planning to move value by ATM.</div></td><td>The official SAFE notice on overseas bank-card cash withdrawal reporting and the annual aggregate cap, read on safe.gov.cn.</td><td><span class="tag bad">high</span></td><td><a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a> <a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a></td></tr><tr><td><span id="F03">F03</span></td><td><strong>Money-transfer-operator fees and limits via Chinese bank agents</strong><div class="muted small">methods.json M12 china_cost, limit_text, documents</div></td><td>Bank of China&#x27;s tariff note 6 confirms it acts as agent for international remittance companies and that the pricing is set by those companies, but does not publish the prices. No official operator page was verified.</td><td>The operator&#x27;s own published China-outbound fee schedule and limit page.</td><td><span class="tag warn">medium</span></td><td><a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a></td></tr><tr><td><span id="F04">F04</span></td><td><strong>QDII and ODI product-level costs, quotas, and US PFIC / Form 5471 consequences</strong><div class="muted small">methods.json M13, M15 china_cost and us_tax detail</div></td><td>The legal basis (Detailed Rules Art. 16 and 17) is verified, but institution-level quotas, fees and the US entity-reporting analysis were not verified from official sources this session.<div class="note">Low priority because neither is a practical personal repatriation route.</div></td><td>SAFE&#x27;s current QDII quota table; IRS Form 8621 and Form 5471 instructions.</td><td><span class="tag info">low</span></td><td><a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a></td></tr><tr><td><span id="F05">F05</span></td><td><strong>PayPal / Alipay / WeChat Pay outbound personal CNY-to-USD transfers</strong><div class="muted small">methods.json M24 — all numeric fields</div></td><td>No official operator or regulator page confirming an outbound personal CNY-to-USD product, its limits or its fees was verified. Yinfa [2020] No. 330 item 2 addresses cross-border e-commerce trade flows through payment institutions, which is a different thing.<div class="note">Marked status &#x27;unverified&#x27; rather than &#x27;legal&#x27; or &#x27;prohibited&#x27;. Absence of verification is not proof of illegality.</div></td><td>An official operator page or PBOC/SAFE authorisation covering personal outbound capital transfer via these apps.</td><td><span class="tag warn">medium</span></td><td><a class="src" href="https://www.pbc.gov.cn/huobizhengceersi/214481/214511/3406535/7c4cab88dc26405d9aba84feee8059e0/index.html" target="_blank" rel="noopener noreferrer" title="关于进一步优化跨境人民币政策支持稳外贸稳外资的通知 (Notice on Further Optimising Cross-border RMB Policy), Yinfa [2020] No. 330 — PBOC, NDRC, MOFCOM, SASAC, CBIRC, SAFE">S07</a></td></tr><tr><td><span id="F06">F06</span></td><td><strong>The actual FX bid-ask spread on a personal CNY/USD conversion</strong><div class="muted small">fees.json B13 — all numeric fields</div></td><td>This is the single largest cost on a large conversion, and it is the one number that could NOT be officially verified. Bank of China confirms it charges no separate conversion fee at its own branches, but publishes no spread figure. Figures of roughly 0.24%-0.3% circulate on secondary sites only and are deliberately NOT used.<div class="note">Users must measure this themselves at the moment of transfer. The site explains how rather than quoting an unverified number.</div></td><td>A same-day comparison of the bank&#x27;s published USD buying and selling quotes against the CFETS central parity rate, or an official statement of the permitted spread.</td><td><span class="tag bad">high</span></td><td><a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a> <a class="src" href="https://www.boc.cn/custserv/fd5/" target="_blank" rel="noopener noreferrer" title="中国银行服务价目 (Bank of China service price list index) — Bank of China">S13</a></td></tr><tr><td><span id="F07">F07</span></td><td><strong>US-China treaty article-level withholding rates</strong><div class="muted small">us-tax.json T10 article_rates</div></td><td>The IRS treaty index was verified and confirms the 1984 treaty and technical explanation exist, but the article text was not read this session, so no dividend, interest, royalty or capital-gains rate is quoted.</td><td>Reading https://www.irs.gov/pub/irs-trty/china.pdf and citing the specific article.</td><td><span class="tag warn">medium</span></td><td><a class="src" href="https://www.irs.gov/businesses/international-businesses/china-tax-treaty-documents" target="_blank" rel="noopener noreferrer" title="China — Tax treaty documents — Internal Revenue Service">S20</a></td></tr><tr><td><span id="F08">F08</span></td><td><strong>FBAR automatic extension to 15 October</strong><div class="muted small">us-tax.json U01 due</div></td><td>The 15 April due date is confirmed by the IRS FATCA summary. The automatic six-month extension to 15 October is standard practice and widely documented, but was not read verbatim in an official source this session, so it is presented as flagged rather than as verified.</td><td>The FinCEN FBAR reference page or IRS page stating the automatic extension.</td><td><span class="tag info">low</span></td><td><a class="src" href="https://www.fincen.gov/report-foreign-bank-and-financial-accounts" target="_blank" rel="noopener noreferrer" title="Report Foreign Bank and Financial Accounts (FBAR) — FinCEN (US Treasury)">S15</a> <a class="src" href="https://www.irs.gov/businesses/corporations/summary-of-fatca-reporting-for-us-taxpayers" target="_blank" rel="noopener noreferrer" title="Summary of FATCA reporting for U.S. taxpayers — Internal Revenue Service">S16</a> <a class="src" href="https://www.irs.gov/irm/part5/irm_05-021-006" target="_blank" rel="noopener noreferrer" title="Comparison of Form 8938 and FBAR requirements (IRM 5.21.6 exhibit) — Internal Revenue Service — Internal Revenue Manual">S24</a></td></tr><tr><td><span id="F09">F09</span></td><td><strong>Primary text of PBOC Announcement [2004] No. 18 (RMB 20,000 cash limit)</strong><div class="muted small">china-rules.json R14 source_caveat</div></td><td>The RMB 20,000 figure IS verified, but only in an official Customs reply (S05), not in the PBOC announcement itself. Two previously used official URLs for the announcement are now dead (see I-02). The value is published because the Customs source is official; the caveat records that the primary instrument was not read.</td><td>A live pbc.gov.cn page carrying Announcement [2004] No. 18.</td><td><span class="tag info">low</span></td><td><a class="src" href="http://www.customs.gov.cn/eportal/ui?pageId=374112&amp;msgDataId=7cebfa81134447ad8a57883790a3e68d" target="_blank" rel="noopener noreferrer" title="出境可以带多少现金？ (How much cash may be taken out of the country?) — official Customs reply — General Administration of Customs of the PRC (Jiangmen Customs)">S05</a></td></tr><tr><td><span id="F10">F10</span></td><td><strong>Bank of China tariff superseded in three days</strong><div class="muted small">fees.json — all rows dated 2025-11-11</div></td><td>Not a blank, but a currency warning. Today is 2026-11-08. The published tariff took effect 2025-11-11. The bank has announced a change effective 2026-11-11 that alters item 210108014 (ATM withdrawals). Every other item in the announcement is unchanged. The FX carrying-permit fee waiver is separately stated to run to 2026-12-31, and tariff note 11 says temporary waivers lapse when the next tariff takes effect.<div class="note">Both the current and the incoming ATM figures are published side by side so the page does not silently go stale.</div></td><td>Re-checking https://www.boc.cn/custserv/fd5/ after 2026-11-11.</td><td><span class="tag bad">high</span></td><td><a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a> <a class="src" href="https://www.boc.cn/custserv/fd5/" target="_blank" rel="noopener noreferrer" title="中国银行服务价目 (Bank of China service price list index) — Bank of China">S13</a> <a class="src" href="https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html" target="_blank" rel="noopener noreferrer" title="关于调整部分个人服务收费内容的公告（2026年11月11日起） (Announcement adjusting certain personal service charges, effective 11 November 2026) — Bank of China">S25</a></td></tr><tr><td><span id="F11">F11</span></td><td><strong>Notary, translation and legalisation costs for property-transfer applications</strong><div class="muted small">methods.json M05, M06 china_cost detail</div></td><td>The document requirements are verified, but no official schedule of notary, translation or consular legalisation fees was located. These are real costs on an inheritance or emigration transfer.</td><td>Provincial price-bureau notary fee schedules and the relevant Chinese consulate&#x27;s legalisation fee page.</td><td><span class="tag warn">medium</span></td><td><a class="src" href="http://m.safe.gov.cn/safe/2004/1116/4133.html" target="_blank" rel="noopener noreferrer" title="个人财产对外转移售付汇管理暂行办法 (Interim Measures for the Administration of the Sale and Payment of Foreign Exchange for Outbound Transfer of Individual Property), PBOC Announcement [2004] No. 16 — People&#x27;s Bank of China (reproduced with SAFE press release)">S08</a></td></tr></tbody></table></div></section><section class="section"><h2>Irregularities found</h2><div class="table-wrap"><table class="data"><thead><tr><th scope="col">ID</th><th scope="col">Irregularity</th><th scope="col">Detail</th><th scope="col">Resolution</th><th scope="col">Severity</th></tr></thead><tbody><tr><td><span id="I-01">I-01</span></td><td><strong>Branch naming deviates from the requested convention</strong></td><td>The task specification called for session branches named session-&lt;id&gt;/&lt;task&gt;. The platform fixes this session to the branch arena/6919f563-china4 and forbids creating or pushing any other branch. Work therefore proceeds on the mandated branch and coordination is recorded in COORDINATION.md instead.</td><td>Documented deviation; no action needed.</td><td><span class="tag info">info</span></td></tr><tr><td><span id="I-02">I-02</span></td><td><strong>Link rot: three previously cited official URLs are dead</strong></td><td>Confirmed dead by direct fetch: (1) https://www.cbp.gov/travel/international-visitors/know-before-you-visit/money returns 404 — replaced with /travel/international-visitors/money-monetary-instruments (S21). (2) https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/4348521/index.html returns 404 — the crypto notice is now at /2025092212551974141/index.html (S06). (3) The Guangzhou Customs page carrying the RMB 20,000 rule returns 404 — replaced with an official Customs Q&amp;A reply (S05).</td><td>All three replaced with live official sources verified this session.</td><td><span class="tag warn">medium</span></td></tr><tr><td><span id="I-03">I-03</span></td><td><strong>Bank of China ATM tariff changes on 2026-11-11</strong></td><td>The bank&#x27;s announcement of 2026-08-11 changes item 210108014 effective 2026-11-11. Overseas UnionPay withdrawals stay at RMB 12 + 1% capped at RMB 112. Mastercard and VISA move to 2.5% of the withdrawal, minimum USD 3 and maximum USD 40 equivalent, replacing the previous 0.5% / min USD 3 / max USD 5 line. For a large withdrawal this is an eightfold increase in the cap.</td><td>Both figures published side by side with effective dates. Practical guidance: use UnionPay, not Mastercard or VISA, for overseas cash after 2026-11-11.</td><td><span class="tag bad">high</span></td></tr><tr><td><span id="I-04">I-04</span></td><td><strong>Conflicting repeal status for Huifa [2015] No. 49</strong></td><td>A secondary site (waizi.org.cn) labels the circular 【全文废止】 (wholly repealed). The official SAFE page for the circular carries no repeal marker, and SAFE&#x27;s in-force catalogue was checked. The official position is treated as controlling.</td><td>Flagged as an unresolved conflict rather than asserting repeal. The quota-splitting prohibition is independently supported by Order 532 Art. 39 and Art. 40, so the substantive warning holds either way.</td><td><span class="tag warn">medium</span></td></tr><tr><td><span id="I-05">I-05</span></td><td><strong>Two official IRS pages are stale and must not be used for current figures</strong></td><td>The IRS FEIE landing page prints dollar amounts only through 2023. IRM 5.21.6&#x27;s FBAR/8938 comparison exhibit still shows a 30 June FBAR deadline with no extensions and un-indexed $10,000 / $100,000 penalties. Both are official but out of date.</td><td>Current figures taken from Rev. Proc. 2025-32 (S18), the IRS FATCA summary (S16), FinCEN (S15) and eCFR (S14) instead. S22 and S24 are cited only for the rules they still state correctly, with the caveat recorded in the source registry.</td><td><span class="tag warn">medium</span></td></tr><tr><td><span id="I-06">I-06</span></td><td><strong>CBP wording inconsistency on the cash-reporting threshold</strong></td><td>Some CBP newsroom text says &#x27;$10,000 or greater&#x27; while the governing statute and CBP&#x27;s own Money and Other Monetary Instruments page say &#x27;exceeding $10,000&#x27;. Exactly $10,000 is therefore not reportable on the controlling wording.</td><td>The site uses &#x27;more than USD 10,000&#x27; throughout, matching S21.</td><td><span class="tag info">low</span></td></tr><tr><td><span id="I-07">I-07</span></td><td><strong>FBAR penalty amounts were mislabelled as a 2026 adjustment</strong></td><td>The previous site labelled $16,536 / $165,353 as the &#x27;2026 adjustment&#x27;. They are the amounts for penalties assessed on or after 17 January 2025. They remain operative in 2026 because the 2026 annual civil-monetary-penalty adjustment was cancelled (no October 2025 CPI-U was published; OMB M-26-11).</td><td>Relabelled to the eCFR&#x27;s own column heading and explained. The figures themselves were correct.</td><td><span class="tag warn">medium</span></td></tr><tr><td><span id="I-08">I-08</span></td><td><strong>Two different Form 3520 gift thresholds were conflated</strong></td><td>The site presented $20,573 as the general foreign-gift threshold. It is the section 6039F threshold for gifts from foreign CORPORATIONS and PARTNERSHIPS (Rev. Proc. 2025-32 s.4.47). Gifts from a nonresident alien INDIVIDUAL or a foreign estate use a non-indexed &#x27;more than $100,000&#x27; threshold (Form 3520 instructions, Who Must File item 4(a)).</td><td>Split into two separate rows, U07 and U08, each with its own source.</td><td><span class="tag bad">high</span></td></tr><tr><td><span id="I-09">I-09</span></td><td><strong>Fabricated penalty ranges in the previous version of the site</strong></td><td>penalties.html stated fines of &#x27;30%-300%&#x27; under Art. 45 and &#x27;30%-500%&#x27; under Art. 39. Neither appears in State Council Order 532. Both articles read &#x27;处...30%以下的罚款；情节严重的，处...30%以上等值以下的罚款&#x27; — up to 30%, and in serious cases 30% up to 100% (等值 = the equivalent amount). A separate &#x27;1 to 5 times&#x27; figure belongs to Art. 46 and applies to unlicensed OPERATORS, not customers.</td><td>Corrected against the verbatim statute (S02), with the Chinese text quoted in the penalty table so the correction is auditable.</td><td><span class="tag bad">critical</span></td></tr><tr><td><span id="I-10">I-10</span></td><td><strong>The USD 50,000 quota was misapplied to a US citizen</strong></td><td>The previous index.html told a US citizen they are limited to USD 50,000 a year. Detailed Rules Art. 2 imposes the annual purchase total only on 境内个人. Under Order 532 Art. 52(2) a foreigner is a domestic individual only after one full year of continuous residence in China. A non-resident US citizen instead uses Art. 13 with tax vouchers, which states no numeric annual cap.</td><td>Added an explicit classification step at the top of the decision guide, with both articles quoted.</td><td><span class="tag bad">critical</span></td></tr><tr><td><span id="I-11">I-11</span></td><td><strong>Repealed provision cited as current law</strong></td><td>The previous penalties page cited Detailed Rules Art. 39 (a fine of up to RMB 1,000 for individuals). That article was expressly repealed by Huifa [2023] No. 8, Annex 3; the repeal note is printed on the official SAFE page.</td><td>Retained as row P10 but explicitly marked REPEALED so readers who have seen the old figure elsewhere can see why it no longer applies.</td><td><span class="tag warn">medium</span></td></tr><tr><td><span id="I-12">I-12</span></td><td><strong>Blanket claim of &#x27;no US tax on conversion&#x27; was wrong</strong></td><td>The previous site stated there is no US tax on converting currency. IRC 988(c)(1)(C) makes any disposition of nonfunctional currency, including a foreign-currency bank deposit, a section 988 transaction producing ORDINARY gain or loss. The 988(e)(2) personal-transaction exclusion is gain-only and switches off entirely once the gain exceeds $200.</td><td>Added a dedicated section 988 analysis (T02-T05) with the statutory text quoted.</td><td><span class="tag bad">high</span></td></tr><tr><td><span id="I-13">I-13</span></td><td><strong>Non-official sources used as row citations</strong></td><td>The previous methods.html cited fdi.gov.cn, chinamoney.com.cn, travelchinaguide.com, choiceshanghai.com, yclcpa.com and hsbc.com.cn as authorities for legal limits. These are not the regulator and cannot establish a legal limit.</td><td>Every row now cites a regulator, legislature, government portal or the regulated institution&#x27;s own published tariff. Secondary sites are used for nothing.</td><td><span class="tag bad">high</span></td></tr><tr><td><span id="I-14">I-14</span></td><td><strong>Malformed HTML and a hard-coded date</strong></td><td>taxes.html contained a stray &lt;td&gt;&lt;/td&gt; inside a &lt;ul&gt;, and index.html hard-coded &#x27;Last updated: 2026-11-07&#x27;.</td><td>All pages are now generated from the JSON datasets by build.py, which stamps the build date automatically and emits well-formed tables. tools/verify.py fails the build on malformed structure or a missing source.</td><td><span class="tag info">low</span></td></tr></tbody></table></div></section>
+</main>
 <footer class="site-footer">
-  <div class="inner">
-    <div>
-      <div class="brand" style="text-decoration:none; color:var(--ink);"><span class="mark">C4</span> China4</div>
-      <p class="small">Flagged for review &middot; unverified items left blank by design</p>
-    </div>
-    <div>
-      <p class="small"><a href="index.html" style="color:var(--accent);">&#8592; Back to Dashboard</a></p>
-    </div>
+  <div class="container">
+    <p><strong>Built 2026-11-08</strong> from the datasets in <code>data/</code>.
+    Every table row links to the official source it was read from. A dash
+    (<span class="blank">—</span>) means the value could not be confirmed officially and is
+    <a href="flagged.html">flagged for review</a>; it never means zero.</p>
+    <p class="disclaimer">Research summary, not legal, tax or financial advice. Rules and tariffs change.
+    Confirm your own position with your bank, SAFE and a qualified US tax adviser before acting.
+    <a href="sources.html">All 25 sources</a> ·
+    <a href="audit.html">What was corrected</a> ·
+    <a href="https://github.com/sassnarep3-star/China4">Repository</a></p>
   </div>
 </footer>
-
 </body>
 </html>

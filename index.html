@@ -3,169 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>China4 — Getting Money Out of China (US Citizen Guide)</title>
+<title>Getting money out of China · China Money</title>
+<meta name="description" content="A verified, source-by-source guide for a US citizen holding CNY in a Chinese bank account.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html"><span class="mark">C4</span> China4</a>
-    <nav>
-      <a class="active" href="index.html">Dashboard</a>
-      <a href="methods.html">Conversion Methods</a>
-      <a href="penalties.html">Penalty Breakdown</a>
-      <a href="taxes.html">US Tax Obligations</a>
-      <a href="flagged.html">Flagged for Review</a>
-      <a href="sources.html">Sources</a>
-    </nav>
+  <div class="container header-inner">
+    <a class="brand" href="index.html">China&nbsp;Money<span>CNY → USD, verified</span></a>
+    <button class="navtoggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">Menu</button>
   </div>
+  <nav class="site-nav"><div class="container"><a href="index.html" class="active" aria-current="page">Dashboard</a><a href="guide.html">Decision guide</a><a href="methods.html">All routes</a><a href="costs.html">Conversion cost</a><a href="china-rules.html">China rules</a><a href="us-tax.html">US tax &amp; reporting</a><a href="penalties.html">Penalties</a><a href="flagged.html">Flagged for review</a><a href="audit.html">Repo audit</a><a href="sources.html">Sources</a></div></nav>
 </header>
-
-<div class="container">
-  <div class="hero">
-    <h1>Moving money out of China to the US</h1>
-    <p>A research dashboard for US citizens with CNY stuck in a Chinese bank account: every legal way to convert CNY to USD, what each costs, the tax and reporting penalties, and which option carries the least penalty. All figures are traced to official sources; anything we could not verify is left blank and flagged.</p>
-    <a class="cta" href="methods.html">View all conversion methods &rarr;</a>
-  </div>
-
-  <div class="best-answer">
-    <h3>The short answer (best way, least penalty)</h3>
-    <p><strong>Use a normal bank wire (SWIFT) from your Chinese bank, converting CNY to USD within China&rsquo;s annual individual foreign-exchange quota of <b>US$50,000 per person per calendar year</b>.</strong> Within the quota you need only your ID — no tax penalty in China, just the bank&rsquo;s FX spread and wire fee. Above the quota, you must document the legitimate source of the funds (for a foreigner working in China, after-tax salary with tax payment records can be remitted on top of the quota). Moving your own already-taxed money to the US is <strong>not</strong> a US taxable event — but you must still file US reports (FBAR if your foreign accounts aggregate over US$10,000; Form 8938/FATCA above higher thresholds; Form 3520 if the money is a gift over US$100,000 from a foreign person). <strong>Never use underground money changers or crypto P2P</strong> — both are illegal in China and carry fines of 30%&ndash;300% of the amount plus criminal risk.</p>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128202; Executive summary</h2>
-    <p>China tightly controls converting renminbi (CNY) into foreign currency and moving it abroad. The key constraint is not a US tax on the transfer itself — it is China&rsquo;s foreign-exchange quota and the US information-reporting regime. The table below is the quick reference; full details, pros/cons, and penalties are on the following pages.</p>
-
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:22%">Method</th>
-          <th style="width:16%">China annual limit</th>
-          <th style="width:14%">China-side cost</th>
-          <th style="width:18%">US tax / reporting</th>
-          <th style="width:14%">Legality</th>
-          <th style="width:16%">Verdict</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="method-cell">Bank wire / SWIFT (Chinese bank)</td>
-          <td>US$50,000/person/yr quota; above = documentation required</td>
-          <td>FX spread + wire fee (amounts not verified — flagged)</td>
-          <td>Not taxable if your own funds; FBAR/8938 may apply</td>
-          <td><span class="tag good">Legal</span></td>
-          <td><strong>Best option</strong> within quota</td>
-        </tr>
-        <tr>
-          <td class="method-cell">After-tax salary remittance (foreigners employed in China)</td>
-          <td>No fixed cap beyond documented after-tax salary</td>
-          <td>FX spread + wire fee (unverified)</td>
-          <td>Not taxable if your own funds; FBAR/8938 may apply</td>
-          <td><span class="tag good">Legal</span></td>
-          <td>Best option above quota if you paid Chinese tax</td>
-        </tr>
-        <tr>
-          <td class="method-cell">Carry cash across the border</td>
-          <td>RMB 20,000; FX cash &le;US$5,000 no declaration</td>
-          <td>None (but risky)</td>
-          <td>US: declare &gt;US$10,000 (FinCEN 105)</td>
-          <td><span class="tag good">Legal</span> (within limits)</td>
-          <td>Only for small amounts</td>
-        </tr>
-        <tr>
-          <td class="method-cell">Western Union / MoneyGram (bank agents in China)</td>
-          <td>Same FX controls ($50,000 quota)</td>
-          <td>Fees + FX margin (unverified)</td>
-          <td>FBAR/8938 may apply</td>
-          <td><span class="tag mixed">Legal via banks</span></td>
-          <td>Convenient for small amounts</td>
-        </tr>
-        <tr>
-          <td class="method-cell">PayPal China / Alipay / WeChat Pay cross-border</td>
-          <td>Limits vary; not fully verified</td>
-          <td>Unverified</td>
-          <td>FBAR/8938 may apply</td>
-          <td><span class="tag mixed">Legal (limited)</span></td>
-          <td>Small amounts; limits unclear</td>
-        </tr>
-        <tr>
-          <td class="method-cell">Underground money changers (黑庄)</td>
-          <td>No legal channel</td>
-          <td>Fine 30%&ndash;300% + confiscation</td>
-          <td>FBAR/8938/3520 still apply</td>
-          <td><span class="tag bad">Illegal</span></td>
-          <td><strong>Never use</strong></td>
-        </tr>
-        <tr>
-          <td class="method-cell">Cryptocurrency / P2P</td>
-          <td>No legal channel</td>
-          <td>Illegal in China; criminal risk</td>
-          <td>FBAR/8938 may apply</td>
-          <td><span class="tag bad">Illegal in China</span></td>
-          <td><strong>Never use</strong></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="sources"><b>Sources:</b> SAFE Detailed Rules on Individual Foreign Exchange (US$50,000 annual quota); Regulations of the PRC on Foreign Exchange Administration (fines 30%&ndash;300%); FinCEN FBAR ($10,000 aggregate threshold); IRS FATCA/Form 8938 and Form 3520 guidance; China Customs cash declaration (RMB 20,000 / US$5,000). Full links: <a href="sources.html">Sources page</a>.</div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128397; Key numbers at a glance</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>US$50,000 / year</h3>
-        <p class="small">China individual annual foreign-exchange purchase/settlement quota per person (resets 1 Jan). Within quota: ID only at a bank.</p>
-      </div>
-      <div class="card">
-        <h3>US$10,000</h3>
-        <p class="small">FBAR (FinCEN Form 114): file if aggregate foreign accounts exceed $10,000 at any time during the year.</p>
-      </div>
-      <div class="card">
-        <h3>US$100,000</h3>
-        <p class="small">Form 3520: report gifts from foreign individuals/estates above $100,000/yr (gift itself not taxable; reporting is mandatory).</p>
-      </div>
-      <div class="card">
-        <h3>US$5,000</h3>
-        <p class="small">China customs: foreign-currency cash above US$5,000 equivalent must be declared when leaving China; RMB cash cap RMB 20,000.</p>
-      </div>
-      <div class="card">
-        <h3>30%&ndash;300%</h3>
-        <p class="small">China fine for illegally buying/selling foreign exchange (underground changers), plus confiscation and possible criminal liability.</p>
-      </div>
-      <div class="card">
-        <h3>No US tax</h3>
-        <p class="small">Transferring your own already-taxed money to the US is not US taxable income. US citizens are taxed on worldwide income — the transfer itself is not an event.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">&#128204; How to use this site</h2>
-    <ol>
-      <li><a href="methods.html">Conversion Methods</a> — every way to convert CNY to USD, with pros, cons, limits, and official source for each row.</li>
-      <li><a href="penalties.html">Penalty Breakdown</a> — the full cost of each channel, including exchange spreads, wire fees, China fines, and US reporting penalties.</li>
-      <li><a href="taxes.html">US Tax Obligations</a> — FBAR, FATCA Form 8938, Form 3520, foreign tax credit, US&ndash;China treaty.</li>
-      <li><a href="flagged.html">Flagged for Review</a> — values we could not confirm from an official source (left blank) and irregularities needing your review.</li>
-      <li><a href="sources.html">Sources</a> — every official link used, for manual verification.</li>
-    </ol>
-    <div class="disclaimer"><strong>Not legal or tax advice.</strong> This site summarizes publicly available regulations for research purposes. Rules change, bank practices vary, and your facts (source of funds, tax history, visa status) determine what is legal for you. Consult a US-China cross-border tax professional and your bank before moving money.</div>
-  </div>
+<main id="main" class="container">
+<div class="page-head">
+  <h1>Getting money out of China</h1>
+  <p class="subtitle">A verified, source-by-source guide for a US citizen holding CNY in a Chinese bank account.</p>
 </div>
 
+<div class="card-grid">
+  <div class="card"><div class="stat">25</div><div class="stat-label">routes examined</div></div>
+  <div class="card"><div class="stat good-text">18</div><div class="stat-label">lawful routes</div></div>
+  <div class="card"><div class="stat bad-text">6</div><div class="stat-label">prohibited routes</div></div>
+  <div class="card"><div class="stat">25</div><div class="stat-label">official sources read</div></div>
+  <div class="card"><div class="stat warn-text">11</div><div class="stat-label">values left blank</div></div>
+  <div class="card"><div class="stat">16</div><div class="stat-label">errors found &amp; fixed</div></div>
+</div>
+<section class="section best-answer">
+<h2>The short answer</h2>
+<p class="lede">There is no single cheap trick. The lawful route depends on <strong>two facts about you</strong>,
+and the real cost is the bank's exchange-rate spread, not its fees.</p>
+<ol class="steps">
+<li><strong>First, work out which rule set applies to you.</strong> Chinese law splits individuals into
+<em>domestic</em> (境内个人) and <em>non-domestic</em> (境外个人). Under State Council Order 532 Art. 52(2), a foreigner
+who has lived in China <strong>continuously for one full year counts as domestic</strong>. Below that you are non-domestic.
+This decides whether the famous USD 50,000 annual ceiling binds you at all. <a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a> <a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a></li>
+<li><strong>If the money is documented salary or other current-account income</strong> and you are non-domestic,
+convert at the bank under Detailed Rules Art. 13 with your ID, proof of the amount and your
+<strong>Chinese tax vouchers</strong>. That article states no annual numeric cap. Then wire it out under Art. 15,
+which for a non-domestic individual's FX savings account requires only ID. <a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a></li>
+<li><strong>If you are domestic</strong> (including a US citizen resident a year or more), you get
+USD 50,000 a year on ID alone; above that you need documents proving a genuine current-account transaction.
+Do not borrow relatives' quotas — that is quota splitting and it puts you on a three-year watch list. <a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a> <a class="src" href="https://www.safe.gov.cn/safe/2015/1231/5442.html" target="_blank" rel="noopener noreferrer" title="国家外汇管理局关于进一步完善个人外汇管理有关问题的通知 (Notice on Further Improving Individual Foreign Exchange Administration), Huifa [2015] No. 49 — SAFE">S03</a></li>
+<li><strong>If it is a large capital balance</strong> — an inheritance, or assets you owned before emigrating —
+the quota routes will never be enough. Use the purpose-built <strong>inheritance transfer</strong> or
+<strong>emigration transfer</strong> channel, which has no annual ceiling but needs SAFE approval and a tax certificate. <a class="src" href="http://m.safe.gov.cn/safe/2004/1116/4133.html" target="_blank" rel="noopener noreferrer" title="个人财产对外转移售付汇管理暂行办法 (Interim Measures for the Administration of the Sale and Payment of Foreign Exchange for Outbound Transfer of Individual Property), PBOC Announcement [2004] No. 16 — People&#x27;s Bank of China (reproduced with SAFE press release)">S08</a> <a class="src" href="https://www.gov.cn/zhengce/zhengceku/202404/content_6945036.htm" target="_blank" rel="noopener noreferrer" title="资本项目外汇业务指引（2024年版） (Capital Account Foreign Exchange Business Guidelines, 2024 edition), Huifa [2024] No. 12 — SAFE (State Council policy repository reproduction of the SAFE notice)">S09</a> <a class="src" href="https://www.safe.gov.cn/tianjin/2026/0319/3018.html" target="_blank" rel="noopener noreferrer" title="个人财产转移购付汇业务问答（七） (Q&amp;A on FX purchase and payment for outbound individual property transfer, No. 7) — SAFE Tianjin branch">S10</a></li>
+<li><strong>On the US side, moving your own money is not income</strong> — but converting RMB can produce an
+<strong>ordinary</strong> currency gain under IRC 988, and the FBAR and Form 8938 duties apply regardless of whether
+any tax is due. The reporting penalties are the expensive part. <a class="src" href="https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.htm" target="_blank" rel="noopener noreferrer" title="26 U.S.C. 988 — Treatment of certain foreign currency transactions — US Government Publishing Office (United States Code, 2023 edition)">S19</a> <a class="src" href="https://www.fincen.gov/report-foreign-bank-and-financial-accounts" target="_blank" rel="noopener noreferrer" title="Report Foreign Bank and Financial Accounts (FBAR) — FinCEN (US Treasury)">S15</a> <a class="src" href="https://www.irs.gov/businesses/corporations/summary-of-fatca-reporting-for-us-taxpayers" target="_blank" rel="noopener noreferrer" title="Summary of FATCA reporting for U.S. taxpayers — Internal Revenue Service">S16</a></li>
+</ol>
+<p class="callout"><strong>Biggest avoidable cost:</strong> the exchange-rate spread. Bank of China charges
+<em>no separate fee</em> for converting at its own branches, which makes conversion look free. It is not —
+the bank earns the gap between its quoted rate and the interbank rate. No official spread figure is published,
+so this site leaves it blank and shows you how to measure it yourself. <a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a> <a class="tag warn" href="flagged.html#F06" title="The actual FX bid-ask spread on a personal CNY/USD conversion">F06</a></p>
+</section><section class="section"><h2>Route comparison at a glance</h2><div class="table-wrap"><table class="data"><caption>The routes that matter most. Full detail on the <a href="methods.html">all routes</a> page.</caption><thead><tr><th scope="col">Route</th><th scope="col">Status</th><th scope="col">Limit</th><th scope="col">Official source</th></tr></thead><tbody><tr><td><a href="methods.html#M01"><strong>Convert lawful RMB income to USD as a non-domestic individual (境外个人), then wire</strong></a></td><td><span class="tag mixed">Lawful if conditions met</span></td><td>No annual quota is imposed on this route by Art. 13. The amount is bounded by the documented lawful income, not by a fixed cap. The USD 50,000 annual total in Art. 2 applies to settlement by individuals and to purchase by DOMESTIC individuals only.</td><td><a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a> <a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a> <a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a> <a class="src" href="https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.htm" target="_blank" rel="noopener noreferrer" title="26 U.S.C. 988 — Treatment of certain foreign currency transactions — US Government Publishing Office (United States Code, 2023 edition)">S19</a> </td></tr><tr><td><a href="methods.html#M02"><strong>Purchase FX within the USD 50,000 annual total, then wire (domestic individual)</strong></a></td><td><span class="tag good">Lawful</span></td><td>USD 50,000 equivalent per person per year for purchase by a domestic individual (Art. 2). SAFE may adjust the annual total.</td><td><a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a> <a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a> <a class="src" href="https://www.safe.gov.cn/safe/2015/1231/5442.html" target="_blank" rel="noopener noreferrer" title="国家外汇管理局关于进一步完善个人外汇管理有关问题的通知 (Notice on Further Improving Individual Foreign Exchange Administration), Huifa [2015] No. 49 — SAFE">S03</a> <a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a> </td></tr><tr><td><a href="methods.html#M03"><strong>Above-quota current-account purchase with transaction documents (domestic individual)</strong></a></td><td><span class="tag mixed">Lawful if conditions met</span></td><td>No fixed ceiling stated; bounded by the documented genuine transaction amount. Art. 12 sets a documentary test, not a numeric cap.</td><td><a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a> <a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a> <a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a> </td></tr><tr><td><a href="methods.html#M04"><strong>Remit FX already held in your own foreign-currency savings account</strong></a></td><td><span class="tag good">Lawful</span></td><td>Non-domestic individual: no numeric cap stated in Art. 15(1) for remitting FX from a savings account. Domestic individual: USD 50,000 equivalent PER DAY on ID alone (Art. 14), above which documents are needed. This daily threshold is separate from the annual purchase quota.</td><td><a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a> <a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a> </td></tr><tr><td><a href="methods.html#M05"><strong>Inheritance transfer (继承财产转移) — repatriating a Chinese estate you inherited</strong></a></td><td><span class="tag mixed">Lawful if conditions met</span></td><td>No annual quota. Approval threshold: total at or below RMB 500,000 equivalent is approved by the local SAFE branch; above that the branch reviews and forwards to SAFE head office (Art. 10). Estate from one decedent must be applied for in one application but may be remitted in one or several instalments (Art. 6).</td><td><a class="src" href="http://m.safe.gov.cn/safe/2004/1116/4133.html" target="_blank" rel="noopener noreferrer" title="个人财产对外转移售付汇管理暂行办法 (Interim Measures for the Administration of the Sale and Payment of Foreign Exchange for Outbound Transfer of Individual Property), PBOC Announcement [2004] No. 16 — People&#x27;s Bank of China (reproduced with SAFE press release)">S08</a> <a class="src" href="https://www.gov.cn/zhengce/zhengceku/202404/content_6945036.htm" target="_blank" rel="noopener noreferrer" title="资本项目外汇业务指引（2024年版） (Capital Account Foreign Exchange Business Guidelines, 2024 edition), Huifa [2024] No. 12 — SAFE (State Council policy repository reproduction of the SAFE notice)">S09</a> <a class="src" href="https://www.safe.gov.cn/tianjin/2026/0319/3018.html" target="_blank" rel="noopener noreferrer" title="个人财产转移购付汇业务问答（七） (Q&amp;A on FX purchase and payment for outbound individual property transfer, No. 7) — SAFE Tianjin branch">S10</a> <a class="src" href="https://www.irs.gov/pub/irs-pdf/i3520.pdf" target="_blank" rel="noopener noreferrer" title="Instructions for Form 3520 (Rev. December 2025) — Internal Revenue Service">S17</a> </td></tr><tr><td><a href="methods.html#M06"><strong>Emigration transfer (移民财产转移) — moving pre-emigration assets out</strong></a></td><td><span class="tag mixed">Lawful if conditions met</span></td><td>No annual quota, but staged remittance under Art. 6: first remittance no more than half the approved total; after one year no more than half the remainder; after two years the entire remainder. If the whole approved amount is RMB 200,000 equivalent or less it may be remitted in one lump sum. Art. 10 approval split at RMB 500,000.</td><td><a class="src" href="http://m.safe.gov.cn/safe/2004/1116/4133.html" target="_blank" rel="noopener noreferrer" title="个人财产对外转移售付汇管理暂行办法 (Interim Measures for the Administration of the Sale and Payment of Foreign Exchange for Outbound Transfer of Individual Property), PBOC Announcement [2004] No. 16 — People&#x27;s Bank of China (reproduced with SAFE press release)">S08</a> <a class="src" href="https://www.gov.cn/zhengce/zhengceku/202404/content_6945036.htm" target="_blank" rel="noopener noreferrer" title="资本项目外汇业务指引（2024年版） (Capital Account Foreign Exchange Business Guidelines, 2024 edition), Huifa [2024] No. 12 — SAFE (State Council policy repository reproduction of the SAFE notice)">S09</a> <a class="src" href="https://www.safe.gov.cn/tianjin/2026/0319/3018.html" target="_blank" rel="noopener noreferrer" title="个人财产转移购付汇业务问答（七） (Q&amp;A on FX purchase and payment for outbound individual property transfer, No. 7) — SAFE Tianjin branch">S10</a> <a class="src" href="https://www.chinatax.gov.cn/n810219/n810744/n3752930/n3752974/c3970366/content.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国个人所得税法 (Individual Income Tax Law of the PRC), as amended 2018-08-31 — State Taxation Administration">S11</a> </td></tr><tr><td><a href="methods.html#M07"><strong>Remit RMB offshore under the current account, then convert to USD outside China</strong></a></td><td><span class="tag mixed">Lawful if conditions met</span></td><td><span class="blank" title="Left blank: not verified">—</span></td><td><a class="src" href="https://www.pbc.gov.cn/huobizhengceersi/214481/214511/3406535/7c4cab88dc26405d9aba84feee8059e0/index.html" target="_blank" rel="noopener noreferrer" title="关于进一步优化跨境人民币政策支持稳外贸稳外资的通知 (Notice on Further Optimising Cross-border RMB Policy), Yinfa [2020] No. 330 — PBOC, NDRC, MOFCOM, SASAC, CBIRC, SAFE">S07</a> <a class="src" href="https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.htm" target="_blank" rel="noopener noreferrer" title="26 U.S.C. 988 — Treatment of certain foreign currency transactions — US Government Publishing Office (United States Code, 2023 edition)">S19</a> <a class="tag warn" href="flagged.html#F01" title="Per-transaction and annual limits for individual cross-border RMB remittance">F01</a></td></tr><tr><td><a href="methods.html#M08"><strong>Carry foreign-currency banknotes out of China</strong></a></td><td><span class="tag mixed">Lawful if conditions met</span></td><td>Per trip: USD 5,000 equivalent permit-free; USD 5,000-10,000 with bank-issued permit; above USD 10,000 in principle not permitted, SAFE permit only for listed special cases. Separate stricter tiers apply to same-day and 15-day repeat crossers.</td><td><a class="src" href="https://www.safe.gov.cn/tianjin/2024/0430/2466.html" target="_blank" rel="noopener noreferrer" title="携带外币现钞出入境管理暂行办法 (Interim Measures for Carrying Foreign Currency Banknotes In and Out of the Country), Huifa [2003] No. 102 — SAFE + General Administration of Customs (SAFE Tianjin branch reproduction of the national circular)">S04</a> <a class="src" href="http://www.customs.gov.cn/eportal/ui?pageId=374112&amp;msgDataId=7cebfa81134447ad8a57883790a3e68d" target="_blank" rel="noopener noreferrer" title="出境可以带多少现金？ (How much cash may be taken out of the country?) — official Customs reply — General Administration of Customs of the PRC (Jiangmen Customs)">S05</a> <a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a> <a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a> <a class="src" href="https://www.cbp.gov/travel/international-visitors/money-monetary-instruments" target="_blank" rel="noopener noreferrer" title="Money and Other Monetary Instruments — US Customs and Border Protection">S21</a> </td></tr><tr><td><a href="methods.html#M18"><strong>Underground money changer / underground bank (地下钱庄), including mirror &#x27;对敲&#x27; settlement</strong></a></td><td><span class="tag bad">Prohibited</span></td><td>No lawful channel exists</td><td><a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a> </td></tr><tr><td><a href="methods.html#M19"><strong>Quota splitting or borrowing other people&#x27;s USD 50,000 allowances (&#x27;ants moving&#x27;)</strong></a></td><td><span class="tag bad">Prohibited</span></td><td>Huifa [2015] No. 49 item 2 expressly forbids evading quota and authenticity management by splitting.</td><td><a class="src" href="https://www.safe.gov.cn/safe/2015/1231/5442.html" target="_blank" rel="noopener noreferrer" title="国家外汇管理局关于进一步完善个人外汇管理有关问题的通知 (Notice on Further Improving Individual Foreign Exchange Administration), Huifa [2015] No. 49 — SAFE">S03</a> <a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a> </td></tr><tr><td><a href="methods.html#M20"><strong>Cryptocurrency or stablecoin P2P (e.g. buying USDT with CNY)</strong></a></td><td><span class="tag bad">Prohibited</span></td><td>No lawful channel exists</td><td><a class="src" href="https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2025092212551974141/index.html" target="_blank" rel="noopener noreferrer" title="关于进一步防范和处置虚拟货币交易炒作风险的通知 (Notice on Further Preventing and Disposing of Risks in Virtual Currency Trading Speculation), Yinfa [2021] No. 237 — People&#x27;s Bank of China and nine other authorities">S06</a> <a class="src" href="https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.htm" target="_blank" rel="noopener noreferrer" title="26 U.S.C. 988 — Treatment of certain foreign currency transactions — US Government Publishing Office (United States Code, 2023 edition)">S19</a> </td></tr><tr><td><a href="methods.html#M25"><strong>Reconvert unused RMB back to FX using the original exchange memo</strong></a></td><td><span class="tag good">Lawful</span></td><td>Bounded by the amount originally exchanged; 24-month validity. ID-only tiers: USD 500 per day, or USD 1,000 per day before departure at designated offsite locations.</td><td><a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a> <a class="src" href="https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf" target="_blank" rel="noopener noreferrer" title="中国银行服务价目表 — 第三章 个人客户服务收费业务 / 一、个人金融 (Bank of China Service Price List, ch.3 personal finance), effective 2025-11-11 — Bank of China (the regulated institution&#x27;s own published tariff)">S12</a> <a class="src" href="https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapN-partIII-subpartJ-sec988.htm" target="_blank" rel="noopener noreferrer" title="26 U.S.C. 988 — Treatment of certain foreign currency transactions — US Government Publishing Office (United States Code, 2023 edition)">S19</a> </td></tr></tbody></table></div></section>
+<section class="section">
+<h2>Three things that will cost you money if you get them wrong</h2>
+<div class="card-grid three">
+  <div class="card">
+    <h3>The USD 50,000 myth</h3>
+    <p>It limits <em>purchase</em> of foreign currency by <strong>domestic</strong> individuals. It does not
+    apply to a non-domestic individual converting documented lawful income under Art. 13.</p>
+    <p><a class="src" href="https://www.safe.gov.cn/safe/2007/0105/5320.html" target="_blank" rel="noopener noreferrer" title="个人外汇管理办法实施细则 (Detailed Rules for the Administration of Individual Foreign Exchange), SAFE Circular Huifa [2007] No. 1 — State Administration of Foreign Exchange (SAFE)">S01</a> <a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></p>
+  </div>
+  <div class="card">
+    <h3>The fine is up to 100%, not 500%</h3>
+    <p>Order 532 Arts. 39, 40 and 45 all say up to 30%, and in serious cases 30% up to
+    <strong>100%</strong> of the amount. Earlier versions of this site claimed 300% and 500%. Those figures do not exist.</p>
+    <p><a class="src" href="https://www.safe.gov.cn/safe/2008/0806/5321.html" target="_blank" rel="noopener noreferrer" title="中华人民共和国外汇管理条例 (Regulations of the PRC on Foreign Exchange Administration), State Council Order No. 532 — State Council of the PRC / published on SAFE portal">S02</a></p>
+  </div>
+  <div class="card">
+    <h3>Bank fees change in three days</h3>
+    <p>From <strong>2026-11-11</strong> Bank of China raises Mastercard and VISA overseas ATM fees to
+    <strong>2.5%</strong>, capped at <strong>USD 40</strong> — up from 0.5% capped at USD 5. UnionPay is unchanged.</p>
+    <p><a class="src" href="https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html" target="_blank" rel="noopener noreferrer" title="关于调整部分个人服务收费内容的公告（2026年11月11日起） (Announcement adjusting certain personal service charges, effective 11 November 2026) — Bank of China">S25</a></p>
+  </div>
+</div>
+</section><section class="section"><h2>Where to go next</h2>
+<div class="card-grid three">
+<a class="card link-card" href="guide.html"><h3>Decision guide →</h3><p>Answer four questions, get the route that fits your facts.</p></a>
+<a class="card link-card" href="costs.html"><h3>Conversion cost →</h3><p>Every fee, every layer, and how to measure the spread yourself.</p></a>
+<a class="card link-card" href="us-tax.html"><h3>US tax &amp; reporting →</h3><p>FBAR, FATCA, Form 3520 and the section 988 currency gain.</p></a>
+<a class="card link-card" href="china-rules.html"><h3>China rules →</h3><p>The 26 controlling rules with the Chinese text quoted.</p></a>
+<a class="card link-card" href="penalties.html"><h3>Penalties →</h3><p>What each violation actually costs, from the statute.</p></a>
+<a class="card link-card" href="flagged.html"><h3>Flagged for review →</h3><p>What could not be verified, and what would resolve it.</p></a>
+</div></section>
+</main>
 <footer class="site-footer">
-  <div class="inner">
-    <div>
-      <div class="brand" style="text-decoration:none; color:var(--ink);"><span class="mark">C4</span> China4</div>
-      <p class="small">Collect, organize, and analyze options for moving money out of China. Built from official sources only; unverified items are flagged.</p>
-    </div>
-    <div>
-      <p class="small">Maintained on GitHub: <a href="https://github.com/sassnarep3-star/China4" style="color:var(--accent);">sassnarep3-star/China4</a></p>
-      <p class="small">Last updated: 2026-11-07 &middot; GitHub Pages site</p>
-    </div>
+  <div class="container">
+    <p><strong>Built 2026-11-08</strong> from the datasets in <code>data/</code>.
+    Every table row links to the official source it was read from. A dash
+    (<span class="blank">—</span>) means the value could not be confirmed officially and is
+    <a href="flagged.html">flagged for review</a>; it never means zero.</p>
+    <p class="disclaimer">Research summary, not legal, tax or financial advice. Rules and tariffs change.
+    Confirm your own position with your bank, SAFE and a qualified US tax adviser before acting.
+    <a href="sources.html">All 25 sources</a> ·
+    <a href="audit.html">What was corrected</a> ·
+    <a href="https://github.com/sassnarep3-star/China4">Repository</a></p>
   </div>
 </footer>
-
 </body>
 </html>

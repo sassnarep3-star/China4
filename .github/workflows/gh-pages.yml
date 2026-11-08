@@ -1,7 +1,9 @@
-name: Deploy China4 site to GitHub Pages
+name: Verify and deploy China4 site
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -11,11 +13,40 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.ref }}"
   cancel-in-progress: false
 
 jobs:
+  verify:
+    name: Build and verify (gate)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rebuild every page from the datasets
+        run: python3 build.py
+
+      - name: Verify sources, links and structure
+        run: python3 tools/verify.py
+
+      - name: Confirm generated pages match the committed pages
+        run: |
+          if ! git diff --exit-code -- '*.html'; then
+            echo "::error::Generated HTML differs from committed HTML. Run 'python3 build.py' and commit the result."
+            exit 1
+          fi
+          echo "Generated pages match committed pages."
+
   deploy:
+    name: Deploy to GitHub Pages
+    needs: verify
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -23,11 +54,27 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rebuild and verify before publishing
+        run: |
+          python3 build.py
+          python3 tools/verify.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "."
+
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
