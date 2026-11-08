@@ -212,3 +212,41 @@ a.source { font-size: 0.78rem; color: #2563eb; text-decoration: underline; }
 @media (max-width: 700px) { .site-header { position: static; } nav { margin-left: 0; } }
 
 @media (max-width: 700px) { .cost-schedule .data { min-width: 0; font-size: .72rem; } .cost-schedule .data th, .cost-schedule .data td { padding: 7px 4px; } }
+
+/* ---------- mobile card tables (added by session 9ca8a991) ---------- */
+@media (max-width: 760px) {
+  .table-wrap { overflow-x: visible; }
+  .table-wrap .data { min-width: 0; }
+  table.data, table.data tbody, table.data tr, table.data td { display: block; width: 100%; }
+  table.data thead { display: none; }
+  table.data { border: none; background: transparent; }
+  table.data tr {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin: 0 0 12px;
+    padding: 6px 0;
+    box-shadow: var(--shadow);
+  }
+  table.data td {
+    border-bottom: 1px dashed var(--line);
+    padding: 7px 12px 7px 46%;
+    position: relative;
+    min-height: 30px;
+    font-size: .84rem;
+  }
+  table.data tr td:last-child { border-bottom: none; }
+  table.data td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px; top: 7px;
+    width: 42%;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+    color: var(--muted);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  table.data td[data-label="Amount"] { background: #eef2f7; font-size: 1rem; }
+}
