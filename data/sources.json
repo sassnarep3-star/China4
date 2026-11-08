@@ -83,13 +83,13 @@
       "official": "secondary-official"
     },
     "card_2017": {
-      "title": "外汇局规范个人持银行卡境外大额提现：每人每年不超过10万元（汇发〔2017〕29号报道）",
-      "publisher": "Xinhua, reporting the SAFE release",
-      "url": "http://www.xinhuanet.com/fortune/2017-12/30/c_1122190237.htm",
-      "short": "SAFE card-cash rule (Xinhua report)",
-      "establishes": "From 2018-01-01, cash withdrawals abroad on domestic bank cards are capped at RMB 100,000 equivalent per person per calendar year across all cards (supplementary cards included), and RMB 10,000 per card per day; exceeding the annual cap suspends withdrawals for the rest of that year and the next. Card spending abroad does not use the US$50,000 quota.",
-      "status": "SAFE's own page for 汇发〔2017〕29号 was not located in this session; the content is taken from Xinhua's report of the SAFE release. Flagged for a primary-source check.",
-      "official": "secondary-official"
+      "title": "国家外汇管理局关于规范银行卡境外大额提取现金交易的通知（汇发〔2017〕29号）",
+      "publisher": "State Administration of Foreign Exchange (SAFE)",
+      "url": "http://m.safe.gov.cn/safe/2017/1230/8116.html",
+      "short": "SAFE 汇发〔2017〕29号 (card cash abroad)",
+      "establishes": "Art. 1: cash withdrawals abroad on a domestic card (supplementary cards included) may not exceed the equivalent of RMB 100,000 per person per calendar year, and exceeding it suspends withdrawals for the rest of that year and the following year; Art. 1 also forbids borrowing or lending cards to get around the cap. Art. 4: the per-card daily limit is RMB 10,000 equivalent for both RMB and foreign-currency cards. Art. 6: breaches are punished under the FX Regulations. In force from 2018-01-01.",
+      "status": "Retrieved and read in full, 2026-11-08 (SAFE's mobile site). The circular does not say that card spending abroad uses the US$50,000 quota; that inference is not made here.",
+      "official": "official"
     },
     "crypto_2021": {
       "title": "关于进一步防范和处置虚拟货币交易炒作风险的通知（银发〔2021〕237号）",

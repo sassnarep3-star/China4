@@ -5,8 +5,10 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ['index.html','methods.html','penalties.html','taxes.html','flagged.html','sources.html']
-OFFICIAL = ('safe.gov.cn', 'english.shanghai.gov.cn', 'bankofchina.com', 'irs.gov', 'fincen.gov', 'pbc.gov.cn', 'cbp.gov')
+PAGES = ['index.html','costs.html','methods.html','penalties.html','taxes.html','flagged.html','sources.html','playbook.html']
+OFFICIAL = ('safe.gov.cn', 'english.shanghai.gov.cn', 'bankofchina.com', 'boc.cn', 'gov.cn',
+            'mofcom.gov.cn', 'chinatax.gov.cn', 'irs.gov', 'fincen.gov', 'pbc.gov.cn',
+            'cbp.gov', 'ecfr.gov')
 
 class Audit(HTMLParser):
     def __init__(self):
@@ -32,8 +34,11 @@ for name in PAGES:
     for i, row in enumerate(p.rows,1):
         if not any(any((urlparse(u).hostname or '') == d or (urlparse(u).hostname or '').endswith('.'+d) for d in OFFICIAL) for u in row):
             raise SystemExit(f'{name}: table row {i} lacks official source')
-    if name == 'penalties.html':
+    if name == 'costs.html':
         for amount in range(10000,400001,10000):
+            if f'${amount:,.0f}' not in text: raise SystemExit(f'Missing ${amount:,}')
+    if name == 'penalties.html':
+        for amount in range(50000,400001,50000):
             if f'${amount:,.0f}' not in text: raise SystemExit(f'Missing ${amount:,}')
     print(f'{name}: {len(p.rows)} sourced rows; local links OK')
 print('Static checks passed; source relevance/currentness and external availability require separate review.')
