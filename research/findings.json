@@ -1,0 +1,519 @@
+{
+  "as_of": "2026-11-08",
+  "scope": "Lawful conversion/remittance options for a US citizen holding CNY in a mainland Chinese bank. Federal US analysis; China rules and operator-published terms. Not a personalized tax opinion or executable quote.",
+  "bottom_line": "Start with the actual source of the CNY. A foreign individual with documented lawful China earnings can usually use a bank or an eligible licensed salary-remittance service without treating USD 50,000 as a universal outbound cap. Property, inheritance, migration and business proceeds need their own evidence and tax analysis. Compare same-time, all-in net-USD quotes. Do not assume that moving principal creates no currency gain or that Chinese tax eliminates US tax.",
+  "claims": [
+    {
+      "id": "classification",
+      "finding": "US citizenship is not the SAFE domestic/foreign individual test. A foreign-passport holder is generally a foreign individual; permanent-residence-card and other classifications require branch confirmation. The USD 50,000 facilitation quota is not a universal annual outbound-remittance cap.",
+      "sources": [
+        "safe_rules",
+        "safe_faq"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "salary",
+      "finding": "A foreign individual's lawful mainland current-account RMB income may be converted and remitted with identity and transaction-amount source evidence, including tax evidence. ICBC gives employment contract, income details and tax records as examples. Repeated salary business at the same bank may avoid duplicate documents.",
+      "sources": [
+        "safe_rules",
+        "safe_faq",
+        "icbc_fx"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "reconversion",
+      "finding": "Unused RMB from an earlier exchange can be reconverted using the original memo within 24 months. ID-only small reconversion is limited to USD 500 per day, or USD 1,000 at qualifying departure ports. ICBC also describes a six-month route for qualifying foreign-card RMB withdrawal evidence.",
+      "sources": [
+        "safe_rules",
+        "safe_faq",
+        "icbc_fx"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "existing_fx",
+      "finding": "For a foreign individual, remitting foreign currency already in a mainland foreign-currency savings account is ID-based under the cited SAFE guidance. This is distinct from buying USD with CNY earned in China; the original purchase still needs a lawful basis.",
+      "sources": [
+        "safe_rules",
+        "safe_faq"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "domestic_current",
+      "finding": "A person classified as a domestic individual may remit up to USD 50,000 equivalent per day from a foreign-currency account with ID; above that, genuine current-account transaction evidence is required. Buying FX for an unopened overseas investment/property purpose is not authorized merely by having a facilitation quota.",
+      "sources": [
+        "safe_rules",
+        "safe_faq"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "property",
+      "finding": "A foreign individual's mainland property-sale proceeds use the sale/title/tax-evidence route. The obsolete SAFE-approval description must be read with Huifa [2012] 59 section VI(4), which cancelled that approval and assigned document review to banks. Migration-route assets owned before migration are a different case.",
+      "sources": [
+        "safe_property_amended",
+        "safe_faq",
+        "icbc_fx",
+        "cn_iit",
+        "cn_home_sale"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "migration_inheritance",
+      "finding": "Migration and inheritance transfers are special capital-account procedures, not salary workarounds. Apply to the competent former-hukou or decedent's former-hukou SAFE branch with status, ownership/source, inheritance where relevant, and tax evidence. The cited administrative permission has no fee; bank/professional costs are separate.",
+      "sources": [
+        "safe_migration",
+        "safe_inheritance",
+        "safe_property_venue_2026",
+        "pboc_property"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "operators",
+      "finding": "Wise publishes a non-mainland-Chinese, current/prior-worker, tax-record-based own-account service. SkyRemit publishes after-tax-income own-account service. Western Union publishes outbound China service through partner banks, principally cash pickup in the fetched instructions. Operator eligibility and risk review can be narrower than the law.",
+      "sources": [
+        "wise_cny",
+        "sky_terms",
+        "sky_limit",
+        "wu_cn"
+      ],
+      "status": "verified_operator_terms"
+    },
+    {
+      "id": "boc_fees",
+      "finding": "BOC's current posted cross-border TT/draft commission is 0.1% of remittance amount, minimum CNY 50 and maximum CNY 260, plus CNY 150 cable outside HK/Macao/TW or CNY 80 to those regions. Overseas charges are actual. Conditional USD full-arrival service is USD 15 or 25 depending on routing. These are components, not an all-in quote.",
+      "sources": [
+        "boc_index",
+        "boc_tariff"
+      ],
+      "status": "verified_operator_terms"
+    },
+    {
+      "id": "no_fabricated_spread",
+      "finding": "No customer-specific CNY/USD execution quote was obtained. The legacy 1%–3% spread and USD 15–50 wire estimates are removed. The Federal Reserve's latest fetched CNY 6.6538/USD observation is historical reference data, not a retail quote or a substitute for tax-basis rates.",
+      "sources": [
+        "fed_h10",
+        "fed_h10_about",
+        "boc_tariff",
+        "wise_pricing"
+      ],
+      "status": "verified_limit"
+    },
+    {
+      "id": "us_income",
+      "finding": "A US citizen generally reports worldwide income. Transferring previously reported principal is not itself a new income item, but the underlying salary, interest, dividends, rent or gain must be tested. Disposing of CNY can separately produce section 988 currency gain/loss; the personal-transaction exception is narrow and has a USD 200 gain condition.",
+      "sources": [
+        "irs_worldwide",
+        "irs_2555",
+        "irc_988"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "us_relief",
+      "finding": "Compare Form 1116 foreign tax credit with Form 2555 earned-income exclusion where eligible; do not claim both on the same income. The 2026 FEIE maximum is USD 132,900, requires a foreign tax home and residence/presence qualification, and does not cover passive income or property gains. Treaty benefits require actual eligibility.",
+      "sources": [
+        "irs_ftc",
+        "irs_2555",
+        "irs_treaty"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "china_tax",
+      "finding": "China residence depends on domicile and 183-day presence, not US citizenship. Comprehensive income has 3%–45% progressive rates; business income 5%–35%; specified passive/property categories ordinarily 20%. Savings-deposit interest accrued from 2008-10-09 is temporarily exempt from PRC IIT, not US tax. These rates are not applied to the transfer principal in the cost tables.",
+      "sources": [
+        "cn_iit",
+        "cn_interest"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "dividend_change",
+      "finding": "From 2026-09-01, foreign individuals' dividends from foreign-invested enterprises are subject to 20% PRC IIT under announcement 2026 No. 27; the former exemption is repealed. Do not rely on the older 2024 FAQ or invent transitional grandfathering. Treaty entitlement and US tax/credit still need separate analysis.",
+      "sources": [
+        "cn_dividends_2026",
+        "cn_dividends_old_faq",
+        "irs_treaty",
+        "irs_ftc"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "reporting",
+      "finding": "FBAR depends on aggregate foreign-account value >USD 10,000 at any time in the calendar year, not on transferring USD 10,000. Form 8938 has different residence/filing-status thresholds and attaches to the income-tax return. Form 3520 concerns specified foreign gifts/trusts, not an ordinary transfer of one's own money.",
+      "sources": [
+        "fincen_fbar",
+        "irs_8938",
+        "irs_3520",
+        "irs_gifts"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "penalties",
+      "finding": "The current eCFR table lists adjusted FBAR maxima of USD 16,536 non-willful and USD 165,353 willful for assessments on/after 2025-01-17; statutory alternatives, reasonable-cause and case-specific rules matter. These are not automatic fees. China's illegal-FX-trading fine is ordinarily up to 30%, and 30%–100% in serious cases, not a universal 30%–300%.",
+      "sources": [
+        "fincen_penalties",
+        "safe_fx_reg"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "cash_cards",
+      "finding": "Cash carrying and overseas ATM withdrawals are small, separately controlled alternatives. SAFE's overseas-card cash cap is CNY 100,000 equivalent per person per calendar year across all domestic cards, plus CNY 10,000 per card per day. China export permits and US FinCEN 105 declarations are separate from tax.",
+      "sources": [
+        "safe_cards",
+        "safe_faq",
+        "china_customs",
+        "cbp_105",
+        "boc_tariff"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "closed_loop",
+      "finding": "Wealth Management Connect Southbound is an eligible-mainland-investor, paired-account, closed-loop investment channel. Principal/proceeds return to the paired mainland account; it is not a route to freely deposit USD into a US personal account. QDII is an institutional investment channel, not a personal remittance workaround.",
+      "sources": [
+        "hkma_wmc",
+        "safe_faq"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "excluded",
+      "finding": "Underground matching, borrowed quotas, false trade documents and mainland virtual-currency exchange/business workarounds are excluded. The current PBOC notice is 2026 No. 42, which repeals 2021 No. 237. Genuine family support or genuine trade must be evaluated on its own facts, not relabeled to evade controls.",
+      "sources": [
+        "safe_rules",
+        "safe_quota_press",
+        "safe_fx_reg",
+        "pboc_crypto_2026"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "fbar_unit",
+      "finding": "Bittner holds the non-willful FBAR penalty accrues per annual report, not per account. The adjusted maximum is not an automatic assessment; reasonable cause and willful account-based rules are separate.",
+      "sources": [
+        "bittner",
+        "fincen_penalties"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "property_local",
+      "finding": "A 2026 Shanghai tax guide confirms the conditional five-year self-use/sole-family-home IIT exemption, 20% net-gain taxation otherwise, and a local 1% assessed rate when basis cannot be established. This is local guidance, not a national flat rate.",
+      "sources": [
+        "cn_home_sale_shanghai",
+        "cn_home_sale"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "rmb_current",
+      "finding": "PBOC 2020 No. 330 supports individuals’ lawful current-account cross-border RMB settlement under bank due diligence. It is not blanket capital-account permission; offshore RMB acceptance/conversion is a separate step.",
+      "sources": [
+        "pboc_rmb"
+      ],
+      "status": "verified_with_scope"
+    },
+    {
+      "id": "apps_verified",
+      "finding": "Alipay official international-remittance page describes a domestic-individual quota product; WeChat official cross-border page is merchant acquiring; PayPal C2 pages do not verify mainland bank CNY funding to a US personal savings account. These are not interchangeable with Wise Alipay funding.",
+      "sources": [
+        "alipay_intl",
+        "wechat_merchant",
+        "paypal_cn",
+        "paypal_fees",
+        "wise_cny"
+      ],
+      "status": "verified_limit"
+    }
+  ],
+  "tax_matrix": [
+    {
+      "item": "Previously reported principal",
+      "china": "No new income merely because principal changes location; confirm the underlying source and any currency gain.",
+      "us": "Moving one's own principal is not a second income item; currency disposition can still matter under section 988.",
+      "amount_usd": null,
+      "sources": [
+        "cn_iit",
+        "irs_worldwide",
+        "irc_988"
+      ]
+    },
+    {
+      "item": "China employment / service income",
+      "china": "Residence, income category, treaty and withholding determine IIT; comprehensive-income rates are 3%–45%.",
+      "us": "Worldwide income; compare eligible FTC and FEIE, without double benefit. FEIE does not remove self-employment tax.",
+      "amount_usd": null,
+      "sources": [
+        "cn_iit",
+        "irs_ftc",
+        "irs_2555",
+        "irs_treaty"
+      ]
+    },
+    {
+      "item": "Bank savings-deposit interest",
+      "china": "Temporary PRC IIT exemption for interest accrued from 2008-10-09 under the cited notice.",
+      "us": "Generally reportable interest for a US citizen; China exemption does not create a US exemption or a foreign tax credit.",
+      "amount_usd": null,
+      "sources": [
+        "cn_interest",
+        "irs_worldwide",
+        "irs_ftc"
+      ]
+    },
+    {
+      "item": "FIE dividends paid to a foreign individual",
+      "china": "20% under announcement 2026 No. 27 from 2026-09-01, subject to any separately established treaty entitlement; payer withholding.",
+      "us": "Generally reportable dividend income; FTC limitations and treaty residence require analysis. No assumed zero US tax.",
+      "amount_usd": null,
+      "sources": [
+        "cn_dividends_2026",
+        "irs_treaty",
+        "irs_ftc"
+      ]
+    },
+    {
+      "item": "Mainland home sale",
+      "china": "Ordinarily net gain after basis/reasonable expenses; cited guidance includes conditional five-year self-use and sole-family-home relief. Local assessment and other transaction taxes require a current local calculation.",
+      "us": "Reportable sale/gain analysis, basis, possible exclusion eligibility and separate currency effects; do not apply China relief to the US return.",
+      "amount_usd": null,
+      "sources": [
+        "cn_iit",
+        "cn_home_sale",
+        "irs_worldwide",
+        "irc_988"
+      ]
+    },
+    {
+      "item": "CNY conversion / disposition",
+      "china": "No universal transfer-percentage tax established; currency conversion is not a substitute for settling tax on the underlying income or gain.",
+      "us": "Section 988 can produce ordinary currency gain/loss. Personal-transaction gain recognition exception ceases when gain exceeds USD 200; investment/business facts matter.",
+      "amount_usd": null,
+      "sources": [
+        "cn_iit",
+        "irc_988"
+      ]
+    },
+    {
+      "item": "Inheritance / genuine gift",
+      "china": "Transfer-specific tax and evidence analysis; no blanket China inheritance-tax assertion is made.",
+      "us": "Ordinary foreign gift/bequest reporting is distinct from income; foreign-trust distributions and covered-expatriate transfers can have different tax/reporting consequences.",
+      "amount_usd": null,
+      "sources": [
+        "safe_inheritance",
+        "irs_3520",
+        "irs_gifts"
+      ]
+    },
+    {
+      "item": "Genuine business / trade proceeds",
+      "china": "Actual business/income category and registrations determine tax; personal savings cannot be relabeled as trade.",
+      "us": "Worldwide business income and entity/information reporting may apply; no assumed tax-free remittance.",
+      "amount_usd": null,
+      "sources": [
+        "cn_iit",
+        "safe_faq",
+        "irs_worldwide"
+      ]
+    }
+  ],
+  "reporting": [
+    {
+      "form": "FinCEN Form 114 (FBAR)",
+      "trigger": "US person with financial interest/signature authority; aggregate foreign financial accounts >USD 10,000 at any time in the calendar year.",
+      "filing": "BSA E-Filing; generally April 15 with automatic extension to October 15 under FinCEN's due-date guidance.",
+      "penalty": "Current adjusted maximum USD 16,536 for non-willful failure, per report under Bittner (not per account); willful statutory framework uses the greater of adjusted USD 165,353 or 50% of the relevant account balance, subject to exceptions and case law. Not automatic.",
+      "sources": [
+        "fincen_fbar",
+        "fincen_penalties",
+        "bittner",
+        "fincen_due"
+      ]
+    },
+    {
+      "form": "Form 8938",
+      "trigger": "Specified individual with an income-tax return filing requirement and assets above the applicable strict thresholds: US resident single/separate >50,000 year-end or >75,000 anytime; joint >100,000/>150,000; qualifying abroad single/separate >200,000/>300,000; joint >400,000/>600,000.",
+      "filing": "Attach to the annual income-tax return, including extensions. Does not replace FBAR.",
+      "penalty": "USD 10,000 initial failure; after IRS notice and 90 days, USD 10,000 per additional 30-day period/part-period, additional maximum USD 50,000; other consequences possible.",
+      "sources": [
+        "irs_8938"
+      ]
+    },
+    {
+      "form": "Form 3520 Part IV",
+      "trigger": "Foreign individual/estate gifts/bequests >USD 100,000 aggregate; foreign corporation/partnership purported gifts >USD 20,573 for 2026; related-party aggregation applies. Foreign trusts use other parts.",
+      "filing": "File separately; generally return due date, qualifying abroad June 15, extension no later than October 15 for calendar-year filers.",
+      "penalty": "Foreign-gift reporting failure: 5% per month, maximum 25%, reasonable-cause exception. Trust penalties differ; covered-expatriate gifts may incur section 2801 tax.",
+      "sources": [
+        "irs_3520",
+        "irs_gifts"
+      ]
+    },
+    {
+      "form": "FinCEN Form 105",
+      "trigger": "Currency/covered monetary instruments >USD 10,000 equivalent entering/leaving the US at one time; family/group amounts aggregate.",
+      "filing": "CBP-recommended electronic filing or paper process at the border. It is a declaration, not a tax.",
+      "penalty": "Forfeiture/seizure and possible civil/criminal consequences for non-reporting or false information; not a percentage transfer tax.",
+      "sources": [
+        "cbp_105"
+      ]
+    },
+    {
+      "form": "Forms 1116 / 2555",
+      "trigger": "Not account reports: elective federal income-tax relief if the actual income and taxpayer qualify.",
+      "filing": "With the federal return; retain foreign-tax, income, travel and tax-home records.",
+      "penalty": "No standalone transfer penalty; incorrect claims can change tax, interest and accuracy-related exposure.",
+      "sources": [
+        "irs_ftc",
+        "irs_2555"
+      ]
+    }
+  ],
+  "legitimate_cost_reduction": [
+    "Obtain simultaneous quotes for the same net USD destination amount, with identical fee allocation (SHA/OUR), expected credited amount, validity time and receiving-bank charges. Do not rank providers from a fee alone.",
+    "Use the actual lawful source route. Repeated salary documentation at the same bank can reduce preparation friction; eligible Wise/SkyRemit may reduce branch visits, but neither is proven cheapest without quotes.",
+    "Reconcile principal, interest and gains before conversion. Claim only eligible FTC/FEIE and treaty benefits; keep acquisition-date USD basis records for CNY lots.",
+    "For a real property sale, substantiate basis and reasonable expenses and test the actual five-year/sole-family-home relief. Do not create a sale or recharacterize income to obtain relief.",
+    "Avoid unnecessary double conversion and cash routes for large balances. A capped wire commission can make consolidated lawful transfers efficient, but do not split to evade controls.",
+    "File FBAR/8938/3520/105 correctly when triggered. Reporting compliance avoids penalties; it is not a tax deduction or a way to erase underlying tax.",
+    "Have a US–China adviser model federal, state, currency-gain, treaty-residence and any entity-reporting effects before a large distribution or sale."
+  ],
+  "open_flags": [
+    {
+      "id": "fx_quote",
+      "item": "Customer-specific FX spread and all-in USD totals",
+      "reason": "No executable quote, receiving-bank fee schedule, source-of-funds file or tax facts supplied.",
+      "action": "Blank in every affected cost row; obtain same-time quotes.",
+      "sources": [
+        "boc_tariff",
+        "wise_pricing",
+        "fed_h10_about"
+      ]
+    },
+    {
+      "id": "tax_facts",
+      "item": "Personal China/US tax and currency gain",
+      "reason": "Residence, income type, acquisition basis, prior filings, treaty entitlement and state ties are unknown.",
+      "action": "Blank numeric tax; publish conditional rules and formulas only.",
+      "sources": [
+        "cn_iit",
+        "irc_988",
+        "irs_ftc"
+      ]
+    },
+    {
+      "id": "wise_price",
+      "item": "Wise CNY-to-USD fee",
+      "reason": "Official help confirms route and limits, but fetched pricing page exposes no corridor quote.",
+      "action": "Do not import 0.41% or comparison-site figures.",
+      "sources": [
+        "wise_cny",
+        "wise_pricing"
+      ]
+    },
+    {
+      "id": "sky_price",
+      "item": "SkyRemit current executable fee and FX rate",
+      "reason": "CNY 79 is published in an undated notice; terms allow changes and final billed amount controls.",
+      "action": "Show CNY 79 as a reference component only; total blank.",
+      "sources": [
+        "sky_terms",
+        "sky_limit"
+      ]
+    },
+    {
+      "id": "wu_limits",
+      "item": "Western Union US-passport/US-bank corridor limits and price",
+      "reason": "Official China page verifies partner-bank cash-pickup service, not a personalized US-bank deposit quote.",
+      "action": "Confirm with the actual partner bank; do not assume a USD 50,000 operator cap.",
+      "sources": [
+        "wu_cn"
+      ]
+    },
+    {
+      "id": "other_apps",
+      "item": "MoneyGram, PayPal China, Alipay foreign-passport eligibility and direct WeChat outbound savings transfers",
+      "reason": "Alipay official page describes domestic-individual quota product but not foreign-passport eligibility/current fees; WeChat official page is merchant acquiring; PayPal C2 pages do not verify mainland bank CNY funding; MoneyGram attempted URL returned 404.",
+      "action": "Eligibility and costs blank; not recommended as verified routes.",
+      "sources": [
+        "moneygram_missing",
+        "paypal_cn",
+        "paypal_fees",
+        "alipay_intl",
+        "wechat_merchant",
+        "wise_cny"
+      ]
+    },
+    {
+      "id": "property_local",
+      "item": "Property-sale local taxes and relief eligibility",
+      "reason": "No property location, holding period, family-home status, basis or sale documents supplied; older national guidance needs current local application.",
+      "action": "Obtain local tax calculation and bank checklist; no tax amount inferred.",
+      "sources": [
+        "cn_home_sale",
+        "safe_property_amended",
+        "cn_home_sale_shanghai"
+      ]
+    },
+    {
+      "id": "migration_staging",
+      "item": "Migration staged-remittance implementation",
+      "reason": "2004 text contains staging and obsolete approval routing; current local service guides control implementation.",
+      "action": "Confirm the competent branch's current staging/approval instructions before scheduling transfers.",
+      "sources": [
+        "pboc_property",
+        "safe_migration",
+        "safe_property_venue_2026"
+      ]
+    },
+    {
+      "id": "dividend_transition",
+      "item": "Pre-2026-09-01 retained earnings paid after the dividend-rule change",
+      "reason": "New announcement gives an effective date but no explicit transitional rule in its text.",
+      "action": "Do not assume grandfathering; obtain written competent-tax-authority advice.",
+      "sources": [
+        "cn_dividends_2026"
+      ]
+    },
+    {
+      "id": "boc_atm_future",
+      "item": "BOC ATM tariff change on 2026-11-11",
+      "reason": "Change is announced but not effective on the research date.",
+      "action": "Use current tariff now; publish future change separately.",
+      "sources": [
+        "boc_tariff",
+        "boc_atm_change"
+      ]
+    },
+    {
+      "id": "cash_guide",
+      "item": "Current local cash-export implementation",
+      "reason": "Official English passenger guide is undated; SAFE permit bands and bank/SAFE processing must be confirmed for the actual trip.",
+      "action": "No large-cash recommendation; no assumption that a customs declaration alone authorizes export.",
+      "sources": [
+        "china_customs",
+        "safe_faq"
+      ]
+    },
+    {
+      "id": "professional_costs",
+      "item": "Translation, notarization, tax adviser, property agent and receiving-bank costs",
+      "reason": "No engagement quotes or property transaction facts.",
+      "action": "Blank; add actual invoices/quotes without treating them as taxes.",
+      "sources": [
+        "safe_migration",
+        "safe_inheritance",
+        "boc_tariff"
+      ]
+    }
+  ]
+}
