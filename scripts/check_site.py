@@ -43,6 +43,7 @@ class PageParser(HTMLParser):
         self.tables: list[dict] = []
         self._table_stack: list[dict] = []
         self._in_tbody = False
+        self._in_thead = False
         self._row: dict | None = None
         self._in_title = False
         self._title_parts: list[str] = []
@@ -90,6 +91,8 @@ class PageParser(HTMLParser):
             })
         if tag == "caption" and self._table_stack:
             self._table_stack[-1]["caption"] = True
+        if tag == "thead":
+            self._in_thead = True
         if tag == "tbody":
             self._in_tbody = True
         if tag == "tr" and self._table_stack:
@@ -106,11 +109,13 @@ class PageParser(HTMLParser):
         if tag == "title":
             self._in_title = False
             self.title = "".join(self._title_parts).strip()
+        if tag == "thead":
+            self._in_thead = False
         if tag == "tbody":
             self._in_tbody = False
         if tag == "tr" and self._table_stack and self._row is not None:
             table = self._table_stack[-1]
-            if self._in_tbody or table["require_source"] or table["cost_method"]:
+            if self._in_tbody and not self._in_thead:
                 table["rows"].append(self._row)
                 if self._row["amount"] is not None:
                     table["amounts"].append(self._row["amount"])

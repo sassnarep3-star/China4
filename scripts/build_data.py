@@ -195,7 +195,9 @@ def build_rows(procedures: dict, registry: dict) -> list[dict]:
         sid = default_source if default_source in sources else m["sources"][0]
         # Prefer a route-specific primary source when the default is generic.
         if m["cost_rule"] == "unverified":
-            sid = next((s for s in m["sources"] if s not in {"safe_rules"}), m["sources"][0])
+            # Do not cite a failed/404 operator URL as the row's official source.
+            usable = [s for s in m["sources"] if s != "safe_rules" and sources[s].get("access") != "not_found"]
+            sid = usable[0] if usable else "safe_rules"
         if m["cost_rule"] == "prohibited":
             sid = "pboc_crypto_2026" if m["id"] == "crypto_p2p" else "safe_fx_reg"
         if m["cost_rule"] == "closed_loop":
