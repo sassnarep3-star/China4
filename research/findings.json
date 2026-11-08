@@ -233,6 +233,18 @@
         "wise_cny"
       ],
       "status": "verified_limit"
+    },
+    {
+      "id": "expanded_routes",
+      "finding": "Added other licensed bank, failed property-purchase refund, FDI exit and Payment Connect southbound-leg routes after fetching SAFE 2025/2020 guides and BOC Payment Connect; MoneyGram updated to historical BOC schedule with current terms unverified.",
+      "sources": [
+        "safe_2025_guide",
+        "safe_capital_2020",
+        "boc_payment_connect",
+        "boc_moneygram_2018",
+        "safe_online_channels"
+      ],
+      "status": "verified_with_scope"
     }
   ],
   "tax_matrix": [
@@ -513,6 +525,55 @@
         "safe_migration",
         "safe_inheritance",
         "boc_tariff"
+      ]
+    },
+    {
+      "id": "other_bank_tariff",
+      "item": "Non-BOC licensed-bank personal tariffs",
+      "reason": "No current institution-wide ICBC/CCB/other personal cross-border tariff verified.",
+      "action": "Obtain the bank’s current personal price list and executable quote; do not reuse BOC fees.",
+      "sources": [
+        "safe_online_channels",
+        "icbc_fx"
+      ]
+    },
+    {
+      "id": "property_refund_original_path",
+      "item": "Failed property-purchase refund amount/path",
+      "reason": "Refund depends on original conversion/payment evidence and transaction-failure records.",
+      "action": "Confirm refundable principal, permitted interest and original-path return with the bank.",
+      "sources": [
+        "safe_2025_guide",
+        "safe_capital_2020"
+      ]
+    },
+    {
+      "id": "fdi_exit_docs",
+      "item": "FDI exit control information and tax evidence",
+      "reason": "Equity/liquidation/capital-reduction remittance depends on registration/control data and tax documents.",
+      "action": "Obtain current bank/SAFE checklist and corporate/tax file before quoting.",
+      "sources": [
+        "safe_capital_2020",
+        "safe_2025_guide"
+      ]
+    },
+    {
+      "id": "payment_connect_second_leg",
+      "item": "Payment Connect HK-to-USD-to-US second leg",
+      "reason": "BOC page verifies mainland–HK RMB/HKD scenarios, not complete USD disposal to a US personal account.",
+      "action": "Obtain written two-bank complete-route confirmation or do not use.",
+      "sources": [
+        "boc_payment_connect"
+      ]
+    },
+    {
+      "id": "moneygram_current",
+      "item": "Current MoneyGram outbound terms",
+      "reason": "Verified BOC schedule is dated 2018 and ends below USD 10,000; attempted current MoneyGram URL returned 404.",
+      "action": "Ask BOC/MoneyGram for current terms; do not extrapolate historical tiers.",
+      "sources": [
+        "boc_moneygram_2018",
+        "moneygram_missing"
       ]
     }
   ]

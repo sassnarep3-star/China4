@@ -128,6 +128,7 @@ def cost_anchor(mid: str) -> str:
 
 
 def render_index(findings, procedures, sources) -> str:
+    method_count_x40 = f"{len(procedures['methods']) * 40:,}"
     claims = {c["id"]: c for c in findings["claims"]}
     rows = []
     decision = [
@@ -163,7 +164,7 @@ def render_index(findings, procedures, sources) -> str:
 <section class="hero" aria-labelledby="hero-heading">
   <h2 id="hero-heading">Most important answer first</h2>
   <p>{e(findings['bottom_line'])}</p>
-  <p class="cta-row">{link('methods.html', 'Compare all methods', 'cta')} {link('costs.html', 'Open 1,120 cost rows', 'cta secondary')} {link('procedures.html', 'Step-by-step procedures', 'cta secondary')}</p>
+  <p class="cta-row">{link('methods.html', 'Compare all methods', 'cta')} {link('costs.html', f'Open {len(procedures["methods"]) * 40:,} cost rows', 'cta secondary')} {link('procedures.html', 'Step-by-step procedures', 'cta secondary')}</p>
 </section>
 <section class="callout ok" aria-labelledby="short-answer">
   <h2 id="short-answer">The lawful starting point</h2>
@@ -231,7 +232,7 @@ def status_class(status: str) -> str:
         return "good"
     if status in {"conditional", "supporting_only", "closed_loop"}:
         return "info"
-    if status in {"unverified", "not_personal_route"}:
+    if status in {"unverified", "not_personal_route", "historical_unverified"}:
         return "mixed"
     return "bad"
 
@@ -257,6 +258,8 @@ def render_category(key: str, title: str, desc: str, procedures, sources) -> str
 
 
 def render_costs(procedures, costs, sources) -> str:
+    method_count = len(procedures['methods'])
+    row_count = costs['row_count']
     rows_by_method = {}
     for row in costs["rows"]:
         rows_by_method.setdefault(row["method_id"], []).append(row)
@@ -289,11 +292,11 @@ def render_costs(procedures, costs, sources) -> str:
 </details>""")
     body = f"""
 <p>{e(costs['numeric_policy'])}</p>
-<p>{link('costs.csv', 'Download complete CSV (1,120 rows)')} · {link('research/costs.json', 'Canonical JSON')} · {link('research/costs.csv', 'Research CSV copy')}</p>
+<p>{link('costs.csv', f'Download complete CSV ({row_count:,} rows)')} · {link('research/costs.json', 'Canonical JSON')} · {link('research/costs.csv', 'Research CSV copy')}</p>
 <nav class="jump" aria-label="Cost table jump links">{jump}</nav>
 {''.join(sections)}
 """
-    return page("Cost tables: USD 10,000–400,000", "costs.html", body, "40 rows for every method. Unknown numeric values remain blank and flagged.")
+    return page("Cost tables: USD 10,000–400,000", "costs.html", body, f"40 rows for every method ({method_count} methods, {row_count:,} rows). Unknown numeric values remain blank and flagged.")
 
 
 def render_procedures(procedures, sources) -> str:
@@ -409,15 +412,34 @@ def render_audit(sources) -> str:
             e(i["correction"]),
             source_links(i["sources"], sources),
         ])
+    snapshot = load("research/audit/main_snapshot_issues.json")
+    snap_rows = []
+    for i in snapshot["issues"]:
+        snap_rows.append([
+            e(i["id"]),
+            f'<span class="tag { "bad" if i["severity"] in {"critical","high"} else "mixed" }">{e(i["severity"])}</span>',
+            e(i["title"]),
+            e(", ".join(i["files"])),
+            e(i["correction"]),
+            source_links(i["sources"], sources),
+        ])
     body = f"""
 <p>{e(audit['method'])}</p>
 <p>Baseline commit: <code>{e(audit['baseline_commit'])}</code>. Coverage: 1,344 lines across 10 baseline files; 776 content lines mapped to issues. {link('research/audit/line_audit.csv', 'Download full line audit CSV')} · {link('research/audit/issues.json', 'Issue JSON')}</p>
 {table('Legacy audit issues and corrections', ['ID','Severity','Issue','Files','Correction','Official sources'], rows)}
+<h2>Archived main snapshot audit</h2>
+<p>{e(snapshot['method'])}</p>
+<p>Snapshot commit: <code>{e(snapshot['snapshot_commit'])}</code>. Coverage: 2,633 physical lines. The snapshot is preserved under <code>archive/main-98e5b00/</code>; the active site applies the stricter blank/flag policy. {link('research/audit/main_snapshot_line_audit.csv', 'Download snapshot line audit CSV')} · {link('research/audit/main_snapshot_issues.json', 'Snapshot issue JSON')} · {link('archive/main-98e5b00/ARCHIVE_NOTICE.md', 'Archive notice')}</p>
+{table('Main snapshot issues and active treatment', ['ID','Severity','Issue','Files','Active treatment','Official sources'], snap_rows)}
 """
     return page("Line-by-line legacy audit", "audit.html", body, "Independent re-audit; prior done/verified labels were not treated as evidence.")
 
 
 def render_verification() -> str:
+    procedures = load("research/procedures.json")
+    costs = load("research/costs.json")
+    method_count = len(procedures["methods"])
+    row_count = costs["row_count"]
     body = f"""
 <h2>Reproducible local commands</h2>
 <pre><code>python scripts/build_data.py
@@ -426,9 +448,9 @@ python -m unittest discover -s tests -v
 python scripts/check_site.py</code></pre>
 <h2>Checks enforced</h2>
 <ul>
-<li>28 methods × 40 amounts = 1,120 cost rows; exact USD 10,000–400,000 grid.</li>
+<li>{method_count} methods × 40 amounts = {row_count:,} cost rows; exact USD 10,000–400,000 grid.</li>
 <li>Unknown numeric USD costs remain null/empty; every row has a registered official source URL.</li>
-<li>Canonical JSON/CSV reproducibility; 1,344-line legacy audit coverage.</li>
+<li>Canonical JSON/CSV reproducibility; 1,344-line legacy audit and 2,633-line archived main snapshot audit coverage.</li>
 <li>Local links and anchors, source-required table rows, one h1, landmarks, skip link, table captions, th scope, no JavaScript dependency.</li>
 <li>Responsive CSS rules: focus-visible, horizontal table scroll, media queries and reduced motion.</li>
 </ul>

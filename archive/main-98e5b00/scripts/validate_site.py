@@ -1,0 +1,250 @@
+#!/usr/bin/env python3
+"""Dependency-free structural and independent arithmetic validation for China4."""
+from __future__ import annotations
+
+from collections import Counter
+from decimal import Decimal as D, ROUND_CEILING
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.parse import urlsplit
+import json
+import re
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+PAGES = ["index.html", "methods.html", "penalties.html", "taxes.html", "sources.html", "flagged.html"]
+VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
+ERRORS: list[str] = []
+
+
+def fail(message: str) -> None:
+    ERRORS.append(message)
+
+
+class AuditParser(HTMLParser):
+    def __init__(self, filename: str):
+        super().__init__(convert_charrefs=True)
+        self.filename = filename
+        self.stack: list[str] = []
+        self.ids: list[str] = []
+        self.links: list[str] = []
+        self.tables: list[dict] = []
+        self.current_table: dict | None = None
+        self.details = 0
+        self.h1 = 0
+        self.main = 0
+        self.lang = False
+        self.viewport = False
+
+    def handle_starttag(self, tag: str, attrs_list):
+        attrs = dict(attrs_list)
+        if tag == "html" and attrs.get("lang") == "en":
+            self.lang = True
+        if tag == "meta" and attrs.get("name") == "viewport":
+            self.viewport = True
+        if tag == "h1":
+            self.h1 += 1
+        if tag == "main":
+            self.main += 1
+        if "id" in attrs:
+            self.ids.append(attrs["id"])
+        if tag == "a" and "href" in attrs:
+            self.links.append(attrs["href"])
+        if tag == "details" and "route" in attrs.get("class", "").split():
+            self.details += 1
+        if tag == "table":
+            self.current_table = {"rows": 0, "in_body": False, "sources": 0}
+        if tag == "tbody" and self.current_table is not None:
+            self.current_table["in_body"] = True
+        if tag == "tr" and self.current_table is not None and self.current_table["in_body"]:
+            self.current_table["rows"] += 1
+        if tag == "a" and self.current_table is not None and "source" in attrs.get("class", "").split():
+            self.current_table["sources"] += 1
+        if tag not in VOID:
+            self.stack.append(tag)
+
+    def handle_startendtag(self, tag: str, attrs_list):
+        self.handle_starttag(tag, attrs_list)
+        if tag not in VOID and self.stack and self.stack[-1] == tag:
+            self.stack.pop()
+
+    def handle_endtag(self, tag: str):
+        if tag in VOID:
+            return
+        if not self.stack:
+            fail(f"{self.filename}: unexpected </{tag}>")
+            return
+        if self.stack[-1] != tag:
+            fail(f"{self.filename}: expected </{self.stack[-1]}> before </{tag}>")
+            if tag in self.stack:
+                while self.stack and self.stack[-1] != tag:
+                    self.stack.pop()
+        if self.stack and self.stack[-1] == tag:
+            self.stack.pop()
+        if tag == "tbody" and self.current_table is not None:
+            self.current_table["in_body"] = False
+        if tag == "table" and self.current_table is not None:
+            self.tables.append(self.current_table)
+            self.current_table = None
+
+
+def ceil_int(x: D) -> int:
+    return int(x.to_integral_value(rounding=ROUND_CEILING))
+
+
+def pieces(amount: D, cap: D):
+    count = ceil_int(amount / cap)
+    last = amount - cap * (count - 1)
+    return [cap] * (count - 1) + [last]
+
+
+def close(actual: D, expected: D, label: str):
+    if abs(actual - expected) > D("1e-24"):
+        fail(f"arithmetic {label}: {actual} != {expected}")
+
+
+def validate_arithmetic():
+    data = json.loads((ROOT / "data/cost-model.json").read_text())
+    rows = data["rows"]
+    if len(rows) != 40:
+        fail(f"cost-model: expected 40 rows, found {len(rows)}")
+    buy, sell = D("6.6648"), D("6.6929")
+    mid = (buy + sell) / 2
+    close(D(data["inputs"]["internal_same_quote_midpoint"]), mid, "midpoint")
+    close(D(data["inputs"]["half_spread_fraction"]), (sell - mid) / mid, "half-spread")
+    previous = D(0)
+    for index, raw in enumerate(rows, 1):
+        amount = D(index * 10000)
+        r = {k: D(v) if isinstance(v, str) and re.fullmatch(r"-?\d+(\.\d+)?", v) else v for k, v in raw.items()}
+        if D(raw["amount_usd"]) != amount:
+            fail(f"row {index}: wrong amount ladder")
+        principal = amount * sell
+        commission = min(D(260), max(D(50), principal * D("0.001")))
+        spread = principal * (sell - mid) / mid
+        base = commission + D(150) + spread
+        close(D(raw["principal_cny"]), principal, f"{amount} principal")
+        close(D(raw["commission_cny"]), commission, f"{amount} commission")
+        close(D(raw["spread_cny"]), spread, f"{amount} spread")
+        close(D(raw["base_cny"]), base, f"{amount} base CNY")
+        close(D(raw["base_usd"]), base / sell, f"{amount} base USD")
+        close(D(raw["existing_usd_wire_usd"]), (commission + D(150)) / sell, f"{amount} existing USD")
+        close(D(raw["draft_known_usd"]), (commission + spread) / sell, f"{amount} draft")
+        close(D(raw["full_arrival_other_us_plus_bofa_usd"]), base / sell + D(40), f"{amount} receiving scenario")
+        emigration_parts = [amount] if principal <= D(200000) else [amount / 2, amount / 4, amount / 4]
+        emigration_total = D(0)
+        for part in emigration_parts:
+            p = part * sell
+            c = min(D(260), max(D(50), p * D("0.001")))
+            emigration_total += c + D(150) + p * (sell - mid) / mid
+        if raw["emigration_wires"] != len(emigration_parts):
+            fail(f"{amount}: emigration wire count")
+        close(D(raw["emigration_staged_total_usd"]), emigration_total / sell, f"{amount} emigration")
+        close(D(raw["inheritance_one_wire_total_usd"]), base / sell, f"{amount} inheritance")
+        close(D(raw["property_sale_one_wire_total_usd"]), base / sell, f"{amount} property sale")
+        annual = pieces(amount, D(50000))
+        annual_total = D(0)
+        for part in annual:
+            p = part * sell
+            c = min(D(260), max(D(50), p * D("0.001")))
+            annual_total += c + D(150) + p * (sell - mid) / mid
+        if raw["quota_wires"] != len(annual):
+            fail(f"{amount}: quota wire count")
+        close(D(raw["quota_total_usd"]), annual_total / sell, f"{amount} annual model")
+        for key, cap, variable, count_key in [
+            ("wise_bank_historical_fee_usd", D(300000), D("0.0062"), "wise_bank_transfers"),
+            ("wise_alipay_historical_fee_usd", D(50000), D("0.0197"), "wise_alipay_transfers"),
+        ]:
+            route_pieces = pieces(amount, cap)
+            fee = sum((D("33.20") + variable * part * sell for part in route_pieces), D(0))
+            if raw[count_key] != len(route_pieces):
+                fail(f"{amount}: {count_key}")
+            close(D(raw[key]), fee / sell, f"{amount} {key}")
+        if amount == D(10000):
+            close(D(raw["base_usd"]), D("53.44836522396977101779300253214629"), "known 10k regression")
+            if "atm_unionpay_fee_usd" not in raw:
+                fail("10k ATM model missing")
+        else:
+            if "atm_unionpay_fee_usd" in raw or "atm_future_card_fee_usd" in raw:
+                fail(f"{amount}: infeasible ATM amount incorrectly priced")
+        current = D(raw["base_usd"])
+        if current <= previous:
+            fail(f"{amount}: BOC cost not strictly increasing")
+        previous = current
+
+
+def main():
+    parsed = {}
+    source_urls = set()
+    for page in PAGES:
+        path = ROOT / page
+        text = path.read_text(encoding="utf-8")
+        if not text.startswith("<!DOCTYPE html>"):
+            fail(f"{page}: missing HTML5 doctype")
+        if "{{" in text or "}}" in text:
+            fail(f"{page}: unexpanded template marker")
+        parser = AuditParser(page)
+        parser.feed(text)
+        parser.close()
+        parsed[page] = parser
+        if parser.stack:
+            fail(f"{page}: unclosed tags {parser.stack}")
+        if not parser.lang or not parser.viewport or parser.h1 != 1 or parser.main != 1:
+            fail(f"{page}: landmark/viewport/lang failure")
+        duplicates = [key for key, count in Counter(parser.ids).items() if count > 1]
+        if duplicates:
+            fail(f"{page}: duplicate IDs {duplicates}")
+        for href in parser.links:
+            if href == "#" or href.startswith("javascript:"):
+                fail(f"{page}: invalid link {href}")
+            if href.startswith("http"):
+                parts = urlsplit(href)
+                if parts.scheme != "https":
+                    fail(f"{page}: non-HTTPS external link {href}")
+                source_urls.add(href)
+            elif not href.startswith(("mailto:", "tel:")):
+                target, _, anchor = href.partition("#")
+                target_path = (ROOT / (target or page)).resolve()
+                if ROOT not in target_path.parents and target_path != ROOT:
+                    fail(f"{page}: local link escapes root {href}")
+                elif not target_path.exists():
+                    fail(f"{page}: missing local link target {href}")
+                elif anchor and target_path.suffix == ".html":
+                    target_parser = parsed.get(target_path.name)
+                    if target_parser is None:
+                        target_parser = AuditParser(target_path.name)
+                        target_parser.feed(target_path.read_text(encoding="utf-8"))
+                    if anchor not in target_parser.ids:
+                        fail(f"{page}: missing anchor {href}")
+    if parsed["methods.html"].details != 18:
+        fail(f"methods: expected 18 route procedures, found {parsed['methods.html'].details}")
+    index_counts = [t["rows"] for t in parsed["index.html"].tables]
+    if index_counts != [4, 18]:
+        fail(f"index: expected snapshot 4 and routes 18, found {index_counts}")
+    penalty_counts = [t["rows"] for t in parsed["penalties.html"].tables]
+    if penalty_counts != [40, 40, 40, 40, 8]:
+        fail(f"penalties: expected four 40-row matrices + 8 penalty rows, found {penalty_counts}")
+    for page, parser in parsed.items():
+        for number, t in enumerate(parser.tables, 1):
+            if t["rows"] and t["sources"] == 0 and page != "sources.html":
+                fail(f"{page} table {number}: no official source links")
+    if len(parsed["sources.html"].tables) != 1 or parsed["sources.html"].tables[0]["rows"] != 47:
+        fail("sources: expected exactly 47 primary-source rows")
+    for alias in ("estimates.html", "costs.html"):
+        alias_text = (ROOT / alias).read_text(encoding="utf-8")
+        if 'http-equiv="refresh" content="0; url=penalties.html"' not in alias_text or 'href="penalties.html"' not in alias_text:
+            fail(f"{alias}: compatibility redirect missing")
+    banned_hosts = ["fdi.gov.cn", "expatarrivals.com", "travelchinaguide.com", "wise.com/gb/blog/send-money-china-to-usa"]
+    for url in source_urls:
+        if any(host in url for host in banned_hosts):
+            fail(f"secondary/legacy source remains: {url}")
+    validate_arithmetic()
+    if ERRORS:
+        print(f"FAILED: {len(ERRORS)} validation issue(s)")
+        for error in ERRORS:
+            print(f" - {error}")
+        sys.exit(1)
+    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 47 sources, local links, landmarks and independent Decimal arithmetic.")
+
+
+if __name__ == "__main__":
+    main()

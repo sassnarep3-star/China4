@@ -570,6 +570,83 @@
       "locator": "Purpose; eligibility criteria; general treatment",
       "establishes": "Non-willful certification required; civil examination/criminal investigation can bar eligibility; valid TIN; no automatic audit or closing agreement; willful concerns point to Criminal Investigation Voluntary Disclosure Practice with advisers.",
       "caveat": "Do not promise reduced/no penalties or eligibility without facts; do not rely on removed delinquent-FBAR assurances."
+    },
+    {
+      "id": "safe_2025_guide",
+      "publisher": "SAFE",
+      "title": "深化跨境投融资外汇管理便利化政策操作指引 (2025)",
+      "url": "https://www.safe.gov.cn/safe/file/file/20250915/16a1dd8e54f94d26969b0a9b781106a8.pdf",
+      "type": "regulator",
+      "access": "fetched",
+      "locator": "Section 8, parts III–IV; section 6 capital-account payment",
+      "establishes": "Foreign-individual property purchase settlement, failed-purchase RMB refund reconversion/return along original path with reasonable interest, and property-sale remittance capped at sale proceeds less included taxes/fees and seller share; title transfer and tax-evidence consistency required.",
+      "caveat": "Operating guide; local housing eligibility and tax facts still apply. Do not use failed-purchase refund for unrelated CNY."
+    },
+    {
+      "id": "safe_capital_2020",
+      "publisher": "SAFE Yunnan",
+      "title": "资本项目外汇业务指引 (2020 edition)",
+      "url": "https://www.safe.gov.cn/yunnan/file/file/20210303/26c1c63b5ced4c639e22d63df04afbef.pdf",
+      "type": "regulator",
+      "access": "fetched",
+      "locator": "6.9 foreign-investor exit remittance; 6.10 property; 6.11 profit remittance",
+      "establishes": "Foreign-investor liquidation/capital-reduction/equity-transfer/early-recovery remittance uses business registration凭证 and capital-account control information; equity transfer also needs tax凭证; profit remittance needs distribution resolution, audited financials and tax凭证.",
+      "caveat": "2020 guide; later 2025 facilitation guide updates some property/capital procedures. Institution-specific fees unverified."
+    },
+    {
+      "id": "boc_payment_connect",
+      "publisher": "Bank of China",
+      "title": "跨境支付通 launch and supported scenarios (2025-06-20)",
+      "url": "https://www.boc.cn/aboutboc/bi1/202506/t20250620_25390382.html",
+      "type": "operator",
+      "access": "fetched",
+      "locator": "Three supported scenario paragraphs",
+      "establishes": "Mainland-HK Payment Connect launched 2025-06-22; southbound convenience remittance from mainland resident personal to HK bank account can send RMB and receive RMB/HKD; northbound and personal-institution RMB payment scenarios described.",
+      "caveat": "Not evidence of unrestricted CNY-to-USD-to-US personal savings route; HK second-leg conversion/US remittance unverified."
+    },
+    {
+      "id": "boc_moneygram_2018",
+      "publisher": "Bank of China / MoneyGram",
+      "title": "MoneyGram personal outbound fee adjustment effective 2018-01-15",
+      "url": "https://www.boc.cn/pbservice/bi2/201801/t20180112_11198459.html",
+      "type": "operator",
+      "access": "fetched",
+      "locator": "Non-Africa USD table",
+      "establishes": "Historical BOC MoneyGram outbound USD fee tiers: 0.01–500 USD14; 500.01–1000 USD20; 1000.01–2000 USD24; 2000.01–5000 USD28; 5000.01–9999.99 USD32.",
+      "caveat": "Dated 2018 schedule ends below USD 10,000; current availability/fees/limits unverified. Do not extrapolate to requested grid."
+    },
+    {
+      "id": "wise_fee_changes_2024",
+      "publisher": "Wise",
+      "title": "Summary of fee changes (Nov 2024)",
+      "url": "https://wise.com/gb/blog/summary-of-fee-changes",
+      "type": "operator",
+      "access": "fetched",
+      "locator": "CNY bank-transfer and Alipay examples",
+      "establishes": "Historical published examples: CNY-to-USD bank funding changed to CNY33.20 + 0.62%; Alipay funding example CNY33.20 + 1.97%.",
+      "caveat": "Historical notice, not current executable quote; current pricing/eligibility must be checked in Wise flow."
+    },
+    {
+      "id": "boc_rate_board",
+      "publisher": "Bank of China",
+      "title": "BOC Exchange Rate historical page",
+      "url": "https://www.boc.cn/sourcedb/whpj/enindex_1619_1.html",
+      "type": "operator",
+      "access": "fetched",
+      "locator": "USD row, pub time 2026/11/09 05:30:00",
+      "establishes": "Fetched page shows USD buying 666.48, selling 669.29, middle 671.68 per 100 USD at displayed timestamp.",
+      "caveat": "Reference board only; executed customer rate governs. Timestamp is Beijing time and may be later than UTC research cutoff. Not used to fill customer-specific USD cost cells."
+    },
+    {
+      "id": "safe_online_channels",
+      "publisher": "SAFE Guangdong",
+      "title": "关于个人网上办理外币兑换业务的温馨提示 (2020-03-04)",
+      "url": "https://www.safe.gov.cn/guangdong/2020/0304/1668.html",
+      "type": "regulator",
+      "access": "fetched",
+      "locator": "Paragraphs 1–2",
+      "establishes": "Personal FX settlement/purchase must use qualified banks/franchised exchangers/authorized agents; private apps/social/underground channels are illegal; domestic-individual USD50k facilitation and above-quota authenticity evidence; no splitting/false documents.",
+      "caveat": "General notice; does not price a specific bank/operator route."
     }
   ]
 }

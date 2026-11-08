@@ -120,6 +120,31 @@ COMPONENTS: dict[str, tuple[str, str, str]] = {
         "not_applicable_as_personal_remittance_quote",
         "hkma_wmc",
     ),
+    "other_bank_quote": (
+        "No current non-BOC institution-wide personal cross-border tariff verified. SAFE rules are not BOC-specific; obtain the chosen bank's current price list and quote.",
+        "all_in_USD = chosen_bank_fee + FX friction + routing/receiving + tax_USD; unknown",
+        "safe_online_channels",
+    ),
+    "property_refund_quote": (
+        "SAFE 2025 guide: failed-purchase RMB refund is reconverted and returned along the original path or eligible same-name FX account; reasonable interest may be included. Bank/FX fees unverified.",
+        "refundable_principal + permitted_interest; all_in_USD unknown without original-path bank quote",
+        "safe_2025_guide",
+    ),
+    "fdi_exit_quote": (
+        "SAFE capital-account guide: exit remittance uses registration/control information and tax evidence where required. Institution-specific fees and corporate/professional costs unverified.",
+        "all_in_USD = bank_fee + FX friction + corporate_tax_USD + professional_USD; unknown",
+        "safe_capital_2020",
+    ),
+    "payment_connect_quote": (
+        "BOC Payment Connect page verifies mainland–HK RMB/HKD scenarios only. HK-to-USD conversion and US remittance fees/limits are unverified.",
+        "all_in_USD = mainland_HK_leg_fee + HK_conversion_friction + US_remittance_fee + tax_USD; unknown",
+        "boc_payment_connect",
+    ),
+    "moneygram_historical": (
+        "BOC/MoneyGram schedule effective 2018-01-15: non-Africa USD tiers end at USD 9,999.99 (top fee USD 32). Current availability/fees/limits unverified; do not extrapolate to the requested grid.",
+        "historical_fee_USD tiers only below USD 10,000; current all_in_USD unknown",
+        "boc_moneygram_2018",
+    ),
     "unverified": (
         "No current official route eligibility/fee/limit verification. Numeric costs remain blank.",
         "unknown; do not infer from another corridor or stale schedule",
@@ -176,6 +201,8 @@ def feasibility(method: dict, amount: int) -> str:
         return "Supporting step only; a separate lawful source/conversion route is required."
     if status == "unverified":
         return "Route eligibility/limits unverified; do not proceed without current official operator/bank confirmation."
+    if status == "historical_unverified":
+        return "Only historical official terms verified; current availability/fees/limits unverified. Do not extrapolate."
     if method["id"] == "unionpay_atm":
         return "Large target generally unsuitable: CNY 100,000/person/year and CNY 10,000/card/day caps apply."
     if method["id"] == "cash_carry":

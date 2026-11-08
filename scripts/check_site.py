@@ -177,7 +177,16 @@ def check_data(errors: list[str]) -> dict:
         for sid in issue["sources"]:
             if sid not in source_ids:
                 fail(errors, f"audit issue {issue['id']} missing source {sid}")
-    return {"methods": len(procedures["methods"]), "cost_rows": expected, "audit_lines": len(audit), "sources": len(registry["sources"])}
+    with (ROOT / "research/audit/main_snapshot_line_audit.csv").open(newline="") as fh:
+        snapshot_audit = list(csv.DictReader(fh))
+    if len(snapshot_audit) != 2633:
+        fail(errors, f"main snapshot audit line count {len(snapshot_audit)} != 2633")
+    snapshot_issues = json.loads((ROOT / "research/audit/main_snapshot_issues.json").read_text())
+    for issue in snapshot_issues["issues"]:
+        for sid in issue["sources"]:
+            if sid not in source_ids:
+                fail(errors, f"snapshot audit issue {issue['id']} missing source {sid}")
+    return {"methods": len(procedures["methods"]), "cost_rows": expected, "audit_lines": len(audit), "snapshot_audit_lines": len(snapshot_audit), "sources": len(registry["sources"])}
 
 
 def resolve_local(href: str, page: Path) -> tuple[Path | None, str | None]:

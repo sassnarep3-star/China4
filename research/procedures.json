@@ -1,315 +1,1368 @@
 {
   "as_of": "2026-11-08",
-  "amount_grid_usd": {"start": 10000, "stop": 400000, "step": 10000},
+  "amount_grid_usd": {
+    "start": 10000,
+    "stop": 400000,
+    "step": 10000
+  },
   "cost_policy": "Amounts are gross USD targets before fees/tax. Numeric USD cost cells are blank unless a fixed USD fee is verified for the exact route. Published CNY fees, percentages, formulas and conditional fees are shown as text; CNY-to-USD equivalents are not inferred from a historical reference rate. Taxes and penalties are not transfer fees. All-in cost and net USD remain blank without an executable quote, routing instructions and personal tax facts.",
   "methods": [
     {
-      "id": "bank_salary_tt", "name": "Bank telegraphic transfer — documented China salary", "category": "bank", "status": "verified_route",
+      "id": "bank_salary_tt",
+      "name": "Bank telegraphic transfer — documented China salary",
+      "category": "bank",
+      "status": "verified_route",
       "summary": "Convert lawful after-tax China salary with source/tax evidence and remit by SWIFT to your own US account. BOC tariff is the published cost example.",
       "eligibility": "Foreign individual with lawful mainland current-account salary; bank classification and document review required. Not a universal USD 50,000 cap.",
       "limits": "Amount supported by documented salary net of China tax and bank review; no fixed legal cap established in the cited rules. Operator/channel limits may apply.",
-      "pros": ["Primary regulated channel", "Strong source-of-funds trail", "BOC publishes commission/cable components", "Can support large documented amounts"],
-      "cons": ["Branch document review", "FX quote and correspondent fees unknown", "Underlying US tax/currency gain still requires analysis"],
-      "documents": ["Passport/ID and bank classification", "Employment contract", "Income details/payslips", "China tax records or evidence no PRC tax is due", "US recipient name, account, SWIFT/BIC and address"],
-      "steps": ["Ask the bank to confirm foreign-individual classification and the salary-purchase checklist.", "Collect contract, income details and tax records for the exact amount; reconcile salary already reported to the IRS.", "Obtain a same-time CNY/USD quote and written fee allocation (SHA/OUR), including cable and expected correspondent/receiving charges.", "Complete the purchase/remittance application truthfully; do not borrow quotas or relabel funds.", "Authorize conversion and SWIFT transfer to your own US account; retain the memo, receipt and SWIFT confirmation.", "Reconcile the credited USD amount, keep FX/basis records, and update FBAR/Form 8938 reporting if triggered."],
-      "cost_rule": "boc_tt", "flags": ["fx_quote", "tax_facts", "professional_costs"], "sources": ["safe_rules", "safe_faq", "icbc_fx", "boc_tariff", "boc_remit", "irs_worldwide", "irc_988"]
+      "pros": [
+        "Primary regulated channel",
+        "Strong source-of-funds trail",
+        "BOC publishes commission/cable components",
+        "Can support large documented amounts"
+      ],
+      "cons": [
+        "Branch document review",
+        "FX quote and correspondent fees unknown",
+        "Underlying US tax/currency gain still requires analysis"
+      ],
+      "documents": [
+        "Passport/ID and bank classification",
+        "Employment contract",
+        "Income details/payslips",
+        "China tax records or evidence no PRC tax is due",
+        "US recipient name, account, SWIFT/BIC and address"
+      ],
+      "steps": [
+        "Ask the bank to confirm foreign-individual classification and the salary-purchase checklist.",
+        "Collect contract, income details and tax records for the exact amount; reconcile salary already reported to the IRS.",
+        "Obtain a same-time CNY/USD quote and written fee allocation (SHA/OUR), including cable and expected correspondent/receiving charges.",
+        "Complete the purchase/remittance application truthfully; do not borrow quotas or relabel funds.",
+        "Authorize conversion and SWIFT transfer to your own US account; retain the memo, receipt and SWIFT confirmation.",
+        "Reconcile the credited USD amount, keep FX/basis records, and update FBAR/Form 8938 reporting if triggered."
+      ],
+      "cost_rule": "boc_tt",
+      "flags": [
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_rules",
+        "safe_faq",
+        "icbc_fx",
+        "boc_tariff",
+        "boc_remit",
+        "irs_worldwide",
+        "irc_988"
+      ]
     },
     {
-      "id": "bank_other_current_tt", "name": "Bank telegraphic transfer — other lawful current-account RMB income", "category": "bank", "status": "conditional",
+      "id": "bank_other_current_tt",
+      "name": "Bank telegraphic transfer — other lawful current-account RMB income",
+      "category": "bank",
+      "status": "conditional",
       "summary": "Use transaction-amount source evidence for lawful non-salary current-account RMB income, such as qualifying service/royalty/rent-related income, after tax analysis.",
       "eligibility": "Foreign individual with lawful mainland current-account RMB income; the bank must accept the actual source category and documents.",
       "limits": "Documented transaction amount; no universal USD 50,000 purchase quota for foreign individuals. Capital-account proceeds need a different route.",
-      "pros": ["Matches the actual legal source", "Regulated bank trail", "Can exceed facilitation thresholds with evidence"],
-      "cons": ["Category-specific documents", "Tax evidence may be required", "No verified all-in quote"],
-      "documents": ["ID", "Contract/agreement or payment notice", "Income/source evidence for the transaction amount", "Tax records or competent-authority evidence where required", "US recipient details"],
-      "steps": ["Identify the precise current-account income category and confirm it is not capital-account property/equity proceeds.", "Ask the bank for the category checklist and tax-evidence requirement.", "Resolve China tax and US worldwide-income reporting before conversion.", "Obtain a same-time quote and fee allocation.", "Submit truthful source documents and remit to your own US account.", "Retain receipts and reconcile currency gain/loss and account reporting."],
-      "cost_rule": "boc_tt", "flags": ["fx_quote", "tax_facts", "professional_costs"], "sources": ["safe_rules", "safe_faq", "icbc_fx", "boc_tariff", "cn_iit", "irs_worldwide"]
+      "pros": [
+        "Matches the actual legal source",
+        "Regulated bank trail",
+        "Can exceed facilitation thresholds with evidence"
+      ],
+      "cons": [
+        "Category-specific documents",
+        "Tax evidence may be required",
+        "No verified all-in quote"
+      ],
+      "documents": [
+        "ID",
+        "Contract/agreement or payment notice",
+        "Income/source evidence for the transaction amount",
+        "Tax records or competent-authority evidence where required",
+        "US recipient details"
+      ],
+      "steps": [
+        "Identify the precise current-account income category and confirm it is not capital-account property/equity proceeds.",
+        "Ask the bank for the category checklist and tax-evidence requirement.",
+        "Resolve China tax and US worldwide-income reporting before conversion.",
+        "Obtain a same-time quote and fee allocation.",
+        "Submit truthful source documents and remit to your own US account.",
+        "Retain receipts and reconcile currency gain/loss and account reporting."
+      ],
+      "cost_rule": "boc_tt",
+      "flags": [
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_rules",
+        "safe_faq",
+        "icbc_fx",
+        "boc_tariff",
+        "cn_iit",
+        "irs_worldwide"
+      ]
     },
     {
-      "id": "bank_reconversion_tt", "name": "Bank telegraphic transfer — unused RMB from an earlier exchange", "category": "bank", "status": "verified_route",
+      "id": "bank_reconversion_tt",
+      "name": "Bank telegraphic transfer — unused RMB from an earlier exchange",
+      "category": "bank",
+      "status": "verified_route",
       "summary": "Reconvert unused RMB using the original exchange memo within 24 months, or qualifying foreign-card RMB withdrawal evidence within six months at ICBC.",
       "eligibility": "Foreign individual with unused RMB originally obtained by exchange or qualifying foreign-card withdrawal; small ID-only reconversion is limited to USD 500/day or USD 1,000 at qualifying departure ports.",
       "limits": "Original memo amount and 24-month validity; ICBC describes six-month foreign-card withdrawal evidence. Small daily ID-only bands are not a large-transfer route.",
-      "pros": ["Clear reversal trail", "Avoids relabeling savings as salary", "Published BOC tariff components"],
-      "cons": ["Memo/evidence must match", "Time-limited", "FX and routing costs unknown"],
-      "documents": ["ID", "Original exchange memo or qualifying card withdrawal evidence", "Unused RMB amount reconciliation", "US recipient details"],
-      "steps": ["Locate the original memo/withdrawal evidence and check the date and unused amount.", "Confirm the bank accepts the evidence and the amount does not exceed the original conversion.", "Obtain quote and fee allocation.", "Complete reconversion and remittance application.", "Send to your own US account and retain the reversal receipt.", "Analyze any currency gain/loss and reporting."],
-      "cost_rule": "boc_tt", "flags": ["fx_quote", "tax_facts"], "sources": ["safe_rules", "safe_faq", "icbc_fx", "boc_tariff", "irc_988"]
+      "pros": [
+        "Clear reversal trail",
+        "Avoids relabeling savings as salary",
+        "Published BOC tariff components"
+      ],
+      "cons": [
+        "Memo/evidence must match",
+        "Time-limited",
+        "FX and routing costs unknown"
+      ],
+      "documents": [
+        "ID",
+        "Original exchange memo or qualifying card withdrawal evidence",
+        "Unused RMB amount reconciliation",
+        "US recipient details"
+      ],
+      "steps": [
+        "Locate the original memo/withdrawal evidence and check the date and unused amount.",
+        "Confirm the bank accepts the evidence and the amount does not exceed the original conversion.",
+        "Obtain quote and fee allocation.",
+        "Complete reconversion and remittance application.",
+        "Send to your own US account and retain the reversal receipt.",
+        "Analyze any currency gain/loss and reporting."
+      ],
+      "cost_rule": "boc_tt",
+      "flags": [
+        "fx_quote",
+        "tax_facts"
+      ],
+      "sources": [
+        "safe_rules",
+        "safe_faq",
+        "icbc_fx",
+        "boc_tariff",
+        "irc_988"
+      ]
     },
     {
-      "id": "bank_domestic_current_tt", "name": "Bank telegraphic transfer — person classified as a domestic individual", "category": "bank", "status": "conditional",
+      "id": "bank_domestic_current_tt",
+      "name": "Bank telegraphic transfer — person classified as a domestic individual",
+      "category": "bank",
+      "status": "conditional",
       "summary": "If the bank classifies the customer as a domestic individual, use the facilitation quota or documented genuine current-account demand; do not assume US citizenship controls the classification.",
       "eligibility": "Only after bank classification. Domestic individuals have USD 50,000 annual purchase facilitation; above it, genuine current-account transaction evidence is required.",
       "limits": "USD 50,000 annual purchase facilitation; foreign-currency account remittance USD 50,000/day ID-only, above with current-account evidence; cash remittance USD 10,000/day ID-only. Unopened capital-account purposes are not authorized by the quota.",
-      "pros": ["Clear regulatory framework", "Documented above-quota current-account route", "Published BOC tariff components"],
-      "cons": ["Classification must be confirmed", "Quota is not a universal outbound cap", "Capital-account investment/property purchases may be restricted"],
-      "documents": ["ID and bank classification", "Purchase application", "Genuine current-account transaction evidence if above quota", "US recipient details"],
-      "steps": ["Obtain the bank's written classification and available facilitation/quota status.", "Identify a genuine current-account purpose and collect transaction evidence if needed.", "Do not split or borrow quotas to evade controls.", "Obtain quote and fee allocation.", "Complete purchase/remittance and retain receipts.", "Reconcile US tax and account reporting."],
-      "cost_rule": "boc_tt", "flags": ["fx_quote", "tax_facts"], "sources": ["safe_rules", "safe_faq", "safe_quota_press", "boc_tariff"]
+      "pros": [
+        "Clear regulatory framework",
+        "Documented above-quota current-account route",
+        "Published BOC tariff components"
+      ],
+      "cons": [
+        "Classification must be confirmed",
+        "Quota is not a universal outbound cap",
+        "Capital-account investment/property purchases may be restricted"
+      ],
+      "documents": [
+        "ID and bank classification",
+        "Purchase application",
+        "Genuine current-account transaction evidence if above quota",
+        "US recipient details"
+      ],
+      "steps": [
+        "Obtain the bank's written classification and available facilitation/quota status.",
+        "Identify a genuine current-account purpose and collect transaction evidence if needed.",
+        "Do not split or borrow quotas to evade controls.",
+        "Obtain quote and fee allocation.",
+        "Complete purchase/remittance and retain receipts.",
+        "Reconcile US tax and account reporting."
+      ],
+      "cost_rule": "boc_tt",
+      "flags": [
+        "fx_quote",
+        "tax_facts"
+      ],
+      "sources": [
+        "safe_rules",
+        "safe_faq",
+        "safe_quota_press",
+        "boc_tariff"
+      ]
     },
     {
-      "id": "bank_existing_fx_tt", "name": "Bank telegraphic transfer — foreign currency already in a mainland FX account", "category": "bank", "status": "supporting_only",
+      "id": "bank_existing_fx_tt",
+      "name": "Bank telegraphic transfer — foreign currency already in a mainland FX account",
+      "category": "bank",
+      "status": "supporting_only",
       "summary": "Remit USD already held in a mainland foreign-currency savings account. This is not a CNY conversion route, but it is the second leg after a lawful purchase.",
       "eligibility": "Foreign individual: ID-based remittance from FX savings account under cited SAFE guidance. Domestic individual: USD 50,000/day ID-only, above with current-account evidence.",
       "limits": "Account balance and classification-specific daily rules; original CNY purchase still needs a lawful basis.",
-      "pros": ["Separates conversion from remittance", "Published BOC tariff components", "Avoids double conversion if USD already held"],
-      "cons": ["Does not solve CNY source legality", "Correspondent/receiving fees unknown", "Account reporting still applies"],
-      "documents": ["ID", "FX account details", "Original purchase/source evidence if requested", "US recipient SWIFT/account details"],
-      "steps": ["Confirm the funds are already foreign currency and the original purchase was lawful.", "Confirm classification-specific remittance rules.", "Obtain fee allocation and receiving-bank instructions.", "Submit remittance application and retain receipt.", "Reconcile credited amount and reporting."],
-      "cost_rule": "boc_tt", "flags": ["fx_quote", "professional_costs"], "sources": ["safe_rules", "safe_faq", "boc_tariff", "boc_remit"]
+      "pros": [
+        "Separates conversion from remittance",
+        "Published BOC tariff components",
+        "Avoids double conversion if USD already held"
+      ],
+      "cons": [
+        "Does not solve CNY source legality",
+        "Correspondent/receiving fees unknown",
+        "Account reporting still applies"
+      ],
+      "documents": [
+        "ID",
+        "FX account details",
+        "Original purchase/source evidence if requested",
+        "US recipient SWIFT/account details"
+      ],
+      "steps": [
+        "Confirm the funds are already foreign currency and the original purchase was lawful.",
+        "Confirm classification-specific remittance rules.",
+        "Obtain fee allocation and receiving-bank instructions.",
+        "Submit remittance application and retain receipt.",
+        "Reconcile credited amount and reporting."
+      ],
+      "cost_rule": "boc_tt",
+      "flags": [
+        "fx_quote",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_rules",
+        "safe_faq",
+        "boc_tariff",
+        "boc_remit"
+      ]
     },
     {
-      "id": "bank_demand_draft", "name": "Bank demand draft", "category": "bank", "status": "verified_route",
+      "id": "bank_demand_draft",
+      "name": "Bank demand draft",
+      "category": "bank",
+      "status": "verified_route",
       "summary": "Buy a USD demand draft with lawful CNY source evidence and deliver/deposit it abroad. Slower and acceptance-dependent than SWIFT.",
       "eligibility": "Same lawful source/conversion rules as the underlying purchase; receiving bank must accept the draft.",
       "limits": "Source-supported amount; draft acceptance, collection time and receiving-bank fees are not verified.",
-      "pros": ["Published BOC commission component", "Useful where draft is specifically requested", "Physical instrument trail"],
-      "cons": ["Postage/collection fees actual", "Loss/stop-payment risk", "Slower; US bank acceptance must be confirmed"],
-      "documents": ["ID and lawful source evidence", "Payee name/address", "Receiving-bank draft acceptance instructions"],
-      "steps": ["Confirm the US bank accepts a BOC USD demand draft and ask about collection fees/hold time.", "Complete the lawful CNY purchase with source documents.", "Complete the draft application and pay published commission plus actual postage.", "Securely deliver the draft and deposit it according to the receiving bank's instructions.", "Retain draft/receipt and reconcile collection, fees and reporting."],
-      "cost_rule": "boc_draft", "flags": ["fx_quote", "professional_costs"], "sources": ["safe_rules", "boc_remit", "boc_tariff"]
+      "pros": [
+        "Published BOC commission component",
+        "Useful where draft is specifically requested",
+        "Physical instrument trail"
+      ],
+      "cons": [
+        "Postage/collection fees actual",
+        "Loss/stop-payment risk",
+        "Slower; US bank acceptance must be confirmed"
+      ],
+      "documents": [
+        "ID and lawful source evidence",
+        "Payee name/address",
+        "Receiving-bank draft acceptance instructions"
+      ],
+      "steps": [
+        "Confirm the US bank accepts a BOC USD demand draft and ask about collection fees/hold time.",
+        "Complete the lawful CNY purchase with source documents.",
+        "Complete the draft application and pay published commission plus actual postage.",
+        "Securely deliver the draft and deposit it according to the receiving bank's instructions.",
+        "Retain draft/receipt and reconcile collection, fees and reporting."
+      ],
+      "cost_rule": "boc_draft",
+      "flags": [
+        "fx_quote",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_rules",
+        "boc_remit",
+        "boc_tariff"
+      ]
     },
     {
-      "id": "wise_salary", "name": "Wise — eligible China salary to own overseas account", "category": "digital", "status": "operator_verified",
+      "id": "wise_salary",
+      "name": "Wise — eligible China salary to own overseas account",
+      "category": "digital",
+      "status": "operator_verified",
       "summary": "Wise publishes a CNY salary-remittance service for non-mainland-Chinese individuals with current/prior China work and qualifying tax records.",
       "eligibility": "Non-mainland-Chinese individual; worked in China; tax records for the relevant period; personal transfer to own overseas account/Wise account; own-name funding.",
       "limits": "Overall limit generally documented salary net of China tax; bank-app funding CNY 300,000/transfer and Alipay CNY 50,000/transfer in the fetched guide. Current document review controls.",
-      "pros": ["Online own-account flow", "Published eligibility and funding caps", "Mid-market pricing claim with transparent quote at transaction time"],
-      "cons": ["Narrower than law", "Tax-record example is stale", "No static CNY-to-USD fee quote verified"],
-      "documents": ["Passport/ID", "China work/employment evidence", "Tax records", "Own overseas account/Wise account", "Own-name funding source"],
-      "steps": ["Create/sign in to Wise and select CNY to USD personal transfer to your own account.", "Complete identity and China-work/tax-record review.", "Enter the amount and compare the live all-in quote, fee, rate and expected credit.", "Fund only from your own named account using an available method within the published cap.", "Confirm the transfer and retain the receipt/rate.", "Reconcile US tax, currency gain and account reporting."],
-      "cost_rule": "wise_quote", "flags": ["wise_price", "fx_quote", "tax_facts"], "sources": ["wise_cny", "wise_pricing", "safe_rules", "irs_worldwide"]
+      "pros": [
+        "Online own-account flow",
+        "Published eligibility and funding caps",
+        "Mid-market pricing claim with transparent quote at transaction time"
+      ],
+      "cons": [
+        "Narrower than law",
+        "Tax-record example is stale",
+        "No static CNY-to-USD fee quote verified"
+      ],
+      "documents": [
+        "Passport/ID",
+        "China work/employment evidence",
+        "Tax records",
+        "Own overseas account/Wise account",
+        "Own-name funding source"
+      ],
+      "steps": [
+        "Create/sign in to Wise and select CNY to USD personal transfer to your own account.",
+        "Complete identity and China-work/tax-record review.",
+        "Enter the amount and compare the live all-in quote, fee, rate and expected credit.",
+        "Fund only from your own named account using an available method within the published cap.",
+        "Confirm the transfer and retain the receipt/rate.",
+        "Reconcile US tax, currency gain and account reporting."
+      ],
+      "cost_rule": "wise_quote",
+      "flags": [
+        "wise_price",
+        "fx_quote",
+        "tax_facts"
+      ],
+      "sources": [
+        "wise_cny",
+        "wise_pricing",
+        "safe_rules",
+        "irs_worldwide",
+        "wise_fee_changes_2024"
+      ]
     },
     {
-      "id": "skyremit_salary", "name": "SkyRemit — after-tax China income to own overseas account", "category": "digital", "status": "operator_verified",
+      "id": "skyremit_salary",
+      "name": "SkyRemit — after-tax China income to own overseas account",
+      "category": "digital",
+      "status": "operator_verified",
       "summary": "SkyRemit publishes after-tax mainland income remittance to the customer's own overseas account, with compliance review and a CNY 300,000 per-transaction notice.",
       "eligibility": "Customer with lawful after-tax mainland income; own overseas account; special consular/diplomatic evidence exception described in the notice.",
       "limits": "Published CNY 300,000 per transaction; up to ten bank funding transfers may be consolidated in the notice; current terms and final billed amount control.",
-      "pros": ["Own-account salary flow", "Published CNY 79 reference fee", "Published per-transaction cap"],
-      "cons": ["Undated fee notice; terms allow changes", "Indicative rate until confirmation", "No guaranteed completion time; correspondent delays possible"],
-      "documents": ["ID", "Income/after-tax evidence", "Own overseas account details", "Own-name funding"],
-      "steps": ["Register and complete SkyRemit identity/income review.", "Enter the transfer to your own overseas account and check the live rate, fee and limits.", "Fund from your own named account within the published cap.", "Confirm only after the final billed amount/rate is displayed.", "Retain receipt and reconcile credited USD, tax and reporting."],
-      "cost_rule": "sky_reference", "flags": ["sky_price", "fx_quote", "tax_facts"], "sources": ["sky_terms", "sky_limit", "safe_rules", "irs_worldwide"]
+      "pros": [
+        "Own-account salary flow",
+        "Published CNY 79 reference fee",
+        "Published per-transaction cap"
+      ],
+      "cons": [
+        "Undated fee notice; terms allow changes",
+        "Indicative rate until confirmation",
+        "No guaranteed completion time; correspondent delays possible"
+      ],
+      "documents": [
+        "ID",
+        "Income/after-tax evidence",
+        "Own overseas account details",
+        "Own-name funding"
+      ],
+      "steps": [
+        "Register and complete SkyRemit identity/income review.",
+        "Enter the transfer to your own overseas account and check the live rate, fee and limits.",
+        "Fund from your own named account within the published cap.",
+        "Confirm only after the final billed amount/rate is displayed.",
+        "Retain receipt and reconcile credited USD, tax and reporting."
+      ],
+      "cost_rule": "sky_reference",
+      "flags": [
+        "sky_price",
+        "fx_quote",
+        "tax_facts"
+      ],
+      "sources": [
+        "sky_terms",
+        "sky_limit",
+        "safe_rules",
+        "irs_worldwide"
+      ]
     },
     {
-      "id": "western_union", "name": "Western Union via China partner banks", "category": "digital", "status": "operator_verified",
+      "id": "western_union",
+      "name": "Western Union via China partner banks",
+      "category": "digital",
+      "status": "operator_verified",
       "summary": "Outbound service through partner banks; the fetched China page describes online/agent sending and overseas cash pickup, not a verified direct-to-US-bank quote.",
       "eligibility": "Partner-bank customer meeting WU/bank identity, destination and passport/risk rules; BOC online is mobile-only in the fetched page.",
       "limits": "Operator/agent/destination limits and fees not verified for a US passport or US bank deposit. Do not assume a USD 50,000 operator cap.",
-      "pros": ["Published partner-bank channel", "Cash-pickup option where available", "Useful for smaller urgent needs after quote"],
-      "cons": ["Direct US-bank delivery unverified", "Fees/FX/limits unknown", "Cash pickup adds handling and declaration issues"],
-      "documents": ["Government ID", "Partner-bank account/mobile access where required", "Recipient details and lawful source evidence"],
-      "steps": ["Ask the actual partner bank whether your passport, source and US destination/cash pickup are supported.", "Obtain the operator fee, FX rate, limit and delivery method in writing.", "Complete identity/source review and fund truthfully.", "Send and retain the control number/receipt.", "If cash pickup, comply with US border declaration rules when carrying funds; reconcile reporting."],
-      "cost_rule": "wu_quote", "flags": ["wu_limits", "fx_quote", "tax_facts"], "sources": ["wu_cn", "safe_rules", "cbp_105"]
+      "pros": [
+        "Published partner-bank channel",
+        "Cash-pickup option where available",
+        "Useful for smaller urgent needs after quote"
+      ],
+      "cons": [
+        "Direct US-bank delivery unverified",
+        "Fees/FX/limits unknown",
+        "Cash pickup adds handling and declaration issues"
+      ],
+      "documents": [
+        "Government ID",
+        "Partner-bank account/mobile access where required",
+        "Recipient details and lawful source evidence"
+      ],
+      "steps": [
+        "Ask the actual partner bank whether your passport, source and US destination/cash pickup are supported.",
+        "Obtain the operator fee, FX rate, limit and delivery method in writing.",
+        "Complete identity/source review and fund truthfully.",
+        "Send and retain the control number/receipt.",
+        "If cash pickup, comply with US border declaration rules when carrying funds; reconcile reporting."
+      ],
+      "cost_rule": "wu_quote",
+      "flags": [
+        "wu_limits",
+        "fx_quote",
+        "tax_facts"
+      ],
+      "sources": [
+        "wu_cn",
+        "safe_rules",
+        "cbp_105"
+      ]
     },
     {
-      "id": "alipay_intl", "name": "Alipay international remittance — official quota product", "category": "digital", "status": "unverified",
+      "id": "alipay_intl",
+      "name": "Alipay international remittance — official quota product",
+      "category": "digital",
+      "status": "unverified",
       "summary": "Alipay's official page describes partner-financial-institution remittance for verified real-name users and a domestic-individual USD 50,000 purchase quota check.",
       "eligibility": "Page describes domestic-individual quota treatment; foreign-passport eligibility, current fees and US-bank delivery are not verified.",
       "limits": "Official page cites USD 50,000 annual purchase quota for domestic individuals; current product limits/fees unverified. Do not use promotional flash-remit claims.",
-      "pros": ["Official operator product page exists", "USD among listed currencies"],
-      "cons": ["Foreign eligibility unverified", "Undated page", "No verified fee/all-in quote", "Not the same as Wise funding via Alipay"],
-      "documents": ["Alipay real-name verification", "Bank/source documents if requested", "Recipient details"],
-      "steps": ["Open the official international-remittance entry in Alipay and confirm your identity classification is supported.", "Ask the partner financial institution for current foreign-passport rules, limits and fees.", "Do not proceed unless the lawful source and quota treatment are confirmed.", "If approved, compare the live all-in quote and retain the receipt.", "Reconcile US tax and reporting."],
-      "cost_rule": "unverified", "flags": ["other_apps", "fx_quote", "tax_facts"], "sources": ["alipay_intl", "safe_rules", "wise_cny"]
+      "pros": [
+        "Official operator product page exists",
+        "USD among listed currencies"
+      ],
+      "cons": [
+        "Foreign eligibility unverified",
+        "Undated page",
+        "No verified fee/all-in quote",
+        "Not the same as Wise funding via Alipay"
+      ],
+      "documents": [
+        "Alipay real-name verification",
+        "Bank/source documents if requested",
+        "Recipient details"
+      ],
+      "steps": [
+        "Open the official international-remittance entry in Alipay and confirm your identity classification is supported.",
+        "Ask the partner financial institution for current foreign-passport rules, limits and fees.",
+        "Do not proceed unless the lawful source and quota treatment are confirmed.",
+        "If approved, compare the live all-in quote and retain the receipt.",
+        "Reconcile US tax and reporting."
+      ],
+      "cost_rule": "unverified",
+      "flags": [
+        "other_apps",
+        "fx_quote",
+        "tax_facts"
+      ],
+      "sources": [
+        "alipay_intl",
+        "safe_rules",
+        "wise_cny"
+      ]
     },
     {
-      "id": "paypal_cn", "name": "PayPal China C2 — unverified personal CNY savings route", "category": "digital", "status": "unverified",
+      "id": "paypal_cn",
+      "name": "PayPal China C2 — unverified personal CNY savings route",
+      "category": "digital",
+      "status": "unverified",
       "summary": "PayPal C2 pages show generic send/receive and balance-withdrawal fees, but do not verify funding from a mainland Chinese bank CNY balance to a US personal savings account.",
       "eligibility": "Not verified for the requested route. Do not apply US consumer fees to a China account.",
       "limits": "Unverified. The 2021 C2 fee schedule lists USD 35 withdrawal to a US bank from PayPal balance, but that is not a CNY bank-funding route quote.",
-      "pros": ["Official China C2 pages exist", "Published balance-withdrawal component"],
-      "cons": ["Mainland bank CNY funding unverified", "Stale fee schedule", "No route eligibility/limit verification"],
-      "documents": ["PayPal account eligibility confirmation", "Funding-source confirmation", "Recipient/withdrawal details"],
-      "steps": ["Ask PayPal whether a mainland Chinese bank CNY balance can fund the intended personal USD withdrawal.", "Obtain current China-account terms, fees and limits in writing.", "Do not treat the USD 35 balance-withdrawal fee as an all-in route cost.", "Proceed only if the funding/conversion route is verified and lawful.", "Retain records and reconcile reporting."],
-      "cost_rule": "unverified", "flags": ["other_apps", "fx_quote", "tax_facts"], "sources": ["paypal_cn", "paypal_fees", "safe_rules"]
+      "pros": [
+        "Official China C2 pages exist",
+        "Published balance-withdrawal component"
+      ],
+      "cons": [
+        "Mainland bank CNY funding unverified",
+        "Stale fee schedule",
+        "No route eligibility/limit verification"
+      ],
+      "documents": [
+        "PayPal account eligibility confirmation",
+        "Funding-source confirmation",
+        "Recipient/withdrawal details"
+      ],
+      "steps": [
+        "Ask PayPal whether a mainland Chinese bank CNY balance can fund the intended personal USD withdrawal.",
+        "Obtain current China-account terms, fees and limits in writing.",
+        "Do not treat the USD 35 balance-withdrawal fee as an all-in route cost.",
+        "Proceed only if the funding/conversion route is verified and lawful.",
+        "Retain records and reconcile reporting."
+      ],
+      "cost_rule": "unverified",
+      "flags": [
+        "other_apps",
+        "fx_quote",
+        "tax_facts"
+      ],
+      "sources": [
+        "paypal_cn",
+        "paypal_fees",
+        "safe_rules"
+      ]
     },
     {
-      "id": "wechat_pay", "name": "WeChat Pay cross-border — merchant acquiring, not personal savings remittance", "category": "digital", "status": "not_personal_route",
+      "id": "wechat_pay",
+      "name": "WeChat Pay cross-border — merchant acquiring, not personal savings remittance",
+      "category": "digital",
+      "status": "not_personal_route",
       "summary": "The official WeChat Pay cross-border page describes consumer RMB payments to overseas merchants, converted and settled to merchant accounts.",
       "eligibility": "Merchant-acquiring use case; no verified personal CNY-to-USD savings-transfer product.",
       "limits": "Not applicable as a personal remittance route; merchant settlement rules are not personal transfer limits.",
-      "pros": ["Official merchant cross-border payment channel"],
-      "cons": ["Not a personal savings remittance route", "Cannot be used to relabel merchant settlement as personal transfer"],
-      "documents": ["Merchant agreement if actually using merchant acquiring"],
-      "steps": ["Do not use merchant acquiring to move personal savings.", "If you have a genuine merchant business, use the merchant contract and settlement rules separately.", "For personal savings, return to a verified bank/salary/special-source route."],
-      "cost_rule": "not_applicable", "flags": ["other_apps"], "sources": ["wechat_merchant", "safe_rules"]
+      "pros": [
+        "Official merchant cross-border payment channel"
+      ],
+      "cons": [
+        "Not a personal savings remittance route",
+        "Cannot be used to relabel merchant settlement as personal transfer"
+      ],
+      "documents": [
+        "Merchant agreement if actually using merchant acquiring"
+      ],
+      "steps": [
+        "Do not use merchant acquiring to move personal savings.",
+        "If you have a genuine merchant business, use the merchant contract and settlement rules separately.",
+        "For personal savings, return to a verified bank/salary/special-source route."
+      ],
+      "cost_rule": "not_applicable",
+      "flags": [
+        "other_apps"
+      ],
+      "sources": [
+        "wechat_merchant",
+        "safe_rules"
+      ]
     },
     {
-      "id": "moneygram", "name": "MoneyGram outbound from China — unverified", "category": "digital", "status": "unverified",
-      "summary": "No current official mainland personal CNY-to-USD outbound product terms were verified; the attempted official China send-money URL returned 404.",
-      "eligibility": "Unverified. A failed URL does not prove universal unavailability, but it is not evidence of a usable route.",
-      "limits": "Unverified.",
-      "pros": ["Potential operator channel if current terms are confirmed"],
-      "cons": ["No verified outbound product page", "No verified fees/limits/US delivery"],
-      "documents": ["Current operator/partner-bank terms if available"],
-      "steps": ["Ask MoneyGram or a current partner bank for written mainland outbound CNY-to-USD terms.", "Verify identity, source, destination, limits and fees.", "Do not proceed on legacy assumptions.", "If verified, compare a live quote and retain records."],
-      "cost_rule": "unverified", "flags": ["other_apps", "fx_quote"], "sources": ["moneygram_missing", "safe_rules"]
+      "id": "moneygram",
+      "name": "MoneyGram via BOC — historical schedule, current terms unverified",
+      "category": "digital",
+      "status": "historical_unverified",
+      "summary": "BOC published a MoneyGram outbound fee schedule effective 2018-01-15; it documents historical tiers but not current 2026 availability or fees.",
+      "eligibility": "Current BOC/MoneyGram outbound availability, passport/source review and destination limits must be confirmed.",
+      "limits": "Historical non-Africa USD schedule ends at USD 9,999.99; no basis to extrapolate to the USD 10,000–400,000 grid.",
+      "pros": [
+        "Historical official bank-agent fee evidence"
+      ],
+      "cons": [
+        "Dated 2018 schedule",
+        "Current availability/fees/limits unverified",
+        "Top published tier below requested grid"
+      ],
+      "documents": [
+        "Current BOC/MoneyGram terms if available",
+        "ID and lawful source evidence",
+        "Recipient/payout details"
+      ],
+      "steps": [
+        "Ask BOC whether MoneyGram outbound is currently available for your passport/source/destination.",
+        "Obtain current fee, FX, limit and payout terms in writing.",
+        "Do not extrapolate the 2018 schedule to USD 10,000 or above.",
+        "If verified, compare a live quote and retain records."
+      ],
+      "cost_rule": "moneygram_historical",
+      "flags": [
+        "moneygram_current",
+        "fx_quote",
+        "tax_facts"
+      ],
+      "sources": [
+        "boc_moneygram_2018",
+        "safe_rules",
+        "moneygram_missing"
+      ]
     },
     {
-      "id": "property_sale", "name": "Foreign individual's mainland property-sale proceeds", "category": "special", "status": "conditional",
+      "id": "property_sale",
+      "name": "Foreign individual's mainland property-sale proceeds",
+      "category": "special",
+      "status": "conditional",
       "summary": "Remit sale proceeds with registered sale/title/tax documents through bank review. Migration-route assets owned before migration are a different procedure.",
       "eligibility": "Foreign individual who lawfully purchased/owned mainland commercial housing; actual sale and tax clearance. Huifa [2012] 59 cancelled the obsolete SAFE purchase/remittance approval for this case.",
       "limits": "Documented net sale proceeds and bank review; local tax/relief facts control. No universal USD 50,000 cap established for this route.",
-      "pros": ["Source-matched capital/current treatment as applicable", "Bank review replaces obsolete approval", "Potential local IIT relief if genuinely qualified"],
-      "cons": ["Property/tax documents heavy", "Local taxes and relief vary", "US sale/gain/currency analysis required"],
-      "documents": ["Purchase/remittance application", "Foreign individual ID", "Registered sale contract and title-transfer evidence", "Tax clearance/proof", "Notarized POA and agent ID if delegated", "Original purchase/basis records"],
-      "steps": ["Confirm whether the asset is foreign-individual property-sale proceeds or pre-migration property requiring the migration route.", "Complete the sale and obtain registered contract/title-transfer evidence.", "Obtain the local tax calculation; substantiate basis/expenses and test five-year self-use/sole-family-home relief only if true.", "Pay required taxes and obtain clearance/proof.", "Submit the bank's property-sale checklist and obtain quote/fee allocation.", "Remit to your own US account and retain the full file.", "Report the US sale/gain, currency effects and account changes."],
-      "cost_rule": "property_quote", "flags": ["property_local", "fx_quote", "tax_facts", "professional_costs"], "sources": ["safe_property_amended", "safe_faq", "icbc_fx", "cn_iit", "cn_home_sale", "cn_home_sale_shanghai", "irs_worldwide", "irc_988"]
+      "pros": [
+        "Source-matched capital/current treatment as applicable",
+        "Bank review replaces obsolete approval",
+        "Potential local IIT relief if genuinely qualified"
+      ],
+      "cons": [
+        "Property/tax documents heavy",
+        "Local taxes and relief vary",
+        "US sale/gain/currency analysis required"
+      ],
+      "documents": [
+        "Purchase/remittance application",
+        "Foreign individual ID",
+        "Registered sale contract and title-transfer evidence",
+        "Tax clearance/proof",
+        "Notarized POA and agent ID if delegated",
+        "Original purchase/basis records"
+      ],
+      "steps": [
+        "Confirm whether the asset is foreign-individual property-sale proceeds or pre-migration property requiring the migration route.",
+        "Complete the sale and obtain registered contract/title-transfer evidence.",
+        "Obtain the local tax calculation; substantiate basis/expenses and test five-year self-use/sole-family-home relief only if true.",
+        "Pay required taxes and obtain clearance/proof.",
+        "Submit the bank's property-sale checklist and obtain quote/fee allocation.",
+        "Remit to your own US account and retain the full file.",
+        "Report the US sale/gain, currency effects and account changes."
+      ],
+      "cost_rule": "property_quote",
+      "flags": [
+        "property_local",
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_property_amended",
+        "safe_2025_guide",
+        "safe_faq",
+        "icbc_fx",
+        "cn_iit",
+        "cn_home_sale",
+        "cn_home_sale_shanghai",
+        "irs_worldwide",
+        "irc_988"
+      ]
     },
     {
-      "id": "migration_transfer", "name": "Migration property transfer — pre-status assets", "category": "special", "status": "conditional",
+      "id": "migration_transfer",
+      "name": "Migration property transfer — pre-status assets",
+      "category": "special",
+      "status": "conditional",
       "summary": "Transfer lawful mainland assets owned before obtaining qualifying migration status through the competent former-hukou SAFE branch and bank.",
       "eligibility": "Qualifying migration status and lawful undisputed assets owned before that status; not a general route for every US citizen.",
       "limits": "Approved source/title/tax amount; competent-branch implementation controls. Historical staging text must be confirmed locally; administrative permission has no fee in the cited guide.",
-      "pros": ["Designed for pre-migration assets", "No administrative permission fee in cited guide", "Direct own-overseas-account remittance"],
-      "cons": ["Status/ownership/tax evidence heavy", "Branch approval and possible staging", "Bank/professional costs separate"],
-      "documents": ["Application form", "ID and migration/settlement status evidence", "Former-hukou evidence", "Asset source/title documents", "Tax clearance/proof", "委托代理协议 and agent ID if delegated"],
-      "steps": ["Identify the competent former-hukou SAFE branch and obtain its current checklist.", "Prove qualifying migration status and that assets were owned before that status.", "Collect source/title and tax documents for each asset.", "Submit the application; the cited guide gives a 20-working-day statutory decision period after acceptance, with possible extension.", "After approval, confirm any staging and complete bank purchase/remittance to your own overseas account.", "Retain approval/receipts and reconcile US tax/reporting."],
-      "cost_rule": "migration_safe", "flags": ["migration_staging", "fx_quote", "tax_facts", "professional_costs"], "sources": ["safe_migration", "safe_property_venue_2026", "pboc_property", "safe_rules", "irs_worldwide"]
+      "pros": [
+        "Designed for pre-migration assets",
+        "No administrative permission fee in cited guide",
+        "Direct own-overseas-account remittance"
+      ],
+      "cons": [
+        "Status/ownership/tax evidence heavy",
+        "Branch approval and possible staging",
+        "Bank/professional costs separate"
+      ],
+      "documents": [
+        "Application form",
+        "ID and migration/settlement status evidence",
+        "Former-hukou evidence",
+        "Asset source/title documents",
+        "Tax clearance/proof",
+        "委托代理协议 and agent ID if delegated"
+      ],
+      "steps": [
+        "Identify the competent former-hukou SAFE branch and obtain its current checklist.",
+        "Prove qualifying migration status and that assets were owned before that status.",
+        "Collect source/title and tax documents for each asset.",
+        "Submit the application; the cited guide gives a 20-working-day statutory decision period after acceptance, with possible extension.",
+        "After approval, confirm any staging and complete bank purchase/remittance to your own overseas account.",
+        "Retain approval/receipts and reconcile US tax/reporting."
+      ],
+      "cost_rule": "migration_safe",
+      "flags": [
+        "migration_staging",
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_migration",
+        "safe_property_venue_2026",
+        "pboc_property",
+        "safe_rules",
+        "irs_worldwide"
+      ]
     },
     {
-      "id": "inheritance_transfer", "name": "Inheritance property transfer — foreign citizen inheriting mainland estate", "category": "special", "status": "conditional",
+      "id": "inheritance_transfer",
+      "name": "Inheritance property transfer — foreign citizen inheriting mainland estate",
+      "category": "special",
+      "status": "conditional",
       "summary": "Transfer inherited mainland property through the decedent's former-hukou SAFE branch with inheritance, title, identity and tax evidence.",
       "eligibility": "Foreign citizen lawfully inheriting mainland estate; competent decedent former-hukou branch.",
       "limits": "Approved inherited amount; multiple decedents may be combined at one relevant branch under the 2026 Q&A. Administrative permission has no fee in the cited guide.",
-      "pros": ["Source-matched inheritance route", "No administrative permission fee in cited guide", "Delegation possible with proper documents"],
-      "cons": ["Inheritance/title/tax evidence heavy", "Branch approval", "US gift/estate/trust reporting may differ"],
-      "documents": ["Application form", "Applicant ID/settlement evidence", "Decedent former-hukou evidence", "Inheritance legal instrument/notarial document", "Asset title/source evidence", "Tax documents", "委托代理协议 and agent ID if delegated"],
-      "steps": ["Identify the decedent's former-hukou SAFE branch and current checklist.", "Obtain inheritance legal instruments and title/source evidence.", "Resolve tax documents and any estate administration requirements.", "Submit the application and await approval.", "Complete bank purchase/remittance to your own overseas account.", "Retain records and analyze US Form 3520/estate/trust reporting and any currency effects."],
-      "cost_rule": "inheritance_safe", "flags": ["fx_quote", "tax_facts", "professional_costs"], "sources": ["safe_inheritance", "safe_property_venue_2026", "pboc_property", "safe_rules", "irs_3520", "irs_gifts"]
+      "pros": [
+        "Source-matched inheritance route",
+        "No administrative permission fee in cited guide",
+        "Delegation possible with proper documents"
+      ],
+      "cons": [
+        "Inheritance/title/tax evidence heavy",
+        "Branch approval",
+        "US gift/estate/trust reporting may differ"
+      ],
+      "documents": [
+        "Application form",
+        "Applicant ID/settlement evidence",
+        "Decedent former-hukou evidence",
+        "Inheritance legal instrument/notarial document",
+        "Asset title/source evidence",
+        "Tax documents",
+        "委托代理协议 and agent ID if delegated"
+      ],
+      "steps": [
+        "Identify the decedent's former-hukou SAFE branch and current checklist.",
+        "Obtain inheritance legal instruments and title/source evidence.",
+        "Resolve tax documents and any estate administration requirements.",
+        "Submit the application and await approval.",
+        "Complete bank purchase/remittance to your own overseas account.",
+        "Retain records and analyze US Form 3520/estate/trust reporting and any currency effects."
+      ],
+      "cost_rule": "inheritance_safe",
+      "flags": [
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_inheritance",
+        "safe_property_venue_2026",
+        "pboc_property",
+        "safe_rules",
+        "irs_3520",
+        "irs_gifts"
+      ]
     },
     {
-      "id": "fie_dividend", "name": "Foreign-invested enterprise dividend to a foreign individual", "category": "special", "status": "conditional",
+      "id": "fie_dividend",
+      "name": "Foreign-invested enterprise dividend to a foreign individual",
+      "category": "special",
+      "status": "conditional",
       "summary": "Distribute genuine FIE profits to a foreign individual with corporate approvals and withholding. From 2026-09-01 the former foreign-individual exemption is repealed and 20% PRC IIT applies.",
       "eligibility": "Foreign individual shareholder of an FIE with distributable profits and proper corporate/tax/foreign-exchange documents.",
       "limits": "Distributable profit and bank/registration review; treaty entitlement must be separately established. No transitional grandfathering is assumed.",
-      "pros": ["Matches genuine equity income", "Current 2026 rule verified", "Potential treaty analysis if entitled"],
-      "cons": ["20% PRC withholding under new rule", "Corporate documents and tax filing", "US dividend/FTC analysis required"],
-      "documents": ["Corporate profit-distribution resolution", "Financial/tax records", "Withholding evidence", "Foreign-exchange/registration documents as required", "Shareholder ID and overseas account"],
-      "steps": ["Confirm distributable profits and shareholder eligibility.", "Obtain competent tax advice on announcement 2026 No. 27 and any treaty entitlement; do not assume grandfathering.", "Complete corporate approval and withholding/filing.", "Submit bank documents for dividend purchase/remittance.", "Obtain quote/fees and remit to the shareholder's account.", "Report US dividend income and evaluate FTC; retain withholding evidence."],
-      "cost_rule": "dividend_withholding", "flags": ["dividend_transition", "fx_quote", "tax_facts", "professional_costs"], "sources": ["cn_dividends_2026", "cn_dividends_old_faq", "safe_rules", "irs_treaty", "irs_ftc", "irs_worldwide"]
+      "pros": [
+        "Matches genuine equity income",
+        "Current 2026 rule verified",
+        "Potential treaty analysis if entitled"
+      ],
+      "cons": [
+        "20% PRC withholding under new rule",
+        "Corporate documents and tax filing",
+        "US dividend/FTC analysis required"
+      ],
+      "documents": [
+        "Corporate profit-distribution resolution",
+        "Financial/tax records",
+        "Withholding evidence",
+        "Foreign-exchange/registration documents as required",
+        "Shareholder ID and overseas account"
+      ],
+      "steps": [
+        "Confirm distributable profits and shareholder eligibility.",
+        "Obtain competent tax advice on announcement 2026 No. 27 and any treaty entitlement; do not assume grandfathering.",
+        "Complete corporate approval and withholding/filing.",
+        "Submit bank documents for dividend purchase/remittance.",
+        "Obtain quote/fees and remit to the shareholder's account.",
+        "Report US dividend income and evaluate FTC; retain withholding evidence."
+      ],
+      "cost_rule": "dividend_withholding",
+      "flags": [
+        "dividend_transition",
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "cn_dividends_2026",
+        "cn_dividends_old_faq",
+        "safe_rules",
+        "irs_treaty",
+        "irs_ftc",
+        "irs_worldwide"
+      ]
     },
     {
-      "id": "genuine_trade", "name": "Genuine individual trade / cross-border e-commerce settlement", "category": "business", "status": "conditional",
+      "id": "genuine_trade",
+      "name": "Genuine individual trade / cross-border e-commerce settlement",
+      "category": "business",
+      "status": "conditional",
       "summary": "Use a personal foreign-exchange settlement account or compliant e-commerce/market-procurement settlement for real trade, with contracts and transport/transaction evidence.",
       "eligibility": "Registered individual trade operator/individual business or qualifying cross-border e-commerce/market-procurement activity; not personal savings relabeled as trade.",
       "limits": "Actual transaction amount and institutional-style account rules; documented e-commerce/market-procurement settlement may not use the personal facilitation quota.",
-      "pros": ["Lawful business-source route", "Documented trade can avoid personal quota treatment", "Matches real commercial activity"],
-      "cons": ["Registration and business records required", "Business tax and possibly US entity reporting", "Fake invoices are illegal"],
-      "documents": ["Business/registration evidence", "Contracts", "Logistics/transport documents or transaction electronic information", "Tax records", "Settlement account details"],
-      "steps": ["Confirm the activity is genuine and properly registered/qualified.", "Open/use the appropriate settlement account under institutional-style rules.", "Collect contracts and logistics/transaction evidence matching the amount.", "Resolve China business tax and US worldwide business reporting.", "Bank reviews authenticity and processes settlement/remittance.", "Retain records; never use fake invoices or over/under-invoicing."],
-      "cost_rule": "trade_quote", "flags": ["fx_quote", "tax_facts", "professional_costs"], "sources": ["safe_rules", "safe_faq", "safe_quota_press", "cn_iit", "irs_worldwide", "safe_fx_reg"]
+      "pros": [
+        "Lawful business-source route",
+        "Documented trade can avoid personal quota treatment",
+        "Matches real commercial activity"
+      ],
+      "cons": [
+        "Registration and business records required",
+        "Business tax and possibly US entity reporting",
+        "Fake invoices are illegal"
+      ],
+      "documents": [
+        "Business/registration evidence",
+        "Contracts",
+        "Logistics/transport documents or transaction electronic information",
+        "Tax records",
+        "Settlement account details"
+      ],
+      "steps": [
+        "Confirm the activity is genuine and properly registered/qualified.",
+        "Open/use the appropriate settlement account under institutional-style rules.",
+        "Collect contracts and logistics/transaction evidence matching the amount.",
+        "Resolve China business tax and US worldwide business reporting.",
+        "Bank reviews authenticity and processes settlement/remittance.",
+        "Retain records; never use fake invoices or over/under-invoicing."
+      ],
+      "cost_rule": "trade_quote",
+      "flags": [
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_rules",
+        "safe_faq",
+        "safe_quota_press",
+        "cn_iit",
+        "irs_worldwide",
+        "safe_fx_reg"
+      ]
     },
     {
-      "id": "rmb_cross_border", "name": "Lawful current-account RMB remittance, then offshore conversion", "category": "business", "status": "conditional",
+      "id": "rmb_cross_border",
+      "name": "Lawful current-account RMB remittance, then offshore conversion",
+      "category": "business",
+      "status": "conditional",
       "summary": "Remit RMB for a genuine current-account purpose under bank due diligence, then convert offshore if the receiving bank accepts RMB. This is not blanket capital-account permission.",
       "eligibility": "Individual with lawful current-account RMB income/purpose accepted by the domestic bank; receiving bank must accept RMB and offer conversion.",
       "limits": "Bank KYC/KYB/due diligence and actual current-account purpose; no verified personal capital-account outbound quota. Offshore conversion is separate.",
-      "pros": ["Avoids premature onshore conversion", "PBOC current-account policy verified", "May allow offshore rate comparison"],
-      "cons": ["Receiving-bank acceptance unverified", "Two-step FX/routing costs", "Not a quota-evasion or capital-account workaround"],
-      "documents": ["ID", "Current-account source/purpose evidence", "Receiving bank RMB acceptance/conversion terms"],
-      "steps": ["Confirm the domestic bank will handle the actual current-account RMB transaction.", "Confirm the overseas bank accepts RMB from you and the conversion/withdrawal rules.", "Compare the combined RMB remittance plus offshore conversion cost against direct CNY-to-USD quotes.", "Submit truthful documents and remit RMB.", "Convert offshore only under the receiving bank's lawful terms.", "Retain both legs and reconcile US tax/currency reporting."],
-      "cost_rule": "rmb_quote", "flags": ["fx_quote", "tax_facts", "professional_costs"], "sources": ["pboc_rmb", "safe_rules", "irs_worldwide", "irc_988"]
+      "pros": [
+        "Avoids premature onshore conversion",
+        "PBOC current-account policy verified",
+        "May allow offshore rate comparison"
+      ],
+      "cons": [
+        "Receiving-bank acceptance unverified",
+        "Two-step FX/routing costs",
+        "Not a quota-evasion or capital-account workaround"
+      ],
+      "documents": [
+        "ID",
+        "Current-account source/purpose evidence",
+        "Receiving bank RMB acceptance/conversion terms"
+      ],
+      "steps": [
+        "Confirm the domestic bank will handle the actual current-account RMB transaction.",
+        "Confirm the overseas bank accepts RMB from you and the conversion/withdrawal rules.",
+        "Compare the combined RMB remittance plus offshore conversion cost against direct CNY-to-USD quotes.",
+        "Submit truthful documents and remit RMB.",
+        "Convert offshore only under the receiving bank's lawful terms.",
+        "Retain both legs and reconcile US tax/currency reporting."
+      ],
+      "cost_rule": "rmb_quote",
+      "flags": [
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "pboc_rmb",
+        "safe_rules",
+        "irs_worldwide",
+        "irc_988"
+      ]
     },
     {
-      "id": "unionpay_atm", "name": "Overseas ATM withdrawal with a mainland card", "category": "cash_cards", "status": "verified_route",
+      "id": "unionpay_atm",
+      "name": "Overseas ATM withdrawal with a mainland card",
+      "category": "cash_cards",
+      "status": "verified_route",
       "summary": "Withdraw local cash abroad using a mainland card, subject to SAFE's per-person annual and per-card daily caps. Unsuitable for large balances.",
       "eligibility": "Cardholder using own mainland card abroad; no borrowing/lending cards. BOC international-debit tariff is the published example.",
       "limits": "CNY 100,000 equivalent per person per calendar year across all domestic cards; CNY 10,000 equivalent per card per day. Exceeding annual cap suspends overseas withdrawals for current and following year.",
-      "pros": ["Small cash access while traveling", "Published BOC international-debit fee formula", "No SWIFT paperwork for small withdrawals"],
-      "cons": ["Annual cap far below large targets", "ATM surcharge and FX unknown", "Cash handling/declaration risk"],
-      "documents": ["Own card and PIN", "Travel/identity documents", "Cash declaration records if crossing borders with thresholds"],
-      "steps": ["Confirm card network, overseas withdrawal enablement and remaining annual/daily cap.", "Check the BOC tariff effective on the withdrawal date and the ATM surcharge screen.", "Withdraw only within CNY 10,000/card/day and CNY 100,000/person/year.", "Keep receipts and track all cards under your name.", "If carrying cash across the US border, aggregate family/group amounts and file FinCEN 105 when >USD 10,000.", "Do not use repeated withdrawals to evade caps."],
-      "cost_rule": "atm_boc", "flags": ["boc_atm_future", "fx_quote", "cash_guide"], "sources": ["safe_cards", "safe_faq", "boc_tariff", "boc_atm_change", "cbp_105"]
+      "pros": [
+        "Small cash access while traveling",
+        "Published BOC international-debit fee formula",
+        "No SWIFT paperwork for small withdrawals"
+      ],
+      "cons": [
+        "Annual cap far below large targets",
+        "ATM surcharge and FX unknown",
+        "Cash handling/declaration risk"
+      ],
+      "documents": [
+        "Own card and PIN",
+        "Travel/identity documents",
+        "Cash declaration records if crossing borders with thresholds"
+      ],
+      "steps": [
+        "Confirm card network, overseas withdrawal enablement and remaining annual/daily cap.",
+        "Check the BOC tariff effective on the withdrawal date and the ATM surcharge screen.",
+        "Withdraw only within CNY 10,000/card/day and CNY 100,000/person/year.",
+        "Keep receipts and track all cards under your name.",
+        "If carrying cash across the US border, aggregate family/group amounts and file FinCEN 105 when >USD 10,000.",
+        "Do not use repeated withdrawals to evade caps."
+      ],
+      "cost_rule": "atm_boc",
+      "flags": [
+        "boc_atm_future",
+        "fx_quote",
+        "cash_guide"
+      ],
+      "sources": [
+        "safe_cards",
+        "safe_faq",
+        "boc_tariff",
+        "boc_atm_change",
+        "cbp_105"
+      ]
     },
     {
-      "id": "cash_carry", "name": "Purchase FX cash and carry it across the border", "category": "cash_cards", "status": "conditional",
+      "id": "cash_carry",
+      "name": "Purchase FX cash and carry it across the border",
+      "category": "cash_cards",
+      "status": "conditional",
       "summary": "Lawful only within China export/permit rules and US declaration rules. Not a practical large-balance route.",
       "eligibility": "Lawful FX purchase and export permit where required; China customs declaration and US FinCEN 105 when triggered.",
       "limits": "China RMB cash reference CNY 20,000; FX cash USD 5,000 declaration reference; USD 5,000–10,000 bank permit band; >USD 10,000 generally requires SAFE permit and is not ordinary. US >USD 10,000 aggregate family/group declaration.",
-      "pros": ["Physical immediate access for small amounts", "BOC permit fee waived through 2026-12-31 in current tariff"],
-      "cons": ["Permit/declaration complexity", "Loss/theft and deposit risk", "FX cash spread unknown", "Not suitable for USD 10,000–400,000 targets"],
-      "documents": ["ID", "Lawful purchase/source evidence", "Bank/SAFE carrying permit if required", "Endorsed entry declaration for re-export", "FinCEN 105 if US threshold exceeded"],
-      "steps": ["Confirm the actual trip, amount and current local customs/SAFE permit rules.", "Purchase FX cash lawfully and reserve cash with the bank.", "Obtain a bank carrying permit for the applicable band; >USD 10,000 requires SAFE processing and is exceptional.", "Declare at China customs as required and retain endorsed documents.", "At the US border, aggregate family/group monetary instruments and file FinCEN 105 if >USD 10,000.", "Deposit cash with the US bank and retain source/declaration records; reconcile reporting."],
-      "cost_rule": "cash_permit", "flags": ["cash_guide", "fx_quote", "professional_costs"], "sources": ["china_customs", "safe_faq", "safe_rules", "boc_tariff", "cbp_105"]
+      "pros": [
+        "Physical immediate access for small amounts",
+        "BOC permit fee waived through 2026-12-31 in current tariff"
+      ],
+      "cons": [
+        "Permit/declaration complexity",
+        "Loss/theft and deposit risk",
+        "FX cash spread unknown",
+        "Not suitable for USD 10,000–400,000 targets"
+      ],
+      "documents": [
+        "ID",
+        "Lawful purchase/source evidence",
+        "Bank/SAFE carrying permit if required",
+        "Endorsed entry declaration for re-export",
+        "FinCEN 105 if US threshold exceeded"
+      ],
+      "steps": [
+        "Confirm the actual trip, amount and current local customs/SAFE permit rules.",
+        "Purchase FX cash lawfully and reserve cash with the bank.",
+        "Obtain a bank carrying permit for the applicable band; >USD 10,000 requires SAFE processing and is exceptional.",
+        "Declare at China customs as required and retain endorsed documents.",
+        "At the US border, aggregate family/group monetary instruments and file FinCEN 105 if >USD 10,000.",
+        "Deposit cash with the US bank and retain source/declaration records; reconcile reporting."
+      ],
+      "cost_rule": "cash_permit",
+      "flags": [
+        "cash_guide",
+        "fx_quote",
+        "professional_costs"
+      ],
+      "sources": [
+        "china_customs",
+        "safe_faq",
+        "safe_rules",
+        "boc_tariff",
+        "cbp_105"
+      ]
     },
     {
-      "id": "hk_witness", "name": "Overseas/HK account opening witness service — supporting only", "category": "investments", "status": "supporting_only",
+      "id": "hk_witness",
+      "name": "Overseas/HK account opening witness service — supporting only",
+      "category": "investments",
+      "status": "supporting_only",
       "summary": "BOC publishes a pre-departure overseas account-opening witness service. Opening an account does not itself authorize CNY conversion or outbound remittance.",
       "eligibility": "Bank customer meeting the overseas institution's account-opening/KYC rules.",
       "limits": "Account opening only; transfer still needs a lawful source route. BOC witness fee is max CNY 400/account, charged to the委托方 in the tariff.",
-      "pros": ["May prepare a receiving account", "Published BOC witness fee cap"],
-      "cons": ["Not a transfer route", "Overseas bank fees/KYC separate", "Cannot bypass source controls"],
-      "documents": ["ID", "Overseas institution KYC documents", "Account-opening application"],
-      "steps": ["Ask BOC and the overseas institution whether witness opening is available for your destination.", "Complete KYC and pay the published witness fee if applicable.", "Activate the account under the overseas bank's rules.", "Use a separate verified lawful CNY source route to fund it.", "Report the new foreign account for FBAR/Form 8938 if triggered."],
-      "cost_rule": "hk_witness", "flags": ["professional_costs", "fx_quote"], "sources": ["boc_tariff", "safe_rules", "fincen_fbar", "irs_8938"]
+      "pros": [
+        "May prepare a receiving account",
+        "Published BOC witness fee cap"
+      ],
+      "cons": [
+        "Not a transfer route",
+        "Overseas bank fees/KYC separate",
+        "Cannot bypass source controls"
+      ],
+      "documents": [
+        "ID",
+        "Overseas institution KYC documents",
+        "Account-opening application"
+      ],
+      "steps": [
+        "Ask BOC and the overseas institution whether witness opening is available for your destination.",
+        "Complete KYC and pay the published witness fee if applicable.",
+        "Activate the account under the overseas bank's rules.",
+        "Use a separate verified lawful CNY source route to fund it.",
+        "Report the new foreign account for FBAR/Form 8938 if triggered."
+      ],
+      "cost_rule": "hk_witness",
+      "flags": [
+        "professional_costs",
+        "fx_quote"
+      ],
+      "sources": [
+        "boc_tariff",
+        "safe_rules",
+        "fincen_fbar",
+        "irs_8938"
+      ]
     },
     {
-      "id": "wmc_southbound", "name": "Wealth Management Connect Southbound — closed-loop investment", "category": "investments", "status": "closed_loop",
+      "id": "wmc_southbound",
+      "name": "Wealth Management Connect Southbound — closed-loop investment",
+      "category": "investments",
+      "status": "closed_loop",
       "summary": "Eligible GBA mainland investors can invest through paired mainland/HK accounts in RMB; principal/proceeds return to the paired mainland account, not freely to a US personal account.",
       "eligibility": "Eligible mainland investor in the Greater Bay Area scheme; paired dedicated accounts and quota management.",
       "limits": "Closed-loop RMB via CIPS; offshore conversion only inside the dedicated investment account; return route is the paired mainland remittance account.",
-      "pros": ["Regulated cross-boundary investment channel", "Offshore product/currency options inside the scheme"],
-      "cons": ["Not a free USD disposal route", "Eligibility and quota restrictions", "Investment risk and scheme fees unverified"],
-      "documents": ["Scheme eligibility evidence", "Paired dedicated accounts", "Bank investment documents"],
-      "steps": ["Confirm GBA eligibility and scheme quota with participating banks.", "Open/designate the paired dedicated remittance and investment accounts.", "Remit RMB through the scheme and invest only in eligible products.", "Redeem and return funds through the paired mainland account.", "Do not treat the HK investment account as a general US-remittance account."],
-      "cost_rule": "closed_loop", "flags": ["professional_costs"], "sources": ["hkma_wmc", "safe_rules", "fincen_fbar"]
+      "pros": [
+        "Regulated cross-boundary investment channel",
+        "Offshore product/currency options inside the scheme"
+      ],
+      "cons": [
+        "Not a free USD disposal route",
+        "Eligibility and quota restrictions",
+        "Investment risk and scheme fees unverified"
+      ],
+      "documents": [
+        "Scheme eligibility evidence",
+        "Paired dedicated accounts",
+        "Bank investment documents"
+      ],
+      "steps": [
+        "Confirm GBA eligibility and scheme quota with participating banks.",
+        "Open/designate the paired dedicated remittance and investment accounts.",
+        "Remit RMB through the scheme and invest only in eligible products.",
+        "Redeem and return funds through the paired mainland account.",
+        "Do not treat the HK investment account as a general US-remittance account."
+      ],
+      "cost_rule": "closed_loop",
+      "flags": [
+        "professional_costs"
+      ],
+      "sources": [
+        "hkma_wmc",
+        "safe_rules",
+        "fincen_fbar"
+      ]
     },
     {
-      "id": "qdii", "name": "QDII product — institutional investment channel, not personal remittance", "category": "investments", "status": "closed_loop",
+      "id": "qdii",
+      "name": "QDII product — institutional investment channel, not personal remittance",
+      "category": "investments",
+      "status": "closed_loop",
       "summary": "Domestic individuals may invest through qualified domestic institutional investors, but QDII is an investment product channel, not a verified route to dispose of USD freely in a US personal account.",
       "eligibility": "Investor in an approved QDII product; institution holds quota and custody arrangements.",
       "limits": "Product-specific subscription/redemption and return-account rules; no verified free US-account disposal. Do not use as a remittance workaround.",
-      "pros": ["Regulated overseas investment access"],
-      "cons": ["Investment risk", "Product fees/return rules unverified", "Not a personal remittance route"],
-      "documents": ["Product prospectus", "Institutional custody/return-account terms", "Investor suitability documents"],
-      "steps": ["Read the product prospectus and redemption/return-account rules.", "Confirm whether proceeds return to a domestic account and in which currency.", "Do not subscribe for the purpose of bypassing remittance controls.", "Use a verified source-matched remittance route for personal USD needs."],
-      "cost_rule": "closed_loop", "flags": ["professional_costs"], "sources": ["safe_rules", "safe_faq", "fincen_fbar"]
+      "pros": [
+        "Regulated overseas investment access"
+      ],
+      "cons": [
+        "Investment risk",
+        "Product fees/return rules unverified",
+        "Not a personal remittance route"
+      ],
+      "documents": [
+        "Product prospectus",
+        "Institutional custody/return-account terms",
+        "Investor suitability documents"
+      ],
+      "steps": [
+        "Read the product prospectus and redemption/return-account rules.",
+        "Confirm whether proceeds return to a domestic account and in which currency.",
+        "Do not subscribe for the purpose of bypassing remittance controls.",
+        "Use a verified source-matched remittance route for personal USD needs."
+      ],
+      "cost_rule": "closed_loop",
+      "flags": [
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_rules",
+        "safe_faq",
+        "fincen_fbar"
+      ]
     },
     {
-      "id": "underground_changer", "name": "Underground money changer / matched RMB-USD swap", "category": "prohibited", "status": "prohibited",
+      "id": "underground_changer",
+      "name": "Underground money changer / matched RMB-USD swap",
+      "category": "prohibited",
+      "status": "prohibited",
       "summary": "Excluded. Paying RMB domestically for USD abroad through an unauthorized matcher is not a verified lawful route and creates enforcement/fraud risk.",
       "eligibility": "None for the proposed workaround.",
       "limits": "Not applicable; do not use.",
-      "pros": ["None that outweigh the risk"],
-      "cons": ["Illegal FX trading/evasion exposure", "Confiscation/fines/criminal risk", "Counterparty fraud and no recourse"],
+      "pros": [
+        "None that outweigh the risk"
+      ],
+      "cons": [
+        "Illegal FX trading/evasion exposure",
+        "Confiscation/fines/criminal risk",
+        "Counterparty fraud and no recourse"
+      ],
       "documents": [],
-      "steps": ["Do not use underground matchers.", "Use a source-matched bank/operator/special route.", "If already involved, preserve records and obtain legal advice."],
-      "cost_rule": "prohibited", "flags": [], "sources": ["safe_fx_reg", "safe_rules", "safe_quota_press", "pboc_crypto_2026"]
+      "steps": [
+        "Do not use underground matchers.",
+        "Use a source-matched bank/operator/special route.",
+        "If already involved, preserve records and obtain legal advice."
+      ],
+      "cost_rule": "prohibited",
+      "flags": [],
+      "sources": [
+        "safe_fx_reg",
+        "safe_rules",
+        "safe_quota_press",
+        "pboc_crypto_2026"
+      ]
     },
     {
-      "id": "crypto_p2p", "name": "CNY-to-crypto-to-USD P2P workaround", "category": "prohibited", "status": "prohibited",
+      "id": "crypto_p2p",
+      "name": "CNY-to-crypto-to-USD P2P workaround",
+      "category": "prohibited",
+      "status": "prohibited",
       "summary": "Excluded. Current PBOC 2026 No. 42 treats mainland virtual-currency-related business as illegal financial activity and restricts overseas services to mainland subjects.",
       "eligibility": "None for the proposed exchange/business workaround.",
       "limits": "Not applicable; do not use.",
-      "pros": ["None that outweigh the risk"],
-      "cons": ["Illegal financial activity exposure", "Exchange/counterparty fraud", "US tax complexity does not make it lawful"],
+      "pros": [
+        "None that outweigh the risk"
+      ],
+      "cons": [
+        "Illegal financial activity exposure",
+        "Exchange/counterparty fraud",
+        "US tax complexity does not make it lawful"
+      ],
       "documents": [],
-      "steps": ["Do not use crypto P2P to move mainland CNY savings.", "Use a verified lawful source route.", "If you hold crypto separately, analyze US tax/reporting on its own facts; do not assume passive ownership rules authorize exchange business."],
-      "cost_rule": "prohibited", "flags": [], "sources": ["pboc_crypto_2026", "safe_fx_reg", "irs_worldwide"]
+      "steps": [
+        "Do not use crypto P2P to move mainland CNY savings.",
+        "Use a verified lawful source route.",
+        "If you hold crypto separately, analyze US tax/reporting on its own facts; do not assume passive ownership rules authorize exchange business."
+      ],
+      "cost_rule": "prohibited",
+      "flags": [],
+      "sources": [
+        "pboc_crypto_2026",
+        "safe_fx_reg",
+        "irs_worldwide"
+      ]
     },
     {
-      "id": "fake_trade", "name": "Fake or distorted trade invoices", "category": "prohibited", "status": "prohibited",
+      "id": "fake_trade",
+      "name": "Fake or distorted trade invoices",
+      "category": "prohibited",
+      "status": "prohibited",
       "summary": "Excluded. Over/under-invoicing or fabricated contracts to move value is false-document FX activity, not genuine trade.",
       "eligibility": "None.",
       "limits": "Not applicable; do not use.",
-      "pros": ["None legitimate"],
-      "cons": ["False-document penalties", "Account freezing/criminal risk", "US false-record exposure"],
+      "pros": [
+        "None legitimate"
+      ],
+      "cons": [
+        "False-document penalties",
+        "Account freezing/criminal risk",
+        "US false-record exposure"
+      ],
       "documents": [],
-      "steps": ["Do not fabricate or distort invoices.", "Use genuine trade only with real contracts/logistics and tax records.", "If documents are inaccurate, correct them through the bank/legal process."],
-      "cost_rule": "prohibited", "flags": [], "sources": ["safe_fx_reg", "safe_rules", "safe_faq"]
+      "steps": [
+        "Do not fabricate or distort invoices.",
+        "Use genuine trade only with real contracts/logistics and tax records.",
+        "If documents are inaccurate, correct them through the bank/legal process."
+      ],
+      "cost_rule": "prohibited",
+      "flags": [],
+      "sources": [
+        "safe_fx_reg",
+        "safe_rules",
+        "safe_faq"
+      ]
     },
     {
-      "id": "quota_borrowing", "name": "Borrowing family/friend quotas or splitting to evade controls", "category": "prohibited", "status": "prohibited",
+      "id": "quota_borrowing",
+      "name": "Borrowing family/friend quotas or splitting to evade controls",
+      "category": "prohibited",
+      "status": "prohibited",
       "summary": "Excluded. Using another person's quota or splitting transactions to evade authenticity/quota controls is not a lawful planning technique.",
       "eligibility": "None for evasion. Genuine family support must be evaluated on its own facts.",
       "limits": "Not applicable; do not use.",
-      "pros": ["None legitimate"],
-      "cons": ["Watchlist/enforcement exposure", "Misdeclaration risk", "Family accounts may be implicated"],
+      "pros": [
+        "None legitimate"
+      ],
+      "cons": [
+        "Watchlist/enforcement exposure",
+        "Misdeclaration risk",
+        "Family accounts may be implicated"
+      ],
       "documents": [],
-      "steps": ["Do not borrow quotas or split to evade controls.", "Use documented above-quota current-account or special-source routes.", "For genuine family support, obtain bank advice on the actual donor/recipient facts and US gift reporting."],
-      "cost_rule": "prohibited", "flags": [], "sources": ["safe_rules", "safe_quota_press", "safe_faq", "safe_fx_reg", "irs_3520"]
+      "steps": [
+        "Do not borrow quotas or split to evade controls.",
+        "Use documented above-quota current-account or special-source routes.",
+        "For genuine family support, obtain bank advice on the actual donor/recipient facts and US gift reporting."
+      ],
+      "cost_rule": "prohibited",
+      "flags": [],
+      "sources": [
+        "safe_rules",
+        "safe_quota_press",
+        "safe_faq",
+        "safe_fx_reg",
+        "irs_3520"
+      ]
+    },
+    {
+      "id": "other_licensed_bank",
+      "name": "Another licensed Chinese bank — USD wire",
+      "category": "bank",
+      "status": "conditional",
+      "summary": "SAFE foreign-individual rules are not BOC-specific; another licensed bank may offer a better execution rate or document process, but no institution-wide current tariff was verified.",
+      "eligibility": "Same lawful source/conversion rules; bank-specific KYC, documents and channel availability.",
+      "limits": "Documented source amount and bank review; do not reuse BOC fees as another bank’s fees.",
+      "pros": [
+        "Potential competitive FX/service",
+        "Same licensed-bank evidence framework"
+      ],
+      "cons": [
+        "Institution-specific tariff unverified",
+        "Channel/document practice varies"
+      ],
+      "documents": [
+        "ID and bank classification",
+        "Source/tax evidence",
+        "US recipient details",
+        "Bank’s current personal tariff/quote"
+      ],
+      "steps": [
+        "Ask the bank to classify identity/source and pre-check documents.",
+        "Request its current personal cross-border USD tariff, execution rate, correspondent terms and receiving instructions.",
+        "Compare total CNY debit and net USD against BOC/Wise/Sky quotes.",
+        "Execute only after truthful review and preserve the evidence chain."
+      ],
+      "cost_rule": "other_bank_quote",
+      "flags": [
+        "other_bank_tariff",
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_rules",
+        "safe_online_channels",
+        "icbc_fx"
+      ]
+    },
+    {
+      "id": "property_purchase_refund",
+      "name": "Failed foreign-buyer property purchase — RMB refund reconversion",
+      "category": "special",
+      "status": "conditional",
+      "summary": "SAFE 2025 guide covers returning unused RMB purchase funds when a foreign individual’s property transaction fails; refund follows the original path or eligible same-name FX account.",
+      "eligibility": "Foreign individual whose mainland property purchase failed/cancelled and whose RMB funds originated from a documented FX conversion/payment.",
+      "limits": "Refundable amount only; reasonable interest during domestic retention may be included; cannot cycle unrelated CNY.",
+      "pros": [
+        "Specific failed-purchase mechanism",
+        "Original-path and interest treatment addressed"
+      ],
+      "cons": [
+        "Original payment/conversion evidence required",
+        "Transaction-failure and regulatory records required",
+        "Not a general savings route"
+      ],
+      "documents": [
+        "ID",
+        "Original payment and FX-conversion凭证",
+        "Proof purchase/registration failed or was cancelled",
+        "Written explanation if buyer terminated",
+        "Escrow/regulatory agreement conditions",
+        "Notarized POA/agent ID if delegated"
+      ],
+      "steps": [
+        "Collect original payment and conversion records.",
+        "Obtain evidence the purchase/registration failed or was lawfully cancelled.",
+        "Present passport and bank/regulator documents requested.",
+        "Request reconversion and return along the original path or eligible same-name FX account.",
+        "Document permitted interest separately and retain all bank records."
+      ],
+      "cost_rule": "property_refund_quote",
+      "flags": [
+        "property_refund_original_path",
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_2025_guide",
+        "safe_capital_2020",
+        "safe_rules"
+      ]
+    },
+    {
+      "id": "fdi_exit",
+      "name": "Foreign-investor exit — equity sale, capital reduction or liquidation proceeds",
+      "category": "business",
+      "status": "conditional",
+      "summary": "SAFE capital-account guide addresses remittance of foreign-investor equity-transfer, capital-reduction, liquidation or early-recovery proceeds using registration and control information.",
+      "eligibility": "Genuine foreign investor with documented FIE exit event, registration/control information and tax evidence where required.",
+      "limits": "Control-information amount and bank authenticity review; not personal savings relabeled as investment exit.",
+      "pros": [
+        "Formal channel for business capital",
+        "Bank/registration framework supports large documented transactions"
+      ],
+      "cons": [
+        "Corporate/registration/valuation/tax facts decisive",
+        "Professional implementation normally necessary",
+        "Institution-specific costs unverified"
+      ],
+      "documents": [
+        "Business registration凭证",
+        "Capital-account system outflow control information",
+        "Equity transfer/liquidation/capital-reduction documents",
+        "Tax凭证 for equity transfer where required",
+        "Investor ID and overseas account"
+      ],
+      "steps": [
+        "Map the entity, investor, registration and exact exit event.",
+        "Obtain equity/liquidation/capital-reduction documents and bank/SAFE registration-control information.",
+        "Complete corporate approvals and tax filing/payment evidence.",
+        "Ask the handling bank to verify authenticity, amount and registration data before purchase/remittance.",
+        "Remit to the documented foreign investor and retain corporate, tax and bank records."
+      ],
+      "cost_rule": "fdi_exit_quote",
+      "flags": [
+        "fdi_exit_docs",
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "safe_capital_2020",
+        "safe_2025_guide",
+        "safe_rules",
+        "irs_worldwide"
+      ]
+    },
+    {
+      "id": "payment_connect",
+      "name": "Mainland–HK Payment Connect — southbound leg only, USD second leg unverified",
+      "category": "business",
+      "status": "conditional",
+      "summary": "BOC describes Payment Connect southbound convenience remittance from mainland resident personal accounts to HK accounts in RMB/HKD; it is not a verified complete CNY-to-USD-to-US route.",
+      "eligibility": "Participating-bank customer meeting southbound scenario rules; HK account and second-leg conversion/US remittance must be separately confirmed.",
+      "limits": "Supported scenarios/currencies and participating-bank limits; no verified USD-to-US personal savings disposal.",
+      "pros": [
+        "Regulated mainland–HK fast-payment channel",
+        "May support genuine qualifying HK payment"
+      ],
+      "cons": [
+        "Not a complete CNY-to-USD route",
+        "Second-leg FX/fees/US receipt unverified",
+        "Cannot bypass mainland source rules"
+      ],
+      "documents": [
+        "ID and participating-bank eligibility",
+        "HK account details",
+        "Source/purpose evidence",
+        "HK bank conversion/US remittance terms"
+      ],
+      "steps": [
+        "Do not initiate a detour until both banks confirm the complete lawful path in writing.",
+        "Verify eligibility, direction, currency and purpose for the mainland–HK leg.",
+        "Separately verify HK account RMB/HKD-to-USD conversion and US remittance terms.",
+        "Compare all legs and retain evidence; otherwise use a direct source-matched bank route."
+      ],
+      "cost_rule": "payment_connect_quote",
+      "flags": [
+        "payment_connect_second_leg",
+        "fx_quote",
+        "tax_facts",
+        "professional_costs"
+      ],
+      "sources": [
+        "boc_payment_connect",
+        "safe_rules",
+        "safe_online_channels"
+      ]
     }
   ]
 }

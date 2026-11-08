@@ -1,0 +1,153 @@
+{
+  "snapshot_commit": "98e5b005aab9445f74ebf1ab05e673476e928b92",
+  "reviewed_on": "2026-11-08",
+  "method": "Every physical line of the archived main snapshot was read/classified. Minified HTML content lines are mapped to issues; structural/generator/data lines are classified separately. This supplements the e7e12b1 baseline audit.",
+  "issues": [
+    {
+      "id": "M01",
+      "severity": "high",
+      "title": "Modeled FX half-spread and known BOC totals are not executable customer quotes",
+      "files": [
+        "index.html",
+        "penalties.html",
+        "methods.html",
+        "data/cost-model.json",
+        "scripts/build_site.py"
+      ],
+      "correction": "Active site leaves customer-specific FX/all-in USD blank; published tariff components only.",
+      "sources": [
+        "boc_tariff",
+        "boc_rate_board",
+        "fed_h10"
+      ]
+    },
+    {
+      "id": "M02",
+      "severity": "medium",
+      "title": "Wise matrix uses historical 2024 fee formulas",
+      "files": [
+        "penalties.html",
+        "methods.html",
+        "data/cost-model.json",
+        "scripts/build_site.py"
+      ],
+      "correction": "Active site flags current Wise quote unverified; historical notice not promoted to current price.",
+      "sources": [
+        "wise_fee_changes_2024",
+        "wise_cny"
+      ]
+    },
+    {
+      "id": "M03",
+      "severity": "high",
+      "title": "Domestic USD 50k/year multi-year arithmetic could be misread as a planning route",
+      "files": [
+        "penalties.html",
+        "methods.html",
+        "data/cost-model.json"
+      ],
+      "correction": "Active site excludes quota-spreading advice; genuine above-quota current-account evidence required.",
+      "sources": [
+        "safe_rules",
+        "safe_online_channels"
+      ]
+    },
+    {
+      "id": "M04",
+      "severity": "medium",
+      "title": "Emigration staging model uses historical tranche arithmetic",
+      "files": [
+        "penalties.html",
+        "methods.html",
+        "data/cost-model.json"
+      ],
+      "correction": "Active site flags migration staging/branch practice unverified; no staged cost total.",
+      "sources": [
+        "safe_migration",
+        "pboc_property"
+      ]
+    },
+    {
+      "id": "M05",
+      "severity": "medium",
+      "title": "MoneyGram schedule is dated 2018 and below requested grid",
+      "files": [
+        "methods.html",
+        "penalties.html",
+        "sources.html"
+      ],
+      "correction": "Active site marks current MoneyGram terms unverified; no extrapolation.",
+      "sources": [
+        "boc_moneygram_2018",
+        "moneygram_missing"
+      ]
+    },
+    {
+      "id": "M06",
+      "severity": "medium",
+      "title": "Crypto risk entry cites 2021 notice rather than current 2026 No. 42",
+      "files": [
+        "methods.html",
+        "sources.html",
+        "flagged.html"
+      ],
+      "correction": "Active site cites PBOC 2026 No. 42 and excludes exchange workaround.",
+      "sources": [
+        "pboc_crypto_2026"
+      ]
+    },
+    {
+      "id": "M07",
+      "severity": "low",
+      "title": "Form 3520 entity gift threshold left unverified despite IRS gifts page",
+      "files": [
+        "flagged.html",
+        "taxes.html"
+      ],
+      "correction": "Active registry verifies 2026 entity threshold USD 20,573.",
+      "sources": [
+        "irs_gifts",
+        "irs_3520"
+      ]
+    },
+    {
+      "id": "M08",
+      "severity": "medium",
+      "title": "FBAR penalty unit does not cite Bittner per-report holding",
+      "files": [
+        "penalties.html",
+        "taxes.html"
+      ],
+      "correction": "Active site cites Bittner and adjusted eCFR maxima.",
+      "sources": [
+        "bittner",
+        "fincen_penalties"
+      ]
+    },
+    {
+      "id": "M09",
+      "severity": "low",
+      "title": "Payment Connect correctly incomplete for USD-to-US route",
+      "files": [
+        "methods.html",
+        "flagged.html"
+      ],
+      "correction": "Active site preserves as conditional southbound leg only; second leg unverified.",
+      "sources": [
+        "boc_payment_connect"
+      ]
+    },
+    {
+      "id": "M10",
+      "severity": "low",
+      "title": "Coordination task 10 stale in-progress label after PR #14 merged",
+      "files": [
+        "COORDINATION.md"
+      ],
+      "correction": "Active board records PR #14 merged and final integration claim.",
+      "sources": [
+        "safe_rules"
+      ]
+    }
+  ]
+}
