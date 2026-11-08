@@ -27,3 +27,27 @@ Session ID for this session: `agent-1` (branch `arena/c56cf052-china4`)
 - "needs review" = published on Flagged for Review page, does not block other tasks
 - Never mark verified without checking an official source; link the source
 - Shared outputs (table data, index, navigation) changed only by final integration session
+
+## Session agent-06824257 — full re-audit and cost-model extension (2026-11-08)
+
+Arena fixes this session's branch to `arena/06824257-china4`; all work stays on
+that branch rather than creating a `session-*` branch. The previous tasks are
+recorded as done. This session independently reopens verification through the
+new tasks below; no other active claim was present when inspected. Research and
+implementation files below have a separate scope from the legacy site. Shared
+site files and navigation are reserved for task 15 (final integration), after
+the research, calculations, and checks are complete.
+
+| # | Task | Scope (files) | Status | Owner | Sources / verification | Notes |
+|---|------|---------------|--------|-------|------------------------|-------|
+| 10 | Independent line-by-line audit of existing content | research/audit/* | in progress | agent-06824257 | Pending official-source recheck | Do not trust prior verification labels |
+| 11 | Official-source legal-route and tax research | research/sources/*, research/findings.json | in progress | agent-06824257 | Pending | Cover individual, salary, property, business, cards, cash, and prohibited routes |
+| 12 | Reproducible $10k–$400k cost tables, all 40 increments | research/costs.json, scripts/build_data.py | in progress | agent-06824257 | Pending | No invented fees, FX spreads, or tax rates; unknown total stays blank |
+| 13 | Executive summary and step-by-step procedures | EXECUTIVE_SUMMARY.md, research/procedures.json | in progress | agent-06824257 | Pending | Distinguish bank friction from tax; no evasion instructions |
+| 14 | Automated data, link, accessibility and build checks | scripts/check_site.py, tests/*, .github/workflows/* | in progress | agent-06824257 | Pending | Validate all rows, calculations, local links and source citations |
+| 15 | Final integration, accessible dashboard, PR, merge and Pages | index.html, methods.html, costs.html, procedures.html, taxes.html, penalties.html, sources.html, flagged.html, style.css, README.md, VERIFICATION.md, COORDINATION.md | unclaimed | agent-06824257 | Pending tasks 10–14 | Only integration edits shared outputs; verify before merging |
+
+### Handoff / integration log
+- 2026-11-08: Read the existing board and legacy site before claiming. Initial
+  review already found unsupported fee estimates and potentially misleading
+  tax/eligibility claims; they will be recorded in the audit, not copied forward.
