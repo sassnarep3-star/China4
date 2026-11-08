@@ -40,10 +40,10 @@ the research, calculations, and checks are complete.
 
 | # | Task | Scope (files) | Status | Owner | Sources / verification | Notes |
 |---|------|---------------|--------|-------|------------------------|-------|
-| 10 | Independent line-by-line audit of existing content | research/audit/* | in progress | agent-06824257 | Pending official-source recheck | Do not trust prior verification labels |
-| 11 | Official-source legal-route and tax research | research/sources/*, research/findings.json | in progress | agent-06824257 | Pending | Cover individual, salary, property, business, cards, cash, and prohibited routes |
-| 12 | Reproducible $10k–$400k cost tables, all 40 increments | research/costs.json, scripts/build_data.py | in progress | agent-06824257 | Pending | No invented fees, FX spreads, or tax rates; unknown total stays blank |
-| 13 | Executive summary and step-by-step procedures | EXECUTIVE_SUMMARY.md, research/procedures.json | in progress | agent-06824257 | Pending | Distinguish bank friction from tax; no evasion instructions |
+| 10 | Independent line-by-line audit of existing content | research/audit/* | done | agent-06824257 | 1,344 baseline lines classified; 24 issues mapped to official sources | Do not trust prior verification labels |
+| 11 | Official-source legal-route and tax research | research/sources/*, research/findings.json | done | agent-06824257 | 53 registry entries; SAFE/PBOC/STA/IRS/FinCEN/eCFR/Supreme Court/operator primary pages | Cover individual, salary, property, business, cards, cash, and prohibited routes |
+| 12 | Reproducible $10k–$400k cost tables, all 40 increments | research/costs.json, scripts/build_data.py | done | agent-06824257 | 28 methods x 40 amounts = 1,120 rows; BOC/Sky/ATM published components only | No invented fees, FX spreads, or tax rates; unknown total stays blank |
+| 13 | Executive summary and step-by-step procedures | EXECUTIVE_SUMMARY.md, research/procedures.json | done | agent-06824257 | 28 source-matched procedures; executive summary links primary sources | Distinguish bank friction from tax; no evasion instructions |
 | 14 | Automated data, link, accessibility and build checks | scripts/check_site.py, tests/*, .github/workflows/* | in progress | agent-06824257 | Pending | Validate all rows, calculations, local links and source citations |
 | 15 | Final integration, accessible dashboard, PR, merge and Pages | index.html, methods.html, costs.html, procedures.html, taxes.html, penalties.html, sources.html, flagged.html, style.css, README.md, VERIFICATION.md, COORDINATION.md | unclaimed | agent-06824257 | Pending tasks 10–14 | Only integration edits shared outputs; verify before merging |
 
@@ -51,3 +51,8 @@ the research, calculations, and checks are complete.
 - 2026-11-08: Read the existing board and legacy site before claiming. Initial
   review already found unsupported fee estimates and potentially misleading
   tax/eligibility claims; they will be recorded in the audit, not copied forward.
+
+- 2026-11-08: Tasks 10–13 completed independently. Additional primary checks closed
+  the IRC 988 personal-transaction gap, Form 3520 penalty gap, Bittner FBAR unit,
+  Alipay/WeChat/PayPal product scope, current-account RMB policy and Shanghai property
+  tax guide. Remaining unverified items are published as flags, not guessed.
