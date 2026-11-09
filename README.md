@@ -26,7 +26,7 @@ python3 scripts/build_site.py
 python3 scripts/validate_site.py
 ```
 
-`build_site.py` uses `Decimal` arithmetic to regenerate all six HTML pages and `data/cost-model.json`. The validator independently recalculates the amount ladder, BOC fees/FX benchmark, conditional annual schedule and dated Wise scenarios; it also checks HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts.
+`build_site.py` uses `Decimal` arithmetic to regenerate all six HTML pages and `data/cost-model.json`. The validator independently recalculates the amount ladder, BOC fees/FX benchmark, conditional annual schedule and dated Wise scenarios; it also checks HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts. It also requires a direct source link in each table body row; this structural check does not prove that a linked source supports every claim or that external links are live.
 
 The GitHub Actions workflow rebuilds and validates pull requests, verifies generated files are current, then deploys only the public site files from `main` to GitHub Pages.
 

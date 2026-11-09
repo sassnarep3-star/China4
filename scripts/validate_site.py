@@ -53,13 +53,17 @@ class AuditParser(HTMLParser):
         if tag == "details" and "route" in attrs.get("class", "").split():
             self.details += 1
         if tag == "table":
-            self.current_table = {"rows": 0, "in_body": False, "sources": 0}
+            self.current_table = {"rows": 0, "in_body": False, "sources": 0, "row_sources": [], "in_row": False}
         if tag == "tbody" and self.current_table is not None:
             self.current_table["in_body"] = True
         if tag == "tr" and self.current_table is not None and self.current_table["in_body"]:
             self.current_table["rows"] += 1
+            self.current_table["in_row"] = True
+            self.current_table["row_sources"].append([])
         if tag == "a" and self.current_table is not None and "source" in attrs.get("class", "").split():
             self.current_table["sources"] += 1
+            if self.current_table["in_row"]:
+                self.current_table["row_sources"][-1].append(attrs.get("href", ""))
         if tag not in VOID:
             self.stack.append(tag)
 
@@ -81,6 +85,8 @@ class AuditParser(HTMLParser):
                     self.stack.pop()
         if self.stack and self.stack[-1] == tag:
             self.stack.pop()
+        if tag == "tr" and self.current_table is not None:
+            self.current_table["in_row"] = False
         if tag == "tbody" and self.current_table is not None:
             self.current_table["in_body"] = False
         if tag == "table" and self.current_table is not None:
@@ -225,8 +231,9 @@ def main():
         fail(f"penalties: expected four 40-row matrices + 8 penalty rows, found {penalty_counts}")
     for page, parser in parsed.items():
         for number, t in enumerate(parser.tables, 1):
-            if t["rows"] and t["sources"] == 0 and page != "sources.html":
-                fail(f"{page} table {number}: no official source links")
+            for row_number, links in enumerate(t["row_sources"], 1):
+                if not links or not any(url.startswith("https://") or url.startswith("http://") for url in links):
+                    fail(f"{page} table {number} row {row_number}: no direct source link")
     if len(parsed["sources.html"].tables) != 1 or parsed["sources.html"].tables[0]["rows"] != 47:
         fail("sources: expected exactly 47 primary-source rows")
     for alias in ("estimates.html", "costs.html"):

@@ -168,4 +168,10 @@ returned 200.
 
 | Task | Scope | Status | Owner | Notes |
 |---|---|---|---|---|
-| Independent post-PR #14 audit and publication | COORDINATION.md, scripts/build_site.py, scripts/validate_site.py, generated site and data, documentation, GitHub PR/Pages | in progress | arena/4646bb35-china4 | Taking over task 10: its owning branch was merged in PR #14 on 2026-11-08 23:40 UTC, although the task board was not updated. Fixed Arena branch is used. Will preserve concurrent work. |
+| Independent post-PR #14 audit and publication | COORDINATION.md, scripts/build_site.py, scripts/validate_site.py, generated site and data, documentation, GitHub PR/Pages | done | arena/4646bb35-china4 | PR and deployment follow. See audit note below. |
+
+### Post-PR #14 audit — arena/4646bb35-china4
+- Task 10's branch was merged in [PR #14](https://github.com/sassnarep3-star/China4/pull/14), despite the older in-progress status. Its deployment [run 42536288129](https://github.com/sassnarep3-star/China4/actions/runs/42536288129) succeeded. The current session uses the Arena-mandated branch. Initial pull before the first push failed because that remote branch did not yet exist; the claim was then pushed.
+- Independently checked [SAFE Articles 2, 13 and 15](https://www.safe.gov.cn/safe/2007/0105/5320.html) and [SAFE Tianjin 2025](https://www.safe.gov.cn/tianjin/2025/0715/2834.html): legitimate current-account RMB income has documentation requirements, with an exception for tax vouchers where no tax is due. Article 39 is marked repealed on SAFE's own page.
+- The [BOC rate board](https://www.boc.cn/sourcedb/whpj/) at 09:15:45 Beijing time on 2026-11-09 showed USD spot buy/sell 6.6638/6.6919 CNY per USD, different from the explicitly historical 05:30 model. The board says the actual executed rate governs. Estimates are snapshots, not live quotes.
+- Fixed an overbroad dashboard sentence about tax and currency gains. Strengthened validation from table-level to per-row direct source links; independently rebuilt and validated all six pages and four 40-row matrices. This automated test checks link presence, not source support or external availability. This limited audit does not assert a fresh line-by-line verification of all claims; unknown costs, eligibility and historical pricing remain on Flagged for Review.
