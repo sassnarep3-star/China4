@@ -176,3 +176,9 @@ returned 200.
 - The [BOC rate board](https://www.boc.cn/sourcedb/whpj/) at 09:15:45 Beijing time on 2026-11-09 showed USD spot buy/sell 6.6638/6.6919 CNY per USD, different from the explicitly historical 05:30 model. The board says the actual executed rate governs. Estimates are snapshots, not live quotes.
 - Fixed an overbroad dashboard sentence about tax and currency gains. Strengthened validation from table-level to per-row direct source links; independently rebuilt and validated all six pages and four 40-row matrices. This automated test checks link presence, not source support or external availability. This limited audit does not assert a fresh line-by-line verification of all claims; unknown costs, eligibility and historical pricing remain on Flagged for Review.
 - [PR #15](https://github.com/sassnarep3-star/China4/pull/15) merged at `29089128a0ccdc2583ab25f20bca87ac115e3377` on 2026-11-09 01:31 UTC. GitHub Pages legacy [build and deployment 42546010956](https://github.com/sassnarep3-star/China4/actions/runs/42546010956) succeeded. GitHub reported Node 20 action deprecation and upcoming ubuntu-latest migration warnings, neither fatal.
+
+## Current session: arena/67730449-china4
+
+| Task | Scope | Status | Owner | Verification / notes |
+|---|---|---|---|---|
+| Independent citation audit: pin the BOC quote link to the exact official historical result and disclose pagination volatility | `scripts/build_site.py`, generated `sources.html`, generated `flagged.html`, `COORDINATION.md` | in progress | arena/67730449-china4 | Non-overlapping with open PR #12 (dashboard, methods, penalties and CSS). Verified SAFE Art. 2 and 13, Wise eligibility/limits, and BOC's 2026-11-09 05:30 quote against issuer pages. The existing S5 manual-review URL landed on a later 09:15 row; exact quote found on BOC page 5. Updating the source entry and flagging that BOC's paginated history can roll over. Working on Arena-fixed branch. |
