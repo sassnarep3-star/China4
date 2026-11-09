@@ -27,7 +27,7 @@ SOURCES = {
     "S2": ("SAFE / PBOC", "Measures for the Administration of Individual Foreign Exchange", "https://www.safe.gov.cn/tianjin/2024/0430/2465.html"),
     "S3": ("SAFE", "Current Account FX Business Guide (2020 edition)", "https://www.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf"),
     "S4": ("Bank of China", "Personal Financial Services Price List, effective 2025-11-11 (PDF)", "https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf"),
-    "S5": ("Bank of China", "Historical retail FX quotation page", "https://www.boc.cn/sourcedb/whpj/enindex_1619_1.html"),
+    "S5": ("Bank of China", "Historical retail FX quotation page — 2026-11-09 05:30 USD row (page 5 at review)", "https://www.boc.cn/sourcedb/whpj/enindex_1619_4.html"),
     "S6": ("Bank of China", "Personal outward remittance product and channel instructions", "https://www.boc.cn/pbservice/pb4/200806/t20080626_760.html"),
     "S7": ("SAFE", "Foreign-currency cash carrying limits and permit rules", "https://www.safe.gov.cn/tianjin/2024/0430/2466.html"),
     "S8": ("China Customs", "Official cash declaration guide: RMB 20,000 / USD-equivalent 5,000", "https://online.customs.gov.cn/static/pages/guides/000629014002/000629014002.html"),
@@ -553,6 +553,8 @@ def flagged_page():
         ("Prior China private-FX fine: 30%–300%", "Corrected under current 2008 regulation: up to 30%; serious cases over 30% up to 100%, plus other consequences", "High", source("S18")),
         ("Prior blanket ‘no US tax’ statement", "Corrected: moving own principal is not itself new income, but underlying income/gains, interest and personal FX rules remain", "High", source("S32", "S38")),
         ("BOC quote date is after UTC research cutoff", "BOC page timestamp is 2026-11-09 05:30 Beijing time; it is explicitly dated and not compared as though simultaneous with a different market quote", "Medium", source("S5")),
+        ("BOC historical FX table is paginated and mutable", "The exact 2026-11-09 05:30 USD quote (buy 666.48, sell 669.29 CNY per USD) was visible on page 5 at review; later quote updates change page positions, so S5 is a direct official source but not a permanent archived snapshot", "Medium", source("S5")),
+
         ("ATM tariff changes three days after research cutoff", "Current 2025-11-11 price list and new 2026-11-11 Visa/Mastercard formula are shown separately", "Medium", source("S4", "S10")),
         ("Wise matrix uses historical fee formulas", "Included because disclosed formulas are reproducible; not labeled live or used to declare a universal winner", "Medium", source("S13")),
         ("MoneyGram $10,000 falls outside top published tier", "Schedule ends at $9,999.99; matrix labels the $10,000 value as dated-only and does not invent higher tiers", "Medium", source("S16")),
