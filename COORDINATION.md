@@ -163,3 +163,9 @@ half-spread to three decimal places, and the BOC $400,000 totals agree to within
 every local link resolves, every value-bearing row carries an official-source link, and the full 40-amount
 grid is present on both `estimates.html` and `costs.html`. HTTP smoke test: all eight pages plus `style.css`
 returned 200.
+
+## Session arena/4646bb35-china4 — integration audit
+
+| Task | Scope | Status | Owner | Notes |
+|---|---|---|---|---|
+| Independent post-PR #14 audit and publication | COORDINATION.md, scripts/build_site.py, scripts/validate_site.py, generated site and data, documentation, GitHub PR/Pages | in progress | arena/4646bb35-china4 | Taking over task 10: its owning branch was merged in PR #14 on 2026-11-08 23:40 UTC, although the task board was not updated. Fixed Arena branch is used. Will preserve concurrent work. |
