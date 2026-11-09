@@ -182,6 +182,7 @@ returned 200.
 | Task | Scope | Status | Owner | Verification / notes |
 |---|---|---|---|---|
 | Independent citation audit: pin the BOC quote link to the exact official historical result and disclose pagination volatility | `scripts/build_site.py`, generated `sources.html`, generated `flagged.html`, `COORDINATION.md` | done | arena/67730449-china4 | Non-overlapping with open PR #12 (dashboard, methods, penalties and CSS). Verified SAFE Art. 2/13 and Wise CNY limits from their official pages. Fetched BOC pages 1–5 on 2026-11-09: original S5 URL landed on a later quote; page 5 showed 2026-11-09 05:30 USD buy/sell 666.48/669.29 CNY per USD 100, matching the model. Updated S5 to direct to page 5 and flagged page-position volatility; quote page says executed rate governs. `python3 scripts/build_site.py && python3 scripts/validate_site.py` passed after regeneration. Direct-link presence is checked by validator; source interpretation remains a manual audit. PR [#18](https://github.com/sassnarep3-star/China4/pull/18) merged as `b9e23926c66eaa94c60bf8ebc44fabe946246cb6` on 2026-11-09 01:34 UTC. Post-merge validation + Pages deploy [run 42546238041](https://github.com/sassnarep3-star/China4/actions/runs/42546238041) succeeded; Pages API reports `built`. Live sources/flagged pages were fetched after deployment; a cache-busted source fetch confirmed the updated S5 label and page-5 URL. |
+
 ## Current session: arena/672f75fb-china4 — final re-verification & gap closure
 
 | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
@@ -209,3 +210,11 @@ returned 200.
 ### Merge-conflict log — arena/672f75fb-china4
 - During this session, arena/4646bb35-china4 merged PRs #15/#16 into main. Rebasing task 11 onto the new main conflicted only in COORDINATION.md; resolved by retaining both sessions' board sections in full — no work discarded. Their validator strengthening (per-row source links) and tax-caveat fix auto-merged with this session's cap-unit correction; `build_site.py` + `validate_site.py` pass on the combined tree with a clean working copy.
 - Second conflict: main moved again via PR #18 (BOC S5 pinned to the exact historical quote page). Rebase conflicted in COORDINATION.md, scripts/build_site.py and generated HTML. Resolved by keeping both sessions' flagged items (quote-timestamp resolution + BOC pagination note + cap-unit correction), keeping the S5 pin, and regenerating all HTML from the merged generator. Nothing discarded; validator passes on the combined tree.
+
+## Current session: arena/ddfecf5c-china4 — exhaustive 100%-URL verification, regulatory updates & UX integration
+
+| Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| Phase 1 — Exhaustive primary-source fetch & line-by-line audit of all 47+ sources and PRC/US tax/FX statutes | `COORDINATION.md`, `data/source-verification-log.json` | done | arena/ddfecf5c-china4 | 2026-11-09 | Fetched and verified all 47 existing primary URLs plus 10 additional official SAFE/STA/IRS primary documents. Rebased onto `origin/main` (`54a190c`) after PRs #15–#19 completed, preserving all prior sessions' board entries in full. |
+| Phase 2 — Regulatory defect fixes, 21-route expansion, tax-bottleneck playbook, mobile-first table UX & Pages deployment | `scripts/build_site.py`, `scripts/validate_site.py`, `style.css`, `EXECUTIVE_SUMMARY.md`, `README.md`, `data/cost-model.json`, `data/source-verification-log.json`, generated root HTML pages, `COORDINATION.md` | in progress | arena/ddfecf5c-china4 | 2026-11-09 | Non-overlapping: all active parallel sessions (`4646bb35`, `67730449`, `672f75fb`) are `done` and merged; stale PRs #4, #5, #12 (>2h without commits) left untouched. Fixed Arena branch `arena/ddfecf5c-china4`. |
+
