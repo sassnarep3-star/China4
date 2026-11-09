@@ -20,7 +20,7 @@ BUY = D("6.6648")
 SELL = D("6.6929")
 MID = (BUY + SELL) / 2
 QUOTE_TIME = "2026-11-09 05:30 Beijing time (BOC page timestamp)"
-RESEARCH_DATE = "2026-11-08 UTC"
+RESEARCH_DATE = "2026-11-09 UTC"
 
 SOURCES = {
     "S1": ("SAFE", "Individual FX Detailed Rules (modified), especially Arts. 2, 12–15", "https://www.safe.gov.cn/tianjin/2024/0430/2464.html"),
@@ -191,21 +191,27 @@ def quota_model(amount: D):
     return len(pieces), total / SELL
 
 
-def wise_model(amount: D, cap: D, variable: D):
-    pieces = split_principal(amount, cap)
-    fee_cny = sum((D("33.20") + variable * p * SELL for p in pieces), ZERO)
+def wise_model(amount: D, cap_cny: D, variable: D):
+    # Wise caps are CNY per transfer (300,000 bank app / 50,000 Alipay) [S11];
+    # the fixed ¥33.20 fee is charged per transfer, so split the CNY principal.
+    pieces = split_principal(amount * SELL, cap_cny)
+    fee_cny = sum((D("33.20") + variable * p for p in pieces), ZERO)
     return len(pieces), fee_cny / SELL, fee_cny
 
 
 def atm_unionpay(amount: D):
-    pieces = split_principal(amount, D(10000))
-    fee = sum((min(D(112), D(12) + D("0.01") * p * SELL) for p in pieces), ZERO)
+    # SAFE caps overseas ATM withdrawals at CNY 10,000 per card/day [S9];
+    # the BOC UnionPay fee applies per withdrawal [S4/S10].
+    pieces = split_principal(amount * SELL, D(10000))
+    fee = sum((min(D(112), D(12) + D("0.01") * p) for p in pieces), ZERO)
     return len(pieces), fee / SELL
 
 
 def atm_card_future(amount: D):
-    pieces = split_principal(amount, D(10000))
-    fee = sum((min(D(40), max(D(3), D("0.025") * p)) for p in pieces), ZERO)
+    # Same CNY 10,000/day withdrawal split; Visa/MC fee is 2.5% of the amount
+    # withdrawn, min USD-equivalent 3 / max USD-equivalent 40 per withdrawal [S10].
+    pieces = split_principal(amount * SELL, D(10000))
+    fee = sum((min(D(40), max(D(3), D("0.025") * p / SELL)) for p in pieces), ZERO)
     return len(pieces), fee
 
 
@@ -315,7 +321,7 @@ def methods_page():
         ["Documented non-bank alternative", "Own-name requirement reduces third-party misuse", "Published caps and transparent quote flow"],
         ["Not for mainland-Chinese senders", "Tax records within Wise’s accepted period and overall limit control eligibility", "Current fees/rates are quote-dependent; historical matrix is not an offer"],
         ["Create a personal Wise account and select CNY→USD to your own USD bank account or Wise account.", "Upload passport, an accepted current/former work-eligibility document and Chinese personal-income-tax records meeting Wise’s recency rules.", "Let Wise calculate your overall sending limit; cancel unfunded transfers you do not intend to complete so their reserved limit is released.", "Choose Chinese bank-app funding (up to CNY 300,000 per transfer) or Alipay funding (up to CNY 50,000 per transfer) and record the live fee/rate before paying.", "For bank funding, send CNY only from your same-name account to the unique partner safeguarding-account details shown by Wise; for Alipay, complete the displayed payment flow.", "Track verification/payout and save the quote, local debit, tax records and final USD receipt."],
-        f"Dated 2024 bank-funding formula modeled at {usd(COSTS[0]['wise_bank_historical_fee_usd'])} for $10k and {usd(COSTS[-1]['wise_bank_historical_fee_usd'])} for $400k (2 transfers); current quote —. Historical Alipay formula is separate and usually has more transfers.", source("S11", "S12", "S13")))
+        f"Dated 2024 bank-funding formula modeled at {usd(COSTS[0]['wise_bank_historical_fee_usd'])} for $10k and {usd(COSTS[-1]['wise_bank_historical_fee_usd'])} for $400k ({COSTS[-1]['wise_bank_transfers']} transfers at the CNY 300,000/transfer cap); current quote —. Historical Alipay formula is separate and needs far more transfers at the CNY 50,000 cap.", source("S11", "S12", "S13")))
     routes.append(route_details("draft", "5. BOC cross-border demand draft → US bank collection/deposit", "Niche",
         "BOC’s current personal price list covers both telegraphic transfers and drafts. A draft avoids the CNY 150 telecom charge but adds actual postage and US foreign-item acceptance/collection considerations.",
         ["Same CNY 50–260 commission scale as BOC wire", "No BOC international telecom charge"],
@@ -387,7 +393,7 @@ def methods_page():
         ["Immediate access to local currency abroad", "Published BOC UnionPay fee cap per withdrawal"],
         ["Only the $10,000 scenario fits the annual cap at this FX rate", "ATM owner surcharge and execution FX can add cost", "Cash deposit/reporting and physical-security issues remain"],
         ["Check your annual person-level withdrawal total and card-level daily total before traveling.", "Ask BOC which network/fee applies and request the ATM’s displayed surcharge and conversion terms before confirming.", "Withdraw within both limits using only your own card; do not borrow cards.", "Keep ATM and FX receipts; deposit cash transparently and answer bank source questions.", "Do not split deposits or use additional people/cards to bypass limits or reports."],
-        f"At $10k: current BOC UnionPay modeled fee {usd(COSTS[0]['atm_unionpay_fee_usd'])}; Visa/Mastercard formula effective 2026-11-11 {usd(COSTS[0]['atm_future_card_fee_usd'])}. Other matrix rows exceed the annual cap. FX and ATM-owner costs —.", source("S9", "S4", "S10")))
+        f"At $10k: {COSTS[0]['atm_unionpay_withdrawals']} withdrawals at the CNY 10,000/card/day cap; current BOC UnionPay modeled fee {usd(COSTS[0]['atm_unionpay_fee_usd'])}; Visa/Mastercard formula effective 2026-11-11 {usd(COSTS[0]['atm_future_card_fee_usd'])}. Other matrix rows exceed the annual cap. FX and ATM-owner costs —.", source("S9", "S4", "S10")))
     routes.append(route_details("hk", "17. Hong Kong Payment Connect / offshore-CN H detour", "Incomplete",
         "BOC describes mainland–Hong Kong Payment Connect for specified CNY/HKD scenarios. That is not evidence of an unrestricted CNY→USD transfer to the US, and routing through Hong Kong does not erase mainland source rules.",
         ["May be useful for a genuine qualifying mainland–HK payment", "Participating-bank channel"],
@@ -484,10 +490,10 @@ def penalties_page():
     ]
     body = f'''
 {callout("warn", "Read the model boundary", "These are planning models from official published inputs—not executable all-in quotes. CNY principal means the USD-equivalent principal multiplied by 6.6929; final USD received requires a live execution rate and every intermediary/receiver fee. A blank means unknown, not zero.")}
-<section class="section"><div class="section-heading"><p class="eyebrow">Model inputs</p><h2>Formula and source hierarchy</h2></div><div class="formula-grid"><div><h3>BOC personal US-bound TT</h3><code>fee CNY = clamp(0.001 × USD principal × 6.6929, 50, 260) + 150</code><p>Current 2025-11-11 personal tariff. Electronic channels share counter pricing; agreements/promotions and actual foreign-bank charges may differ. {source("S4", "S45")}</p></div><div><h3>Same-quote retail benchmark</h3><code>midpoint = (6.6648 + 6.6929) / 2 = 6.67885</code><code>half-spread = principal × (6.6929 − midpoint) / midpoint</code><p>0.2103656% of USD-equivalent principal. This is an arithmetic benchmark, not a guaranteed markup or accessible mid-market execution. {source("S5")}</p></div><div><h3>Dated Wise formulas</h3><code>bank: ¥33.20 + 0.62% × CNY per transfer</code><code>Alipay: ¥33.20 + 1.97% × CNY per transfer</code><p>Published 2024-11-25 examples. Matrix applies 300k/50k CNY caps and converts the fee at 6.6929 solely for comparison. {source("S11", "S13")}</p></div></div><p class="note">BOC quote timestamp: {QUOTE_TIME}. The research cutoff is {RESEARCH_DATE}; the quote is later Beijing time and is labeled, not silently treated as synchronous with any other market rate.</p></section>
+<section class="section"><div class="section-heading"><p class="eyebrow">Model inputs</p><h2>Formula and source hierarchy</h2></div><div class="formula-grid"><div><h3>BOC personal US-bound TT</h3><code>fee CNY = clamp(0.001 × USD principal × 6.6929, 50, 260) + 150</code><p>Current 2025-11-11 personal tariff. Electronic channels share counter pricing; agreements/promotions and actual foreign-bank charges may differ. {source("S4", "S45")}</p></div><div><h3>Same-quote retail benchmark</h3><code>midpoint = (6.6648 + 6.6929) / 2 = 6.67885</code><code>half-spread = principal × (6.6929 − midpoint) / midpoint</code><p>0.2103656% of USD-equivalent principal. This is an arithmetic benchmark, not a guaranteed markup or accessible mid-market execution. {source("S5")}</p></div><div><h3>Dated Wise formulas</h3><code>bank: ¥33.20 + 0.62% × CNY per transfer</code><code>Alipay: ¥33.20 + 1.97% × CNY per transfer</code><p>Published 2024-11-25 examples. The fixed ¥33.20 is charged per transfer, so the matrix splits the CNY principal at the 300,000 (bank) / 50,000 (Alipay) CNY caps — $400,000 needs 9 bank-funded or 54 Alipay-funded transfers — and converts the fee at 6.6929 solely for comparison. {source("S11", "S13")}</p></div></div><p class="note">BOC quote timestamp: {QUOTE_TIME}. The research cutoff is {RESEARCH_DATE}; the quote is later Beijing time and is labeled, not silently treated as synchronous with any other market rate.</p></section>
 <section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Bank rails</p><h2>BOC conversion, remittance, and draft costs</h2></div>{bank_table}</section>
 <section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Alternatives</p><h2>Full-arrival, conditional annual, Wise and WU comparisons</h2></div>{compare_table}<p class="note">Other published BOC full-arrival tier: $15 when the receiving account is at BOC New York. Receiving examples: BofA $15 (some waivers), Chase Secure $15, Capital One 360 Checking $0; correspondent charges can be separate. {source("S4", "S42", "S43", "S44")}</p></section>
-<section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Cash/transmitters</p><h2>Availability-limited routes and dated fee evidence</h2></div>{physical_table}<p class="note">ATM models exclude ATM-owner surcharge and unverified execution FX. Current UnionPay formula: min(¥112, ¥12 + 1% × CNY withdrawal) per withdrawal. Future Visa/Mastercard formula: 2.5%, min $3/max $40 per withdrawal, effective 2026-11-11. {source("S4", "S9", "S10")}</p></section>
+<section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Cash/transmitters</p><h2>Availability-limited routes and dated fee evidence</h2></div>{physical_table}<p class="note">ATM models exclude ATM-owner surcharge and unverified execution FX. Withdrawals are split at SAFE’s CNY 10,000 per card/day cap, so $10,000 (¥66,929) needs 7 withdrawals. Current UnionPay formula: min(¥112, ¥12 + 1% × CNY withdrawal) per withdrawal. Future Visa/Mastercard formula: 2.5% of the amount withdrawn, min $3/max $40 equivalent per withdrawal, effective 2026-11-11. {source("S4", "S9", "S10")}</p></section>
 <section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Special property</p><h2>Emigration, inheritance, property sale, and investment exit</h2></div>{special_table}<p class="note">The emigration route requires one application for the full intended property amount. The schedule is a maximum-tranche planning model, not permission to defer documented current-account income. Inheritance and property-sale rows assume one wire for comparability; professional, tax, title, liquidation and receiving costs remain excluded. {source("S20", "S21")}</p></section>
 <section class="section"><div class="section-heading"><p class="eyebrow">Noncompliance exposure</p><h2>Corrected penalties—no invented ranges</h2></div>{table(["Rule / violation", "Published consequence", "Official sources"], penalty_rows, "Maximums and ranges are not predictions of an assessment. Criminal, tax, accuracy, fraud and other consequences depend on the facts and are not comprehensively priced.")}</section>'''
     return layout("penalties.html", "Cost matrices and penalty exposure", "Reproducible $10,000–$400,000 scenarios at $10,000 increments, plus corrected China and US reporting penalties.", body)
@@ -552,9 +558,9 @@ def flagged_page():
         ("Prior advice: every user gets $50,000 with ID only", "Corrected: annual convenience purchase quota applies to domestic individuals; foreign individuals follow lawful current-account income, reconversion or special routes", "High", source("S1", "S2", "S46")),
         ("Prior China private-FX fine: 30%–300%", "Corrected under current 2008 regulation: up to 30%; serious cases over 30% up to 100%, plus other consequences", "High", source("S18")),
         ("Prior blanket ‘no US tax’ statement", "Corrected: moving own principal is not itself new income, but underlying income/gains, interest and personal FX rules remain", "High", source("S32", "S38")),
-        ("BOC quote date is after UTC research cutoff", "BOC page timestamp is 2026-11-09 05:30 Beijing time; it is explicitly dated and not compared as though simultaneous with a different market quote", "Medium", source("S5")),
+        ("BOC quote timestamp vs research cutoff", "Resolved 2026-11-09: the quote is stamped 2026-11-09 05:30 Beijing time (= 2026-11-08 21:30 UTC) and the cutoff is now stated as 2026-11-09 UTC; the quote is explicitly dated and never compared as though simultaneous with a different market quote. BOC’s live 2026-11-09 09:15 board (buy 6.6638 / sell 6.6919) corroborates the snapshot’s magnitude", "Medium", source("S5")),
         ("BOC historical FX table is paginated and mutable", "The exact 2026-11-09 05:30 USD quote (buy 666.48, sell 669.29 CNY per USD) was visible on page 5 at review; later quote updates change page positions, so S5 is a direct official source but not a permanent archived snapshot", "Medium", source("S5")),
-
+        ("Cost model treated Wise/ATM CNY caps as USD amounts (corrected 2026-11-09)", "The inherited model split the USD principal at 300,000/50,000/10,000 as if those caps were USD. Wise caps are CNY 300,000 (bank app) and CNY 50,000 (Alipay) per transfer, and the ATM cap is CNY 10,000 per card/day. The model now splits the CNY principal: $400,000 = 9 bank-funded or 54 Alipay-funded Wise transfers; $10,000 by ATM = 7 withdrawals. Fixed per-transfer/per-withdrawal fees were understated; all matrices and the validator were corrected together", "High", source("S11", "S9", "S10")),
         ("ATM tariff changes three days after research cutoff", "Current 2025-11-11 price list and new 2026-11-11 Visa/Mastercard formula are shown separately", "Medium", source("S4", "S10")),
         ("Wise matrix uses historical fee formulas", "Included because disclosed formulas are reproducible; not labeled live or used to declare a universal winner", "Medium", source("S13")),
         ("MoneyGram $10,000 falls outside top published tier", "Schedule ends at $9,999.99; matrix labels the $10,000 value as dated-only and does not invent higher tiers", "Medium", source("S16")),

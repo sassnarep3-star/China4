@@ -156,12 +156,14 @@ def validate_arithmetic():
         if raw["quota_wires"] != len(annual):
             fail(f"{amount}: quota wire count")
         close(D(raw["quota_total_usd"]), annual_total / sell, f"{amount} annual model")
-        for key, cap, variable, count_key in [
+        # Wise caps are CNY per transfer (independent re-derivation from the
+        # CNY principal, not from the USD amount): fixed fee per transfer.
+        for key, cap_cny, variable, count_key in [
             ("wise_bank_historical_fee_usd", D(300000), D("0.0062"), "wise_bank_transfers"),
             ("wise_alipay_historical_fee_usd", D(50000), D("0.0197"), "wise_alipay_transfers"),
         ]:
-            route_pieces = pieces(amount, cap)
-            fee = sum((D("33.20") + variable * part * sell for part in route_pieces), D(0))
+            route_pieces = pieces(principal, cap_cny)
+            fee = sum((D("33.20") + variable * part for part in route_pieces), D(0))
             if raw[count_key] != len(route_pieces):
                 fail(f"{amount}: {count_key}")
             close(D(raw[key]), fee / sell, f"{amount} {key}")
@@ -169,6 +171,16 @@ def validate_arithmetic():
             close(D(raw["base_usd"]), D("53.44836522396977101779300253214629"), "known 10k regression")
             if "atm_unionpay_fee_usd" not in raw:
                 fail("10k ATM model missing")
+            # ATM: CNY 10,000/card/day split; fees apply per withdrawal.
+            atm_pieces = pieces(principal, D(10000))
+            union_fee = sum((min(D(112), D(12) + D("0.01") * part) for part in atm_pieces), D(0)) / sell
+            future_fee = sum((min(D(40), max(D(3), D("0.025") * part / sell)) for part in atm_pieces), D(0))
+            if raw["atm_unionpay_withdrawals"] != len(atm_pieces):
+                fail("10k ATM UnionPay withdrawal count")
+            if raw["atm_future_card_withdrawals"] != len(atm_pieces):
+                fail("10k ATM future-card withdrawal count")
+            close(D(raw["atm_unionpay_fee_usd"]), union_fee, "10k ATM UnionPay fee")
+            close(D(raw["atm_future_card_fee_usd"]), future_fee, "10k ATM future-card fee")
         else:
             if "atm_unionpay_fee_usd" in raw or "atm_future_card_fee_usd" in raw:
                 fail(f"{amount}: infeasible ATM amount incorrectly priced")
