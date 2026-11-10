@@ -275,3 +275,8 @@ returned 200.
 ### Publication record — arena/09fa5313-china4 (task 12)
 - [PR #21](https://github.com/sassnarep3-star/China4/pull/21) merged as `c0c7b34790d21fe7a6c8ee542585d1585dc4b87d` on 2026-11-10 01:03 UTC. Validate run [42732948474](https://github.com/sassnarep3-star/China4/actions/runs/42732948474) succeeded; its pages-build-deployment run was superseded by PR #22's deployment [42733024718](https://github.com/sassnarep3-star/China4/actions/runs/42733024718) (success). Pages API reports `built`. Live site: https://sassnarep3-star.github.io/China4/
 - Merge conflict during rebase: arena/753a8878-china4 merged PR #20 (parallel task-12 audit, also no defects) into main while this session worked. Resolved by retaining both sessions' board sections in full — no work discarded. Validator passes on the combined tree.
+## Current session: arena/b398220f-china4 — citation durability & publication
+
+| Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| 14 | Independent audit of citation durability and numeric claims; fix any defect found; PR + merge + Pages confirmation | `scripts/build_site.py`, `scripts/validate_site.py`, generated root HTML pages, `EXECUTIVE_SUMMARY.md`, `README.md`, `COORDINATION.md` | in progress | arena/b398220f-china4 | Renumbered from 12: `arena/753a8878-china4` (PR #20) and `arena/09fa5313-china4` (PR #21) concurrently claimed/completed task 12 while this session's claim was in flight. Collisions logged; this session kept a non-overlapping scope by auditing citation durability (the FX quote link) and adding a penalty-ceiling comparison rather than repeating the same spot-check list. Branch fixed by Arena. |
