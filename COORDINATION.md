@@ -219,3 +219,24 @@ returned 200.
 ### Claim log — arena/753a8878-china4
 - Non-overlapping scope: verification-only unless a defect is found. No other session has claimed this task. Branch fixed by Arena; this is the integration branch.
 - Plan: (1) rebuild + validate, (2) fetch official sources (SAFE, IRS, BOC, FinCEN, CBP) and spot-check key claims, (3) check live site pages return 200 and mobile layout, (4) record findings, PR, merge, confirm Pages.
+
+### Completion log — arena/753a8878-china4 (task 12)
+
+**Status: done.** Independent verification audit; no site-content defects found, so no site files were changed. Only this coordination record is published.
+
+**Verification performed (2026-11-10):**
+- Rebuilt and validated: `python3 scripts/build_site.py && python3 scripts/validate_site.py` → PASS (6 pages, 18 procedures, 4×40 matrices, 47 sources, Decimal arithmetic). Rebuild produced zero diff against committed files (reproducible).
+- Every table row carries a direct official-source link: independent check of all six pages found 0 rows without a source link (validator enforces the same per-row rule).
+- Live site fetched: dashboard and Flagged for Review pages render correctly with dated-quote labeling and blank-for-unknown policy intact.
+- Fresh official-source spot-checks (all fetched this session):
+  - [IRS FBAR](https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar) — aggregate >$10,000 at any time; due Apr 15, auto-ext Oct 15. Matches S25.
+  - [SAFE Detailed Rules (S1)](https://www.safe.gov.cn/tianjin/2024/0430/2464.html) — Art. 2 $50,000 annual quota; Art. 13 foreign-individual lawful RMB income with tax vouchers; Art. 39 repeal note present. Matches S1/S46.
+  - [eCFR 31 CFR 1010.821 (S26)](https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821) — non-willful $16,536 / willful $165,353 (assessed on/after 2025-01-17). Matches S26.
+  - [Wise CNY guide (S11)](https://wise.com/help/articles/2955298/guide-to-cny-transfers) — non-mainland-Chinese + work/tax-record eligibility, own-account recipient, 300,000 CNY (bank app) / 50,000 CNY (Alipay) per transfer, overall limit = salary minus tax. Matches S11/S12.
+  - [IRS FEIE (S35)](https://www.irs.gov/individuals/international-taxpayers/figuring-the-foreign-earned-income-exclusion) — 2026 maximum $132,900. Matches S35.
+  - [CBP (S29)](https://www.cbp.gov/travel/us-citizens/know-before-you-go/know-you-go-traveling-abroad) — FinCEN Form 105 for >$10,000 entering the US. Matches S29.
+- Independent Decimal recomputation matched site figures exactly: BOC $53.45 / $166.44 / $271.62 / $481.99 / $902.72 at $10k/$50k/$100k/$200k/$400k; Wise dated bank $2,524.64 (9 transfers) and Alipay $8,147.87 (54 transfers) at $400k.
+- Mobile: `style.css` provides card-transformed tables with `data-label` at ≤760px, horizontal-scroll tables on desktop, viewport meta on all pages. No JS required.
+- Irregularity re-confirmed (already published on flagged.html, not a new defect): BOC page 5 now shows 2026-11-10 02:49 USD 666.22/669.03 — the 2026-11-09 05:30 snapshot has rolled off the paginated board. Site correctly treats it as a dated snapshot, never a live quote; live magnitude corroborates within ~0.04%.
+
+**Irregularities:** none new. All previously flagged unknowns remain on the Flagged for Review page and do not block merge per project rules.
