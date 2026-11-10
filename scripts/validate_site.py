@@ -12,7 +12,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "methods.html", "penalties.html", "taxes.html", "sources.html", "flagged.html"]
+PAGES = ["index.html", "summary.html", "methods.html", "penalties.html", "taxes.html", "sources.html", "flagged.html"]
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 ERRORS: list[str] = []
 
@@ -241,6 +241,9 @@ def main():
     penalty_counts = [t["rows"] for t in parsed["penalties.html"].tables]
     if penalty_counts != [40, 40, 40, 40, 6, 8]:
         fail(f"penalties: expected four 40-row matrices + 6 exposure + 8 penalty rows, found {penalty_counts}")
+    summary_counts = [t["rows"] for t in parsed["summary.html"].tables]
+    if summary_counts != [5, 8, 6]:
+        fail(f"summary: expected 5 key amounts, 8 routes and 6 tax rows, found {summary_counts}")
     for page, parser in parsed.items():
         for number, t in enumerate(parser.tables, 1):
             for row_number, links in enumerate(t["row_sources"], 1):
@@ -269,6 +272,9 @@ def main():
             for href in parser.links:
                 if stale_link in href:
                     fail(f"{page}: branch-specific repository link {href}")
+    for page, parser in parsed.items():
+        if ("summary.html" not in parser.links) and page not in ("estimates.html", "costs.html"):
+            fail(f"{page}: navigation link to executive summary missing")
     for alias in ("estimates.html", "costs.html"):
         alias_text = (ROOT / alias).read_text(encoding="utf-8")
         if 'http-equiv="refresh" content="0; url=penalties.html"' not in alias_text or 'href="penalties.html"' not in alias_text:
@@ -283,7 +289,7 @@ def main():
         for error in ERRORS:
             print(f" - {error}")
         sys.exit(1)
-    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 52 sources, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
+    print("PASS: 7 HTML pages, executive summary, 18 procedures, 4×40 cost matrices, 52 sources, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
 
 
 if __name__ == "__main__":

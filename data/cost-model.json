@@ -1,5 +1,7 @@
 {
   "research_cutoff_utc": "2026-11-10 UTC",
+  "summary_page_introduced_utc": "2026-11-10 UTC",
+  "boc_quote_provenance": "USD 666.48 / 669.29 CNY per 100 USD captured from the official BOC board on 2026-11-09; the row has rolled off the five-quote board and BOC's date search requires a captcha. See flagged.html.",
   "boc_quote_timestamp_beijing": "2026-11-09 05:30 Beijing time (BOC page timestamp)",
   "inputs": {
     "boc_usd_cash_spot_buy_cny_per_usd": "6.6648",

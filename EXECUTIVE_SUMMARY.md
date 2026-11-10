@@ -3,7 +3,7 @@
 - **Research cutoff:** 2026-11-10 UTC (independent re-verification; FX citation made durable, Wise/ATM cap-unit correction retained)
 - **BOC retail quote timestamp:** 2026-11-09 05:30 Beijing time
 
-**Current deliverable:** [`index.html`](index.html) · [cost matrices](penalties.html) · [procedures](methods.html) · [open items](flagged.html)
+**Current deliverable:** [executive summary](summary.html) · [`index.html`](index.html) · [cost matrices](penalties.html) · [procedures](methods.html) · [taxes](taxes.html) · [sources](sources.html) · [open items](flagged.html)
 
 This summary supersedes earlier draft summaries and cost pages. Earlier provider figures that were not supported by current primary evidence are no longer presented as executable prices.
 
@@ -31,7 +31,7 @@ Inputs:
 | $200,000 | **$481.99** | $61.26 | $420.73 |
 | $400,000 | **$902.72** | $61.26 | $841.46 |
 
-Known modeled cost excludes correspondent deductions, account-specific recipient fees, underlying taxes, travel and professional costs. Optional BOC full-arrival pricing is **USD 15 to BOC New York / USD 25 elsewhere**. Receiving examples are BofA USD 15, Chase Secure USD 15 and Capital One 360 Checking USD 0, subject to account terms and waivers.
+Known modeled cost excludes correspondent deductions, account-specific recipient fees, underlying taxes, travel and professional costs. Optional BOC full-arrival pricing is **USD 15 to BOC New York / USD 25 elsewhere**. Receiving examples are BofA USD 15 and Chase Secure USD 15; [Capital One](https://www.capitalone.com/help-center/checking-savings/send-receive-wire-transfer/) charges USD 15 only on Essential Checking, High-Yield Checking and Essential Savings and no fee on other account types, so confirm your own account schedule.
 
 **Penalty versus lawful cost (the decisive comparison):** at USD 400,000 the modeled lawful BOC cost is **USD 902.72**, while the published statutory ceiling for an FX offence is 30% of the amount (USD 120,000), rising to the equivalent amount (USD 400,000) in serious cases — before criminal exposure. These ceilings are statutory rates applied to the principal, not an assessment or prediction; enforcement is discretionary and fact-specific. See the [comparison table](penalties.html#penalty-vs-cost).
 
@@ -61,4 +61,15 @@ python3 scripts/build_site.py
 python3 scripts/validate_site.py
 ```
 
-The build regenerates six main pages, two compatibility redirects and `data/cost-model.json`. The independent validator checks 18 procedures, four 40-row matrices, 52 primary sources, local links, HTML structure, citation durability for the dated FX quote, and Decimal arithmetic. GitHub Actions repeats the build/validation before deploying the public artifact.
+The build regenerates seven main pages, two compatibility redirects and `data/cost-model.json`. The independent validator checks 18 procedures, four 40-row matrices, 52 primary sources, local links, HTML structure, citation durability for the dated FX quote, and Decimal arithmetic. GitHub Actions repeats the build/validation before deploying the public artifact.
+
+
+## Final integration — arena/374f09e6-china4 (2026-11-10 UTC)
+
+This session re-read the load-bearing official sources, then added the **live executive-summary page** (`summary.html`), which previously existed only as this Markdown file in the repository. The page carries a five-amount key-cost table, an eight-route shortlist, a six-row tax/penalty boundary and eight ordered execution steps; every table row links to a primary source. The dashboard CTA, navigation, validator, Pages artifact and documentation were updated with it.
+
+**Merge-conflict resolution.** While this session was working, other sessions merged PRs #24–#29 into `main` (including a 52-source register with S48–S52, current Customs Announcement 2025 No. 43, the dedicated CBP monetary-instruments page and the corrected Capital One wording). PR #30 therefore reported `CONFLICTING`. Rather than overwrite that work, `main`'s tree was taken in full and this session re-applied only its genuinely new contribution on top: the summary page, a second same-day rate-freshness check, three additional flagged items and the validator/Pages wiring. All 52 source IDs, S48–S52, the prose/register count guard and every other session's corrections were preserved.
+
+**Additional verification.** A 2026/11/10 07:32:39 Beijing read of [BOC's official board](https://www.boc.cn/sourcedb/whpj/enindex.html) showed USD 666.22 / 669.03 CNY per 100 USD and a separately published Middle Rate of 671.88; the Costs page now discloses that the Middle Rate is a distinct column, not the arithmetic midpoint of the buy/sell quotes. [IRS Publication 525](https://www.irs.gov/publications/p525) (personal FX gain over $200 is capital gain), [Instructions for Form 3520](https://www.irs.gov/instructions/i3520) (>$100,000 foreign gifts, 5%/month capped at 25%), [FinCEN's CTR FAQ](https://www.fincen.gov/resources/frequently-asked-questions-regarding-fincen-currency-transaction-report-ctr) and [IRS Publication 1544](https://www.irs.gov/publications/p1544) were also re-read. New flagged items: no permanent official URL for the exact dated BOC row, the undefined Middle Rate column, and the PRC IIT rate tables being published as images. Nothing was inferred to fill a blank.
+
+`python3 scripts/build_site.py` → 7 pages, 2 redirects, 40 audited rows; `python3 scripts/validate_site.py` → **PASS** (7 pages, executive summary, 18 procedures, 4×40 matrices, 52 sources, prose/table agreement, canonical FX citations, local links, independent Decimal arithmetic). Local HTTP smoke test: all 9 HTML/redirect pages, `style.css` and `data/cost-model.json` returned **200**. Mobile tables still collapse to labelled cards at ≤760 px via `data-label` on every `td`.
