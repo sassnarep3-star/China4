@@ -397,3 +397,23 @@ Scope delivered: citation-durability fix for the FX input (S5 → official date 
 - PR [#27](https://github.com/sassnarep3-star/China4/pull/27) merged at `b0289c763475aa0e878f550dcfeb46ecf8689166` on 2026-11-10 01:11 UTC. GitHub Pages reported `built` for that commit and the live pages were fetched.
 - **Live-site defect caught after the merge:** `sources.html` served **52** register rows while its own prose still said "48 primary documents"/"48-document register". Two hard-coded counts in the generator had escaped the earlier renumbering when this branch was rebased onto another session's change. Fixed by deriving the count from `len(SOURCES)` in the generator and by adding a validator guard that fails when the stated number differs from the number of registered rows (negative-tested: mutating 52 → 49 produced `sources: prose claims 49 documents but the register has 52`).
 - Follow-up PR and its deployment are recorded below.
+
+### Publication log — arena/7f52b605-china4 (final)
+
+| Item | Result |
+|---|---|
+| PR #27 | https://github.com/sassnarep3-star/China4/pull/27 — merged **2026-11-10 01:11 UTC** at `b0289c763475aa0e878f550dcfeb46ecf8689166` |
+| PR #29 | https://github.com/sassnarep3-star/China4/pull/29 — merged at `ec08cb52ae94f9eba0848dd377a2b55717a66052` |
+| Pages deploy (PR #27) | `pages build and deployment` [42734166953](https://github.com/sassnarep3-star/China4/actions/runs/42734166953) / run 42733912980 reported success; Pages API status `built` |
+| Pages deploy (PR #29) | `pages build and deployment` 42734166967 and `Validate and deploy China4` 42734166953 completed for `ec08cb52`; Pages API status `built` |
+| Live URL | https://sassnarep3-star.github.io/China4/ |
+
+**Live verification after the final deploy (cache-busted fetches):**
+- `sources.html` now reads "52-document primary-source register" and "52 primary documents", matching 52 register rows; S8 is relabelled as the clearance-procedure page with "threshold values: S49, S50".
+- `flagged.html` serves the seven new findings, including the repealed-customs-instrument item, the dead SAFE link, the Capital One condition and the identity-classification divergence, each with source links.
+- `penalties.html` serves the corrected Capital One receiving note and the unchanged 40-row matrices (BofA $15, Chase Secure $15 stated as before; no cost value moved).
+- Cost model spot-check from the regenerated JSON: $10k = $53.45, $100k = $271.62, $200k = $481.99, $300k = $692.36, $400k = $902.72 (BOC known baseline); full-arrival scenario adds $40; Wise bank-funded 1/3/5/7/9 transfers ($66.96 → $2,524.64), Alipay-funded 2/14/27/41/54 transfers.
+
+**Merge-conflict log (final).** Main advanced four times during this session (PRs #24, #25, #26 and their follow-ups). Every rebase conflicted only in `COORDINATION.md`, except one that also conflicted in the generator because another session had already taken source id **S48**. Each conflict was resolved by retaining all sessions' board sections and replaying this session's edits on top of the other session's generator, renumbering new sources to **S49–S52**; nothing was discarded and no other session's claim, source or finding was removed. `git merge-base --is-ancestor origin/main HEAD` was confirmed before each final push.
+
+**Open items (published on `flagged.html`, non-blocking):** live execution quotes and correspondent/receiver deductions; Wise, Western Union and MoneyGram current prices; other banks' tariffs; ATM execution FX and surcharge; PayPal China/wallet and the Hong Kong two-leg route; provincial customs guidance after 2025-04-01; and all personal China/US tax amounts.
