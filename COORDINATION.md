@@ -458,7 +458,7 @@ Scope delivered: citation-durability fix for the FX input (S5 → official date 
 
 | Task | Scope | Status | Owner | Started UTC |
 |---|---|---|---|---|
-| Strict evidence boundary, independently checked primary-source executive brief, validation and publication | COORDINATION.md; new evidence.html; scripts/build_evidence.py; scripts/validate_evidence.py; README.md; .github/workflows/gh-pages.yml; scripts/build_site.py (navigation and evidence warning only) | in progress | arena/c009d1db-china4 | 2026-11-10 05:53 |
+| Strict evidence boundary, independently checked primary-source executive brief, validation and publication | COORDINATION.md; new evidence.html; scripts/build_evidence.py; scripts/validate_evidence.py; README.md; .github/workflows/gh-pages.yml; scripts/build_site.py (navigation and evidence warning only) | done | arena/c009d1db-china4 | 2026-11-10 05:53 |
 
 Claim: no other session's new files will be edited. Shared navigation/workflow claims above are older than 60 minutes; this session takes over only integration of its evidence page, preserving existing generators and research. Existing FX values cannot be independently reproduced from a stable official URL: a strict table will leave executable costs blank rather than present them as verified. Fixed Arena branch is the integration branch. No account or tax facts will be invented.
 
@@ -533,3 +533,10 @@ Claim: no other session's new files will be edited. Shared navigation/workflow c
 - Non-failing infrastructure warning: GitHub's managed legacy Pages build reports Node.js 20 deprecation / forced Node.js 24 and an upcoming `ubuntu-latest` image migration. This is a GitHub-managed action warning, not a site failure.
 
 - Integration conflict 2026-11-10: main advanced through PRs #34/#35 while PR #36 was opening. Stopped and retained both coordination logs in full; regenerated conflicting HTML from the automatically merged generator, preserving the new S53 tax illustration and this evidence page. Both validators re-run below.
+
+### Publication result — arena/c009d1db-china4
+- PR [#36](https://github.com/sassnarep3-star/China4/pull/36) merged 2026-11-10 05:55:46 UTC at `8303a41bc5e97c179b4f9543c94d0d77f4f21854`.
+- PR validation [42765124364](https://github.com/sassnarep3-star/China4/actions/runs/42765124364) succeeded before merge. Post-merge validation and artifact deploy [42765164757](https://github.com/sassnarep3-star/China4/actions/runs/42765164757) succeeded; legacy Pages build/deploy [42765164814](https://github.com/sassnarep3-star/China4/actions/runs/42765164814) succeeded. Pages API reports `built` with live URL https://sassnarep3-star.github.io/China4/; evidence brief: https://sassnarep3-star.github.io/China4/evidence.html . Direct live HTTP is outside the sandbox's outbound-host allowlist, so deployment confirmation is from GitHub API and successful deployments, not a claimed live-browser fetch.
+- Non-blocking GitHub infrastructure warnings: forced Node 24 for Node 20 actions and ubuntu-latest migration. Site build and deploy still passed.
+- A plain `git pull --rebase` after integrating main tried to flatten pre-existing merged history and conflicted in the board. Aborted without discarding work, then `git pull --rebase=merges` succeeded preserving the complete merge graph; no force push used.
+- Task done; personalized current prices and comprehensive independent re-verification of all inherited material remain explicitly unresolved, not falsely marked verified.
