@@ -11,7 +11,7 @@ Live deployment: **https://sassnarep3-star.github.io/China4/**
 - **Costs** — four 40-row matrices covering $10,000 through $400,000 in $10,000 increments, including special property routes, a statutory penalty-ceiling versus lawful-cost comparison, and corrected penalties.
 - **Taxes** — China IIT, US worldwide income, FBAR, Form 8938, Form 3520, cash reporting, FEIE/FTC, treaty and filing corrections.
 - **Flagged for Review** — unresolved values, irregularities and required manual verification.
-- **Sources** — 48 primary documents with direct manual-review links.
+- **Sources** — 52 primary documents with direct manual-review links.
 
 The former `estimates.html` and `costs.html` URLs remain as compatibility redirects to the consolidated matrices, so older links do not serve conflicting figures.
 

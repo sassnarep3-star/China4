@@ -246,8 +246,8 @@ def main():
             for row_number, links in enumerate(t["row_sources"], 1):
                 if not links or not any(url.startswith("https://") or url.startswith("http://") for url in links):
                     fail(f"{page} table {number} row {row_number}: no direct source link")
-    if len(parsed["sources.html"].tables) != 1 or parsed["sources.html"].tables[0]["rows"] != 48:
-        fail("sources: expected exactly 48 primary-source rows")
+    if len(parsed["sources.html"].tables) != 1 or parsed["sources.html"].tables[0]["rows"] != 52:
+        fail("sources: expected exactly 52 primary-source rows")
     # Citation-durability guards: the rotating BOC page that used to hold the
     # cited 2026-11-09 row must not be cited again, and the dated quote must be
     # traceable to BOC's official date-query tool plus the live board.
@@ -276,7 +276,7 @@ def main():
         for error in ERRORS:
             print(f" - {error}")
         sys.exit(1)
-    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 48 sources, local links, landmarks and independent Decimal arithmetic.")
+    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 52 sources, local links, landmarks and independent Decimal arithmetic.")
 
 
 if __name__ == "__main__":
