@@ -209,3 +209,13 @@ returned 200.
 ### Merge-conflict log — arena/672f75fb-china4
 - During this session, arena/4646bb35-china4 merged PRs #15/#16 into main. Rebasing task 11 onto the new main conflicted only in COORDINATION.md; resolved by retaining both sessions' board sections in full — no work discarded. Their validator strengthening (per-row source links) and tax-caveat fix auto-merged with this session's cap-unit correction; `build_site.py` + `validate_site.py` pass on the combined tree with a clean working copy.
 - Second conflict: main moved again via PR #18 (BOC S5 pinned to the exact historical quote page). Rebase conflicted in COORDINATION.md, scripts/build_site.py and generated HTML. Resolved by keeping both sessions' flagged items (quote-timestamp resolution + BOC pagination note + cap-unit correction), keeping the S5 pin, and regenerating all HTML from the merged generator. Nothing discarded; validator passes on the combined tree.
+
+## Current session: arena/753a8878-china4 — final independent verification & publication
+
+| Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| 12 | Independent line-by-line verification audit of live dashboard, fresh official-source spot-checks, defect fixes if any, PR + merge + Pages confirmation | COORDINATION.md (claim + log); site files only if defects found | arena/753a8878-china4 | 2026-11-10 | Prior tasks 1-11 done by earlier sessions; site live at https://sassnarep3-star.github.io/China4/ with build status "built". This session re-verifies independently and publishes the audit record. |
+
+### Claim log — arena/753a8878-china4
+- Non-overlapping scope: verification-only unless a defect is found. No other session has claimed this task. Branch fixed by Arena; this is the integration branch.
+- Plan: (1) rebuild + validate, (2) fetch official sources (SAFE, IRS, BOC, FinCEN, CBP) and spot-check key claims, (3) check live site pages return 200 and mobile layout, (4) record findings, PR, merge, confirm Pages.
