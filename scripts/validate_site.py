@@ -12,7 +12,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "methods.html", "penalties.html", "taxes.html", "sources.html", "flagged.html"]
+PAGES = ["index.html", "summary.html", "methods.html", "penalties.html", "taxes.html", "sources.html", "flagged.html"]
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 ERRORS: list[str] = []
 
@@ -241,6 +241,9 @@ def main():
     penalty_counts = [t["rows"] for t in parsed["penalties.html"].tables]
     if penalty_counts != [40, 40, 40, 40, 8]:
         fail(f"penalties: expected four 40-row matrices + 8 penalty rows, found {penalty_counts}")
+    summary_counts = [t["rows"] for t in parsed["summary.html"].tables]
+    if summary_counts != [5, 8, 6]:
+        fail(f"summary: expected 5 key amounts, 8 routes and 6 tax rows, found {summary_counts}")
     for page, parser in parsed.items():
         for number, t in enumerate(parser.tables, 1):
             for row_number, links in enumerate(t["row_sources"], 1):
@@ -256,13 +259,29 @@ def main():
     for url in source_urls:
         if any(host in url for host in banned_hosts):
             fail(f"secondary/legacy source remains: {url}")
+        if "github.com/sassnarep3-star/China4/blob/arena/" in url:
+            fail(f"stale session-branch link to the generator: {url}")
+    required_sources = [
+        "https://www.boc.cn/sourcedb/whpj/enindex.html",
+        "https://online.customs.gov.cn/static/pages/guides/000629014002/5.",
+        "https://github.com/sassnarep3-star/China4/blob/main/scripts/build_site.py",
+    ]
+    for required in required_sources:
+        if not any(url.startswith(required) for url in source_urls):
+            fail(f"required canonical source link missing: {required}")
+    for page, parser in parsed.items():
+        text = (ROOT / page).read_text(encoding="utf-8")
+        if "2026-11-10 UTC" not in text:
+            fail(f"{page}: missing re-verification date")
+        if 'href="https://www.boc.cn/sourcedb/whpj/enindex_1619_4.html"' in text:
+            fail(f"{page}: stale mutable BOC pagination link remains")
     validate_arithmetic()
     if ERRORS:
         print(f"FAILED: {len(ERRORS)} validation issue(s)")
         for error in ERRORS:
             print(f" - {error}")
         sys.exit(1)
-    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 47 sources, local links, landmarks and independent Decimal arithmetic.")
+    print("PASS: 7 HTML pages, executive summary, 18 procedures, 4×40 cost matrices, 47 sources, canonical citation links, local links, landmarks and independent Decimal arithmetic.")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,9 @@
 {
   "research_cutoff_utc": "2026-11-09 UTC",
+  "link_reverification_utc": "2026-11-10 UTC",
   "boc_quote_timestamp_beijing": "2026-11-09 05:30 Beijing time (BOC page timestamp)",
+  "boc_quote_provenance": "USD 666.48 / 669.29 CNY per 100 USD captured from the official BOC board on 2026-11-09; BOC's board is a rolling five-quote window and its date search requires a captcha, so the exact row is not permanently retrievable from an official URL. See flagged.html.",
+  "boc_board_recheck_2026_11_10": "USD 666.22 / 669.03 CNY per 100 USD at 2026/11/10 07:32:39 Beijing; separately published Middle Rate 671.88.",
   "inputs": {
     "boc_usd_cash_spot_buy_cny_per_usd": "6.6648",
     "boc_usd_cash_spot_sell_cny_per_usd": "6.6929",

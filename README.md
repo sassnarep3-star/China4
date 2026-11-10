@@ -7,6 +7,7 @@ Live deployment: **https://sassnarep3-star.github.io/China4/**
 ## Pages
 
 - **Dashboard** — executive decision guidance and 18-route comparison.
+- **Summary** — the executive brief: answer, key numbers, route shortlist, tax boundary and eight execution steps.
 - **Methods** — pros, cons, constraints, and exact procedures for each route.
 - **Costs** — four 40-row matrices covering $10,000 through $400,000 in $10,000 increments, including special property routes, plus corrected penalties.
 - **Taxes** — China IIT, US worldwide income, FBAR, Form 8938, Form 3520, cash reporting, FEIE/FTC, treaty and filing corrections.
@@ -26,7 +27,7 @@ python3 scripts/build_site.py
 python3 scripts/validate_site.py
 ```
 
-`build_site.py` uses `Decimal` arithmetic to regenerate all six HTML pages and `data/cost-model.json`. The validator independently recalculates the amount ladder, BOC fees/FX benchmark, conditional annual schedule and dated Wise scenarios; it also checks HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts. It also requires a direct source link in each table body row; this structural check does not prove that a linked source supports every claim or that external links are live.
+`build_site.py` uses `Decimal` arithmetic to regenerate all seven HTML pages and `data/cost-model.json`. The validator independently recalculates the amount ladder, BOC fees/FX benchmark, conditional annual schedule and dated Wise scenarios; it also checks HTML nesting, landmarks, local links, anchors, source counts, route counts, matrix row counts, canonical citation URLs and the absence of stale session-branch links. It also requires a direct source link in each table body row; this structural check does not prove that a linked source supports every claim or that external links are live.
 
 The GitHub Actions workflow rebuilds and validates pull requests, verifies generated files are current, then deploys only the public site files from `main` to GitHub Pages.
 
@@ -40,4 +41,4 @@ Open `http://localhost:8080/`. No JavaScript, web fonts, cookies or runtime data
 
 ## Evidence and model boundary
 
-The BOC model uses the personal tariff effective 2025-11-11 and the explicitly dated BOC USD retail quote timestamped 2026-11-09 05:30 Beijing time. Wise formulas are historical examples published 2024-11-25, not current quotes. Current provider quotes, correspondent deductions, account-specific receiving fees, underlying taxes and professional costs must be verified before execution. See the site's **Flagged for Review** page for the complete boundary.
+The BOC model uses the personal tariff effective 2025-11-11 and the explicitly dated BOC USD retail quote timestamped 2026-11-09 05:30 Beijing time. BOC's exchange-rate board is a rolling five-quote window: the exact historical row is no longer displayed there and its date search requires a captcha, so the dated inputs are preserved in `data/cost-model.json` and the citation defect is published on **Flagged for Review**. Primary research cutoff 2026-11-09 UTC; links re-verified 2026-11-10 UTC. Wise formulas are historical examples published 2024-11-25, not current quotes. Current provider quotes, correspondent deductions, account-specific receiving fees, underlying taxes and professional costs must be verified before execution. See the site's **Flagged for Review** page for the complete boundary.

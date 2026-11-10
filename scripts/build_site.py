@@ -21,16 +21,17 @@ SELL = D("6.6929")
 MID = (BUY + SELL) / 2
 QUOTE_TIME = "2026-11-09 05:30 Beijing time (BOC page timestamp)"
 RESEARCH_DATE = "2026-11-09 UTC"
+AUDIT_DATE = "2026-11-10 UTC"
 
 SOURCES = {
     "S1": ("SAFE", "Individual FX Detailed Rules (modified), especially Arts. 2, 12–15", "https://www.safe.gov.cn/tianjin/2024/0430/2464.html"),
     "S2": ("SAFE / PBOC", "Measures for the Administration of Individual Foreign Exchange", "https://www.safe.gov.cn/tianjin/2024/0430/2465.html"),
     "S3": ("SAFE", "Current Account FX Business Guide (2020 edition)", "https://www.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf"),
     "S4": ("Bank of China", "Personal Financial Services Price List, effective 2025-11-11 (PDF)", "https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf"),
-    "S5": ("Bank of China", "Historical retail FX quotation page — 2026-11-09 05:30 USD row (page 5 at review)", "https://www.boc.cn/sourcedb/whpj/enindex_1619_4.html"),
+    "S5": ("Bank of China", "Official BOC exchange rate board (rolling five-quote window); the dated 2026-11-09 05:30 USD row is preserved in data/cost-model.json, not permanently archived here", "https://www.boc.cn/sourcedb/whpj/enindex.html"),
     "S6": ("Bank of China", "Personal outward remittance product and channel instructions", "https://www.boc.cn/pbservice/pb4/200806/t20080626_760.html"),
     "S7": ("SAFE", "Foreign-currency cash carrying limits and permit rules", "https://www.safe.gov.cn/tianjin/2024/0430/2466.html"),
-    "S8": ("China Customs", "Official cash declaration guide: RMB 20,000 / USD-equivalent 5,000", "https://online.customs.gov.cn/static/pages/guides/000629014002/000629014002.html"),
+    "S8": ("China Customs", "Official passenger-baggage service guide (PDF) reproducing GACC Announcement 2007 No. 72: RMB 20,000 / USD-equivalent 5,000 declaration thresholds", "https://online.customs.gov.cn/static/pages/guides/000629014002/5.%E8%BF%9B%E5%87%BA%E5%A2%83%E8%A1%8C%E6%9D%8E%E7%89%A9%E5%93%81%E7%9B%91%E7%AE%A1%EF%BC%88%E7%89%B9%E6%AE%8A%E9%A1%B9%E7%9B%AE%E9%99%A4%E5%A4%96%EF%BC%89%E6%94%BF%E5%8A%A1%E6%9C%8D%E5%8A%A1%E4%BA%8B%E9%A1%B9%E5%8A%9E%E4%BA%8B%E6%8C%87%E5%8D%97%EF%BC%88%E4%BF%AE%E6%94%B9%E7%A8%BF%EF%BC%89.pdf"),
     "S9": ("SAFE", "Domestic-bank-card overseas ATM withdrawal limits", "https://www.safe.gov.cn/hubei/2019/0305/851.html"),
     "S10": ("Bank of China", "ATM price change effective 2026-11-11", "https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html"),
     "S11": ("Wise", "Official guide to sending from CNY", "https://wise.com/help/articles/2955298/guide-to-cny-transfers"),
@@ -51,7 +52,7 @@ SOURCES = {
     "S26": ("eCFR", "31 CFR 1010.821, current FBAR civil-penalty maxima", "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821"),
     "S27": ("IRS", "Form 8938 and FBAR comparison, including all residence/filing-status thresholds", "https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements"),
     "S28": ("IRS", "Current Instructions for Form 3520", "https://www.irs.gov/instructions/i3520"),
-    "S29": ("US Customs and Border Protection", "FinCEN Form 105 for more than USD 10,000 entering/leaving the US", "https://www.cbp.gov/travel/us-citizens/know-before-you-go/know-you-go-traveling-abroad"),
+    "S29": ("US Customs and Border Protection", "FinCEN Form 105 required when carrying more than USD 10,000 into the US", "https://www.cbp.gov/travel/us-citizens/know-before-you-go/know-you-go-traveling-abroad"),
     "S30": ("FinCEN", "CTR FAQ: same-day cash aggregation above USD 10,000", "https://www.fincen.gov/resources/frequently-asked-questions-regarding-fincen-currency-transaction-report-ctr"),
     "S31": ("IRS", "Form 8300 applies to trade/business cash receipts, not an ordinary own-account transfer", "https://www.irs.gov/publications/p1544/ar02.html"),
     "S32": ("IRS", "Publication 54 (2025): worldwide income, FEIE, FTC, and filing rules", "https://www.irs.gov/publications/p54"),
@@ -92,6 +93,7 @@ def table(headers, rows, caption="", cls="") -> str:
 
 NAV = [
     ("index.html", "Dashboard", "Decision dashboard"),
+    ("summary.html", "Summary", "Executive brief"),
     ("methods.html", "Methods", "18 routes and procedures"),
     ("penalties.html", "Costs", "40-row cost matrices"),
     ("taxes.html", "Taxes", "China and US tax/reporting"),
@@ -127,11 +129,11 @@ def layout(filename: str, title: str, subtitle: str, body: str) -> str:
 <nav aria-label="Primary navigation">{links}</nav>
 </div></header>
 <main class="container" id="main">
-<div class="page-heading"><div><p class="eyebrow">CNY → USD · US-citizen research</p><h1>{escape(title)}</h1><p class="page-sub">{subtitle}</p></div><div class="as-of"><span>Research cutoff</span><strong>{RESEARCH_DATE}</strong><small>BOC quote: 2026-11-09 Beijing</small></div></div>
+<div class="page-heading"><div><p class="eyebrow">CNY → USD · US-citizen research</p><h1>{escape(title)}</h1><p class="page-sub">{subtitle}</p></div><div class="as-of"><span>Research cutoff</span><strong>{RESEARCH_DATE}</strong><small>BOC quote: 2026-11-09 Beijing · links re-checked {AUDIT_DATE}</small></div></div>
 {body}
 <div class="disclaimer"><strong>Research, not individualized legal, tax, or investment advice.</strong> Eligibility follows the source and character of funds, identity used at the bank, tax residence, and transaction purpose. Obtain a written all-in bank/provider quote and qualified cross-border tax review before execution. “—” means unknown or unavailable, never zero.</div>
 </main>
-<footer class="site-footer"><div class="inner"><div><strong>China4 evidence desk</strong><p>Independent primary-source audit · calculations reproducible in <code>scripts/build_site.py</code> and <code>data/cost-model.json</code>.</p></div><div><p>Reviewed {RESEARCH_DATE}. FX and fees change.</p><p><a href="flagged.html">Read unresolved items before acting</a> · <a href="https://github.com/sassnarep3-star/China4">Repository</a></p></div></div></footer>
+<footer class="site-footer"><div class="inner"><div><strong>China4 evidence desk</strong><p>Independent primary-source audit · calculations reproducible in <code>scripts/build_site.py</code> and <code>data/cost-model.json</code>.</p></div><div><p>Research cutoff {RESEARCH_DATE} · re-verified {AUDIT_DATE}. FX and fees change.</p><p><a href="flagged.html">Read unresolved items before acting</a> · <a href="https://github.com/sassnarep3-star/China4">Repository</a></p></div></div></footer>
 </body></html>'''
 
 
@@ -279,7 +281,7 @@ def index_page():
     snapshot_table = table(["USD-equivalent principal", "CNY at 6.6929", "BOC known baseline", "+ $25 full-arrival + $15 BofA example", "Wise bank model (not live)", "Sources"], snapshots,
                            "Known BOC model = published fee + CNY 150 telecom + same-quote half-spread. Correspondent/recipient charges, taxes and unknowns excluded unless shown.")
     body = f'''
-<div class="hero"><div class="hero-copy"><p class="eyebrow light">Executive answer · independently corrected</p><h2>Use the route your documents support—not a quota workaround.</h2><p>For a US passport holder, the most verifiable default is a licensed-bank conversion and own-account international wire supported by lawful source-of-funds and tax evidence. The $50,000 convenience purchase rule is written for <strong>domestic individuals</strong>; it is not blanket “ID-only” permission for a foreign individual.</p><div class="hero-actions"><a class="cta" href="methods.html">Choose a documented route</a><a class="cta secondary" href="penalties.html">Compare all 40 amounts</a></div></div><div class="hero-panel"><span>BOC modeled known cost</span><strong>{usd(COSTS[0]['base_usd'])}</strong><small>per USD 10,000 equivalent</small><hr><strong>{usd(COSTS[-1]['base_usd'])}</strong><small>per USD 400,000 equivalent</small><p>Published wire tariff + same-quote FX benchmark. Not an all-in quote.</p></div></div>
+<div class="hero"><div class="hero-copy"><p class="eyebrow light">Executive answer · independently corrected</p><h2>Use the route your documents support—not a quota workaround.</h2><p>For a US passport holder, the most verifiable default is a licensed-bank conversion and own-account international wire supported by lawful source-of-funds and tax evidence. The $50,000 convenience purchase rule is written for <strong>domestic individuals</strong>; it is not blanket “ID-only” permission for a foreign individual.</p><div class="hero-actions"><a class="cta" href="summary.html">Read the executive summary</a><a class="cta secondary" href="methods.html">Choose a documented route</a><a class="cta secondary" href="penalties.html">Compare all 40 amounts</a></div></div><div class="hero-panel"><span>BOC modeled known cost</span><strong>{usd(COSTS[0]['base_usd'])}</strong><small>per USD 10,000 equivalent</small><hr><strong>{usd(COSTS[-1]['base_usd'])}</strong><small>per USD 400,000 equivalent</small><p>Published wire tariff + same-quote FX benchmark. Not an all-in quote.</p></div></div>
 {callout("info", "Bottom line", "No single route is always cheapest or tax-free. Start with BOC’s documented wire as the auditable baseline; if Wise confirms your eligibility, compare its live CNY debit, fee, execution rate and final USD received against the bank’s written quote. Assess taxes on the underlying income and any taxable currency gain separately; the payment rail alone does not determine tax. " + source("S1", "S11", "S32"))}
 <div class="metric-grid"><div class="metric"><span>BOC USD selling rate</span><strong>6.6929</strong><small>CNY per USD · {QUOTE_TIME}</small><p>{source("S5")}</p></div><div class="metric"><span>Retail half-spread benchmark</span><strong>0.210366%</strong><small>From same-timestamp buy 6.6648 / sell 6.6929; arithmetic, not a guaranteed markup</small><p>{source("S5")}</p></div><div class="metric"><span>FBAR aggregate trigger</span><strong>&gt; $10,000</strong><small>Foreign accounts at any time in the calendar year</small><p>{source("S25")}</p></div><div class="metric"><span>Convenience purchase quota</span><strong>$50,000</strong><small>Domestic individuals; genuine documented current-account needs can exceed it</small><p>{source("S1", "S46")}</p></div></div>
 <section class="section"><div class="section-heading"><p class="eyebrow">01 · Eligibility first</p><h2>Four checks before comparing prices</h2></div><div class="steps four"><div><span>1</span><h3>Classify identity</h3><p>SAFE’s implementation measures define a passport-holding foreign citizen as a foreign individual. Confirm which identity the bank has on file. {source("S2")}</p></div><div><span>2</span><h3>Classify money</h3><p>After-tax current-account income, old foreign-currency savings, original-currency reconversion, inheritance and property proceeds follow different rules. {source("S1", "S20", "S21")}</p></div><div><span>3</span><h3>Build evidence</h3><p>Passport, contracts/payslips, amount-matched records and Chinese tax evidence; keep the complete chain from income to bank balance. {source("S1")}</p></div><div><span>4</span><h3>Compare net USD</h3><p>Record CNY principal, execution rate, every sender/intermediary/receiver fee, and final USD credited. Never treat “no fee” as “no spread.” {source("S4", "S15")}</p></div></div></section>
@@ -419,6 +421,74 @@ def methods_page():
     return layout("methods.html", "Conversion routes and exact procedures", "Eighteen bank, provider, property, cash, conditional, unproven and prohibited paths—with implementation steps and primary evidence.", body)
 
 
+def summary_page():
+    """Executive brief: the decision, the numbers, the routes, the tax boundary."""
+    number_rows = []
+    for i in [0, 4, 9, 19, 39]:
+        r = COSTS[i]
+        pct = r["base_usd"] / r["amount_usd"] * D(100)
+        number_rows.append((
+            f"<strong>{usd(r['amount_usd'])}</strong>",
+            cny(r["principal_cny"]),
+            f"<strong>{usd(r['base_usd'])}</strong>",
+            f"{pct:.3f}%",
+            source("S4", "S5"),
+        ))
+    number_table = table(
+        ["USD principal", "CNY principal", "BOC known modeled cost", "Cost as % of principal", "Official sources"],
+        number_rows,
+        "Published 2025-11-11 personal tariff plus a same-quote half-spread benchmark at the dated 6.6648 / 6.6929 retail pair. Excludes correspondent deductions, recipient fees, taxes and unknown costs. Full 40-row grid: <a href=\"penalties.html\">Costs</a>.",
+        "numeric matrix",
+    )
+    shortlist = [
+        ("Documented after-tax Chinese income → licensed-bank wire", "Default for a US passport holder", f"{usd(COSTS[0]['base_usd'])} at $10k · {usd(COSTS[-1]['base_usd'])} at $400k known model", "Bank must accept the identity, source-of-funds and tax evidence", '<span class="tag good">Primary</span>', source("S1", "S2", "S4", "S5")),
+        ("Existing foreign-currency savings → own-account wire", "Funds already held in USD", f"{usd(COSTS[0]['existing_usd_wire_usd'])} at $10k · {usd(COSTS[-1]['existing_usd_wire_usd'])} at $400k before receiving charges", "No CNY conversion needed; receiving deductions remain unknown", '<span class="tag good">Conditional</span>', source("S1", "S4")),
+        ("Wise from CNY (bank app / Alipay funding)", "Eligible non-mainland-Chinese user with Chinese tax records", "Dated 2024 formulas only; live fee and execution rate required", "Own-name recipient only; CNY 300,000 / 50,000 per-transfer caps; overall limit based on tax records", '<span class="tag mixed">Compare live quote</span>', source("S11", "S12", "S13")),
+        ("Domestic-individual annual convenience quota schedule", "Only if the bank classifies you as a domestic individual", f"Illustrative $400k over 8 annual $50k wires: {usd(COSTS[-1]['quota_total_usd'])}", "Constant-rate arithmetic, not advice to split or borrow quotas", '<span class="tag mixed">Not default</span>', source("S1", "S46", "S19")),
+        ("Emigration / inheritance property transfer", "Qualifying emigrant or foreign heir of PRC property", f"Staged $400k BOC model: {usd(COSTS[-1]['emigration_staged_total_usd'])}", "SAFE application for the full amount; staged remittance; professional and tax costs unknown", '<span class="tag good">Special route</span>', source("S20", "S4")),
+        ("USD cash carry", "Small, fully documented amount only", "Travel, insurance and security costs —", "≤ $5k no permit; > $5k–$10k bank permit; > $10k generally prohibited except special SAFE cases", '<span class="tag mixed">Not scalable</span>', source("S7", "S8", "S4")),
+        ("Chinese card → overseas ATM", "Emergency cash, not a USD account transfer", f"$10k scenario: {usd(COSTS[0]['atm_unionpay_fee_usd'])} UnionPay modeled issuer fee", "CNY 100,000/person/year and CNY 10,000/card/day caps; other amounts infeasible", '<span class="tag mixed">Very limited</span>', source("S9", "S4", "S10")),
+        ("Private swaps, borrowed quotas, fake invoices, crypto workarounds", "No lawful implementation", "Not priced; statutory penalty exposure", "Watch-list treatment and fines under the current FX regulations", '<span class="tag bad">Avoid</span>', source("S18", "S19", "S17", "S24")),
+    ]
+    shortlist_table = table(
+        ["Route", "Best fit", "Cost position", "Controlling constraint", "Assessment", "Official sources"],
+        shortlist,
+        "Ranked by evidential strength, not by a claim of a universal cheapest price. Every row links primary evidence; see <a href=\"methods.html\">Methods</a> for the 18 step-by-step procedures.",
+    )
+    tax_rows = [
+        ("Moving your own existing balance", "Not itself a new wage or gift — but not proof of zero tax", "Underlying income, interest, gains, residence and information returns still require analysis", source("S32", "S38", "S39")),
+        ("FBAR / FinCEN 114", "Aggregate foreign accounts exceeded $10,000 at any time in the calendar year", "Due April 15 with automatic extension to October 15", source("S25", "S26")),
+        ("Form 8938", "Separate thresholds by residence and filing status; both FBAR and 8938 can apply", "Filed with the annual return; specified foreign financial assets", source("S27")),
+        ("Form 3520", "Specified foreign gifts/bequests and trusts, not moving your own savings", "Gifts/bequests over $100,000 from a foreign individual or estate; 5%/month late penalty capped at 25% for covered cases", source("S28")),
+        ("Lawful US tax relief", "FEIE 2026 maximum $132,900 per qualifying person; foreign tax credit for qualifying foreign income tax", "No credit on income excluded under FEIE; treaty saving clause preserves broad US taxation of citizens", source("S34", "S35", "S33", "S41")),
+        ("China noncompliance exposure", "Up to 30% of the amount; serious cases over 30% up to 100% for covered FX violations; cash violations up to 20%", "Maximums are statutory ranges, not a prediction of an assessment", source("S18", "S19")),
+    ]
+    tax_table = table(
+        ["Topic", "Verified rule", "Decision constraint", "Official sources"],
+        tax_rows,
+        "No personalized tax amount can be computed from the principal alone. Full analysis: <a href=\"taxes.html\">Taxes</a>.",
+    )
+    steps = [
+        "Classify your identity with the bank: SAFE defines a passport-holding foreign citizen as a foreign individual, which is not the same as a domestic individual for the annual convenience quota. " + source("S2", "S1"),
+        "Classify the money: after-tax salary, existing foreign currency, unused RMB from an earlier conversion, inheritance and property proceeds each follow different rules. " + source("S1", "S20", "S21"),
+        "Assemble the evidence chain: passport, contracts/payslips, amount-matched records, Chinese tax receipts and prior US returns. " + source("S1", "S32"),
+        "Resolve US reporting first: FBAR, Form 8938, Form 3520 and any past-due filings are independent of the transfer rail. " + source("S25", "S27", "S28", "S36"),
+        "Ask the Chinese bank for a written all-in quote: CNY debit, FX rate, commission, telecom, correspondent deduction and final USD credit. " + source("S4", "S6"),
+        "If eligible, obtain Wise's live CNY quote and compare the final USD received — not just the headline fee. " + source("S11", "S13"),
+        "Execute the documented route to your own US account; never split to evade review or borrow another person's quota. " + source("S1", "S19"),
+        "Keep the FX memo, all fee receipts and the final credit; reconcile against the model and update FBAR maximum balances. " + source("S4", "S25"),
+    ]
+    body = f'''
+{callout("info", "Executive answer", "For a US citizen holding CNY in a Chinese bank account, the best-evidenced route is a licensed-bank conversion and an own-account international wire supported by lawful source-of-funds and Chinese tax evidence. The USD 50,000 annual convenience purchase quota is written for domestic individuals; it is not blanket ID-only permission for a foreign individual. Moving your own principal is not itself new taxable income, but it is not proof of zero tax: underlying income, interest, currency gains, tax residence and US information returns must be analyzed separately. " + source("S1", "S2", "S32"))}
+{callout("warn", "Read before acting", "Every figure below is a planning model from published official inputs, not an executable bank quote. The BOC retail rate used here is a dated 2026-11-09 05:30 snapshot; the official board is a rolling window and no longer displays that exact row as of " + AUDIT_DATE + ". Obtain a written same-time rate and all-in fee quote before execution. Blank or “—” means unknown, never zero. " + source("S5", "S4"))}
+<section class="section"><div class="section-heading"><p class="eyebrow">01 · Most important numbers</p><h2>Known modeled cost at five amounts</h2><a href="penalties.html">All 40 amounts →</a></div>{number_table}</section>
+<section class="section"><div class="section-heading"><p class="eyebrow">02 · Route shortlist</p><h2>Which method fits which facts</h2><a href="methods.html">18 procedures →</a></div>{shortlist_table}</section>
+<section class="section"><div class="section-heading"><p class="eyebrow">03 · Tax and penalty boundary</p><h2>What the transfer does and does not change</h2><a href="taxes.html">Full tax analysis →</a></div>{tax_table}</section>
+<section class="section"><div class="section-heading"><p class="eyebrow">04 · Execution</p><h2>Eight steps, in order</h2></div><ol class="procedure">{''.join(f"<li>{s}</li>" for s in steps)}</ol></section>
+<section class="section"><div class="section-heading"><p class="eyebrow">05 · Verification boundary</p><h2>What remains unverified</h2></div><p>Current provider quotes, correspondent and recipient deductions, personal tax amounts, eligibility, cash/travel costs and a permanent official URL for the dated BOC quote are deliberately left blank. They are published with their required manual checks on the <a href="flagged.html">Flagged for Review</a> page. The complete primary-source register is on <a href="sources.html">Sources</a>. {source("S5", "S4", "S32")}</p></section>'''
+    return layout("summary.html", "Executive summary", "The decision, the modeled costs, the route shortlist, the tax boundary and the eight execution steps — each linked to primary evidence.", body)
+
+
 def penalties_page():
     bank_rows = []
     compare_rows = []
@@ -490,9 +560,10 @@ def penalties_page():
     ]
     body = f'''
 {callout("warn", "Read the model boundary", "These are planning models from official published inputs—not executable all-in quotes. CNY principal means the USD-equivalent principal multiplied by 6.6929; final USD received requires a live execution rate and every intermediary/receiver fee. A blank means unknown, not zero.")}
+{callout("info", "Rate freshness check — " + AUDIT_DATE, "Re-fetched " + source("S5") + " on 2026-11-10: BOC's official board shows USD buying 666.22 and selling 669.03 CNY per 100 USD (6.6622 / 6.6903 per USD) at 2026/11/10 07:32:39 Beijing time, with a separately published Middle Rate column of 671.88. The matrices use the earlier 2026-11-09 05:30 row (666.48 / 669.29 per 100 USD = 6.6648 / 6.6929 per USD). BOC's Middle Rate is a distinct published column, not the arithmetic midpoint of its buy/sell quotes, so this model computes its own midpoint. Both are dated snapshots, not executable quotes: obtain a written same-time rate before execution. See <a href='flagged.html'>Flagged for Review</a>.")}
 <section class="section"><div class="section-heading"><p class="eyebrow">Model inputs</p><h2>Formula and source hierarchy</h2></div><div class="formula-grid"><div><h3>BOC personal US-bound TT</h3><code>fee CNY = clamp(0.001 × USD principal × 6.6929, 50, 260) + 150</code><p>Current 2025-11-11 personal tariff. Electronic channels share counter pricing; agreements/promotions and actual foreign-bank charges may differ. {source("S4", "S45")}</p></div><div><h3>Same-quote retail benchmark</h3><code>midpoint = (6.6648 + 6.6929) / 2 = 6.67885</code><code>half-spread = principal × (6.6929 − midpoint) / midpoint</code><p>0.2103656% of USD-equivalent principal. This is an arithmetic benchmark, not a guaranteed markup or accessible mid-market execution. {source("S5")}</p></div><div><h3>Dated Wise formulas</h3><code>bank: ¥33.20 + 0.62% × CNY per transfer</code><code>Alipay: ¥33.20 + 1.97% × CNY per transfer</code><p>Published 2024-11-25 examples. The fixed ¥33.20 is charged per transfer, so the matrix splits the CNY principal at the 300,000 (bank) / 50,000 (Alipay) CNY caps — $400,000 needs 9 bank-funded or 54 Alipay-funded transfers — and converts the fee at 6.6929 solely for comparison. {source("S11", "S13")}</p></div></div><p class="note">BOC quote timestamp: {QUOTE_TIME}. The research cutoff is {RESEARCH_DATE}; the quote is later Beijing time and is labeled, not silently treated as synchronous with any other market rate.</p></section>
 <section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Bank rails</p><h2>BOC conversion, remittance, and draft costs</h2></div>{bank_table}</section>
-<section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Alternatives</p><h2>Full-arrival, conditional annual, Wise and WU comparisons</h2></div>{compare_table}<p class="note">Other published BOC full-arrival tier: $15 when the receiving account is at BOC New York. Receiving examples: BofA $15 (some waivers), Chase Secure $15, Capital One 360 Checking $0; correspondent charges can be separate. {source("S4", "S42", "S43", "S44")}</p></section>
+<section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Alternatives</p><h2>Full-arrival, conditional annual, Wise and WU comparisons</h2></div>{compare_table}<p class="note">Other published BOC full-arrival tier: $15 when the receiving account is at BOC New York. Receiving examples: BofA $15 (some waivers), Chase Secure $15; Capital One publishes $15 for three named account types and no fee for all others, so confirm your own account's schedule; correspondent charges can be separate. {source("S4", "S42", "S43", "S44")}</p></section>
 <section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Cash/transmitters</p><h2>Availability-limited routes and dated fee evidence</h2></div>{physical_table}<p class="note">ATM models exclude ATM-owner surcharge and unverified execution FX. Withdrawals are split at SAFE’s CNY 10,000 per card/day cap, so $10,000 (¥66,929) needs 7 withdrawals. Current UnionPay formula: min(¥112, ¥12 + 1% × CNY withdrawal) per withdrawal. Future Visa/Mastercard formula: 2.5% of the amount withdrawn, min $3/max $40 equivalent per withdrawal, effective 2026-11-11. {source("S4", "S9", "S10")}</p></section>
 <section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Special property</p><h2>Emigration, inheritance, property sale, and investment exit</h2></div>{special_table}<p class="note">The emigration route requires one application for the full intended property amount. The schedule is a maximum-tranche planning model, not permission to defer documented current-account income. Inheritance and property-sale rows assume one wire for comparability; professional, tax, title, liquidation and receiving costs remain excluded. {source("S20", "S21")}</p></section>
 <section class="section"><div class="section-heading"><p class="eyebrow">Noncompliance exposure</p><h2>Corrected penalties—no invented ranges</h2></div>{table(["Rule / violation", "Published consequence", "Official sources"], penalty_rows, "Maximums and ranges are not predictions of an assessment. Criminal, tax, accuracy, fraud and other consequences depend on the facts and are not comprehensively priced.")}</section>'''
@@ -508,7 +579,7 @@ def taxes_page():
         ("Form 8938 — living abroad, unmarried/MFS", "More than $200,000 on last day or more than $300,000 at any time", "Must also satisfy IRS ‘living abroad’ criteria; read the comparison", source("S27")),
         ("Form 8938 — living abroad, MFJ", "More than $400,000 on last day or more than $600,000 at any time", "Specified assets are broader than just bank accounts", source("S27")),
         ("Form 3520", "Gifts/bequests over $100,000 from a foreign individual or foreign estate, with related/nominee aggregation; separate trust rules", "Not a form for moving your own savings; 5% per month late penalty capped at 25% for covered gifts", source("S28")),
-        ("FinCEN Form 105", "Physically transporting more than $10,000 in currency/monetary instruments into or out of the US", "Group totals can aggregate; this is not FBAR and not an income tax", source("S29")),
+        ("FinCEN Form 105", "Physically carrying more than $10,000 in currency/monetary instruments into the US", "Group totals can aggregate; this is not FBAR and not an income tax", source("S29")),
         ("Bank CTR", "Financial institution reports same-day physical-cash transactions over $10,000, including known aggregation", "A report is not a tax or evidence of wrongdoing; never structure to avoid it", source("S30")),
         ("Form 8300", "Trade/business receipt of more than $10,000 cash in one or related transactions", "Not generally an individual’s own-account cash deposit; business facts can differ", source("S31")),
     ]
@@ -540,6 +611,9 @@ def taxes_page():
 def flagged_page():
     unresolved = [
         ("Live BOC execution quote and actual foreign-bank deductions", "Dated quote is only a benchmark; route/correspondent/recipient can change net USD", "Obtain written same-time quote and final-credit confirmation", source("S4", "S5", "S6")),
+        ("Permanent official record of the 2026-11-09 05:30 BOC USD quote", "BOC's board is a rolling five-quote window and its historical date search requires a captcha; the exact row was not present on any of the five pages at the 2026-11-10 re-check", "Request a written BOC rate confirmation or an archived official statement; re-run the model from verified current inputs before relying on the figures", source("S5", "S4")),
+        ("Official definition of BOC's 'Middle Rate' column", "The board publishes a Middle Rate that is a separate figure, not the arithmetic midpoint of its own buy/sell quotes; the model deliberately computes its own midpoint instead", "Ask BOC for the definition and confirm which published rate applies to a personal FX purchase", source("S5")),
+        ("Customs declaration announcement currently in force", "The linked official PDF reproduces GACC Announcement 2007 No. 72; a later announcement may govern the same thresholds", "Confirm the effective announcement and current RMB 20,000 / USD 5,000 thresholds with China Customs (12360) before carrying cash", source("S8", "S7")),
         ("Current Wise CNY→USD fee and execution rate", "Only historical 2024 formulas are reproducible; eligibility and overall limit are account-specific", "Start but do not fund a Wise transfer; record the displayed live quote", source("S11", "S12", "S13")),
         ("Western Union current China→US fee, FX and limits", "Official pages confirm route and variability, not a static current schedule", "Request agent/channel quote and payout limit", source("S14", "S15")),
         ("MoneyGram current service and amounts above $9,999.99", "Verified BOC schedule is dated 2018 and stops below $10,000", "Ask BOC for current MoneyGram terms; do not extrapolate", source("S16")),
@@ -559,9 +633,13 @@ def flagged_page():
         ("Prior China private-FX fine: 30%–300%", "Corrected under current 2008 regulation: up to 30%; serious cases over 30% up to 100%, plus other consequences", "High", source("S18")),
         ("Prior blanket ‘no US tax’ statement", "Corrected: moving own principal is not itself new income, but underlying income/gains, interest and personal FX rules remain", "High", source("S32", "S38")),
         ("BOC quote timestamp vs research cutoff", "Resolved 2026-11-09: the quote is stamped 2026-11-09 05:30 Beijing time (= 2026-11-08 21:30 UTC) and the cutoff is now stated as 2026-11-09 UTC; the quote is explicitly dated and never compared as though simultaneous with a different market quote. BOC’s live 2026-11-09 09:15 board (buy 6.6638 / sell 6.6919) corroborates the snapshot’s magnitude", "Medium", source("S5")),
-        ("BOC historical FX table is paginated and mutable", "The exact 2026-11-09 05:30 USD quote (buy 666.48, sell 669.29 CNY per USD) was visible on page 5 at review; later quote updates change page positions, so S5 is a direct official source but not a permanent archived snapshot", "Medium", source("S5")),
+        ("BOC FX citation no longer reproduces the model's historical quote", "High-severity finding of the 2026-11-10 re-audit: the previously pinned page (enindex_1619_4.html) now shows a 2026/11/10 02:49:40 quote, and all five rolling-board pages show 2026/11/10 quotes only. The 2026-11-09 05:30 USD row (666.48 / 669.29 per 100 USD) was captured and cross-validated on 2026-11-09 and is preserved in data/cost-model.json, but BOC's date search requires a captcha and no permanent official URL for that exact row was found. S5 now links the canonical board. The dated inputs are not independently re-verifiable from a permanent official URL: treat them as historical model inputs, obtain a written BOC rate confirmation, and re-run the model against a current quote before execution", "High", source("S5", "S4")),
         ("Cost model treated Wise/ATM CNY caps as USD amounts (corrected 2026-11-09)", "The inherited model split the USD principal at 300,000/50,000/10,000 as if those caps were USD. Wise caps are CNY 300,000 (bank app) and CNY 50,000 (Alipay) per transfer, and the ATM cap is CNY 10,000 per card/day. The model now splits the CNY principal: $400,000 = 9 bank-funded or 54 Alipay-funded Wise transfers; $10,000 by ATM = 7 withdrawals. Fixed per-transfer/per-withdrawal fees were understated; all matrices and the validator were corrected together", "High", source("S11", "S9", "S10")),
-        ("ATM tariff changes three days after research cutoff", "Current 2025-11-11 price list and new 2026-11-11 Visa/Mastercard formula are shown separately", "Medium", source("S4", "S10")),
+        ("ATM tariff effective after the research cutoff", "The 2025-11-11 price list and the Visa/Mastercard formula effective 2026-11-11 are shown separately; the earlier note that the change was three days after the cutoff was stale once the cutoff moved to 2026-11-09. At the 2026-11-10 re-audit the change is still one day away, so the matrices label it as future-dated rather than current", "Medium", source("S4", "S10")),
+        ("Customs thresholds were cited to a page whose HTML omits the numbers", "The official passenger-baggage service guide PDF reproduces GACC Announcement 2007 No. 72 and states the RMB 20,000 / USD-equivalent 5,000 declaration thresholds verbatim; the HTML landing page hides them behind expandable sections. S8 was repointed to that official PDF. Confirm the currently effective customs announcement with Customs before travel", "Medium", source("S8", "S7")),
+        ("Form 105 description was broader than the linked CBP page", "CBP's page states the reporting duty for travelers carrying more than USD 10,000 INTO the United States. The site previously said 'into or out of' the US and now says 'into the US' to match the source; outbound reporting rules were not independently linked in this audit", "Medium", source("S29")),
+        ("Capital One 360 Checking USD 0 receiving example is inferred", "The official help page names three account types charged USD 15 for incoming wires and says all other account types are not charged; it does not name '360 Checking'. The USD 0 example is an inference from that list, so it must be confirmed against the account's own fee schedule", "Medium", source("S44")),
+        ("PRC IIT rate schedule is published as images", "S39's official law page embeds the comprehensive-income rate table as images rather than machine-readable text, so the seven brackets and quick deductions on the Taxes page could not be re-read from the fetched text. Confirm each bracket and quick deduction against the images on the official page", "Low", source("S39")),
         ("Wise matrix uses historical fee formulas", "Included because disclosed formulas are reproducible; not labeled live or used to declare a universal winner", "Medium", source("S13")),
         ("MoneyGram $10,000 falls outside top published tier", "Schedule ends at $9,999.99; matrix labels the $10,000 value as dated-only and does not invent higher tiers", "Medium", source("S16")),
         ("Foreign-individual status may differ from intuition", "US citizenship, PRC documentation, account identity and residence facts must be reconciled by the bank", "High", source("S1", "S2")),
@@ -585,10 +663,10 @@ def sources_page():
         "S2": "Identity definitions, current/capital account framework and anti-evasion",
         "S3": "Current-account guide and outward-remittance evidence",
         "S4": "Wire/draft/ATM/permit prices, full-arrival and foreign-bank charges",
-        "S5": "Dated USD buy/sell quotes used for every CNY/FX calculation",
+        "S5": "Official BOC rate board; the 2026-11-09 05:30 USD inputs are retained only in data/cost-model.json (rolling window, not a permanent archive)",
         "S6": "BOC remittance channels and SWIFT instructions",
         "S7": "China foreign-currency cash permits and special-case ceiling",
-        "S8": "Customs RMB and FX declaration thresholds",
+        "S8": "RMB 20,000 / USD-equivalent 5,000 passenger declaration thresholds in the official PDF guide",
         "S9": "ATM CNY 100,000/year and CNY 10,000/card/day caps",
         "S10": "Future Visa/Mastercard ATM fee effective 2026-11-11",
         "S11": "Wise eligibility, own-name recipient, funding routes and caps",
@@ -609,7 +687,7 @@ def sources_page():
         "S26": "Current adjusted FBAR civil maxima",
         "S27": "All Form 8938 thresholds and FBAR distinction",
         "S28": "Foreign gift/bequest threshold and Form 3520 penalty",
-        "S29": "US travel monetary-instrument declaration",
+        "S29": "FinCEN Form 105 when carrying more than USD 10,000 into the US",
         "S30": "US bank physical-cash aggregation",
         "S31": "Trade/business Form 8300 scope",
         "S32": "Worldwide income and citizen-abroad framework",
@@ -633,14 +711,15 @@ def sources_page():
         rows.append((f"<strong>{sid}</strong>", authority, f'<a href="{url}" target="_blank" rel="noopener noreferrer">{escape(title)}</a>', used[sid], f'<a class="source" href="{url}" target="_blank" rel="noopener noreferrer">Open primary ↗</a>'))
     body = f'''
 {callout("info", "Evidence standard", "The register contains the primary pages used in the audit. Chinese-language rules are summarized conservatively in English. Bank/operator pages establish their own products and prices—not another institution’s terms. All external links open in a new tab for side-by-side manual review.")}
-<section class="section"><div class="section-heading"><p class="eyebrow">47 primary documents</p><h2>Source register and exact use</h2></div>{table(["ID", "Issuer", "Document", "Used to verify", "Manual review"], rows, "Source IDs are stable across all six pages. Retrieval/review cutoff: " + RESEARCH_DATE + ".")}</section>
-<section class="section"><div class="section-heading"><p class="eyebrow">Reproducibility</p><h2>How to audit the calculations</h2></div><ol class="procedure"><li>Open <a href="https://github.com/sassnarep3-star/China4/blob/arena/d778fbdf-china4/scripts/build_site.py"><code>scripts/build_site.py</code></a> and confirm the Decimal inputs BUY=6.6648, SELL=6.6929 and amount ladder $10,000…$400,000.</li><li>Run <code>python3 scripts/build_site.py</code>. It rebuilds the HTML and <code>data/cost-model.json</code> without network calls.</li><li>Compare BOC commission against the CNY 50 minimum and CNY 260 maximum; add CNY 150 telecom only to TT, not draft.</li><li>Verify the half-spread from BOC’s same-timestamp buy/sell midpoint. Do not substitute the PBOC fixing or a later mid-market quote.</li><li>Check Wise transfer counts against CNY 300,000/50,000 caps and apply the dated 2024 fee formula separately per transfer.</li><li>Confirm that ATM amounts above $10,000 are marked infeasible under the annual cap and that unknown values remain blank.</li></ol><p class="note">The dashboard intentionally does not fetch live prices during a visit. This prevents a stale static page from presenting new values without an audit trail.</p></section>'''
+<section class="section"><div class="section-heading"><p class="eyebrow">{len(SOURCES)} primary documents</p><h2>Source register and exact use</h2></div>{table(["ID", "Issuer", "Document", "Used to verify", "Manual review"], rows, "Source IDs are stable across all pages. Primary research cutoff: " + RESEARCH_DATE + ". Link re-check: " + AUDIT_DATE + ". S5 is a rolling official board and does not permanently retain the model's dated quote.")}</section>
+<section class="section"><div class="section-heading"><p class="eyebrow">Reproducibility</p><h2>How to audit the calculations</h2></div><ol class="procedure"><li>Open <a href="https://github.com/sassnarep3-star/China4/blob/main/scripts/build_site.py"><code>scripts/build_site.py</code></a> on <code>main</code> and confirm the Decimal inputs BUY=6.6648, SELL=6.6929 and amount ladder $10,000…$400,000.</li><li>Run <code>python3 scripts/build_site.py</code>. It rebuilds the HTML and <code>data/cost-model.json</code> without network calls.</li><li>Compare BOC commission against the CNY 50 minimum and CNY 260 maximum; add CNY 150 telecom only to TT, not draft.</li><li>Verify the half-spread from BOC’s same-timestamp buy/sell midpoint. Do not substitute the PBOC fixing or a later mid-market quote.</li><li>Check Wise transfer counts against CNY 300,000/50,000 caps and apply the dated 2024 fee formula separately per transfer.</li><li>Confirm that ATM amounts above $10,000 are marked infeasible under the annual cap and that unknown values remain blank.</li></ol><p class="note">The dashboard intentionally does not fetch live prices during a visit. This prevents a stale static page from presenting new values without an audit trail.</p></section>'''
     return layout("sources.html", "Official sources and calculation audit", "A 47-document primary-source register with direct manual-review links and exact instructions for rebuilding every cost row.", body)
 
 
 def main():
     pages = {
         "index.html": index_page(),
+        "summary.html": summary_page(),
         "methods.html": methods_page(),
         "penalties.html": penalties_page(),
         "taxes.html": taxes_page(),
@@ -656,7 +735,10 @@ def main():
 <body><main><h1>Cost matrices have moved</h1><p>The provider and legal-route models are now consolidated in the <a href="penalties.html">audited cost matrices</a>.</p></main></body></html>''', encoding="utf-8")
     audit = {
         "research_cutoff_utc": RESEARCH_DATE,
+        "link_reverification_utc": AUDIT_DATE,
         "boc_quote_timestamp_beijing": QUOTE_TIME,
+        "boc_quote_provenance": "USD 666.48 / 669.29 CNY per 100 USD captured from the official BOC board on 2026-11-09; BOC's board is a rolling five-quote window and its date search requires a captcha, so the exact row is not permanently retrievable from an official URL. See flagged.html.",
+        "boc_board_recheck_2026_11_10": "USD 666.22 / 669.03 CNY per 100 USD at 2026/11/10 07:32:39 Beijing; separately published Middle Rate 671.88.",
         "inputs": {
             "boc_usd_cash_spot_buy_cny_per_usd": str(BUY),
             "boc_usd_cash_spot_sell_cny_per_usd": str(SELL),

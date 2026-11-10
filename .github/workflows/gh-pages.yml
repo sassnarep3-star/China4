@@ -45,7 +45,7 @@ jobs:
       - name: Stage public site
         run: |
           mkdir _site
-          cp index.html methods.html penalties.html taxes.html sources.html flagged.html estimates.html costs.html style.css _site/
+          cp index.html summary.html methods.html penalties.html taxes.html sources.html flagged.html estimates.html costs.html style.css _site/
           mkdir _site/data
           cp data/cost-model.json _site/data/
       - name: Setup Pages
