@@ -245,3 +245,24 @@ returned 200.
 | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
 |---|---|---|---|---|---|
 | 12 | Independent line-by-line re-verification of live dashboard, fresh official-source spot-checks, defect fixes, PR + merge + Pages confirmation | root HTML pages (via scripts/build_site.py), style.css, EXECUTIVE_SUMMARY.md, README.md, COORDINATION.md, .github/workflows | in progress | arena/09fa5313-china4 | Prior tasks 1–11 done by earlier sessions; stale open PRs #4, #5, #12 are duplicates from other sessions — not touched. Branch fixed by Arena; this is the integration branch. |
+
+### Completion log — arena/09fa5313-china4 (task 12)
+
+**Status: done.** Fixed Arena branch `arena/09fa5313-china4` used as integration branch. No code defects found; no generated-file changes required (build is deterministic and current).
+
+**Fresh official sources fetched and verified this session (2026-11-10):**
+- [IRS, Figuring the FEIE](https://www.irs.gov/individuals/international-taxpayers/figuring-the-foreign-earned-income-exclusion) — 2026 maximum exclusion **$132,900** confirmed.
+- [IRS, FBAR](https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar) — aggregate > $10,000 at any time in calendar year; due April 15, automatic extension to October 15 confirmed.
+- [eCFR 31 CFR 1010.821](https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821) — FBAR civil maxima **$16,536** (non-willful) / **$165,353** (willful) for penalties assessed on or after Jan 17, 2025 confirmed.
+- [SAFE, Individual FX Detailed Rules](https://www.safe.gov.cn/tianjin/2024/0430/2464.html) — Art. 2 ($50k annual quota, domestic individuals), Art. 13 (foreign-individual lawful RMB income with tax documentation), Art. 14/15 (outward remittance), Art. 39 repealed by 汇发〔2023〕8号 confirmed.
+- [SAFE, ATM withdrawal notice](https://www.safe.gov.cn/hubei/2019/0305/851.html) — CNY 100,000/person/year and CNY 10,000/card/day confirmed.
+- [BOC, ATM price-change notice effective 2026-11-11](https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html) — UnionPay ¥12 + 1% (max ¥112); Visa/Mastercard 2.5% (min USD-equiv. 3 / max USD-equiv. 40) per withdrawal confirmed.
+- [BOC, personal service price list effective 2025-11-11 (PDF)](https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf) — item 210105008: TT/draft 0.1%, min ¥50 / max ¥260, international telecom ¥150; note 5: full-arrival USD 15 (BOC NY) / USD 25 elsewhere; item 210101002: permit ¥10 waived 2025-04-01–2026-12-31 confirmed.
+- [BOC live FX board](https://www.boc.cn/sourcedb/whpj/enindex_1619_1.html) — 2026-11-10 06:43 USD buy 6.6622 / sell 6.6903 / middle 6.7188; sell-below-middle anomaly persists, corroborating the flagged item. Model's dated 2026-11-09 05:30 snapshot (6.6648/6.6929) remains correctly labeled historical.
+- [Wise, Guide to CNY transfers](https://wise.com/help/articles/2955298/guide-to-cny-transfers) — non-mainland-Chinese eligibility, own-account-only recipients, CNY 300,000/bank transfer and CNY 50,000/Alipay caps, tax-record overall limit confirmed.
+- [Wise, Summary of fee changes (2024-11-25)](https://wise.com/gb/blog/summary-of-fee-changes) — bank ¥33.20 + 0.62%; Alipay ¥33.20 + 1.97% (dated formulas only) confirmed.
+- [CBP, Know Before You Go](https://www.cbp.gov/travel/us-citizens/know-before-you-go/know-you-go-traveling-abroad) and [IRS Form 3520 instructions](https://www.irs.gov/instructions/i3520) — retrieved; FinCEN Form 105 / Form 3520 scope as published on taxes.html confirmed at retrieval level.
+
+**Verification performed:** `python3 scripts/build_site.py && python3 scripts/validate_site.py` PASS (6 pages, 18 procedures, 4×40 matrices, 47 sources, local links, landmarks, independent Decimal arithmetic); working tree clean after rebuild (generated files current). Local HTTP smoke test: all 8 pages + style.css + data/cost-model.json returned 200. Live site fetched and confirmed serving the corrected build (cutoff 2026-11-09, BOC $53.45/$902.72, Wise 9 transfers · $2,524.64 at $400k). Pages API reports `built`, legacy, source main "/". Mobile: ≤760px tables render as labelled cards via `data-label` (style.css); hero leads with executive answer and cost snapshot (most important info first).
+
+**Irregularities:** none new. All previously flagged items remain published on flagged.html and do not block the merge. Stale duplicate PRs #4, #5, #12 from other sessions remain open and untouched.
