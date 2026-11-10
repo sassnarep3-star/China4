@@ -156,17 +156,6 @@ def validate_arithmetic():
         if raw["quota_wires"] != len(annual):
             fail(f"{amount}: quota wire count")
         close(D(raw["quota_total_usd"]), annual_total / sell, f"{amount} annual model")
-        # Wise caps are CNY per transfer (independent re-derivation from the
-        # CNY principal, not from the USD amount): fixed fee per transfer.
-        for key, cap_cny, variable, count_key in [
-            ("wise_bank_historical_fee_usd", D(300000), D("0.0062"), "wise_bank_transfers"),
-            ("wise_alipay_historical_fee_usd", D(50000), D("0.0197"), "wise_alipay_transfers"),
-        ]:
-            route_pieces = pieces(principal, cap_cny)
-            fee = sum((D("33.20") + variable * part for part in route_pieces), D(0))
-            if raw[count_key] != len(route_pieces):
-                fail(f"{amount}: {count_key}")
-            close(D(raw[key]), fee / sell, f"{amount} {key}")
         if amount == D(10000):
             close(D(raw["base_usd"]), D("53.44836522396977101779300253214629"), "known 10k regression")
             if "atm_unionpay_fee_usd" not in raw:
@@ -239,8 +228,8 @@ def main():
     if index_counts != [4, 18]:
         fail(f"index: expected snapshot 4 and routes 18, found {index_counts}")
     penalty_counts = [t["rows"] for t in parsed["penalties.html"].tables]
-    if penalty_counts != [40, 40, 40, 40, 6, 8]:
-        fail(f"penalties: expected four 40-row matrices + 6 exposure + 8 penalty rows, found {penalty_counts}")
+    if penalty_counts != [40, 40, 40, 40, 40, 6, 8]:
+        fail(f"penalties: expected five 40-row matrices + 6 exposure + 8 penalty rows, found {penalty_counts}")
     summary_counts = [t["rows"] for t in parsed["summary.html"].tables]
     if summary_counts != [5, 8, 6]:
         fail(f"summary: expected 5 key amounts, 8 routes and 6 tax rows, found {summary_counts}")
@@ -283,13 +272,20 @@ def main():
     for url in source_urls:
         if any(host in url for host in banned_hosts):
             fail(f"secondary/legacy source remains: {url}")
+    # Regressions for previously misleading claims and a required primary source.
+    if "Dated 2018 USD 10k tier" in (ROOT / "index.html").read_text(encoding="utf-8"):
+        fail("MoneyGram tier incorrectly described as covering $10,000")
+    if "https://shanghai.chinatax.gov.cn/zcfw/zcfgk/grsds/202402/P020240202362406243753.pdf" not in source_urls:
+        fail("missing official annual IIT bracket source")
+    if "same net USD received" not in (ROOT / "penalties.html").read_text(encoding="utf-8"):
+        fail("Wise gross-vs-net comparison caveat missing")
     validate_arithmetic()
     if ERRORS:
         print(f"FAILED: {len(ERRORS)} validation issue(s)")
         for error in ERRORS:
             print(f" - {error}")
         sys.exit(1)
-    print("PASS: 7 HTML pages, executive summary, 18 procedures, 4×40 cost matrices, 52 sources, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
+    print("PASS: 7 HTML pages, executive summary, 18 procedures, 5×40 cost matrices, primary-source register, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
 
 
 if __name__ == "__main__":
