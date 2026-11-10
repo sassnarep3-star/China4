@@ -97,6 +97,7 @@ def table(headers, rows, caption="", cls="") -> str:
 
 
 NAV = [
+    ("evidence.html", "Evidence", "Fresh audit and strict costs"),
     ("index.html", "Dashboard", "Decision dashboard"),
     ("summary.html", "Summary", "Executive brief"),
     ("methods.html", "Methods", "18 routes and procedures"),
@@ -135,6 +136,7 @@ def layout(filename: str, title: str, subtitle: str, body: str) -> str:
 </div></header>
 <main class="container" id="main">
 <div class="page-heading"><div><p class="eyebrow">CNY → USD · US-citizen research</p><h1>{escape(title)}</h1><p class="page-sub">{subtitle}</p></div><div class="as-of"><span>Research cutoff</span><strong>{RESEARCH_DATE}</strong><small>BOC quote: 2026-11-09 Beijing</small></div></div>
+<aside class="callout info"><strong>Evidence boundary:</strong> <a href="evidence.html">Read the fresh evidence brief and strict current-cost register first.</a> Older dollar calculations use a historical FX snapshot that cannot currently be reproduced from a permanent official row. They are illustrative, not verified executable costs. Unconfirmed current costs are blank in the strict register.</aside>
 {body}
 <div class="disclaimer"><strong>Research, not individualized legal, tax, or investment advice.</strong> Eligibility follows the source and character of funds, identity used at the bank, tax residence, and transaction purpose. Obtain a written all-in bank/provider quote and qualified cross-border tax review before execution. “—” means unknown or unavailable, never zero.</div>
 </main>
@@ -714,6 +716,7 @@ def taxes_page():
 
 def flagged_page():
     unresolved = [
+        ("Strict evidence audit and current-cost blanks", "Historical scenario arithmetic is not verification of an executable current quote; unknown live fees and personal taxes remain blank in the strict register", 'Read <a href="evidence.html#audit-flags">the fresh evidence audit and its review flags</a> before relying on inherited estimates', source("S1", "S5", "S11")),
         ("Permanent official record of the 2026-11-09 05:30 BOC USD quote", "BOC's five-quote board has rotated and its historical date query requires a captcha; the exact row was not present on any of the five board pages at the 2026-11-10 re-check", "Request a written BOC rate confirmation or an archived official statement; re-run the model from verified current inputs before relying on the figures", source("S5", "S48")),
         ("Official definition of BOC's Middle Rate column", "The board publishes a Middle Rate that is a separate figure, not the arithmetic midpoint of its own buy/sell quotes; the model deliberately computes its own midpoint instead", "Ask BOC for the column definition and confirm which published rate applies to a personal FX purchase", source("S48")),
         ("Live BOC execution quote and actual foreign-bank deductions", "Dated quote is only a benchmark; route/correspondent/recipient can change net USD", "Obtain written same-time quote and final-credit confirmation", source("S4", "S5", "S6")),
