@@ -73,3 +73,26 @@ This session re-read the load-bearing official sources, then added the **live ex
 **Additional verification.** A 2026/11/10 07:32:39 Beijing read of [BOC's official board](https://www.boc.cn/sourcedb/whpj/enindex.html) showed USD 666.22 / 669.03 CNY per 100 USD and a separately published Middle Rate of 671.88; the Costs page now discloses that the Middle Rate is a distinct column, not the arithmetic midpoint of the buy/sell quotes. [IRS Publication 525](https://www.irs.gov/publications/p525) (personal FX gain over $200 is capital gain), [Instructions for Form 3520](https://www.irs.gov/instructions/i3520) (>$100,000 foreign gifts, 5%/month capped at 25%), [FinCEN's CTR FAQ](https://www.fincen.gov/resources/frequently-asked-questions-regarding-fincen-currency-transaction-report-ctr) and [IRS Publication 1544](https://www.irs.gov/publications/p1544) were also re-read. New flagged items: no permanent official URL for the exact dated BOC row, the undefined Middle Rate column, and the PRC IIT rate tables being published as images. Nothing was inferred to fill a blank.
 
 `python3 scripts/build_site.py` → 7 pages, 2 redirects, 40 audited rows; `python3 scripts/validate_site.py` → **PASS** (7 pages, executive summary, 18 procedures, 4×40 matrices, 52 sources, prose/table agreement, canonical FX citations, local links, independent Decimal arithmetic). Local HTTP smoke test: all 9 HTML/redirect pages, `style.css` and `data/cost-model.json` returned **200**. Mobile tables still collapse to labelled cards at ≤760 px via `data-label` on every `td`.
+
+## What the tax exposure looks like, quantified (2026)
+
+Illustration for a **single filer under 65 with USD 100,000 of other taxable income**, using the brackets, standard deduction, capital-gain bands and FEIE amount published in IRS Rev. Proc. 2025-32. Same dollar amount, three different characters:
+
+| Amount | If ordinary income: added US tax | If a 10% currency gain: US capital-gain tax | If FEIE-eligible earned income: US tax |
+|---:|---:|---:|---:|
+| $10,000 | **$2,286.00** | $150.00 | **$0.00** |
+| $50,000 | **$11,886.00** | $750.00 | $1,804.00 |
+| $100,000 | **$23,886.00** | $1,500.00 | $9,474.00 |
+| $200,000 | **$57,057.25** | $3,000.00 | $32,702.00 |
+| $400,000 | **$127,057.25** | $6,000.00 | $97,254.25 |
+
+Read this as a scale, not a forecast. Two consequences drive the decision:
+
+- **A currency gain is not a percentage levy on the principal.** Publication 525 excludes a personal foreign-currency transaction gain unless it is more than USD 200 and reports it as a capital gain above that amount, so a held-for-personal-use balance converted once is a small separate line. A *measured* gain stays blank on the site because the acquisition date and rate of a pre-existing balance are personal facts.
+- **The large numbers appear only if the money is untaxed income.** That is a reporting-history question answered by the FBAR, FEIE/FTC and streamlined-procedure material — not by choosing a different payment rail. No rail converts taxable income into exempt principal.
+
+## Re-verification performed 2026-11-10
+
+Primary documents re-fetched and read, not merely linked: SAFE individual FX rules (Arts. 2, 13, 14, 15, 30, 39) and the PBOC individual FX measures (Art. 37 identity definitions); the SAFE 2022 Q&A confirming a convenience quota rather than a hard cap; the State Council FX Regulations (Dec. 532, Arts. 5 and 39–45); the BOC tariff PDF (items 210101002, 210105008, 210108014, notes 5 and 10) and the 2026-11-11 ATM notice; eCFR 31 CFR 1010.821 and 1010.340; IRS FBAR guidance, the Form 8938/FBAR comparison, Form 3520 instructions, the FEIE page and Publication 525; IRS Rev. Proc. 2025-32; PBOC Announcement [2004] No. 18; Customs Announcement 2025 No. 43; SAFE's cash-carrying and ATM-cap notices; and Wise's CNY guide with its dated 2024-11-25 fee-change post.
+
+All cited figures matched the sources on re-read. The 2026 US tax illustration is arithmetic on published brackets: a mutation test (changing one bracket's tax-at-floor by one dollar) makes the validator fail, which confirms the check is live rather than tautological.

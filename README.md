@@ -10,9 +10,9 @@ Live deployment: **https://sassnarep3-star.github.io/China4/**
 - **Summary** — the executive brief: answer, key costs, route shortlist, tax boundary and eight execution steps.
 - **Methods** — pros, cons, constraints, and exact procedures for each route.
 - **Costs** — four 40-row matrices covering $10,000 through $400,000 in $10,000 increments, including special property routes, a statutory penalty-ceiling versus lawful-cost comparison, and corrected penalties.
-- **Taxes** — China IIT, US worldwide income, FBAR, Form 8938, Form 3520, cash reporting, FEIE/FTC, treaty and filing corrections.
+- **Taxes** — China IIT, US worldwide income, FBAR, Form 8938, Form 3520, cash reporting, FEIE/FTC, treaty and filing corrections, plus a sourced 2026 illustration of what the same amount costs under different tax characters.
 - **Flagged for Review** — unresolved values, irregularities and required manual verification.
-- **Sources** — 52 primary documents with direct manual-review links.
+- **Sources** — the full primary-source register with direct manual-review links; the count is generated from `SOURCES` so prose cannot drift.
 
 The former `estimates.html` and `costs.html` URLs remain as compatibility redirects to the consolidated matrices, so older links do not serve conflicting figures.
 
