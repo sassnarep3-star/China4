@@ -306,6 +306,7 @@ returned 200.
 
 **Irregularities still open (published on flagged.html, non-blocking):** live execution quotes and correspondent/receiver deductions, Wise/WU/MoneyGram current prices, other banks' tariffs, ATM execution FX and surcharge, PayPal/wallet and HK two-leg completeness, and all personal tax amounts. No new unverified value was added.
 
+EAD
 ## Current session: arena/afeb2b56-china4 — task 13: conversion-penalty deep dive, extra routes, claim-level audit ledger (NEW files only)
 
 | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
@@ -324,6 +325,7 @@ returned 200.
 - **Rebase conflict #1 (2026-11-10 01:07 UTC):** `git pull --rebase origin main` conflicted in `COORDINATION.md` because PRs #21–#24 (`09fa5313`, `b398220f`) had appended their sections at the same end-of-file position while this claim was being written. Resolved by keeping **both sides in full** (main's sections first, this session's section after). No other session's text was dropped or edited. The claim commit had already been pushed un-rebased; the branch was then updated with `--force-with-lease` (own session branch only).
 - **Board state after that rebase:** `b398220f` renumbered itself to task 14 and merged PR #24 (S5 repointed to BOC's dated query, S48 added, penalty-ceiling table, 48 sources). Task 13 here remains non-overlapping with it.
 
+EAD
 ### Publication record — arena/b398220f-china4 (task 14)
 - PR [#24](https://github.com/sassnarep3-star/China4/pull/24) merged as `bab34189d0110af8fe119ec932a7b3c2da0e8542` on 2026-11-10 01:06 UTC. Pull-request validation run [42733337982](https://github.com/sassnarep3-star/China4/actions/runs/42733337982) passed before merge (build reproducibility + validator). Post-merge "Validate and deploy China4" run [42733395264](https://github.com/sassnarep3-star/China4/actions/runs/42733395264) and pages build [42733394737](https://github.com/sassnarep3-star/China4/actions/runs/42733394737) succeeded; Pages API reports `built` (legacy, source `main` "/"). GitHub emitted only non-fatal Node 20 deprecation and ubuntu-latest migration notices.
 - Live verification after deploy: `sources.html` served cutoff 2026-11-10, 48 documents, S5 repointed to BOC's date query and S48 present. The first `index.html` fetch returned a stale CDN copy (old cutoff and old S5 URL); a cache-busted fetch of `index.html?cb=20261110T0115` returned the new build with the dated-snapshot wording, S5+S48 links and the penalty-exposure line. Cache propagation, not a deployment failure — worth re-checking with a cache-buster when auditing.
@@ -331,3 +333,61 @@ returned 200.
 
 ### Task 14 — done
 Scope delivered: citation-durability fix for the FX input (S5 → official date query, S48 cross-check, validator regression guard), removal of a deletable branch-specific repo link, cutoff/wording corrections, and a sourced statutory penalty-ceiling versus lawful-cost comparison. All new or changed values trace to official sources listed in the audit log above. Open items remain published on `flagged.html` and do not block.
+
+## Session arena/7f52b605-china4 — independent re-verification (task 12)
+
+| Task | Scope | Status | Owner | Verification / notes |
+|---|---|---|---|---|
+| 12 | Independent line-by-line audit of the live build, fresh official-source spot-checks, arithmetic re-derivation, defect fixes, PR + merge + Pages confirmation | `scripts/build_site.py`, `scripts/validate_site.py`, generated root HTML, `data/cost-model.json`, `README.md`, `EXECUTIVE_SUMMARY.md`, `COORDINATION.md` | done | arena/7f52b605-china4 | Claim pushed 2026-11-10. Branch fixed by Arena and used as the integration branch. |
+
+### Sources fetched and read in full this session (2026-11-10)
+
+- [SAFE Individual FX Detailed Rules (2007, as modified)](https://www.safe.gov.cn/safe/2007/0105/5320.html) — Art. 2 (USD 50,000 annual convenience quota for 个人 settlement and 境内个人 purchase), Art. 13 (foreign individual: ID + amount evidence **including tax vouchers**; reconversion with original memo within **24 months**), Art. 15 (foreign individual remitting FX savings with ID). Art. 39 is marked repealed on SAFE's own page.
+- [SAFE Measures for Individual FX (PBOC Order 2006 No. 3)](https://www.safe.gov.cn/tianjin/2024/0430/2465.html) — Art. 37 definitions: 境内个人 = Chinese citizens holding a PRC resident ID; 境外个人 = foreign citizens (incl. stateless) **holding a passport** plus HK/Macau/Taiwan compatriots.
+- [State Council FX Regulations, Decree 532](https://www.gov.cn/gongbao/content/2008/content_1071846.htm) — read Art. 39–48. Confirms fine **up to 30%**, serious cases **over 30% up to 100%**, Art. 42 illegal cash carriage **up to 20%**, and Art. 52's 境内个人 definition that includes a foreign national residing in China for a continuous year.
+- [BOC personal service price list effective 2025-11-11](https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf) — item 210105008 TT/draft 0.1%, min ¥50 / max ¥260, international telecom ¥150, draft postage actual; note 5 full-arrival USD 15 (BOC NY) / USD 25 elsewhere; item 210101002 carrying permit ¥10 waived to 2026-12-31; item 210108014 cross-border ATM ¥12 + 1%, max ¥112.
+- [BOC ATM price change effective 2026-11-11](https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html) — UnionPay unchanged; Visa/Mastercard 2.5% of amount withdrawn, min USD-equiv. 3 / max USD-equiv. 40 **per withdrawal**.
+- [BOC MoneyGram fee schedule effective 2018-01-15](https://www.boc.cn/pbservice/bi2/201801/t20180112_11198459.html) — confirms the top non-Africa USD tier is 5,000.01–9,999.99 at $32, i.e. nothing above $9,999.99.
+- [BOC live FX board](https://www.boc.cn/sourcedb/whpj/enindex_1619_1.html) — 2026-11-10 06:43 USD buy 6.6622 / sell 6.6903 (per 100 CNY table 666.22 / 669.03). Independent half-spread 0.210447% vs 0.210366% modeled.
+- [Wise guide to CNY transfers](https://wise.com/help/articles/2955298/guide-to-cny-transfers) — non-mainland-Chinese eligibility, own-account recipient only, tax record within 3 years, **CNY 300,000/transfer (bank app)**, **CNY 50,000/transfer (Alipay)**, overall limit = after-tax salary.
+- [Wise fee-change summary](https://wise.com/gb/blog/summary-of-fee-changes) — bank funding ¥33.20 + 0.62%; Alipay ¥33.20 + 1.97% (dated 2024 examples only).
+- [SAFE cash-carrying measures](https://www.safe.gov.cn/tianjin/2024/0430/2466.html) — no permit ≤ USD 5,000; bank permit USD 5,000–10,000; above USD 10,000 generally not permitted except listed special cases.
+- [SAFE card-cash notice, Hui Fa [2017] No. 29](https://www.safe.gov.cn/hubei/2019/0305/851.html) — CNY 100,000 per person per calendar year; **CNY 10,000 per card per day**; borrowing/lending cards prohibited.
+- [SAFE 2022 Q&A](https://www.safe.gov.cn/ningxia/2022/0929/1997.html) — the annual convenience quota is **not** a ceiling on genuine current-account purchase/settlement; documentation, not an ID alone, is required above it.
+- [PBC Announcement [2004] No. 18](https://www.pbc.gov.cn/chubanwu/114566/114579/114643/2839193/index.html) — RMB 20,000 per person per trip for Chinese citizens and foreign nationals.
+- [Customs Announcement 2025 No. 43](https://www.gov.cn/zhengce/zhengceku/202504/content_7017195.htm) — effective 2025-04-01; currency beyond the prescribed amount must be declared; **repeals Announcement 2007 No. 72**.
+- [eCFR 31 CFR 1010.821](https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821) — nonwillful **$16,536**, willful **$165,353** (assessments on/after 2025-01-17).
+- [IRS Form 8938 / FBAR comparison](https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements) — all four thresholds; FBAR trigger > $10,000.
+- [IRS FEIE](https://www.irs.gov/individuals/international-taxpayers/figuring-the-foreign-earned-income-exclusion) — 2026 maximum **$132,900**.
+- [CBP money and monetary instruments](https://www.cbp.gov/travel/international-visitors/money-monetary-instruments) — > $10,000 report, **group/family aggregation**, electronic FinCEN 105 filing.
+- [FinCEN FBAR page](https://www.fincen.gov/report-foreign-bank-and-financial-accounts) — aggregate > $10,000 at any time in the calendar year.
+- [Bank of America wire flyer](https://resources.bankofamerica.com/direct/render-resource/9149a2de7b1047a499ae291815e985e6) — inbound **$15**, may be waived.
+- [Chase Secure Checking fees](https://www.chase.com/personal/fees/secure-checking) — domestic and international incoming wires **$15**.
+- [Capital One wire transfer](https://www.capitalone.com/help-center/checking-savings/send-receive-wire-transfer/) — $15 incoming only on Essential Checking, High-Yield Checking, Essential Savings; other account types no fee.
+- [PBOC Announcement [2004] No. 16](https://www.gov.cn/gongbao/content/2005/content_64294.htm) — emigration transfer applied for in full at once; 50% / then 50% of the remainder after 1 year / balance after 2 years; **≤ RMB 200,000 may be remitted in one lump sum after approval**; inheritance once or in instalments.
+
+### Defects found and fixed
+
+1. **S8 was cited for numbers it does not contain (High).** The customs clearance-guide page never states RMB 20,000 or USD 5,000. The values now rest on the PBOC announcement (S49) and the current customs instrument (S50); S8 is retained only for the red/green-channel procedure.
+2. **The relied-on customs instrument had been repealed (High).** Announcement 2007 No. 72 was repealed effective 2025-04-01 by Announcement 2025 No. 43. The site now cites the current instrument and keeps the "declare currency beyond the prescribed amount" duty while dropping the defunct list.
+3. **CBP source did not state the $10,000 rule (Medium).** Replaced with CBP's dedicated money/monetary-instruments page (S51), which also documents group aggregation. No value changed.
+4. **Capital One example named an account type its own page does not name (Medium).** "360 Checking $0" was not what the page says; the note now states the disclosed condition.
+5. **Dead official link (Medium, non-live).** `safe.gov.cn/en/2018/1206/1478.html` returns SAFE's page-not-found notice. No published row depended on it; the penalty ranges stand on S18, read in full.
+6. **Identity-regulation divergence published as a review item (High).** SAFE treats a passport holder as 境外个人; Decree 532 includes a foreign national resident for a continuous year in 境内个人. Neither reading creates a general ID-only USD 50,000 right.
+7. **Reproducibility link pinned an old session branch** — repointed to `blob/main`.
+
+### Verification performed
+
+- `python3 scripts/build_site.py && python3 scripts/validate_site.py` → **PASS**: 6 pages, 18 procedures, 4 × 40 cost matrices, 52 primary sources, local links, landmarks, per-row source-link requirement, independent `Decimal` re-derivation of the BOC, quota, Wise, ATM, emigration and receiving scenarios.
+- Independent arithmetic re-derivation outside the validator: 40/40 BOC rows reproduce exactly (commission clamp, ¥150 telecom, same-quote half-spread, base USD); Wise splits confirmed for $10k/$100k/$200k/$400k (1/3/5/9 bank-funded; 2/14/27/54 Alipay-funded) with the fixed fee charged per transfer.
+- Local HTTP smoke test: `index`, `methods`, `penalties`, `taxes`, `sources`, `flagged`, both redirects, `style.css` and `data/cost-model.json` all returned **200**; every page byte-identical to the generator output (`git diff` clean before regeneration).
+- Mobile: no CSS change was needed — tables still collapse to labelled cards at ≤760 px via `data-label` on every `td`.
+
+### Merge-conflict log
+
+- First rebase onto `main` conflicted in `COORDINATION.md` (sessions `arena/753a8878-china4` and `arena/b398220f-china4` had appended boards). Resolved by **retaining every session's section in full**; nothing discarded.
+- The rebase then conflicted in `scripts/build_site.py`, the validator and four generated pages, because `arena/b398220f-china4` had already used source id **S48** for the BOC board. Rather than overwrite their work, this session replayed its edits on top of theirs and re-numbered its new sources **S49–S52**, then regenerated all HTML from the merged generator. Cross-checked that their BOC-board citation, date-query note and penalty-ceiling comparison survive intact.
+
+### Publication
+
+- PR and merge result are recorded in the "Publication log" section below after the merge, together with the Pages deployment run and the live-URL check.
