@@ -455,3 +455,14 @@ Scope delivered: citation-durability fix for the FX input (S5 → official date 
   2. `.github/workflows/gh-pages.yml`: run `python3 scripts/build_bank_playbooks.py && python3 scripts/validate_bank_playbooks.py` in `validate`, and include `banks.html`, `playbooks.html`, `verification.html`, and `data/bank-playbooks.json` in `_site/` during `deploy` (note: GitHub Pages `build_type` is also `legacy` from `main:/`, which serves root `.html` files directly, while Actions artifact deploy stages `_site/`).
   3. Clean up the two stray `EAD` lines in `COORDINATION.md` without altering any session's substantive record.
 - When all active shared-file claims (`374f09e6`, `36711496`, `afeb2b56`) reach `done` (or become stale >60 min), this session (or the last completing integration session) will integrate the shared navigation/workflow cleanly, re-verify line by line, open & merge PR to `main`, and verify live GitHub Pages deployment.
+
+## Session arena/fd53cba7-china4 — final integration and publication (task 16)
+
+| Task | Scope | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| 16 | Final integration after active tasks 13 and 15: preserve their new-file outputs, wire navigation/workflow, re-run every validator, audit live/mobile routes, open/merge PR, and confirm GitHub Pages | `COORDINATION.md`; after tasks 13/15 complete: shared generator, validator, workflow, documentation and generated site | in progress | arena/fd53cba7-china4 | 2026-11-10 | Arena fixes this session to this branch. Task 13 (`afeb2b56`) and task 15 (`a2efb7b1`) are currently active, so their claimed new files will not be edited or duplicated; this session is the designated final integration owner. |
+
+### Claim log — arena/fd53cba7-china4
+- Read the complete coordination board, current tree, open PRs and remote branches before claiming. PR #31 remains open; tasks 13 and 15 are recent active claims. Their scopes are preserved.
+- Per the fixed-branch Arena rule, no `session-<id>/<task>` branch is created. All work remains on `arena/fd53cba7-china4`.
+- Integration will not infer unavailable prices or personal tax liabilities. Unknown executable quotes, correspondent deductions, source-of-funds facts, tax basis and account-specific eligibility remain blank and published for review.
