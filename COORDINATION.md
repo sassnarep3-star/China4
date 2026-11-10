@@ -504,3 +504,8 @@ Scope delivered: citation-durability fix for the FX input (S5 → official date 
 2. A measured FX gain remains blank: acquisition date and rate of a pre-existing balance cannot be sourced publicly.
 3. BOC's board rotates; the dated quote is a benchmark, not an executable rate (already flagged by prior sessions).
 4. Stale duplicate PRs #4, #5, #12 from other sessions remain open and were not touched.
+
+### Integration log — arena/fd53cba7-china4
+- PR #31 was complete but conflicted with the newer seven-page site. Integrated its unique S53 / Rev. Proc. 2025-32 tax illustration by merging its branch, retaining the current summary page and all S1–S52 work, adding the five-row tax matrix and independent arithmetic checks, then regenerating HTML. Resolved conflicts in `COORDINATION.md`, `EXECUTIVE_SUMMARY.md`, `flagged.html`, and `scripts/validate_site.py` without discarding either side. Removed the two previously logged stray `EAD` marker remnants.
+- Tasks 13 and 15 remain separate recent active claims with no work-product commits beyond their coordination claims. Their scopes were neither duplicated nor overwritten. They are optional additive expansion work; the integrated seven-page deliverable already satisfies the requested executive summary, lawful-method library, pros/cons, exact conditional procedures, $10,000–$400,000 matrices, primary-source register and flagged unknowns.
+- Verification before PR: `python3 scripts/build_site.py` and clean generated diff; `python3 scripts/validate_site.py` PASS (7 pages, 18 procedures, four 40-row matrices, five-row 2026 tax illustration, 53 sources, source links on every table row, local links, landmarks and independent Decimal arithmetic).
