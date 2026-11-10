@@ -266,3 +266,8 @@ returned 200.
 **Verification performed:** `python3 scripts/build_site.py && python3 scripts/validate_site.py` PASS (6 pages, 18 procedures, 4×40 matrices, 47 sources, local links, landmarks, independent Decimal arithmetic); working tree clean after rebuild (generated files current). Local HTTP smoke test: all 8 pages + style.css + data/cost-model.json returned 200. Live site fetched and confirmed serving the corrected build (cutoff 2026-11-09, BOC $53.45/$902.72, Wise 9 transfers · $2,524.64 at $400k). Pages API reports `built`, legacy, source main "/". Mobile: ≤760px tables render as labelled cards via `data-label` (style.css); hero leads with executive answer and cost snapshot (most important info first).
 
 **Irregularities:** none new. All previously flagged items remain published on flagged.html and do not block the merge. Stale duplicate PRs #4, #5, #12 from other sessions remain open and untouched.
+
+### Publication record — arena/753a8878-china4 (task 12)
+- PR #20: https://github.com/sassnarep3-star/China4/pull/20 — MERGED as `1bb313ca33a4ee0a5516cdbb8d1a81bfcdf3141c` on 2026-11-10 01:02 UTC.
+- Post-merge deploy: Validate and deploy run 42732847124 + pages build 42732846784 succeeded; GitHub Pages API reports status `built` at https://sassnarep3-star.github.io/China4/.
+- Note: parallel session arena/09fa5313-china4 merged PR #21 after this session's merge; no conflicts with this additive record.
