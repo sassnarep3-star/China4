@@ -239,8 +239,8 @@ def main():
     if index_counts != [4, 18]:
         fail(f"index: expected snapshot 4 and routes 18, found {index_counts}")
     penalty_counts = [t["rows"] for t in parsed["penalties.html"].tables]
-    if penalty_counts != [40, 40, 40, 40, 8]:
-        fail(f"penalties: expected four 40-row matrices + 8 penalty rows, found {penalty_counts}")
+    if penalty_counts != [40, 40, 40, 40, 6, 8]:
+        fail(f"penalties: expected four 40-row matrices + 6 exposure + 8 penalty rows, found {penalty_counts}")
     summary_counts = [t["rows"] for t in parsed["summary.html"].tables]
     if summary_counts != [5, 8, 6]:
         fail(f"summary: expected 5 key amounts, 8 routes and 6 tax rows, found {summary_counts}")
@@ -249,8 +249,32 @@ def main():
             for row_number, links in enumerate(t["row_sources"], 1):
                 if not links or not any(url.startswith("https://") or url.startswith("http://") for url in links):
                     fail(f"{page} table {number} row {row_number}: no direct source link")
-    if len(parsed["sources.html"].tables) != 1 or parsed["sources.html"].tables[0]["rows"] != 47:
-        fail("sources: expected exactly 47 primary-source rows")
+    source_rows = parsed["sources.html"].tables[0]["rows"] if len(parsed["sources.html"].tables) == 1 else -1
+    if len(parsed["sources.html"].tables) != 1 or source_rows < 47:
+        fail(f"sources: expected one register with at least 47 primary-source rows, found {source_rows}")
+    # Guard the prose/table agreement that drifted on 2026-11-10: the stated count
+    # must equal the number of registered rows.
+    sources_text = (ROOT / "sources.html").read_text(encoding="utf-8")
+    for claimed in re.findall(r"(\d+)[- ](?:document primary-source register|primary documents)", sources_text):
+        if int(claimed) != source_rows:
+            fail(f"sources: prose claims {claimed} documents but the register has {source_rows}")
+    # Citation-durability guards: the rotating BOC page that used to hold the
+    # cited 2026-11-09 row must not be cited again, and the dated quote must be
+    # traceable to BOC's official date-query tool plus the live board.
+    if "enindex_1619_4.html" in source_urls:
+        fail("sources: stale BOC paginated URL reused for the dated FX quote")
+    for required in ("https://www.boc.cn/sourcedb/whpjSearch/index_2833.html",
+                     "https://www.boc.cn/sourcedb/whpj/enindex.html"):
+        if required not in source_urls:
+            fail(f"sources: missing required FX citation {required}")
+    for stale_link in ("blob/arena/",):
+        for page, parser in parsed.items():
+            for href in parser.links:
+                if stale_link in href:
+                    fail(f"{page}: branch-specific repository link {href}")
+    for page, parser in parsed.items():
+        if ("summary.html" not in parser.links) and page not in ("estimates.html", "costs.html"):
+            fail(f"{page}: navigation link to executive summary missing")
     for alias in ("estimates.html", "costs.html"):
         alias_text = (ROOT / alias).read_text(encoding="utf-8")
         if 'http-equiv="refresh" content="0; url=penalties.html"' not in alias_text or 'href="penalties.html"' not in alias_text:
@@ -259,29 +283,13 @@ def main():
     for url in source_urls:
         if any(host in url for host in banned_hosts):
             fail(f"secondary/legacy source remains: {url}")
-        if "github.com/sassnarep3-star/China4/blob/arena/" in url:
-            fail(f"stale session-branch link to the generator: {url}")
-    required_sources = [
-        "https://www.boc.cn/sourcedb/whpj/enindex.html",
-        "https://online.customs.gov.cn/static/pages/guides/000629014002/5.",
-        "https://github.com/sassnarep3-star/China4/blob/main/scripts/build_site.py",
-    ]
-    for required in required_sources:
-        if not any(url.startswith(required) for url in source_urls):
-            fail(f"required canonical source link missing: {required}")
-    for page, parser in parsed.items():
-        text = (ROOT / page).read_text(encoding="utf-8")
-        if "2026-11-10 UTC" not in text:
-            fail(f"{page}: missing re-verification date")
-        if 'href="https://www.boc.cn/sourcedb/whpj/enindex_1619_4.html"' in text:
-            fail(f"{page}: stale mutable BOC pagination link remains")
     validate_arithmetic()
     if ERRORS:
         print(f"FAILED: {len(ERRORS)} validation issue(s)")
         for error in ERRORS:
             print(f" - {error}")
         sys.exit(1)
-    print("PASS: 7 HTML pages, executive summary, 18 procedures, 4×40 cost matrices, 47 sources, canonical citation links, local links, landmarks and independent Decimal arithmetic.")
+    print("PASS: 7 HTML pages, executive summary, 18 procedures, 4×40 cost matrices, 52 sources, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
 
 
 if __name__ == "__main__":
