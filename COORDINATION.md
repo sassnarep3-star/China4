@@ -391,3 +391,11 @@ Scope delivered: citation-durability fix for the FX input (S5 → official date 
 ### Publication
 
 - PR and merge result are recorded in the "Publication log" section below after the merge, together with the Pages deployment run and the live-URL check.
+
+## Follow-up — arena/b398220f-china4 (post-merge defect)
+
+**Defect (Medium, fixed).** After PR #27 merged S49–S52, `sources.html` still displayed **"48 primary documents"** in the section eyebrow and subtitle while the table, validator, README and executive summary all said 52. Live pages served the stale heading. Cause: the count was hard-coded text rather than derived from `SOURCES`.
+
+**Fix.** Both strings now interpolate `len(SOURCES)`. `scripts/validate_site.py` additionally asserts that the rendered eyebrow and subtitle match the actual row count and rejects known stale literals, so a future source-addition cannot leave a contradictory heading. No scope owner conflicts: task 13's session completed and merged, and this touches only the source-count strings plus the guard.
+
+**Verification.** `python3 scripts/build_site.py && python3 scripts/validate_site.py` → PASS (52 sources; heading "52 primary documents"; subtitle "A 52-document primary-source register"). No other content changed.

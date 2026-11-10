@@ -248,6 +248,17 @@ def main():
                     fail(f"{page} table {number} row {row_number}: no direct source link")
     if len(parsed["sources.html"].tables) != 1 or parsed["sources.html"].tables[0]["rows"] != 52:
         fail("sources: expected exactly 52 primary-source rows")
+    # Displayed counts must be derived from the register, never hard-coded:
+    # a parallel merge added S49-S52 but left the heading saying "48".
+    register_rows = parsed["sources.html"].tables[0]["rows"]
+    sources_text = (ROOT / "sources.html").read_text(encoding="utf-8")
+    if f">{register_rows} primary documents<" not in sources_text:
+        fail(f"sources: heading does not state the actual register size ({register_rows})")
+    if f"A {register_rows}-document primary-source register" not in sources_text:
+        fail(f"sources: page subtitle does not state the actual register size ({register_rows})")
+    for hardcoded in (">47 primary documents<", ">48 primary documents<", ">50 primary documents<"):
+        if hardcoded in sources_text:
+            fail(f"sources: hard-coded stale count {hardcoded}")
     # Citation-durability guards: the rotating BOC page that used to hold the
     # cited 2026-11-09 row must not be cited again, and the dated quote must be
     # traceable to BOC's official date-query tool plus the live board.
