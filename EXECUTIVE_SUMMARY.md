@@ -3,7 +3,7 @@
 - **Research cutoff:** 2026-11-10 UTC (independent re-verification; FX citation made durable, Wise/ATM cap-unit correction retained)
 - **BOC retail quote timestamp:** 2026-11-09 05:30 Beijing time
 
-**Current deliverable:** [`index.html`](index.html) · [cost matrices](penalties.html) · [procedures](methods.html) · [open items](flagged.html)
+**Current deliverable:** [`index.html`](index.html) · [cost matrices](penalties.html) · [procedures](methods.html) · [tax analysis](taxes.html) · [open items](flagged.html) · [49 sources](sources.html)
 
 This summary supersedes earlier draft summaries and cost pages. Earlier provider figures that were not supported by current primary evidence are no longer presented as executable prices.
 
@@ -35,6 +35,23 @@ Known modeled cost excludes correspondent deductions, account-specific recipient
 
 **Penalty versus lawful cost (the decisive comparison):** at USD 400,000 the modeled lawful BOC cost is **USD 902.72**, while the published statutory ceiling for an FX offence is 30% of the amount (USD 120,000), rising to the equivalent amount (USD 400,000) in serious cases — before criminal exposure. These ceilings are statutory rates applied to the principal, not an assessment or prediction; enforcement is discretionary and fact-specific. See the [comparison table](penalties.html#penalty-vs-cost).
 
+## What the tax exposure looks like, quantified (2026)
+
+Illustration for a **single filer under 65 with USD 100,000 of other taxable income**, using the brackets, standard deduction, capital-gain bands and FEIE amount published in IRS Rev. Proc. 2025-32. Same dollar amount, three different characters:
+
+| Amount | If ordinary income: added US tax | If a 10% currency gain: US capital-gain tax | If FEIE-eligible earned income: US tax |
+|---:|---:|---:|---:|
+| $10,000 | **$2,286.00** | $150.00 | **$0.00** |
+| $50,000 | **$11,886.00** | $750.00 | $1,804.00 |
+| $100,000 | **$23,886.00** | $1,500.00 | $9,474.00 |
+| $200,000 | **$57,057.25** | $3,000.00 | $32,702.00 |
+| $400,000 | **$127,057.25** | $6,000.00 | $97,254.25 |
+
+Read this as a scale, not a forecast. Two consequences drive the decision:
+
+- **A currency gain is not a percentage levy on the principal.** Publication 525 excludes a personal foreign-currency transaction gain unless it is more than USD 200 and reports it as a capital gain above that amount, so a held-for-personal-use balance converted once is a small separate line. A *measured* gain stays blank on the site because the acquisition date and rate of a pre-existing balance are personal facts.
+- **The large numbers appear only if the money is untaxed income.** That is a reporting-history question answered by the FBAR, FEIE/FTC and streamlined-procedure material — not by choosing a different payment rail. No rail converts taxable income into exempt principal.
+
 ## Conditional comparisons
 
 - **Wise from CNY:** available only to eligible non-mainland-Chinese users with qualifying work/tax records; recipient must be the sender’s own account. Bank-app funding cap CNY 300,000 per transfer; Alipay funding cap CNY 50,000. Current price requires a live quote. The site separately models Wise’s **dated 2024-11-25** formulas, never as current prices. At those CNY caps, USD 400,000 requires **9 bank-funded or 54 Alipay-funded transfers** (dated-formula fees $2,524.64 / $8,147.87); an earlier model that treated the CNY caps as USD understated the fixed per-transfer fees and was corrected on 2026-11-09.
@@ -53,6 +70,12 @@ Known modeled cost excludes correspondent deductions, account-specific recipient
 - **Cash:** FinCEN Form 105 applies to physically transporting more than USD 10,000; bank CTR aggregation and trade/business Form 8300 are distinct rules.
 - **Underlying income:** compare FEIE (2026 maximum USD 132,900 for a qualifying person) with the foreign tax credit, without claiming a credit on excluded income. Treaty saving-clause rules matter for US citizens.
 - **Past omissions:** eligible nonwillful taxpayers should evaluate the IRS streamlined offshore or US-resident procedures rather than silently back-filing.
+
+## Re-verification performed 2026-11-10
+
+Primary documents re-fetched and read, not merely linked: SAFE individual FX rules (Arts. 2, 13, 14, 15, 30, 39) and the PBOC individual FX measures (Art. 37 identity definitions); the SAFE 2022 Q&A confirming a convenience quota rather than a hard cap; the State Council FX Regulations (Dec. 532, Arts. 5 and 39–45); the BOC tariff PDF (items 210101002, 210105008, 210108014, notes 5 and 10) and the 2026-11-11 ATM notice; eCFR 31 CFR 1010.821 and 1010.340; IRS FBAR guidance, the Form 8938/FBAR comparison, Form 3520 instructions, the FEIE page and Publication 525; IRS Rev. Proc. 2025-32; PBOC Announcement [2004] No. 18; Customs Announcement 2025 No. 43; SAFE's cash-carrying and ATM-cap notices; and Wise's CNY guide with its dated 2024-11-25 fee-change post.
+
+All cited figures matched the sources on re-read. The 2026 US tax illustration is arithmetic on published brackets: a mutation test (changing one bracket's tax-at-floor by one dollar) makes the validator fail, which confirms the check is live rather than tautological.
 
 ## Reproduce and verify
 

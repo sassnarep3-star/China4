@@ -190,6 +190,57 @@ def validate_arithmetic():
         previous = current
 
 
+def validate_us_tax():
+    """Re-derive the 2026 US tax illustration from Rev. Proc. 2025-32 values.
+
+    Independent of build_site.py: the floors, rates, tax-at-floor, capital-gain
+    thresholds, standard deduction and FEIE amount are re-entered here from the
+    published source.
+    """
+    brackets = [
+        (D("0"), D("0.10"), D("0")),
+        (D("12400"), D("0.12"), D("1240")),
+        (D("50400"), D("0.22"), D("5800")),
+        (D("105700"), D("0.24"), D("17966")),
+        (D("201775"), D("0.32"), D("41024")),
+        (D("256225"), D("0.35"), D("58448")),
+        (D("640600"), D("0.37"), D("192979.25")),
+    ]
+    zero_max, fifteen_max, feie, other = D("49450"), D("545500"), D("132900"), D("100000")
+
+    def ordinary(taxable):
+        if taxable <= 0:
+            return D(0)
+        floor, rate, base = brackets[0]
+        for f, r, b in brackets:
+            if taxable > f:
+                floor, rate, base = f, r, b
+        return base + rate * (taxable - floor)
+
+    def ltcg(start, gain):
+        if gain <= 0:
+            return D(0)
+        begin, end = max(start, D(0)), max(start, D(0)) + gain
+        mid = max(D(0), min(end, fifteen_max) - max(begin, zero_max))
+        high = max(D(0), end - max(begin, fifteen_max))
+        return D("0.15") * mid + D("0.20") * high
+
+    for taxable, expected in [("12400", "1240"), ("50400", "5800"), ("105700", "17966"),
+                              ("201775", "41024"), ("256225", "58448"), ("400000", "108769.25")]:
+        close(ordinary(D(taxable)), D(expected), f"2026 ordinary tax at {taxable}")
+    close(ltcg(D(40000), D(9000)), D("0"), "2026 LTCG inside the 0% band")
+    close(ltcg(D("49450"), D("1050")), D("157.50"), "2026 LTCG crossing the 15% threshold")
+
+    text = (ROOT / "taxes.html").read_text(encoding="utf-8")
+    for amount in ("10000", "50000", "100000", "200000", "400000"):
+        value = D(amount)
+        for rendered in (ordinary(other + value) - ordinary(other),
+                         ltcg(other, value * D("0.10")),
+                         ordinary(max(D(0), other + value - feie))):
+            if f"${rendered:,.2f}" not in text:
+                fail(f"taxes: missing recomputed value ${rendered:,.2f} for {amount}")
+
+
 def main():
     parsed = {}
     source_urls = set()
@@ -241,6 +292,9 @@ def main():
     penalty_counts = [t["rows"] for t in parsed["penalties.html"].tables]
     if penalty_counts != [40, 40, 40, 40, 6, 8]:
         fail(f"penalties: expected four 40-row matrices + 6 exposure + 8 penalty rows, found {penalty_counts}")
+    tax_counts = [t["rows"] for t in parsed["taxes.html"].tables]
+    if tax_counts[-1] != 5:
+        fail(f"taxes: expected a 5-row US tax illustration, found {tax_counts}")
     for page, parser in parsed.items():
         for number, t in enumerate(parser.tables, 1):
             for row_number, links in enumerate(t["row_sources"], 1):
@@ -278,12 +332,13 @@ def main():
         if any(host in url for host in banned_hosts):
             fail(f"secondary/legacy source remains: {url}")
     validate_arithmetic()
+    validate_us_tax()
     if ERRORS:
         print(f"FAILED: {len(ERRORS)} validation issue(s)")
         for error in ERRORS:
             print(f" - {error}")
         sys.exit(1)
-    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 52 sources, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
+    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 2026 US tax illustration, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
 
 
 if __name__ == "__main__":
