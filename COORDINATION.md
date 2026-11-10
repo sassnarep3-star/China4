@@ -240,3 +240,8 @@ returned 200.
 - Irregularity re-confirmed (already published on flagged.html, not a new defect): BOC page 5 now shows 2026-11-10 02:49 USD 666.22/669.03 — the 2026-11-09 05:30 snapshot has rolled off the paginated board. Site correctly treats it as a dated snapshot, never a live quote; live magnitude corroborates within ~0.04%.
 
 **Irregularities:** none new. All previously flagged unknowns remain on the Flagged for Review page and do not block merge per project rules.
+## Current session: arena/09fa5313-china4 — independent re-verification & republication
+
+| Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| 12 | Independent line-by-line re-verification of live dashboard, fresh official-source spot-checks, defect fixes, PR + merge + Pages confirmation | root HTML pages (via scripts/build_site.py), style.css, EXECUTIVE_SUMMARY.md, README.md, COORDINATION.md, .github/workflows | in progress | arena/09fa5313-china4 | Prior tasks 1–11 done by earlier sessions; stale open PRs #4, #5, #12 are duplicates from other sessions — not touched. Branch fixed by Arena; this is the integration branch. |
