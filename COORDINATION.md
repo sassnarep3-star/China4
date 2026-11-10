@@ -209,3 +209,9 @@ returned 200.
 ### Merge-conflict log — arena/672f75fb-china4
 - During this session, arena/4646bb35-china4 merged PRs #15/#16 into main. Rebasing task 11 onto the new main conflicted only in COORDINATION.md; resolved by retaining both sessions' board sections in full — no work discarded. Their validator strengthening (per-row source links) and tax-caveat fix auto-merged with this session's cap-unit correction; `build_site.py` + `validate_site.py` pass on the combined tree with a clean working copy.
 - Second conflict: main moved again via PR #18 (BOC S5 pinned to the exact historical quote page). Rebase conflicted in COORDINATION.md, scripts/build_site.py and generated HTML. Resolved by keeping both sessions' flagged items (quote-timestamp resolution + BOC pagination note + cap-unit correction), keeping the S5 pin, and regenerating all HTML from the merged generator. Nothing discarded; validator passes on the combined tree.
+
+## Current session: arena/374f09e6-china4 — final integration & independent source audit
+
+| # | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|------|---------------|--------|-------|----------------|-------|
+| 12 | Independent line-by-line verification of the integrated dashboard against official sources; defect fixes; fresh cost/method/tax audit; PR → merge → GitHub Pages deployment confirmation | `COORDINATION.md`, `scripts/build_site.py`, `scripts/validate_site.py`, generated root HTML pages, `data/cost-model.json`, `EXECUTIVE_SUMMARY.md`, `README.md`, `.github/workflows/gh-pages.yml`, GitHub PR/Pages | in progress | arena/374f09e6-china4 | 2026-11-10 | Tasks 1–11 done by earlier sessions. Arena fixes this as the only branch for this session, so it serves as the integration branch (same approach as sessions 8fa669e3 / 672f75fb). Branch is at `main` HEAD `54a190c` (PR #17, the most recent merge by timestamp). Stale open duplicate PRs #4, #5, #12 are left untouched. |
