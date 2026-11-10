@@ -1,6 +1,6 @@
 # Executive summary — China4 evidence desk
 
-- **Research cutoff:** 2026-11-09 UTC (re-verified; Wise/ATM cap-unit correction applied)
+- **Research cutoff:** 2026-11-10 UTC (independent re-verification; FX citation made durable, Wise/ATM cap-unit correction retained)
 - **BOC retail quote timestamp:** 2026-11-09 05:30 Beijing time
 
 **Current deliverable:** [`index.html`](index.html) · [cost matrices](penalties.html) · [procedures](methods.html) · [open items](flagged.html)
@@ -21,6 +21,7 @@ Inputs:
 - Personal TT/draft commission: **0.1%, minimum CNY 50, maximum CNY 260**.
 - US-bound international TT telecom charge: **CNY 150**.
 - One-way half-spread benchmark: **0.2103656%**, calculated from the same-timestamp retail buy/sell pair. It is an arithmetic benchmark, not a guaranteed markup or accessible mid-market quote.
+- Quote durability: BOC's rate board rotates, and by 2026-11-10 the cited 2026-11-09 05:30 row had rolled off the page where it was first captured. The citation now points to BOC's official historical query (date 2026-11-09, USD) rather than a page number. BOC's live board at 2026-11-10 02:49 showed **6.6622 / 6.6903**, a **0.210449%** half-spread — about 0.04% relative difference from the modeled input, so the dated input remains representative even though the absolute rate moved.
 
 | USD-equivalent principal | BOC TT known modeled cost | Wire-only component | FX benchmark component |
 |---:|---:|---:|---:|
@@ -31,6 +32,8 @@ Inputs:
 | $400,000 | **$902.72** | $61.26 | $841.46 |
 
 Known modeled cost excludes correspondent deductions, account-specific recipient fees, underlying taxes, travel and professional costs. Optional BOC full-arrival pricing is **USD 15 to BOC New York / USD 25 elsewhere**. Receiving examples are BofA USD 15, Chase Secure USD 15 and Capital One 360 Checking USD 0, subject to account terms and waivers.
+
+**Penalty versus lawful cost (the decisive comparison):** at USD 400,000 the modeled lawful BOC cost is **USD 902.72**, while the published statutory ceiling for an FX offence is 30% of the amount (USD 120,000), rising to the equivalent amount (USD 400,000) in serious cases — before criminal exposure. These ceilings are statutory rates applied to the principal, not an assessment or prediction; enforcement is discretionary and fact-specific. See the [comparison table](penalties.html#penalty-vs-cost).
 
 ## Conditional comparisons
 
@@ -58,4 +61,4 @@ python3 scripts/build_site.py
 python3 scripts/validate_site.py
 ```
 
-The build regenerates six main pages, two compatibility redirects and `data/cost-model.json`. The independent validator checks 18 procedures, four 40-row matrices, 47 primary sources, local links, HTML structure and Decimal arithmetic. GitHub Actions repeats the build/validation before deploying the public artifact.
+The build regenerates six main pages, two compatibility redirects and `data/cost-model.json`. The independent validator checks 18 procedures, four 40-row matrices, 48 primary sources, local links, HTML structure, citation durability for the dated FX quote, and Decimal arithmetic. GitHub Actions repeats the build/validation before deploying the public artifact.
