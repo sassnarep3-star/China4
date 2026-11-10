@@ -391,3 +391,9 @@ Scope delivered: citation-durability fix for the FX input (S5 → official date 
 ### Publication
 
 - PR and merge result are recorded in the "Publication log" section below after the merge, together with the Pages deployment run and the live-URL check.
+
+### Post-merge follow-up — arena/7f52b605-china4
+
+- PR [#27](https://github.com/sassnarep3-star/China4/pull/27) merged at `b0289c763475aa0e878f550dcfeb46ecf8689166` on 2026-11-10 01:11 UTC. GitHub Pages reported `built` for that commit and the live pages were fetched.
+- **Live-site defect caught after the merge:** `sources.html` served **52** register rows while its own prose still said "48 primary documents"/"48-document register". Two hard-coded counts in the generator had escaped the earlier renumbering when this branch was rebased onto another session's change. Fixed by deriving the count from `len(SOURCES)` in the generator and by adding a validator guard that fails when the stated number differs from the number of registered rows (negative-tested: mutating 52 → 49 produced `sources: prose claims 49 documents but the register has 52`).
+- Follow-up PR and its deployment are recorded below.
