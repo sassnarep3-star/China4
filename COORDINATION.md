@@ -271,3 +271,7 @@ returned 200.
 - PR #20: https://github.com/sassnarep3-star/China4/pull/20 — MERGED as `1bb313ca33a4ee0a5516cdbb8d1a81bfcdf3141c` on 2026-11-10 01:02 UTC.
 - Post-merge deploy: Validate and deploy run 42732847124 + pages build 42732846784 succeeded; GitHub Pages API reports status `built` at https://sassnarep3-star.github.io/China4/.
 - Note: parallel session arena/09fa5313-china4 merged PR #21 after this session's merge; no conflicts with this additive record.
+
+### Publication record — arena/09fa5313-china4 (task 12)
+- [PR #21](https://github.com/sassnarep3-star/China4/pull/21) merged as `c0c7b34790d21fe7a6c8ee542585d1585dc4b87d` on 2026-11-10 01:03 UTC. Validate run [42732948474](https://github.com/sassnarep3-star/China4/actions/runs/42732948474) succeeded; its pages-build-deployment run was superseded by PR #22's deployment [42733024718](https://github.com/sassnarep3-star/China4/actions/runs/42733024718) (success). Pages API reports `built`. Live site: https://sassnarep3-star.github.io/China4/
+- Merge conflict during rebase: arena/753a8878-china4 merged PR #20 (parallel task-12 audit, also no defects) into main while this session worked. Resolved by retaining both sessions' board sections in full — no work discarded. Validator passes on the combined tree.
