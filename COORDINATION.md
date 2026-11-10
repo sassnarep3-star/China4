@@ -306,7 +306,6 @@ returned 200.
 
 **Irregularities still open (published on flagged.html, non-blocking):** live execution quotes and correspondent/receiver deductions, Wise/WU/MoneyGram current prices, other banks' tariffs, ATM execution FX and surcharge, PayPal/wallet and HK two-leg completeness, and all personal tax amounts. No new unverified value was added.
 
-EAD
 ## Current session: arena/afeb2b56-china4 — task 13: conversion-penalty deep dive, extra routes, claim-level audit ledger (NEW files only)
 
 | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
@@ -325,7 +324,6 @@ EAD
 - **Rebase conflict #1 (2026-11-10 01:07 UTC):** `git pull --rebase origin main` conflicted in `COORDINATION.md` because PRs #21–#24 (`09fa5313`, `b398220f`) had appended their sections at the same end-of-file position while this claim was being written. Resolved by keeping **both sides in full** (main's sections first, this session's section after). No other session's text was dropped or edited. The claim commit had already been pushed un-rebased; the branch was then updated with `--force-with-lease` (own session branch only).
 - **Board state after that rebase:** `b398220f` renumbered itself to task 14 and merged PR #24 (S5 repointed to BOC's dated query, S48 added, penalty-ceiling table, 48 sources). Task 13 here remains non-overlapping with it.
 
-EAD
 ### Publication record — arena/b398220f-china4 (task 14)
 - PR [#24](https://github.com/sassnarep3-star/China4/pull/24) merged as `bab34189d0110af8fe119ec932a7b3c2da0e8542` on 2026-11-10 01:06 UTC. Pull-request validation run [42733337982](https://github.com/sassnarep3-star/China4/actions/runs/42733337982) passed before merge (build reproducibility + validator). Post-merge "Validate and deploy China4" run [42733395264](https://github.com/sassnarep3-star/China4/actions/runs/42733395264) and pages build [42733394737](https://github.com/sassnarep3-star/China4/actions/runs/42733394737) succeeded; Pages API reports `built` (legacy, source `main` "/"). GitHub emitted only non-fatal Node 20 deprecation and ubuntu-latest migration notices.
 - Live verification after deploy: `sources.html` served cutoff 2026-11-10, 48 documents, S5 repointed to BOC's date query and S48 present. The first `index.html` fetch returned a stale CDN copy (old cutoff and old S5 URL); a cache-busted fetch of `index.html?cb=20261110T0115` returned the new build with the dated-snapshot wording, S5+S48 links and the penalty-exposure line. Cache propagation, not a deployment failure — worth re-checking with a cache-buster when auditing.
@@ -466,3 +464,43 @@ Scope delivered: citation-durability fix for the FX input (S5 → official date 
 - Read the complete coordination board, current tree, open PRs and remote branches before claiming. PR #31 remains open; tasks 13 and 15 are recent active claims. Their scopes are preserved.
 - Per the fixed-branch Arena rule, no `session-<id>/<task>` branch is created. All work remains on `arena/fd53cba7-china4`.
 - Integration will not infer unavailable prices or personal tax liabilities. Unknown executable quotes, correspondent deductions, source-of-funds facts, tax basis and account-specific eligibility remain blank and published for review.
+## Session arena/36711496-china4 — independent evidence audit (task 12)
+
+| Task | Scope (files) | Status | Owner | Notes |
+|---|---|---|---|---|
+| 12 | Independent line-by-line evidence audit: re-fetch every cited primary source, re-derive every figure, fix defects, verify live Pages state, PR + merge + deploy confirmation | `scripts/build_site.py`, `scripts/validate_site.py`, generated `*.html`, `EXECUTIVE_SUMMARY.md`, `README.md`, `COORDINATION.md` | done | arena/36711496-china4 |
+
+### Audit log — arena/36711496-china4
+
+**Scope and coordination.** Branch `arena/36711496-china4` (fixed by Arena) is this session's integration branch. During the session, main advanced by 20 commits (through PR #27) and other sessions had already corrected the customs-citation defect inherited from S8 and added source IDs S48–S52. Rather than overwrite that work, this session rebased onto main, replayed only its non-overlapping additions, and **re-numbered its single new source to S53** to avoid a collision. Their S8 correction, PBOC Announcement [2004] No. 18 citation (RMB 20,000) and penalty-vs-cost comparison were verified and preserved intact. `backup-mine-36711496` holds the pre-rebase state for traceability.
+
+**Sources re-fetched and read this session (not merely linked):**
+- [SAFE individual FX detailed rules](https://www.safe.gov.cn/tianjin/2024/0430/2464.html) — Arts. 2 (USD 50,000 annual total for settlement and domestic-individual purchase), 13 (foreign individual lawful current-account income with tax vouchers), 14, 15, 30, 39 (marked repealed on SAFE's own page).
+- [PBOC individual FX measures](https://www.safe.gov.cn/tianjin/2024/0430/2465.html) — Art. 37 definitions: domestic individual = Chinese citizen holding a PRC resident ID; foreign individual = passport/HK/Macau/Taiwan travel-document holder.
+- [SAFE 2022 Q&A](https://www.safe.gov.cn/ningxia/2022/0929/1997.html) — the USD 50,000 figure is a convenience quota, not a hard cap on genuine current-account transactions.
+- [State Council FX Regulations, Decree 532](https://www.gov.cn/gongbao/content/2008/content_1071846.htm) — Art. 5 (no restriction on current international payments and transfers); Arts. 39–45 (30% ceiling, 30%–100% for serious cases; 20% for cash).
+- [BOC 2025-11-11 personal tariff PDF](https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf) — item 210105008 (0.1%, min ¥50, max ¥260; international telecom ¥150), note 5 (full arrival USD 15 BOC NY / USD 25 elsewhere), item 210101002 (permit ¥10, waived to 2026-12-31), item 210108014 (UnionPay ¥12 + 1%, max ¥112), note 10 (ATM-owner surcharge).
+- [BOC 2026-11-11 ATM notice](https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html) — Visa/Mastercard 2.5%, min USD-equiv. 3 / max 40 per withdrawal.
+- [BOC rate board](https://www.boc.cn/sourcedb/whpj/enindex_1619_1.html) — 2026-11-10 06:43 USD buy 6.6622 / sell 6.6903; consistent in magnitude with the 2026-11-09 05:30 model input (6.6648 / 6.6929).
+- [eCFR 31 CFR 1010.821](https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821) — non-willful USD 16,536; willful USD 165,353 (assessments on/after 2025-01-17).
+- [eCFR 31 CFR 1010.340](https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-C/section-1010.340) — report required to transport more than USD 10,000.
+- [IRS FBAR](https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar), [Form 8938/FBAR comparison](https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements), [Form 3520 instructions](https://www.irs.gov/instructions/i3520) (USD 100,000 nonresident-individual/estate gift threshold), [FEIE page](https://www.irs.gov/individuals/international-taxpayers/figuring-the-foreign-earned-income-exclusion) (2026: USD 132,900).
+- [IRS Publication 525](https://www.irs.gov/publications/p525) — personal foreign-currency transaction gain excluded unless more than USD 200, then reported as a capital gain.
+- [IRS Rev. Proc. 2025-32](https://www.irs.gov/pub/irs-drop/rp-25-32.pdf) — 2026 Table 3 brackets, USD 16,100 standard deduction, capital-gain bands USD 49,450 / USD 545,500, FEIE USD 132,900, §6039F USD 20,573.
+- [PBOC Announcement [2004] No. 18](https://www.pbc.gov.cn/chubanwu/114566/114579/114643/2839193/index.html) — RMB 20,000 per person per trip.
+- [Customs Announcement 2025 No. 43](https://www.gov.cn/zhengce/zhengceku/202504/content_7017195.htm) — repeals Announcement 2007 No. 72 from 2025-04-01.
+- [SAFE cash-carrying measures](https://www.safe.gov.cn/tianjin/2024/0430/2466.html) — USD 5,000 permit-free, 5,000–10,000 bank permit, above 10,000 generally prohibited.
+- [SAFE ATM-cap notice](https://www.safe.gov.cn/hubei/2019/0305/851.html) — CNY 100,000/person/year, CNY 10,000/card/day, no borrowed cards.
+- [SAFE Hui Fa [2015] No. 49](https://www.safe.gov.cn/safe/2015/1231/5442.html) — splitting/borrowed quotas and the watch-list period (year of listing plus two following years).
+- [Wise CNY guide](https://wise.com/help/articles/2955298/guide-to-cny-transfers) — non-mainland-Chinese eligibility, 3-year tax records, own-account recipient, CNY 300,000 bank / 50,000 Alipay per transfer, tax-based overall limit.
+- [Wise 2024-11-25 fee-change post](https://wise.com/gb/blog/summary-of-fee-changes) — CNY 33.20 + 0.62% (bank) and CNY 33.20 + 1.97% (Alipay).
+
+**Result of the audit:** every cited figure above matched its source on re-read. No figure in the inherited cost model required correction this session; the BOC ladder, half-spread, Wise splits and ATM counts re-derived exactly (`validate_site.py` PASS).
+
+**New contribution (non-overlapping):** the site previously described US tax qualitatively but never quantified it, which left the user's core question ("how much tax would this cost me?") unanswered. Added a 2026 single-filer illustration pricing the same amount under three characters (ordinary income, a 10% currency gain, FEIE-eligible earned income) from Rev. Proc. 2025-32, with the *measured* gain column deliberately blank because acquisition basis is a personal fact. The validator re-derives all fifteen displayed figures from separately re-entered source values; a one-dollar mutation of a bracket makes it fail (negative control run). This also **resolved** the open 2026 §6039F threshold item (USD 20,573).
+
+**Irregularities for review (published on flagged.html, not merge blockers):**
+1. The 2026 tax illustration assumes USD 100,000 of other taxable income, single filer, standard deduction. A real return has different inputs.
+2. A measured FX gain remains blank: acquisition date and rate of a pre-existing balance cannot be sourced publicly.
+3. BOC's board rotates; the dated quote is a benchmark, not an executable rate (already flagged by prior sessions).
+4. Stale duplicate PRs #4, #5, #12 from other sessions remain open and were not touched.

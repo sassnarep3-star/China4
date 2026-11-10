@@ -75,6 +75,7 @@ SOURCES = {
     "S50": ("China Customs", "Announcement 2025 No. 43 (effective 2025-04-01), which repealed Announcement 2007 No. 72", "https://www.gov.cn/zhengce/zhengceku/202504/content_7017195.htm"),
     "S51": ("CBP", "Money and monetary instruments: FinCEN Form 105 above USD 10,000 and group aggregation", "https://www.cbp.gov/travel/international-visitors/money-monetary-instruments"),
     "S52": ("FinCEN", "FBAR trigger: aggregate foreign accounts above USD 10,000 at any time in the calendar year", "https://www.fincen.gov/report-foreign-bank-and-financial-accounts"),
+    "S53": ("IRS", "Rev. Proc. 2025-32: 2026 rate tables, standard deduction, capital-gain thresholds, FEIE and the §6039F gift threshold", "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf"),
 }
 
 
@@ -246,6 +247,67 @@ def cost_rows():
             item.update({"atm_unionpay_withdrawals": un, "atm_unionpay_fee_usd": ucost, "atm_future_card_withdrawals": vn, "atm_future_card_fee_usd": vcost})
         rows.append(item)
     return rows
+
+
+
+# --- 2026 US federal tax arithmetic (Rev. Proc. 2025-32, source S53) ---------
+# Single filer, under 65, not blind. Floors, rates and tax-at-floor are quoted
+# exactly from Table 3 (ordinary) and section 4.03 (capital gain) of S53.
+US_ORDINARY_2026 = [
+    (D("0"), D("0.10"), D("0")),
+    (D("12400"), D("0.12"), D("1240")),
+    (D("50400"), D("0.22"), D("5800")),
+    (D("105700"), D("0.24"), D("17966")),
+    (D("201775"), D("0.32"), D("41024")),
+    (D("256225"), D("0.35"), D("58448")),
+    (D("640600"), D("0.37"), D("192979.25")),
+]
+US_STANDARD_DEDUCTION_2026 = D("16100")
+US_LTCG_ZERO_MAX_2026 = D("49450")
+US_LTCG_FIFTEEN_MAX_2026 = D("545500")
+US_OTHER_TAXABLE_2026 = D("100000")
+FEIE_2026 = D("132900")
+
+
+def us_ordinary_tax(taxable: D) -> D:
+    """2026 single-filer ordinary income tax from the published S53 table."""
+    if taxable <= 0:
+        return ZERO
+    floor, rate, base = US_ORDINARY_2026[0]
+    for candidate_floor, candidate_rate, candidate_base in US_ORDINARY_2026:
+        if taxable > candidate_floor:
+            floor, rate, base = candidate_floor, candidate_rate, candidate_base
+    return base + rate * (taxable - floor)
+
+
+def us_ltcg_tax(other_taxable: D, gain: D) -> D:
+    """2026 single-filer long-term capital gain tax, stacked on other income."""
+    if gain <= 0:
+        return ZERO
+    start = max(other_taxable, ZERO)
+    end = start + gain
+    fifteen_part = max(ZERO, min(end, US_LTCG_FIFTEEN_MAX_2026) - max(start, US_LTCG_ZERO_MAX_2026))
+    twenty_part = max(ZERO, end - max(start, US_LTCG_FIFTEEN_MAX_2026))
+    return D("0.15") * fifteen_part + D("0.20") * twenty_part
+
+
+def us_tax_scenarios():
+    """Illustrative 2026 US tax on the same amount under different characters."""
+    rows = []
+    for amount in (D(10000), D(50000), D(100000), D(200000), D(400000)):
+        baseline = us_ordinary_tax(US_OTHER_TAXABLE_2026)
+        rows.append({
+            "amount": amount,
+            "other_taxable": US_OTHER_TAXABLE_2026,
+            "ordinary_delta": us_ordinary_tax(US_OTHER_TAXABLE_2026 + amount) - baseline,
+            "fx_gain": amount * D("0.10"),
+            "fx_gain_tax": us_ltcg_tax(US_OTHER_TAXABLE_2026, amount * D("0.10")),
+            "feie_tax": us_ordinary_tax(max(ZERO, US_OTHER_TAXABLE_2026 + amount - FEIE_2026)),
+        })
+    return rows
+
+
+US_TAX = us_tax_scenarios()
 
 
 COSTS = cost_rows()
@@ -623,11 +685,29 @@ def taxes_page():
         ("Personal FX gain", "Publication 525 says personal foreign-currency transaction gain need not be included unless over $200; if over $200, report as capital gain", "Different business/investment rules may apply; preserve acquisition/disposition rates and basis", source("S38", "S47")),
         ("Past nonwillful filings", "Streamlined offshore/US-resident procedures can apply to eligible taxpayers; generally three tax years and six FBAR years", "Eligibility and penalties differ; do not quietly back-file if a formal procedure is appropriate", source("S36", "S37")),
     ]
+    tax_rows = []
+    for r in US_TAX:
+        tax_rows.append((
+            f"<strong>{usd(r['amount'])}</strong>",
+            usd(r['other_taxable']),
+            usd(r['ordinary_delta']),
+            f"10% = {usd(r['fx_gain'])} → {usd(r['fx_gain_tax'])}",
+            usd(r['feie_tax']),
+            "— (needs acquisition date and rate)",
+            source("S53"),
+        ))
+    tax_table = table(
+        ["Amount in question", "Assumed other taxable income (single)", "If ordinary income: added US tax", "If a 10% currency gain: US capital-gain tax", "If FEIE-eligible earned income: US tax", "Measured FX gain", "Sources"],
+        tax_rows,
+        "Illustrative 2026 single-filer arithmetic from published brackets. The character of the money decides which column applies; column 6 stays blank because basis is unknown.",
+        "numeric matrix",
+    )
     body = f'''
 {callout("info", "Tax conclusion", "Moving your own existing bank balance is not, by itself, a new wage or gift. That does not establish ‘zero tax’: underlying income/gains, interest, personal FX gain, tax residence and information returns still require analysis. No personalized tax amount can be calculated from principal alone.")}
 <section class="section"><div class="section-heading"><p class="eyebrow">US compliance</p><h2>Reporting thresholds that can apply alongside the transfer</h2></div>{table(["Rule", "Trigger / requirement", "How to apply it", "Official sources"], reporting, "FBAR and Form 8938 are independent. Form 3520 is not triggered merely because you move your own funds.")}</section>
 <section class="section"><div class="section-heading"><p class="eyebrow">China underlying tax</p><h2>Resident comprehensive-income schedule</h2></div><p>China’s IIT law makes a person domiciled in China, or without domicile but present at least 183 days in a tax year, a resident individual. Residents are taxed on China and foreign-source income; nonresidents on China-source income. The table applies to annual <strong>taxable</strong> comprehensive income after statutory deductions—not gross remittance principal. Nonresidents generally calculate wages monthly using the monthly-converted schedule and a ¥5,000 monthly expense deduction. Non-domicile 90-day, 183-day, six-year and treaty rules can change the income included. {source("S39", "S40")}</p>{table(["Annual taxable comprehensive income", "Rate", "Quick deduction", "Official source"], china_rates, "Tax = taxable income × rate − quick deduction, subject to the complete law, deductions, residence and special rules. Nonresident monthly brackets are 1/12 of these thresholds with quick deductions 1/12 of these values.")}<p class="note">Source of money and tax records are also required for the foreign-individual FX purchase route. Paying bank fees is not paying income tax. {source("S1")}</p></section>
 <section class="section"><div class="section-heading"><p class="eyebrow">Lawful tax minimization</p><h2>Compare relief mechanisms without double counting</h2></div>{table(["Mechanism", "Verified rule", "Decision constraint", "Official sources"], relief, "The lowest legal tax outcome is fact-specific. Do not choose a transfer rail based on an assumed exemption.")}</section>
+<section class="section"><div class="section-heading"><p class="eyebrow">The penalty, quantified</p><h2>What a tax bill on the balance would look like in 2026</h2></div><p>The feared “conversion penalty” is two separate questions. Mechanically, converting CNY to USD is a bank-fee event, not a tax event. The tax question is what the money <em>is</em>: already-taxed principal, wage income, a capital gain, or a gift. The table prices the same amount under each character so the scale of the risk is visible rather than assumed.</p>{tax_table}<div class="callout warn"><h2>Why the measured-gain column is blank</h2><p>A currency gain is measured between the rate when the CNY was acquired and the rate when it is converted. Acquisition dates and rates for a pre-existing balance are personal facts no public source can supply, so none is inferred. Publication 525 excludes a personal foreign-currency transaction gain unless it is more than $200 and reports it as a capital gain above that amount, so a held-for-personal-use balance converted once is a small separate line — not a percentage levy on the principal. {source("S38", "S47")}</p></div><p class="note">Assumptions: single filer, under 65, not blind, 2026 standard deduction of {usd(US_STANDARD_DEDUCTION_2026)} and {usd(US_OTHER_TAXABLE_2026)} of other taxable income. Brackets, capital-gain bands, the standard deduction and the {usd(FEIE_2026)} exclusion are quoted from IRS Rev. Proc. 2025-32. Change the assumed inputs and every figure moves. {source("S53", "S35")}</p></section>
 <section class="section"><div class="section-heading"><p class="eyebrow">Execution worksheet</p><h2>Ten questions for a cross-border tax professional</h2></div><ol class="checklist"><li>Which years did the CNY income arise, and what were your China/US tax-residence positions in each?</li><li>How much is principal, interest, capital gain, gift, inheritance or business equity?</li><li>Which Chinese taxes were withheld or paid, and do you have amount-matched official records?</li><li>Which income was already reported on US returns, and at what translated USD basis?</li><li>Does FEIE qualify, and would FTC produce a better result across current and carryover years?</li><li>Are you claiming any treaty position requiring specific disclosure or residency analysis?</li><li>Does personal FX gain exceed $200, or do business/investment FX rules apply instead?</li><li>What were each foreign account’s maximum values for every open FBAR year?</li><li>Do Form 8938, 3520, trust/entity, state or other information returns apply independently?</li><li>If past filings were incomplete, are you eligible for streamlined or another formal correction procedure?</li></ol><p class="note">Personal tax due, China exit-related professional costs and US tax on the transfer are intentionally <strong>blank</strong> until these facts are known. See <a href="flagged.html">Flagged for Review</a>.</p></section>'''
     return layout("taxes.html", "China and US tax obligations", "Separate underlying tax from transfer mechanics: FBAR, FATCA, Form 3520, cash reporting, China IIT, FEIE, FTC, treaty and correction paths.", body)
 
@@ -648,7 +728,7 @@ def flagged_page():
         ("PayPal China / standalone Alipay / WeChat direct route", "No primary proof of exact passport-funded CNY→USD own-US-account service", "Do not use without explicit operator terms; Wise’s Alipay rail is different", source("S11", "S24")),
         ("Hong Kong second leg to USD/US", "Payment Connect evidence covers specified CNY/HKD mainland–HK flows only", "Obtain written two-bank complete-route confirmation or do not use", source("S23")),
         ("Personal China and US tax amounts", "Source, basis, residence, filing history, deductions and credits are unknown", "Provide year-by-year records to a cross-border tax professional", source("S32", "S33", "S39", "S40")),
-        ("2026 indexed Form 3520 foreign-corporation/partnership gift threshold", "Not needed for the stated own-savings case and not independently confirmed here", "If such a gift exists, check the current Form 3520 instructions", source("S28")),
+        ("2026 §6039F threshold for gifts from foreign corporations/partnerships", "Resolved 2026-11-10: Rev. Proc. 2025-32 sets the 2026 §6039F aggregate threshold at USD 20,573, separate from the USD 100,000 nonresident-individual/estate gift threshold", "Applies only if such a gift exists; not to moving your own savings", source("S53", "S28")),
         ("Whether a provincial customs office has issued local guidance since 2025-04-01", "Only the national instrument (S50) and the PBOC limit (S49) were verified; branch-level implementation notes were not reviewed", "Ask the departure-port customs office (12360 hotline) for the operative threshold on your travel date", source("S50", "S49")),
         ("Current BOC promotional waiver", "The verified 2025 wire promotion expired 2025-12-31; none is assumed for 2026", "Ask branch/app for a current dated promotion and preserve terms", source("S45")),
     ]
@@ -673,6 +753,7 @@ def flagged_page():
         ("Property-transfer rules changed in presentation over time", "Latest 2025 operating guide used for property sale; older general measures still cited for framework", "Medium", source("S21", "S2")),
         ("FX spread is an analytical benchmark", "Half-spread uses BOC’s own same-timestamp buy/sell midpoint; it is not proof of the bank’s profit or an executable mid-market rate", "Medium", source("S5", "S48")),
         ("DOMESTIC $50k/year model could be misused", "Shown solely as constant-rate arithmetic for independently lawful annual transactions; never borrow quotas or split to evade review", "High", source("S19", "S46")),
+        ("US tax was described qualitatively but never quantified", "Added a 2026 single-filer illustration that prices the same amount by character (ordinary income, a 10% currency gain, FEIE-eligible earned income) from Rev. Proc. 2025-32; a measured FX gain stays blank because acquisition basis is a personal fact", "Medium", source("S53", "S38")),
         ("Crypto description was overbroad on old site", "Corrected to the PBOC notice’s actual prohibited business activities and legal-risk language; no blanket claim about every individual act is added", "Medium", source("S17")),
     ]
     body = f'''
@@ -738,6 +819,7 @@ def sources_page():
         "S50": "Current customs declaration instrument (2025 No. 43)",
         "S51": "FinCEN Form 105 threshold and group aggregation",
         "S52": "FBAR aggregate-account threshold",
+        "S53": "2026 brackets, standard deduction, capital-gain bands, FEIE and the §6039F threshold",
     }
     for sid, (authority, title, url) in SOURCES.items():
         rows.append((f"<strong>{sid}</strong>", authority, f'<a href="{url}" target="_blank" rel="noopener noreferrer">{escape(title)}</a>', used[sid], f'<a class="source" href="{url}" target="_blank" rel="noopener noreferrer">Open primary ↗</a>'))
