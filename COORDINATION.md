@@ -455,3 +455,11 @@ Scope delivered: citation-durability fix for the FX input (S5 → official date 
   2. `.github/workflows/gh-pages.yml`: run `python3 scripts/build_bank_playbooks.py && python3 scripts/validate_bank_playbooks.py` in `validate`, and include `banks.html`, `playbooks.html`, `verification.html`, and `data/bank-playbooks.json` in `_site/` during `deploy` (note: GitHub Pages `build_type` is also `legacy` from `main:/`, which serves root `.html` files directly, while Actions artifact deploy stages `_site/`).
   3. Clean up the two stray `EAD` lines in `COORDINATION.md` without altering any session's substantive record.
 - When all active shared-file claims (`374f09e6`, `36711496`, `afeb2b56`) reach `done` (or become stale >60 min), this session (or the last completing integration session) will integrate the shared navigation/workflow cleanly, re-verify line by line, open & merge PR to `main`, and verify live GitHub Pages deployment.
+
+## Session arena/c009d1db-china4 — strict evidence audit and publication
+
+| Task | Scope | Status | Owner | Started UTC |
+|---|---|---|---|---|
+| Strict evidence boundary, independently checked primary-source executive brief, validation and publication | COORDINATION.md; new evidence.html; scripts/build_evidence.py; scripts/validate_evidence.py; README.md; .github/workflows/gh-pages.yml; scripts/build_site.py (navigation and evidence warning only) | in progress | arena/c009d1db-china4 | 2026-11-10 05:53 |
+
+Claim: no other session's new files will be edited. Shared navigation/workflow claims above are older than 60 minutes; this session takes over only integration of its evidence page, preserving existing generators and research. Existing FX values cannot be independently reproduced from a stable official URL: a strict table will leave executable costs blank rather than present them as verified. Fixed Arena branch is the integration branch. No account or tax facts will be invented.
