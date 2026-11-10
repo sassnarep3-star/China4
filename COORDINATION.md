@@ -671,3 +671,36 @@ Claim: no other session's new files will be edited. Shared navigation/workflow c
 - **Why this scope.** `arena/abe2d028-china4` explicitly requests a final integration owner (its own log: "a final integration owner should combine the work and publish it"). PR #38 is an open, self-validated correction set on the shared generator. Neither has been merged. Combining them, re-verifying and publishing is exactly the board's "final integration session" role, and nothing else is claimed with live commits.
 - **Overlap guard.** Before every push this session re-fetches `main` and all remote branches. If any other session publishes the same files first, this session links to it instead of duplicating it and narrows task 19.
 - **No invented values.** Unknown current provider quotes, correspondent deductions, account-specific fees, source-of-funds facts and personal tax amounts stay blank (`—`) and are published on the Flagged for Review page. Nothing is inferred to fill a cell.
+
+### Verification performed — arena/1a8e4027-china4 (2026-11-10 ~09:55–10:10 UTC)
+
+Every figure below was re-read from the linked official page in this session, not merely linked. Structural validators were re-run after the merge.
+
+**Re-built and re-validated.** `python3 scripts/build_site.py`, `build_evidence.py`, `build_bank_playbooks.py` all run clean; `validate_site.py` → `PASS: 7 HTML pages, executive summary, 18 procedures, 5×40 cost matrices, 2026 US tax illustration, 54 sources`; `validate_evidence.py` → `PASS: 720 strictly blank current-cost rows, 18 route ladders`; `validate_bank_playbooks.py` → `PASS: 3 additive pages, 49 sources, 8 fee rows, 9 playbooks/63 cited steps, 28 ledger rows, 16 irregularities, 27 canonical facts, 40 re-derived amount rows`. Local HTTP smoke test returned 200 for all eleven pages, both compatibility redirects, `style.css` and both JSON data files.
+
+**Primary sources re-read this session (all linked from the site):**
+
+| Claim checked | Verified value | Official source |
+|---|---|---|
+| BOC personal cross-border telegraphic transfer | 0.1%; min CNY50; max CNY260; international telegram CNY150 (item 210105008) | [BOC personal price list, effective 2025-11-11 (PDF)](https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf) |
+| BOC UnionPay cross-border ATM fee | CNY12 + 1% per withdrawal, max CNY112 (item 210108014) | same BOC PDF |
+| BOC full-arrival (全额到账) | USD15 when the receiving account is at BOC New York, USD25 otherwise; charged on top of commission and telegram (note 5) | same BOC PDF |
+| BOC ATM-owner surcharge warning | present (note 10) | same BOC PDF |
+| BOC FX board (current) | USD buying 665.76 / selling 668.56, Middle Rate 671.67 per 100 USD at 2026-11-10 17:54:59 | [BOC exchange-rate board](https://www.boc.cn/sourcedb/whpj/enindex.html) |
+| SAFE individual FX annual total | USD 50,000 per person per year for settlement and purchase; above-quota current-account business handled under Arts. 10–15; Art. 39 repealed by 汇发〔2023〕8号 | [SAFE Detailed Rules (汇发〔2007〕1号, as amended)](https://www.safe.gov.cn/tianjin/2024/0430/2464.html) |
+| SAFE overseas ATM caps | CNY 100,000 per person per natural year; CNY 10,000 per card per day; borrowed cards prohibited (汇发〔2017〕29号) | [SAFE Hubei notice](https://www.safe.gov.cn/hubei/2019/0305/851.html) |
+| FBAR civil penalties | non-willful USD 16,536; willful USD 165,353; assessed on/after 2025-01-17 (31 CFR 1010.821 Table 1) | [eCFR 31 CFR 1010.821](https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821) |
+| US personal FX gain threshold | gain on a personal foreign-currency transaction is excluded unless more than USD 200, then reported as a capital gain | [IRS Publication 525](https://www.irs.gov/publications/p525) |
+| PRC comprehensive-income IIT brackets | 3/10/20/25/30/35/45% with quick deductions 0/2,520/16,920/31,920/52,920/85,920/181,920 (source S54) | [Shanghai Tax Service bracket PDF](https://shanghai.chinatax.gov.cn/zcfw/zcfgk/grsds/202402/P020240202362406243753.pdf) |
+| US–China treaty caps | dividends, interest and royalties capped at 10% each; saving clause in Protocol 1 ¶2 (1984 treaty, in force 1987-01-01) | [IRS/US Treasury treaty text](https://www.irs.gov/pub/irs-trty/china.pdf) |
+| ABC outward remittance | 0.1%; min CNY20; max CNY200 for individuals (item 09012); outbound SWIFT telegram CNY80 for individuals (item 09015); full-arrival overseas-bank fee USD25; ABC express remittance USD15 + 0.25%, min USD15, max USD50 (item 09023) | [ABC market-adjusted price standard](https://www.abchina.com/cn/PublicPlate/sfbz/fwjgbz/202109/t20210929_2047241.htm) |
+| SkyRemit pricing | CNY79 fixed fee plus a variable percentage; Alipay/WeChat channel fee 0.8%; bank channel adds no such fee | [SkyRemit transparent-pricing notice](https://www.skyremit.cn/news/blog-detail-109-Transparent-Pricing-Model-Updated.html) |
+| Wise CNY outbound eligibility | non-mainland-Chinese sender; valid PRC tax record for the last 3 years; own-account recipient only; bank app CNY300,000 and Alipay CNY50,000 per transfer; tax-based overall limit shared with SkyRemit | [Wise guide to CNY transfers](https://wise.com/help/articles/2955298/guide-to-cny-transfers) |
+
+**Findings and irregularities logged (not merge blockers).**
+1. **BOC Middle Rate is not the arithmetic midpoint.** The board's published Middle Rate column (671.67) differs from (665.76 + 668.56)/2 = 667.16. This confirms the site's existing flag that the model computes its own midpoint rather than borrowing BOC's column. The current board's half-spread (0.2091%) is within ~0.06% relative of the modelled 2026-11-09 input (0.21037%), so the dated input remains representative while the absolute rate has moved.
+2. **ABC discount note scope.** The ABC page states that the listed free/discount items in categories (一)–(九) apply from 2026-09-30 until the price directory expires. `banks.html` already qualifies this; no change needed.
+3. **ABC express remittance is already captured.** `abc_express = USD15 + 0.25%; min USD15; max USD50` (item 09023) is present in `canonical_facts` and validated; re-confirmed against the official page this session.
+4. **Wise current-cost cells.** Blanked under PR #38 because Wise's published 2024 examples do not establish a current price and Wise deducts fees before conversion. The route remains fully documented on `methods.html` and `banks.html`; the net-payout caveat is printed on `penalties.html`.
+5. **Unchanged inherited limitations.** BOC's dated USD row is not permanently retrievable from a static URL (rolling board + captcha historical query); inherited S1–S53 values were not all re-derived this session; personal source-of-funds facts, account-specific fees and personal tax amounts remain blank by policy. These stay published on `flagged.html` and `verification.html`.
+6. **Repository mechanics.** Three stale open PRs (#4, #5, #12) from early sessions remain open and were not touched. No force push was used. The `git merge` of `arena/abe2d028-china4` conflicted only in `COORDINATION.md`; both sessions' sections were retained in full.
