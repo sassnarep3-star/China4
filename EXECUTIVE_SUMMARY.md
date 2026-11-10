@@ -3,7 +3,7 @@
 - **Research cutoff:** 2026-11-10 UTC (independent re-verification; FX citation made durable, Wise/ATM cap-unit correction retained)
 - **BOC retail quote timestamp:** 2026-11-09 05:30 Beijing time
 
-**Current deliverable:** [`index.html`](index.html) · [cost matrices](penalties.html) · [procedures](methods.html) · [tax analysis](taxes.html) · [open items](flagged.html) · [49 sources](sources.html)
+**Current deliverable:** [`index.html`](index.html) · [cost matrices](penalties.html) · [procedures](methods.html) · [tax analysis](taxes.html) · [open items](flagged.html) · [sources](sources.html)
 
 This summary supersedes earlier draft summaries and cost pages. Earlier provider figures that were not supported by current primary evidence are no longer presented as executable prices.
 
