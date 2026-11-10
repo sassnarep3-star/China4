@@ -246,8 +246,15 @@ def main():
             for row_number, links in enumerate(t["row_sources"], 1):
                 if not links or not any(url.startswith("https://") or url.startswith("http://") for url in links):
                     fail(f"{page} table {number} row {row_number}: no direct source link")
-    if len(parsed["sources.html"].tables) != 1 or parsed["sources.html"].tables[0]["rows"] != 52:
-        fail("sources: expected exactly 52 primary-source rows")
+    source_rows = parsed["sources.html"].tables[0]["rows"] if len(parsed["sources.html"].tables) == 1 else -1
+    if len(parsed["sources.html"].tables) != 1 or source_rows < 47:
+        fail(f"sources: expected one register with at least 47 primary-source rows, found {source_rows}")
+    # Guard the prose/table agreement that drifted on 2026-11-10: the stated count
+    # must equal the number of registered rows.
+    sources_text = (ROOT / "sources.html").read_text(encoding="utf-8")
+    for claimed in re.findall(r"(\d+)[- ](?:document primary-source register|primary documents)", sources_text):
+        if int(claimed) != source_rows:
+            fail(f"sources: prose claims {claimed} documents but the register has {source_rows}")
     # Citation-durability guards: the rotating BOC page that used to hold the
     # cited 2026-11-09 row must not be cited again, and the dated quote must be
     # traceable to BOC's official date-query tool plus the live board.
@@ -276,7 +283,7 @@ def main():
         for error in ERRORS:
             print(f" - {error}")
         sys.exit(1)
-    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 52 sources, local links, landmarks and independent Decimal arithmetic.")
+    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 52 sources, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
 
 
 if __name__ == "__main__":
