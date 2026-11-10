@@ -4,6 +4,10 @@ A static, primary-source research dashboard for lawful CNY→USD conversion and 
 
 Live deployment: **https://sassnarep3-star.github.io/China4/**
 
+## Fresh audit (2026-11-10)
+
+Start with **[Verified evidence brief](https://sassnarep3-star.github.io/China4/evidence.html)**: eight freshly checked rules, execution steps, explicit audit limits and 18 × 40 strictly blank current-cost rows. The blank register supersedes any interpretation of the historical scenario figures as verified executable costs. Current quote and personal-tax values could not be verified; no universal cheapest route is claimed. Review flags are linked from the global Review page. The older 52-source catalog was not independently re-verified in full in this narrow audit.
+
 ## Pages
 
 - **Dashboard** — executive decision guidance and 18-route comparison.
@@ -24,7 +28,9 @@ Requires Python 3.11+ and no third-party packages:
 
 ```sh
 python3 scripts/build_site.py
+python3 scripts/build_evidence.py
 python3 scripts/validate_site.py
+python3 scripts/validate_evidence.py
 ```
 
 `build_site.py` uses `Decimal` arithmetic to regenerate all seven HTML pages and `data/cost-model.json`. The validator independently recalculates the amount ladder, BOC fees/FX benchmark, conditional annual schedule and dated Wise scenarios; it also checks HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts. It also requires a direct source link in each table body row; this structural check does not prove that a linked source supports every claim or that external links are live.
