@@ -13,10 +13,14 @@ Start with **[Verified evidence brief](https://sassnarep3-star.github.io/China4/
 - **Dashboard** — executive decision guidance and 18-route comparison.
 - **Summary** — the executive brief: answer, key costs, route shortlist, tax boundary and eight execution steps.
 - **Methods** — pros, cons, constraints, and exact procedures for each route.
-- **Costs** — four 40-row matrices covering $10,000 through $400,000 in $10,000 increments, including special property routes, a statutory penalty-ceiling versus lawful-cost comparison, and corrected penalties.
-- **Taxes** — China IIT, US worldwide income, FBAR, Form 8938, Form 3520, cash reporting, FEIE/FTC, treaty and filing corrections, plus a sourced 2026 illustration of what the same amount costs under different tax characters.
+- **Costs** — five 40-row matrices covering $10,000 through $400,000 in $10,000 increments, including unpriced routes, special property routes and statutory penalty ceilings.
+- **Taxes** — China IIT, US worldwide income, FBAR, Form 8938, Form 3520, cash reporting, FEIE/FTC, treaty and filing corrections, plus a sourced 2026 tax illustration.
 - **Flagged for Review** — unresolved values, irregularities and required manual verification.
-- **Sources** — the full primary-source register with direct manual-review links; the count is generated from `SOURCES` so prose cannot drift.
+- **Sources** — the primary-source register with direct manual-review links; the count is generated from `SOURCES`.
+- **Banks** — published tariffs and provider fee structures for BOC, ABC, CCB, HSBC, CMB, ICBC, SkyRemit and Wise, with eligibility boundaries and a task-17 source register.
+- **Playbooks** — documented step-by-step procedures for the conditional lawful routes, each step tied to the official rule it follows.
+- **Verification** — the row-by-row ledger: what was checked against which official text, what was re-derived independently, and what remains unverified.
+
 
 The former `estimates.html` and `costs.html` URLs remain as compatibility redirects to the consolidated matrices, so older links do not serve conflicting figures.
 
@@ -29,11 +33,13 @@ Requires Python 3.11+ and no third-party packages:
 ```sh
 python3 scripts/build_site.py
 python3 scripts/build_evidence.py
+python3 scripts/build_bank_playbooks.py
 python3 scripts/validate_site.py
 python3 scripts/validate_evidence.py
+python3 scripts/validate_bank_playbooks.py
 ```
 
-`build_site.py` uses `Decimal` arithmetic to regenerate all seven HTML pages and `data/cost-model.json`. The validator independently recalculates the amount ladder, BOC fees/FX benchmark, conditional annual schedule and dated Wise scenarios; it also checks HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts. It also requires a direct source link in each table body row; this structural check does not prove that a linked source supports every claim or that external links are live.
+`build_site.py` uses `Decimal` arithmetic to regenerate all seven HTML pages and `data/cost-model.json`. `build_bank_playbooks.py` generates the three additive pages from `data/bank-playbooks.json`. The validators independently recalculate the amount ladder, BOC fees/FX benchmark, conditional annual schedule and published tariff scenarios; they also check HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts. They require a direct source link in each table body row; this structural check does not prove that a linked source supports every claim or that external links are live.
 
 The GitHub Actions workflow rebuilds and validates pull requests, verifies generated files are current, then deploys only the public site files from `main` to GitHub Pages.
 
@@ -47,4 +53,4 @@ Open `http://localhost:8080/`. No JavaScript, web fonts, cookies or runtime data
 
 ## Evidence and model boundary
 
-The BOC model uses the personal tariff effective 2025-11-11 and the explicitly dated BOC USD retail quote timestamped 2026-11-09 05:30 Beijing time. Because BOC's board rotates, that row is cited through BOC's official historical date query (2026-11-09, USD) instead of a page number, and the current board is cited separately as a magnitude cross-check. The query requires a captcha, so the exact dated row is not permanently retrievable from a static official URL; the inputs are preserved in `data/cost-model.json` and the limitation is published on **Flagged for Review**. Wise formulas are historical examples published 2024-11-25, not current quotes. Current provider quotes, correspondent deductions, account-specific receiving fees, underlying taxes and professional costs must be verified before execution. See the site's **Flagged for Review** page for the complete boundary.
+The BOC model uses the personal tariff effective 2025-11-11 and the explicitly dated BOC USD retail quote timestamped 2026-11-09 05:30 Beijing time. Because BOC's board rotates, that row is cited through BOC's official historical date query (2026-11-09, USD) instead of a page number, and the current board is cited separately as a magnitude cross-check. The query requires a captcha, so the exact dated row is not permanently retrievable from a static official URL; the inputs are preserved in `data/cost-model.json` and the limitation is published on **Flagged for Review**. Wise examples published in 2024 do not establish current prices, so the cost cells are blank. Current provider quotes, correspondent deductions, account-specific receiving fees, underlying taxes and professional costs must be verified before execution. Wise fees are deducted from CNY before conversion; compare quotes for the same net USD payout. See the site's **Flagged for Review** page for the complete boundary.

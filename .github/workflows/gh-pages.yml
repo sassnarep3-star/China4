@@ -26,11 +26,11 @@ jobs:
         with:
           python-version: "3.12"
       - name: Rebuild static pages and cost audit
-        run: python3 scripts/build_site.py && python3 scripts/build_evidence.py
+        run: python3 scripts/build_site.py && python3 scripts/build_evidence.py && python3 scripts/build_bank_playbooks.py
       - name: Verify generated files are current
         run: git diff --exit-code
       - name: Validate HTML, links, source register and calculations
-        run: python3 scripts/validate_site.py && python3 scripts/validate_evidence.py
+        run: python3 scripts/validate_site.py && python3 scripts/validate_evidence.py && python3 scripts/validate_bank_playbooks.py
 
   deploy:
     if: github.event_name != 'pull_request'
@@ -45,9 +45,9 @@ jobs:
       - name: Stage public site
         run: |
           mkdir _site
-          cp evidence.html index.html summary.html methods.html penalties.html taxes.html sources.html flagged.html estimates.html costs.html style.css _site/
+          cp evidence.html index.html summary.html methods.html penalties.html taxes.html sources.html flagged.html estimates.html costs.html banks.html playbooks.html verification.html style.css _site/
           mkdir _site/data
-          cp data/cost-model.json _site/data/
+          cp data/cost-model.json data/bank-playbooks.json _site/data/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
