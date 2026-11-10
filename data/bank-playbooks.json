@@ -1,0 +1,2018 @@
+{
+  "metadata": {
+    "task": "17",
+    "owner": "arena/abe2d028-china4",
+    "research_cutoff_utc": "2026-11-10 UTC",
+    "scope": "Additive new files only: banks.html, playbooks.html, verification.html, scripts/build_bank_playbooks.py, scripts/validate_bank_playbooks.py, data/bank-playbooks.json, plus the task-17 section of COORDINATION.md.",
+    "blank_legend": "'—' means unknown or unavailable, never zero. 'Not extractable' means the official page did not expose a stable text row. 'Not independently re-derived' means an inherited value was not re-fetched or recomputed in task 17.",
+    "quote_warning": "Published tariffs and provider fee structures are not simultaneous executable quotes. Obtain a written all-in quote and qualified cross-border tax/legal review before execution.",
+    "nav": [
+      [
+        "evidence.html",
+        "Evidence",
+        "Fresh audit and strict costs"
+      ],
+      [
+        "index.html",
+        "Dashboard",
+        "Decision dashboard"
+      ],
+      [
+        "summary.html",
+        "Summary",
+        "Executive brief"
+      ],
+      [
+        "methods.html",
+        "Methods",
+        "18 routes and procedures"
+      ],
+      [
+        "penalties.html",
+        "Costs",
+        "40-row cost matrices"
+      ],
+      [
+        "taxes.html",
+        "Taxes",
+        "China and US tax/reporting"
+      ],
+      [
+        "flagged.html",
+        "Review",
+        "Unknowns and irregularities"
+      ],
+      [
+        "sources.html",
+        "Sources",
+        "Primary-source register"
+      ],
+      [
+        "banks.html",
+        "Banks",
+        "Multi-bank tariff evidence"
+      ],
+      [
+        "playbooks.html",
+        "Playbooks",
+        "Documented route procedures"
+      ],
+      [
+        "verification.html",
+        "Verification",
+        "Row-by-row ledger"
+      ]
+    ]
+  },
+  "sources": {
+    "T01": {
+      "publisher": "SAFE",
+      "title": "Individual Foreign Exchange Detailed Rules (modified), Arts. 2, 12–15, 28–31, 39",
+      "url": "https://www.safe.gov.cn/tianjin/2024/0430/2464.html",
+      "reading": "Full official page re-read for task 17."
+    },
+    "T02": {
+      "publisher": "PBOC / SAFE",
+      "title": "Measures for the Administration of Individual Foreign Exchange, PBOC Order [2006] No. 3",
+      "url": "https://www.safe.gov.cn/tianjin/2024/0430/2465.html",
+      "reading": "Full official page re-read for task 17."
+    },
+    "T03": {
+      "publisher": "SAFE Ningxia",
+      "title": "2022 FX policy Q&A: USD 50,000 is a convenience quota, not a hard current-account cap",
+      "url": "https://www.safe.gov.cn/ningxia/2022/0929/1997.html",
+      "reading": "Full official Q&A re-read for task 17."
+    },
+    "T04": {
+      "publisher": "State Council, PRC",
+      "title": "Foreign Exchange Administration Regulations, Decree 532",
+      "url": "https://www.gov.cn/gongbao/content/2008/content_1071846.htm",
+      "reading": "Full official text re-read for task 17."
+    },
+    "T05": {
+      "publisher": "SAFE",
+      "title": "Hui Fa [2015] No. 49: splitting, borrowed quotas and watch-list management",
+      "url": "https://www.safe.gov.cn/safe/2015/1231/5442.html",
+      "reading": "Full official notice re-read for task 17."
+    },
+    "T06": {
+      "publisher": "SAFE Guangdong",
+      "title": "Tip on lawful online FX channels; private changers and underground banks are unlawful",
+      "url": "https://www.safe.gov.cn/guangdong/2020/0304/1668.html",
+      "reading": "Full official notice re-read for task 17."
+    },
+    "T07": {
+      "publisher": "STA / SAFE",
+      "title": "2021 No. 19 supplementary announcement on tax filing for service-trade and other outbound payments",
+      "url": "https://www.safe.gov.cn/safe/2021/0702/19306.html",
+      "reading": "Full official announcement re-read for task 17."
+    },
+    "T08": {
+      "publisher": "SAFE",
+      "title": "Official interpretation of STA / SAFE Announcement 2021 No. 19",
+      "url": "https://www.safe.gov.cn/safe/2021/0702/19307.html",
+      "reading": "Full official interpretation re-read for task 17."
+    },
+    "T09": {
+      "publisher": "SAFE",
+      "title": "Hui Fa [2017] No. 29: overseas ATM cash-withdrawal limits",
+      "url": "https://www.safe.gov.cn/safe/2017/1230/8116.html",
+      "reading": "Full official notice re-read for task 17."
+    },
+    "T10": {
+      "publisher": "SAFE Henan",
+      "title": "2018 press Q&A on overseas large cash withdrawals by bank card",
+      "url": "https://www.safe.gov.cn/henan/2018/0111/238.html",
+      "reading": "Full official Q&A re-read for task 17."
+    },
+    "T11": {
+      "publisher": "UnionPay International",
+      "title": "Overseas ATM instructions, CNY settlement, ATM-owner surcharges and local limits",
+      "url": "https://m.unionpayintl.com/wap/cn/serviceCenter/cardUsingInstructions/1606.shtml",
+      "reading": "Official provider page chunks 0–1 re-read for task 17."
+    },
+    "T12": {
+      "publisher": "SAFE / China Customs",
+      "title": "Interim Measures on carrying foreign-currency cash across the border",
+      "url": "https://www.safe.gov.cn/tianjin/2024/0430/2466.html",
+      "reading": "Full official notice re-read for task 17."
+    },
+    "T13": {
+      "publisher": "PBOC / SAFE",
+      "title": "Interim Measures for Personal Property Transfers Abroad, PBOC Announcement [2004] No. 16",
+      "url": "https://www.gov.cn/gongbao/content/2005/content_64294.htm",
+      "reading": "Full official text re-read for task 17."
+    },
+    "T14": {
+      "publisher": "PBOC and nine other regulators",
+      "title": "Yin Fa [2021] No. 237: virtual-currency-related business is illegal financial activity in the PRC",
+      "url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4348658/index.html",
+      "reading": "Full official notice re-read for task 17."
+    },
+    "T15": {
+      "publisher": "Bank of China",
+      "title": "Consolidated service-price index, effective 2025-11-11, with 2026-11-11 adjustment notice",
+      "url": "https://www.boc.cn/custserv/fd5/",
+      "reading": "Full official index page re-read for task 17."
+    },
+    "T16": {
+      "publisher": "Bank of China",
+      "title": "Personal Financial Services Price List, effective 2025-11-11 (PDF)",
+      "url": "https://pic.bankofchina.com/bocappd/pricelist/202511/P020251110646838136627.pdf",
+      "reading": "All six PDF pages parsed and re-read for task 17."
+    },
+    "T17": {
+      "publisher": "Bank of China",
+      "title": "Personal service-charge adjustment effective 2026-11-11 (ATM fee notice)",
+      "url": "https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html",
+      "reading": "Full official notice re-read for task 17."
+    },
+    "T18": {
+      "publisher": "Bank of China",
+      "title": "Current retail exchange-rate board (rolling snapshots)",
+      "url": "https://www.boc.cn/sourcedb/whpj/enindex.html",
+      "reading": "Live board page re-read on 2026-11-10; values are dynamic."
+    },
+    "T19": {
+      "publisher": "Bank of China",
+      "title": "Historical exchange-rate query (captcha required)",
+      "url": "https://www.boc.cn/sourcedb/whpjSearch/index_2833.html",
+      "reading": "Captcha/error page re-read for task 17; dated row not reproducible."
+    },
+    "T20": {
+      "publisher": "Agricultural Bank of China",
+      "title": "Market-adjusted service price standard: foreign-exchange and fund transactions, items 09010–09023",
+      "url": "https://www.abchina.com/cn/PublicPlate/sfbz/fwjgbz/202109/t20210929_2047241.htm",
+      "reading": "Three official HTML chunks re-read for task 17."
+    },
+    "T21": {
+      "publisher": "China Construction Bank, Hebei Branch",
+      "title": "2016-08-22 personal online-bank overseas FX wire page",
+      "url": "https://wealth.ccb.com/he/cn/faverable/20160822_1471836289.html",
+      "reading": "Dated branch page chunks 0–1 re-read for task 17."
+    },
+    "T22": {
+      "publisher": "HSBC Bank (China)",
+      "title": "Wealth and Personal Banking account/service tariff effective 2026-10-31 (PDF)",
+      "url": "https://www.hsbc.com.cn/content/dam/hsbc/cn/docs/document-download/tariff-of-accouts-and-services.pdf",
+      "reading": "Relevant PDF chunks 0–2 re-read for task 17."
+    },
+    "T23": {
+      "publisher": "China Merchants Bank",
+      "title": "Dynamic service-price catalogue (mobile financial-information view)",
+      "url": "https://fin.paas.cmbchina.com/mserviceprice",
+      "reading": "Dynamic catalogue page re-read for task 17; no outward-wire row exposed."
+    },
+    "T24": {
+      "publisher": "China Merchants Bank",
+      "title": "Customer-service price directory reference notice",
+      "url": "https://www.cmbchina.com/customerservice/customerserviceinfo.aspx?pageid=zhbz",
+      "reading": "Full official directory shell re-read for task 17; local branch notices control."
+    },
+    "T25": {
+      "publisher": "Industrial and Commercial Bank of China",
+      "title": "Consolidated service-price list, current version effective 2026-08-08",
+      "url": "https://www.icbc.com.cn/column/1438058326864052304.html",
+      "reading": "Official index chunks 0–1 re-read for task 17; price tables are images."
+    },
+    "T26": {
+      "publisher": "Industrial and Commercial Bank of China",
+      "title": "Personal cross-border remittance product and channel instructions",
+      "url": "https://www.icbc.com.cn/page/721854316817449008.html",
+      "reading": "Official product-page chunks 0–1 re-read for task 17."
+    },
+    "T27": {
+      "publisher": "SkyRemit",
+      "title": "Homepage calculator, eligibility, transfer range and four-step flow",
+      "url": "https://www.skyremit.cn/",
+      "reading": "Official provider homepage re-read for task 17; calculator values are dynamic."
+    },
+    "T28": {
+      "publisher": "SkyRemit",
+      "title": "Salary-remittance FAQ: eligibility, CNY79 fixed fee, variable fee, own-account rule, 500–300,000 CNY range",
+      "url": "https://www.skyremit.cn/news/blog-detail-119-SkyRemit-Salary-Remittance-Frequently-Asked-Questions.html",
+      "reading": "Full official FAQ re-read for task 17."
+    },
+    "T29": {
+      "publisher": "SkyRemit",
+      "title": "Transparent pricing update: XE rate + CNY79 fixed fee + variable fee; wallet channel fee 0.8%",
+      "url": "https://www.skyremit.cn/news/blog-detail-109-Transparent-Pricing-Model-Updated.html",
+      "reading": "Full official pricing notice re-read for task 17."
+    },
+    "T30": {
+      "publisher": "SkyRemit",
+      "title": "Service User Agreement, updated October 2023",
+      "url": "https://skyremit.cn/terms-of-use.html",
+      "reading": "All six official terms chunks read for task 17."
+    },
+    "T31": {
+      "publisher": "SkyRemit",
+      "title": "Final amount received: how to compare banks, Wise, PayPal and SkyRemit",
+      "url": "https://www.skyremit.cn/service-support/final-amount-received-how-to-compare-skyremit-banks-wise-paypal.html",
+      "reading": "Full official comparison guide re-read for task 17."
+    },
+    "T32": {
+      "publisher": "SkyRemit",
+      "title": "Bank wire vs money-transfer platform in China",
+      "url": "https://www.skyremit.cn/service-support/bank-wire-vs-money-transfer-platform-in-china.html",
+      "reading": "Official guide chunks 0–1 re-read for task 17; competitor cost claims are provider statements."
+    },
+    "T33": {
+      "publisher": "Wise",
+      "title": "Guide to CNY transfers: eligibility, tax records, own-account rule, limits and timing",
+      "url": "https://wise.com/help/articles/2955298/guide-to-cny-transfers",
+      "reading": "Full official guide chunks 0–1 re-read for task 17."
+    },
+    "T34": {
+      "publisher": "Wise",
+      "title": "Getting verified when sending from CNY",
+      "url": "https://wise.com/help/articles/6UiSPdtzZzYuwQqI4HHtNX/getting-verified-when-sending-from-cny",
+      "reading": "Full official verification page re-read for task 17."
+    },
+    "T35": {
+      "publisher": "MOHRSS / Jiangsu tax policy library",
+      "title": "MOHRSS Order No. 16: foreign employees' social-insurance participation and account treatment",
+      "url": "https://jiangsu.chinatax.gov.cn/art/2011/9/6/art_23636_3204.html",
+      "reading": "Full consolidated official rule re-read for task 17."
+    },
+    "T36": {
+      "publisher": "Ministry of Justice, PRC",
+      "title": "2024 amendment to MOHRSS Order No. 16 (eligibility-document and annual-verification changes)",
+      "url": "https://www.moj.gov.cn/pub/sfbgw/flfggz/flfggzbmgz/202510/t20251017_526358.html",
+      "reading": "Official amendment page chunks 0–1 re-read for task 17."
+    },
+    "T37": {
+      "publisher": "State Taxation Administration",
+      "title": "PRC Individual Income Tax Law",
+      "url": "https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193028/content.html",
+      "reading": "Full official law chunk 0 re-read for task 17; rate-table images were not transcribed."
+    },
+    "T38": {
+      "publisher": "MOF / STA",
+      "title": "2026 Announcement No. 27: foreign individuals' FIE dividends taxed at 20% from 2026-09-01",
+      "url": "https://fgk.chinatax.gov.cn/zcfgk/c102416/c5252107/content.html",
+      "reading": "Full official announcement re-read for task 17."
+    },
+    "T39": {
+      "publisher": "State Taxation Administration",
+      "title": "PRC Enterprise Income Tax Law implementation regulations, Art. 91",
+      "url": "https://fgk.chinatax.gov.cn/zcfgk/c100010/c5194417/content.html",
+      "reading": "Relevant official regulation chunk re-read for task 17."
+    },
+    "T40": {
+      "publisher": "IRS / US Treasury",
+      "title": "US–China income tax treaty and protocols (1984, with protocol texts)",
+      "url": "https://www.irs.gov/pub/irs-trty/china.pdf",
+      "reading": "Relevant treaty PDF chunks 0–7 re-read for task 17."
+    },
+    "T41": {
+      "publisher": "IRS",
+      "title": "Publication 525 (2025): personal foreign-currency transaction gain over USD 200",
+      "url": "https://www.irs.gov/publications/p525",
+      "reading": "Relevant full-page section re-read for task 17."
+    },
+    "T42": {
+      "publisher": "IRS",
+      "title": "Foreign tax credit: Form 1116 and no credit for tax on excluded income",
+      "url": "https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit",
+      "reading": "Full official page re-read for task 17."
+    },
+    "T43": {
+      "publisher": "IRS",
+      "title": "Comparison of Form 8938 and FBAR requirements",
+      "url": "https://www.irs.gov/businesses/comparison-of-form-8938-and-fbar-requirements",
+      "reading": "Official comparison table chunk 0 re-read for task 17."
+    },
+    "T44": {
+      "publisher": "FinCEN",
+      "title": "Report of Foreign Bank and Financial Accounts (FBAR): aggregate accounts over USD 10,000",
+      "url": "https://www.fincen.gov/report-foreign-bank-and-financial-accounts",
+      "reading": "Full official FBAR page re-read for task 17."
+    },
+    "T45": {
+      "publisher": "IRS",
+      "title": "Publication 54 (12/2025): worldwide gross income and filing rules abroad",
+      "url": "https://www.irs.gov/publications/p54",
+      "reading": "Relevant filing-requirements chunk re-read for task 17."
+    },
+    "T46": {
+      "publisher": "US Customs and Border Protection",
+      "title": "Money and monetary instruments: FinCEN Form 105 above USD 10,000",
+      "url": "https://www.cbp.gov/travel/international-visitors/money-monetary-instruments",
+      "reading": "Full official CBP page re-read for task 17."
+    },
+    "T47": {
+      "publisher": "IRS",
+      "title": "Rev. Proc. 2025-32: 2026 inflation-adjusted tax items",
+      "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+      "reading": "Table of contents/chunk 0 re-read for task 17; inherited tax illustration was not re-derived here."
+    },
+    "T48": {
+      "publisher": "PBOC",
+      "title": "Announcement [2004] No. 18: RMB 20,000 cash limit per person per trip",
+      "url": "https://www.pbc.gov.cn/chubanwu/114566/114579/114643/2839193/index.html",
+      "reading": "Full official bulletin chunk containing announcement 18 re-read for task 17."
+    },
+    "T49": {
+      "publisher": "IRS",
+      "title": "Foreign earned income exclusion eligibility",
+      "url": "https://www.irs.gov/individuals/international-taxpayers/foreign-earned-income-exclusion",
+      "reading": "Official eligibility page chunk 0 re-read for task 17."
+    }
+  },
+  "bank_rows": [
+    {
+      "id": "B01",
+      "institution": "Bank of China (BOC)",
+      "channel": "Personal cross-border telegraphic transfer",
+      "document": "Personal tariff effective 2025-11-11",
+      "commission": "0.1%; min CNY50; max CNY260",
+      "telegram": "CNY150 for international telegram",
+      "full_arrival": "USD15 BOC New York / USD25 otherwise; full-arrival fee is in addition to commission and telegram",
+      "current_executable_quote": "—",
+      "status": "Documented tariff; not an executable rate",
+      "notes": "Service-price index also links an ATM-only adjustment effective 2026-11-11. Historical dated rate query requires captcha and the rolling board changes.",
+      "sources": [
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "id": "B02",
+      "institution": "Agricultural Bank of China (ABC)",
+      "channel": "Private outward wire and full-arrival service",
+      "document": "Market-adjusted price standard, items 09012 and 09015",
+      "commission": "0.1%; min CNY20; max CNY200",
+      "telegram": "CNY80 for an ordinary outbound SWIFT/message",
+      "full_arrival": "USD25 or equivalent overseas-bank fee; inward original-currency credit is free",
+      "current_executable_quote": "—",
+      "status": "Documented tariff; dated discount note needs branch confirmation",
+      "notes": "The same page states listed free/discount items apply from 2026-09-30 until the price directory expires. Do not conflate that note with a general 2025-12-15 announcement.",
+      "sources": [
+        "T20"
+      ]
+    },
+    {
+      "id": "B03",
+      "institution": "China Construction Bank (CCB)",
+      "channel": "Hebei-branch personal online-bank overseas FX wire",
+      "document": "Branch page dated 2016-08-22",
+      "commission": "0.1%; min CNY20; max CNY300",
+      "telegram": "CNY80 per transfer",
+      "full_arrival": "Cash-to-remittance spread applies at the board rate; offshore recipient account required; fees converted to FX",
+      "current_executable_quote": "—",
+      "status": "Historical branch tariff; not a current executable quote",
+      "notes": "Supports 9 currencies; 7×24 submission but workday 09:00–17:00 processing. Do not use as a 2026 price without a written branch quote.",
+      "sources": [
+        "T21"
+      ]
+    },
+    {
+      "id": "B04",
+      "institution": "HSBC Bank (China)",
+      "channel": "Outward telegraphic transfer",
+      "document": "Wealth/Personal Banking tariff effective 2026-10-31",
+      "commission": "Private-banking personal client: free; Premier/Advance: 0.1%; min CNY100; max CNY500",
+      "telegram": "Private-banking personal client: free; Premier/Advance: CNY120",
+      "full_arrival": "USD full-amount service prepays CNY200 and may charge a shortfall later; 'free' excludes receiving/intermediary-bank fees; SHA/BEN/OUR options apply",
+      "current_executable_quote": "—",
+      "status": "Documented tariff; client tier and downstream deductions control",
+      "notes": "The PDF's free label is tier-specific and excludes non-HSBC fees. Confirm client tier before execution.",
+      "sources": [
+        "T22"
+      ]
+    },
+    {
+      "id": "B05",
+      "institution": "China Merchants Bank (CMB)",
+      "channel": "Personal outward wire",
+      "document": "Dynamic service-price catalogue and customer-service directory",
+      "commission": "Not extractable",
+      "telegram": "Not extractable",
+      "full_arrival": "Not extractable",
+      "current_executable_quote": "—",
+      "status": "Official dynamic catalogue; no stable outward-wire row exposed",
+      "notes": "Both official pages state the content is for reference and local branch announcements/specific rules apply. Search snippets were not promoted to published tariffs.",
+      "sources": [
+        "T23",
+        "T24"
+      ]
+    },
+    {
+      "id": "B06",
+      "institution": "Industrial and Commercial Bank of China (ICBC)",
+      "channel": "Personal cross-border remittance",
+      "document": "Service-price list effective 2026-08-08 plus product page",
+      "commission": "Not extractable",
+      "telegram": "Not extractable",
+      "full_arrival": "Product page says TT may have extra telegram fee and intermediary deductions; cash-account funds incur cash-to-remittance spread",
+      "current_executable_quote": "—",
+      "status": "Official product rules; tariff tables published as images, no text row extracted",
+      "notes": "Product page confirms domestic-individual USD50,000/day ID threshold, foreign-individual ID-based remittance, and MoneyGram USD10,000 single / USD20,000 daily limits; local branch rules control.",
+      "sources": [
+        "T25",
+        "T26"
+      ]
+    },
+    {
+      "id": "B07",
+      "institution": "SkyRemit (provider)",
+      "channel": "Documented after-tax salary remittance to own overseas account",
+      "document": "Homepage, FAQ, pricing update, terms and comparison guides",
+      "commission": "CNY79 fixed fee + variable percentage fee; XE real-time rate with visible markup",
+      "telegram": "Alipay/WeChat channel fee 0.8%; bank transfer has no channel fee",
+      "full_arrival": "Terms say displayed rate is indicative, actual rate locks at 'Confirm Rate', actual debit may differ, and receiving-country taxes/fees are excluded",
+      "current_executable_quote": "—",
+      "status": "Provider structure documented; no stable executable total",
+      "notes": "500–300,000 CNY per transfer; own-account and personal-purpose restrictions; payment instructions are irrevocable; fees can fluctuate.",
+      "sources": [
+        "T27",
+        "T28",
+        "T29",
+        "T30",
+        "T31",
+        "T32"
+      ]
+    },
+    {
+      "id": "B08",
+      "institution": "Wise (provider)",
+      "channel": "CNY outbound route for eligible non-mainland-Chinese workers",
+      "document": "CNY transfer guide and verification page",
+      "commission": "Exact current fee requires setting up a transfer; no stable numeric quote extracted",
+      "telegram": "Bank transfer or Alipay funding; single limits CNY300,000 and CNY50,000 respectively",
+      "full_arrival": "Overall limit based on annual income, tax paid and tax-record years; only own overseas account",
+      "current_executable_quote": "—",
+      "status": "Provider eligibility and limits documented; current price blank",
+      "notes": "Passport, work-eligibility document, and personal income tax record from the last three years; first verification 1–2 working days.",
+      "sources": [
+        "T33",
+        "T34"
+      ]
+    }
+  ],
+  "condition_rows": [
+    {
+      "id": "C01",
+      "topic": "Classification",
+      "rule": "PBOC Art. 37 defines domestic individuals by PRC ID/military papers and foreign individuals by passport/HK/Macau/Taiwan travel documents; Decree 532 Art. 52 uses a separate one-year residence definition. Do not infer classification from nationality alone; use the bank's account/identity classification.",
+      "sources": [
+        "T02",
+        "T04"
+      ]
+    },
+    {
+      "id": "C02",
+      "topic": "USD 50,000 quota",
+      "rule": "USD50,000 is an annual convenience purchase/settlement quota, not a hard cap on genuine lawful current-account transactions; above it requires ID plus transaction-amount/source or purpose documents.",
+      "sources": [
+        "T01",
+        "T02",
+        "T03"
+      ]
+    },
+    {
+      "id": "C03",
+      "topic": "Foreign individual's RMB income",
+      "rule": "A foreign individual with lawful current-account RMB income may purchase FX and remit with ID and supporting/tax documents; unused inward FX may be remitted back with ID.",
+      "sources": [
+        "T01",
+        "T02"
+      ]
+    },
+    {
+      "id": "C04",
+      "topic": "Anti-splitting",
+      "rule": "No splitting, borrowed quotas, false documents or private swap channels. Hui Fa [2015] No. 49 imposes a watch list for the listing year and two following years.",
+      "sources": [
+        "T04",
+        "T05",
+        "T06"
+      ]
+    },
+    {
+      "id": "C05",
+      "topic": "Licensed channels",
+      "rule": "Individual FX purchase/sale must use qualified banks or authorized exchange agencies; company/app/social-media/broker/underground-bank channels are unlawful. Virtual-currency-related exchange and settlement business is also prohibited.",
+      "sources": [
+        "T06",
+        "T14"
+      ]
+    },
+    {
+      "id": "C06",
+      "topic": "Tax filing gate",
+      "rule": "For service-trade and other specified outbound payments, a single payment above USD50,000 requires tax filing; the unchanged amount standard is USD50,000, and for one contract with multiple payments filing occurs only when the first payment exceeds it.",
+      "sources": [
+        "T07",
+        "T08"
+      ]
+    },
+    {
+      "id": "C07",
+      "topic": "FX-savings remittance",
+      "rule": "Domestic-individual FX-savings remittance ≤USD50,000/day uses ID; above that needs genuine current-account documents. Foreign-individual FX-savings remittance uses ID. ICBC's product page repeats these rules.",
+      "sources": [
+        "T01",
+        "T26"
+      ]
+    },
+    {
+      "id": "C08",
+      "topic": "Cash-account conversion",
+      "rule": "If funds are in a foreign-currency cash account rather than a remittance account, ICBC and CCB describe a cash-to-remittance spread charged at the day's board rate; include it in a written quote.",
+      "sources": [
+        "T21",
+        "T26"
+      ]
+    },
+    {
+      "id": "C09",
+      "topic": "Overseas ATM",
+      "rule": "CNY100,000 per person per calendar year across own cards and CNY10,000 per card per day; exceeding the annual cap suspends current and next-year overseas cash withdrawals. Ordinary card consumption is unaffected and does not consume the USD50,000 convenience quota.",
+      "sources": [
+        "T09",
+        "T10",
+        "T11"
+      ]
+    },
+    {
+      "id": "C10",
+      "topic": "Cash and border reporting",
+      "rule": "Foreign-currency cash: ≤USD5,000 permit-free, USD5,000–10,000 bank permit, >USD10,000 generally prohibited except special SAFE permit. RMB cash limit is CNY20,000 per person per trip. Entering/leaving the US with more than USD10,000 in currency/monetary instruments requires FinCEN Form 105; group aggregation applies.",
+      "sources": [
+        "T12",
+        "T48",
+        "T46"
+      ]
+    },
+    {
+      "id": "C11",
+      "topic": "Social insurance",
+      "rule": "Foreign employees participate in five insurances. On departure before pension age the personal account is retained; only a written application to terminate the social-insurance relation permits a one-time payment of the personal-account balance. The 2024 amendment changes eligibility-document names and annual overseas eligibility verification.",
+      "sources": [
+        "T35",
+        "T36"
+      ]
+    },
+    {
+      "id": "C12",
+      "topic": "US tax/reporting",
+      "rule": "US citizens/resident aliens remain on worldwide-income filing rules; personal FX gain over USD200 is a capital gain; FTC uses Form 1116 and cannot apply to excluded income; FBAR aggregate foreign accounts >USD10,000 and Form 8938 have separate thresholds; FEIE requires a foreign tax home and residence/presence test.",
+      "sources": [
+        "T41",
+        "T42",
+        "T43",
+        "T44",
+        "T45",
+        "T49"
+      ]
+    }
+  ],
+  "playbooks": [
+    {
+      "id": "P01",
+      "title": "Default: documented foreign-individual after-tax income bank wire",
+      "summary": "Use a licensed bank, your own overseas account, and source-of-funds/tax evidence; do not treat the USD50,000 convenience quota as a blanket permission.",
+      "quote_gate": "Request a written same-time all-in quote: FX selling rate, commission, telegram, cash-to-remittance spread, full-arrival charge, intermediary/receiving deductions and expected final recipient amount.",
+      "unknowns": [
+        "Current executable FX rate and all-in fee",
+        "Recipient/intermediary deductions",
+        "Personal acquisition basis for any FX gain"
+      ],
+      "steps": [
+        {
+          "text": "Confirm the bank's classification of the account holder from identity documents; a US passport holder is normally a foreign individual under PBOC Art. 37, but Decree 532 has a separate residence definition.",
+          "sources": [
+            "T02",
+            "T04"
+          ]
+        },
+        {
+          "text": "Assemble passport/work eligibility, lawful source-of-funds records, PRC personal income-tax records and the overseas account in your own name.",
+          "sources": [
+            "T01",
+            "T33",
+            "T34",
+            "T30"
+          ]
+        },
+        {
+          "text": "Use only a qualified bank or authorized exchange institution; do not use a private swap, borrowed quota, false invoice or underground-bank channel.",
+          "sources": [
+            "T05",
+            "T06",
+            "T14"
+          ]
+        },
+        {
+          "text": "Present the genuine current-account purpose and transaction-amount documents. If the bank applies the USD50,000 convenience quota, above-quota genuine transactions require documents rather than splitting.",
+          "sources": [
+            "T01",
+            "T02",
+            "T03"
+          ]
+        },
+        {
+          "text": "Request a written same-time all-in quote before irrevocable instructions: FX selling rate, commission, telegram, cash-to-remittance spread, full-arrival charge, intermediary/receiving deductions and expected final recipient amount.",
+          "sources": [
+            "T16",
+            "T20",
+            "T22",
+            "T31"
+          ]
+        },
+        {
+          "text": "Confirm whether funds are cash-account or remittance-account FX; cash-account funds can incur an additional spread.",
+          "sources": [
+            "T21",
+            "T26"
+          ]
+        },
+        {
+          "text": "Use an own-account wire with accurate recipient details; retain the FX memo, tax records, bank receipt and any tax-filing number/verification code.",
+          "sources": [
+            "T01",
+            "T07",
+            "T08",
+            "T26"
+          ]
+        },
+        {
+          "text": "After settlement, check US worldwide-income filing, FBAR/Form 8938, any realized FX gain over USD200, and FTC/FEIE interactions with a qualified tax adviser.",
+          "sources": [
+            "T41",
+            "T42",
+            "T43",
+            "T44",
+            "T45",
+            "T49"
+          ]
+        }
+      ],
+      "sources": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T14",
+        "T16",
+        "T20",
+        "T21",
+        "T22",
+        "T26",
+        "T30",
+        "T31",
+        "T33",
+        "T34",
+        "T41",
+        "T42",
+        "T43",
+        "T44",
+        "T45",
+        "T49"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "Domestic-individual genuine current-account purchase above USD50,000",
+      "summary": "Only if the bank classifies you as a domestic individual; the convenience quota is not a hard cap on documented genuine transactions.",
+      "quote_gate": "All-in written quote plus the bank's document checklist; do not split to avoid documentation.",
+      "unknowns": [
+        "Bank classification",
+        "Document acceptance by branch",
+        "Current executable FX rate"
+      ],
+      "steps": [
+        {
+          "text": "Ask the bank to confirm the legal classification; do not assume a US passport or long residence decides it.",
+          "sources": [
+            "T02",
+            "T04"
+          ]
+        },
+        {
+          "text": "Identify the genuine current-account purpose and collect ID plus transaction-amount/source or purpose evidence.",
+          "sources": [
+            "T02",
+            "T03"
+          ]
+        },
+        {
+          "text": "Use the USD50,000 annual convenience quota only for ID-only processing; above the quota, present genuine-transaction documents instead of splitting.",
+          "sources": [
+            "T01",
+            "T02",
+            "T03"
+          ]
+        },
+        {
+          "text": "Do not borrow another person's quota or use false documents; the watch-list period is the listing year plus two following years.",
+          "sources": [
+            "T05",
+            "T06"
+          ]
+        },
+        {
+          "text": "Request a written all-in quote from the licensed bank, including cash-to-remittance spread and downstream deductions.",
+          "sources": [
+            "T16",
+            "T20",
+            "T21",
+            "T22",
+            "T26",
+            "T31"
+          ]
+        },
+        {
+          "text": "Keep the bank's classification memo, documents and receipt for later US reporting and any PRC tax review.",
+          "sources": [
+            "T42",
+            "T43",
+            "T44"
+          ]
+        }
+      ],
+      "sources": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T16",
+        "T20",
+        "T21",
+        "T22",
+        "T26",
+        "T31",
+        "T42",
+        "T43",
+        "T44"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "Service-trade / income / current-transfer payment with tax filing",
+      "summary": "For a genuine contract-based outbound payment, not a workaround for moving personal savings.",
+      "quote_gate": "Tax-filing number/verification code plus a written bank quote; current cost blank until both exist.",
+      "unknowns": [
+        "Whether the transaction is in the filing scope",
+        "Tax authority's document requirements",
+        "Current bank fees"
+      ],
+      "steps": [
+        {
+          "text": "Characterize the underlying contract and payment; do not invent a service contract to move personal principal.",
+          "sources": [
+            "T04",
+            "T07",
+            "T08"
+          ]
+        },
+        {
+          "text": "Check the USD50,000 single-payment tax-filing threshold: an unexceeded single payment does not require filing under Announcement 2021 No. 19's unchanged standard.",
+          "sources": [
+            "T07",
+            "T08"
+          ]
+        },
+        {
+          "text": "For one contract with multiple payments, file only before the first payment that exceeds USD50,000; do not file again for every later payment on the same contract.",
+          "sources": [
+            "T07",
+            "T08"
+          ]
+        },
+        {
+          "text": "File online through the electronic tax bureau or obtain the paper form at a tax hall; record the form number and verification code.",
+          "sources": [
+            "T07",
+            "T08"
+          ]
+        },
+        {
+          "text": "Give the number and verification code to the bank and follow FX authenticity/document review; the tax hall need not complete a substantive tax review at filing.",
+          "sources": [
+            "T07",
+            "T08",
+            "T01",
+            "T04"
+          ]
+        },
+        {
+          "text": "Request a written all-in bank quote and compare the final recipient amount, not just the visible fee.",
+          "sources": [
+            "T16",
+            "T20",
+            "T22",
+            "T31"
+          ]
+        },
+        {
+          "text": "Retain the contract, filing, tax-payment evidence, bank receipt and US reporting records.",
+          "sources": [
+            "T42",
+            "T43",
+            "T44",
+            "T45"
+          ]
+        }
+      ],
+      "sources": [
+        "T01",
+        "T04",
+        "T07",
+        "T08",
+        "T16",
+        "T20",
+        "T22",
+        "T31",
+        "T42",
+        "T43",
+        "T44",
+        "T45"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "Regulated provider route (Wise or SkyRemit)",
+      "summary": "Use only when eligible work-status, after-tax income records, own-account destination and the supported corridor all fit.",
+      "quote_gate": "Compare final recipient amount at the same send amount, currency and quote time; do not convert a dynamic display into a durable price.",
+      "unknowns": [
+        "Current variable fee and FX markup",
+        "Final recipient amount",
+        "Receiving/intermediary deductions"
+      ],
+      "steps": [
+        {
+          "text": "Confirm non-mainland-Chinese eligibility, valid work/ID documents and a tax record showing tax paid within the provider's accepted three-year window.",
+          "sources": [
+            "T28",
+            "T30",
+            "T33",
+            "T34"
+          ]
+        },
+        {
+          "text": "Confirm the recipient is your own overseas account and the purpose is personal, documented after-tax salary/income.",
+          "sources": [
+            "T28",
+            "T30",
+            "T33"
+          ]
+        },
+        {
+          "text": "Check per-transfer limits: SkyRemit 500–300,000 CNY; Wise bank app CNY300,000 and Alipay CNY50,000. Wise also applies a tax-record-based overall limit.",
+          "sources": [
+            "T27",
+            "T28",
+            "T33",
+            "T34"
+          ]
+        },
+        {
+          "text": "For SkyRemit, record the CNY79 fixed fee, the variable percentage fee, the XE-based visible markup, and the 0.8% Alipay/WeChat channel fee; bank transfer has no channel fee.",
+          "sources": [
+            "T27",
+            "T28",
+            "T29"
+          ]
+        },
+        {
+          "text": "Read the rate-lock terms: displayed rates are indicative, the actual rate locks at Confirm Rate, actual debit may differ, and receiving-country taxes/fees are excluded.",
+          "sources": [
+            "T29",
+            "T30"
+          ]
+        },
+        {
+          "text": "Do not submit irrevocable instructions until the quote page shows the expected final recipient amount; take a screenshot and retain the order record.",
+          "sources": [
+            "T30",
+            "T31"
+          ]
+        },
+        {
+          "text": "For a fair comparison, use the same send amount, destination currency, quote time and recipient route; ask explicitly about intermediary/receiving-bank deductions.",
+          "sources": [
+            "T31",
+            "T32",
+            "T16",
+            "T22"
+          ]
+        },
+        {
+          "text": "Complete US reporting after receipt; provider convenience does not remove worldwide-income, FBAR or Form 8938 analysis.",
+          "sources": [
+            "T41",
+            "T43",
+            "T44",
+            "T45"
+          ]
+        }
+      ],
+      "sources": [
+        "T16",
+        "T22",
+        "T27",
+        "T28",
+        "T29",
+        "T30",
+        "T31",
+        "T32",
+        "T33",
+        "T34",
+        "T41",
+        "T43",
+        "T44",
+        "T45"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "Foreign-employee social-insurance account closure",
+      "summary": "A narrow statutory payout, not a general method to extract a CNY bank balance.",
+      "quote_gate": "Written termination application and social-insurance agency determination; no transfer quote until the balance and lawful-source documents exist.",
+      "unknowns": [
+        "Personal-account balance",
+        "Tax treatment of payout",
+        "Whether the bank will accept the resulting funds for FX conversion"
+      ],
+      "steps": [
+        {
+          "text": "Confirm participation in the five social insurances and identify the personal-account balance with the social-insurance agency.",
+          "sources": [
+            "T35",
+            "T36"
+          ]
+        },
+        {
+          "text": "If departing before pension age, note that the account is retained and contribution years accumulate on return; departure alone does not create a lump sum.",
+          "sources": [
+            "T35"
+          ]
+        },
+        {
+          "text": "Only after a written application to terminate the social-insurance relation may the personal-account balance be paid once to the individual.",
+          "sources": [
+            "T35"
+          ]
+        },
+        {
+          "text": "For overseas monthly-benefit eligibility, observe the annual verification rule as amended in 2024.",
+          "sources": [
+            "T36"
+          ]
+        },
+        {
+          "text": "Treat any one-time payout as a separate source-of-funds event; obtain written tax and bank documentation before attempting conversion/remittance.",
+          "sources": [
+            "T01",
+            "T02",
+            "T37"
+          ]
+        },
+        {
+          "text": "Use a licensed bank and own-account wire; do not use a private channel or mistakenly label the payout as salary.",
+          "sources": [
+            "T05",
+            "T06",
+            "T14"
+          ]
+        },
+        {
+          "text": "Record the payout in the US reporting analysis; do not assume a social-insurance refund is exempt.",
+          "sources": [
+            "T41",
+            "T42",
+            "T45"
+          ]
+        }
+      ],
+      "sources": [
+        "T01",
+        "T02",
+        "T05",
+        "T06",
+        "T14",
+        "T35",
+        "T36",
+        "T37",
+        "T41",
+        "T42",
+        "T45"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "FIE dividend / business distribution",
+      "summary": "Characterize the income first; a distribution is not a transfer of existing personal principal and is not a transfer tax.",
+      "quote_gate": "Corporate resolution, withholding evidence, tax-filing number/verification code where required, and a written all-in bank quote; current cost blank.",
+      "unknowns": [
+        "Applicable domestic rate and treaty relief",
+        "Beneficial-owner/residence facts",
+        "US tax outcome under the saving clause"
+      ],
+      "steps": [
+        {
+          "text": "Determine whether the payment is a dividend, interest, royalty, service payment or liquidation proceeds; the tax and FX documents differ.",
+          "sources": [
+            "T37",
+            "T38",
+            "T39",
+            "T40"
+          ]
+        },
+        {
+          "text": "For foreign individuals receiving FIE dividends from 2026-09-01, apply the 20% IIT rate under MOF/STA Announcement 2026 No. 27; the prior exemption is repealed.",
+          "sources": [
+            "T38"
+          ]
+        },
+        {
+          "text": "For a nonresident enterprise, EIT implementation regulations Art. 91 states a reduced 10% rate for specified income; do not apply this to an individual automatically.",
+          "sources": [
+            "T39"
+          ]
+        },
+        {
+          "text": "Read the US–China treaty Articles 9, 10 and 11 (dividends, interest, royalties) 10% gross caps, Article 22 double-tax relief, and Protocol 1 paragraph 2 allowing the US to tax its citizens.",
+          "sources": [
+            "T40"
+          ]
+        },
+        {
+          "text": "Do not assume treaty relief overrides domestic withholding; obtain a qualified cross-border tax determination and supporting residency/beneficial-owner documents.",
+          "sources": [
+            "T40",
+            "T42"
+          ]
+        },
+        {
+          "text": "If a single outbound payment exceeds USD50,000 and is in the tax-filing scope, obtain the tax-filing number/verification code before the bank processes it.",
+          "sources": [
+            "T07",
+            "T08"
+          ]
+        },
+        {
+          "text": "Use a licensed bank, own-account or properly documented beneficiary, and a written all-in quote; retain withholding and bank records for US FTC analysis.",
+          "sources": [
+            "T05",
+            "T06",
+            "T16",
+            "T31",
+            "T42"
+          ]
+        }
+      ],
+      "sources": [
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T16",
+        "T31",
+        "T37",
+        "T38",
+        "T39",
+        "T40",
+        "T42"
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "Emigration or inheritance property transfer",
+      "summary": "Special SAFE-approved capital route for a narrowly defined property transfer; not a salary or savings workaround.",
+      "quote_gate": "SAFE approval reply and verification document, tax certificate, then a written bank quote; current cost blank.",
+      "unknowns": [
+        "SAFE approval",
+        "Property valuation",
+        "Staged-transfer timing",
+        "Professional and tax costs"
+      ],
+      "steps": [
+        {
+          "text": "Confirm the case fits emigration or inheritance property transfer under PBOC Announcement [2004] No. 16; ordinary personal savings do not fit.",
+          "sources": [
+            "T13"
+          ]
+        },
+        {
+          "text": "Apply to the competent SAFE office with identity, property-title, source-of-funds/property-sale and tax-certificate documents.",
+          "sources": [
+            "T13"
+          ]
+        },
+        {
+          "text": "For emigration property, observe the staged remittance rule: first no more than half, then staged further amounts after one and two years, unless the total is ≤CNY200,000.",
+          "sources": [
+            "T13"
+          ]
+        },
+        {
+          "text": "Obtain the SAFE approval reply and capital-account FX verification document; the designated bank must remit directly to the applicant's own overseas account.",
+          "sources": [
+            "T13"
+          ]
+        },
+        {
+          "text": "Do not withdraw foreign-currency cash domestically as a substitute for the approved remittance.",
+          "sources": [
+            "T12",
+            "T13"
+          ]
+        },
+        {
+          "text": "Request a written all-in bank quote and retain the approval chain for later PRC/US tax and reporting review.",
+          "sources": [
+            "T16",
+            "T31",
+            "T42",
+            "T45"
+          ]
+        }
+      ],
+      "sources": [
+        "T12",
+        "T13",
+        "T16",
+        "T31",
+        "T42",
+        "T45"
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "Cash, card and ATM boundaries (not a USD400,000 execution route)",
+      "summary": "Use these rules only to reject an unlawful shortcut or to plan ordinary travel cash, not to move the full balance.",
+      "quote_gate": "No all-in quote is inferred; cash/ATM amounts, surcharges and declarations are fact-specific.",
+      "unknowns": [
+        "ATM-owner surcharge",
+        "Local ATM limit",
+        "Customs declaration",
+        "Security and transport cost"
+      ],
+      "steps": [
+        {
+          "text": "Foreign-currency cash ≤USD5,000 is permit-free; USD5,000–10,000 needs a bank permit; >USD10,000 is generally prohibited except special SAFE permit.",
+          "sources": [
+            "T12"
+          ]
+        },
+        {
+          "text": "RMB cash carried across the border is limited to CNY20,000 per person per trip under PBOC Announcement [2004] No. 18.",
+          "sources": [
+            "T48"
+          ]
+        },
+        {
+          "text": "Overseas ATM cash withdrawals are capped at CNY100,000 per person per calendar year and CNY10,000 per card per day; exceeding the annual cap suspends current and next-year withdrawals.",
+          "sources": [
+            "T09",
+            "T10",
+            "T11"
+          ]
+        },
+        {
+          "text": "Ordinary overseas card consumption is unaffected by the ATM rule and does not use the USD50,000 convenience purchase quota, but it is not a conversion of the bank balance into a US deposit.",
+          "sources": [
+            "T10",
+            "T11"
+          ]
+        },
+        {
+          "text": "UnionPay says local currency is converted to CNY at a market rate; ATM-owner surcharges and local machine limits can apply. Debit cards are generally preferable to credit for cash.",
+          "sources": [
+            "T11"
+          ]
+        },
+        {
+          "text": "Entering or leaving the US with more than USD10,000 in currency/monetary instruments requires FinCEN Form 105; family/group amounts are aggregated.",
+          "sources": [
+            "T46"
+          ]
+        },
+        {
+          "text": "Do not use crypto/stablecoin P2P as a workaround; PRC regulators classify virtual-currency exchange and related business activities as illegal financial activity.",
+          "sources": [
+            "T14"
+          ]
+        }
+      ],
+      "sources": [
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T14",
+        "T46",
+        "T48"
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "After every route: US tax and reporting wrapper",
+      "summary": "Moving your own principal is not itself new income, but it does not prove zero tax or eliminate reporting.",
+      "quote_gate": "No quoted amount; personal basis, residency and account maxima are facts that only the taxpayer can supply.",
+      "unknowns": [
+        "Acquisition date and FX basis",
+        "Filing status and other income",
+        "Foreign-account maximum values",
+        "Treaty/FTC/FEIE eligibility"
+      ],
+      "steps": [
+        {
+          "text": "Check worldwide gross income against the filing rules for US citizens/resident aliens living abroad; the place of residence does not remove the filing framework.",
+          "sources": [
+            "T45"
+          ]
+        },
+        {
+          "text": "Measure any realized personal foreign-currency gain; gains over USD200 are reported as capital gain, but acquisition basis and rate are personal facts.",
+          "sources": [
+            "T41",
+            "T43"
+          ]
+        },
+        {
+          "text": "Check FBAR when aggregate foreign financial accounts exceed USD10,000 at any time in the calendar year; Form 8938 has separate residence/status thresholds.",
+          "sources": [
+            "T43",
+            "T44"
+          ]
+        },
+        {
+          "text": "If foreign tax was paid on the same income, evaluate Form 1116; no foreign tax credit is allowed for tax on income excluded under FEIE/FHE.",
+          "sources": [
+            "T42",
+            "T49"
+          ]
+        },
+        {
+          "text": "Evaluate FEIE only after confirming foreign earned income, a foreign tax home and bona fide residence or physical-presence test; the exclusion does not make the income disappear from a required return.",
+          "sources": [
+            "T45",
+            "T49"
+          ]
+        },
+        {
+          "text": "For treaty positions, read Article 22 and the saving clause; do not treat the treaty as a blanket exemption for a US citizen.",
+          "sources": [
+            "T40",
+            "T42"
+          ]
+        },
+        {
+          "text": "Keep the source-of-funds file, bank/provider quote, rate lock, receipts, tax filings and account statements together for the preparer.",
+          "sources": [
+            "T30",
+            "T31",
+            "T42"
+          ]
+        }
+      ],
+      "sources": [
+        "T30",
+        "T31",
+        "T40",
+        "T41",
+        "T42",
+        "T43",
+        "T44",
+        "T45",
+        "T49"
+      ]
+    }
+  ],
+  "verification_rows": [
+    {
+      "id": "V01",
+      "claim": "SAFE individual FX rules: USD50,000 annual convenience quota; foreign-individual lawful RMB income needs ID and supporting documents; domestic/foreign FX-savings remittance thresholds.",
+      "reading": "Full page re-read",
+      "result": "Matches source",
+      "limit": "Bank classification and document acceptance remain branch-specific.",
+      "sources": [
+        "T01"
+      ]
+    },
+    {
+      "id": "V02",
+      "claim": "PBOC measures Art. 37 definitions, Art. 9 quota, Art. 13 foreign-individual income, Art. 7 no splitting/false documents.",
+      "reading": "Full page re-read",
+      "result": "Matches source",
+      "limit": "Decree 532 Art. 52 uses a different residence-based definition.",
+      "sources": [
+        "T02",
+        "T04"
+      ]
+    },
+    {
+      "id": "V03",
+      "claim": "USD50,000 is a convenience quota, not a hard cap on genuine lawful current-account transactions.",
+      "reading": "Full Q&A re-read",
+      "result": "Matches source",
+      "limit": "Does not authorize undocumented capital transfers.",
+      "sources": [
+        "T03"
+      ]
+    },
+    {
+      "id": "V04",
+      "claim": "Decree 532 Art. 5 no restrictions on current international payments; Arts. 39–45 penalty ceilings include 30% ordinary and 30%–100% serious cases.",
+      "reading": "Full official text re-read",
+      "result": "Matches source",
+      "limit": "Penalty exposure is not a transaction cost; no penalty minimization by evasion is endorsed.",
+      "sources": [
+        "T04"
+      ]
+    },
+    {
+      "id": "V05",
+      "claim": "Hui Fa [2015] No. 49 watch-list period is listing year plus two following years; borrowed quotas and splitting are prohibited.",
+      "reading": "Full notice re-read",
+      "result": "Matches source",
+      "limit": "Operational bank controls may be stricter.",
+      "sources": [
+        "T05",
+        "T06"
+      ]
+    },
+    {
+      "id": "V06",
+      "claim": "STA/SAFE 2021 No. 19: one filing per contract, online/paper channels, form number and verification code; USD50,000 single-payment standard unchanged.",
+      "reading": "Announcement and interpretation re-read in full",
+      "result": "Matches source",
+      "limit": "Scope is specified outbound payments, not personal principal transfers.",
+      "sources": [
+        "T07",
+        "T08"
+      ]
+    },
+    {
+      "id": "V07",
+      "claim": "Overseas ATM cap CNY100,000/person/year and CNY10,000/card/day; ordinary card consumption unaffected; no borrowed cards.",
+      "reading": "Official notice and Q&A re-read in full",
+      "result": "Matches source",
+      "limit": "ATM-owner surcharge and local machine limits are variable.",
+      "sources": [
+        "T09",
+        "T10",
+        "T11"
+      ]
+    },
+    {
+      "id": "V08",
+      "claim": "Foreign-currency cash ≤USD5,000 permit-free, USD5,000–10,000 bank permit, >USD10,000 generally prohibited except special cases; RMB cash limit CNY20,000/trip.",
+      "reading": "Full official pages re-read",
+      "result": "Matches source",
+      "limit": "CBP Form 105 applies above USD10,000 entering/leaving the US; distinct regime.",
+      "sources": [
+        "T12",
+        "T48",
+        "T46"
+      ]
+    },
+    {
+      "id": "V09",
+      "claim": "BOC cross-border TT 0.1% min CNY50 max CNY260 plus CNY150 international telegram; full-arrival USD15 BOC NY / USD25 otherwise; ATM CNY12 + 1% max CNY112.",
+      "reading": "All six tariff PDF pages re-read",
+      "result": "Matches source",
+      "limit": "Rate board is rolling; historical query requires captcha; 2026-11-11 ATM notice changes Visa/Mastercard ATM pricing only.",
+      "sources": [
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "id": "V10",
+      "claim": "ABC item 09012 private outward wire 0.1% min CNY20 max CNY200; item 09015 outbound ordinary SWIFT/message CNY80; full-arrival +USD25; inward original-currency credit free; 09023 express USD15+0.25% min USD15 max USD50.",
+      "reading": "Relevant official HTML chunks re-read",
+      "result": "Matches source",
+      "limit": "Discount/effective-date note says 2026-09-30 until directory expiry; do not conflate with a separate 2025-12-15 announcement.",
+      "sources": [
+        "T20"
+      ]
+    },
+    {
+      "id": "V11",
+      "claim": "CCB Hebei 2016 online FX wire 0.1% min CNY20 max CNY300 plus CNY80 telegram, 9 currencies, offshore recipient, cash-to-remittance spread.",
+      "reading": "Dated branch page chunks re-read",
+      "result": "Matches source",
+      "limit": "2016 branch page is not a current executable quote.",
+      "sources": [
+        "T21"
+      ]
+    },
+    {
+      "id": "V12",
+      "claim": "HSBC tariff effective 2026-10-31: private-banking personal outward wire and telegram free; Premier/Advance 0.1% min CNY100 max CNY500 plus CNY120 telegram; USD full-amount prepays CNY200; free excludes non-HSBC fees.",
+      "reading": "Relevant PDF chunks re-read",
+      "result": "Matches source",
+      "limit": "Client tier, SHA/BEN/OUR choice and downstream deductions control actual cost.",
+      "sources": [
+        "T22"
+      ]
+    },
+    {
+      "id": "V13",
+      "claim": "CMB official service-price pages say content is for reference and local branch notices/rules apply; no stable personal outward-wire row exposed.",
+      "reading": "Dynamic catalogue and directory shell re-read",
+      "result": "No row extractable",
+      "limit": "Search snippets and older FAQs are not promoted to a current tariff.",
+      "sources": [
+        "T23",
+        "T24"
+      ]
+    },
+    {
+      "id": "V14",
+      "claim": "ICBC service-price list effective 2026-08-08 publishes tariff tables as images; product page states ID/document thresholds, cash-to-remittance spread and MoneyGram limits.",
+      "reading": "Official index and product-page chunks re-read",
+      "result": "No text tariff row extracted",
+      "limit": "Do not infer a mainland personal outward-wire price from overseas ICBC branch tariffs.",
+      "sources": [
+        "T25",
+        "T26"
+      ]
+    },
+    {
+      "id": "V15",
+      "claim": "SkyRemit CNY79 fixed fee plus variable fee, XE-based visible markup, 0.8% wallet channel fee, bank transfer no channel fee, 500–300,000 CNY per transfer, own-account/personal purpose.",
+      "reading": "Homepage, FAQ, pricing notice, terms and guides re-read",
+      "result": "Matches source",
+      "limit": "Displayed calculator values are dynamic; terms allow fluctuation and actual debit may differ.",
+      "sources": [
+        "T27",
+        "T28",
+        "T29",
+        "T30",
+        "T31",
+        "T32"
+      ]
+    },
+    {
+      "id": "V16",
+      "claim": "Wise CNY outbound eligibility requires non-mainland-Chinese status, work/tax records, own overseas account; bank app CNY300,000 and Alipay CNY50,000 single limits; overall tax-paid income limit.",
+      "reading": "Full guide and verification page re-read",
+      "result": "Matches source",
+      "limit": "Current fee requires setting up a transfer and is deliberately blank.",
+      "sources": [
+        "T33",
+        "T34"
+      ]
+    },
+    {
+      "id": "V17",
+      "claim": "Foreign employees join five social insurances; pre-pension departure retains the personal account; one-time payout only after written termination; 2024 amendment changes document names and annual verification.",
+      "reading": "Consolidated rule and amendment re-read",
+      "result": "Matches source",
+      "limit": "Not a general route for extracting a CNY bank balance.",
+      "sources": [
+        "T35",
+        "T36"
+      ]
+    },
+    {
+      "id": "V18",
+      "claim": "PRC IIT Law: interest/dividends/bonuses, property transfer and incidental income 20%; foreign individuals' FIE dividends 20% from 2026-09-01 under Announcement 2026 No. 27.",
+      "reading": "Official law and 2026 announcement re-read",
+      "result": "Matches source",
+      "limit": "IIT rate-table images were not transcribed; treaty interplay is fact-specific.",
+      "sources": [
+        "T37",
+        "T38"
+      ]
+    },
+    {
+      "id": "V19",
+      "claim": "EIT implementation regulation Art. 91 reduced 10% rate applies to specified nonresident-enterprise income.",
+      "reading": "Relevant regulation chunk re-read",
+      "result": "Matches source",
+      "limit": "Do not apply automatically to an individual recipient.",
+      "sources": [
+        "T39"
+      ]
+    },
+    {
+      "id": "V20",
+      "claim": "US–China treaty Arts. 9/10/11 cap dividends, interest and royalties at 10% gross; Art. 22 provides double-tax relief; Protocol 1 para. 2 preserves US taxation of citizens.",
+      "reading": "Relevant treaty PDF chunks re-read",
+      "result": "Matches source",
+      "limit": "Treaty article numbering differs from some modern treaties; do not assume a blanket exemption.",
+      "sources": [
+        "T40"
+      ]
+    },
+    {
+      "id": "V21",
+      "claim": "IRS Pub. 525: personal FX gain from exchange-rate changes is excluded unless more than USD200; above USD200 report as capital gain.",
+      "reading": "Relevant full-page section re-read",
+      "result": "Matches source",
+      "limit": "Acquisition basis and realized gain are personal facts and remain blank.",
+      "sources": [
+        "T41"
+      ]
+    },
+    {
+      "id": "V22",
+      "claim": "IRS FTC: Form 1116 for individuals; no credit for tax on income excluded under FEIE/FHE; generally only income taxes qualify.",
+      "reading": "Full official page re-read",
+      "result": "Matches source",
+      "limit": "Complex limitation and treaty-rate rules require a preparer.",
+      "sources": [
+        "T42",
+        "T49"
+      ]
+    },
+    {
+      "id": "V23",
+      "claim": "FBAR aggregate foreign accounts >USD10,000 at any time; Form 8938 has separate thresholds and is filed with the return.",
+      "reading": "FinCEN FBAR page and IRS comparison table re-read",
+      "result": "Matches source",
+      "limit": "Maximum account values and filing status are personal facts.",
+      "sources": [
+        "T43",
+        "T44"
+      ]
+    },
+    {
+      "id": "V24",
+      "claim": "IRS Pub. 54: US citizens/resident aliens generally follow the same filing rules abroad and worldwide gross income determines filing; FEIE eligibility requires foreign tax home and residence/presence test.",
+      "reading": "Relevant Pub. 54 and FEIE eligibility chunks re-read",
+      "result": "Matches source",
+      "limit": "2026 dollar limits are inherited from the existing site and not re-derived here.",
+      "sources": [
+        "T45",
+        "T49"
+      ]
+    },
+    {
+      "id": "V25",
+      "claim": "CBP: currency/monetary instruments over USD10,000 entering/leaving the US must be reported on FinCEN Form 105; family/group aggregation applies.",
+      "reading": "Full official CBP page re-read",
+      "result": "Matches source",
+      "limit": "This is a transport/declaration rule, not a bank-wire rule.",
+      "sources": [
+        "T46"
+      ]
+    },
+    {
+      "id": "V26",
+      "claim": "Inherited S1–S53 register and the five-row Rev. Proc. 2025-32 tax illustration were not line-by-line re-fetched or re-derived in task 17.",
+      "reading": "TOC/chunk 0 of Rev. Proc. 2025-32 read; inherited site not fully re-fetched",
+      "result": "Not independently re-derived",
+      "limit": "No new 'verified' mark is applied to inherited S1–S53 values.",
+      "sources": [
+        "T47"
+      ]
+    },
+    {
+      "id": "V27",
+      "claim": "PBOC 2021 notice: virtual currency is not legal tender; virtual-currency exchange/settlement and overseas exchange services to PRC residents are illegal financial activities.",
+      "reading": "Full official notice re-read",
+      "result": "Matches source",
+      "limit": "No crypto workaround is offered.",
+      "sources": [
+        "T14"
+      ]
+    },
+    {
+      "id": "V28",
+      "claim": "PBOC [2004] No. 16 property-transfer route requires SAFE approval, staged emigration remittance, tax certificate and direct bank remittance to own overseas account; no domestic cash withdrawal.",
+      "reading": "Full official text re-read",
+      "result": "Matches source",
+      "limit": "Special capital route; not for ordinary savings.",
+      "sources": [
+        "T13"
+      ]
+    }
+  ],
+  "irregularities": [
+    {
+      "id": "I01",
+      "severity": "High",
+      "topic": "BOC dated FX quote durability",
+      "finding": "The exact 2026-11-09 05:30 Beijing BOC USD row used by the inherited model is no longer on the rolling board; historical date search returns a captcha/error. On 2026-11-10 14:09:58 Beijing the board showed USD 665.84 / 668.64 per 100 and a Middle Rate of 671.67.",
+      "action": "Treat the inherited BOC rate as a benchmark, obtain a written rate confirmation, and keep current executable quote blank.",
+      "sources": [
+        "T18",
+        "T19"
+      ]
+    },
+    {
+      "id": "I02",
+      "severity": "Medium",
+      "topic": "BOC Middle Rate definition",
+      "finding": "The observed Middle Rate 671.67 is not the arithmetic midpoint of the displayed buy/sell 665.84/668.64 (667.24). The inherited model computes its own midpoint.",
+      "action": "Do not substitute BOC's Middle Rate for the model's own midpoint; ask BOC to confirm the published definition before execution.",
+      "sources": [
+        "T18"
+      ]
+    },
+    {
+      "id": "I03",
+      "severity": "Medium",
+      "topic": "ABC effective-date wording",
+      "finding": "The ABC price table's discount note says listed free/discount items apply from 2026-09-30 until the price directory expires; a separate general announcement has a 2025-12-15 date in search snippets. The two should not be conflated.",
+      "action": "Quote the exact item and footnote; obtain branch confirmation of the applicable date and discount.",
+      "sources": [
+        "T20"
+      ]
+    },
+    {
+      "id": "I04",
+      "severity": "Medium",
+      "topic": "CCB dated branch page",
+      "finding": "The CCB fee and process row comes from a 2016-08-22 Hebei branch online-banking page, not a 2026 national tariff.",
+      "action": "Label it historical; leave current executable quote blank.",
+      "sources": [
+        "T21"
+      ]
+    },
+    {
+      "id": "I05",
+      "severity": "Medium",
+      "topic": "HSBC 'free' scope",
+      "finding": "HSBC's free outward-wire and telegram entries are tier-specific and explicitly exclude receiving/intermediary-bank fees; USD full-amount service prepays CNY200 and may charge a shortfall later.",
+      "action": "Confirm client tier, SHA/BEN/OUR option and downstream deductions in writing.",
+      "sources": [
+        "T22"
+      ]
+    },
+    {
+      "id": "I06",
+      "severity": "High",
+      "topic": "CMB tariff not extractable",
+      "finding": "CMB's official dynamic price catalogue and directory say content is for reference and local branch notices/rules apply; no stable personal outward-wire row was exposed to the text fetcher.",
+      "action": "Leave the current tariff blank; do not publish search-snippet numbers as verified prices.",
+      "sources": [
+        "T23",
+        "T24"
+      ]
+    },
+    {
+      "id": "I07",
+      "severity": "High",
+      "topic": "ICBC tariff images",
+      "finding": "ICBC's current service-price list effective 2026-08-08 publishes the tables as images; the text index does not expose a mainland personal outward-wire tariff row.",
+      "action": "Use the product page for process rules only; leave price blank until a written branch quote or accessible text tariff exists.",
+      "sources": [
+        "T25",
+        "T26"
+      ]
+    },
+    {
+      "id": "I08",
+      "severity": "High",
+      "topic": "SkyRemit dynamic total",
+      "finding": "The homepage calculator shows a dynamic XE rate, 0.27% markup example and final-rate example; the terms say displayed rates are indicative, actual rate locks at Confirm Rate, fees may fluctuate and actual debit can differ.",
+      "action": "Publish only the stable CNY79 fixed fee, variable-fee structure, 0.8% wallet channel fee and limits; leave final amount and current quote blank.",
+      "sources": [
+        "T27",
+        "T28",
+        "T29",
+        "T30",
+        "T31"
+      ]
+    },
+    {
+      "id": "I09",
+      "severity": "Medium",
+      "topic": "Wise current price",
+      "finding": "The official CNY guide says to set up a transfer and add a recipient to see exact fees; no stable numeric current fee was extracted.",
+      "action": "Leave current fee blank; do not reuse the historical 2024 fee-change post as current.",
+      "sources": [
+        "T33",
+        "T34"
+      ]
+    },
+    {
+      "id": "I10",
+      "severity": "High",
+      "topic": "Classification definitions differ",
+      "finding": "PBOC Art. 37 defines domestic/foreign individuals by identity documents; Decree 532 Art. 52 defines domestic individual by citizenship or continuous residence for one year. These are different instruments and contexts.",
+      "action": "Do not infer classification from nationality or residence alone; get the bank's classification memo and qualified legal review.",
+      "sources": [
+        "T02",
+        "T04"
+      ]
+    },
+    {
+      "id": "I11",
+      "severity": "High",
+      "topic": "Dividend / treaty interplay",
+      "finding": "MOF/STA 2026 No. 27 imposes 20% IIT on foreign individuals' FIE dividends from 2026-09-01, while the US–China treaty has 10% gross caps in Arts. 9–11 and a saving clause. Domestic and treaty positions need expert reconciliation.",
+      "action": "Do not assume an automatic treaty reduction; obtain a written cross-border tax determination before payment.",
+      "sources": [
+        "T38",
+        "T39",
+        "T40",
+        "T42"
+      ]
+    },
+    {
+      "id": "I12",
+      "severity": "High",
+      "topic": "Inherited source register",
+      "finding": "Task 17 re-read the sources needed for its own additive rows; it did not line-by-line re-fetch the entire inherited S1–S53 register or re-derive the five-row Rev. Proc. 2025-32 tax illustration.",
+      "action": "Do not mark inherited S1–S53 values verified from task 17; integration owner should retain PR #34's own verification record.",
+      "sources": [
+        "T47"
+      ]
+    },
+    {
+      "id": "I13",
+      "severity": "Medium",
+      "topic": "Personal FX gain basis",
+      "finding": "The USD200 Pub. 525 threshold is verified, but the acquisition date/rate and realized gain are personal facts; moving principal is not by itself proof of zero gain.",
+      "action": "Keep measured FX gain blank and have the taxpayer's preparer compute it.",
+      "sources": [
+        "T41",
+        "T43"
+      ]
+    },
+    {
+      "id": "I14",
+      "severity": "Medium",
+      "topic": "Social-insurance payout scope",
+      "finding": "The one-time social-insurance personal-account payment requires a written application to terminate the relation; departure alone retains the account and accumulates contribution years on return.",
+      "action": "Do not present social insurance as a general CNY-extraction route.",
+      "sources": [
+        "T35",
+        "T36"
+      ]
+    },
+    {
+      "id": "I15",
+      "severity": "High",
+      "topic": "Cash/ATM/card limits are not a USD400,000 route",
+      "finding": "Overseas ATM withdrawals are capped at CNY100,000/person/year and CNY10,000/card/day; foreign-currency cash above USD10,000 is generally prohibited; RMB cash is CNY20,000/trip; CBP reporting applies above USD10,000.",
+      "action": "Use cash/card rules only as boundaries or travel planning; do not plan a large transfer by splitting cash or cards.",
+      "sources": [
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T48",
+        "T46"
+      ]
+    },
+    {
+      "id": "I16",
+      "severity": "High",
+      "topic": "No live all-in quotes",
+      "finding": "No official page supplied a simultaneous, executable CNY→USD rate, full fee stack, correspondent/intermediary deductions and expected final recipient amount for this user's facts.",
+      "action": "Every current-executable-quote cell remains '—'; collect written quotes at the same time before acting.",
+      "sources": [
+        "T16",
+        "T18",
+        "T19",
+        "T22",
+        "T27",
+        "T29",
+        "T30",
+        "T31",
+        "T33"
+      ]
+    }
+  ],
+  "canonical_facts": {
+    "boc_commission": {
+      "value": "0.1%; min CNY50; max CNY260",
+      "sources": [
+        "T16"
+      ]
+    },
+    "boc_telegram_us": {
+      "value": "CNY150",
+      "sources": [
+        "T16"
+      ]
+    },
+    "boc_full_arrival_other_usd": {
+      "value": "USD25",
+      "sources": [
+        "T16"
+      ]
+    },
+    "abc_commission": {
+      "value": "0.1%; min CNY20; max CNY200",
+      "sources": [
+        "T20"
+      ]
+    },
+    "abc_telegram": {
+      "value": "CNY80",
+      "sources": [
+        "T20"
+      ]
+    },
+    "abc_full_arrival_usd": {
+      "value": "USD25",
+      "sources": [
+        "T20"
+      ]
+    },
+    "abc_express": {
+      "value": "USD15 + 0.25%; min USD15; max USD50",
+      "sources": [
+        "T20"
+      ]
+    },
+    "ccb_online_commission": {
+      "value": "0.1%; min CNY20; max CNY300",
+      "sources": [
+        "T21"
+      ]
+    },
+    "ccb_online_telegram": {
+      "value": "CNY80",
+      "sources": [
+        "T21"
+      ]
+    },
+    "hsbc_premier_commission": {
+      "value": "0.1%; min CNY100; max CNY500",
+      "sources": [
+        "T22"
+      ]
+    },
+    "hsbc_premier_telegram": {
+      "value": "CNY120",
+      "sources": [
+        "T22"
+      ]
+    },
+    "hsbc_full_arrival_prepay": {
+      "value": "CNY200",
+      "sources": [
+        "T22"
+      ]
+    },
+    "skyremit_fixed_fee": {
+      "value": "CNY79",
+      "sources": [
+        "T27",
+        "T28",
+        "T29",
+        "T30"
+      ]
+    },
+    "skyremit_single_limit": {
+      "value": "CNY500–CNY300,000",
+      "sources": [
+        "T27",
+        "T28"
+      ]
+    },
+    "skyremit_wallet_channel_fee": {
+      "value": "0.8%",
+      "sources": [
+        "T29"
+      ]
+    },
+    "atm_annual_cap": {
+      "value": "CNY100,000",
+      "sources": [
+        "T09",
+        "T10",
+        "T11"
+      ]
+    },
+    "atm_daily_cap": {
+      "value": "CNY10,000",
+      "sources": [
+        "T09",
+        "T10",
+        "T11"
+      ]
+    },
+    "tax_filing_threshold_usd": {
+      "value": "USD50,000",
+      "sources": [
+        "T07",
+        "T08"
+      ]
+    },
+    "cash_no_permit_usd": {
+      "value": "USD5,000",
+      "sources": [
+        "T12"
+      ]
+    },
+    "cash_bank_permit_usd": {
+      "value": "USD10,000",
+      "sources": [
+        "T12"
+      ]
+    },
+    "rmb_cash_limit": {
+      "value": "CNY20,000",
+      "sources": [
+        "T48"
+      ]
+    },
+    "cbp_report_threshold_usd": {
+      "value": "USD10,000",
+      "sources": [
+        "T46"
+      ]
+    },
+    "fbar_threshold_usd": {
+      "value": "USD10,000",
+      "sources": [
+        "T43",
+        "T44"
+      ]
+    },
+    "fx_gain_threshold_usd": {
+      "value": "USD200",
+      "sources": [
+        "T41"
+      ]
+    },
+    "foreign_dividend_rate": {
+      "value": "20%",
+      "sources": [
+        "T37",
+        "T38"
+      ]
+    },
+    "eit_reduced_rate": {
+      "value": "10%",
+      "sources": [
+        "T39"
+      ]
+    },
+    "treaty_rate_cap": {
+      "value": "10%",
+      "sources": [
+        "T40"
+      ]
+    }
+  },
+  "matrix_config": {
+    "amount_start_usd": 10000,
+    "amount_step_usd": 10000,
+    "amount_count": 40
+  },
+  "build_checks": [
+    "python3 scripts/build_bank_playbooks.py -- writes banks.html, playbooks.html and verification.html from data/bank-playbooks.json and data/cost-model.json.",
+    "python3 scripts/validate_bank_playbooks.py -- checks JSON source references, canonical facts, 40 amount rows, blank quote cells, every table row's source link, playbook step citations, local links, anchors, landmarks and balanced HTML.",
+    "Generated-diff check -- rebuild twice and compare byte-for-byte; no timestamps or random values are emitted.",
+    "Negative controls -- remove a source link, fill a blank quote with a numeric value, mutate a canonical fee, or drop a playbook step; each mutation must make the validator fail.",
+    "Local HTTP smoke test -- serve the repository and request the three new pages, the seven inherited pages, redirects, CSS and data files; each should return 200."
+  ]
+}
