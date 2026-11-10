@@ -239,15 +239,29 @@ def main():
     if index_counts != [4, 18]:
         fail(f"index: expected snapshot 4 and routes 18, found {index_counts}")
     penalty_counts = [t["rows"] for t in parsed["penalties.html"].tables]
-    if penalty_counts != [40, 40, 40, 40, 8]:
-        fail(f"penalties: expected four 40-row matrices + 8 penalty rows, found {penalty_counts}")
+    if penalty_counts != [40, 40, 40, 40, 6, 8]:
+        fail(f"penalties: expected four 40-row matrices + 6 exposure + 8 penalty rows, found {penalty_counts}")
     for page, parser in parsed.items():
         for number, t in enumerate(parser.tables, 1):
             for row_number, links in enumerate(t["row_sources"], 1):
                 if not links or not any(url.startswith("https://") or url.startswith("http://") for url in links):
                     fail(f"{page} table {number} row {row_number}: no direct source link")
-    if len(parsed["sources.html"].tables) != 1 or parsed["sources.html"].tables[0]["rows"] != 47:
-        fail("sources: expected exactly 47 primary-source rows")
+    if len(parsed["sources.html"].tables) != 1 or parsed["sources.html"].tables[0]["rows"] != 48:
+        fail("sources: expected exactly 48 primary-source rows")
+    # Citation-durability guards: the rotating BOC page that used to hold the
+    # cited 2026-11-09 row must not be cited again, and the dated quote must be
+    # traceable to BOC's official date-query tool plus the live board.
+    if "enindex_1619_4.html" in source_urls:
+        fail("sources: stale BOC paginated URL reused for the dated FX quote")
+    for required in ("https://www.boc.cn/sourcedb/whpjSearch/index_2833.html",
+                     "https://www.boc.cn/sourcedb/whpj/enindex.html"):
+        if required not in source_urls:
+            fail(f"sources: missing required FX citation {required}")
+    for stale_link in ("blob/arena/",):
+        for page, parser in parsed.items():
+            for href in parser.links:
+                if stale_link in href:
+                    fail(f"{page}: branch-specific repository link {href}")
     for alias in ("estimates.html", "costs.html"):
         alias_text = (ROOT / alias).read_text(encoding="utf-8")
         if 'http-equiv="refresh" content="0; url=penalties.html"' not in alias_text or 'href="penalties.html"' not in alias_text:
@@ -262,7 +276,7 @@ def main():
         for error in ERRORS:
             print(f" - {error}")
         sys.exit(1)
-    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 47 sources, local links, landmarks and independent Decimal arithmetic.")
+    print("PASS: 6 HTML pages, 18 procedures, 4×40 cost matrices, 48 sources, local links, landmarks and independent Decimal arithmetic.")
 
 
 if __name__ == "__main__":
