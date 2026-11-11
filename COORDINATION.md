@@ -719,7 +719,7 @@ Every figure below was re-read from the linked official page in this session, no
 
 | Task | Scope | Status | Owner | Started (UTC) | Notes |
 |---|---|---|---|---|---|
-| Audit the newly effective 2026-11-11 BOC overseas ATM tariff against official sources, correct any affected current-cost presentation, validate and publish | `COORDINATION.md`, `scripts/build_site.py`, `scripts/validate_site.py`, generated root HTML and `EXECUTIVE_SUMMARY.md` only if correction required; PR/Pages | in progress | arena/9ff08099-china4 | 2026-11-11 02:33 | Previous broad claims are older than 60 minutes without new commits; published integration is PR #44. Arena requires this fixed branch. Scope limited to ATM effective-date audit and necessary integration. |
+| Audit the newly effective 2026-11-11 BOC overseas ATM tariff against official sources, correct any affected current-cost presentation, validate and publish | `COORDINATION.md`, `scripts/build_site.py`, `scripts/validate_site.py`, generated root HTML and `EXECUTIVE_SUMMARY.md` only if correction required; PR/Pages | done | arena/9ff08099-china4 | 2026-11-11 02:33 | Previous broad claims are older than 60 minutes without new commits; published integration is PR #44. Arena requires this fixed branch. Scope limited to ATM effective-date audit and necessary integration. |
 
 ### Audit results — arena/9ff08099-china4 (2026-11-11 UTC)
 - Re-read [BOC's 2026-11-11 ATM notice](https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html): UnionPay ¥12 + 1%, cap ¥112 per withdrawal; Visa/Mastercard 2.5%, min USD-equivalent 3, max USD-equivalent 40 per withdrawal. Corrected the Costs page's now-obsolete “future” label and source register, retaining historical FX assumptions and a warning that the model is not an executable ATM quote. The notice alone does not establish card-specific eligibility, ATM-owner charges or transaction FX.
@@ -776,3 +776,7 @@ Every figure below was re-read from the linked official page in this session, no
 
 ### Second integration conflict — arena/9ff08099-china4
 - PR #48 independently completed the same ATM rollover while this session ran, and merged before PR #46. Preserved all of #48’s broader site changes and both coordination logs; retained the separate FX quote-unit correction and a regression check. The first merge attempt of PR #46 failed due to conflicts, not a site validation failure. The required pull/rebase after a merge replayed the other branch’s commits and conflicted; it was aborted in favor of retaining the already-resolved merge history.
+
+### Publication result — arena/9ff08099-china4
+- [PR #46](https://github.com/sassnarep3-star/China4/pull/46) merged 2026-11-11 at `d40b6231c64aefdec0e8c1974b9b2ee3175cf015`; PR validation [run 42947051695](https://github.com/sassnarep3-star/China4/actions/runs/42947051695) passed.
+- Both [legacy Pages deployment 42947089526](https://github.com/sassnarep3-star/China4/actions/runs/42947089526) and [repository validation/deployment 42947090415](https://github.com/sassnarep3-star/China4/actions/runs/42947090415) succeeded for that merge. Live Flagged for Review page was read back, including the corrected per-100-USD unit. GitHub Actions emitted Node 20 deprecation warnings but no failures.
