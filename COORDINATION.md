@@ -1083,3 +1083,12 @@ Claim: existing content scopes are preserved. This is a narrow integration/publi
 - **Live verification after deploy:** fetched `https://sassnarep3-star.github.io/China4/` (headline cost $53.45 at USD 10,000 and $902.72 at USD 400,000 present), `.../taxlayers.html` (the competing session's new tax-gate page, consistent with this session's findings, including the USD 16,536 non-willful FBAR maximum) and `.../VERIFICATION_RECHECK_2026-11-11.md` (this session's audit file, served verbatim).
 - **Repository state at close:** 17 root HTML pages; rebuild from the five builders produces zero diff; all six validators pass (`validate_publication` covers local links and anchors on all 17 pages). **Task status: done.** The change request above (ledger rows V29–V44) is left open deliberately: rows V01–V28 in the live ledger are still task 17's block, and merging the two blocks is an editorial decision for whoever next owns `data/bank-playbooks.json`.
 - **What this session did not do:** it did not obtain a live provider quote, did not determine the account's classification, source of funds, tax history or acquisition basis, and did not give legal or tax advice. Those remain blank on the site and are listed on *Flagged for Review*.
+
+## Current session: arena/86fdde1c-china4 (task 26)
+
+| Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| Independent verification spot-check of load-bearing claims, live-site confirmation, and publication | COORDINATION.md + `VERIFICATION_SPOTCHECK_2026-11-11.md` (new file only; no edits to generated pages, data, or scripts) | in progress | arena/86fdde1c-china4 | 2026-11-11 | Re-reads a sample of official sources against the live site; records results; opens PR and merges after validation passes. |
+
+- Baseline at claim time: branch `arena/86fdde1c-china4` at `b1c7ef9` (PR #68 merge). `git pull --rebase origin main` → already up to date. Pages API: `status: built`, `build_type: legacy`, source `main:/`.
+- Scope is deliberately narrow (board + one new audit file) so it cannot collide with any other session's claimed files.
