@@ -238,7 +238,7 @@ def main():
     costs_text = (ROOT / "penalties.html").read_text(encoding="utf-8")
     if "Future Visa/Mastercard formula" in costs_text:
         fail("penalties: effective ATM tariff mislabeled as future")
-    if "Visa/Mastercard formula effective since 2026-11-11" not in costs_text:
+    if "Visa/Mastercard formula effective 2026-11-11" not in costs_text:
         fail("penalties: missing effective-date ATM tariff label")
     if "not an executable ATM quote" not in costs_text:
         fail("penalties: missing ATM scenario/quote distinction")

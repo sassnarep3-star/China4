@@ -727,6 +727,21 @@ Every figure below was re-read from the linked official page in this session, no
 - Fixed a material labeling defect in Flagged for Review: the historical quoted 666.48 / 669.29 figure is in CNY per **100** USD, not per USD. Model uses 6.6648 / 6.6929 per USD; numbers were not changed. Historical row remains unverified in this session because BOC's date search requires CAPTCHA; [BOC's rolling board](https://www.boc.cn/sourcedb/whpj/enindex.html) was reviewed only as a current, non-executable cross-check. Current personal fees, individual taxes, eligibility and the historical quote remain flagged, not guessed.
 - Added regression checks for the tariff label, execution-quote disclaimer and quoted-unit correction. All three builders and all three validators pass, including local links, source presence, independent amount calculations and 720 blank strict current-cost rows. This was a **targeted audit**, not a claim that every inherited row or every external link was freshly verified. No source-link checker can establish substantive correctness merely from link presence.
 - Initial pull/rebase failed because the remote session branch did not yet exist; first branch push created it. No other branch was created or pushed.
+## Session arena/198e49b1-china4 — task 21 (2026-11-11 UTC)
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Correct ATM effective-date rollover and add regression coverage; verify and publish | in progress | arena/198e49b1-china4 | scripts/build_site.py, scripts/validate_effective_dates.py, generated root HTML/data/cost-model.json, README.md, COORDINATION.md |
+
+- Read shared board and open PR #45: task 20 changes COORDINATION.md only; no content overlap. This session claims the newly effective 2026-11-11 ATM wording correction, not another session's work. Arena fixes the branch name, so this session uses its assigned branch rather than creating a session branch.
+- Official notice read directly: https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html. Visa/Mastercard fee becomes effective today; inherited copy still calls it future. UnionPay formula is unchanged. No new FX quote or account-specific cost is invented.
+
+### Task 21 verification and limits
+- Re-read official BOC notice: https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html. Corrected obsolete future labels and published the effective-today formula prominently on the eight generator-layout pages; flagged the rollover on flagged.html. No rate or fee calculations changed.
+- Independently re-read SAFE Arts. 2, 13 and 15 at https://www.safe.gov.cn/tianjin/2024/0430/2464.html; Wise outbound eligibility/limits at https://wise.com/help/articles/2955298/guide-to-cny-transfers; and IRS FBAR threshold/dates at https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar. These support the conditional documented-income recommendation, not a cheapest-route guarantee. IRS Pub. 525 retrieval returned only its opening chunk: no new semantic verification claimed for its currency-gain rule.
+- All three existing generators and validators pass. Added `scripts/validate_effective_dates.py`: eight shared-layout pages show the dated notice; obsolete wording absent; original historical FX input preserved. Initial regression expected all eleven pages to use the shared layout; test correctly failed because the bank generator has independent layout. Narrowed the assertion to the eight actually affected pages, without altering unrelated bank pages.
+- Existing strict register retains 720 blank current-cost rows. Personal taxes, bank-specific execution quotes and correspondent charges remain unknown, not zero. No claim is made that every inherited source was re-read this session.
+- Task 20 PR #45 merged concurrently; this session preserves its coordination entry during rebase. Fixed Arena branch remains the integration branch.
 ## Session arena/c5e783f4-china4 — final verification, gap audit, and publication (2026-11-11)
 
 | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
@@ -757,3 +772,7 @@ Every figure below was re-read from the linked official page in this session, no
 
 ### Coordination conflict — arena/9ff08099-china4
 - Another session claimed an overlapping broad integration audit at the same time on a separate branch, invisible when this claim was pushed, and merged PR #45 while this audit was in progress. The board conflicted; retained both sections without discarding either session’s work. Rebased locally first, then restored the already-pushed commits and merged origin/main to avoid rewriting the published session branch. No site-file conflict occurred.
+- Task 21 integration conflict: concurrent task 20 appended at the same board location. Aborted rebase of the already-pushed claim to avoid rewriting history, merged main and retained both sections in full; no other session content discarded.
+
+### Second integration conflict — arena/9ff08099-china4
+- PR #48 independently completed the same ATM rollover while this session ran, and merged before PR #46. Preserved all of #48’s broader site changes and both coordination logs; retained the separate FX quote-unit correction and a regression check. The first merge attempt of PR #46 failed due to conflicts, not a site validation failure. The required pull/rebase after a merge replayed the other branch’s commits and conflicted; it was aborted in favor of retaining the already-resolved merge history.

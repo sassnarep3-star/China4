@@ -4,6 +4,12 @@ A static, primary-source research dashboard for lawful CNY→USD conversion and 
 
 Live deployment: **https://sassnarep3-star.github.io/China4/**
 
+## Tariff effective-date update (2026-11-11)
+
+Re-read [BOC’s official ATM notice](https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html): overseas Visa/Mastercard pricing is now effective at 2.5%, minimum USD3 and maximum USD40 equivalent per withdrawal. UnionPay remains CNY12 + 1%, capped at CNY112. Corrected the obsolete “future” label; the dated FX model has **not** been refreshed, and these issuer fees are not all-in costs. This narrow update is not a new verification of every inherited source.
+
+Run `python3 scripts/validate_effective_dates.py` for the rollover regression check.
+
 ## Fresh audit (2026-11-10)
 
 Start with **[Verified evidence brief](https://sassnarep3-star.github.io/China4/evidence.html)**: eight freshly checked rules, execution steps, explicit audit limits and 18 × 40 strictly blank current-cost rows. The blank register supersedes any interpretation of the historical scenario figures as verified executable costs. Current quote and personal-tax values could not be verified; no universal cheapest route is claimed. Review flags are linked from the global Review page. The older 52-source catalog was not independently re-verified in full in this narrow audit.
