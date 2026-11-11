@@ -715,6 +715,21 @@ Every figure below was re-read from the linked official page in this session, no
 - Task 19 is **done**. The published site now has eleven pages: `index.html`, `summary.html`, `methods.html`, `penalties.html`, `taxes.html`, `flagged.html`, `sources.html`, `evidence.html`, `banks.html`, `playbooks.html`, `verification.html`, plus the `estimates.html` / `costs.html` compatibility redirects.
 - Remaining unresolved items are published, not hidden: current provider quotes, correspondent deductions, account-specific receiving fees, personal source-of-funds facts and personal tax amounts are blank (`—`) and listed on `flagged.html` and `verification.html`. No universal cheapest route is claimed.
 
+## Session arena/198e49b1-china4 — task 21 (2026-11-11 UTC)
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Correct ATM effective-date rollover and add regression coverage; verify and publish | in progress | arena/198e49b1-china4 | scripts/build_site.py, scripts/validate_effective_dates.py, generated root HTML/data/cost-model.json, README.md, COORDINATION.md |
+
+- Read shared board and open PR #45: task 20 changes COORDINATION.md only; no content overlap. This session claims the newly effective 2026-11-11 ATM wording correction, not another session's work. Arena fixes the branch name, so this session uses its assigned branch rather than creating a session branch.
+- Official notice read directly: https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html. Visa/Mastercard fee becomes effective today; inherited copy still calls it future. UnionPay formula is unchanged. No new FX quote or account-specific cost is invented.
+
+### Task 21 verification and limits
+- Re-read official BOC notice: https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html. Corrected obsolete future labels and published the effective-today formula prominently on the eight generator-layout pages; flagged the rollover on flagged.html. No rate or fee calculations changed.
+- Independently re-read SAFE Arts. 2, 13 and 15 at https://www.safe.gov.cn/tianjin/2024/0430/2464.html; Wise outbound eligibility/limits at https://wise.com/help/articles/2955298/guide-to-cny-transfers; and IRS FBAR threshold/dates at https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar. These support the conditional documented-income recommendation, not a cheapest-route guarantee. IRS Pub. 525 retrieval returned only its opening chunk: no new semantic verification claimed for its currency-gain rule.
+- All three existing generators and validators pass. Added `scripts/validate_effective_dates.py`: eight shared-layout pages show the dated notice; obsolete wording absent; original historical FX input preserved. Initial regression expected all eleven pages to use the shared layout; test correctly failed because the bank generator has independent layout. Narrowed the assertion to the eight actually affected pages, without altering unrelated bank pages.
+- Existing strict register retains 720 blank current-cost rows. Personal taxes, bank-specific execution quotes and correspondent charges remain unknown, not zero. No claim is made that every inherited source was re-read this session.
+- Task 20 PR #45 merged concurrently; this session preserves its coordination entry during rebase. Fixed Arena branch remains the integration branch.
 ## Session arena/c5e783f4-china4 — final verification, gap audit, and publication (2026-11-11)
 
 | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
@@ -742,3 +757,5 @@ Every figure below was re-read from the linked official page in this session, no
 **Requirement-by-requirement gap audit.** Executive summary → `summary.html` + `EXECUTIVE_SUMMARY.md`. Questions/information/answers + how to discover missing information → `flagged.html` ("Required verification" column with official starting points) + `taxes.html` ("Ten questions for a cross-border tax professional") + dashboard four checks. US-citizen best route → dashboard executive answer (licensed-bank wire with source-of-funds evidence; $50,000 quota is for domestic individuals). Methods pros/cons → `methods.html` (18 routes). Penalty breakdown → `penalties.html` (statutory ceilings vs lawful cost). $10,000–$400,000 tables → five 40-row matrices, mobile card layout at ≤760 px (`data-label`), most important columns first. Step-by-step → `methods.html` + `playbooks.html` (63 cited steps). Sourcing policy → every table row carries a source link (validator-enforced); unverified values blank and flagged. **No gap found; no site change required.** Unverified current quotes (Wise, WU, MoneyGram, correspondent deductions, personal taxes) remain blank by policy — estimating them would be hallucination.
 
 **Irregularities (not merge blockers, already published on flagged.html):** BOC dated quote not permanently retrievable (rotating board + captcha); BOC Middle Rate ≠ arithmetic midpoint; stale open PRs #4/#5/#12/#38 untouched; task 17 taxgate files never delivered (no remote branch) — the China-tax-by-source topic is covered on `taxes.html` + `flagged.html` and is not duplicated here.
+
+- Task 21 integration conflict: concurrent task 20 appended at the same board location. Aborted rebase of the already-pushed claim to avoid rewriting history, merged main and retained both sections in full; no other session content discarded.
