@@ -715,6 +715,13 @@ Every figure below was re-read from the linked official page in this session, no
 - Task 19 is **done**. The published site now has eleven pages: `index.html`, `summary.html`, `methods.html`, `penalties.html`, `taxes.html`, `flagged.html`, `sources.html`, `evidence.html`, `banks.html`, `playbooks.html`, `verification.html`, plus the `estimates.html` / `costs.html` compatibility redirects.
 - Remaining unresolved items are published, not hidden: current provider quotes, correspondent deductions, account-specific receiving fees, personal source-of-funds facts and personal tax amounts are blank (`—`) and listed on `flagged.html` and `verification.html`. No universal cheapest route is claimed.
 
+## Session arena/3c69f1fe-china4 — verification and PR/merge closeout
+
+| Task | Scope (files) | Status | Owner | Notes |
+|---|---|---|---|---|
+| Rebase onto integrated main, verify the complete dashboard, and close out via PR/merge; record PR link, merge result and Pages deploy confirmation | COORDINATION.md | in progress | arena/3c69f1fe-china4 | No unique code delta: task 20 (Before-You-Decide questions page with discovery suggestions + fresh 2026-11-11 audit) was already integrated on origin/main via PR #47 by session arena/e701c274-china4 (merge commit cbfc46b). This session's duplicate questions page was superseded, not duplicated, per the no-overlap rule. Local validation PASS on the integrated tree: 8 pages, before-you-decide checklist, 18 procedures, 5×40 cost matrices, 2026 US tax illustration, 54 sources; evidence and bank-playbooks validators PASS. GitHub Pages status `built`, live https://sassnarep3-star.github.io/China4/, source main `/`; CI push run 42947260552 success for cbfc46b. Verification figures re-confirmed against public sources: FBAR $16,536 nonwillful / $165,353 willful (31 CFR 1010.821, eff. 2025-01-17); FEIE 2026 $132,900 (Rev. Proc. 2025-32). Pending: closeout PR from arena/3c69f1fe-china4 to main, merge, deploy confirmation, and final COORDINATION.md record. |
+
+
 ## Session arena/9ff08099-china4 — current-date ATM tariff and publication audit
 
 | Task | Scope | Status | Owner | Started (UTC) | Notes |
