@@ -107,6 +107,7 @@ NAV = [
     ("methods.html", "Methods", "18 routes and procedures"),
     ("method-matrix.html", "Matrix", "Multi-bank comparisons"),
     ("treaty-filings.html", "Treaty", "Claims and remediation"),
+    ("taxlayers.html", "Tax layers", "What really costs tax"),
     ("penalties.html", "Costs", "40-row cost matrices"),
     ("taxes.html", "Taxes", "China and US tax/reporting"),
     ("flagged.html", "Review", "Unknowns and irregularities"),
@@ -811,6 +812,8 @@ def flagged_page():
         ("2026 §6039F threshold for gifts from foreign corporations/partnerships", "Resolved 2026-11-10: Rev. Proc. 2025-32 sets the 2026 §6039F aggregate threshold at USD 20,573, separate from the USD 100,000 nonresident-individual/estate gift threshold", "Applies only if such a gift exists; not to moving your own savings", source("S53", "S28")),
         ("Whether a provincial customs office has issued local guidance since 2025-04-01", "Only the national instrument (S50) and the PBOC limit (S49) were verified; branch-level implementation notes were not reviewed", "Ask the departure-port customs office (12360 hotline) for the operative threshold on your travel date", source("S50", "S49")),
         ("Current BOC promotional waiver", "The verified 2025 wire promotion expired 2025-12-31; none is assumed for 2026", "Ask branch/app for a current dated promotion and preserve terms", source("S45")),
+        ("Whether any PRC tax attaches to the act of converting CNY into USD", "Limited negative finding on <a href=\"taxlayers.html\">Tax layers</a>: no conversion levy appears among the nine IIT Law income categories or in the FX regulations, which regulate permission and documentation instead. Provincial practice, local guidance and non-reviewed instruments were not examined, so this is not a legal opinion", "Ask the servicing bank and the competent tax authority in writing what tax evidence they will accept for the specific tranches", source("S32", "S1", "S18")),
+        ("Whether a PRC court or tax authority has published guidance on an individual's FX gain", "Not located in this review; the IIT Law lists no currency-exchange category, but absence of a located rule is not a ruling. US treatment of the same gain is addressed separately on <a href=\"taxes.html\">Taxes</a>", "Obtain advice on the acquisition basis and character of the CNY before relying on either treatment", source("S32", "S38")),
     ]
     irregular = [
         ("PRC IIT rate schedules were not independently transcribed from law-page images", "Resolved 2026-11-10: all seven annual bracket thresholds, rates and deductions were checked against the Shanghai tax authority’s official text PDF; individual tax still depends on eligibility, deductions and source.", "Low", source("S39", "S54")),
@@ -837,6 +840,7 @@ def flagged_page():
         ("DOMESTIC $50k/year model could be misused", "Shown solely as constant-rate arithmetic for independently lawful annual transactions; never borrow quotas or split to evade review", "High", source("S19", "S46")),
         ("US tax was described qualitatively but never quantified", "Added a 2026 single-filer illustration that prices the same amount by character (ordinary income, a 10% currency gain, FEIE-eligible earned income) from Rev. Proc. 2025-32; a measured FX gain stays blank because acquisition basis is a personal fact", "Medium", source("S53", "S38")),
         ("Crypto description was overbroad on old site", "Corrected to the PBOC notice’s actual prohibited business activities and legal-risk language; no blanket claim about every individual act is added", "Medium", source("S17")),
+        ("The tax-gate analysis was claimed twice and never published (corrected 2026-11-11)", "Tasks 21-TG and 22 both claimed a source-of-funds tax-gate page; PR #52 merged the claim, but no equivalent page existed on any branch. Built here from freshly fetched IIT Law, Tax Collection and Administration Law, SAFE Detailed Rules and 2013 No. 40 text, with a 40-increment hypothetical exposure table and six sourced tables", "High", source("S32", "S1", "S18")),
     ]
     body = f'''
 {callout("warn", "Review before execution", "This page is part of the deliverable, not a merge blocker. Values below remain blank because they are not verified. Historical values are labeled and never silently promoted to current prices.")}

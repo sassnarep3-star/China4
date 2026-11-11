@@ -7,6 +7,8 @@
 
 New: [40-amount method matrix](method-matrix.html) compares documented tariffs and caps; [treaty and filings](treaty-filings.html) outlines conditional relief and remediation. The illustrations are not executable quotes or individualized tax advice.
 
+New 2026-11-11: [Tax layers](taxlayers.html) isolates the four costs usually called a "conversion tax" — PRC income tax on the source of the balance, the bank's tax-voucher document gate, US income tax on the same income, and US information-return penalties — with a 40-increment hypothetical PRC exposure table and a fixed order of operations. It records a limited negative finding: no PRC tax on the act of conversion was located in the reviewed statutes.
+
 This summary supersedes earlier draft summaries and cost pages. Earlier provider figures that were not supported by current primary evidence are no longer presented as executable prices.
 
 ## Bottom line
