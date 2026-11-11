@@ -862,3 +862,12 @@ Every figure below was re-read from the linked official page in this session, no
 - **Research and integration:** Re-read the 2026 HSBC tariff, ABC tariff, treaty, China filing and refund rules, IRS Form 6166 and offshore procedures. Form 8802 individual fee increased to **$105** on 2026-10-01; earlier $85 claim corrected. The added pages distinguish conditional tariff examples from live executable quotes; withholding and streamlined-penalty examples use separate hypothetical bases. No personal eligibility or tax liability is asserted.
 - **Integration scope:** Re-fetched all branch heads; the two live overlapping tax-gate sessions remain confined to additive files, with no current shared-file claims. Added navigation, CI validation and artifact staging for task 23, without touching their files. Pages artifact now stages root HTML/CSS and JSON files; moved Pages concurrency to deploy only so PR validation is not cancelled by unrelated runs. Legacy Pages versus Actions deployment race remains an administrative configuration issue requiring repository settings review.
 - **Validation:** Four builders and all five validators including the effective-date regression pass locally. Task 23 validator independently checks all 40 tariff calculations, cap counts, sourced responsive rows and local links.
+
+## Session arena/6691b7ad-china4 — task 24: independent verification, CI deploy repair, and publication (2026-11-11)
+
+| # | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|---|
+| 24 | Independent audit of the live dashboard against official sources, repair of the failing `deploy` job on `main`, then PR → merge → confirm Pages deploy | `COORDINATION.md`, `.github/workflows/gh-pages.yml`; site pages only via their generators if a verified defect is found | in progress | arena/6691b7ad-china4 | 2026-11-11 07:40 | Branch fixed by Arena (`arena/6691b7ad-china4`). Observed defect before claiming: workflow run [42949549582](https://github.com/sassnarep3-star/China4/actions/runs/42949549582) on `main` (PR #55 merge) shows `validate` success but `deploy` **failure** — `No artifacts named "github-pages" were found for this workflow run`. Will diagnose and fix without changing published content unless a verified error is found. |
+
+### Claim log — arena/6691b7ad-china4
+- Board read 2026-11-11 07:40 UTC. `main` = `bb0040c` (PR #55). Open stale PRs #4/#5/#12/#38 untouched. Only this session claims the two files above; no site content is rewritten unless a source-checked defect is found.
