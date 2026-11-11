@@ -35,6 +35,6 @@ for r in p.rows:
 for href in p.links:
     u=urlsplit(href)
     if not u.scheme and u.path: assert (ROOT/u.path).exists(), href
-for filename in ['index.html','summary.html','methods.html','penalties.html','taxes.html','flagged.html','sources.html']:
+for filename in ['index.html','summary.html','questions.html','methods.html','penalties.html','taxes.html','flagged.html','sources.html']:
     assert 'href="evidence.html"' in (ROOT/filename).read_text()
 print('PASS: 720 strictly blank current-cost rows; 18 route ladders; every data row sourced; local links and evidence navigation.')

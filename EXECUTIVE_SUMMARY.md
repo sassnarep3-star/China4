@@ -1,9 +1,9 @@
 # Executive summary — China4 evidence desk
 
-- **Research cutoff:** 2026-11-10 UTC (independent re-verification; FX citation made durable, Wise current-cost cells blanked, ATM cap-unit correction retained)
+- **Research cutoff:** 2026-11-11 UTC (fresh re-verification of load-bearing sources; new Before You Decide checklist page)
 - **BOC retail quote timestamp:** 2026-11-09 05:30 Beijing time
 
-**Current deliverable:** [executive summary](summary.html) · [`index.html`](index.html) · [cost matrices](penalties.html) · [procedures](methods.html) · [taxes](taxes.html) · [bank tariffs](banks.html) · [route playbooks](playbooks.html) · [verification ledger](verification.html) · [sources](sources.html) · [open items](flagged.html)
+**Current deliverable:** [executive summary](summary.html) · [before-you-decide checklist](questions.html) · [`index.html`](index.html) · [cost matrices](penalties.html) · [procedures](methods.html) · [taxes](taxes.html) · [bank tariffs](banks.html) · [route playbooks](playbooks.html) · [verification ledger](verification.html) · [sources](sources.html) · [open items](flagged.html)
 
 This summary supersedes earlier draft summaries and cost pages. Earlier provider figures that were not supported by current primary evidence are no longer presented as executable prices.
 
@@ -96,3 +96,11 @@ Read this as a scale, not a forecast. Two consequences drive the decision:
 Primary documents re-fetched and read, not merely linked: SAFE individual FX rules (Arts. 2, 13, 14, 15, 30, 39) and the PBOC individual FX measures (Art. 37 identity definitions); the SAFE 2022 Q&A confirming a convenience quota rather than a hard cap; the State Council FX Regulations (Dec. 532, Arts. 5 and 39–45); the BOC tariff PDF (items 210101002, 210105008, 210108014, notes 5 and 10) and the 2026-11-11 ATM notice; eCFR 31 CFR 1010.821 and 1010.340; IRS FBAR guidance, the Form 8938/FBAR comparison, Form 3520 instructions, the FEIE page and Publication 525; IRS Rev. Proc. 2025-32; PBOC Announcement [2004] No. 18; Customs Announcement 2025 No. 43; SAFE's cash-carrying and ATM-cap notices; and Wise's CNY guide with its dated 2024-11-25 fee-change post.
 
 All cited figures matched the sources on re-read. The 2026 US tax illustration is arithmetic on published brackets: a mutation test (changing one bracket's tax-at-floor by one dollar) makes the validator fail, which confirms the check is live rather than tautological.
+
+## Task 20 — arena/e701c274-china4 (2026-11-11 UTC)
+
+**New page: [Before You Decide](questions.html).** The brief's "clear list of questions, information and answers that need to be addressed before any decision" previously had no dedicated home. The new page carries fourteen decision questions (each with the known official answer, the still-unknown personal fact, and the exact discovery step), a ten-row missing-information checklist, and seven sequential decision gates. Every row links a primary source already in the register; no new prices, rates or tax amounts were introduced, and unknowns stay blank.
+
+**Fresh re-verification (read, not merely linked):** SAFE Detailed Rules Arts. 2, 13–15 and 39 (repealed by 汇发〔2023〕8号); SAFE 2022 Q&A (convenience quota, not a hard cap); BOC personal tariff PDF items 210105008/210108014 and notes 5/10; BOC rate board 2026/11/11 10:30:02 (USD 666.29/669.10 per 100, Middle 671.91; half-spread ~0.2104%, still representative of the modeled 0.210366%); IRS FBAR page (>$10,000 aggregate, April 15 / October 15); FinCEN FBAR page; IRS Publication 525 ($200 personal FX-gain threshold); Wise CNY guide (eligibility, CNY 300,000/50,000 caps, own-account rule). All matched the site. The live site was read back and confirmed serving current content.
+
+**Build:** `build_site.py` now generates 8 pages; validators updated (PAGES, evidence nav list, bank-playbook nav, Pages artifact). All three validators pass. Research cutoff bumped to 2026-11-11 UTC; the dated BOC model inputs are unchanged.
