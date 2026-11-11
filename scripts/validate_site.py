@@ -12,7 +12,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "summary.html", "methods.html", "penalties.html", "taxes.html", "sources.html", "flagged.html"]
+PAGES = ["index.html", "summary.html", "questions.html", "methods.html", "penalties.html", "taxes.html", "sources.html", "flagged.html"]
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 ERRORS: list[str] = []
 
@@ -352,7 +352,7 @@ def main():
         for error in ERRORS:
             print(f" - {error}")
         sys.exit(1)
-    print(f"PASS: 7 HTML pages, executive summary, 18 procedures, 5×40 cost matrices, 2026 US tax illustration, {source_rows} sources, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
+    print(f"PASS: 8 HTML pages, executive summary, before-you-decide checklist, 18 procedures, 5×40 cost matrices, 2026 US tax illustration, {source_rows} sources, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
 
 
 if __name__ == "__main__":
