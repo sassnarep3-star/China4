@@ -784,7 +784,7 @@ Every figure below was re-read from the linked official page in this session, no
 
 | # | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
 |---|------|---------------|--------|-------|---------------|-------|
-| 20 | Fresh independent audit of the live site, add a dedicated "Before You Decide" questions/information/answers checklist page (the one brief item without a dedicated home), re-verify load-bearing sources, rebuild/validate, PR, merge, confirm Pages | `COORDINATION.md`; `scripts/build_site.py`, `scripts/validate_site.py`, `scripts/validate_evidence.py`, `data/bank-playbooks.json` (nav only), generated root pages, `.github/workflows/gh-pages.yml`, `README.md`, `EXECUTIVE_SUMMARY.md`; plus this section | in progress | arena/e701c274-china4 | 2026-11-11 | Arena-fixed branch; no `session-<id>/<task>` branch. Prior tasks 1–19 done; site live at https://sassnarep3-star.github.io/China4/ (PR #44 merged). |
+| 20 | Fresh independent audit of the live site, add a dedicated "Before You Decide" questions/information/answers checklist page (the one brief item without a dedicated home), re-verify load-bearing sources, rebuild/validate, PR, merge, confirm Pages | `COORDINATION.md`; `scripts/build_site.py`, `scripts/validate_site.py`, `scripts/validate_evidence.py`, `data/bank-playbooks.json` (nav only), generated root pages, `.github/workflows/gh-pages.yml`, `README.md`, `EXECUTIVE_SUMMARY.md`; plus this section | done | arena/e701c274-china4 | 2026-11-11 | Arena-fixed branch; no `session-<id>/<task>` branch. Prior tasks 1–19 done; site live at https://sassnarep3-star.github.io/China4/ (PR #44 merged). |
 
 ### Claim log — arena/e701c274-china4
 - **Board state read before claiming (2026-11-11).** `main` is `62210ff` (PR #44 merged). Open PRs #4, #5, #12, #38 are stale early-session PRs, untouched. No other session has a live claim with recent commits; this session is the integration owner for task 20.
@@ -802,7 +802,7 @@ Every figure below was re-read from the linked official page in this session, no
 
 **Irregularities (not blockers, published on flagged.html as before).** Dated BOC row still not permanently retrievable (captcha date query); Wise current prices still blank; personal facts/tax amounts still blank. No new irregularities found; no values inferred.
 
-**Publication status.** [PR #47](https://github.com/sassnarep3-star/China4/pull/47) is open; merge and deployment remain pending. Concurrent PRs #45, #48 and #46 updated main; rebase conflicts in this log and generated HTML were resolved by retaining both sessions’ logs and rebuilding from the merged generators.
+**Publication.** [PR #47](https://github.com/sassnarep3-star/China4/pull/47) merged 2026-11-11 02:37 UTC as `cbfc46bddffe60ac659a98459d3f996c0e2035d3`. The [Pages workflow](https://github.com/sassnarep3-star/China4/actions/runs/42947260552) completed validation and deployment successfully; the live [questions page](https://sassnarep3-star.github.io/China4/questions.html) was read back. Concurrent PRs #45, #48 and #46 updated main; rebase conflicts in this log and generated HTML were resolved by retaining both sessions’ logs and rebuilding from the merged generators.
 
 - Checklist wording tightened: cash declaration does not authorize exceeding the RMB limit, and own-account restrictions and tax documentation are route-specific. No universal requirement to resolve past filings before a wire is asserted.
 
