@@ -715,6 +715,18 @@ Every figure below was re-read from the linked official page in this session, no
 - Task 19 is **done**. The published site now has eleven pages: `index.html`, `summary.html`, `methods.html`, `penalties.html`, `taxes.html`, `flagged.html`, `sources.html`, `evidence.html`, `banks.html`, `playbooks.html`, `verification.html`, plus the `estimates.html` / `costs.html` compatibility redirects.
 - Remaining unresolved items are published, not hidden: current provider quotes, correspondent deductions, account-specific receiving fees, personal source-of-funds facts and personal tax amounts are blank (`—`) and listed on `flagged.html` and `verification.html`. No universal cheapest route is claimed.
 
+## Session arena/9ff08099-china4 — current-date ATM tariff and publication audit
+
+| Task | Scope | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| Audit the newly effective 2026-11-11 BOC overseas ATM tariff against official sources, correct any affected current-cost presentation, validate and publish | `COORDINATION.md`, `scripts/build_site.py`, `scripts/validate_site.py`, generated root HTML and `EXECUTIVE_SUMMARY.md` only if correction required; PR/Pages | in progress | arena/9ff08099-china4 | 2026-11-11 02:33 | Previous broad claims are older than 60 minutes without new commits; published integration is PR #44. Arena requires this fixed branch. Scope limited to ATM effective-date audit and necessary integration. |
+
+### Audit results — arena/9ff08099-china4 (2026-11-11 UTC)
+- Re-read [BOC's 2026-11-11 ATM notice](https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html): UnionPay ¥12 + 1%, cap ¥112 per withdrawal; Visa/Mastercard 2.5%, min USD-equivalent 3, max USD-equivalent 40 per withdrawal. Corrected the Costs page's now-obsolete “future” label and source register, retaining historical FX assumptions and a warning that the model is not an executable ATM quote. The notice alone does not establish card-specific eligibility, ATM-owner charges or transaction FX.
+- Re-read [SAFE overseas ATM notice](https://www.safe.gov.cn/hubei/2019/0305/851.html): annual CNY100,000 per individual across cards and daily CNY10,000 per card, no borrowed-card evasion. Re-read [SAFE current-account Q&A](https://www.safe.gov.cn/tianjin/2025/0715/2834.html), [IRS currency guidance](https://www.irs.gov/individuals/international-taxpayers/foreign-currency-and-currency-exchange-rates), and [IRS FBAR](https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar) for the summary distinctions.
+- Fixed a material labeling defect in Flagged for Review: the historical quoted 666.48 / 669.29 figure is in CNY per **100** USD, not per USD. Model uses 6.6648 / 6.6929 per USD; numbers were not changed. Historical row remains unverified in this session because BOC's date search requires CAPTCHA; [BOC's rolling board](https://www.boc.cn/sourcedb/whpj/enindex.html) was reviewed only as a current, non-executable cross-check. Current personal fees, individual taxes, eligibility and the historical quote remain flagged, not guessed.
+- Added regression checks for the tariff label, execution-quote disclaimer and quoted-unit correction. All three builders and all three validators pass, including local links, source presence, independent amount calculations and 720 blank strict current-cost rows. This was a **targeted audit**, not a claim that every inherited row or every external link was freshly verified. No source-link checker can establish substantive correctness merely from link presence.
+- Initial pull/rebase failed because the remote session branch did not yet exist; first branch push created it. No other branch was created or pushed.
 ## Session arena/198e49b1-china4 — task 21 (2026-11-11 UTC)
 
 | Task | Status | Owner | File scope |
@@ -758,4 +770,9 @@ Every figure below was re-read from the linked official page in this session, no
 
 **Irregularities (not merge blockers, already published on flagged.html):** BOC dated quote not permanently retrievable (rotating board + captcha); BOC Middle Rate ≠ arithmetic midpoint; stale open PRs #4/#5/#12/#38 untouched; task 17 taxgate files never delivered (no remote branch) — the China-tax-by-source topic is covered on `taxes.html` + `flagged.html` and is not duplicated here.
 
+### Coordination conflict — arena/9ff08099-china4
+- Another session claimed an overlapping broad integration audit at the same time on a separate branch, invisible when this claim was pushed, and merged PR #45 while this audit was in progress. The board conflicted; retained both sections without discarding either session’s work. Rebased locally first, then restored the already-pushed commits and merged origin/main to avoid rewriting the published session branch. No site-file conflict occurred.
 - Task 21 integration conflict: concurrent task 20 appended at the same board location. Aborted rebase of the already-pushed claim to avoid rewriting history, merged main and retained both sections in full; no other session content discarded.
+
+### Second integration conflict — arena/9ff08099-china4
+- PR #48 independently completed the same ATM rollover while this session ran, and merged before PR #46. Preserved all of #48’s broader site changes and both coordination logs; retained the separate FX quote-unit correction and a regression check. The first merge attempt of PR #46 failed due to conflicts, not a site validation failure. The required pull/rebase after a merge replayed the other branch’s commits and conflicted; it was aborted in favor of retaining the already-resolved merge history.

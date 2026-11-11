@@ -233,6 +233,18 @@ def validate_us_tax():
 def main():
     parsed = {}
     source_urls = set()
+    # The 2026-11-11 ATM adjustment is no longer future. Keep the dated
+    # historical FX benchmark and incomplete-cost warning visible as well.
+    costs_text = (ROOT / "penalties.html").read_text(encoding="utf-8")
+    if "Future Visa/Mastercard formula" in costs_text:
+        fail("penalties: effective ATM tariff mislabeled as future")
+    if "Visa/Mastercard formula effective 2026-11-11" not in costs_text:
+        fail("penalties: missing effective-date ATM tariff label")
+    if "not an executable ATM quote" not in costs_text:
+        fail("penalties: missing ATM scenario/quote distinction")
+    review_text = (ROOT / "flagged.html").read_text(encoding="utf-8")
+    if "buy 666.48 / sell 669.29 CNY per 100 USD" not in review_text:
+        fail("flagged: BOC quoted-rate units incorrect")
     for page in PAGES:
         path = ROOT / page
         text = path.read_text(encoding="utf-8")
