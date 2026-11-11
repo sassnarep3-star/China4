@@ -714,3 +714,9 @@ Every figure below was re-read from the linked official page in this session, no
 - Live content was read back after deployment: the dashboard (`index.html`) shows the integrated route inventory with the Wise current-cost cell blanked and the corrected penalty wording, and `banks.html` serves the eight-row multi-bank tariff table with the new navigation. Direct `curl` to `github.io` is blocked by this sandbox's outbound-host allowlist (SSL connect error), so live content was confirmed through the page-fetch tool and the Pages API rather than a claimed browser fetch.
 - Task 19 is **done**. The published site now has eleven pages: `index.html`, `summary.html`, `methods.html`, `penalties.html`, `taxes.html`, `flagged.html`, `sources.html`, `evidence.html`, `banks.html`, `playbooks.html`, `verification.html`, plus the `estimates.html` / `costs.html` compatibility redirects.
 - Remaining unresolved items are published, not hidden: current provider quotes, correspondent deductions, account-specific receiving fees, personal source-of-funds facts and personal tax amounts are blank (`—`) and listed on `flagged.html` and `verification.html`. No universal cheapest route is claimed.
+
+## Session arena/9ff08099-china4 — current-date ATM tariff and publication audit
+
+| Task | Scope | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| Audit the newly effective 2026-11-11 BOC overseas ATM tariff against official sources, correct any affected current-cost presentation, validate and publish | `COORDINATION.md`, `scripts/build_site.py`, `scripts/validate_site.py`, generated root HTML and `EXECUTIVE_SUMMARY.md` only if correction required; PR/Pages | in progress | arena/9ff08099-china4 | 2026-11-11 02:33 | Previous broad claims are older than 60 minutes without new commits; published integration is PR #44. Arena requires this fixed branch. Scope limited to ATM effective-date audit and necessary integration. |
