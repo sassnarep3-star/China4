@@ -10,14 +10,17 @@ Re-read [BOC’s official ATM notice](https://www.boc.cn/pbservice/bi2/202608/t2
 
 Run `python3 scripts/validate_effective_dates.py` for the rollover regression check.
 
-## Fresh audit (2026-11-10)
+## Fresh audit (2026-11-11)
 
 Start with **[Verified evidence brief](https://sassnarep3-star.github.io/China4/evidence.html)**: eight freshly checked rules, execution steps, explicit audit limits and 18 × 40 strictly blank current-cost rows. The blank register supersedes any interpretation of the historical scenario figures as verified executable costs. Current quote and personal-tax values could not be verified; no universal cheapest route is claimed. Review flags are linked from the global Review page. The older 52-source catalog was not independently re-verified in full in this narrow audit.
+
+The 2026-11-11 audit re-read the load-bearing sources (SAFE individual FX rules, BOC tariff and rate board, IRS FBAR and Publication 525, FinCEN FBAR, Wise CNY guide, SAFE 2022 quota clarification) and added the **[Before You Decide](https://sassnarep3-star.github.io/China4/questions.html)** checklist: fourteen decision questions with known answers, unknowns and discovery steps, a missing-information checklist, and seven sequential decision gates.
 
 ## Pages
 
 - **Dashboard** — executive decision guidance and 18-route comparison.
 - **Summary** — the executive brief: answer, key costs, route shortlist, tax boundary and eight execution steps.
+- **Questions** — the before-you-decide checklist: fourteen questions with known answers, unknowns and discovery steps, plus seven sequential decision gates.
 - **Methods** — pros, cons, constraints, and exact procedures for each route.
 - **Costs** — five 40-row matrices covering $10,000 through $400,000 in $10,000 increments, including unpriced routes, special property routes and statutory penalty ceilings.
 - **Taxes** — China IIT, US worldwide income, FBAR, Form 8938, Form 3520, cash reporting, FEIE/FTC, treaty and filing corrections, plus a sourced 2026 tax illustration.
@@ -45,7 +48,7 @@ python3 scripts/validate_evidence.py
 python3 scripts/validate_bank_playbooks.py
 ```
 
-`build_site.py` uses `Decimal` arithmetic to regenerate all seven HTML pages and `data/cost-model.json`. `build_bank_playbooks.py` generates the three additive pages from `data/bank-playbooks.json`. The validators independently recalculate the amount ladder, BOC fees/FX benchmark, conditional annual schedule and published tariff scenarios; they also check HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts. They require a direct source link in each table body row; this structural check does not prove that a linked source supports every claim or that external links are live.
+`build_site.py` uses `Decimal` arithmetic to regenerate all eight HTML pages and `data/cost-model.json`. `build_bank_playbooks.py` generates the three additive pages from `data/bank-playbooks.json`. The validators independently recalculate the amount ladder, BOC fees/FX benchmark, conditional annual schedule and published tariff scenarios; they also check HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts. They require a direct source link in each table body row; this structural check does not prove that a linked source supports every claim or that external links are live.
 
 The GitHub Actions workflow rebuilds and validates pull requests, verifies generated files are current, then deploys only the public site files from `main` to GitHub Pages.
 

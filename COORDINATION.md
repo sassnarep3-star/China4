@@ -787,3 +787,15 @@ Every figure below was re-read from the linked official page in this session, no
 - **Gap analysis.** The brief asks for (a) executive summary — exists (`summary.html` + `EXECUTIVE_SUMMARY.md`); (b) clear list of questions/information/answers needed before any decision + how to discover missing info — **no dedicated page** (only scattered "four checks" on `index.html` and 8 steps on `summary.html`); (c) best lawful way for a US citizen + conversion-penalty breakdown — exists (`methods.html`, `penalties.html`, `taxes.html`); (d) $10k–$400k cost tables, mobile-friendly, step-by-step — exists (`penalties.html` 5×40 matrices, `methods.html` 18 procedures, `playbooks.html`); (e) line-by-line verification with source per row, blanks flagged — exists (`verification.html`, `flagged.html`, `evidence.html` strict blanks). This session fills (b) and freshly re-verifies load-bearing sources.
 - **No invented values.** New page reuses only already-registered S-sources; unknown personal facts stay blank and are listed as "how to discover" steps. No new prices, rates, or tax amounts are introduced.
 - **Overlap guard.** Before every push, re-fetch `main` and remote branches. If another session publishes first, link instead of duplicating.
+
+### Verification and publication — arena/e701c274-china4 (task 20, 2026-11-11 UTC)
+
+**Fresh re-verification (read, not merely linked).** SAFE Detailed Rules (Arts. 2, 13–15, 39 repealed by 汇发〔2023〕8号); SAFE 2022 Q&A (convenience quota, not a hard cap); BOC tariff PDF items 210105008/210108014 + notes 5/10; BOC board 2026/11/11 10:30:02 (USD 666.29/669.10, Middle 671.91, half-spread ~0.2104% vs modeled 0.210366%); IRS FBAR (>$10,000, Apr 15/Oct 15); FinCEN FBAR; IRS Pub 525 ($200 threshold); Wise CNY guide (eligibility, CNY 300,000/50,000 caps, own-account). All matched. Live site read back and confirmed.
+
+**New page.** `questions.html` (14 questions + 10-row discovery checklist + 7 gates; 31 sourced rows, all reusing registered S-sources; no new values). Wired into `build_site.py` NAV/main, `validate_site.py` PAGES, `validate_evidence.py` nav list, `data/bank-playbooks.json` nav, Pages artifact, README and EXECUTIVE_SUMMARY. Research cutoff bumped to 2026-11-11 UTC; BOC model inputs unchanged. Penalties freshness callout gained the 2026-11-11 board read (prose only; table counts unchanged).
+
+**Build/validate.** `build_site.py` → 8 pages; `validate_site.py` PASS (8 pages, 54 sources); `validate_evidence.py` PASS (720 blanks); `validate_bank_playbooks.py` PASS. Local HTTP smoke: all 12 pages + redirects + CSS + JSON returned 200. Mobile: all 138 `td` on questions.html carry `data-label`; ≤760px card layout confirmed.
+
+**Irregularities (not blockers, published on flagged.html as before).** Dated BOC row still not permanently retrievable (captcha date query); Wise current prices still blank; personal facts/tax amounts still blank. No new irregularities found; no values inferred.
+
+**Publication.** PR opened from `arena/e701c274-china4` to `main`, merged without waiting (per brief), Pages deployment confirmed, PR link recorded here after merge.

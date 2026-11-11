@@ -20,7 +20,7 @@ BUY = D("6.6648")
 SELL = D("6.6929")
 MID = (BUY + SELL) / 2
 QUOTE_TIME = "2026-11-09 05:30 Beijing time (BOC page timestamp)"
-RESEARCH_DATE = "2026-11-10 UTC"
+RESEARCH_DATE = "2026-11-11 UTC"
 
 SOURCES = {
     "S1": ("SAFE", "Individual FX Detailed Rules (modified), especially Arts. 2, 12–15", "https://www.safe.gov.cn/tianjin/2024/0430/2464.html"),
@@ -70,7 +70,7 @@ SOURCES = {
     "S45": ("Bank of China", "Consolidated service-price index and effective date", "https://www.boc.cn/custserv/fd5/"),
     "S46": ("SAFE", "2022 clarification: USD 50,000 is a convenience quota, not a hard current-account cap", "https://www.safe.gov.cn/ningxia/2022/0929/1997.html"),
     "S47": ("IRS", "Yearly-average FX rates and spot-rate translation principle", "https://www.irs.gov/individuals/international-taxpayers/yearly-average-currency-exchange-rates"),
-    "S48": ("Bank of China", "Current retail exchange-rate board (rotating snapshots; re-checked 2026-11-10 02:49 Beijing)", "https://www.boc.cn/sourcedb/whpj/enindex.html"),
+    "S48": ("Bank of China", "Current retail exchange-rate board (rotating snapshots; re-checked 2026-11-10 02:49 and 2026-11-11 10:30 Beijing)", "https://www.boc.cn/sourcedb/whpj/enindex.html"),
     "S49": ("PBOC", "Announcement [2004] No. 18: RMB 20,000 per-trip limit for inbound/outbound travellers", "https://www.pbc.gov.cn/chubanwu/114566/114579/114643/2839193/index.html"),
     "S50": ("China Customs", "Announcement 2025 No. 43 (effective 2025-04-01), which repealed Announcement 2007 No. 72", "https://www.gov.cn/zhengce/zhengceku/202504/content_7017195.htm"),
     "S51": ("CBP", "Money and monetary instruments: FinCEN Form 105 above USD 10,000 and group aggregation", "https://www.cbp.gov/travel/international-visitors/money-monetary-instruments"),
@@ -101,6 +101,7 @@ NAV = [
     ("evidence.html", "Evidence", "Fresh audit and strict costs"),
     ("index.html", "Dashboard", "Decision dashboard"),
     ("summary.html", "Summary", "Executive brief"),
+    ("questions.html", "Questions", "Before you decide checklist"),
     ("methods.html", "Methods", "18 routes and procedures"),
     ("penalties.html", "Costs", "40-row cost matrices"),
     ("taxes.html", "Taxes", "China and US tax/reporting"),
@@ -549,6 +550,70 @@ def summary_page():
     return layout("summary.html", "Executive summary", "The decision, the modeled costs, the route shortlist, the tax boundary and the eight execution steps — each linked to primary evidence.", body)
 
 
+def questions_page():
+    """Before-you-decide checklist: questions, known answers, unknowns, discovery steps."""
+    q_rows = [
+        ("<strong>Q1. What identity does the Chinese bank have on file?</strong>", "SAFE/PBOC measures define a passport-holding foreign citizen as a foreign individual; domestic versus foreign classification controls quota treatment.", "The bank's recorded classification for this account.", "Ask the bank in writing for its recorded classification; bring your passport; keep the reply.", source("S2", "S1")),
+        ("<strong>Q2. What is the lawful source of each CNY deposit?</strong>", "After-tax current-account income, existing foreign-currency savings, unused prior-conversion RMB, inheritance and property proceeds each follow different rules.", "The actual source and character of the balance.", "Reconstruct the deposit trail tranche by tranche: contracts, payslips, statements; label each tranche before choosing a route.", source("S1", "S20", "S21")),
+        ("<strong>Q3. Has Chinese individual income tax been paid on the income?</strong>", "A foreign individual's lawful current-account income purchase requires amount-linked supporting documents including tax vouchers.", "Your Chinese tax-payment history.", "Obtain tax-payment records from the tax authority or individual income tax app; keep the receipts with the transfer file.", source("S1", "S11")),
+        ("<strong>Q4. Is the balance CNY needing conversion, or already USD?</strong>", "Existing foreign-currency savings can be wired without a CNY conversion; a CNY purchase follows the foreign-individual income rules.", "The currency composition of the account.", "Check a bank statement showing the currency split; do not assume the whole balance needs conversion.", source("S1", "S4")),
+        ("<strong>Q5. Does the USD 50,000 convenience quota apply to me?</strong>", "The annual convenience purchase quota is written for domestic individuals; genuine documented current-account needs can exceed it and are not limited to ID-only handling.", "Your classification from Q1.", "Confirm classification with the bank first; never assume ID-only permission or borrow another person's quota.", source("S1", "S46", "S19")),
+        ("<strong>Q6. What is the all-in executable quote?</strong>", "The BOC wire tariff formula is published, but the execution FX rate is live and dated; the modeled matrices are not executable quotes.", "The live rate, commission, telecom charge, correspondent deduction and net USD credit.", "Request a written all-in quote (see the discovery checklist below) and compare routes on the same net USD received.", source("S4", "S5", "S48")),
+        ("<strong>Q7. What will intermediaries or correspondents deduct?</strong>", "The published tariff does not include foreign-bank charges; BOC prices an optional full-arrival service that shifts the deduction to the sender.", "The actual deduction on this corridor for this transfer.", "Ask the bank what deduction applies; compare standard versus full-arrival pricing inside the written quote.", source("S4")),
+        ("<strong>Q8. What will my US bank charge to receive the wire?</strong>", "Published examples exist (for example BofA and Chase Secure Checking inbound fees, and Capital One's tiered schedule), but each depends on the account type.", "The fee schedule for your own US account.", "Check your US bank's incoming-wire fee page for your exact account type before execution.", source("S42", "S43", "S44")),
+        ("<strong>Q9. What is the US tax character of the money?</strong>", "US citizens are generally taxed on worldwide income; a personal foreign-currency gain is excluded unless more than USD 200, then reported as a capital gain; basis is a personal fact.", "Acquisition date and rate, income history, tax residence and basis.", "Reconstruct basis from records and obtain qualified cross-border tax review; the transfer amount alone cannot establish tax owed.", source("S32", "S38", "S47")),
+        ("<strong>Q10. Have I met FBAR, Form 8938 and Form 3520 duties?</strong>", "FBAR applies above USD 10,000 aggregate at any time in the year; Form 8938 has separate thresholds; Form 3520 covers specified gifts, bequests and trusts, not moving your own savings.", "Your prior-year filing history.", "Review prior returns and FBAR filings; if eligible, evaluate the streamlined procedures rather than silently back-filing.", source("S25", "S27", "S28", "S36", "S37")),
+        ("<strong>Q11. Am I eligible for Wise or SkyRemit?</strong>", "Wise from CNY requires a non-mainland-Chinese sender who has worked in China, a valid tax record from the last 3 years, and an own-account recipient; per-transfer caps are CNY 300,000 (bank app) and CNY 50,000 (Alipay).", "Your eligibility and overall document-based limit.", "Complete Wise verification with tax records; compare only a live same-net-payout quote, never the 2024 examples.", source("S11", "S12", "S13")),
+        ("<strong>Q12. Am I carrying cash or using an ATM?</strong>", "Travellers are limited to RMB 20,000 cash per trip with customs declaration beyond the prescribed amount; FinCEN Form 105 applies above USD 10,000 transported; overseas ATM withdrawals are capped per person per year and per card per day.", "Your travel and ATM plan.", "Check the cash and ATM limits before travel; do not treat cash or ATM as a USD 400,000 transfer route.", source("S49", "S50", "S51", "S9")),
+        ("<strong>Q13. Is any part a gift, inheritance, property or investment proceeds?</strong>", "Qualifying emigration property, inheritance, property-sale and direct-investment proceeds each have their own application and evidence route.", "The character of each tranche.", "Gather the estate, property or investment documents and apply through the bank for that specific route.", source("S20", "S21", "S22")),
+        ("<strong>Q14. What records must I keep?</strong>", "The FX purchase record, fee receipts and final account credit form the audit trail; FBAR maximum balances must be updated.", "Nothing unknown: this is a fixed checklist.", "Retain the complete chain from income to final credit and reconcile it against the modeled cost.", source("S1", "S4", "S25")),
+    ]
+    q_table = table(
+        ["Question", "What the official rule already answers", "Still unknown for this person", "How to discover it", "Official sources"],
+        q_rows,
+        "Every row links the primary evidence for the known answer. Unknowns are personal facts or live quotes and stay blank until discovered by the stated step.",
+    )
+    d_rows = [
+        ("Bank identity classification", "Written statement of the recorded domestic/foreign-individual classification", "Chinese bank branch or app", source("S2")),
+        ("Source-of-funds chain", "Contracts, payslips and amount-matched statements for each tranche", "Employer and Chinese bank", source("S1")),
+        ("Chinese tax evidence", "Individual income tax payment records matching the amount", "State Taxation Administration or individual income tax app", source("S1")),
+        ("All-in bank quote", "CNY debit, execution rate, commission, telecom, correspondent deduction, net USD credit and quote expiry", "Chinese bank (written quote)", source("S4", "S6")),
+        ("Wise live quote (if eligible)", "CNY debit, fee, execution rate and net USD credit for the same payout", "Wise app after verification", source("S11", "S13")),
+        ("US receiving fee", "Incoming-wire fee for your exact US account type", "Your US bank's fee schedule", source("S42", "S43", "S44")),
+        ("US tax character", "Basis reconstruction and a qualified cross-border tax memo", "CPA and prior US returns", source("S32", "S38")),
+        ("Reporting history", "Copies of prior FBAR, Form 8938 and Form 1040 filings", "IRS records and tax preparer", source("S25", "S27")),
+        ("Gift, estate or property documents", "Donor, estate, title or investment records for the specific route", "Bank, notary or property registry", source("S20", "S21")),
+        ("Cash or ATM plan", "Customs declaration and FinCEN Form 105 analysis if applicable", "China Customs and US CBP", source("S50", "S51")),
+    ]
+    d_table = table(
+        ["Missing fact", "Exact document or quote to obtain", "Where to get it", "Official sources"],
+        d_rows,
+        "No cost or time estimate is given for obtaining these items; none is published in the cited sources, so none is invented here.",
+    )
+    g_rows = [
+        ("<strong>Gate 1 · Identity confirmed</strong>", "Bank classification obtained in writing.", "Stop. Do not choose a route until the classification is known.", source("S2")),
+        ("<strong>Gate 2 · Source documented</strong>", "Each tranche labeled and evidenced.", "Stop. Do not relabel salary, gifts, property or company funds as one another.", source("S1")),
+        ("<strong>Gate 3 · Tax evidence assembled</strong>", "Chinese tax vouchers match the amount.", "Stop. Do not proceed on ID alone where documentation is required.", source("S1")),
+        ("<strong>Gate 4 · Reporting reviewed</strong>", "FBAR, Form 8938 and Form 3520 history checked.", "Resolve past filings first; the wire does not cure earlier omissions.", source("S25", "S27", "S28")),
+        ("<strong>Gate 5 · Written all-in quote obtained</strong>", "Same-net-USD comparison is possible.", "Do not rank routes or claim a cheapest option without it.", source("S4", "S11")),
+        ("<strong>Gate 6 · Own-account destination confirmed</strong>", "Recipient is the sender's own US account.", "Do not use a third-party recipient; the bank or provider will reject it.", source("S11", "S1")),
+        ("<strong>Gate 7 · Records plan ready</strong>", "FX memo, receipts and final-credit retention arranged.", "Do not execute without an audit trail.", source("S4", "S25")),
+    ]
+    g_table = table(
+        ["Gate, in order", "Pass condition", "If not passed", "Official sources"],
+        g_rows,
+        "Gates are sequential: a later gate cannot cure an earlier failure.",
+    )
+    body = f'''
+{callout("info", "How to use this page", "No route, cost or tax conclusion is reasonable until identity, source of funds, Chinese tax history and US reporting history are known. This page lists every decision question, what the official rule already answers, what is still unknown for this person, and the exact step that discovers it. Unknowns stay blank until discovered — they are never guessed. " + source("S1", "S2", "S32"))}
+{callout("warn", "What this page is not", "This is general research, not individualized legal, tax or investment advice. Eligibility follows the source and character of funds, the identity used at the bank, tax residence and transaction purpose. Obtain a written all-in quote and qualified cross-border tax review before execution. " + source("S32", "S4"))}
+<section class="section"><div class="section-heading"><p class="eyebrow">01 · Questions and answers</p><h2>Fourteen questions before any decision</h2><a href="methods.html">18 procedures →</a></div>{q_table}</section>
+<section class="section"><div class="section-heading"><p class="eyebrow">02 · Discover the missing facts</p><h2>Missing-information checklist</h2><a href="flagged.html">Flagged for Review →</a></div>{d_table}</section>
+<section class="section"><div class="section-heading"><p class="eyebrow">03 · Decision gates</p><h2>Seven gates, in order</h2><a href="summary.html">Executive summary →</a></div>{g_table}</section>
+<section class="section"><div class="section-heading"><p class="eyebrow">04 · After the gates</p><h2>Where to go next</h2></div><p>Once every gate passes, compare the documented routes on <a href="methods.html">Methods</a>, price them on <a href="penalties.html">Costs</a>, confirm the tax boundary on <a href="taxes.html">Taxes</a>, and check bank tariffs on <a href="banks.html">Banks</a>. Anything still unknown is published on <a href="flagged.html">Flagged for Review</a> with its manual check. {source("S1", "S4", "S32")}</p></section>'''
+    return layout("questions.html", "Before you decide: questions, answers and missing-information checklist", "What must be known before any route, cost or tax conclusion is reasonable — and exactly how to discover each missing fact.", body)
+
+
 def penalties_page():
     bank_rows = []
     compare_rows = []
@@ -651,7 +716,7 @@ def penalties_page():
         ("Form 3520 specified foreign gift reporting", "5% of gift per month, capped at 25%, for covered late reporting; see instructions for facts/defenses", source("S28")),
     ]
     body = f'''
-{callout("info", "Rate freshness check — " + RESEARCH_DATE, "A second read of " + source("S48") + " at 2026/11/10 07:32:39 Beijing showed USD buying 666.22 and selling 669.03 CNY per 100 USD, with a separately published Middle Rate column of 671.88. The matrices use the earlier 2026-11-09 05:30 row (666.48 / 669.29 per 100 USD). BOC's Middle Rate is a distinct published column, not the arithmetic midpoint of its buy/sell quotes, so the model computes its own midpoint. Both are dated snapshots, not executable quotes: obtain a written same-time rate before execution. See <a href='flagged.html'>Flagged for Review</a>.")}
+{callout("info", "Rate freshness check — " + RESEARCH_DATE, "A second read of " + source("S48") + " at 2026/11/10 07:32:39 Beijing showed USD buying 666.22 and selling 669.03 CNY per 100 USD, with a separately published Middle Rate column of 671.88. A third read at 2026/11/11 10:30:02 Beijing showed USD buying 666.29 and selling 669.10 CNY per 100 USD (Middle Rate 671.91), a half-spread of about 0.2104%, still representative of the modeled 0.210366% while the absolute rate has moved. The matrices use the earlier 2026-11-09 05:30 row (666.48 / 669.29 per 100 USD). BOC's Middle Rate is a distinct published column, not the arithmetic midpoint of its buy/sell quotes, so the model computes its own midpoint. All are dated snapshots, not executable quotes: obtain a written same-time rate before execution. See <a href='flagged.html'>Flagged for Review</a>.")}
 {callout("warn", "Read the model boundary", "These are planning models from official published inputs—not executable all-in quotes. CNY principal means the USD-equivalent principal multiplied by 6.6929; final USD received requires a live execution rate and every intermediary/receiver fee. A blank means unknown, not zero.")}
 <section class="section"><div class="section-heading"><p class="eyebrow">Model inputs</p><h2>Formula and source hierarchy</h2></div><div class="formula-grid"><div><h3>BOC personal US-bound TT</h3><code>fee CNY = clamp(0.001 × USD principal × 6.6929, 50, 260) + 150</code><p>Current 2025-11-11 personal tariff. Electronic channels share counter pricing; agreements/promotions and actual foreign-bank charges may differ. {source("S4", "S45")}</p></div><div><h3>Same-quote retail benchmark</h3><code>midpoint = (6.6648 + 6.6929) / 2 = 6.67885</code><code>half-spread = principal × (6.6929 − midpoint) / midpoint</code><p>0.2103656% of USD-equivalent principal. This is an arithmetic benchmark, not a guaranteed markup or accessible mid-market execution. {source("S5")}</p></div><div><h3>Wise examples, not quotes</h3><p>Wise published examples for a CNY 10,000 transfer in 2024, including bank-app and Alipay funding. Those examples do not establish current prices at these matrix amounts. Current totals and execution rate remain blank. {source("S11", "S13")}</p></div></div><p class="note">BOC quote timestamp: {QUOTE_TIME}. The research cutoff is {RESEARCH_DATE}. Cross-check: BOC’s board on 2026-11-10 02:49 Beijing showed USD buy 6.6622 / sell 6.6903, a half-spread of 0.210449% versus the modeled 0.210366% (about 0.04% relative difference), so the dated input remains representative while the absolute rate has moved. The exact 2026-11-09 05:30 row has rolled off BOC’s paginated board; re-query that date through BOC’s official historical search. The quote is labeled, never treated as synchronous with another market rate. {source("S48")}</p></section>
 <section class="section"><div class="section-heading"><p class="eyebrow">40 amounts · Bank rails</p><h2>BOC conversion, remittance, and draft costs</h2></div>{bank_table}</section>
@@ -847,6 +912,7 @@ def main():
     pages = {
         "index.html": index_page(),
         "summary.html": summary_page(),
+        "questions.html": questions_page(),
         "methods.html": methods_page(),
         "penalties.html": penalties_page(),
         "taxes.html": taxes_page(),
