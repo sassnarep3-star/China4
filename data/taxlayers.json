@@ -1,0 +1,254 @@
+{
+  "as_of": "2026-11-11",
+  "historical_cny_per_usd": "6.6929",
+  "rate_note": "The PRC rates are applied to the USD amount after converting at the historical 6.6929 CNY/USD BOC selling rate, so a 20% rate on CNY income equals 20% of the USD equivalent at that rate. Not a current quote.",
+  "statutory_rates": {
+    "comprehensive_3_45": "0.03-0.45",
+    "business_5_35": "0.05-0.35",
+    "flat_20": "0.20",
+    "late_fee_per_day": "0.0005",
+    "evasion_fine_range": "0.50-5.00"
+  },
+  "rows": [
+    {
+      "amount_usd": "10000",
+      "prc_tax_20pct_usd": "2000.00",
+      "prc_tax_45pct_usd": "4500.00",
+      "prc_late_fee_30d_usd": "30.000000"
+    },
+    {
+      "amount_usd": "20000",
+      "prc_tax_20pct_usd": "4000.00",
+      "prc_tax_45pct_usd": "9000.00",
+      "prc_late_fee_30d_usd": "60.000000"
+    },
+    {
+      "amount_usd": "30000",
+      "prc_tax_20pct_usd": "6000.00",
+      "prc_tax_45pct_usd": "13500.00",
+      "prc_late_fee_30d_usd": "90.000000"
+    },
+    {
+      "amount_usd": "40000",
+      "prc_tax_20pct_usd": "8000.00",
+      "prc_tax_45pct_usd": "18000.00",
+      "prc_late_fee_30d_usd": "120.000000"
+    },
+    {
+      "amount_usd": "50000",
+      "prc_tax_20pct_usd": "10000.00",
+      "prc_tax_45pct_usd": "22500.00",
+      "prc_late_fee_30d_usd": "150.000000"
+    },
+    {
+      "amount_usd": "60000",
+      "prc_tax_20pct_usd": "12000.00",
+      "prc_tax_45pct_usd": "27000.00",
+      "prc_late_fee_30d_usd": "180.000000"
+    },
+    {
+      "amount_usd": "70000",
+      "prc_tax_20pct_usd": "14000.00",
+      "prc_tax_45pct_usd": "31500.00",
+      "prc_late_fee_30d_usd": "210.000000"
+    },
+    {
+      "amount_usd": "80000",
+      "prc_tax_20pct_usd": "16000.00",
+      "prc_tax_45pct_usd": "36000.00",
+      "prc_late_fee_30d_usd": "240.000000"
+    },
+    {
+      "amount_usd": "90000",
+      "prc_tax_20pct_usd": "18000.00",
+      "prc_tax_45pct_usd": "40500.00",
+      "prc_late_fee_30d_usd": "270.000000"
+    },
+    {
+      "amount_usd": "100000",
+      "prc_tax_20pct_usd": "20000.00",
+      "prc_tax_45pct_usd": "45000.00",
+      "prc_late_fee_30d_usd": "300.000000"
+    },
+    {
+      "amount_usd": "110000",
+      "prc_tax_20pct_usd": "22000.00",
+      "prc_tax_45pct_usd": "49500.00",
+      "prc_late_fee_30d_usd": "330.000000"
+    },
+    {
+      "amount_usd": "120000",
+      "prc_tax_20pct_usd": "24000.00",
+      "prc_tax_45pct_usd": "54000.00",
+      "prc_late_fee_30d_usd": "360.000000"
+    },
+    {
+      "amount_usd": "130000",
+      "prc_tax_20pct_usd": "26000.00",
+      "prc_tax_45pct_usd": "58500.00",
+      "prc_late_fee_30d_usd": "390.000000"
+    },
+    {
+      "amount_usd": "140000",
+      "prc_tax_20pct_usd": "28000.00",
+      "prc_tax_45pct_usd": "63000.00",
+      "prc_late_fee_30d_usd": "420.000000"
+    },
+    {
+      "amount_usd": "150000",
+      "prc_tax_20pct_usd": "30000.00",
+      "prc_tax_45pct_usd": "67500.00",
+      "prc_late_fee_30d_usd": "450.000000"
+    },
+    {
+      "amount_usd": "160000",
+      "prc_tax_20pct_usd": "32000.00",
+      "prc_tax_45pct_usd": "72000.00",
+      "prc_late_fee_30d_usd": "480.000000"
+    },
+    {
+      "amount_usd": "170000",
+      "prc_tax_20pct_usd": "34000.00",
+      "prc_tax_45pct_usd": "76500.00",
+      "prc_late_fee_30d_usd": "510.000000"
+    },
+    {
+      "amount_usd": "180000",
+      "prc_tax_20pct_usd": "36000.00",
+      "prc_tax_45pct_usd": "81000.00",
+      "prc_late_fee_30d_usd": "540.000000"
+    },
+    {
+      "amount_usd": "190000",
+      "prc_tax_20pct_usd": "38000.00",
+      "prc_tax_45pct_usd": "85500.00",
+      "prc_late_fee_30d_usd": "570.000000"
+    },
+    {
+      "amount_usd": "200000",
+      "prc_tax_20pct_usd": "40000.00",
+      "prc_tax_45pct_usd": "90000.00",
+      "prc_late_fee_30d_usd": "600.000000"
+    },
+    {
+      "amount_usd": "210000",
+      "prc_tax_20pct_usd": "42000.00",
+      "prc_tax_45pct_usd": "94500.00",
+      "prc_late_fee_30d_usd": "630.000000"
+    },
+    {
+      "amount_usd": "220000",
+      "prc_tax_20pct_usd": "44000.00",
+      "prc_tax_45pct_usd": "99000.00",
+      "prc_late_fee_30d_usd": "660.000000"
+    },
+    {
+      "amount_usd": "230000",
+      "prc_tax_20pct_usd": "46000.00",
+      "prc_tax_45pct_usd": "103500.00",
+      "prc_late_fee_30d_usd": "690.000000"
+    },
+    {
+      "amount_usd": "240000",
+      "prc_tax_20pct_usd": "48000.00",
+      "prc_tax_45pct_usd": "108000.00",
+      "prc_late_fee_30d_usd": "720.000000"
+    },
+    {
+      "amount_usd": "250000",
+      "prc_tax_20pct_usd": "50000.00",
+      "prc_tax_45pct_usd": "112500.00",
+      "prc_late_fee_30d_usd": "750.000000"
+    },
+    {
+      "amount_usd": "260000",
+      "prc_tax_20pct_usd": "52000.00",
+      "prc_tax_45pct_usd": "117000.00",
+      "prc_late_fee_30d_usd": "780.000000"
+    },
+    {
+      "amount_usd": "270000",
+      "prc_tax_20pct_usd": "54000.00",
+      "prc_tax_45pct_usd": "121500.00",
+      "prc_late_fee_30d_usd": "810.000000"
+    },
+    {
+      "amount_usd": "280000",
+      "prc_tax_20pct_usd": "56000.00",
+      "prc_tax_45pct_usd": "126000.00",
+      "prc_late_fee_30d_usd": "840.000000"
+    },
+    {
+      "amount_usd": "290000",
+      "prc_tax_20pct_usd": "58000.00",
+      "prc_tax_45pct_usd": "130500.00",
+      "prc_late_fee_30d_usd": "870.000000"
+    },
+    {
+      "amount_usd": "300000",
+      "prc_tax_20pct_usd": "60000.00",
+      "prc_tax_45pct_usd": "135000.00",
+      "prc_late_fee_30d_usd": "900.000000"
+    },
+    {
+      "amount_usd": "310000",
+      "prc_tax_20pct_usd": "62000.00",
+      "prc_tax_45pct_usd": "139500.00",
+      "prc_late_fee_30d_usd": "930.000000"
+    },
+    {
+      "amount_usd": "320000",
+      "prc_tax_20pct_usd": "64000.00",
+      "prc_tax_45pct_usd": "144000.00",
+      "prc_late_fee_30d_usd": "960.000000"
+    },
+    {
+      "amount_usd": "330000",
+      "prc_tax_20pct_usd": "66000.00",
+      "prc_tax_45pct_usd": "148500.00",
+      "prc_late_fee_30d_usd": "990.000000"
+    },
+    {
+      "amount_usd": "340000",
+      "prc_tax_20pct_usd": "68000.00",
+      "prc_tax_45pct_usd": "153000.00",
+      "prc_late_fee_30d_usd": "1020.000000"
+    },
+    {
+      "amount_usd": "350000",
+      "prc_tax_20pct_usd": "70000.00",
+      "prc_tax_45pct_usd": "157500.00",
+      "prc_late_fee_30d_usd": "1050.000000"
+    },
+    {
+      "amount_usd": "360000",
+      "prc_tax_20pct_usd": "72000.00",
+      "prc_tax_45pct_usd": "162000.00",
+      "prc_late_fee_30d_usd": "1080.000000"
+    },
+    {
+      "amount_usd": "370000",
+      "prc_tax_20pct_usd": "74000.00",
+      "prc_tax_45pct_usd": "166500.00",
+      "prc_late_fee_30d_usd": "1110.000000"
+    },
+    {
+      "amount_usd": "380000",
+      "prc_tax_20pct_usd": "76000.00",
+      "prc_tax_45pct_usd": "171000.00",
+      "prc_late_fee_30d_usd": "1140.000000"
+    },
+    {
+      "amount_usd": "390000",
+      "prc_tax_20pct_usd": "78000.00",
+      "prc_tax_45pct_usd": "175500.00",
+      "prc_late_fee_30d_usd": "1170.000000"
+    },
+    {
+      "amount_usd": "400000",
+      "prc_tax_20pct_usd": "80000.00",
+      "prc_tax_45pct_usd": "180000.00",
+      "prc_late_fee_30d_usd": "1200.000000"
+    }
+  ]
+}
