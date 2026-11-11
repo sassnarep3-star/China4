@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the tax-gate page: what actually creates a tax or a documentation
+"""Build the tax-layer page: what actually creates a tax or a documentation
 block when CNY becomes USD.
 
 Every figure below is either (a) quoted from an official page fetched in this
@@ -76,7 +76,7 @@ def main():
         },
         'rows': rows,
     }
-    (ROOT / 'data/taxgate.json').write_text(json.dumps(data, indent=2) + '\n')
+    (ROOT / 'data/taxlayers.json').write_text(json.dumps(data, indent=2) + '\n')
 
     # --- 1. Framing ---------------------------------------------------------
     body = ('<p><a href="taxes.html">Tax overview →</a> · <a href="treaty-filings.html">Treaty and '
@@ -315,13 +315,13 @@ def main():
              'estimate of your liability.</li></ul>')
     body += ('<p>Row-by-row verification for this page is recorded on '
              '<a href="verification.html">Verification</a>; the build is reproducible with '
-             '<code>python3 scripts/build_taxgate.py</code> from <code>data/taxgate.json</code>.</p>')
+             '<code>python3 scripts/build_taxlayers.py</code> from <code>data/taxlayers.json</code>.</p>')
 
-    (ROOT / 'taxgate.html').write_text(
-        layout('taxgate.html', 'Tax gate',
+    (ROOT / 'taxlayers.html').write_text(
+        layout('taxlayers.html', 'Tax gate',
                'What actually costs tax when CNY becomes USD — and in what order to fix it.',
                body))
-    print('Built taxgate.html and data/taxgate.json')
+    print('Built taxlayers.html and data/taxlayers.json')
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate taxgate.html against data/taxgate.json and the repository.
+"""Validate taxlayers.html against data/taxlayers.json and the repository.
 
 Checks performed (no network access):
   * every amount row is recomputed independently with Decimal
@@ -24,8 +24,8 @@ ALLOWED = (
 )
 
 errors = []
-data = json.loads((ROOT / 'data/taxgate.json').read_text())
-html = (ROOT / 'taxgate.html').read_text()
+data = json.loads((ROOT / 'data/taxlayers.json').read_text())
+html = (ROOT / 'taxlayers.html').read_text()
 
 # --- 1. independent arithmetic ------------------------------------------------
 rows = data['rows']
