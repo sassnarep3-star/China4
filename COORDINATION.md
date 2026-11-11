@@ -1099,3 +1099,8 @@ Claim: existing content scopes are preserved. This is a narrow integration/publi
 - **Irregularities:** none found in the spot-checked claims. Standing known items (no live provider quote; dated BOC row not permanently retrievable; legacy branch publishing serves repo root) remain published on Flagged for Review and do not block publication.
 - **Scope kept:** only `COORDINATION.md` and the new audit file were edited; no generated page, data, or script was touched, so no other session's claimed files were affected.
 - Task 26 status: done (pending PR merge + Pages confirmation below).
+## Session arena/2a3963ca-china4 — CI coverage and release audit
+
+| Task | Scope | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| Repair missing tax-layers generation and validation in CI, run reproducible-build and publication checks, publish the result | `.github/workflows/gh-pages.yml`, `README.md`, this board section | in progress | arena/2a3963ca-china4 | 2026-11-11 12:52 | Prior workflow and README claims are completed or stale (>60 minutes); prior publication audits report successful merges. No financial data or generated pages claimed. Arena fixes the branch name. |
