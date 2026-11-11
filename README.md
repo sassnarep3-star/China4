@@ -23,6 +23,7 @@ The 2026-11-11 audit re-read the load-bearing sources (SAFE individual FX rules,
 - **Questions** — the before-you-decide checklist: fourteen questions with known answers, unknowns and discovery steps, plus seven sequential decision gates.
 - **Method matrix** — [40-amount bank tariff and provider-cap comparison](method-matrix.html), illustrative only.
 - **Treaty & filings** — [treaty relief, outbound filings, and remediation](treaty-filings.html).
+- **Tax gate** — [what actually costs tax when CNY becomes USD](taxgate.html): China IIT by source of funds, the bank's tax-voucher gate, penalty arithmetic and the order to fix it in.
 - **Methods** — pros, cons, constraints, and exact procedures for each route.
 - **Costs** — five 40-row matrices covering $10,000 through $400,000 in $10,000 increments, including unpriced routes, special property routes and statutory penalty ceilings.
 - **Taxes** — China IIT, US worldwide income, FBAR, Form 8938, Form 3520, cash reporting, FEIE/FTC, treaty and filing corrections, plus a sourced 2026 tax illustration.
@@ -46,10 +47,12 @@ python3 scripts/build_site.py
 python3 scripts/build_evidence.py
 python3 scripts/build_bank_playbooks.py
 python3 scripts/build_method_treaty.py
+python3 scripts/build_taxgate.py
 python3 scripts/validate_site.py
 python3 scripts/validate_evidence.py
 python3 scripts/validate_bank_playbooks.py
 python3 scripts/validate_method_treaty.py
+python3 scripts/validate_taxgate.py
 ```
 
 `build_site.py` uses `Decimal` arithmetic to regenerate all eight HTML pages and `data/cost-model.json`. `build_bank_playbooks.py` generates the three additive pages from `data/bank-playbooks.json`. The validators independently recalculate the amount ladder, BOC fees/FX benchmark, conditional annual schedule and published tariff scenarios; they also check HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts. They require a direct source link in each table body row; this structural check does not prove that a linked source supports every claim or that external links are live.
