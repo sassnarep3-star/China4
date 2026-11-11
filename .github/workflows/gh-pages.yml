@@ -24,5 +24,5 @@ jobs:
       - name: Verify generated files are current
         run: git diff --exit-code
       - name: Validate HTML, links, source register and calculations
-        run: python3 scripts/validate_site.py && python3 scripts/validate_evidence.py && python3 scripts/validate_bank_playbooks.py && python3 scripts/validate_method_treaty.py && python3 scripts/validate_effective_dates.py
+        run: python3 scripts/validate_site.py && python3 scripts/validate_evidence.py && python3 scripts/validate_bank_playbooks.py && python3 scripts/validate_method_treaty.py && python3 scripts/validate_effective_dates.py && python3 scripts/validate_publication.py
 
