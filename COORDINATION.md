@@ -714,3 +714,31 @@ Every figure below was re-read from the linked official page in this session, no
 - Live content was read back after deployment: the dashboard (`index.html`) shows the integrated route inventory with the Wise current-cost cell blanked and the corrected penalty wording, and `banks.html` serves the eight-row multi-bank tariff table with the new navigation. Direct `curl` to `github.io` is blocked by this sandbox's outbound-host allowlist (SSL connect error), so live content was confirmed through the page-fetch tool and the Pages API rather than a claimed browser fetch.
 - Task 19 is **done**. The published site now has eleven pages: `index.html`, `summary.html`, `methods.html`, `penalties.html`, `taxes.html`, `flagged.html`, `sources.html`, `evidence.html`, `banks.html`, `playbooks.html`, `verification.html`, plus the `estimates.html` / `costs.html` compatibility redirects.
 - Remaining unresolved items are published, not hidden: current provider quotes, correspondent deductions, account-specific receiving fees, personal source-of-funds facts and personal tax amounts are blank (`—`) and listed on `flagged.html` and `verification.html`. No universal cheapest route is claimed.
+
+## Session arena/c5e783f4-china4 — final verification, gap audit, and publication (2026-11-11)
+
+| Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| 20 | Final verification and publication: re-run all generators/validators, audit the live site against every user requirement (executive summary, questions/information/answers, US-citizen best route, methods pros/cons, penalty breakdown, $10k–$400k cost tables, step-by-step procedures, site structure, line-by-line sourcing), spot-check load-bearing official sources, fix any gap found, then PR → merge → confirm Pages deploy | COORDINATION.md (this section); site fixes only if a gap is found, via `scripts/build_site.py` / `scripts/build_evidence.py` / `scripts/build_bank_playbooks.py` + regenerated HTML + `data/*.json` | arena/c5e783f4-china4 | 2026-11-11 02:32 | Branch fixed by Arena (`arena/c5e783f4-china4`). No other session holds a live claim on these files: task 17 taxgate (`arena/8686e554-china4`) and tasks 13/15 have no remote branch and no work-product commits; PRs #4/#5/#12/#38 are stale and untouched. Shared-file edits limited to this claim. |
+
+### Claim log — arena/c5e783f4-china4
+- Board read 2026-11-11 02:32 UTC. `main` = `62210ff` (PR #44 merge, task 19 done, Pages `built`). Only remote branch is `origin/main`; no competing live claim. This session claims task 20 above and will not edit files outside its scope except to fix a verified gap.
+- Work plan: (1) rebuild + validate all three generators; (2) local HTTP smoke test of every page; (3) read back the live site and compare to repo; (4) spot-check official sources (BOC board/tariff, SAFE, IRS, eCFR, FinCEN/CBP); (5) requirement-by-requirement gap audit; (6) commit, push, PR, merge, confirm deploy; (7) record result here.
+
+### Verification performed — arena/c5e783f4-china4 (2026-11-11 02:32–02:50 UTC)
+
+**Rebuilt and re-validated.** `python3 scripts/build_site.py` → 7 main pages, 2 redirects, 40 amount rows; `build_evidence.py` → evidence.html (8 checked rules, 18×40 strict rows); `build_bank_playbooks.py` → 3 additive pages. `validate_site.py` → PASS (7 pages, 18 procedures, 5×40 matrices, 2026 tax illustration, 54 sources, Decimal arithmetic); `validate_evidence.py` → PASS (720 strictly blank current-cost rows); `validate_bank_playbooks.py` → PASS (49 sources, 9 playbooks/63 cited steps, 28 ledger rows). Rebuild produced zero diff — generated files are current. Local HTTP smoke test returned 200 for all 11 pages, both redirects, `style.css` and both JSON data files.
+
+**Live site read back.** https://sassnarep3-star.github.io/China4/ serves the current dashboard (executive answer, cost snapshot, 18-route inventory). Pages API reports `status: built`, `build_type: legacy`, `source: main:/`.
+
+**Official sources spot-checked this session (re-read, not merely linked):**
+
+| Claim checked | Verified value | Official source |
+|---|---|---|
+| BOC FX board (current) | USD buying 666.29 / selling 669.10 per 100 USD at 2026/11/11 10:30:02; half-spread 0.2104% vs modelled 0.21037% — representative, absolute rate moved as flagged | [BOC exchange-rate board](https://www.boc.cn/sourcedb/whpj/enindex.html) |
+| FBAR civil penalties | non-willful USD 16,536; willful USD 165,353; assessed on/after 2025-01-17 (31 CFR 1010.821 Table 1) | [eCFR 31 CFR 1010.821](https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821) |
+| US personal FX gain threshold | gain on a personal foreign-currency transaction excluded unless more than USD 200, then capital gain | [IRS Publication 525](https://www.irs.gov/publications/p525) |
+
+**Requirement-by-requirement gap audit.** Executive summary → `summary.html` + `EXECUTIVE_SUMMARY.md`. Questions/information/answers + how to discover missing information → `flagged.html` ("Required verification" column with official starting points) + `taxes.html` ("Ten questions for a cross-border tax professional") + dashboard four checks. US-citizen best route → dashboard executive answer (licensed-bank wire with source-of-funds evidence; $50,000 quota is for domestic individuals). Methods pros/cons → `methods.html` (18 routes). Penalty breakdown → `penalties.html` (statutory ceilings vs lawful cost). $10,000–$400,000 tables → five 40-row matrices, mobile card layout at ≤760 px (`data-label`), most important columns first. Step-by-step → `methods.html` + `playbooks.html` (63 cited steps). Sourcing policy → every table row carries a source link (validator-enforced); unverified values blank and flagged. **No gap found; no site change required.** Unverified current quotes (Wise, WU, MoneyGram, correspondent deductions, personal taxes) remain blank by policy — estimating them would be hallucination.
+
+**Irregularities (not merge blockers, already published on flagged.html):** BOC dated quote not permanently retrievable (rotating board + captcha); BOC Middle Rate ≠ arithmetic midpoint; stale open PRs #4/#5/#12/#38 untouched; task 17 taxgate files never delivered (no remote branch) — the China-tax-by-source topic is covered on `taxes.html` + `flagged.html` and is not duplicated here.
