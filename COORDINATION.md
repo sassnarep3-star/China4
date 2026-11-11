@@ -798,4 +798,6 @@ Every figure below was re-read from the linked official page in this session, no
 
 **Irregularities (not blockers, published on flagged.html as before).** Dated BOC row still not permanently retrievable (captcha date query); Wise current prices still blank; personal facts/tax amounts still blank. No new irregularities found; no values inferred.
 
-**Publication.** PR opened from `arena/e701c274-china4` to `main`, merged without waiting (per brief), Pages deployment confirmed, PR link recorded here after merge.
+**Publication status.** [PR #47](https://github.com/sassnarep3-star/China4/pull/47) is open; merge and deployment remain pending. Concurrent PRs #45, #48 and #46 updated main; rebase conflicts in this log and generated HTML were resolved by retaining both sessions’ logs and rebuilding from the merged generators.
+
+- Checklist wording tightened: cash declaration does not authorize exceeding the RMB limit, and own-account restrictions and tax documentation are route-specific. No universal requirement to resolve past filings before a wire is asserted.
