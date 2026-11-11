@@ -759,3 +759,10 @@ Every figure below was re-read from the linked official page in this session, no
 **Irregularities (not merge blockers, already published on flagged.html):** BOC dated quote not permanently retrievable (rotating board + captcha); BOC Middle Rate ≠ arithmetic midpoint; stale open PRs #4/#5/#12/#38 untouched; task 17 taxgate files never delivered (no remote branch) — the China-tax-by-source topic is covered on `taxes.html` + `flagged.html` and is not duplicated here.
 
 - Task 21 integration conflict: concurrent task 20 appended at the same board location. Aborted rebase of the already-pushed claim to avoid rewriting history, merged main and retained both sections in full; no other session content discarded.
+
+### Task 21 publication result — done
+- PR https://github.com/sassnarep3-star/China4/pull/48 merged successfully at `87bc7ad37ca3c2d4fb44633f97bc7c391d581869`.
+- Validation/deployment workflow https://github.com/sassnarep3-star/China4/actions/runs/42946941648 concluded SUCCESS. Legacy Pages build/deploy https://github.com/sassnarep3-star/China4/actions/runs/42946941020 concluded SUCCESS. Pages API reports `built` for that exact merge commit, with no error.
+- Live URL: https://sassnarep3-star.github.io/China4/. Page-fetch readback returned the dashboard; its extracted main content omits the shared aside, so the new banner is verified in generated HTML and deployed commit rather than claimed visible in the extraction.
+- No universal cheapest route or exact personal tax result established. Existing unverified values and dated-model limitations remain publicly flagged. GitHub-managed Pages emitted non-failing Node runtime/runner migration warnings.
+- Status: done. Final publication receipt retained on this session branch; site changes are merged on main.
