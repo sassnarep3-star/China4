@@ -53,6 +53,8 @@ python3 scripts/validate_evidence.py
 python3 scripts/validate_bank_playbooks.py
 python3 scripts/validate_method_treaty.py
 python3 scripts/validate_taxlayers.py
+python3 scripts/validate_effective_dates.py
+python3 scripts/validate_publication.py
 ```
 
 `build_site.py` uses `Decimal` arithmetic to regenerate all eight HTML pages and `data/cost-model.json`. `build_bank_playbooks.py` generates the three additive pages from `data/bank-playbooks.json`. The validators independently recalculate the amount ladder, BOC fees/FX benchmark, conditional annual schedule and published tariff scenarios; they also check HTML nesting, landmarks, local links, anchors, source counts, route counts and matrix row counts. They require a direct source link in each table body row; this structural check does not prove that a linked source supports every claim or that external links are live.
