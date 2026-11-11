@@ -1,4 +1,4 @@
-name: Validate and deploy China4
+name: Validate China4
 
 on:
   push:
@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 jobs:
   validate:
@@ -26,32 +24,5 @@ jobs:
       - name: Verify generated files are current
         run: git diff --exit-code
       - name: Validate HTML, links, source register and calculations
-        run: python3 scripts/validate_site.py && python3 scripts/validate_evidence.py && python3 scripts/validate_bank_playbooks.py && python3 scripts/validate_method_treaty.py && python3 scripts/validate_effective_dates.py
+        run: python3 scripts/validate_site.py && python3 scripts/validate_evidence.py && python3 scripts/validate_bank_playbooks.py && python3 scripts/validate_method_treaty.py && python3 scripts/validate_effective_dates.py && python3 scripts/validate_publication.py
 
-  deploy:
-    if: github.event_name != 'pull_request'
-    needs: validate
-    concurrency:
-      group: pages-deploy
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Stage public site
-        run: |
-          mkdir _site
-          cp ./*.html ./*.css _site/
-          mkdir _site/data
-          cp data/*.json _site/data/
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "_site"
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4

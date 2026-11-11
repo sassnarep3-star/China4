@@ -863,6 +863,28 @@ Every figure below was re-read from the linked official page in this session, no
 - **Integration scope:** Re-fetched all branch heads; the two live overlapping tax-gate sessions remain confined to additive files, with no current shared-file claims. Added navigation, CI validation and artifact staging for task 23, without touching their files. Pages artifact now stages root HTML/CSS and JSON files; moved Pages concurrency to deploy only so PR validation is not cancelled by unrelated runs. Legacy Pages versus Actions deployment race remains an administrative configuration issue requiring repository settings review.
 - **Validation:** Four builders and all five validators including the effective-date regression pass locally. Task 23 validator independently checks all 40 tariff calculations, cap counts, sourced responsive rows and local links.
 
+## Session arena/47133a67-china4 — deployment reliability
+
+| Task | Scope | Status | Owner | Started UTC | Notes |
+|---|---|---|---|---|---|
+| Diagnose and repair failed Pages deployment after PR #55; validate and publish | `.github/workflows/gh-pages.yml`, `COORDINATION.md` | in progress | arena/47133a67-china4 | 2026-11-11 07:36 | Prior integration branch merged; earlier workflow claims have been inactive for over 60 minutes. Arena-fixed branch. Investigate failure before altering settings. |
+- Initial branch pull failed because the remote branch did not yet exist; the initial push then created it. Task 23 shipped in PR #55, but its board entry remained in progress; earlier task 22's branch had no commits in over 60 minutes and its claimed files are absent from main. No unpublished work is assumed verified or merged.
+- GitHub API showed legacy branch publishing from main and successful Pages build for PR #55, but the separate custom deploy job failed. Its failure log was inaccessible (GitHub log host returned EOF), so the precise failure is unconfirmed. A request to switch Pages to Actions received HTTP 403 (integration lacks access). Rather than leave a failing competing deployment, removed the redundant custom deploy job and retained validation; the existing branch publisher remains authoritative. GitHub's [publishing-source documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) describes branch vs workflow publishing. Branch publishing exposes repository-root content and is independent of validation; documented both limitations in README. No claim of full line-by-line external source verification is made by this session.
+## Session arena/e1d49618-china4 — publication integrity audit
+
+| Task | Scope | Status | Owner | Started UTC |
+|---|---|---|---|---|
+| Audit generated site, current deployment configuration and reproducible validation; publish audit limits | COORDINATION.md, PUBLICATION_AUDIT.md, scripts/validate_publication.py, .github/workflows/gh-pages.yml (validation step only); GitHub Pages settings | in progress | arena/e1d49618-china4 | 2026-11-11 07:40 |
+
+Claim: existing content scopes are preserved. This is a narrow integration/publication task, not a claim that inherited financial research has been independently verified. Previous shared-file claims are over 60 minutes old; no open PR currently owns this scope. Arena requires the fixed current branch, so no additional branch is created. Source retrieval and personal-account limits will be reported explicitly.
+
+### Audit outcome — arena/e1d49618-china4
+- Scope expanded only to `scripts/build_site.py` and generated `flagged.html` for the required published irregularity. Existing content and other sessions' additive files preserved.
+- Official documents re-read: SAFE 2007 https://www.safe.gov.cn/en/2007/0105/819.html (selected quota/authenticity text), IRS currency https://www.irs.gov/individuals/international-taxpayers/foreign-currency-and-currency-exchange-rates, GitHub Pages https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages. This is not full independent legal verification of inherited research.
+- Confirmed Pages legacy/Actions mismatch; latest custom deploy failed but legacy build succeeded. Settings update denied HTTP 403; no credentials requested. Initially drafted a runtime mode guard; concurrent PR #56 removed the deploy job instead, and that fix is preserved. Added all-root-page local link/anchor validator and Review-page flag. Detailed failed logs inaccessible; failure step confirmed via API metadata only.
+- Four builders and all six validators pass. No generated drift outside the intended Review page. Unknown current quote/tax values remain blank. See PUBLICATION_AUDIT.md for limits and sources. PR and publication confirmation follow below.
+
+- Rebase conflict: concurrent session arena/47133a67-china4 merged PR #56 during this audit. Stopped and resolved board conflicts by retaining both logs; preserved their removed-deploy workflow and narrowed our workflow edit to one validator invocation. No other session work discarded.
 ## Session arena/6691b7ad-china4 — task 24: independent verification, CI deploy repair, and publication (2026-11-11)
 
 | # | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
