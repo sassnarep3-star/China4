@@ -12,7 +12,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ["index.html", "summary.html", "methods.html", "penalties.html", "taxes.html", "sources.html", "flagged.html"]
+PAGES = ["index.html", "summary.html", "questions.html", "methods.html", "penalties.html", "taxes.html", "sources.html", "flagged.html"]
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 ERRORS: list[str] = []
 
@@ -233,6 +233,18 @@ def validate_us_tax():
 def main():
     parsed = {}
     source_urls = set()
+    # The 2026-11-11 ATM adjustment is no longer future. Keep the dated
+    # historical FX benchmark and incomplete-cost warning visible as well.
+    costs_text = (ROOT / "penalties.html").read_text(encoding="utf-8")
+    if "Future Visa/Mastercard formula" in costs_text:
+        fail("penalties: effective ATM tariff mislabeled as future")
+    if "Visa/Mastercard formula effective 2026-11-11" not in costs_text:
+        fail("penalties: missing effective-date ATM tariff label")
+    if "not an executable ATM quote" not in costs_text:
+        fail("penalties: missing ATM scenario/quote distinction")
+    review_text = (ROOT / "flagged.html").read_text(encoding="utf-8")
+    if "buy 666.48 / sell 669.29 CNY per 100 USD" not in review_text:
+        fail("flagged: BOC quoted-rate units incorrect")
     for page in PAGES:
         path = ROOT / page
         text = path.read_text(encoding="utf-8")
@@ -340,7 +352,7 @@ def main():
         for error in ERRORS:
             print(f" - {error}")
         sys.exit(1)
-    print(f"PASS: 7 HTML pages, executive summary, 18 procedures, 5×40 cost matrices, 2026 US tax illustration, {source_rows} sources, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
+    print(f"PASS: 8 HTML pages, executive summary, before-you-decide checklist, 18 procedures, 5×40 cost matrices, 2026 US tax illustration, {source_rows} sources, prose/table count agreement, local links, landmarks and independent Decimal arithmetic.")
 
 
 if __name__ == "__main__":

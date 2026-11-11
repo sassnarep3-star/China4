@@ -715,6 +715,33 @@ Every figure below was re-read from the linked official page in this session, no
 - Task 19 is **done**. The published site now has eleven pages: `index.html`, `summary.html`, `methods.html`, `penalties.html`, `taxes.html`, `flagged.html`, `sources.html`, `evidence.html`, `banks.html`, `playbooks.html`, `verification.html`, plus the `estimates.html` / `costs.html` compatibility redirects.
 - Remaining unresolved items are published, not hidden: current provider quotes, correspondent deductions, account-specific receiving fees, personal source-of-funds facts and personal tax amounts are blank (`—`) and listed on `flagged.html` and `verification.html`. No universal cheapest route is claimed.
 
+## Session arena/9ff08099-china4 — current-date ATM tariff and publication audit
+
+| Task | Scope | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| Audit the newly effective 2026-11-11 BOC overseas ATM tariff against official sources, correct any affected current-cost presentation, validate and publish | `COORDINATION.md`, `scripts/build_site.py`, `scripts/validate_site.py`, generated root HTML and `EXECUTIVE_SUMMARY.md` only if correction required; PR/Pages | done | arena/9ff08099-china4 | 2026-11-11 02:33 | Previous broad claims are older than 60 minutes without new commits; published integration is PR #44. Arena requires this fixed branch. Scope limited to ATM effective-date audit and necessary integration. |
+
+### Audit results — arena/9ff08099-china4 (2026-11-11 UTC)
+- Re-read [BOC's 2026-11-11 ATM notice](https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html): UnionPay ¥12 + 1%, cap ¥112 per withdrawal; Visa/Mastercard 2.5%, min USD-equivalent 3, max USD-equivalent 40 per withdrawal. Corrected the Costs page's now-obsolete “future” label and source register, retaining historical FX assumptions and a warning that the model is not an executable ATM quote. The notice alone does not establish card-specific eligibility, ATM-owner charges or transaction FX.
+- Re-read [SAFE overseas ATM notice](https://www.safe.gov.cn/hubei/2019/0305/851.html): annual CNY100,000 per individual across cards and daily CNY10,000 per card, no borrowed-card evasion. Re-read [SAFE current-account Q&A](https://www.safe.gov.cn/tianjin/2025/0715/2834.html), [IRS currency guidance](https://www.irs.gov/individuals/international-taxpayers/foreign-currency-and-currency-exchange-rates), and [IRS FBAR](https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar) for the summary distinctions.
+- Fixed a material labeling defect in Flagged for Review: the historical quoted 666.48 / 669.29 figure is in CNY per **100** USD, not per USD. Model uses 6.6648 / 6.6929 per USD; numbers were not changed. Historical row remains unverified in this session because BOC's date search requires CAPTCHA; [BOC's rolling board](https://www.boc.cn/sourcedb/whpj/enindex.html) was reviewed only as a current, non-executable cross-check. Current personal fees, individual taxes, eligibility and the historical quote remain flagged, not guessed.
+- Added regression checks for the tariff label, execution-quote disclaimer and quoted-unit correction. All three builders and all three validators pass, including local links, source presence, independent amount calculations and 720 blank strict current-cost rows. This was a **targeted audit**, not a claim that every inherited row or every external link was freshly verified. No source-link checker can establish substantive correctness merely from link presence.
+- Initial pull/rebase failed because the remote session branch did not yet exist; first branch push created it. No other branch was created or pushed.
+## Session arena/198e49b1-china4 — task 21 (2026-11-11 UTC)
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Correct ATM effective-date rollover and add regression coverage; verify and publish | in progress | arena/198e49b1-china4 | scripts/build_site.py, scripts/validate_effective_dates.py, generated root HTML/data/cost-model.json, README.md, COORDINATION.md |
+
+- Read shared board and open PR #45: task 20 changes COORDINATION.md only; no content overlap. This session claims the newly effective 2026-11-11 ATM wording correction, not another session's work. Arena fixes the branch name, so this session uses its assigned branch rather than creating a session branch.
+- Official notice read directly: https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html. Visa/Mastercard fee becomes effective today; inherited copy still calls it future. UnionPay formula is unchanged. No new FX quote or account-specific cost is invented.
+
+### Task 21 verification and limits
+- Re-read official BOC notice: https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html. Corrected obsolete future labels and published the effective-today formula prominently on the eight generator-layout pages; flagged the rollover on flagged.html. No rate or fee calculations changed.
+- Independently re-read SAFE Arts. 2, 13 and 15 at https://www.safe.gov.cn/tianjin/2024/0430/2464.html; Wise outbound eligibility/limits at https://wise.com/help/articles/2955298/guide-to-cny-transfers; and IRS FBAR threshold/dates at https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar. These support the conditional documented-income recommendation, not a cheapest-route guarantee. IRS Pub. 525 retrieval returned only its opening chunk: no new semantic verification claimed for its currency-gain rule.
+- All three existing generators and validators pass. Added `scripts/validate_effective_dates.py`: eight shared-layout pages show the dated notice; obsolete wording absent; original historical FX input preserved. Initial regression expected all eleven pages to use the shared layout; test correctly failed because the bank generator has independent layout. Narrowed the assertion to the eight actually affected pages, without altering unrelated bank pages.
+- Existing strict register retains 720 blank current-cost rows. Personal taxes, bank-specific execution quotes and correspondent charges remain unknown, not zero. No claim is made that every inherited source was re-read this session.
+- Task 20 PR #45 merged concurrently; this session preserves its coordination entry during rebase. Fixed Arena branch remains the integration branch.
 ## Session arena/c5e783f4-china4 — final verification, gap audit, and publication (2026-11-11)
 
 | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
@@ -750,3 +777,40 @@ Every figure below was re-read from the linked official page in this session, no
 - Post-merge workflow [run 42946802184](https://github.com/sassnarep3-star/China4/actions/runs/42946802184) and legacy Pages build/deploy [run 42946801491](https://github.com/sassnarep3-star/China4/actions/runs/42946801491) both concluded **SUCCESS**. Pages API reports `status: built`, live URL https://sassnarep3-star.github.io/China4/.
 - Task 20 is **done**. No site content change was required: the published 11-page dashboard already satisfies the executive summary, questions/information/answers, US-citizen best-route, methods pros/cons, penalty breakdown, $10,000–$400,000 mobile tables, step-by-step procedures, and line-by-line sourcing requirements. Unverified current quotes remain blank and flagged by policy.
 - Note: other sessions merged PR #48 (BOC ATM tariff correction) while this session was publishing; that work is theirs and was not altered here.
+### Coordination conflict — arena/9ff08099-china4
+- Another session claimed an overlapping broad integration audit at the same time on a separate branch, invisible when this claim was pushed, and merged PR #45 while this audit was in progress. The board conflicted; retained both sections without discarding either session’s work. Rebased locally first, then restored the already-pushed commits and merged origin/main to avoid rewriting the published session branch. No site-file conflict occurred.
+- Task 21 integration conflict: concurrent task 20 appended at the same board location. Aborted rebase of the already-pushed claim to avoid rewriting history, merged main and retained both sections in full; no other session content discarded.
+
+### Second integration conflict — arena/9ff08099-china4
+- PR #48 independently completed the same ATM rollover while this session ran, and merged before PR #46. Preserved all of #48’s broader site changes and both coordination logs; retained the separate FX quote-unit correction and a regression check. The first merge attempt of PR #46 failed due to conflicts, not a site validation failure. The required pull/rebase after a merge replayed the other branch’s commits and conflicted; it was aborted in favor of retaining the already-resolved merge history.
+
+### Publication result — arena/9ff08099-china4
+- [PR #46](https://github.com/sassnarep3-star/China4/pull/46) merged 2026-11-11 at `d40b6231c64aefdec0e8c1974b9b2ee3175cf015`; PR validation [run 42947051695](https://github.com/sassnarep3-star/China4/actions/runs/42947051695) passed.
+- Both [legacy Pages deployment 42947089526](https://github.com/sassnarep3-star/China4/actions/runs/42947089526) and [repository validation/deployment 42947090415](https://github.com/sassnarep3-star/China4/actions/runs/42947090415) succeeded for that merge. Live Flagged for Review page was read back, including the corrected per-100-USD unit. GitHub Actions emitted Node 20 deprecation warnings but no failures.
+## Session arena/e701c274-china4 — task 20: fresh audit + "Before You Decide" questions page + publication
+
+| # | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|------|---------------|--------|-------|---------------|-------|
+| 20 | Fresh independent audit of the live site, add a dedicated "Before You Decide" questions/information/answers checklist page (the one brief item without a dedicated home), re-verify load-bearing sources, rebuild/validate, PR, merge, confirm Pages | `COORDINATION.md`; `scripts/build_site.py`, `scripts/validate_site.py`, `scripts/validate_evidence.py`, `data/bank-playbooks.json` (nav only), generated root pages, `.github/workflows/gh-pages.yml`, `README.md`, `EXECUTIVE_SUMMARY.md`; plus this section | done | arena/e701c274-china4 | 2026-11-11 | Arena-fixed branch; no `session-<id>/<task>` branch. Prior tasks 1–19 done; site live at https://sassnarep3-star.github.io/China4/ (PR #44 merged). |
+
+### Claim log — arena/e701c274-china4
+- **Board state read before claiming (2026-11-11).** `main` is `62210ff` (PR #44 merged). Open PRs #4, #5, #12, #38 are stale early-session PRs, untouched. No other session has a live claim with recent commits; this session is the integration owner for task 20.
+- **Gap analysis.** The brief asks for (a) executive summary — exists (`summary.html` + `EXECUTIVE_SUMMARY.md`); (b) clear list of questions/information/answers needed before any decision + how to discover missing info — **no dedicated page** (only scattered "four checks" on `index.html` and 8 steps on `summary.html`); (c) best lawful way for a US citizen + conversion-penalty breakdown — exists (`methods.html`, `penalties.html`, `taxes.html`); (d) $10k–$400k cost tables, mobile-friendly, step-by-step — exists (`penalties.html` 5×40 matrices, `methods.html` 18 procedures, `playbooks.html`); (e) line-by-line verification with source per row, blanks flagged — exists (`verification.html`, `flagged.html`, `evidence.html` strict blanks). This session fills (b) and freshly re-verifies load-bearing sources.
+- **No invented values.** New page reuses only already-registered S-sources; unknown personal facts stay blank and are listed as "how to discover" steps. No new prices, rates, or tax amounts are introduced.
+- **Overlap guard.** Before every push, re-fetch `main` and remote branches. If another session publishes first, link instead of duplicating.
+
+### Verification and publication — arena/e701c274-china4 (task 20, 2026-11-11 UTC)
+
+**Fresh re-verification (read, not merely linked).** SAFE Detailed Rules (Arts. 2, 13–15, 39 repealed by 汇发〔2023〕8号); SAFE 2022 Q&A (convenience quota, not a hard cap); BOC tariff PDF items 210105008/210108014 + notes 5/10; BOC board 2026/11/11 10:30:02 (USD 666.29/669.10, Middle 671.91, half-spread ~0.2104% vs modeled 0.210366%); IRS FBAR (>$10,000, Apr 15/Oct 15); FinCEN FBAR; IRS Pub 525 ($200 threshold); Wise CNY guide (eligibility, CNY 300,000/50,000 caps, own-account). All matched. Live site read back and confirmed.
+
+**New page.** `questions.html` (14 questions + 10-row discovery checklist + 7 gates; 31 sourced rows, all reusing registered S-sources; no new values). Wired into `build_site.py` NAV/main, `validate_site.py` PAGES, `validate_evidence.py` nav list, `data/bank-playbooks.json` nav, Pages artifact, README and EXECUTIVE_SUMMARY. Research cutoff bumped to 2026-11-11 UTC; BOC model inputs unchanged. Penalties freshness callout gained the 2026-11-11 board read (prose only; table counts unchanged).
+
+**Build/validate.** `build_site.py` → 8 pages; `validate_site.py` PASS (8 pages, 54 sources); `validate_evidence.py` PASS (720 blanks); `validate_bank_playbooks.py` PASS. Local HTTP smoke: all 12 pages + redirects + CSS + JSON returned 200. Mobile: all 138 `td` on questions.html carry `data-label`; ≤760px card layout confirmed.
+
+**Irregularities (not blockers, published on flagged.html as before).** Dated BOC row still not permanently retrievable (captcha date query); Wise current prices still blank; personal facts/tax amounts still blank. No new irregularities found; no values inferred.
+
+**Publication.** [PR #47](https://github.com/sassnarep3-star/China4/pull/47) merged 2026-11-11 02:37 UTC as `cbfc46bddffe60ac659a98459d3f996c0e2035d3`. The [Pages workflow](https://github.com/sassnarep3-star/China4/actions/runs/42947260552) completed validation and deployment successfully; the live [questions page](https://sassnarep3-star.github.io/China4/questions.html) was read back. Concurrent PRs #45, #48 and #46 updated main; rebase conflicts in this log and generated HTML were resolved by retaining both sessions’ logs and rebuilding from the merged generators.
+
+- Checklist wording tightened: cash declaration does not authorize exceeding the RMB limit, and own-account restrictions and tax documentation are route-specific. No universal requirement to resolve past filings before a wire is asserted.
+
+- Publication-log PR #50 conflicted after questions-page PR #47 merged concurrently. Retained both board sections and all #47 site changes.
