@@ -714,3 +714,12 @@ Every figure below was re-read from the linked official page in this session, no
 - Live content was read back after deployment: the dashboard (`index.html`) shows the integrated route inventory with the Wise current-cost cell blanked and the corrected penalty wording, and `banks.html` serves the eight-row multi-bank tariff table with the new navigation. Direct `curl` to `github.io` is blocked by this sandbox's outbound-host allowlist (SSL connect error), so live content was confirmed through the page-fetch tool and the Pages API rather than a claimed browser fetch.
 - Task 19 is **done**. The published site now has eleven pages: `index.html`, `summary.html`, `methods.html`, `penalties.html`, `taxes.html`, `flagged.html`, `sources.html`, `evidence.html`, `banks.html`, `playbooks.html`, `verification.html`, plus the `estimates.html` / `costs.html` compatibility redirects.
 - Remaining unresolved items are published, not hidden: current provider quotes, correspondent deductions, account-specific receiving fees, personal source-of-funds facts and personal tax amounts are blank (`—`) and listed on `flagged.html` and `verification.html`. No universal cheapest route is claimed.
+
+## Session arena/198e49b1-china4 — task 21 (2026-11-11 UTC)
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Correct ATM effective-date rollover and add regression coverage; verify and publish | in progress | arena/198e49b1-china4 | scripts/build_site.py, scripts/validate_effective_dates.py, generated root HTML/data/cost-model.json, README.md, COORDINATION.md |
+
+- Read shared board and open PR #45: task 20 changes COORDINATION.md only; no content overlap. This session claims the newly effective 2026-11-11 ATM wording correction, not another session's work. Arena fixes the branch name, so this session uses its assigned branch rather than creating a session branch.
+- Official notice read directly: https://www.boc.cn/pbservice/bi2/202608/t20260811_25684907.html. Visa/Mastercard fee becomes effective today; inherited copy still calls it future. UnionPay formula is unchanged. No new FX quote or account-specific cost is invented.
