@@ -724,3 +724,21 @@ Every figure below was re-read from the linked official page in this session, no
 ### Claim log — arena/c5e783f4-china4
 - Board read 2026-11-11 02:32 UTC. `main` = `62210ff` (PR #44 merge, task 19 done, Pages `built`). Only remote branch is `origin/main`; no competing live claim. This session claims task 20 above and will not edit files outside its scope except to fix a verified gap.
 - Work plan: (1) rebuild + validate all three generators; (2) local HTTP smoke test of every page; (3) read back the live site and compare to repo; (4) spot-check official sources (BOC board/tariff, SAFE, IRS, eCFR, FinCEN/CBP); (5) requirement-by-requirement gap audit; (6) commit, push, PR, merge, confirm deploy; (7) record result here.
+
+### Verification performed — arena/c5e783f4-china4 (2026-11-11 02:32–02:50 UTC)
+
+**Rebuilt and re-validated.** `python3 scripts/build_site.py` → 7 main pages, 2 redirects, 40 amount rows; `build_evidence.py` → evidence.html (8 checked rules, 18×40 strict rows); `build_bank_playbooks.py` → 3 additive pages. `validate_site.py` → PASS (7 pages, 18 procedures, 5×40 matrices, 2026 tax illustration, 54 sources, Decimal arithmetic); `validate_evidence.py` → PASS (720 strictly blank current-cost rows); `validate_bank_playbooks.py` → PASS (49 sources, 9 playbooks/63 cited steps, 28 ledger rows). Rebuild produced zero diff — generated files are current. Local HTTP smoke test returned 200 for all 11 pages, both redirects, `style.css` and both JSON data files.
+
+**Live site read back.** https://sassnarep3-star.github.io/China4/ serves the current dashboard (executive answer, cost snapshot, 18-route inventory). Pages API reports `status: built`, `build_type: legacy`, `source: main:/`.
+
+**Official sources spot-checked this session (re-read, not merely linked):**
+
+| Claim checked | Verified value | Official source |
+|---|---|---|
+| BOC FX board (current) | USD buying 666.29 / selling 669.10 per 100 USD at 2026/11/11 10:30:02; half-spread 0.2104% vs modelled 0.21037% — representative, absolute rate moved as flagged | [BOC exchange-rate board](https://www.boc.cn/sourcedb/whpj/enindex.html) |
+| FBAR civil penalties | non-willful USD 16,536; willful USD 165,353; assessed on/after 2025-01-17 (31 CFR 1010.821 Table 1) | [eCFR 31 CFR 1010.821](https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-H/section-1010.821) |
+| US personal FX gain threshold | gain on a personal foreign-currency transaction excluded unless more than USD 200, then capital gain | [IRS Publication 525](https://www.irs.gov/publications/p525) |
+
+**Requirement-by-requirement gap audit.** Executive summary → `summary.html` + `EXECUTIVE_SUMMARY.md`. Questions/information/answers + how to discover missing information → `flagged.html` ("Required verification" column with official starting points) + `taxes.html` ("Ten questions for a cross-border tax professional") + dashboard four checks. US-citizen best route → dashboard executive answer (licensed-bank wire with source-of-funds evidence; $50,000 quota is for domestic individuals). Methods pros/cons → `methods.html` (18 routes). Penalty breakdown → `penalties.html` (statutory ceilings vs lawful cost). $10,000–$400,000 tables → five 40-row matrices, mobile card layout at ≤760 px (`data-label`), most important columns first. Step-by-step → `methods.html` + `playbooks.html` (63 cited steps). Sourcing policy → every table row carries a source link (validator-enforced); unverified values blank and flagged. **No gap found; no site change required.** Unverified current quotes (Wise, WU, MoneyGram, correspondent deductions, personal taxes) remain blank by policy — estimating them would be hallucination.
+
+**Irregularities (not merge blockers, already published on flagged.html):** BOC dated quote not permanently retrievable (rotating board + captcha); BOC Middle Rate ≠ arithmetic midpoint; stale open PRs #4/#5/#12/#38 untouched; task 17 taxgate files never delivered (no remote branch) — the China-tax-by-source topic is covered on `taxes.html` + `flagged.html` and is not duplicated here.
