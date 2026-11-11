@@ -888,3 +888,11 @@ Claim: existing content scopes are preserved. This is a narrow integration/publi
 - Rebase conflict: concurrent session arena/47133a67-china4 merged PR #56 during this audit. Stopped and resolved board conflicts by retaining both logs; preserved their removed-deploy workflow and narrowed our workflow edit to one validator invocation. No other session work discarded.
 
 - Coordination conflict: PR #57 appended a concurrent audit while PR #58 was pending. Retained both logs in full; aborted rebase of the published branch and merged main to preserve its history.
+
+## Session arena/dba8e435-china4 — task 24: line-by-line verification of the shipped matrices/playbooks/treaty pages + publication check
+
+| # | Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|---|
+| 24 | Independently re-verify the numeric and legal claims added by task 23 (`method-matrix.html`, `treaty-filings.html`) and the inherited executive/tax/penalty claims against primary sources read directly; correct anything wrong in the generators + regenerate; publish findings to `flagged.html`/`verification.html`; confirm the branch-published site serves every page; PR → merge → confirm Pages | `COORDINATION.md` (this section only), and — only if a defect is found — the generator that owns the affected file (`scripts/build_method_treaty.py`, `scripts/build_site.py`, `scripts/build_evidence.py`, `scripts/build_bank_playbooks.py` + regenerated HTML/data) | in progress | arena/dba8e435-china4 | 2026-11-11 07:45 | Branch fixed by Arena (`arena/dba8e435-china4`). Current `main` = `0fb49cd` (PR #56): the failing `deploy` job was removed and Pages is branch-published from `main` root, so `_site/` staging is no longer used. Live overlapping claims at claim time: `arena/e1d49618-china4` (COORDINATION.md, PUBLICATION_AUDIT.md, scripts/validate_publication.py, workflow validate step) and `arena/47133a67-china4` (workflow, already merged). This session does not touch those files while that claim is live. |
+| 24-claim | Claim log | — | — | arena/dba8e435-china4 | 2026-11-11 07:45 | Read `COORDINATION.md` and all remote branch heads before claiming. No other session claims the generator/HTML scope above. |
+
