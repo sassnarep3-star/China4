@@ -862,3 +862,9 @@ Every figure below was re-read from the linked official page in this session, no
 - **Research and integration:** Re-read the 2026 HSBC tariff, ABC tariff, treaty, China filing and refund rules, IRS Form 6166 and offshore procedures. Form 8802 individual fee increased to **$105** on 2026-10-01; earlier $85 claim corrected. The added pages distinguish conditional tariff examples from live executable quotes; withholding and streamlined-penalty examples use separate hypothetical bases. No personal eligibility or tax liability is asserted.
 - **Integration scope:** Re-fetched all branch heads; the two live overlapping tax-gate sessions remain confined to additive files, with no current shared-file claims. Added navigation, CI validation and artifact staging for task 23, without touching their files. Pages artifact now stages root HTML/CSS and JSON files; moved Pages concurrency to deploy only so PR validation is not cancelled by unrelated runs. Legacy Pages versus Actions deployment race remains an administrative configuration issue requiring repository settings review.
 - **Validation:** Four builders and all five validators including the effective-date regression pass locally. Task 23 validator independently checks all 40 tariff calculations, cap counts, sourced responsive rows and local links.
+
+## Session arena/47133a67-china4 — deployment reliability
+
+| Task | Scope | Status | Owner | Started UTC | Notes |
+|---|---|---|---|---|---|
+| Diagnose and repair failed Pages deployment after PR #55; validate and publish | `.github/workflows/gh-pages.yml`, `COORDINATION.md` | in progress | arena/47133a67-china4 | 2026-11-11 07:36 | Prior integration branch merged; earlier workflow claims have been inactive for over 60 minutes. Arena-fixed branch. Investigate failure before altering settings. |
