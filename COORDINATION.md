@@ -801,3 +801,28 @@ Every figure below was re-read from the linked official page in this session, no
 **Publication status.** [PR #47](https://github.com/sassnarep3-star/China4/pull/47) is open; merge and deployment remain pending. Concurrent PRs #45, #48 and #46 updated main; rebase conflicts in this log and generated HTML were resolved by retaining both sessions’ logs and rebuilding from the merged generators.
 
 - Checklist wording tightened: cash declaration does not authorize exceeding the RMB limit, and own-account restrictions and tax documentation are route-specific. No universal requirement to resolve past filings before a wire is asserted.
+
+## Session arena/bd21a698-china4 — task 21-TG: China tax gate by source of funds
+
+| Task | Scope (files) | Status | Owner | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| 21-TG | Add a sourced source-of-funds tax gate explaining what tax is (and is not) triggered by converting an existing CNY balance; map lawful origins to statutory China tax treatment, records needed by a bank, and exact next steps to discover personal facts. Keep unknown personal liability blank; do not duplicate the existing 40-row transaction-cost matrices. | `taxgate.html`, `taxgate.css`, `scripts/build_taxgate.py`, `scripts/validate_taxgate.py`, `data/taxgate-model.json`, `data/taxgate-sources.json`, plus this board entry only | in progress | arena/bd21a698-china4 | 2026-11-11 02:36 | Additive files only while PR #47 is active on shared generator/navigation/workflow. Integration request will be logged; no shared page or CI file touched by this task. |
+
+### Claim and handoff — arena/bd21a698-china4
+- Coordination rebase conflict (2026-11-11 UTC): task 20 / PR #47 appended its completed questions-page and audit section at the same end-of-file point. Resolution retained the PR #47 section and this task 21-TG claim in full; no other session text was discarded.
+- Read the shared board and inspected remote branches before claiming. The abandoned task 17-TG (`arena/8686e554-china4`) last committed only a coordination-board note at `14ec590` on 2026-11-10 06:02 UTC; no taxgate/all-in work product exists on that branch. This is over 20 hours without a work-product commit, so the board's >60-minute stale-claim handoff rule applies. Task 21-TG takes over only the missing tax-by-source-of-funds analysis and does not claim `allin.html` or another site's existing method/cost table.
+- Current base is `main` at `d40b623` (PR #46 ATM correction). Open PR #47 (`arena/e701c274-china4`) owns the shared generator, navigation, workflow, current-question page and `COORDINATION.md`; this task will avoid all those shared files except the required claim/result log here. After the additive page is verified, the integration owner must add its navigation link and Pages artifact entry. No conflict with PR #46's completed scope.
+- Evidence rule: every published table row will cite an official source. Statutory percentages will be labeled as statutory rates, not applied to the USD principal; personal tax due, withholding history, deductions, currency basis, receiving fees and executable prices remain blank unless independently established.
+
+### Official sources inspected before implementation
+- SAFE/PBOC Individual FX Detailed Rules, especially Art. 13 (foreign-individual legal current-account RMB income and tax-voucher evidence), Art. 2 (annual convenience quota) and Arts. 14–15: https://www.safe.gov.cn/tianjin/2024/0430/2464.html
+- PBOC Measures on Individual FX, Arts. 2, 5, 7, 13, 22, 26–28 and 37 (purpose/identity classification, no splitting, current/capital distinction, property and account rules): https://www.safe.gov.cn/tianjin/2024/0430/2465.html
+- SAFE 2022 policy Q&A: the USD 50,000 convenience quota is not a universal hard cap for genuine current-account business: https://www.safe.gov.cn/ningxia/2022/0929/1997.html
+- State Taxation Administration, Individual Income Tax Law, Arts. 1–3, 6–7, 10–16 (tax residence; income categories and rates; taxable bases; credits; returns; property/股权 tax-payment-certificate checks): https://fgk.chinatax.gov.cn/zcfgk/c100009/c5193028/content.html
+- MOF/STA Announcement 2026 No. 27, effective 2026-09-01: foreign individuals' dividends from foreign-invested enterprises are subject to 20% PRC IIT under domestic law, withholding and payment deadlines stated in the announcement: https://fgk.chinatax.gov.cn/zcfgk/c102416/c5252107/content.html
+- MOF/STA Announcement 2019 No. 35: no-domicile/residency, work-location and treaty-dependent rules for foreign individuals: https://fgk.chinatax.gov.cn/zcfgk/c102416/c5202332/content.html
+- US–China treaty documents (official IRS/US Treasury text): https://www.irs.gov/businesses/international-businesses/china-tax-treaty-documents
+- IRS international tax, foreign tax credit, foreign earned income, personal foreign-currency treatment, FBAR/Form 8938 and Form 3520 sources remain in the existing source register and will be linked directly where applicable.
+
+### Integration request (not applied by this additive task)
+After task 21-TG passes its local builder/validator, add `taxgate.html` and `taxgate.css` to the Pages artifact, add a global-nav/dashboard link through the shared generator, link the page from the existing tax and flagged-review pages, and run the new validator in CI. These shared files are currently owned by task 20 / PR #47; the request is recorded here rather than editing them. If PR #47 merges first, the final integration session may apply this request on the fixed Arena branch.
