@@ -5,6 +5,8 @@
 
 **Current deliverable:** [executive summary](summary.html) · [before-you-decide checklist](questions.html) · [`index.html`](index.html) · [cost matrices](penalties.html) · [procedures](methods.html) · [taxes](taxes.html) · [bank tariffs](banks.html) · [route playbooks](playbooks.html) · [verification ledger](verification.html) · [sources](sources.html) · [open items](flagged.html)
 
+New: [40-amount method matrix](method-matrix.html) compares documented tariffs and caps; [treaty and filings](treaty-filings.html) outlines conditional relief and remediation. The illustrations are not executable quotes or individualized tax advice.
+
 This summary supersedes earlier draft summaries and cost pages. Earlier provider figures that were not supported by current primary evidence are no longer presented as executable prices.
 
 ## Bottom line

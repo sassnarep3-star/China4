@@ -103,6 +103,8 @@ NAV = [
     ("summary.html", "Summary", "Executive brief"),
     ("questions.html", "Questions", "Before you decide checklist"),
     ("methods.html", "Methods", "18 routes and procedures"),
+    ("method-matrix.html", "Matrix", "Multi-bank comparisons"),
+    ("treaty-filings.html", "Treaty", "Claims and remediation"),
     ("penalties.html", "Costs", "40-row cost matrices"),
     ("taxes.html", "Taxes", "China and US tax/reporting"),
     ("flagged.html", "Review", "Unknowns and irregularities"),
@@ -837,6 +839,7 @@ def flagged_page():
 {callout("warn", "Review before execution", "This page is part of the deliverable, not a merge blocker. Values below remain blank because they are not verified. Historical values are labeled and never silently promoted to current prices.")}
 <section class="section"><div class="section-heading"><p class="eyebrow">A · Open items</p><h2>Unknown values and the exact manual check required</h2></div>{table(["Item", "Why it is unresolved", "Required verification", "Official starting point"], unresolved, "Institution- and person-specific unknowns. “—” elsewhere on the site refers to these items.")}</section>
 <section class="section"><div class="section-heading"><p class="eyebrow">B · Audit findings</p><h2>Corrections and irregularities</h2></div>{table(["Finding", "Resolution / treatment", "Severity", "Primary evidence"], irregular, "Material errors found in the inherited pages were corrected rather than preserved for the sake of consistency.")}</section>
+<section class="section"><h2>Additional decision checks</h2><p>The <a href="treaty-filings.html">treaty and filings playbook</a> distinguishes foreign-individual payments from the domestic-party filing rule and explains conditional treaty relief and potential excess withholding. The <a href="method-matrix.html">method matrix</a> compares documented tariffs but does not establish live all-in costs. Confirm all eligibility, filing and refund facts before acting.</p></section>
 <section class="section"><h2>Verification policy</h2><div class="steps three"><div><span>1</span><h3>Primary evidence</h3><p>Regulator, statute, court/regulatory text, issuing bank or operator. Secondary travel/expat estimates are not used as facts.</p></div><div><span>2</span><h3>Date and scope</h3><p>Old tariffs remain only when labeled historical; future changes show their effective date; product availability is not inferred from branding.</p></div><div><span>3</span><h3>Blank means unknown</h3><p>No unconfirmed fee, tax, limit or route is backfilled. Conditional scenarios use disclosed inputs and reproducible formulas.</p></div></div></section>'''
     return layout("flagged.html", "Flagged for Review", "Unresolved institution-specific values, corrected legacy errors, timestamp conflicts, and the manual checks required before moving money.", body)
 
