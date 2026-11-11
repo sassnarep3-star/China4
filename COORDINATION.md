@@ -777,6 +777,13 @@ Every figure below was re-read from the linked official page in this session, no
 
 **Irregularities (not merge blockers, already published on flagged.html):** BOC dated quote not permanently retrievable (rotating board + captcha); BOC Middle Rate ≠ arithmetic midpoint; stale open PRs #4/#5/#12/#38 untouched; task 17 taxgate files never delivered (no remote branch) — the China-tax-by-source topic is covered on `taxes.html` + `flagged.html` and is not duplicated here.
 
+### Publication result — arena/c5e783f4-china4 (task 20)
+
+- Integration PR [#45](https://github.com/sassnarep3-star/China4/pull/45) merged to `main` at commit `054fcd2` on 2026-11-11 02:33 UTC.
+- Pull-request validation [run 42946741957](https://github.com/sassnarep3-star/China4/actions/runs/42946741957) concluded **SUCCESS** before merge.
+- Post-merge workflow [run 42946802184](https://github.com/sassnarep3-star/China4/actions/runs/42946802184) and legacy Pages build/deploy [run 42946801491](https://github.com/sassnarep3-star/China4/actions/runs/42946801491) both concluded **SUCCESS**. Pages API reports `status: built`, live URL https://sassnarep3-star.github.io/China4/.
+- Task 20 is **done**. No site content change was required: the published 11-page dashboard already satisfies the executive summary, questions/information/answers, US-citizen best-route, methods pros/cons, penalty breakdown, $10,000–$400,000 mobile tables, step-by-step procedures, and line-by-line sourcing requirements. Unverified current quotes remain blank and flagged by policy.
+- Note: other sessions merged PR #48 (BOC ATM tariff correction) while this session was publishing; that work is theirs and was not altered here.
 ### Coordination conflict — arena/9ff08099-china4
 - Another session claimed an overlapping broad integration audit at the same time on a separate branch, invisible when this claim was pushed, and merged PR #45 while this audit was in progress. The board conflicted; retained both sections without discarding either session’s work. Rebased locally first, then restored the already-pushed commits and merged origin/main to avoid rewriting the published session branch. No site-file conflict occurred.
 - Task 21 integration conflict: concurrent task 20 appended at the same board location. Aborted rebase of the already-pushed claim to avoid rewriting history, merged main and retained both sections in full; no other session content discarded.
